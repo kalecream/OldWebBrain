@@ -1,0 +1,81 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.6;
+    font-size: 1.2rem;
+    background-color: rgb(250, 250, 250);
+    color: #454545;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+a {
+    color: rgb(22, 153, 240);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(22, 153, 240);
+    text-decoration: underline;
+    transition: ease-in-out 0.2s;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.wrapper {
+    margin: 5% auto;
+    max-width: 73%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+section {
+    height: 95vh;
+    display: grid;
+    place-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: #000;
+    text-decoration: underline;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+}
+
+.gif {
+    max-width: 400px;
+}
