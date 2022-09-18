@@ -1,0 +1,192 @@
+
+
+:root {
+    --color-white: rgb(250, 250, 250);
+    --color-black: #454545;
+    --grey: #ccc;
+    --color-primary: #979e93;
+    /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
+    --light-shades: #f7f7f5;
+    /* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
+    --light-accent: #9b9884;
+    /* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.  */
+    --dark-accent: #8f8182;
+    /* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.  */
+    --dark-shades: #2b3245;
+    /*  Use as the text color for dark-on-light designs, or as the background for inverted designs.
+     */
+    --text-shadow: 0 0 1px #fff;
+    --success: #63aa64;
+    --warning: #e09a2c;
+    --error: #f44336;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.6;
+    font-size: 1.2rem;
+    background-color: --light-shades;
+    color: --dark-shades;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-shadow: --text-shadow;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: normal;
+    text-decoration: underline;
+    transition: ease-in-out 0.2s;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 2rem auto;
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--light-shades);
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: ease-in-out 0.2s;
+}
+
+button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    transition: ease-in-out 0.2s;
+}
+
+.wrapper {
+    margin: 5% auto;
+    max-width: 73%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+section {
+    height: 95vh;
+    display: grid;
+    place-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: #000;
+    text-decoration: underline;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+}
+
+.home-link {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+}
+
+.home-link:hover {
+    color: var(--color-black);
+}
+
+.home-link:visited {
+    color: var(--color-black);
+}
+
+.callout {
+    background-color: var(--light-accent);
+    color: var(--light-shades);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.gif {
+    max-width: 400px;
+}
+
+.lesson {
+    margin-top: 2rem;
+}
+
+.lesson details {
+    padding: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    place-items: center;
+}
+
+.lesson details:open {
+    border-radius: 15px;
+}
+
+.lesson details::marker {
+    color: var(--light-shades);
+}
+
+.lesson > * > .description {
+    width: 80%;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-style: oblique;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.game-stats #time {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.flex-column-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}

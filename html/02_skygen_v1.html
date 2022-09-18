@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <style>
+            .container {
+                display: grid;
+                max-width: 500px;
+                max-height: 600px;
+                padding: 1rem 2rem;
+            }
+            #grid {
+                margin-top: 2rem;
+                display: grid; 
+                grid-template-columns: repeat(12, auto);
+                gap: 1rem;
+            }
+
+            #grid > div[class^='grid-item-'] {
+                /* border: 1px solid var(--grey); */
+                border-radius: 15px;
+                padding: 0.2rem;
+                width: 2rem;
+                display: grid;
+                place-items: center;
+                aspect-ratio: 1/1;
+            }
+
+            #grid > div[class^='grid-item-']::before {
+                content: '';
+                display: none;
+                cursor: pointer;
+            }
+
+            #grid > div[class^='grid-item-']:hover::before{
+                display: flex;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>🌠 &nbsp; SkyGen</h1>
+            <button onclick="generate()">Generate</button>
+            <div class="lesson">
+                <details>
+                    <summary>Details For Nerds</summary>
+                    <p class="description">
+                        This mini-project is a simple css pseudo-element overlay for practice.<br/><br/>In this test, I practiced pseudo-element overlay & dom manipulation<br/><br/>View the source code of this page to see what's happening.
+
+                        I'm working on alternate directions of this like clicking a tree and seeing information from wikipedia, etc.
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </p>
+                </details>
+            </div>
+            <div id="grid"></div>
+            <script>
+                const container = document.getElementById("grid");
+                let gridAmount = 144;
+                let treasure = Math.floor(Math.random() * gridAmount);
+                let random = Math.floor(Math.random() * ((gridAmount - 4) + 4));
+                const gridElementInjector = document.querySelector(`div[class^="grid-item-"]::before`); 
+
+                function createGrid() {
+                    for (let i = 0; i < gridAmount; i++) {
+                        let div = document.createElement("div");
+                        div.className = "grid-item-" + i;
+                        i % 2 == 0 ? div.innerHTML = "✦" : div.innerHTML = "✧";
+                        container.appendChild(div);
+                        i % random == 0 ? div.innerHTML = "☆" : null ;
+                        i % (random + 1) == 0 ? div.innerHTML = "✩" : null ;
+                        i % (random + 2) == 0 ? div.innerHTML = "✶" : null ;
+                        i % (random + 3) == 0 ? div.innerHTML = "✷" : null ;
+                        i % (random + 6) == 0 ? div.innerHTML = "✫" : null ;
+                        i % (random + 6) == 0 ? div.innerHTML = "★" : null ;
+                        i % (random + 7) == 0 ? div.innerHTML = "🌕" : null ;
+                        i % (random + 9) == 0 ? div.innerHTML = "🪐" : null ;
+                        i % (random - 8) == 0 ? div.innerHTML = "💫" : null ;
+                        i % (random - 5) == 0 ? div.innerHTML = "⭐️" : null ;
+                        i % (random / 3) == 0 ? div.innerHTML = "✨" : null ;
+                        i % (random * 3) == 0 ? div.innerHTML = "☄️" : null ;
+                        i % (random / 9) == 0 ? div.innerHTML = " " : null ;
+                        i % (random + 8) == 0 ? div.innerHTML = " 🌑" : null ;
+                    }
+                }
+
+                createGrid();
+                let gridItems = document.querySelectorAll("#grid > div");
+                gridItems[treasure].innerHTML = "🌎";
+                gridItems[treasure].style.fontSize = "1.5rem";
+
+            </script>
+        </div>
+    </body>
+</html>
