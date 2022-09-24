@@ -243,12 +243,14 @@ img {
     }
 }
 
+/* WRAPPER  */
+
 .wrapper {
-    margin: 5% auto;
-    max-width: 73%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
+    margin: 2rem auto;
+    padding: 2rem 5rem;
+    max-width: 90rem;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
