@@ -32,6 +32,8 @@ body {
     width: 100vw;
     height: 100vh;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
     font-size: 1.2rem;
     background-color: var(--light-shades);
     color: var(--dark-shades);
@@ -98,6 +100,18 @@ nav a:active {
     color: var(--color-primary);
 }
 
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0.05rem 1rem;
+    }
+    nav #site-name a {
+        font-size: 1.5rem;
+    }
+    nav ul {
+        display: none;
+    }
+}
+
 .settings {
     height: 100%;
 }
@@ -116,7 +130,7 @@ nav a:active {
 }
 
 .theme-toggle:active {
-    animation: switchColor 0.6s linear;
+    animation: switchColor 1s linear;
 }
 
 .theme-toggle::after{
@@ -259,9 +273,25 @@ img, image {
 }
 
 section {
-    margin: 128px 0;
-    display: grid;
-    place-items: center;
+    margin: 1rem 0;
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+
+    .wrapper {
+        padding: 0.5rem 1rem;
+    }
+
+    #home .hero-text {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    #home p {
+        line-height: 1.4;
+        font-size: 1rem;
+    }
 }
 
 iframe[seamless] {
