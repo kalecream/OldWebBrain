@@ -16,10 +16,6 @@ const directory = [
     links: "/contact",
   },
   {
-    title: "Rolodex",
-    links: "/rolodex",
-  },
-  {
     title: "Blog",
     links: "/blog",
   },
