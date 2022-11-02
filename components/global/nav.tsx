@@ -20,8 +20,8 @@ const directory = [
     links: "/blog",
   },
   {
-    title: "Portfolio",
-    links: "/portfolio",
+    title: "Directory",
+    links: "/directory",
   },
 ];
 

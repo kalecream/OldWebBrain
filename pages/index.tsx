@@ -3,6 +3,25 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Navigation, Footer } from "../components/global";
 
+const directory = [
+  {
+    title: "About",
+    links: "/about",
+  },
+  {
+    title: "Contact",
+    links: "/contact",
+  },
+  {
+    title: "Blog",
+    links: "/blog",
+  },
+  {
+    title: "Directory",
+    links: "/directory",
+  },
+];
+
 export default function Home() {
   return (
     <div className={styles.container}>
