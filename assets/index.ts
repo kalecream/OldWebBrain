@@ -1,3 +1,3 @@
-export * from './icons.ts';
-export * from './images.ts';
-export * from './misc.ts';
+export * from './icons';
+export * from './images';
+export * from './misc';

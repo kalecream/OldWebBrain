@@ -3,32 +3,30 @@ import styles from "../../styles/nav.module.css";
 
 interface NavProps {
   title: string;
-  links: string[];
+  links: string;
 }
 
-const directory = [
-  {
-    title: "About",
-    links: "/about",
-  },
-  {
-    title: "Contact",
-    links: "/contact",
-  },
-  {
-    title: "Blog",
-    links: "/blog",
-  },
-  {
-    title: "Directory",
-    links: "/directory",
-  },
-];
+export const Navigation: React.FunctionComponent = () => {
 
-export const Navigation: React.FunctionComponent<NavProps> = ({
-  title,
-  links,
-}) => {
+  const directory = [
+    {
+      title: "About",
+      links: "/about",
+    },
+    {
+      title: "Contact",
+      links: "/contact",
+    },
+    {
+      title: "Blog",
+      links: "/blog",
+    },
+    {
+      title: "Directory",
+      links: "/directory",
+    },
+  ];
+
   function toggleTheme() {
     var body = document.body;
     body.classList.toggle("dark");

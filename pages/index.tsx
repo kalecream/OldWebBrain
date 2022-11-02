@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Navigation, Footer } from "../components/global";
+import Directory from "./directory";
 
 const directory = [
   {
