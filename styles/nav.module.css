@@ -1,0 +1,102 @@
+
+
+nav #site-name a {
+
+    left: 0;
+    color: var(--color-primary);
+    width: 33%;
+    float: left;
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 0 1rem 0 0;
+}
+
+nav #site-name a:hover {
+    color: var(--dark-shades);
+    text-decoration: none;
+}
+
+.settings {
+    height: 100%;
+}
+
+.themeToggle {
+    display: flex;
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+    border: 3px solid var(--color-black);
+    margin-left: auto;
+    position: relative;
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+    transform: rotate(-75deg);
+}
+
+.themeToggle:active {
+    animation: switchColor 1s linear;
+}
+
+.themeToggle::after{
+    content: '';
+    font-size: 0.9rem;
+    position: absolute;
+    height: 28px;
+    width: 29px;
+    top: -2px;
+    left: 20px;
+    background-color: var(--color-black);
+    border-radius: 50%;
+    border: none;
+    transition-duration: 0.4s;
+}
+
+.themeToggle::before {
+    content: '☀️';
+    z-index: 2;
+    position: absolute;
+    font-size: 0.8rem;
+    top: 0.35rem;
+    left: 1.65rem;
+    transition-duration: 0.4s;
+}
+
+.dark {
+    background-color: var(--color-black);
+    color: var(--light-shades);
+    animation: switchColor 0.6s linear;
+    animation-fill-mode: forwards;
+}
+
+.dark .themeToggle {
+    border-color: var(--light-text);
+    background-color: var(--color-primary);
+}
+
+.dark .themeToggle::after {
+    content: '';
+    left: -1px;
+    background-color: var(--light-shades);
+    transition-duration: 0.4s;
+}
+
+.dark .themeToggle::before {
+    content: '🌕️';
+    font-size: 0.8rem;
+    left: 0.35rem;
+    transition-duration: 0.4s;
+}
+
+@keyframes switchColor {
+    0% {
+        background-color: var(--light-shades);
+    }
+    50% {
+        background-color: var(--color-primary);
+    }
+    100% {
+        background-color: var(--color-black);
+    }
+}
+
+
