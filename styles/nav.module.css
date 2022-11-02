@@ -1,6 +1,6 @@
 
 
-nav #site-name a {
+.siteName a {
 
     left: 0;
     color: var(--color-primary);
@@ -11,7 +11,7 @@ nav #site-name a {
     padding: 0 1rem 0 0;
 }
 
-nav #site-name a:hover {
+.siteName a:hover {
     color: var(--dark-shades);
     text-decoration: none;
 }
