@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./fonts/coolvetica.otf");
+}
+
 :root {
   --color-white: #fafafa;
   --color-black: #454545;
@@ -66,7 +71,7 @@ main {
 }
 
 a {
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   color: var(--color-primary);
 }
@@ -93,26 +98,6 @@ nav ul {
   float:right;
   display: flex;
   list-style: none;
-}
-
-nav li {
-  font-size: 0.85rem;
-  margin: 0 1rem;
-}
-
-nav a {
-  font-weight: 600;
-  color: var(--color-primary);
-  text-decoration: none;
-  opacity: 0.7;
-}
-
-nav a:hover {
-  color: var(--color-primary);
-}
-
-nav a:active {
-  color: var(--color-primary);
 }
 
 @media screen and (max-width: 768px) {
@@ -149,6 +134,7 @@ p {
 h1 {
   font-size: 3rem;
   margin-bottom: 0rem;
+  font-family: "Coolvetica";
 }
 
 h2 {
@@ -181,8 +167,7 @@ img, image {
 }
 
 section {
-  margin: 1rem 0;
-  display: flex;
+  margin: 1rem;
 }
 
 footer {

@@ -29,7 +29,7 @@ const ProjectNumber = styled.span`
     margin-right: 0.5rem;
 `;
 
-const ProjectTitle = styled.h3`
+const ProjectTitle = styled.h2`
     font-size: 1.5rem;
 `;
 

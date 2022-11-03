@@ -1,10 +1,28 @@
 import * as React from "react";
 import styles from "../../styles/nav.module.css";
+import styled from "@emotion/styled";
+import { Colors } from '../../styles/colors';
 
 interface NavProps {
   title: string;
   links: string;
 }
+
+const DirectoryListItem = styled.li`
+  font-size: 0.85rem;
+  margin: 0 1rem;
+`;
+
+const DirectoryLinks = styled.a`
+  font-weight: 300;
+  font-size: 0.85rem;
+  opacity: 0.7;
+
+  * hover {
+    font-weight: 600;
+    opacity: 1;
+  }
+`;
 
 export const Navigation: React.FunctionComponent = () => {
 
@@ -39,9 +57,9 @@ export const Navigation: React.FunctionComponent = () => {
       </div>
       <ul>
         {directory.map((directory, index) => (
-          <li key={index}>
-            <a href={directory.links}>{directory.title}</a>
-          </li>
+          <DirectoryListItem key={index}>
+            <DirectoryLinks href={directory.links}>{directory.title}</DirectoryLinks>
+          </DirectoryListItem>
         ))}
       </ul>
       <div className={styles.settings}>

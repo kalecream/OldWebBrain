@@ -8,7 +8,7 @@ export default function About() {
         <div className={styles.LeftCenter}>
             <h1 className={styles.title}>About</h1>
             <p>
-                Late 20s Jamaican woman self- learning web development through experimentation and needed personal solutions.
+                Late 20s Jamaican woman learning web development through experimentation and needed personal solutions.
             </p>
         </div>
     </section>

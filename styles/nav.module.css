@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: "Cheryl";
+    src: url("./fonts/cheryl.ttf");
+}
 
 .siteName a {
 
@@ -9,6 +12,7 @@
     font-size: 2rem;
     font-weight: 100;
     padding: 0 1rem 0 0;
+    font-family: 'Cheryl';
 }
 
 .siteName a:hover {
