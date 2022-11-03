@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from "@emotion/styled";
 import { Colors } from '../styles/colors';
+import Page from "../containers/layout/page";
 
 const HomeLink = styled.a`
     display: block;
@@ -68,8 +69,8 @@ const Projects = [
 
 export default function Directory() {
   return (
+    <Page>
     <section>
-        <HomeLink href="/">← Home</HomeLink>
         <ProjectContainer>
             {Projects.map((project, index) => (
                 <Project key={index}>
@@ -81,5 +82,6 @@ export default function Directory() {
             ))}
         </ProjectContainer>
     </section>
+    </Page>
   );
 }

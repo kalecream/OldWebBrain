@@ -1,21 +1,9 @@
 export const MediaProfiles = [
     {
-        name: 'Facebook',
-        url: 'https://www.facebook.com/yourname',
-        icon: 'facebook',
-        color: '#3b5998'
-    },
-    {
         name: 'Twitter',
-        url: 'https://twitter.com/yourname',
+        url: 'https://twitter.com/kalecream',
         icon: 'twitter',
         color: '#00aced'
-    },
-    {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/yourname',
-        icon: 'linkedin',
-        color: '#007bb6'
     },
     {  
         name: 'GitHub',
@@ -24,8 +12,8 @@ export const MediaProfiles = [
         color: '#333333'
     },
     {
-        name: 'StackOverflow',
-        url: '',
+        name: 'Mastodon',
+        url: 'https://social.kalecream.com/@sab',
         icon: 'stack-overflow',
         color: '#f48024'
     }
