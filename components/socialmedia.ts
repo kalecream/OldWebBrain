@@ -7,7 +7,7 @@ export const MediaProfiles = [
     },
     {  
         name: 'GitHub',
-        url: '',
+        url: 'https://github.com/kalecream',
         icon: 'github',
         color: '#333333'
     },
