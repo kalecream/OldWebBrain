@@ -1,7 +1,9 @@
 import styles from "../styles/Home.module.css";
+import Page from "../containers/layout/page";
 
 export default function About() {
   return (
+    <Page>
     <section>
         <div className={styles.LeftCenter}>
             <h1 className={styles.title}>About</h1>
@@ -10,5 +12,6 @@ export default function About() {
             </p>
         </div>
     </section>
+    </Page>
   );
 }
