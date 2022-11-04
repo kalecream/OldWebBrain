@@ -27,17 +27,7 @@
   font-size: 1rem;
 }
 
-.hero-text {
-  width: 50%;
-  max-width: 20rem;
-  right: 0;
-  font-size: 0.8rem;
-  margin: 0.5rem 0 auto auto ;
-  font-weight: 500;
-}
-
 @media screen and (max-width: 600px) {
-
   .hero-text {
     line-height: 1.4;
     font-size: 1rem;

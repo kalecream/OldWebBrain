@@ -8,6 +8,33 @@ interface NavProps {
   links: string;
 }
 
+const StyledNavigation = styled.nav`
+  top: 0;
+  width: 100%;
+  padding: 0.05rem 4rem;
+  background-color: inherit;
+  position: sticky;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) { 
+    padding: 0.05rem 1rem;
+  }
+`;
+
+const DirectoryList = styled.ul`
+  right: 0;
+  width: 66%;
+  float:right;
+  display: flex;
+  list-style: none;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const DirectoryListItem = styled.li`
   font-size: 0.85rem;
   margin: 0 1rem;
@@ -21,6 +48,55 @@ const DirectoryLinks = styled.a`
   * hover {
     font-weight: 600;
     opacity: 1;
+  }
+`;
+
+const SiteName = styled.a`
+  padding: 0.75rem 0 !important;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+const ThemeToggle = styled.button`
+  display: flex;
+  cursor: pointer;
+  height: 30px;
+  width: 50px;
+  border: 3px solid var(--color-black);
+  margin-left: auto;
+  position: relative;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+  transform: rotate(-75deg);
+
+  &:active {
+    animation: switchColor 1s linear;
+  }
+
+  &:before {
+    content: '☀️';
+    z-index: 2;
+    position: absolute;
+    font-size: 0.8rem;
+    top: 0.35rem;
+    left: 1.65rem;
+    transition-duration: 0.4s;
+  }
+
+  &:after{
+    content: '';
+    font-size: 0.9rem;
+    position: absolute;
+    height: 28px;
+    width: 29px;
+    top: -2px;
+    left: 20px;
+    background-color: var(--color-black);
+    border-radius: 50%;
+    border: none;
+    transition-duration: 0.4s;
   }
 `;
 
@@ -51,20 +127,20 @@ export const Navigation: React.FunctionComponent = () => {
   }
 
   return (
-    <nav className={styles.nav}>
+    <StyledNavigation className={styles.nav}>
       <div className={styles.siteName}>
-        <a href="/">KaleCream</a>
+        <SiteName href="/">KaleCream</SiteName>
       </div>
-      <ul>
+      <DirectoryList>
         {directory.map((directory, index) => (
           <DirectoryListItem key={index}>
             <DirectoryLinks href={directory.links}>{directory.title}</DirectoryLinks>
           </DirectoryListItem>
         ))}
-      </ul>
-      <div className={styles.settings}>
-        <button id="theme-toggle" className={styles.themeToggle}></button>
-      </div>
-    </nav>
+      </DirectoryList>
+      {/* <div className={styles.settings}>
+        <ThemeToggle id="theme-toggle" className={styles.themeToggle}/>
+      </div> */}
+    </StyledNavigation>
   );
 };
