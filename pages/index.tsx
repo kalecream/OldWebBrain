@@ -92,7 +92,7 @@ export default function Home() {
                 I'm still in the process of porting over posts and experiments. Please free to check out <a href="https://github.com/kalecream"> my code experiments</a> or <a href="https://deviantart.com/kalecream">my art experiments</a> while I continue setting up my website.
               </HeroParagraph>
               <HeroParagraph>
-                If you're trying to find me on the web, I'm available on <a href="https://twitter.com/kalecream">Twitter</a> and I run my own mastodon instance at <a href="https://social.kalecream.com/about">social.kalecream.com</a>.
+                If you're trying to find me on the web, I'm available on <a href="https://twitter.com/kalecream">Twitter</a> and I run my own mastodon instance at <a rel="me" href="https://social.kalecream.com/@sab">social.kalecream.com</a>.
               </HeroParagraph>
             </HeroSection>
             <HeroSection className={styles.heroImage}>
