@@ -12,14 +12,15 @@ const HomeLink = styled.a`
 `;
 
 const ProjectContainer = styled.div`
-	justify-content: space-around;
+	justify-content: space-between;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 0.5rem;
 `;
 
 const Project = styled.div`
 	border-radius: 5px;
-	width: 30%;
+	width: 25%;
 	min-width: 400px;
     background-image: 
 	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) ),
@@ -44,31 +45,42 @@ const ProjectTitle = styled.h2`
 
 const ProjectDescription = styled.p`
 	margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 	color: ${Colors.neutral[300]};
 	font-size: 0.8rem;
 `;
 
 const ProjectTechnologies = styled.ul`
 	color: ${Colors.neutral[300]};
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 	font-size: 0.8rem;
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
 
 	& li {
+		display: grid;
+		place-items: center;
+		margin-top: 0.5rem;
 		margin-right: 0.5rem;
-		color: ${Colors.lightShade};
-		background-color: ${Colors.lightAccent};
-		border-radius: 15px;
-		padding: 0.1rem 0.4rem;
 	}
+
+	& li a:hover {
+		background-color: ${Colors.darkAccent};
+	}
+
+	& li a {
+		background-color: ${Colors.lightAccent};
+		padding: 0.1rem 0.4rem;
+		border-radius: 3px;
+		color: ${Colors.lightShade};
+	}
+
 `;
 
 const ProjectLanguage = styled.ul`
 	color: ${Colors.neutral[300]};
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 	font-size: 0.8rem;
 	flex-wrap: wrap;
 	display: flex;
@@ -76,12 +88,21 @@ const ProjectLanguage = styled.ul`
 	list-style: none;
 
 	& li {
+		display: grid;
+		place-items: center;
+		margin-top: 0.5rem;
 		margin-right: 0.5rem;
-		color: ${Colors.neutral[100]};
-		background-color: ${Colors.lightAccent};
-		border-radius: 15px;
-		padding: 0.2rem 0.4rem;
 	}
+
+	& li a:hover {
+		background-color: ${Colors.darkAccent};
+	}
+
+	& li a {
+		background-color: ${Colors.lightAccent};
+		padding: 0.1rem 0.4rem;
+		border-radius: 3px;
+		color: ${Colors.lightShade};
 `;
 
 const ProjectLink = styled.a`
@@ -107,12 +128,12 @@ const ProjectLink = styled.a`
 const ProjectItem = styled.div`
     color: ${Colors.neutral[300]};
     font-size: 0.8rem;
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
 `;
 
 const Emoji = styled.span`
 	margin-right: 0.5rem;
-    margin-top: 0.25rem;
+    margin-top: 1rem;
 `;
 
 const Projects = [
@@ -121,7 +142,7 @@ const Projects = [
 		image:
 			"https://github.com/kalecream/dotfiles/blob/main/images/wallpaper.png?raw=true",
 		description: (
-			<p>
+			<span>
 				This is a duotone{" "}
 				<a href="https://i3wm.org/" target={"_blank"}>
 					i3wm
@@ -131,26 +152,39 @@ const Projects = [
 				<br /> For a while, my mouse wasn't working properly, so I had to use
 				the keyboard to navigate. I switch from Budgie to i3wm and I'm loving
 				it. I have a mouse that works now, but for how long? ¯\_(ツ)_/¯
-			</p>
+			</span>
 		),
 		link: "https://github.com/kalecream/dotfiles",
         repoName: 'dotfiles',
-		technology: ["i3wm", "rofi", "kitty", "feh"],
-		language: ["bash"],
+		technology: [<a href="https://i3wm.org/">i3wm</a>, <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi</a>, <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty</a>, <a href="https://feh.finalrewind.org/">Feh</a>],
+		language: ["Bash"],
 	},
     {
         title: "Morning Messages",
         image: "https://images.unsplash.com/photo-1523145667259-072b00e52735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
         description: (
-            <p>
+            <span>
                 A simple python script to automate the process of sending my boyfriend current news articles and cute kaomoji-filled messages in the morning via Whatsapp Web. <br/><br/> Who cares about being corny if you enjoyed what you're doing?
-            </p>
+            </span>
         ),
         link: "https://github.com/kalecream/morning-messages",
         repoName: "morning-messages",
-        technology: [ "selenium", "beautifulsoup"],
-        language: ["python"],
+        technology: [ <a href="https://pywhatkit.herokuapp.com/">PyWhatKit</a>, <a href="https://geopy.readthedocs.io/en/stable/">GeoPy</a>, <a href="https://openweathermap.org/">OpenWeatherMap API</a>],
+        language: ["Python"],
     },
+	{
+		title: "Trality Bots",
+		image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
+		description: (
+			<span>
+				I'm almost completely new to trading, but I've been floundering in making crypto trading bots for the last year or so. I decided to take my attempts public. :D
+			</span>
+		),
+		link: "https://github.com/kalecream/TralityTestBots_v2",
+		repoName: "TralityTestBots_v2",
+		technology: [<a href="https://www.trality.com/">Trality</a>],
+		language: ["Python"],
+	},
 ];
 
 const FetchGithubAPIProjects = (repoName:string) => {
@@ -178,7 +212,7 @@ const FetchGithubAPIProjects = (repoName:string) => {
     let updatedDate = new Date(projects[0]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
     let updatedDaysAgo = Math.floor((today.getTime() - new Date(projects[0]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
     let createdDaysAgo = Math.floor((today.getTime() - new Date(projects[projects.length - 1]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
-    let updated = `${updatedDate} ︲ ${updatedDaysAgo} Days ago`;
+    let updated = `${updatedDate} ︲ ${updatedDaysAgo} Days`;
     let created = `${createdDate} ︲ ${createdDaysAgo > 365 ? createdDaysAgo/365 + " Year "+ (createdDaysAgo-365) : createdDaysAgo} Days`;
     return [created, updated];
 };
@@ -189,6 +223,13 @@ export default function Directory() {
 	return (
 		<Page>
 			<section>
+				<h1>My Projects</h1>
+				<small>
+					These are all the projects I've done or am currently working on.<br/>
+					You can click the technologies to see their respectives websites.
+				</small>
+				<br/>
+				<br/>
 				<ProjectContainer>
 					{Projects.map((project, index) => (
 						<Project key={index} image={project.image}>
@@ -226,7 +267,7 @@ export default function Directory() {
                                 ) : null
                             }
 							{project.technology ? (
-								<ProjectTechnologies>
+								<ProjectTechnologies title="Technologies">
 									<Emoji>
 										<FontAwesomeIcon icon={faToolbox} />
 									</Emoji>
@@ -236,12 +277,12 @@ export default function Directory() {
 								</ProjectTechnologies>
 							) : null}
 							{project.language ? (
-								<ProjectLanguage>
+								<ProjectLanguage >
 									<Emoji>
-										<FontAwesomeIcon icon={faLanguage} />
+										<FontAwesomeIcon icon={faLanguage} title="Languages" />
 									</Emoji>
 									{project.language?.map((lang, index) => (
-										<li key={index}>{lang}</li>
+										<li key={index}><a title="Clicking this does nothing right now. Sorry.">{lang}</a></li>
 									))}
 								</ProjectLanguage>
 							) : null}
