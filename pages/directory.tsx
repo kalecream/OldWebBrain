@@ -13,21 +13,22 @@ const HomeLink = styled.a`
 
 const ProjectContainer = styled.div`
 	justify-content: space-around;
-	display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+	display: flex;
 	gap: 0.5rem;
 `;
 
 const Project = styled.div`
 	border-radius: 5px;
-	width: 20%;
+	width: 30%;
 	min-width: 400px;
-    background-image: url(${(props) => props.image});
-    object-fit: cover;
-	border: 1px solid ${Colors.lightAccent};
-	padding: 2rem;
-	flex-direction: column;
+    background-image: 
+	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) ),
+	url(${(props) => props.image});
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: grid;
+	padding: 2.5rem;
 	gap: 0.5rem;
 `;
 
@@ -38,23 +39,18 @@ const ProjectNumber = styled.span`
 
 const ProjectTitle = styled.h2`
 	font-size: 1.5rem;
-`;
-
-const ProjectImage = styled.img`
-	height: 250px;
-	width: 100%;
-	border-radius: 5px;
+	color: ${Colors.lightShade};
 `;
 
 const ProjectDescription = styled.p`
 	margin-top: 1rem;
     margin-bottom: 2rem;
-	color: ${Colors.lightAccent};
+	color: ${Colors.neutral[300]};
 	font-size: 0.8rem;
 `;
 
 const ProjectTechnologies = styled.ul`
-	color: ${Colors.lightAccent};
+	color: ${Colors.neutral[300]};
 	margin-top: 1rem;
 	font-size: 0.8rem;
 	display: flex;
@@ -66,12 +62,12 @@ const ProjectTechnologies = styled.ul`
 		color: ${Colors.lightShade};
 		background-color: ${Colors.lightAccent};
 		border-radius: 15px;
-		padding: 0.2rem 0.5rem;
+		padding: 0.1rem 0.4rem;
 	}
 `;
 
 const ProjectLanguage = styled.ul`
-	color: ${Colors.lightAccent};
+	color: ${Colors.neutral[300]};
 	margin-top: 1rem;
 	font-size: 0.8rem;
 	flex-wrap: wrap;
@@ -81,23 +77,27 @@ const ProjectLanguage = styled.ul`
 
 	& li {
 		margin-right: 0.5rem;
-		color: ${Colors.lightShade};
-		background-color: ${Colors.darkShade};
+		color: ${Colors.neutral[100]};
+		background-color: ${Colors.lightAccent};
 		border-radius: 15px;
-		padding: 0.2rem 0.5rem;
+		padding: 0.2rem 0.4rem;
 	}
 `;
 
 const ProjectLink = styled.a`
-	color: ${Colors.lightAccent};
+	color: ${Colors.neutral[300]};
 	font-size: 0.65rem;
 	float: right;
 	margin: 1rem 0 0 0;
 	padding: 1rem;
+	width: 30%;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid ${Colors.neutral[300]};
 
 	&:hover {
 		font-weight: bold;
-		border-radius: 50px;
+		border-radius: 5px;
 		text-decoration: none;
 		background-color: ${Colors.primary};
 		color: ${Colors.lightShade};
@@ -105,7 +105,7 @@ const ProjectLink = styled.a`
 `;
 
 const ProjectItem = styled.div`
-    color: ${Colors.lightAccent};
+    color: ${Colors.neutral[300]};
     font-size: 0.8rem;
     margin: 1rem 0 0 0;
 `;
@@ -143,7 +143,7 @@ const Projects = [
         image: "https://images.unsplash.com/photo-1523145667259-072b00e52735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
         description: (
             <p>
-                A simple python script to automate the process of sending my boyfriend current news articles and cute kaomoji-filled messages in the morning via Whatsapp Web. <br/><br/> I now think this project was cringy, but who cares about being corny if you enjoyed what you're doing?
+                A simple python script to automate the process of sending my boyfriend current news articles and cute kaomoji-filled messages in the morning via Whatsapp Web. <br/><br/> Who cares about being corny if you enjoyed what you're doing?
             </p>
         ),
         link: "https://github.com/kalecream/morning-messages",
@@ -172,12 +172,14 @@ const FetchGithubAPIProjects = (repoName:string) => {
         hour: "2-digit", minute: "2-digit", hour12: false
     };
 
-    let createdDate = new Date(projects[-1]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
+	
+    let createdDate = new Date(projects[projects.length - 1]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
+	console.log(createdDate);
     let updatedDate = new Date(projects[0]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
     let updatedDaysAgo = Math.floor((today.getTime() - new Date(projects[0]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
-    let createdDaysAgo = Math.floor((today.getTime() - new Date(projects[-1]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
+    let createdDaysAgo = Math.floor((today.getTime() - new Date(projects[projects.length - 1]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
     let updated = `${updatedDate} ︲ ${updatedDaysAgo} Days ago`;
-    let created = `${createdDate} ︲ ${createdDaysAgo} Days ago`;
+    let created = `${createdDate} ︲ ${createdDaysAgo > 365 ? createdDaysAgo/365 + " Year "+ (createdDaysAgo-365) : createdDaysAgo} Days`;
     return [created, updated];
 };
 
@@ -189,8 +191,7 @@ export default function Directory() {
 			<section>
 				<ProjectContainer>
 					{Projects.map((project, index) => (
-						<Project key={index} props={project.image}>
-                            {/* <ProjectImage src={project.image} /> */}
+						<Project key={index} image={project.image}>
 							<ProjectTitle>
 								<ProjectNumber>{index + 1}</ProjectNumber>
 								{project.title}
