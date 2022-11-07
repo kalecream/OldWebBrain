@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "babel": "^6.23.0",
+    "prettier": "^2.7.1",
     "types": "^0.1.1"
   }
 }
