@@ -12,7 +12,7 @@ const StyledNavigation = styled.nav`
   top: 0;
   width: 100%;
   padding: 0.05rem 4rem;
-  background-color: inherit;
+  background-color: ${Colors.lightShade};
   position: sticky;
   justify-content: space-between;
   display: flex;
@@ -128,9 +128,6 @@ export const Navigation: React.FunctionComponent = () => {
 
   return (
     <StyledNavigation className={styles.nav}>
-      <div className={styles.siteName}>
-        <SiteName href="/">KaleCream</SiteName>
-      </div>
       <DirectoryList>
         {directory.map((directory, index) => (
           <DirectoryListItem key={index}>
@@ -138,6 +135,9 @@ export const Navigation: React.FunctionComponent = () => {
           </DirectoryListItem>
         ))}
       </DirectoryList>
+      <div className={styles.siteName}>
+        <SiteName href="/">KaleCream</SiteName>
+      </div>
       {/* <div className={styles.settings}>
         <ThemeToggle id="theme-toggle" className={styles.themeToggle}/>
       </div> */}
