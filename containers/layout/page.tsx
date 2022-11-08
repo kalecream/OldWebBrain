@@ -10,7 +10,6 @@ export default function Page({ children }:{children: React.ReactNode}) {
         <Head>
         <title>KaleCream</title>
         <meta name="description" content="Web Developer" />
-        <link rel="icon" href={Icons.favicon} />
         <link href=
         'https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'/>
       </Head>

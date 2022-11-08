@@ -3,8 +3,25 @@ import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import Page from "../containers/layout/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToolbox, faLanguage, faLink, faClockFour, faCodeCommit, faStar, faBinoculars, faCodeFork } from "@fortawesome/free-solid-svg-icons";
+import {
+	faToolbox,
+	faLanguage,
+	faLink,
+	faClockFour,
+	faCodeCommit,
+	faStar,
+	faBinoculars,
+	faCodeFork,
+} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { create } from "domain";
+
+const PageTitle = styled.h1`
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: ${Colors.primary};
+	margin-bottom: 1rem;
+`;
 
 const ProjectContainer = styled.div`
 	justify-content: space-between;
@@ -40,7 +57,7 @@ const ProjectTitle = styled.h2`
 
 const ProjectDescription = styled.p`
 	margin-top: 1rem;
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 	color: ${Colors.neutral[300]};
 	font-size: 0.8rem;
 `;
@@ -69,7 +86,6 @@ const ProjectTechnologies = styled.ul`
 		border-radius: 3px;
 		color: ${Colors.lightShade};
 	}
-
 `;
 
 const ProjectLanguage = styled.ul`
@@ -120,14 +136,14 @@ const ProjectLink = styled.a`
 `;
 
 const ProjectItem = styled.div`
-    color: ${Colors.neutral[300]};
-    font-size: 0.8rem;
-    margin: 0.5rem 0 0 0;
+	color: ${Colors.neutral[300]};
+	font-size: 0.8rem;
+	margin: 0.5rem 0 0 0;
 `;
 
 const Emoji = styled.span`
 	margin-right: 0.5rem;
-    margin-top: 1rem;
+	margin-top: 1rem;
 `;
 
 const Projects = [
@@ -145,105 +161,97 @@ const Projects = [
 			</span>
 		),
 		link: "https://github.com/kalecream/dotfiles",
-        repoName: 'dotfiles',
-		technology: [<a href="https://i3wm.org/">i3wm</a>, <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi</a>, <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty</a>, <a href="https://feh.finalrewind.org/">Feh</a>],
+		repoName: "dotfiles",
+		technology: [
+			<a href="https://i3wm.org/">i3wm</a>,
+			<a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">
+				Rofi
+			</a>,
+			<a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty</a>,
+			<a href="https://feh.finalrewind.org/">Feh</a>,
+		],
 		language: ["Bash"],
+		created: "2022-07-07",
+		updated: ""
 	},
-    {
-        title: "Morning Messages",
-        image: "https://images.unsplash.com/photo-1523145667259-072b00e52735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
-        description: (
-            <span>
-                A simple python script to automate the process of sending my boyfriend current news articles and cute kaomoji-filled messages in the morning via Whatsapp Web. <br/><br/> Who cares about being corny if you enjoyed what you're doing?
-            </span>
-        ),
-        link: "https://github.com/kalecream/morning-messages",
-        repoName: "morning-messages",
-        technology: [ <a href="https://pywhatkit.herokuapp.com/">PyWhatKit</a>, <a href="https://geopy.readthedocs.io/en/stable/">GeoPy</a>, <a href="https://openweathermap.org/">OpenWeatherMap API</a>],
-        language: ["Python"],
-    },
 	{
-		title: "Trality Bots",
-		image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
+		title: "Morning Messages",
+		image:
+			"https://images.unsplash.com/photo-1523145667259-072b00e52735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
 		description: (
 			<span>
-				I'm almost completely new to trading, but I've been floundering in making crypto trading bots for the last year or so. I decided to take my attempts public. :D
+				A simple python script to automate the process of sending my boyfriend
+				current news articles and cute kaomoji-filled messages in the morning
+				via Whatsapp Web. <br />
+				<br /> Who cares about being corny if you enjoyed what you're doing?
+			</span>
+		),
+		link: "https://github.com/kalecream/morning-messages",
+		repoName: "morning-messages",
+		technology: [
+			<a href="https://pywhatkit.herokuapp.com/">PyWhatKit</a>,
+			<a href="https://geopy.readthedocs.io/en/stable/">GeoPy</a>,
+			<a href="https://openweathermap.org/">OpenWeatherMap API</a>,
+		],
+		language: ["Python"],
+		created: "2021-11-15"
+	},
+	{
+		title: "Trality Bots",
+		image:
+			"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
+		description: (
+			<span>
+				I'm almost completely new to trading, but I've been floundering in
+				making crypto trading bots for the last year or so. I decided to take my
+				attempts public.
 			</span>
 		),
 		link: "https://github.com/kalecream/TralityTestBots_v2",
 		repoName: "TralityTestBots_v2",
 		technology: [<a href="https://www.trality.com/">Trality</a>],
 		language: ["Python"],
+		created: "2022-11-07"
 	},
 ];
 
-const FetchGithubAPIProjects = (repoName:string) => {
-    const [projects, setProjects] = useState([]);
-    const GitURL = `https://api.github.com/repos/kalecream/${repoName}/commits`;
-    let today = new Date();
-
-    useEffect(() => {
-        fetch(GitURL)
-            .then((response) => response.json())
-            .then((data) => {
-                setProjects(data);
-            });
-    }, []);
-
-    let options: Intl.DateTimeFormatOptions = {
-        localeMatcher: "best fit", month: "short",
-        day: "2-digit", year: "numeric",
-        hour: "2-digit", minute: "2-digit", hour12: false
-    };
-
-	
-    let createdDate = new Date(projects[projects.length - 1]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
-	console.log(createdDate);
-    let updatedDate = new Date(projects[0]?.commit?.author?.date).toLocaleDateString("en-US", options).replace(/,/g, "");
-    let updatedDaysAgo = Math.floor((today.getTime() - new Date(projects[0]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
-    let createdDaysAgo = Math.floor((today.getTime() - new Date(projects[projects.length - 1]?.commit?.author?.date).getTime()) / (1000 * 3600 * 24));
-    let updated = `${updatedDate} ︲ ${updatedDaysAgo} Days`;
-    let created = `${createdDate} ︲ ${createdDaysAgo > 365 ? createdDaysAgo/365 + " Year "+ (createdDaysAgo-365) : createdDaysAgo} Days`;
-    return [created, updated];
-};
-
-export default function Directory() {
-    
-
+export const Directory: any = () => {
 	return (
 		<Page>
 			<section>
 				<h1>My Projects</h1>
 				<small>
-					These are all the projects I've done or am currently working on.<br/>
+					These are all the projects I've done or am currently working on.
+					<br />
 					You can click the technologies to see their respectives websites.
 				</small>
-				<br/>
-				<br/>
+				<br />
+				<br />
 				<ProjectContainer>
 					{Projects.map((project, index) => (
+
 						<Project key={index}>
 							<ProjectTitle>
 								<ProjectNumber>{index + 1}</ProjectNumber>
 								{project.title}
 							</ProjectTitle>
-                            
+
 							<ProjectDescription>{project.description}</ProjectDescription>
-                            { project.repoName ? (
-                                <>
-                                    <ProjectItem>
-                                    <Emoji>
-                                        <FontAwesomeIcon icon={faClockFour} />
-                                    </Emoji>
-                                    {FetchGithubAPIProjects(project.repoName)[0]   }
-                                </ProjectItem>
-                                <ProjectItem>
-                                    <Emoji>
-                                        <FontAwesomeIcon icon={faCodeCommit} />
-                                    </Emoji>
-                                    {FetchGithubAPIProjects(project.repoName)[1]}
-                                </ProjectItem>
-                                {/* <ProjectItem>
+							{project.repoName ? (
+								<>
+									<ProjectItem>
+										<Emoji>
+											<FontAwesomeIcon icon={faClockFour} />
+										</Emoji>
+										{project.created}
+									</ProjectItem>
+									{/* <ProjectItem>
+										<Emoji>
+											<FontAwesomeIcon icon={faCodeCommit} />
+										</Emoji>
+										{project.updated}
+									</ProjectItem> */}
+									{/* <ProjectItem>
                                     <Emoji><FontAwesomeIcon icon={faStar}/></Emoji>
                                     {FetchGithubAPIProjects(project.repoName)[2]}
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -252,10 +260,8 @@ export default function Directory() {
                                     <Emoji><FontAwesomeIcon icon={faCodeFork}/></Emoji>
                                     {FetchGithubAPIProjects(project.repoName)[3]}
                                 </ProjectItem> */}
-                                </>
-                                
-                                ) : null
-                            }
+								</>
+							) : null}
 							{project.technology ? (
 								<ProjectTechnologies title="Technologies">
 									<Emoji>
@@ -267,24 +273,27 @@ export default function Directory() {
 								</ProjectTechnologies>
 							) : null}
 							{project.language ? (
-								<ProjectLanguage >
+								<ProjectLanguage>
 									<Emoji>
 										<FontAwesomeIcon icon={faLanguage} title="Languages" />
 									</Emoji>
 									{project.language?.map((lang, index) => (
-										<li key={index}><a title="Clicking this does nothing right now. Sorry.">{lang}</a></li>
+										<li key={index}>
+											<a title="Clicking this does nothing right now. Sorry.">
+												{lang}
+											</a>
+										</li>
 									))}
 								</ProjectLanguage>
 							) : null}
-                            { project.link ? (
-                                <ProjectLink href={project.link} target={"_blank"}>
-                                    <Emoji>
-                                        <FontAwesomeIcon icon={faLink} />
-                                    </Emoji>
-                                    Github
-                                </ProjectLink>
-                                ) : null
-                            }
+							{project.link ? (
+								<ProjectLink href={project.link} target={"_blank"}>
+									<Emoji>
+										<FontAwesomeIcon icon={faLink} />
+									</Emoji>
+									Github
+								</ProjectLink>
+							) : null}
 						</Project>
 					))}
 				</ProjectContainer>
@@ -292,3 +301,5 @@ export default function Directory() {
 		</Page>
 	);
 }
+
+export default Directory;
