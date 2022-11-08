@@ -6,31 +6,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faToolbox, faLanguage, faLink, faClockFour, faCodeCommit, faStar, faBinoculars, faCodeFork } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-const HomeLink = styled.a`
-	display: block;
-	margin: 1rem auto;
-`;
-
 const ProjectContainer = styled.div`
 	justify-content: space-between;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.5rem;
+	gap: 1rem;
 `;
 
 const Project = styled.div`
 	border-radius: 5px;
 	width: 25%;
 	min-width: 400px;
+	background-color: ${Colors.darkShade};
     background-image: 
-	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) ),
-	url(${(props) => props.image});
+	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) )
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	display: grid;
-	padding: 2.5rem;
-	gap: 0.5rem;
+	padding: 2rem;
+	gap: 0.15rem;
 `;
 
 const ProjectNumber = styled.span`
@@ -52,7 +47,6 @@ const ProjectDescription = styled.p`
 
 const ProjectTechnologies = styled.ul`
 	color: ${Colors.neutral[300]};
-	margin-top: 0.5rem;
 	font-size: 0.8rem;
 	display: flex;
 	flex-wrap: wrap;
@@ -80,7 +74,6 @@ const ProjectTechnologies = styled.ul`
 
 const ProjectLanguage = styled.ul`
 	color: ${Colors.neutral[300]};
-	margin-top: 0.5rem;
 	font-size: 0.8rem;
 	flex-wrap: wrap;
 	display: flex;
@@ -109,9 +102,10 @@ const ProjectLink = styled.a`
 	color: ${Colors.neutral[300]};
 	font-size: 0.65rem;
 	float: right;
-	margin: 1rem 0 0 0;
+	margin: 1.5rem 0 0 0;
 	padding: 1rem;
-	width: 30%;
+	max-height: 3rem;
+	width: 45%;
 	text-align: center;
 	border-radius: 5px;
 	border: 1px solid ${Colors.neutral[300]};
@@ -143,11 +137,7 @@ const Projects = [
 			"https://github.com/kalecream/dotfiles/blob/main/images/wallpaper.png?raw=true",
 		description: (
 			<span>
-				This is a duotone{" "}
-				<a href="https://i3wm.org/" target={"_blank"}>
-					i3wm
-				</a>{" "}
-				Rice.
+				This is a duotone i3wm rice.
 				<br />
 				<br /> For a while, my mouse wasn't working properly, so I had to use
 				the keyboard to navigate. I switch from Budgie to i3wm and I'm loving
@@ -232,7 +222,7 @@ export default function Directory() {
 				<br/>
 				<ProjectContainer>
 					{Projects.map((project, index) => (
-						<Project key={index} image={project.image}>
+						<Project key={index}>
 							<ProjectTitle>
 								<ProjectNumber>{index + 1}</ProjectNumber>
 								{project.title}

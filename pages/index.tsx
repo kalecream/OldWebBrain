@@ -65,7 +65,7 @@ const HeroTitle = styled.h1`
 
 const HeroParagraph = styled.p`
   max-width: 40rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: justify;
   padding: 0 2rem;
   margin-bottom: 2rem;
