@@ -10,8 +10,8 @@ import { faStar,  } from "@fortawesome/free-solid-svg-icons";
 const PhotoGrid = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: start;
+    gap: 0.25rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 `;
@@ -40,7 +40,7 @@ const DemographicTableHeader = styled.th`
     min-width: 250px;
 `;
 
-const WarningBanner = styled.div`
+const WarningBanner = styled.small`
     background-color: #f8d7da;
     color: #721c24;
     padding: 0.5rem;
@@ -52,7 +52,7 @@ const WarningBanner = styled.div`
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('../public/img/light_table','')] = r(item); });
+  r.keys().map((item:String, index:Number) => { images[item.replace('../public/img/light_table','')] = r(item); });
   return images;
 }
 
@@ -77,10 +77,6 @@ export const LightTablePage = () => {
           <td>A proper about page with a yearly photojournal that has imaging grouping, descriptiove alt text and captions.</td>
         </tr>
       </DemographicTable>
-
-      <WarningBanner>
-        <FontAwesomeIcon icon="exclamation-triangle" /> This page is still a work in progress.
-      </WarningBanner>
 
       <PhotoGrid>  
         {Object.entries(images).map(([key, value]) => (
