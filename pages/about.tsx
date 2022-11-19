@@ -3,89 +3,116 @@ import Page from "../containers/layout/page";
 import { ExampleAlbum } from "../assets";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { StaticImageData} from "next/image";
+import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { faStar,  } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const PhotoGrid = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 0.25rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	gap: 0.25rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 `;
 
 const CustomImage = styled(Image)`
-    border-radius: 5px;
-    filter: grayscale(100%);
-    transition: filter 0.5s ease-in-out;
+	border-radius: 5px;
+	filter: grayscale(100%);
+	transition: filter 0.5s ease-in-out;
 
-    &:hover{
-        filter: grayscale(0%);}
+	&:hover {
+		filter: grayscale(0%);
+	}
 
-    @media screen and (max-width: 1000px) {
-        width: 200px;
-        height: 200px;
-    }
+	@media screen and (max-width: 1000px) {
+		width: 200px;
+		height: 200px;
+	}
 `;
 
 const DemographicTable = styled.table`
-    font-size: 0.8rem;
-    font-family: Monospace;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+	font-size: 0.8rem;
+	font-family: Monospace;
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 `;
 
-const DemographicTableHeader = styled.th`
-    text-align: left;
-    padding: 12px 0;
-    min-width: 250px;
+const TableRow = styled.tr`
+  &:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 `;
 
-const WarningBanner = styled.small`
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+const TableHeader = styled.th`
+	text-align: left;
+	min-width: 200px;
+  text-indent: 2rem;
+`;
+
+const TableData = styled.td`
+  text-align: left;
+  padding: 1rem 0;
 `;
 
 export const LightTablePage = () => {
-  return (
-    <Page>
-      <h1>About</h1>
-      <section>
-      <DemographicTable>
-        <tr>
-          <DemographicTableHeader>Age / Sex / Location </DemographicTableHeader>
-          <td>Late 20s / F / Jamaica </td>
-        </tr>
-        <tr>
-          <DemographicTableHeader>Hobbies</DemographicTableHeader>
-          <td>Blender3D,  Annoying my cats.</td>
-        </tr>
-        <tr>
-          <DemographicTableHeader>Current Focus</DemographicTableHeader>
-          <td>Fleshing out this website.</td>
-        </tr>
-        <tr>
-          <DemographicTableHeader>Reading</DemographicTableHeader>
-          <td>Night Shift by Stephen King<br/><a href="/read">[Read History]</a></td>
-        </tr>
-      </DemographicTable>
+	return (
+		<Page>
+			<h1>About</h1>
+			<section>
+				<DemographicTable>
+					<TableRow>
+						<TableHeader>
+							Age / Sex / Location{" "}
+						</TableHeader>
+						<TableData>Late 20s / F / Jamaica </TableData>
+					</TableRow>
+					<TableRow>
+						<TableHeader>Hobbies</TableHeader>
+						<TableData>Blender3D, Annoying my cats.</TableData>
+					</TableRow>
+					<TableRow>
+						<TableHeader>Current Focus</TableHeader>
+						<TableData>Fleshing out this website.</TableData>
+					</TableRow>
+					<TableRow>
+						<TableHeader>Reading</TableHeader>
+						<TableData>
+							Night Shift by Stephen King
+							<br />
+              It by Stephen King
+              <br/><br/>
+							<a href="/read">-- Read History --</a>
+						</TableData>
+					</TableRow>
+          <TableRow>
+						<TableHeader>Watching</TableHeader>
+						<TableData>
+            You’re not the same person once the film has finished -- <a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">Link</a>
+							<br /><br />
+							<a href="https://letterboxd.com/kalecream/stats/">-- Watch History (Letterboxd) --</a>
+						</TableData>
+					</TableRow>
+				</DemographicTable>
 
-      <PhotoGrid>  
-        {ExampleAlbum.map((image: StaticImageData, index: number) => (
-          <CustomImage key={index} src={image} alt="Example Album" width={300} height={300} style={{objectFit:'cover'}} placeholder="blur"/>
-        ))}
-      </PhotoGrid>
-      </section>
-    </Page>
-  );
+				<PhotoGrid>
+					{ExampleAlbum.map((image: StaticImageData, index: number) => (
+						<CustomImage
+							key={index}
+							src={image}
+							alt="Example Album"
+							width={300}
+							height={300}
+							style={{ objectFit: "cover" }}
+							placeholder="blur"
+						/>
+					))}
+				</PhotoGrid>
+			</section>
+		</Page>
+	);
 };
 
 export default LightTablePage;
