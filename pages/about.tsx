@@ -1,6 +1,6 @@
 import * as React from "react";
 import Page from "../containers/layout/page";
-import { LightTable } from "../assets";
+import { ExampleAlbum } from "../assets";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StaticImageData} from "next/image";
@@ -12,7 +12,7 @@ const PhotoGrid = styled.div`
     flex-wrap: wrap;
     justify-content: start;
     gap: 0.25rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 `;
 
@@ -49,15 +49,6 @@ const WarningBanner = styled.small`
     margin-bottom: 1rem;
 `;
 
-
-function importAll(r) {
-  let images = {};
-  r.keys().map((index:Number, item) => { images[item.replace('../public/img/light_table','')] = r(item); });
-  return images;
-}
-
-const images = importAll(require.context('../public/img/light_table', false, /\.(png|jpe?g|svg)$/));
-
 export const LightTablePage = () => {
   return (
     <Page>
@@ -74,13 +65,13 @@ export const LightTablePage = () => {
         </tr>
         <tr>
           <DemographicTableHeader>Current Focus</DemographicTableHeader>
-          <td>A proper about page with a yearly photojournal that has imaging grouping, descriptiove alt text and captions.</td>
+          <td>A proper about page with a yearly photojournal that has imaging grouping, descriptive alt text and captions.</td>
         </tr>
       </DemographicTable>
 
       <PhotoGrid>  
-        {Object.entries(images).map(([key, value]) => (
-          typeof value === "string" ? <CustomImage src={value} alt={key} width={300} height={300} /> : null 
+        {ExampleAlbum.map((image: StaticImageData, index: number) => (
+          <CustomImage key={index} src={image} alt="Example Album" width={300} height={300} style={{objectFit:'cover'}} placeholder="blur"/>
         ))}
       </PhotoGrid>
       </section>
