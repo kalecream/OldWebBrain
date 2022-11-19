@@ -55,7 +55,7 @@ const HeroSection = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   color: ${Colors.lightAccent};
 
   @media (max-width: 400px) {
@@ -65,7 +65,7 @@ const HeroTitle = styled.h1`
 
 const HeroParagraph = styled.p`
   max-width: 40rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   text-align: justify;
   padding: 0 2rem;
   margin-bottom: 2rem;
