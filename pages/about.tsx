@@ -66,11 +66,15 @@ export const LightTablePage = () => {
         </tr>
         <tr>
           <DemographicTableHeader>Hobbies</DemographicTableHeader>
-          <td>Blender3D, Painting, Annoying my cats.</td>
+          <td>Blender3D,  Annoying my cats.</td>
         </tr>
         <tr>
           <DemographicTableHeader>Current Focus</DemographicTableHeader>
           <td>Fleshing out this website.</td>
+        </tr>
+        <tr>
+          <DemographicTableHeader>Reading</DemographicTableHeader>
+          <td>Night Shift by Stephen King<br/><a href="/read">[Read History]</a></td>
         </tr>
       </DemographicTable>
 
