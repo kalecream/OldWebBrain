@@ -17,8 +17,7 @@ export const Footer: React.FunctionComponent = () => {
   return (
     <StyledFooter>
       <FooterText id="copyright">
-        &copy; {new Date().getFullYear()} KaleCream Limited. All rights
-        reserved.
+      KaleCream Limited &copy; {new Date().getFullYear()}  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
       </FooterText>
     </StyledFooter>
   );
