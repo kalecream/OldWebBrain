@@ -2,6 +2,8 @@ import * as React from "react";
 import styles from "../../styles/nav.module.css";
 import styled from "@emotion/styled";
 import { Colors } from '../../styles/colors';
+import { Icons } from '../../assets';
+import Image from "next/image";
 
 interface NavProps {
   title: string;
@@ -10,8 +12,7 @@ interface NavProps {
 
 const StyledNavigation = styled.nav`
   top: 0;
-  width: 100%;
-  padding: 0.05rem 4rem;
+  margin: 0.5rem 4rem;
   background-color: ${Colors.lightShade};
   position: sticky;
   justify-content: space-between;
@@ -20,7 +21,7 @@ const StyledNavigation = styled.nav`
   z-index: 1;
 
   @media screen and (max-width: 768px) { 
-    padding: 0.05rem 1rem;
+    margin: 0.05rem 1rem;
   }
 `;
 
@@ -41,8 +42,11 @@ const DirectoryListItem = styled.li`
 `;
 
 const DirectoryLinks = styled.a`
-  font-weight: 300;
-  font-size: 0.75rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: ${Colors.darkAccent};
+  text-transform: uppercase;
+  font-family: monospace;
   opacity: 0.7;
 
   * hover {
@@ -52,8 +56,7 @@ const DirectoryLinks = styled.a`
 `;
 
 const SiteName = styled.a`
-  padding: 0.75rem 0 !important;
-
+  align-items: center;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
@@ -128,7 +131,7 @@ export const Navigation: React.FunctionComponent = () => {
         ))}
       </DirectoryList>
       <div className={styles.siteName}>
-        <SiteName href="/">KaleCream</SiteName>
+        <SiteName href="/"><Image src={Icons.logo} alt="KaleCream" width={24} height={24} /></SiteName>
       </div>
       {/* <div className={styles.settings}>
         <ThemeToggle id="theme-toggle" className={styles.themeToggle}/>
