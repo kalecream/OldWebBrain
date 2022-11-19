@@ -3,23 +3,6 @@
     src: url("./fonts/cheryl.ttf");
 }
 
-.siteName a {
-
-    left: 0;
-    color: var(--color-primary);
-    width: 33%;
-    float: left;
-    font-size: 2rem;
-    font-weight: 100;
-    padding: 0 1rem 0 0;
-    font-family: 'Cheryl';
-}
-
-.siteName a:hover {
-    color: var(--dark-shades);
-    text-decoration: none;
-}
-
 .settings {
     height: 100%;
 }

@@ -90,7 +90,7 @@ export const LightTablePage = () => {
           <TableRow>
 						<TableHeader>Watching</TableHeader>
 						<TableData>
-            You’re not the same person once the film has finished -- <a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">Link</a>
+            You’re not the same person once the film has finished [<a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">Link</a>]
 							<br /><br />
 							<a href="https://letterboxd.com/kalecream/stats/">-- Watch History (Letterboxd) --</a>
 						</TableData>

@@ -44,7 +44,7 @@ export const Footer: React.FunctionComponent = () => {
       </FooterText>
       <SocialsContainer>
         {MediaProfiles.map((profile) => (
-          <a href={profile.url} key={profile.name}>
+          <a rel="me" href={profile.url} key={profile.name}>
             <CustomImage alt={profile.name} src={Brands[profile.name]}   />
           </a>
         ))}
