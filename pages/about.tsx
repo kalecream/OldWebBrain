@@ -23,6 +23,11 @@ const CustomImage = styled(Image)`
 
     &:hover{
         filter: grayscale(0%);}
+
+    @media screen and (max-width: 1000px) {
+        width: 200px;
+        height: 200px;
+    }
 `;
 
 const DemographicTable = styled.table`
@@ -65,7 +70,7 @@ export const LightTablePage = () => {
         </tr>
         <tr>
           <DemographicTableHeader>Current Focus</DemographicTableHeader>
-          <td>A proper about page with a yearly photojournal that has imaging grouping, descriptive alt text and captions.</td>
+          <td>Fleshing out this website.</td>
         </tr>
       </DemographicTable>
 

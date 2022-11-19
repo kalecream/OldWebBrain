@@ -9,7 +9,7 @@ export default function BlogPage( pageTitle:string, {children}:{ children: React
       <Head>
         <title>KaleCream</title>
         <meta name="description" content="Web Developer" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <link
           href="https://fonts.googleapis.com/css?family=Epilogue"
           rel="stylesheet"

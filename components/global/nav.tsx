@@ -108,11 +108,7 @@ export const Navigation: React.FunctionComponent = () => {
       links: "/about",
     },
     {
-      title: "Contact",
-      links: "/contact",
-    },
-    {
-      title: "Directory",
+      title: "Projects",
       links: "/directory",
     },
   ];
