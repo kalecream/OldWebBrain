@@ -52,7 +52,7 @@ const WarningBanner = styled.small`
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item:String, index:Number) => { images[item.replace('../public/img/light_table','')] = r(item); });
+  r.keys().map((index:Number, item) => { images[item.replace('../public/img/light_table','')] = r(item); });
   return images;
 }
 
@@ -80,13 +80,7 @@ export const LightTablePage = () => {
 
       <PhotoGrid>  
         {Object.entries(images).map(([key, value]) => (
-          <CustomImage
-            key={key}
-            src={value}
-            width={250}
-            height={250}
-            style={{objectFit: "cover"}}
-          />
+          typeof value === "string" ? <CustomImage src={value} alt={key} width={300} height={300} /> : null 
         ))}
       </PhotoGrid>
       </section>
