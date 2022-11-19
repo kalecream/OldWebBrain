@@ -17,6 +17,7 @@ const StyledNavigation = styled.nav`
   justify-content: space-between;
   display: flex;
   align-items: center;
+  z-index: 1;
 
   @media screen and (max-width: 768px) { 
     padding: 0.05rem 1rem;
@@ -36,13 +37,12 @@ const DirectoryList = styled.ul`
 `;
 
 const DirectoryListItem = styled.li`
-  font-size: 0.85rem;
   margin: 0 1rem;
 `;
 
 const DirectoryLinks = styled.a`
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   opacity: 0.7;
 
   * hover {
