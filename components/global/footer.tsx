@@ -11,20 +11,20 @@ const StyledFooter = styled.footer`
   bottom: 0;
   font-size: 0.55rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   margin: 0.2rem 4rem;
 `;
 
 const FooterText = styled.p`
   text-align: center;
-  float:left;
 `;
 
 const SocialsContainer = styled.div`
+  margin: 0.5rem 0;
   display: flex;
-  width: 5%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const CustomImage = styled(Image)`
