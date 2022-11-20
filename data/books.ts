@@ -25,7 +25,7 @@ const Books = [
         "format": "Paperback",
         "pages": 409,
         "minutes": 0,
-        "status": "reading",
+        "status": "read",
         "started": "2022-11-13",
         "finished": "2022-11-21",
         "review": "",
@@ -61,39 +61,6 @@ const Books = [
         "started": "2014-06-07",
         "finished": "2014-06-07",
         "review": "I read this book in high school and it was my first experience with sonder. It was remarkable to me to have mundane shared experiences with someone who lived half a century ago and half-way across the world. "
-    },
-    {
-        "title": "A Child Called It",
-        "author": "Dave Pelzer",
-        "series": "",
-        "genre": ["Non-Fiction", "Memoir", "Biography", "Autobiography"] ,
-        "rating": 0,
-        "published": "1995-01-01",
-        "format": "Paperback",
-        "pages": 184,
-        "minutes": 0,
-        "status": "read",
-        "started": "2014-06-07",
-        "finished": "2014-06-07",
-        "review": "",
-        "cover": ""
-
-    },
-    {
-        "title": "Pride and Prejudice",
-        "author": "Jane Austen",
-        "series": "",
-        "genre": ["Fiction", "Romance", "Classics"] ,
-        "rating": 0,
-        "published": "1813-01-28",
-        "format": "Paperback",
-        "pages": 279,
-        "minutes": 0,
-        "status": "read",
-        "started": "2014-06-07",
-        "finished": "2014-06-07",
-        "review": "",
-        "cover": ""
     },
     {
         "title": "The Time Machine/The Invisible Man",
