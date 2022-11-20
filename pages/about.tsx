@@ -30,6 +30,11 @@ const CustomImage = styled(Image)`
 		width: 200px;
 		height: 200px;
 	}
+
+	@media screen and (max-width: 768px) {
+		width: 150px;
+		height: 150px;
+	}
 `;
 
 const DemographicTable = styled.table`
@@ -51,6 +56,11 @@ const TableHeader = styled.th`
 	text-align: left;
 	min-width: 200px;
 	text-indent: 2rem;
+
+	@media screen and (max-width: 500px) {
+		text-indent: 0;
+		min-width: 50px;
+	}
 `;
 
 const TableData = styled.td`

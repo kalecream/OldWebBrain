@@ -146,6 +146,14 @@ const Emoji = styled.span`
 	margin-top: 1rem;
 `;
 
+const PageDescription = styled.p`
+	color: ${Colors.neutral[700]};
+	font-size: 0.8rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 0 0.5rem;
+`;
+
 const Projects = [
 	{
 		title: "Blue Orange",
@@ -220,11 +228,11 @@ export const Directory: any = () => {
 		<Page>
 			<section>
 				<h1>My Projects</h1>
-				<small>
+				<PageDescription>
 					These are all the projects I've done or am currently working on.
 					<br />
 					You can click the technologies to see their respectives websites.
-				</small>
+				</PageDescription>
 				<br />
 				<br />
 				<ProjectContainer>

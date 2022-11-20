@@ -17,7 +17,6 @@ const StyledNavigation = styled.nav`
 	margin-left: 3rem;
 	margin-right: 3rem;
 	border-bottom: 1px solid #eaeaea;
-	background-color: ${Colors.lightShade};
 	justify-content: space-between;
 	display: flex;
 	align-items: center;
