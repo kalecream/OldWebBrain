@@ -228,11 +228,6 @@ export const Directory: any = () => {
 		<Page>
 			<section>
 				<h1>My Projects</h1>
-				<PageDescription>
-					These are all the projects I've done or am currently working on.
-					<br />
-					You can click the technologies to see their respectives websites.
-				</PageDescription>
 				<br />
 				<br />
 				<ProjectContainer>

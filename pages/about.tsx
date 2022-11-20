@@ -54,7 +54,7 @@ const TableRow = styled.tr`
 
 	@media (prefers-color-scheme: dark) {
 		&:nth-child(even) {
-			background-color: #2f2f2f;
+			background-color: transparent;
 		}
 	}
 `;
