@@ -50,6 +50,12 @@ const TableRow = styled.tr`
 	&:nth-child(even) {
 		background-color: #f2f2f2;
 	}
+
+	@prefers-color-scheme: dark {
+		&:nth-child(even) {
+			background-color: #2f2f2f;
+		}
+	}
 `;
 
 const TableHeader = styled.th`
