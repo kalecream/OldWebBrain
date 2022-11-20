@@ -25,6 +25,7 @@ const StyledNavigation = styled.nav`
 
 	@media screen and (max-width: 768px) {
 		margin: 0.05rem 1rem;
+		flex-wrap: wrap;
 	}
 `;
 
@@ -36,7 +37,7 @@ const DirectoryList = styled.ul`
 	list-style: none;
 
 	@media screen and (max-width: 768px) {
-		display: none;
+		flex-wrap: wrap;
 	}
 `;
 
