@@ -123,7 +123,7 @@ export default function Home() {
 						<HeroParagraph>
 							I'm still in the process of porting over posts and experiments.<br/><br/>
               
-              My next step will be changing the color scheme and adding a media page to hold my past read books as I will be removing my <a href="https://www.goodreads.com/user/show/32855839-sabrina">Goodreads</a> & <a href="https://app.thestorygraph.com/profile/sabrinamedwinter">Storygraph</a> accounts in short order.
+              My next step will be changing the color scheme and adding a media page to hold my past read books as I will be removing my <a href="https://www.goodreads.com/user/show/32855839-sabrina">Goodreads</a> & Storygraph accounts in short order.
 							<br />
 							<br />
               Goodreads was only useful to me while their API was alive, now our ratings only serve to help sell books on Amazon. Storygraph started out looking cool, but now it looks bland and the same as every site ever. They gave me the idea that I could download my Goodreads data and interpret it in a way that would be useful to me.

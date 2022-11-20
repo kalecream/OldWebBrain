@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Books from "../data/books";
 
 const PhotoGrid = styled.div`
 	display: flex;
@@ -14,6 +14,7 @@ const PhotoGrid = styled.div`
 	gap: 0.25rem;
 	margin-top: 2rem;
 	margin-bottom: 1rem;
+	overflow: hidden;
 `;
 
 const CustomImage = styled(Image)`
@@ -41,20 +42,20 @@ const DemographicTable = styled.table`
 `;
 
 const TableRow = styled.tr`
-  &:nth-child(even) {
-    background-color: #f2f2f2;
-  }
+	&:nth-child(even) {
+		background-color: #f2f2f2;
+	}
 `;
 
 const TableHeader = styled.th`
 	text-align: left;
 	min-width: 200px;
-  text-indent: 2rem;
+	text-indent: 2rem;
 `;
 
 const TableData = styled.td`
-  text-align: left;
-  padding: 1rem 0;
+	text-align: left;
+	padding: 1rem 0;
 `;
 
 export const LightTablePage = () => {
@@ -64,9 +65,7 @@ export const LightTablePage = () => {
 			<section>
 				<DemographicTable>
 					<TableRow>
-						<TableHeader>
-							Age / Sex / Location{" "}
-						</TableHeader>
+						<TableHeader>Age / Sex / Location </TableHeader>
 						<TableData>Late 20s / F / Jamaica </TableData>
 					</TableRow>
 					<TableRow>
@@ -80,19 +79,31 @@ export const LightTablePage = () => {
 					<TableRow>
 						<TableHeader>Reading</TableHeader>
 						<TableData>
-							Night Shift by Stephen King
-							<br />
-              It by Stephen King
-              <br/><br/>
+							{Books.map((book) => {
+								if (book.status === "reading") {
+									return (
+										<p key={book.title}>
+											{book.title} by {book.author}
+										</p>
+									);
+								}
+							})}
 							<a href="/read">-- Read History --</a>
 						</TableData>
 					</TableRow>
-          <TableRow>
+					<TableRow>
 						<TableHeader>Watching</TableHeader>
 						<TableData>
-            You’re not the same person once the film has finished [<a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">Link</a>]
-							<br /><br />
-							<a href="https://letterboxd.com/kalecream/stats/">-- Watch History (Letterboxd) --</a>
+							You’re not the same person once the film has finished [
+							<a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">
+								Link
+							</a>
+							]
+							<br />
+							<br />
+							<a href="https://letterboxd.com/kalecream/stats/">
+								-- Watch History (Letterboxd) --
+							</a>
 						</TableData>
 					</TableRow>
 				</DemographicTable>
