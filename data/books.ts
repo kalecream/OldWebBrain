@@ -1,5 +1,30 @@
 const Books = [
     {
+        "title": "The Geometry of Hand-Sewing",
+        "author": "Natalie Chanin",
+        "published": "2016",
+        "genre":["Crafts", "Sewing"],
+        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504917301l/34227598._SX318_.jpg"
+    },
+    {
+        "title": "Hunter x Hunter",
+        "author": "Yoshihiro Togashi",
+        "genre": ["Shounen" ],
+        "published": "1998",
+        "status": "reading",
+        "format": "Manga",
+        "cover": "https://m.media-amazon.com/images/I/815uHbvvu1L.jpg"
+    },
+    {
+        "title": "It",
+        "author": "Stephen King",
+        "genre": ["Horror" ],
+        "published": "1986",
+        "minutes": 2695,
+        "status": "reading",
+        "cover": "https://cdna.artstation.com/p/assets/images/images/009/360/872/large/luca-lonardi-cover-it-nologo.jpg"
+    },
+    {
         "title": "Relics",
         "author": "Tim Lebbon",
         "series": "The Relics #1",
@@ -47,35 +72,6 @@ const Books = [
         "review": "",
         "cover": "https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg"
     },
-    {
-        "title": " The Diary of a Young Girl",
-        "author": "Anne Frank",
-        "series": "",
-        "genre": ["Non-Fiction", "Memoir", "Biography", "History"] ,
-        "rating": 2,
-        "published": "1947-02-01",
-        "format": "Paperback",
-        "pages": 288,
-        "minutes": 0,
-        "status": "read",
-        "started": "2014-06-07",
-        "finished": "2014-06-07",
-        "review": "I read this book in high school and it was my first experience with sonder. It was remarkable to me to have mundane shared experiences with someone who lived half a century ago and half-way across the world. "
-    },
-    {
-        "title": "The Time Machine/The Invisible Man",
-        "author": "H.G. Wells",
-        "series": "",
-        "genre": ["Fiction", "Science Fiction", "Classics"] ,
-        "rating": 3,
-        "published": "1895-01-01",
-        "format": "Paperback",
-        "pages": 288,
-        "minutes": 0,
-        "status": "read",
-        "started": "2014-06-07",
-        "finished": "2014-06-07",
-    }
 ]
 
 export default Books
