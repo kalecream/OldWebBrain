@@ -98,6 +98,7 @@ const ReadingContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	jusify-content: center;
 	margin: 2.5rem;
 
 	& > * {
