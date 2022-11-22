@@ -114,7 +114,7 @@ export default function ReadBooks() {
     );
 
     const WantReadFilter = Object.entries(Books).filter(
-        ([key, value]) => value.status === "want to read"
+        ([key, value]) => value.status === "Want to Read"
     );
 
 	return (
@@ -152,10 +152,12 @@ export default function ReadBooks() {
 				</ReadingContainer>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <span style={{fontSize:'1rem', }}>{WantReadFilter.length}</span></h2>
 				{Books.map((book) => {
-					if (book.status === "want-to-read") {
+					if (book.status === "Want to Read") {
 						return (
 							<p>
-								{book.title} by {book.author}
+								{book.title} by {
+								book.author.length == 1 ? book.author: book.author.toString().replace(/,/g, ' & ')
+								}
 							</p>
 						);
 					}
@@ -167,7 +169,7 @@ export default function ReadBooks() {
 					if (book.status === "read") {
 						return (
 							<p>
-								<small>{book.finished.split("-", 1)}</small> {book.title} by{" "}
+								<small>{book.finished?.split("-", 1)}</small> {book.title} by{" "}
 								{book.author}{" "}
 								{book.rating && book.rating >= 3 ? (
 									<span style={{ color: "red" }}>♡</span>
