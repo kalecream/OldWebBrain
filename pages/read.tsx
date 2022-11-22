@@ -2,6 +2,12 @@ import Page from "../containers/layout/page";
 import Books from "../data/books";
 import styled from "@emotion/styled";
 
+const StatusNumber = styled.span`
+	color: #ff0000;
+	vertical-align: top;
+	font-size: 0.55em;
+`;
+
 const BookContainer = styled.a`
 	display: flex;
 	align-items: center;
@@ -133,7 +139,7 @@ export default function ReadBooks() {
                     <br/>
                     Once I have 24 read books here again, I'll add charts.
 				</p>
-				<h2 style={{ textAlign: "center", margin: "2rem" }}>Reading <span style={{fontSize:'1rem', }}>{ReadingFilter.length}</span></h2>
+				<h2 style={{ textAlign: "center", margin: "2rem" }}>Reading <StatusNumber>{ReadingFilter.length}</StatusNumber></h2>
 				<ReadingContainer>
 					{Books.map((book) => {
 						if (book.status === "reading") {
@@ -151,7 +157,7 @@ export default function ReadBooks() {
 						}
 					})}
 				</ReadingContainer>
-				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <span style={{fontSize:'1rem', }}>{WantReadFilter.length}</span></h2>
+				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber></h2>
 				{Books.map((book) => {
 					if (book.status === "Want to Read") {
 						return (
@@ -164,7 +170,7 @@ export default function ReadBooks() {
 					}
 				})}
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>
-					Read <span style={{fontSize:'1rem', }}>{ReadFilter.length}</span>
+					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
 				</h2>
 				{Books.map((book) => {
 					if (book.status === "read") {
