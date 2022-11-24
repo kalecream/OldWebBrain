@@ -120,6 +120,7 @@ const WantToReadContainer = styled.div`
 
 	& > li {
 		list-style-type: '🔖 ';
+		margin-top: 1rem;
 	}
 `;
 
@@ -130,6 +131,12 @@ const ReadContainer = styled.div`
 	& > li {
 		list-style-type: '📖 ';
 	}
+`;
+
+const BookSummary = styled.small`
+	display: block;
+	font-size: 0.8em;
+	width: 75%;
 `;
 
 const ChartArea = styled.div`
@@ -261,9 +268,6 @@ export default function ReadBooks() {
 					<br />I started out porting my Goodreads data then I realised I don't
 					even remember some of these books nor do I still have the same taste
 					as my teens. So I'm going to start afresh.
-                    <br/>
-                    <br/>
-                    Once I have 24 read books here again, I'll add charts.
 				</p>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>Reading <StatusNumber>{ReadingFilter.length}</StatusNumber></h2>
 				<ReadingContainer>
@@ -297,6 +301,8 @@ export default function ReadBooks() {
 								book.author.length == 1 ? book.author: book.author.toString().replace(/,/g, ' & ')
 								}
 								</a>
+								<br/>
+								<BookSummary>{book.summary}</BookSummary>
 							</li>
 						);
 					}
@@ -309,16 +315,18 @@ export default function ReadBooks() {
 				{Books.map((book) => {
 					if (book.status === "read") {
 						let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+
 						return (
 							<li>
-								<a href={searchURL} target='_blank'>{book.finished?.split("-", 1)} {book.title} by{" "}
+								<a href={searchURL} target='_blank'>( {book.finished?.split("-", 1)} ) {book.title} by{" "}
 								{book.author}{" "}
 								{book.rating && book.rating >= 3 ? (
 									<span style={{ color: "red" }}>★</span>
 								) : (
 									""
 								)}
-								</a>
+								</a><br/>
+								<BookSummary>{book.summary}</BookSummary>
 							</li>
 						);
 					}

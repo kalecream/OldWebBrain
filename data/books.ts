@@ -4,24 +4,28 @@ const Books = [
         "author": ["David Cordingly"],
         "genre": ["History"],
         "status": "Want to Read",
+        "summary": "Investigates the reality of piracy from the 16th to the 19th centuries.",
     },
     {
         "title": "Salt: A World History",
         "author": ["Mark Kurlansky"],
         "genre": ["History", "Cooking"],
         "status": "Want to Read",
+        "summary": "A history of salt and its role in civilization.",
     },
     {
         "title": "Drawing for the Absolute Beginner",
         "author": "Mark Willenbrink",
         "genre": ["Art", "Drawing"],
         "status": "Want to Read",
+        "summary": "A series of fun, hands-on exercises help you practice and perfect your strokes—24 mini-demos lead up to 9 full step-by-step demos."
     },
     {
         "title": "The Noma Guide To Fermentation",
         "author": ["René Redzepi" , "David Zilber", "David Joachim"],
         "genre": ["Cooking", "Fermentation"],
         "status": "Want to Read",
+        "summary": "A guide to fermentation from the chefs at Noma."
     },
     {
         "title": "The Geometry of Hand-Sewing",
@@ -29,7 +33,8 @@ const Books = [
         "published": "2016",
         "genre":["Crafts", "Sewing"],
         "status": "reading",
-        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504917301l/34227598._SX318_.jpg"
+        "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504917301l/34227598._SX318_.jpg",
+        "summary": "A guide to hand-sewing with a focus on geometry."
     },
     {
         "title": "Hunter x Hunter",
@@ -38,7 +43,7 @@ const Books = [
         "published": "1998",
         "status": "reading",
         "format": "Manga",
-        "cover": "https://m.media-amazon.com/images/I/815uHbvvu1L.jpg"
+        "cover": "https://m.media-amazon.com/images/I/815uHbvvu1L.jpg",
     },
     {
         "title": "It",
@@ -47,7 +52,8 @@ const Books = [
         "published": "1986",
         "minutes": 2695,
         "status": "reading",
-        "cover": "https://cdna.artstation.com/p/assets/images/images/009/360/872/large/luca-lonardi-cover-it-nologo.jpg"
+        "cover": "https://cdna.artstation.com/p/assets/images/images/009/360/872/large/luca-lonardi-cover-it-nologo.jpg",
+        "summary": "A group of bullied kids band together when a shapeshifting monster, taking the appearance of a clown, begins hunting children."
     },
     {
         "title": "Relics",
@@ -63,7 +69,8 @@ const Books = [
         "started": "2017-03-21",
         "finished": "2017-03-21",
         "review": "",
-        "cover": "https://m.media-amazon.com/images/I/91fmA7u27GL.jpg"
+        "cover": "https://m.media-amazon.com/images/I/91fmA7u27GL.jpg",
+        "summary": "A group of people are trapped in a museum as a horde of monsters attack."
     },
     {
         "title": "Night Shift",
@@ -79,6 +86,7 @@ const Books = [
         "started": "2022-11-13",
         "finished": "2022-11-21",
         "review": "",
+        "summary": "Stephen King's first collection of short stories.",
         "cover": "https://m.media-amazon.com/images/I/81JQ7zUy5PL.jpg"
     },
     {
@@ -95,7 +103,8 @@ const Books = [
         "started": "2022-11-13",
         "finished": "2022-11-21",
         "review": "",
-        "cover": "https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg"
+        "cover": "https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg",
+        "summary": "A guide to cooking basics."
     },
 ]
 
