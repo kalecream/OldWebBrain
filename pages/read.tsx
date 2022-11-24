@@ -1,6 +1,8 @@
 import Page from "../containers/layout/page";
 import Books from "../data/books";
 import styled from "@emotion/styled";
+import * as React from "react";
+import * as d3 from "d3";
 
 const StatusNumber = styled.span`
 	color: #ff0000;
@@ -112,6 +114,130 @@ const ReadingContainer = styled.div`
 	}
 `;
 
+const WantToReadContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	& > li {
+		list-style-type: '🔖 ';
+	}
+`;
+
+const ReadContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	& > li {
+		list-style-type: '📖 ';
+	}
+`;
+
+const ChartArea = styled.div`
+	width: 100%;
+	height: 300px;
+`;
+
+function ReadPages() {
+	const ReadFilter = Object.entries(Books).filter(
+		([key, value]) => value.status === "read"
+	);
+
+	return(
+		<ChartArea>
+			<svg width="100%" height="100%">
+				{ReadFilter.map((book, index) => {
+					const bookName = book[0];
+					let bookPages = 0;
+
+					typeof book[1].pages === "number" ? bookPages = book[1].pages : bookPages = 0;
+
+					const x = 50 + index * 100;
+					const y = 250 - bookPages / 2;
+
+					return (
+						<g key={bookName
+							.replace(/\s/g, "")
+							.replace(/:/g, "")}>
+							<rect
+								x={x}
+								y={y}
+								width="50"
+								height={bookPages}
+								fill="#ff0000"
+							/>
+							<text
+								x={x + 25}
+								y={y - 10}
+								textAnchor="middle"
+								fill="#fff">
+								{bookName}
+							</text>
+							<text
+								x={x + 25}	
+								y={y + bookPages + 20}
+								textAnchor="middle"
+								fill="#fff">
+								{bookPages}
+							</text>
+						</g>
+					);
+				})}
+			</svg>
+		</ChartArea>
+	)
+}
+
+function ReadPagesPerMonthLineChart() {
+	const ReadFilter = Object.entries(Books).filter(
+		([key, value]) => value.status === "read"
+	);
+
+	return(
+		<ChartArea>
+			<svg width="100%" height="100%">
+				{ReadFilter.map((book, index) => {
+					const bookName = book[0];
+					let bookPages = 0;
+					typeof book[1].pages === "number" ? bookPages = book[1].pages : bookPages = 0;
+
+					const x = 50 + index * 100;
+					const y = 250 - bookPages / 2;
+
+					return (
+						<g key={bookName
+							.replace(/\s/g, "")
+							.replace(/:/g, "")}>
+							<rect
+								x={x}
+								y={y}
+								width="50"
+								height={bookPages}
+								fill="#ff0000"
+							/>
+							<text
+								x={x + 25}
+								y={y - 10}
+								textAnchor="middle"
+								fill="#fff">
+								{bookName}
+							</text>
+							<text
+								x={x + 25}
+								y={y + bookPages + 20}
+								textAnchor="middle"
+								fill="#fff">
+								{bookPages}
+							</text>
+						</g>
+					);
+				})}
+			</svg>
+		</ChartArea>
+	)
+}
+	
+
+
 export default function ReadBooks() {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
@@ -143,9 +269,10 @@ export default function ReadBooks() {
 				<ReadingContainer>
 					{Books.map((book) => {
 						if (book.status === "reading") {
+							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 							return (
 								<BookContainer
-									href={""}
+									href={searchURL}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -157,36 +284,46 @@ export default function ReadBooks() {
 						}
 					})}
 				</ReadingContainer>
+				
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber></h2>
+				<WantToReadContainer>
 				{Books.map((book) => {
 					if (book.status === "Want to Read") {
+						let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 						return (
-							<p>
+							<li>
+								<a href={searchURL} target="_blank">
 								{book.title} by {
 								book.author.length == 1 ? book.author: book.author.toString().replace(/,/g, ' & ')
 								}
-							</p>
+								</a>
+							</li>
 						);
 					}
 				})}
+				</WantToReadContainer>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>
 					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
 				</h2>
+				<ReadContainer>
 				{Books.map((book) => {
 					if (book.status === "read") {
+						let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 						return (
-							<p>
-								<small>{book.finished?.split("-", 1)}</small> {book.title} by{" "}
+							<li>
+								<a href={searchURL} target='_blank'>{book.finished?.split("-", 1)} {book.title} by{" "}
 								{book.author}{" "}
 								{book.rating && book.rating >= 3 ? (
-									<span style={{ color: "red" }}>♡</span>
+									<span style={{ color: "red" }}>★</span>
 								) : (
 									""
 								)}
-							</p>
+								</a>
+							</li>
 						);
 					}
 				})}
+				</ReadContainer>
 			</section>
 		</Page>
 	);

@@ -1,8 +1,14 @@
 const Books = [
     {
-        "title": "Chinese Takeaway Cookbook",
-        "author": "Ching-He Huang",
-        "genre": ["Cooking", "Asian"],
+        "title": "Under The Black Flag",
+        "author": ["David Cordingly"],
+        "genre": ["History"],
+        "status": "Want to Read",
+    },
+    {
+        "title": "Salt: A World History",
+        "author": ["Mark Kurlansky"],
+        "genre": ["History", "Cooking"],
         "status": "Want to Read",
     },
     {
