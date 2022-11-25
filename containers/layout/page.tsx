@@ -4,15 +4,13 @@ import { Navigation, Footer } from '../../components/global';
 import styles from '../../styles/Home.module.css';
 import { Icons } from '../../assets';
 
-export default function Page({ children }:{children: React.ReactNode}) {
+export default function Page({ children }:{children: React.ReactNode}, props) {
   return (
     <div className={styles.container}>
         <Head>
-        <title>KaleCream</title>
-        <meta name="description" content="Web Developer" />
-        <link rel="icon" href="/favicon.svg" />
-        <link href=
-        'https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'/>
+        <title>KaleCream { props.title ? "| " + props.title : null}</title>
+        <meta name="description" content={props.description} />
+        <link href='https://fonts.googleapis.com/css?family=Epilogue' rel='stylesheet'/>
       </Head>
         <Navigation />
           <main className={styles.main}>
