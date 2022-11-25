@@ -3,6 +3,13 @@ import Head from "next/head";
 import { Navigation, Footer } from "../../components/global";
 import styles from "../../styles/Home.module.css";
 import { Icons } from "../../assets";
+import styled from "@emotion/styled";
+
+const PageTitle = styled.h1`
+	font-size: 3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+`;
 
 export default function Page({
 	children,
@@ -20,7 +27,10 @@ export default function Page({
 				<meta name="description" content={description} />
 			</Head>
 			<Navigation />
-			<main className={styles.main}>{children}</main>
+			<main className={styles.main}>
+				{title ? <PageTitle>{title}</PageTitle> : null}
+				{children}
+			</main>
 			<Footer />
 		</div>
 	);

@@ -3,7 +3,7 @@ import Page from "../containers/layout/page";
 
 export default function Blog() {
   return (
-    <Page>
+    <Page title="Blog">
     <section>
     </section>
     </Page>

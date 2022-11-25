@@ -46,7 +46,7 @@ const HeroSection = styled.div`
 	gap: 0.5rem;
 	text-align: center;
 
-  @media (max-width: 750px) {
+	@media (max-width: 750px) {
 		width: 100%;
 	}
 `;
@@ -75,40 +75,40 @@ const HeroParagraph = styled.p`
 `;
 
 const HeroButton = styled.button`
-  padding: 1rem 2rem;
-  border-radius: 3px;
-  border: 1px solid ${Colors.darkAccent};
-  background-color: ${Colors.lightShade};
-  font-weight: 400;
-  font-size: 0.8rem;
-  color: ${Colors.darkAccent};
-  text-transform: uppercase;
-  font-family: monospace;
-  opacity: 0.7;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+	padding: 1rem 2rem;
+	border-radius: 3px;
+	border: 1px solid ${Colors.darkAccent};
+	background-color: ${Colors.lightShade};
+	font-weight: 400;
+	font-size: 0.8rem;
+	color: ${Colors.darkAccent};
+	text-transform: uppercase;
+	font-family: monospace;
+	opacity: 0.7;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 
-  &:hover {
-    font-weight: 600;
-    opacity: 1;
-  }
+	&:hover {
+		font-weight: 600;
+		opacity: 1;
+	}
 `;
 
 const HeroSectionImage = styled(Image)`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  @media (max-width: 1500px) {
-    width: 100%;
-    height: 50%;
-  }
+	@media (max-width: 1500px) {
+		width: 100%;
+		height: 50%;
+	}
 
-  @media (max-width: 750px) {
-    display: none;
-  }
+	@media (max-width: 750px) {
+		display: none;
+	}
 `;
 
 export default function Home() {
@@ -121,13 +121,24 @@ export default function Home() {
 							Hi <span className={styles.bigEmoji}>👋🏽</span>
 						</HeroTitle>
 						<HeroParagraph>
-							I'm still in the process of porting over posts and experiments.<br/><br/>
-              
-              My next step will be changing the color scheme and adding a media page to hold my past read books as I will be removing my <a href="https://www.goodreads.com/user/show/32855839-sabrina">Goodreads</a> & Storygraph accounts in short order.
+							I'm still in the process of porting over posts and experiments.
 							<br />
 							<br />
-              Goodreads was only useful to me while their API was alive, now our ratings only serve to help sell books on Amazon. Storygraph started out looking cool, but now it looks bland and the same as every site ever. They gave me the idea that I could download my Goodreads data and interpret it in a way that would be useful to me.
-              <br />
+							My next step will be changing the color scheme and adding a media
+							page to hold my past read books as I will be removing my{" "}
+							<a href="https://www.goodreads.com/user/show/32855839-sabrina">
+								Goodreads
+							</a>{" "}
+							& Storygraph accounts in short order.
+							<br />
+							<br />
+							Goodreads was only useful to me while their API was alive, now our
+							ratings only serve to help sell books on Amazon. Storygraph
+							started out looking cool, but now it looks bland and the same as
+							every site ever. They gave me the idea that I could download my
+							Goodreads data and interpret it in a way that would be useful to
+							me.
+							<br />
 							<br />
 							Thanks for stopping by!
 						</HeroParagraph>
@@ -139,7 +150,7 @@ export default function Home() {
 							width={450}
 							height={450}
 							placeholder="blur"
-              style={{ filter: "grayscale(45%)" }}
+							style={{ filter: "grayscale(45%)" }}
 						/>
 					</HeroSection>
 				</Hero>

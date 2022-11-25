@@ -77,8 +77,7 @@ const TableData = styled.td`
 
 export const LightTablePage = () => {
 	return (
-		<Page>
-			<h1>About</h1>
+		<Page title="About">
 			<section>
 				<DemographicTable>
 					<TableRow>

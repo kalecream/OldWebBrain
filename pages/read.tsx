@@ -244,7 +244,6 @@ function ReadPagesPerMonthLineChart() {
 }
 	
 
-
 export default function ReadBooks() {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
@@ -258,9 +257,8 @@ export default function ReadBooks() {
     );
 
 	return (
-		<Page>
+		<Page title="Books">
 			<section>
-				<h1>Books</h1>
 				<p>
 					I generally try to read one fiction, one non-fiction and one
 					recommended book at a time.

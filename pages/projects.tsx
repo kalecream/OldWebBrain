@@ -225,11 +225,8 @@ const Projects = [
 
 export const Directory: any = () => {
 	return (
-		<Page>
+		<Page title="Projects">
 			<section>
-				<h1>My Projects</h1>
-				<br />
-				<br />
 				<ProjectContainer>
 					{Projects.map((project, index) => (
 
