@@ -4,11 +4,7 @@ import styled from "@emotion/styled";
 import { Colors } from "../../styles/colors";
 import { Icons } from "../../assets";
 import Image from "next/image";
-
-interface NavProps {
-	title: string;
-	links: string;
-}
+import  Directory from "../../data/directory";
 
 const StyledNavigation = styled.nav`
 	top: 0;
@@ -113,16 +109,7 @@ const ThemeToggle = styled.button`
 `;
 
 export const Navigation: React.FunctionComponent = () => {
-	const directory = [
-		{
-			title: "About",
-			links: "/about",
-		},
-		{
-			title: "Projects",
-			links: "/directory",
-		},
-	];
+	
 
 	function toggleTheme() {
 		var body = document.body;
@@ -132,7 +119,7 @@ export const Navigation: React.FunctionComponent = () => {
 	return (
 		<StyledNavigation className={styles.nav}>
 			<DirectoryList>
-				{directory.map((directory, index) => (
+				{Directory.map((directory, index) => (
 					<DirectoryListItem key={index}>
 						<DirectoryLinks href={directory.links}>
 							{directory.title}
