@@ -89,10 +89,6 @@ export const LightTablePage = () => {
 						<TableData>Blender3D, Annoying my cats.</TableData>
 					</TableRow>
 					<TableRow>
-						<TableHeader>Current Focus</TableHeader>
-						<TableData>Fleshing out this website.</TableData>
-					</TableRow>
-					<TableRow>
 						<TableHeader>Reading</TableHeader>
 						<TableData>
 							{Books.map((book) => {
@@ -115,7 +111,6 @@ export const LightTablePage = () => {
 								Link
 							</a>
 							]
-							<br />
 							<br />
 							<a href="https://letterboxd.com/kalecream/stats/">
 								-- Watch History (Letterboxd) --

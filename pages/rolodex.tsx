@@ -28,9 +28,11 @@ const RolodexItem = styled.div`
 export default function Home() {
 	return (
 		<Page title="Rolodex">
+            <section>
 			<RolodexItem>
-                
+
             </RolodexItem>
+            </section>
 		</Page>
 	);
 }
