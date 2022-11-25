@@ -8,8 +8,8 @@ const Directory = [
         links: "/projects",
     },
     {
-        title: "Rolodex",
-        links: "/rolodex",
+        title: "Bookmarks",
+        links: "/bookmarks",
     }
 ];
 
