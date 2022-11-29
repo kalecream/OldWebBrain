@@ -11,20 +11,34 @@ const StyledFooter = styled.footer`
   bottom: 0;
   font-size: 0.55rem;
   display: flex;
+  justify-content: space-between;
+  margin: 0.1rem 3rem;
+  padding: 0.5rem 0;
+  border-top:  1px solid #eaeaea;
+
+  @media screen and (max-width: 768px) {
+		margin: 0.05rem 1rem;
+		flex-wrap: wrap;
+	}
+`;
+
+const FooterColumn = styled.div`
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0.2rem 4rem;
+  justify-content: space-between;
+  align-items: left;
+  gap: 0.2rem;
+  margin: 0 0.5rem;
 `;
 
 const FooterText = styled.p`
-  text-align: center;
+
 `;
 
 const SocialsContainer = styled.div`
-  margin: 0.5rem 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 `;
 
 const CustomImage = styled(Image)`
@@ -37,18 +51,37 @@ const CustomImage = styled(Image)`
 `;
 
 export const Footer: React.FunctionComponent = () => {
+  let LastUpdateDate = new Date();
+  LastUpdateDate.setDate(LastUpdateDate.getDate() - 1);
+  let LastUpdate = LastUpdateDate.toDateString();
   return (
     <StyledFooter>
-      <FooterText id="copyright">
-      KaleCream Limited &copy; {new Date().getFullYear()} —  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
-      </FooterText>
-      <SocialsContainer>
+      <FooterColumn>
+        <SocialsContainer>
         {MediaProfiles.map((profile) => (
           <a rel="me" href={profile.url} key={profile.name}>
-            <CustomImage alt={profile.name} src={Brands[profile.name]}   />
+            <CustomImage width={24} alt={profile.name} src={Brands[profile.name]}   />
           </a>
         ))}
-      </SocialsContainer>
+        </SocialsContainer>
+        <FooterText id="copyright">
+        KaleCream Limited &copy; {new Date().getFullYear()} —  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        </FooterText>
+        <FooterText> Last Updated — {LastUpdate} </FooterText>
+        <FooterText> Made with ☕️ and 🤬 ! </FooterText>
+      </FooterColumn>
+      {/* <FooterColumn>
+        <h3>Legal</h3>
+        <FooterText>
+          <a href="/legal/terms">Terms of Service</a>
+        </FooterText>
+      </FooterColumn>
+      <FooterColumn>
+        <h3>Support</h3>
+        <FooterText>
+          <a href="/support">Support</a>
+        </FooterText>
+      </FooterColumn> */}
     </StyledFooter>
   );
 };
