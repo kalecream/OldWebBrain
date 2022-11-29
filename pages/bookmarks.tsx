@@ -5,25 +5,19 @@ import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import RolodexLinks from "../data/rolodex_list";
 
-const RolodexItem = styled.div`
+const Bookmark = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
-	margin: 1rem;
-	padding: 1rem;
-	border: 1px solid #eaeaea;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: #fff;
-	width: 100%;
-	max-width: 800px;
+	gap: 0.2rem;
 	min-height: 100px;
 
-    &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
-    }
+	& a {
+		font-weight: 600;
+	}
+
+	& li {
+		margin: 0.5rem;
+	}
 
 	@media (max-width: 768px) {
 		width: 100%;
@@ -33,16 +27,18 @@ const RolodexItem = styled.div`
 export default function Bookmarks() {
 	return (
 		<Page title="Bookmarks">
+			<Bookmark>
 			{RolodexLinks.map((item) => (
-				<RolodexItem>
-					<ol>
+				
+					<ul>
 						<li>
 							<a href={item.links} target='_blank'>{item.name}</a>
 							<p>{item.description}</p>
 						</li>
-					</ol>
-				</RolodexItem>
+					</ul>
+				
 			))}
+			</Bookmark>
 		</Page>
 	);
 }
