@@ -11,16 +11,15 @@ import { Colors } from "../styles/colors";
 const PhotoGrid = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: start;
+	justify-content: center;
 	gap: 0.25rem;
 	margin-top: 2rem;
 	margin-bottom: 1rem;
-	overflow: hidden;
 `;
 
 const CustomImage = styled(Image)`
 	border-radius: 5px;
-	filter: grayscale(100%);
+	filter: grayscale(65%);
 	transition: filter 0.5s ease-in-out;
 
 	&:hover {
@@ -28,13 +27,13 @@ const CustomImage = styled(Image)`
 	}
 
 	@media screen and (max-width: 1000px) {
-		width: 200px;
-		height: 200px;
+		max-width: 200px;
+		max-height: 200px;
 	}
 
 	@media screen and (max-width: 768px) {
-		width: 100px;
-		height: 100px;
+		max-width: 100px;
+		max-height: 100px;
 	}
 `;
 
