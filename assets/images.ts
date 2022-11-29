@@ -9,7 +9,6 @@ import earring from '../assets/images/album/earring.jpg';
 
 
 const ExampleAlbum = [
-    Example2,
     Jellyfish,
     bananaSunset,
     okra,
