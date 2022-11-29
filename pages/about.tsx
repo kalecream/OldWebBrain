@@ -13,8 +13,6 @@ const PhotoGrid = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.25rem;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
 `;
 
 const CustomImage = styled(Image)`
@@ -38,11 +36,10 @@ const CustomImage = styled(Image)`
 `;
 
 const DemographicTable = styled.table`
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	font-family: Monospace;
 	border-collapse: collapse;
 	width: 100%;
-	margin-top: 1rem;
 	margin-bottom: 1rem;
 `;
 
@@ -61,7 +58,7 @@ const TableRow = styled.tr`
 const TableHeader = styled.th`
 	text-align: left;
 	min-width: 200px;
-	text-indent: 2rem;
+	text-indent: 1rem;
 
 	@media screen and (max-width: 500px) {
 		text-indent: 0;
@@ -71,7 +68,7 @@ const TableHeader = styled.th`
 
 const TableData = styled.td`
 	text-align: left;
-	padding: 1rem 0;
+	padding: 0.75rem 0;
 `;
 
 export const LightTablePage = () => {
