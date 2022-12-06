@@ -67,7 +67,6 @@ export const Footer: React.FunctionComponent = () => {
         <FooterText id="copyright">
         KaleCream Limited &copy; {new Date().getFullYear()} —  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </FooterText>
-        <FooterText> Last Updated — {LastUpdate} </FooterText>
         <FooterText> Made with ☕️ and 🤬 ! </FooterText>
       </FooterColumn>
       {/* <FooterColumn>
