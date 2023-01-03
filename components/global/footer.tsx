@@ -9,7 +9,7 @@ import Image from "next/image";
 const StyledFooter = styled.footer`
   display: absolute;
   bottom: 0;
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   display: flex;
   justify-content: space-between;
   margin: 0.1rem 3rem;
@@ -42,7 +42,7 @@ const FooterColumn = styled.div`
 `;
 
 const FooterText = styled.p`
-
+  margin: 0;
 `;
 
 const SocialsContainer = styled.div`
@@ -77,7 +77,6 @@ export const Footer: React.FunctionComponent = () => {
         <FooterText id="copyright">
         KaleCream Limited &copy; {new Date().getFullYear()}
         </FooterText>
-        <FooterText> Made with ☕️ and 🤬 ! </FooterText>
       </FooterColumn>
       <FooterColumn>
         <FooterText>

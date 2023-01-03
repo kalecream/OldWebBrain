@@ -10,6 +10,10 @@ const Directory = [
     {
         title: "Bookmarks",
         links: "/bookmarks",
+    },
+    {
+        title: "Services",
+        links: "/services",
     }
 ];
 
