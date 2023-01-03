@@ -86,6 +86,7 @@ const ServiceButton = styled.a`
 	&:hover {
 		background-color: ${Colors.lightShade};
 		color: ${Colors.primary};
+		
 	}
 `;
 
@@ -97,6 +98,7 @@ const ServiceProjectButton = styled(ServiceButton)`
 	&:hover {
 		background-color: ${Colors.darkShade};
 		color: ${Colors.lightShade};
+		
 	}
 `;
 

@@ -7,6 +7,7 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Books from "../data/books";
 import { Colors } from "../styles/colors";
+import 'animate.css';
 
 const PhotoGrid = styled.div`
 	display: flex;
@@ -115,9 +116,10 @@ export const LightTablePage = () => {
 					</TableRow>
 				</DemographicTable>
 
-				<PhotoGrid>
+				<PhotoGrid >
 					{ExampleAlbum.map((image: StaticImageData, index: number) => (
 						<CustomImage
+						className={"animate__animated animate__fadeInUp"}
 							key={index}
 							src={image}
 							alt="Example Album"

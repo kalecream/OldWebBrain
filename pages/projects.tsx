@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { create } from "domain";
+import 'animate.css';
 
 const PageTitle = styled.h1`
 	font-size: 2.5rem;
@@ -230,7 +231,7 @@ export const Directory: any = () => {
 				<ProjectContainer>
 					{Projects.map((project, index) => (
 
-						<Project key={index}>
+						<Project key={index} className={"animate__animated animate__fadeInUp"}>
 							<ProjectTitle>
 								<ProjectNumber>{index + 1}</ProjectNumber>
 								{project.title}
