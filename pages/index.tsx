@@ -169,6 +169,7 @@ export default function Home() {
 								width={1000}
 								height={300}
 								placeholder="blur"
+								blurDataURL={ThreeD.src}
 							/>
 						</>
 					))}
