@@ -10,11 +10,13 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<Head>
 				<link rel="shortcut icon" href="/images/favicon.svg" />
+				<meta lang="en" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link
 					href="https://fonts.googleapis.com/css?family=Epilogue"
 					rel="stylesheet"
 				/>
+				
 			</Head>
 			<Component {...pageProps} />
 		</>
