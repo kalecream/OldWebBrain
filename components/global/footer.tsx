@@ -22,6 +22,12 @@ const StyledFooter = styled.footer`
 	}
 `;
 
+const FooterColumnHeader = styled.h3`
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`;
+
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,6 +35,10 @@ const FooterColumn = styled.div`
   align-items: left;
   gap: 0.2rem;
   margin: 0 0.5rem;
+
+  @media screen and (max-width: 768px) {
+    margin: 0.05rem 0.5rem;
+  }
 `;
 
 const FooterText = styled.p`
@@ -65,22 +75,15 @@ export const Footer: React.FunctionComponent = () => {
         ))}
         </SocialsContainer>
         <FooterText id="copyright">
-        KaleCream Limited &copy; {new Date().getFullYear()} —  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        KaleCream Limited &copy; {new Date().getFullYear()}
         </FooterText>
         <FooterText> Made with ☕️ and 🤬 ! </FooterText>
       </FooterColumn>
-      {/* <FooterColumn>
-        <h3>Legal</h3>
+      <FooterColumn>
         <FooterText>
           <a href="/legal/terms">Terms of Service</a>
         </FooterText>
       </FooterColumn>
-      <FooterColumn>
-        <h3>Support</h3>
-        <FooterText>
-          <a href="/support">Support</a>
-        </FooterText>
-      </FooterColumn> */}
     </StyledFooter>
   );
 };
