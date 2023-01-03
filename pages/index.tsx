@@ -167,7 +167,7 @@ export default function Home() {
 								src={ThreeD.src}
 								alt={""}
 								width={1000}
-								height={300}
+								height={300}placeholder="blur"
 							/>
 						</>
 					))}
