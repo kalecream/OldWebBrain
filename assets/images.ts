@@ -15,4 +15,15 @@ const ExampleAlbum = [
     pineapple,
 ];
 
-export { ExampleAlbum };
+import img_20220102 from '../assets/images/3D/2023/plant_20230102_composed.png'; 
+
+import Chess from '../assets/images/3D/chess__alternate_view__by_kalecream.jpg';
+import Park from '../assets/images/3D/park_by_kalecream.jpg';
+
+const ThreeD = [
+    Chess,
+    Park,
+    img_20220102,
+];
+
+export { ExampleAlbum, ThreeD };
