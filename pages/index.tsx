@@ -4,6 +4,9 @@ import HeroImage from "../assets/images/Under_Construction.webp";
 import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import Image from "next/image";
+import Link from "next/link";
+import { ThreeD } from "../assets";
+import 'animate.css';
 
 const directory = [
 	{
@@ -111,6 +114,18 @@ const HeroSectionImage = styled(Image)`
 	}
 `;
 
+const ThreeDRenders = styled(Image)`
+	width: 30%;
+	object-fit: cover;
+	margin: 0 0.5rem;
+`;
+
+const Caption = styled.p`
+	font-size: 0.8rem;
+	color: ${Colors.darkAccent};
+	text-align: center;
+`;
+
 export default function Home() {
 	return (
 		<Page>
@@ -120,30 +135,17 @@ export default function Home() {
 						<HeroTitle className={styles.title}>
 							Hi <span className={styles.bigEmoji}>👋🏽</span>
 						</HeroTitle>
-						<HeroParagraph>
-							I'm still in the process of porting over posts and experiments.
+						<HeroParagraph className="animate__animated animate__slideInLeft">
+							Thanks for stopping by my website! I'm currently working on my{" "}
+							<Link href="/read">reading history page</Link>.
 							<br />
 							<br />
-							My next step will be changing the color scheme and adding a media
-							page to hold my past read books as I will be removing my{" "}
-							<a href="https://www.goodreads.com/user/show/32855839-sabrina">
-								Goodreads
-							</a>{" "}
-							& Storygraph accounts in short order.
+							My next step will be changing the color scheme of this site to
+							something with a little more contrast.
 							<br />
-							<br />
-							Goodreads was only useful to me while their API was alive, now our
-							ratings only serve to help sell books on Amazon. Storygraph
-							started out looking cool, but now it looks bland and the same as
-							every site ever. They gave me the idea that I could download my
-							Goodreads data and interpret it in a way that would be useful to
-							me.
-							<br />
-							<br />
-							Thanks for stopping by!
 						</HeroParagraph>
 					</HeroSection>
-					<HeroSection className={styles.heroImage}>
+					<HeroSection className={styles.heroImage } >
 						<HeroSectionImage
 							src={HeroImage}
 							alt="KaleCream"
@@ -154,6 +156,31 @@ export default function Home() {
 						/>
 					</HeroSection>
 				</Hero>
+			</section>
+			<section>
+				<div className={styles.directory}>
+					{ThreeD.map((ThreeD, index) => (
+						<>
+							<ThreeDRenders
+							className={"animate__animated animate__fadeInUp"}
+								key={index}
+								src={ThreeD.src}
+								alt={""}
+								width={1000}
+								height={300}
+							/>
+						</>
+					))}
+					<p
+						style={{
+							textAlign: "center",
+							margin: "2rem 0 2rem 0",
+						}}
+					>
+						My last three r/Daily3D renders.<br/> I'm working on making at least 52 renders for 2023 to keep up with
+						the practice of daily3D.
+					</p>
+				</div>
 			</section>
 		</Page>
 	);
