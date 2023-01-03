@@ -123,5 +123,6 @@ img, image {
 }
 
 section {
+  min-height: 55vh;
   margin: 1rem;
 }
