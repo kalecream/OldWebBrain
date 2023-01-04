@@ -37,21 +37,13 @@ const Books = [
         "summary": "A guide to hand-sewing with a focus on geometry."
     },
     {
-        "title": "Hunter x Hunter",
-        "author": "Yoshihiro Togashi",
-        "genre": ["Shounen" ],
-        "published": "1998",
-        "status": "reading",
-        "format": "Manga",
-        "cover": "https://m.media-amazon.com/images/I/815uHbvvu1L.jpg",
-    },
-    {
         "title": "It",
         "author": "Stephen King",
         "genre": ["Horror" ],
         "published": "1986",
         "minutes": 2695,
-        "status": "reading",
+        "status": "read",
+        "finished": "2022-12-31",
         "cover": "https://cdna.artstation.com/p/assets/images/images/009/360/872/large/luca-lonardi-cover-it-nologo.jpg",
         "summary": "A group of bullied kids band together when a shapeshifting monster, taking the appearance of a clown, begins hunting children."
     },
@@ -106,6 +98,21 @@ const Books = [
         "cover": "https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg",
         "summary": "A guide to cooking basics."
     },
+    {
+        "title": "The Lost Art of Reading Nature’s Signs",
+        "author": "Tristan Gooley",
+        "series": "Natual Navigation",
+        "genre": ["Non-Fiction", "Reference", "Nature", "Outdoor", "Survival"] ,
+        "rating": 3,
+        "published": "2015-03-03",
+        "format": "Paperback",
+        "pages": 304,
+        "minutes": 0,
+        "status": "reading",
+        "started": "2023-01-01",
+        "cover": "https://m.media-amazon.com/images/I/914ZQIPOX6L.jpg",
+        "summary": "A guide to reading nature's signs. More useful for persons who live in the UK, but I still learnt a lot."
+    }
 ]
 
 export default Books

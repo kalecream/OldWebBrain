@@ -19,6 +19,7 @@ const BookContainer = styled.a`
 `;
 
 const Book = styled.div`
+	margin: 0 1rem;
 	width: 200px;
 	height: 300px;
 	position: relative;
@@ -41,7 +42,7 @@ const Book = styled.div`
 		transform: translateZ(25px);
 		background-color: #5e5c64;
 		border-radius: 0 2px 2px 0;
-		box-shadow: 5px 5px 20px #666;
+		box-shadow: 5px 5px 20px #999;
 	}
 
 	&::before {
@@ -194,7 +195,7 @@ function ReadPages() {
 	)
 }
 
-function ReadPagesPerMonthLineChart() {
+function ReadPagesPerMonth()  {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
 	);
@@ -205,6 +206,7 @@ function ReadPagesPerMonthLineChart() {
 				{ReadFilter.map((book, index) => {
 					const bookName = book[0];
 					let bookPages = 0;
+
 					typeof book[1].pages === "number" ? bookPages = book[1].pages : bookPages = 0;
 
 					const x = 50 + index * 100;
@@ -242,6 +244,7 @@ function ReadPagesPerMonthLineChart() {
 		</ChartArea>
 	)
 }
+
 	
 
 export default function ReadBooks() {
