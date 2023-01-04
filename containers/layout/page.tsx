@@ -2,14 +2,15 @@ import { useEffect} from "react";
 import Head from "next/head";
 import { Navigation, Footer } from "../../components/global";
 import styles from "../../styles/Home.module.css";
-import { Icons } from "../../assets";
 import styled from "@emotion/styled";
 import TagManager from "react-gtm-module";
+import { Colors } from "../../styles/colors";
 
 const PageTitle = styled.h1`
 	font-size: 3rem;
 	font-weight: 600;
 	margin-bottom: 1rem;
+	color: ${Colors.primary};
 `;
 
 export default function Page({
