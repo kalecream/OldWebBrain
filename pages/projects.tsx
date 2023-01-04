@@ -231,7 +231,7 @@ export const Directory: any = () => {
 				<ProjectContainer>
 					{Projects.map((project, index) => (
 
-						<Project key={index} className={"animate__animated animate__fadeInUp"}>
+						<Project key={index} className="animate__animated animate__fadeInUp">
 							<ProjectTitle>
 								<ProjectNumber>{index + 1}</ProjectNumber>
 								{project.title}

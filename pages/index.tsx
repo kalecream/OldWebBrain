@@ -77,13 +77,37 @@ const HeroParagraph = styled.p`
 	}
 `;
 
+const HeroButtonContainer = styled.div`
+	display: flex;
+	gap: 1rem;
+`;
+
+const HeroPrimaryButton = styled.button`
+	border: none;
+	background-color: ${Colors.primary};
+	text-transform: uppercase;
+	font-family: monospace;
+	opacity: 0.7;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	& a {
+		color: ${Colors.lightShade};
+	}
+
+	&:hover {
+		font-weight: 600;
+		opacity: 1;
+	}
+
+	&:hover a {
+		color: ${Colors.primary};
+	}
+`;
+
 const HeroButton = styled.button`
-	padding: 1rem 2rem;
-	border-radius: 3px;
-	border: 1px solid ${Colors.darkAccent};
+	border: 1px solid ${Colors.primary};
 	background-color: ${Colors.lightShade};
-	font-weight: 400;
-	font-size: 0.8rem;
 	color: ${Colors.darkAccent};
 	text-transform: uppercase;
 	font-family: monospace;
@@ -94,12 +118,19 @@ const HeroButton = styled.button`
 	&:hover {
 		font-weight: 600;
 		opacity: 1;
+		border: 1px solid ${Colors.lightShade};
+	}
+
+	&:hover a {
+		color: ${Colors.primary};
 	}
 `;
 
 const HeroSectionImage = styled(Image)`
-	width: 50%;
+	width: 70%;
 	height: 100%;
+	min-width: 300px;
+	max-height: 800px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -144,6 +175,14 @@ export default function Home() {
 							something with a little more contrast.
 							<br />
 						</HeroParagraph>
+						<HeroButtonContainer>
+							<HeroPrimaryButton className="animate__animated animate__slideInLeft">
+								<Link href="/services">Commission a service</Link>
+							</HeroPrimaryButton>
+<HeroButton className="animate__animated animate__slideInLeft">
+								<Link href="/projects">View my projects</Link>
+							</HeroButton>
+						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection className={styles.heroImage } >
 						<HeroSectionImage
