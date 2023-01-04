@@ -9,13 +9,13 @@ const UpdatedText = styled.p`
 `;
 
 const TermsParagraph = styled.p`
-    font-weight: 400;
-    margin-bottom: 1rem;
-    padding: 0 1.5rem;
+max-width: 45rem;
+text-align: justify;
 `;
 
 const TermsList = styled.ul`
-    font-weight: 400;
+max-width: 45rem;
+text-align: justify;
     margin-bottom: 1rem;
     padding: 0 1.5rem;
 `;
@@ -23,8 +23,7 @@ const TermsList = styled.ul`
 const TermsListItem = styled.li`
     font-weight: 400;
     margin-bottom: 1rem;
-    list-style-type: circle;
-    list-style-position: inside;
+    list-style: lower=roman;
 `;
 
 const TermsOfService = () => {
