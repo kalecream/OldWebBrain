@@ -56,7 +56,6 @@ const HeroSection = styled.div`
 
 const HeroTitle = styled.h1`
 	font-size: 4rem;
-	margin-bottom: 2rem;
 	color: ${Colors.lightAccent};
 
 	@media (max-width: 400px) {
@@ -65,11 +64,10 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroParagraph = styled.p`
-	max-width: 60rem;
+	max-width: 45rem;
 	font-size: 1rem;
 	line-height: 1.6rem;
 	text-align: justify;
-	margin-bottom: 2rem;
 
 	@media (max-width: 400px) {
 		font-size: 0.85rem;
@@ -168,12 +166,10 @@ export default function Home() {
 						</HeroTitle>
 						<HeroParagraph className="animate__animated animate__slideInLeft">
 							Thanks for stopping by my website! I'm currently working on my{" "}
-							<Link href="/read">reading history page</Link>.
-							<br />
-							<br />
+							<Link href="/read">reading history page</Link>.</HeroParagraph>
+							<HeroParagraph>
 							My next step will be changing the color scheme of this site to
 							something with a little more contrast.
-							<br />
 						</HeroParagraph>
 						<HeroButtonContainer>
 							<HeroPrimaryButton className="animate__animated animate__slideInLeft">

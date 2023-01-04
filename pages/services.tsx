@@ -105,7 +105,7 @@ const ServiceProjectButton = styled(ServiceButton)`
 
 export default function Blog() {
 	return (
-		<Page title="Services">
+		<Page title="Let's Work Together">
 			<section>
 				<p>
 					As a freelancer, I offer a variety of services to meet the needs of my
