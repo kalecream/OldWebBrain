@@ -9,23 +9,16 @@ import Image from "next/image";
 const StyledFooter = styled.footer`
   display: absolute;
   bottom: 0;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   display: flex;
   justify-content: space-between;
-  margin: 0.1rem 3rem;
+  margin: 0 10em;
   padding: 0.5rem 0;
-  border-top:  1px solid #eaeaea;
 
   @media screen and (max-width: 768px) {
 		margin: 0.05rem 1rem;
 		flex-wrap: wrap;
 	}
-`;
-
-const FooterColumnHeader = styled.h3`
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
 `;
 
 const FooterColumn = styled.div`
@@ -43,6 +36,8 @@ const FooterColumn = styled.div`
 
 const FooterText = styled.p`
   margin: 0;
+  opacity: 0.5;
+
 `;
 
 const SocialsContainer = styled.div`
@@ -74,7 +69,10 @@ export const Footer: React.FunctionComponent = () => {
           </a>
         ))}
         </SocialsContainer>
-        <FooterText id="copyright">
+        
+      </FooterColumn>
+      <FooterColumn>
+      <FooterText id="copyright">
         KaleCream Limited &copy; {new Date().getFullYear()}
         </FooterText>
       </FooterColumn>

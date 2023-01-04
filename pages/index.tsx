@@ -6,26 +6,8 @@ import { Colors } from "../styles/colors";
 import Image from "next/image";
 import Link from "next/link";
 import { ThreeD } from "../assets";
-import 'animate.css';
-
-const directory = [
-	{
-		title: "About",
-		links: "/about",
-	},
-	{
-		title: "Contact",
-		links: "/contact",
-	},
-	{
-		title: "Blog",
-		links: "/blog",
-	},
-	{
-		title: "Directory",
-		links: "/directory",
-	},
-];
+import { Section, Container, Caption } from "../components/global/Basics";
+import "animate.css";
 
 const Hero = styled.div`
 	background-size: cover;
@@ -39,6 +21,10 @@ const Hero = styled.div`
 	@media (max-width: 1100px) {
 		flex-wrap: wrap;
 	}
+
+	@media (max-width: 400px) {
+		margin: 0 1rem;
+	}
 `;
 
 const HeroSection = styled.div`
@@ -50,13 +36,14 @@ const HeroSection = styled.div`
 	text-align: center;
 
 	@media (max-width: 750px) {
-		width: 100%;
+		width: 80%;
 	}
 `;
 
 const HeroTitle = styled.h1`
-	font-size: 4rem;
-	color: ${Colors.lightAccent};
+	font-size: 3rem;
+	color: ${Colors.primary};
+	opacity: 0.7;
 
 	@media (max-width: 400px) {
 		font-size: 3rem;
@@ -64,10 +51,11 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroParagraph = styled.p`
-	max-width: 45rem;
+	max-width: 25rem;
 	font-size: 1rem;
 	line-height: 1.6rem;
 	text-align: justify;
+	opacity: 0.7;
 
 	@media (max-width: 400px) {
 		font-size: 0.85rem;
@@ -127,8 +115,8 @@ const HeroButton = styled.button`
 const HeroSectionImage = styled(Image)`
 	width: 70%;
 	height: 100%;
-	min-width: 300px;
-	max-height: 800px;
+	min-height: 300px;
+	max-height: 1000px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -138,50 +126,56 @@ const HeroSectionImage = styled(Image)`
 		height: 50%;
 	}
 
+	@media (max-width: 900px) {
+		width: 80%;
+	}
+
 	@media (max-width: 750px) {
 		display: none;
 	}
 `;
 
 const ThreeDRenders = styled(Image)`
-	width: 30%;
+	min-width: 300px;
+	max-width: 400px;
 	object-fit: cover;
 	margin: 0 0.5rem;
-`;
 
-const Caption = styled.p`
-	font-size: 0.8rem;
-	color: ${Colors.darkAccent};
-	text-align: center;
+	@media (max-width: 1500px) {
+		width: 20%;
+	}
+
+	@media (max-width: 450px) {
+		width: 100%;
+	}
 `;
 
 export default function Home() {
 	return (
 		<Page>
-			<section id="home">
+			<Section id="home">
 				<Hero className={styles.hero}>
 					<HeroSection className={styles.heroText}>
-						<HeroTitle className={styles.title}>
+						<HeroTitle className="animate__animated animate__slideInLeft">
 							Hi <span className={styles.bigEmoji}>👋🏽</span>
 						</HeroTitle>
 						<HeroParagraph className="animate__animated animate__slideInLeft">
-							Thanks for stopping by my website! I'm currently working on my{" "}
-							<Link href="/read">reading history page</Link>.</HeroParagraph>
-							<HeroParagraph>
-							My next step will be changing the color scheme of this site to
-							something with a little more contrast.
+							Thanks for stopping by my website! I'm a generalist from Kingston,
+							Jamaica. I'm currently working on improving my web development and
+							multimedia skills.
 						</HeroParagraph>
 						<HeroButtonContainer>
-							<HeroPrimaryButton className="animate__animated animate__slideInLeft">
+							<HeroPrimaryButton className="animate__animated animate__slideInLeft ">
 								<Link href="/services">Commission a service</Link>
 							</HeroPrimaryButton>
-<HeroButton className="animate__animated animate__slideInLeft">
+							<HeroButton className="animate__animated animate__slideInLeft">
 								<Link href="/projects">View my projects</Link>
 							</HeroButton>
 						</HeroButtonContainer>
 					</HeroSection>
-					<HeroSection className={styles.heroImage } >
+					<HeroSection >
 						<HeroSectionImage
+						className="animate__animated animate__slideInRight"
 							src={HeroImage}
 							alt="KaleCream"
 							width={450}
@@ -191,9 +185,9 @@ export default function Home() {
 						/>
 					</HeroSection>
 				</Hero>
-			</section>
-			<section>
-				<div className={styles.directory}>
+			</Section>
+			{/* <Section>
+				<Container>
 					{ThreeD.map((ThreeD, index) => (
 						<>
 							<ThreeDRenders
@@ -208,7 +202,8 @@ export default function Home() {
 							/>
 						</>
 					))}
-					<p
+				</Container>
+				<p
 						style={{
 							textAlign: "center",
 							margin: "2rem 0 2rem 0",
@@ -217,8 +212,7 @@ export default function Home() {
 						My last three r/Daily3D renders.<br/> I'm working on making at least 52 renders for 2023 to keep up with
 						the practice of daily3D.
 					</p>
-				</div>
-			</section>
+			</Section> */}
 		</Page>
 	);
 }

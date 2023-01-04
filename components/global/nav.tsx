@@ -8,11 +8,7 @@ import  Directory from "../../data/directory";
 
 const StyledNavigation = styled.nav`
 	top: 0;
-	margin-top: 0;
-	margin-bottom: 1rem;
-	margin-left: 3rem;
-	margin-right: 3rem;
-	border-bottom: 1px solid #eaeaea;
+	margin: 0 5rem;
 	justify-content: space-between;
 	display: flex;
 	align-items: center;
@@ -21,12 +17,13 @@ const StyledNavigation = styled.nav`
 	@media screen and (max-width: 768px) {
 		margin: 0.05rem 1rem;
 		flex-wrap: wrap;
+		flex-direction: column;
 	}
 `;
 
 const DirectoryList = styled.ul`
 	right: 0;
-	width: 66%;
+	width: fit-content;
 	float: right;
 	display: flex;
 	list-style: none;
@@ -54,16 +51,49 @@ const DirectoryLinks = styled.a`
 	}
 `;
 
+const DirectoryContainer = styled.div`
+	display: flex;
+	align-items: center;
+`;
+
 const SiteName = styled.a`
 	height: 100%;
-	display: grid;
-	place-items: center;
-	align-items: center;
-  padding: 0.5rem 1rem;
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem 1rem;
 	opacity: 0.4;
 
 	& hover {
 		opacity: 1;
+	}
+
+	@media screen and (max-width: 768px) {
+
+		& a h1 {
+		text-align: center; }
+	}
+`;
+
+const CTAHeaderButton = styled.button`
+	border: 1px solid ${Colors.primary};
+	background-color: ${Colors.lightShade};
+	color: ${Colors.darkAccent};
+	text-transform: uppercase;
+	font-family: monospace;
+	font-size: 0.8rem;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
+
+	&:hover {
+		font-weight: 600;
+		opacity: 1;
+		border: 1px solid ${Colors.lightShade};
+	}
+
+	&:hover a {
+		color: ${Colors.primary};
 	}
 `;
 
@@ -108,6 +138,14 @@ const ThemeToggle = styled.button`
 	}
 `;
 
+const NavigationSettings = () => {
+	return (
+		<div className={styles.settings}>
+			<ThemeToggle id="theme-toggle" className={styles.themeToggle} />
+		</div>
+	);
+};
+
 export const Navigation: React.FunctionComponent = () => {
 	
 
@@ -118,6 +156,9 @@ export const Navigation: React.FunctionComponent = () => {
 
 	return (
 		<StyledNavigation className={styles.nav}>
+			<SiteName href="/">
+				<h2>KaleCream</h2>
+			</SiteName>
 			<DirectoryList>
 				{Directory.map((directory, index) => (
 					<DirectoryListItem key={index}>
@@ -127,9 +168,7 @@ export const Navigation: React.FunctionComponent = () => {
 					</DirectoryListItem>
 				))}
 			</DirectoryList>
-			<SiteName href="/">
-				<Image src={Icons.logo} alt="KaleCream" width={24} height={24} />
-			</SiteName>
+			
 			{/* <div className={styles.settings}>
         <ThemeToggle id="theme-toggle" className={styles.themeToggle}/>
       </div> */}
