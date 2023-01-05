@@ -106,6 +106,12 @@ const ServiceProjectButton = styled(ServiceButton)`
 	}
 `;
 
+const BlockContainer = styled(Container)`
+	place-items: center;
+	display: grid;
+	width: 100%;
+`;
+
 export default function Blog() {
 	return (
 		<Page title="Let's Work Together">
@@ -168,6 +174,7 @@ export default function Blog() {
 						</Card>
 					</CardContainer>
 
+<BlockContainer>
 					<p
 						className="animate__animated animate__fadeInUp"
 						style={{ maxWidth: "55rem", textAlign: "justify" }}
@@ -202,6 +209,7 @@ export default function Blog() {
 						</a>{" "}
 						or Payoneer.
 					</p>
+					</BlockContainer>
 
 					<ServiceButton
 						className="animate__animated animate__fadeInUp animated_delay-2s"
