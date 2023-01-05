@@ -126,7 +126,7 @@ export default function Blog() {
 								Provide assistance to a variety of customers and adapt to
 								different communication styles.
 							</ServiceDescription>
-							<ServiceCost>$16/hour</ServiceCost>
+							<ServiceCost>$20/hour</ServiceCost>
 							<ServiceProjectButton href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Customer%20Support%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20customer%20support%20services%20for%20my%20business.%0D%0A%0D%0AI%20am%20seeking%20a%20reliable%20and%20efficient%20customer%20support%20freelancer%20to%20handle%20a%20variety%20of%20tasks%20such%20as%20responding%20to%20customer%20inquiries%2C%20troubleshooting%20issues%2C%20and%20providing%20general%20support.%20I%20am%20open%20to%20discussing%20specific%20details%20and%20negotiating%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20a%20long-term%20basis.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
 								Discuss Details
 							</ServiceProjectButton>
