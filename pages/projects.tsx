@@ -32,14 +32,12 @@ const ProjectDescription = styled.p`
 `;
 
 const RigidContainer = styled.div`
-	width: 100%;
-	height: 100%;
+width: 85%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 `;
 
-const ProjectTechnologies = styled.ul`
+const ProjectDataPoint= styled.ul`
 	color: ${Colors.neutral[300]};
 	font-size: 0.85rem;
 	display: flex;
@@ -54,41 +52,16 @@ const ProjectTechnologies = styled.ul`
 	}
 
 	& li a:hover {
-		background-color: ${Colors.darkAccent};
+		background-color: ${Colors.primary};
+		color: ${Colors.lightShade};
 	}
 
 	& li a {
-		background-color: ${Colors.lightAccent};
+		background-color: ${Colors.lightShade};
 		padding: 0.1rem 0.4rem;
 		border-radius: 3px;
-		color: ${Colors.lightShade};
+		color: ${Colors.primary};
 	}
-`;
-
-const ProjectLanguage = styled.ul`
-	color: ${Colors.neutral[300]};
-	font-size: 0.8rem;
-	flex-wrap: wrap;
-	display: flex;
-	flex-wrap: wrap;
-	list-style: none;
-
-	& li {
-		display: grid;
-		place-items: center;
-		margin-top: 0.5rem;
-		margin-right: 0.5rem;
-	}
-
-	& li a:hover {
-		background-color: ${Colors.darkAccent};
-	}
-
-	& li a {
-		background-color: ${Colors.lightAccent};
-		padding: 0.1rem 0.4rem;
-		border-radius: 3px;
-		color: ${Colors.lightShade};
 `;
 
 const ProjectLink = styled.a`
@@ -192,19 +165,19 @@ export const Directory: any = () => {
 						<Card key={index} className="animate__animated animate__fadeInUp">
 							<ProjectTitle>{project.title}</ProjectTitle>
 							<ProjectDescription>{project.description}</ProjectDescription>
-							{/* <RigidContainer>
+							<RigidContainer>
 							{project.technology ? (
-								<ProjectTechnologies title="Technologies">
+								<ProjectDataPoint title="Technologies">
 									<Emoji>
 										<FontAwesomeIcon icon={faToolbox} />
 									</Emoji>
 									{project.technology?.map((tech, index) => (
 										<li key={index}>{tech}</li>
 									))}
-								</ProjectTechnologies>
+								</ProjectDataPoint>
 							) : null}
 							{project.language ? (
-								<ProjectLanguage>
+								<ProjectDataPoint>
 									<Emoji>
 										<FontAwesomeIcon icon={faLanguage} title="Languages" />
 									</Emoji>
@@ -215,10 +188,10 @@ export const Directory: any = () => {
 											</a>
 										</li>
 									))}
-								</ProjectLanguage>
+								</ProjectDataPoint>
 							) : null}
 							
-							</RigidContainer> */}
+							</RigidContainer>
 							{project.link ? (
 								<ProjectLink href={project.link} target={"_blank"}>
 									View on Github
