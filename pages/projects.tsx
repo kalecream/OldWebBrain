@@ -15,57 +15,33 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { create } from "domain";
-import 'animate.css';
+import "animate.css";
+import { Section, Container, Card, Button } from "../components/global";
 
-const PageTitle = styled.h1`
-	font-size: 2.5rem;
-	font-weight: 700;
-	color: ${Colors.primary};
-	margin-bottom: 1rem;
-`;
-
-const ProjectContainer = styled.div`
-	justify-content: space-between;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-`;
-
-const Project = styled.div`
-	border-radius: 5px;
-	width: 25%;
-	min-width: 400px;
-	background-color: ${Colors.darkShade};
-    background-image: 
-	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) )
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: grid;
-	padding: 2rem;
-	gap: 0.15rem;
-`;
-
-const ProjectNumber = styled.span`
-	color: ${Colors.lightAccent};
-	margin-right: 0.5rem;
-`;
-
-const ProjectTitle = styled.h2`
-	font-size: 1.5rem;
+const ProjectTitle = styled.h3`
+	position: absolute;
+	top: 3rem;
+	text-align: center;
 	color: ${Colors.lightShade};
 `;
 
 const ProjectDescription = styled.p`
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	color: ${Colors.neutral[300]};
-	font-size: 0.8rem;
+	color: ${Colors.neutral[200]};
+	font-size: 0.85rem;
+	padding: 0 2rem;
+`;
+
+const RigidContainer = styled.div`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 
 const ProjectTechnologies = styled.ul`
 	color: ${Colors.neutral[300]};
-	font-size: 0.8rem;
+	font-size: 0.85rem;
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
@@ -116,43 +92,27 @@ const ProjectLanguage = styled.ul`
 `;
 
 const ProjectLink = styled.a`
+position: absolute;
+	bottom: 2rem;
 	color: ${Colors.neutral[300]};
-	font-size: 0.65rem;
-	float: right;
-	margin: 1.5rem 0 0 0;
+	font-size: 0.8rem;
 	padding: 1rem;
-	max-height: 3rem;
-	width: 45%;
+	width: 80%;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 1rem;
+	font-weight: 600;
 	border: 1px solid ${Colors.neutral[300]};
 
 	&:hover {
-		font-weight: bold;
 		border-radius: 5px;
 		text-decoration: none;
-		background-color: ${Colors.primary};
 		color: ${Colors.lightShade};
 	}
-`;
-
-const ProjectItem = styled.div`
-	color: ${Colors.neutral[300]};
-	font-size: 0.8rem;
-	margin: 0.5rem 0 0 0;
 `;
 
 const Emoji = styled.span`
 	margin-right: 0.5rem;
 	margin-top: 1rem;
-`;
-
-const PageDescription = styled.p`
-	color: ${Colors.neutral[700]};
-	font-size: 0.8rem;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	padding: 0 0.5rem;
 `;
 
 const Projects = [
@@ -165,8 +125,8 @@ const Projects = [
 				This is a duotone i3wm rice.
 				<br />
 				<br /> For a while, my mouse wasn't working properly, so I had to use
-				the keyboard to navigate. I switch from Budgie to i3wm and I'm loving
-				it. I have a mouse that works now, but for how long? ¯\_(ツ)_/¯
+				the keyboard to navigate leading to me switching to i3wm I have a mouse
+				that works now, but for how long? ¯\_(ツ)_/¯
 			</span>
 		),
 		link: "https://github.com/kalecream/dotfiles",
@@ -181,7 +141,7 @@ const Projects = [
 		],
 		language: ["Bash"],
 		created: "2022-07-07",
-		updated: ""
+		updated: "",
 	},
 	{
 		title: "Morning Messages",
@@ -191,8 +151,7 @@ const Projects = [
 			<span>
 				A simple python script to automate the process of sending my boyfriend
 				current news articles and cute kaomoji-filled messages in the morning
-				via Whatsapp Web. <br />
-				<br /> Who cares about being corny if you enjoyed what you're doing?
+				via Whatsapp Web.
 			</span>
 		),
 		link: "https://github.com/kalecream/morning-messages",
@@ -203,7 +162,7 @@ const Projects = [
 			<a href="https://openweathermap.org/">OpenWeatherMap API</a>,
 		],
 		language: ["Python"],
-		created: "2021-11-15"
+		created: "2021-11-15",
 	},
 	{
 		title: "Trality Bots",
@@ -220,49 +179,20 @@ const Projects = [
 		repoName: "TralityTestBots_v2",
 		technology: [<a href="https://www.trality.com/">Trality</a>],
 		language: ["Python"],
-		created: "2022-11-07"
+		created: "2022-11-07",
 	},
 ];
 
 export const Directory: any = () => {
 	return (
 		<Page title="Projects">
-			<section>
-				<ProjectContainer>
+			<Section>
+				<Container style={{ margin: 0 }}>
 					{Projects.map((project, index) => (
-
-						<Project key={index} className="animate__animated animate__fadeInUp">
-							<ProjectTitle>
-								<ProjectNumber>{index + 1}</ProjectNumber>
-								{project.title}
-							</ProjectTitle>
-
+						<Card key={index} className="animate__animated animate__fadeInUp">
+							<ProjectTitle>{project.title}</ProjectTitle>
 							<ProjectDescription>{project.description}</ProjectDescription>
-							{project.repoName ? (
-								<>
-									<ProjectItem>
-										<Emoji>
-											<FontAwesomeIcon icon={faClockFour} />
-										</Emoji>
-										{project.created}
-									</ProjectItem>
-									{/* <ProjectItem>
-										<Emoji>
-											<FontAwesomeIcon icon={faCodeCommit} />
-										</Emoji>
-										{project.updated}
-									</ProjectItem> */}
-									{/* <ProjectItem>
-                                    <Emoji><FontAwesomeIcon icon={faStar}/></Emoji>
-                                    {FetchGithubAPIProjects(project.repoName)[2]}
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <Emoji><FontAwesomeIcon icon={faBinoculars}/></Emoji>
-                                    {FetchGithubAPIProjects(project.repoName)[3]}
-                                    <Emoji><FontAwesomeIcon icon={faCodeFork}/></Emoji>
-                                    {FetchGithubAPIProjects(project.repoName)[3]}
-                                </ProjectItem> */}
-								</>
-							) : null}
+							{/* <RigidContainer>
 							{project.technology ? (
 								<ProjectTechnologies title="Technologies">
 									<Emoji>
@@ -287,20 +217,19 @@ export const Directory: any = () => {
 									))}
 								</ProjectLanguage>
 							) : null}
+							
+							</RigidContainer> */}
 							{project.link ? (
 								<ProjectLink href={project.link} target={"_blank"}>
-									<Emoji>
-										<FontAwesomeIcon icon={faLink} />
-									</Emoji>
-									Github
+									View on Github
 								</ProjectLink>
 							) : null}
-						</Project>
+						</Card>
 					))}
-				</ProjectContainer>
-			</section>
+				</Container>
+			</Section>
 		</Page>
 	);
-}
+};
 
 export default Directory;

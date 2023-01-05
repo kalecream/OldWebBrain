@@ -7,7 +7,7 @@ import { Brands } from "../../assets";
 import Image from "next/image";
 
 const StyledFooter = styled.footer`
-  display: absolute;
+  display: fixed;
   bottom: 0;
   font-size: 0.65rem;
   display: flex;

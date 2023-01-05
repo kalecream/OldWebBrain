@@ -8,12 +8,19 @@ import Image from "next/image";
 import Books from "../data/books";
 import { Colors } from "../styles/colors";
 import 'animate.css';
+import { Section, HalfColumn } from "../components/global";
 
 const PhotoGrid = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.25rem;
+	width: 100%;
+
+	@media screen and (max-width: 700px) {
+		margin: 2rem auto;
+		width: 80%;
+	}
 `;
 
 const CustomImage = styled(Image)`
@@ -38,10 +45,15 @@ const CustomImage = styled(Image)`
 
 const DemographicTable = styled.table`
 	font-size: 0.75rem;
-	font-family: Monospace;
-	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 1rem;
+	justify-self: center;
+	border-radius: 5px;
+	padding: 0.5rem;
+
+	@media screen and (max-width: 700px) {
+		width: 80%;
+	}
 `;
 
 const TableRow = styled.tr`
@@ -57,9 +69,10 @@ const TableRow = styled.tr`
 `;
 
 const TableHeader = styled.th`
-	text-align: left;
 	min-width: 200px;
 	text-indent: 1rem;
+
+border-radius: 5px;
 
 	@media screen and (max-width: 500px) {
 		text-indent: 0;
@@ -68,23 +81,16 @@ const TableHeader = styled.th`
 `;
 
 const TableData = styled.td`
+border-radius: 5px;
 	text-align: left;
-	padding: 0.75rem 0;
+	padding: 0.5rem 1.5rem;
 `;
 
 export const LightTablePage = () => {
 	return (
 		<Page title="About">
-			<section>
-				<DemographicTable>
-					<TableRow>
-						<TableHeader>Age / Sex / Location </TableHeader>
-						<TableData>Late 20s / F / Jamaica </TableData>
-					</TableRow>
-					<TableRow>
-						<TableHeader>Hobbies</TableHeader>
-						<TableData>Blender3D, Annoying my cats.</TableData>
-					</TableRow>
+			<Section>
+				<DemographicTable className="animate__animated animate__slideInUp">
 					<TableRow>
 						<TableHeader>Reading</TableHeader>
 						<TableData>
@@ -115,22 +121,7 @@ export const LightTablePage = () => {
 						</TableData>
 					</TableRow>
 				</DemographicTable>
-
-				<PhotoGrid >
-					{ExampleAlbum.map((image: StaticImageData, index: number) => (
-						<CustomImage
-						className={"animate__animated animate__fadeInUp"}
-							key={index}
-							src={image}
-							alt="Example Album"
-							width={300}
-							height={300}
-							style={{ objectFit: "cover" }}
-							placeholder="blur"
-						/>
-					))}
-				</PhotoGrid>
-			</section>
+			</Section>
 		</Page>
 	);
 };

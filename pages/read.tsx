@@ -103,6 +103,13 @@ const Book = styled.div`
 	}
 `;
 
+const FlexContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+`;
+
 const ReadingContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
@@ -113,6 +120,17 @@ const ReadingContainer = styled.div`
 	& > * {
 		margin: 3rem 1rem;
 	}
+
+	@media (min-width: 1200px) {
+		width: 45%;
+		float: left;
+	}
+
+	@media (max-width: 768px) {
+		& > * {
+			margin: 1rem 0;
+		}
+	}
 `;
 
 const WantToReadContainer = styled.div`
@@ -122,6 +140,21 @@ const WantToReadContainer = styled.div`
 	& > li {
 		list-style-type: '🔖 ';
 		margin-top: 1rem;
+	}
+
+
+	@media screen and (min-width: 1000px) {
+		width: 45%;
+	}
+
+	@media (max-width: 768px) {
+		& > * {
+			margin: 1rem 0;
+		}
+	}
+
+	@media (max-width: 400px) {
+		flex-direction: column;
 	}
 `;
 
@@ -245,8 +278,6 @@ function ReadPagesPerMonth()  {
 	)
 }
 
-	
-
 export default function ReadBooks() {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
@@ -262,14 +293,9 @@ export default function ReadBooks() {
 	return (
 		<Page title="Books">
 			<section>
-				<p>
-					I generally try to read one fiction, one non-fiction and one
-					recommended book at a time.
-					<br />
-					<br />I started out porting my Goodreads data then I realised I don't
-					even remember some of these books nor do I still have the same taste
-					as my teens. So I'm going to start afresh.
-				</p>
+
+				<FlexContainer>
+					<div>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>Reading <StatusNumber>{ReadingFilter.length}</StatusNumber></h2>
 				<ReadingContainer>
 					{Books.map((book) => {
@@ -289,7 +315,9 @@ export default function ReadBooks() {
 						}
 					})}
 				</ReadingContainer>
+				</div>
 				
+				<div>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber></h2>
 				<WantToReadContainer>
 				{Books.map((book) => {
@@ -309,6 +337,8 @@ export default function ReadBooks() {
 					}
 				})}
 				</WantToReadContainer>
+				</div>
+				</FlexContainer>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>
 					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
 				</h2>
