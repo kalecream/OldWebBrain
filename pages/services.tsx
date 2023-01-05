@@ -179,7 +179,7 @@ export default function Blog() {
 						className="animate__animated animate__fadeInUp"
 						style={{ maxWidth: "55rem", textAlign: "justify" }}
 					>
-						As a freelancer, I understand that budget can be a major concern for
+						I understand that budget can be a major concern for
 						my clients. That's why I offer flexible pricing options to ensure
 						that I can meet the budget of every client.
 					</p>
