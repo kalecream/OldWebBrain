@@ -110,6 +110,7 @@ const Card = styled.div`
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	overflow-y: scroll;
 
 	&:hover {
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
