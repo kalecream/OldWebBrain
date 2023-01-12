@@ -4,7 +4,8 @@ import styled from "@emotion/styled";
 import { Colors } from "../../styles/colors";
 import { Icons } from "../../assets";
 import Image from "next/image";
-import  Directory from "../../data/directory";
+import Directory from "../../data/directory";
+import { useEffect } from "react";
 
 const StyledNavigation = styled.nav`
 	top: 0;
@@ -68,9 +69,9 @@ const SiteName = styled.a`
 	}
 
 	@media screen and (max-width: 768px) {
-
 		& a h1 {
-		text-align: center; }
+			text-align: center;
+		}
 	}
 `;
 
@@ -139,6 +140,20 @@ const ThemeToggle = styled.button`
 `;
 
 const NavigationSettings = () => {
+	// https://github.com/iseizuu/personal-website/blob/main/pages/index.tsx
+	// const selectTheme = (value: string) => {
+	// 	localStorage.setItem("theme", value);
+	// 	document.querySelector("html").classList.add(localStorage.getItem("theme"));
+
+	// 	if (value === "dark")
+	// 		document.querySelector("html").classList.remove("light");
+	// 	else document.querySelector("html").classList.remove("dark");
+	// };
+
+	// useEffect(() => {
+	// 	document.querySelector("html").classList.add(localStorage.getItem("theme"));
+	// }, []);
+
 	return (
 		<div className={styles.settings}>
 			<ThemeToggle id="theme-toggle" className={styles.themeToggle} />
@@ -147,8 +162,6 @@ const NavigationSettings = () => {
 };
 
 export const Navigation: React.FunctionComponent = () => {
-	
-
 	function toggleTheme() {
 		var body = document.body;
 		body.classList.toggle("dark");
@@ -168,10 +181,8 @@ export const Navigation: React.FunctionComponent = () => {
 					</DirectoryListItem>
 				))}
 			</DirectoryList>
-			
-			{/* <div className={styles.settings}>
-        <ThemeToggle id="theme-toggle" className={styles.themeToggle}/>
-      </div> */}
+
+			{/* <NavigationSettings /> */}
 		</StyledNavigation>
 	);
 };
