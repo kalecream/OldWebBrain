@@ -7,7 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { ThreeD } from "../assets";
 import { Section, Container, Caption } from "../components/global/Basics";
+
 import "animate.css";
+
+import { format, parseISO } from "date-fns";
+import { GetStaticProps } from "next";
+import { getAllPosts } from "../lib/api";
+import { PostType } from "../types/post";
+
+type IndexProps = {
+	posts: PostType[];
+};
 
 const Hero = styled.div`
 	background-size: cover;
@@ -150,7 +160,7 @@ const ThreeDRenders = styled(Image)`
 	}
 `;
 
-export default function Home() {
+export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
 			<Section id="home">
@@ -173,9 +183,9 @@ export default function Home() {
 							</HeroButton>
 						</HeroButtonContainer>
 					</HeroSection>
-					<HeroSection >
+					<HeroSection>
 						<HeroSectionImage
-						className="animate__animated animate__slideInRight"
+							className="animate__animated animate__slideInRight"
 							src={HeroImage}
 							alt="KaleCream"
 							width={450}
@@ -185,6 +195,29 @@ export default function Home() {
 						/>
 					</HeroSection>
 				</Hero>
+			</Section>
+			<Section>
+				<h2>Blog</h2>
+				{posts.map((post) => (
+					<article key={post.slug} className="mt-12">
+						<p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
+							{/* {format(parseISO(post.date), "MMMM dd, yyyy")} */}
+						</p>
+						<h1 className="mb-2 text-xl">
+							<Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+								{/* <a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
+									{post.title}
+								</a> */}
+							</Link>
+						</h1>
+						<p className="mb-3">{post.description}</p>
+						<p>
+							<Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+								{/* <a>Read More</a> */}
+							</Link>
+						</p>
+					</article>
+				))}
 			</Section>
 			{/* <Section>
 				<Container>
@@ -215,4 +248,14 @@ export default function Home() {
 			</Section> */}
 		</Page>
 	);
-}
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+	const posts = getAllPosts(["date", "description", "slug", "title"]);
+
+	return {
+		props: { posts },
+	};
+};
+
+export default Home;

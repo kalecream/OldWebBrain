@@ -1,11 +1,14 @@
----
-title: 'Personal Finance'
-subtitle: 'A journey through apps and spreadsheets.'
-date: '2022-07-11'
-updated: '2022-07-14'
-tags: 'Featured,Finance'
-imgid: '01-personal-finance'
----
+import BlogPage from '../../containers/layout/blogPage';
+
+export const meta = {
+title: 'Personal Finance',
+date: '2022-07-11',
+updated: '2022-07-14',
+imgid: '01-personal-finance',
+author: 'Sabrina Medwinter'
+}
+
+# Personal Finance
 
 Recently three persons asked me to list some budgeting apps and spreadsheets so I decided to take a trip down memory lane to some of the tools I've used over the years.
 
@@ -44,7 +47,7 @@ Unfortunately, I do not remember why I stopped using it. It seems pretty solid i
 - Scan recipts and auto-process them.
 - Not able to access some savings & some other accounts in the web app.
 
-<!-- # BlueCoin -->
+# BlueCoins
 
 # Aspire budgeting
 
@@ -65,3 +68,5 @@ I started off with beancount because of an [Obsidian](https://obsidian.md/) plug
 A double-entry bookkeeping computer language that lets you define financial transaction records in a text file, read them in memory, generate a variety of reports from them, and provides a web interface.
 
 It's in a style that is similar to ledger. You may want to check out the [reddit community](https://old.reddit.com/r/plaintextaccounting/) or the [plaintextaccounting website](https://plaintextaccounting.org/).
+
+export default ({ children }) => <BlogPage meta={meta}>{children}</BlogPage>
