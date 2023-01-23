@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
 import HeroImage from "../assets/images/Under_Construction.webp";
@@ -5,9 +7,15 @@ import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import Image from "next/image";
 import Link from "next/link";
-import { ThreeD } from "../assets";
 import { Section, Container, Caption } from "../components/global/Basics";
+
+import { Model } from "../assets/models/me";
+
 import "animate.css";
+import { Suspense } from "react";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Hero = styled.div`
 	background-size: cover;
@@ -153,7 +161,7 @@ const ThreeDRenders = styled(Image)`
 export default function Home() {
 	return (
 		<Page>
-			<Section id="home">
+			<Section>
 				<Hero className={styles.hero}>
 					<HeroSection className={styles.heroText}>
 						<HeroTitle className="animate__animated animate__slideInLeft">
@@ -173,8 +181,8 @@ export default function Home() {
 							</HeroButton>
 						</HeroButtonContainer>
 					</HeroSection>
-					<HeroSection >
-						<HeroSectionImage
+					<HeroSection>
+						{/* <HeroSectionImage
 						className="animate__animated animate__slideInRight"
 							src={HeroImage}
 							alt="KaleCream"
@@ -182,7 +190,22 @@ export default function Home() {
 							height={450}
 							placeholder="blur"
 							style={{ filter: "grayscale(45%)" }}
-						/>
+						/> */}
+						<Canvas
+							camera={{ position: [2, 0, 12.25], fov: 15 }}
+							style={{
+								width: "600px",
+								height: "800px",
+							}}
+						>
+							<ambientLight intensity={1.25} />
+							<ambientLight intensity={0.1} />
+							<directionalLight intensity={0.4} />
+							<Suspense fallback={null}>
+								<Model position={[0.025, -0.9, 0]}/>
+							</Suspense>
+							<OrbitControls />
+						</Canvas>
 					</HeroSection>
 				</Hero>
 			</Section>
