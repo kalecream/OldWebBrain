@@ -1,19 +1,19 @@
-import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
-import HeroImage from "../assets/images/Under_Construction.webp";
-import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
+
+import React from "react";
+import { format, parseISO } from "date-fns";
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ThreeD } from "../assets";
+import { getAllPosts } from "../lib/api";
+import { PostType } from "../types/post";
+
+import styled from "@emotion/styled";
+import { Colors } from "../styles/colors";
+
 import { Section, Container, Caption } from "../components/global/Basics";
 
 import "animate.css";
-
-import { format, parseISO } from "date-fns";
-import { GetStaticProps } from "next";
-import { getAllPosts } from "../lib/api";
-import { PostType } from "../types/post";
 
 type IndexProps = {
 	posts: PostType[];
