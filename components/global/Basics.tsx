@@ -8,10 +8,9 @@ import Link from 'next/link';
 // Layout
 const Section = styled.section`
     width: 100vw;
-	display: block;
+	display: grid;
     justify-content: center;
     align-items: center;
-	margin-bottom: 2rem;
 `;
 
 const Container = styled.div`
@@ -21,7 +20,6 @@ const Container = styled.div`
 	flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0 5rem;
 	gap: 1rem;
 `;
 
@@ -49,43 +47,93 @@ const Caption = styled.p`
 
 // Components
 
-const Button = styled.button`
-	width: 100%;
-	height: 3rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem;
+const Button = styled.a`
+	width: 75%;
+	margin: 1rem auto;
+	padding: 1rem 3rem;
+
+	display: grid;
+	place-items: center;
+
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 1rem;
+	border: 2px solid ${Colors.neutral[300]};
+
 	background-color: ${Colors.primary};
-	color: ${Colors.lightShade};
+	color: ${Colors.neutral[300]};
+
 	font-size: 0.8rem;
-	font-weight: 600;
+	text-transform: capitalize;
+	
 	transition: background-color 0.5s ease-in-out;
 
 	&:hover {
-		background-color: ${Colors.darkAccent};
+		border-radius: 5px;
+		font-weight: 600;
+		background-color: ${Colors.darkShade};
+		transition: ease-in-out 0.2s;
 	}
+
+	@media (prefers-color-scheme: dark) {
+		&:hover {
+			background-color: ${Colors.primary};
+		}
+
+		border: 1px solid ${Colors.neutral[700]};
+	}
+
 `;
 
 const PrimaryButton = styled(Button)`
 	background-color: ${Colors.primary};
 	color: ${Colors.lightShade};
+	border: none;
 
-	&:hover {
-		background-color: ${Colors.darkAccent};
+	@media (prefers-color-scheme: dark) {
+
+		a {
+			color: ${Colors.darkShade};
+		}
+
+		& a:hover {
+			color: ${Colors.lightShade};
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		& a:hover {
+			color: ${Colors.darkShade};
+		}
+
+		a{
+			color: ${Colors.lightShade};
+		}
 	}
 `;
 
 const SecondaryButton = styled(Button)`
-	background-color: ${Colors.darkAccent};
-	color: ${Colors.lightShade};
+	background-color: transparent;
+	border: 2px solid ${Colors.primary};
 
 	&:hover {
-		background-color: ${Colors.primary};
+		background-color: transparent;
 	}
+
+	& a {
+		color: ${Colors.primary};
+	}
+
+	@prefers-color-scheme: dark {
+		& a:hover {
+			color: ${Colors.lightShade};
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		& a:hover {
+			color: ${Colors.darkShade};
+		}
+	} {
 `;
 
 const Card = styled.div`
@@ -117,5 +165,5 @@ const Card = styled.div`
 	}
 `;
 
-export {Button, Card, Container, Caption, HalfColumn,
+export {Button, PrimaryButton, SecondaryButton, Card, Container, Caption, HalfColumn,
 		Section}

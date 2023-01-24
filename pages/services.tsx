@@ -76,36 +76,6 @@ const ServiceCost = styled.p`
 	color: ${Colors.lightShade};
 `;
 
-const ServiceButton = styled.a`
-	width: 50%;
-	margin: 1.5rem auto auto;
-	font-weight: 400;
-	margin-bottom: 1rem;
-	outline: none;
-	border: 8px solid ${Colors.darkShade};
-	background-color: ${Colors.darkShade};
-	color: ${Colors.lightShade};
-	text-align: center;
-	padding: 0.5rem 1rem;
-	transition: all 0.3s ease-in-out;
-	border-radius: 1rem;
-	&:hover {
-		background-color: ${Colors.lightShade};
-		color: ${Colors.darkShade};
-	}
-`;
-
-const ServiceProjectButton = styled(ServiceButton)`
-	background-color: ${Colors.lightShade};
-	color: ${Colors.darkShade};
-	border: 3px solid ${Colors.darkShade};
-	cursor: pointer;
-	&:hover {
-		background-color: ${Colors.darkShade};
-		color: ${Colors.lightShade};
-	}
-`;
-
 const BlockContainer = styled(Container)`
 	place-items: center;
 	display: grid;
@@ -133,9 +103,9 @@ export default function Blog() {
 								different communication styles.
 							</ServiceDescription>
 							<ServiceCost>$20/hour</ServiceCost>
-							<ServiceProjectButton href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Customer%20Support%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20customer%20support%20services%20for%20my%20business.%0D%0A%0D%0AI%20am%20seeking%20a%20reliable%20and%20efficient%20customer%20support%20freelancer%20to%20handle%20a%20variety%20of%20tasks%20such%20as%20responding%20to%20customer%20inquiries%2C%20troubleshooting%20issues%2C%20and%20providing%20general%20support.%20I%20am%20open%20to%20discussing%20specific%20details%20and%20negotiating%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20a%20long-term%20basis.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
+							<Button href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Customer%20Support%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20customer%20support%20services%20for%20my%20business.%0D%0A%0D%0AI%20am%20seeking%20a%20reliable%20and%20efficient%20customer%20support%20freelancer%20to%20handle%20a%20variety%20of%20tasks%20such%20as%20responding%20to%20customer%20inquiries%2C%20troubleshooting%20issues%2C%20and%20providing%20general%20support.%20I%20am%20open%20to%20discussing%20specific%20details%20and%20negotiating%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20a%20long-term%20basis.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
 								Discuss Details
-							</ServiceProjectButton>
+							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
 							<ServiceTitle>3D Modelling</ServiceTitle>
@@ -144,9 +114,9 @@ export default function Blog() {
 								visualization or design purposes
 							</ServiceDescription>
 							<ServiceCost>$150/project</ServiceCost>
-							<ServiceProjectButton href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=3D%20Modelling%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%203D%20modeling%20services%20for%20a%20project%20I%20am%20working%20on.%20I%20have%20been%20a%20fan%20of%20your%20work%20for%20some%20time%20and%20believe%20that%20your%20skills%20and%20style%20would%20be%20the%20perfect%20fit%20for%20the%20project%20I%20have%20in%20mind.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
+							<Button href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=3D%20Modelling%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%203D%20modeling%20services%20for%20a%20project%20I%20am%20working%20on.%20I%20have%20been%20a%20fan%20of%20your%20work%20for%20some%20time%20and%20believe%20that%20your%20skills%20and%20style%20would%20be%20the%20perfect%20fit%20for%20the%20project%20I%20have%20in%20mind.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
 								Discuss Details
-							</ServiceProjectButton>
+							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
 							<ServiceTitle>Website Design</ServiceTitle>
@@ -155,9 +125,9 @@ export default function Blog() {
 								user-friendly, and optimized for search engines.
 							</ServiceDescription>
 							<ServiceCost>$300/project</ServiceCost>
-							<ServiceProjectButton href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Website%20Design%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20services%20for%20a%20project%20I%20am%20working%20on.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
+							<Button href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Website%20Design%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20services%20for%20a%20project%20I%20am%20working%20on.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
 								Discuss Details
-							</ServiceProjectButton>
+							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
 							<ServiceTitle>Website Creation</ServiceTitle>
@@ -167,10 +137,10 @@ export default function Blog() {
 								of your business or personal project.
 							</ServiceDescription>
 							<ServiceCost>$1000/project</ServiceCost>
-							<ServiceProjectButton href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Website%20Creation%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20services%20for%20a%20project%20I%20am%20working%20on.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
+							<Button href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Website%20Creation%20Proposal&body=Dear%20KaleCream%2C%0D%0A%0D%0ADear%20%5BFreelancer%5D%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20your%20services%20for%20a%20project%20I%20am%20working%20on.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D ">
 								{" "}
 								Discuss Details
-							</ServiceProjectButton>
+							</Button>
 						</Card>
 					</CardContainer>
 
@@ -211,13 +181,13 @@ export default function Blog() {
 					</p>
 					</BlockContainer>
 
-					<ServiceButton
+					<Button
 						className="animate__animated animate__fadeInUp animated_delay-2s"
 						title="This button sends me an e-mail"
 						href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Custom%20Budget%20%7C%20Project%20Comission&body=Dear%20KaleCream%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20a%20%5Bproject%20type%5D%20from%20you.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D "
 					>
 						I would like to comission a service with a custom budget.
-					</ServiceButton>
+					</Button>
 				</Container>
 			</Section>
 		</Page>

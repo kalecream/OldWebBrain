@@ -5,13 +5,7 @@ import Page from "../containers/layout/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faToolbox,
-	faLanguage,
-	faLink,
-	faClockFour,
-	faCodeCommit,
-	faStar,
-	faBinoculars,
-	faCodeFork,
+	faLanguage
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { create } from "domain";
@@ -65,25 +59,6 @@ const ProjectDataPoint= styled.ul`
 	}
 `;
 
-const ProjectLink = styled.a`
-position: absolute;
-	bottom: 2rem;
-	color: ${Colors.neutral[300]};
-	font-size: 0.8rem;
-	padding: 1rem;
-	width: 80%;
-	text-align: center;
-	border-radius: 1rem;
-	font-weight: 600;
-	border: 1px solid ${Colors.neutral[300]};
-
-	&:hover {
-		border-radius: 5px;
-		text-decoration: none;
-		color: ${Colors.lightShade};
-	}
-`;
-
 const Emoji = styled.span`
 	margin-right: 0.5rem;
 	margin-top: 1rem;
@@ -126,9 +101,9 @@ export const Directory: any = () => {
 							
 							</RigidContainer>
 							{project.link ? (
-								<ProjectLink href={project.link} target={"_blank"}>
+								<Button href={project.link} target={"_blank"}>
 									View on Github
-								</ProjectLink>
+								</Button>
 							) : null}
 						</Card>
 					))}
