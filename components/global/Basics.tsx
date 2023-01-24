@@ -8,10 +8,9 @@ import Link from 'next/link';
 // Layout
 const Section = styled.section`
     width: 100vw;
-	display: block;
+	display: grid;
     justify-content: center;
     align-items: center;
-	margin-bottom: 2rem;
 `;
 
 const Container = styled.div`
@@ -21,7 +20,6 @@ const Container = styled.div`
 	flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0 5rem;
 	gap: 1rem;
 `;
 
@@ -49,43 +47,115 @@ const Caption = styled.p`
 
 // Components
 
-const Button = styled.button`
+const Button = styled.a`
 	width: 100%;
-	height: 3rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem;
+	margin: 0.25rem auto;
+	padding: 1em 3em;
+	cursor: pointer;
+	opacity: 0.7;
+
+	display: grid;
+	place-items: center;
+
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 1rem;
+
 	background-color: ${Colors.primary};
-	color: ${Colors.lightShade};
+	color: ${Colors.neutral[300]};
+
+	text-transform: uppercase;
+	font-family: monospace;
 	font-size: 0.8rem;
-	font-weight: 600;
+	
 	transition: background-color 0.5s ease-in-out;
 
 	&:hover {
-		background-color: ${Colors.darkAccent};
+		opacity: 1;
+		border-radius: 5px;
+		font-weight: 600;
+		background-color: ${Colors.darkShade};
+		transition: ease-in-out 0.2s;
 	}
+
+	@media (prefers-color-scheme: light) {
+		border: 2px solid ${Colors.lightShade};
+
+		&:hover {
+			background-color: ${Colors.primary};
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		border: 1px solid ${Colors.darkShade};
+
+		&:hover {
+			background-color: ${Colors.primary};
+		}
+
+		
+	}
+
 `;
 
 const PrimaryButton = styled(Button)`
 	background-color: ${Colors.primary};
 	color: ${Colors.lightShade};
+	border: none;
+	width: 100%;
 
-	&:hover {
-		background-color: ${Colors.darkAccent};
+	@media (prefers-color-scheme: dark) {
+
+		a {
+			color: ${Colors.darkShade};
+		}
+
+		& a:hover {
+			color: ${Colors.darkShade};
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		& a:hover {
+			color: ${Colors.lightShade};
+		}
+
+		a{
+			color: ${Colors.lightShade};
+		}
 	}
 `;
 
 const SecondaryButton = styled(Button)`
-	background-color: ${Colors.darkAccent};
-	color: ${Colors.lightShade};
+	background-color: transparent;
+	border: 2px solid ${Colors.primary};
+	width: 40%;
 
 	&:hover {
-		background-color: ${Colors.primary};
+		background-color: transparent;
 	}
+
+	& a {
+		color: ${Colors.primary};
+	}
+
+	@prefers-color-scheme: dark {
+		& hover {
+			border: 2px solid ${Colors.lightShade};
+		}
+		& a:hover {
+			color: ${Colors.lightShade};
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		&:hover {
+			border: 2px solid ${Colors.darkShade};
+		}
+
+		& a:hover {
+			color: ${Colors.darkShade};
+		}
+	} {
 `;
 
 const Card = styled.div`
@@ -110,12 +180,20 @@ const Card = styled.div`
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	overflow-y: scroll;
 
 	&:hover {
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 	}
 `;
 
-export {Button, Card, Container, Caption, HalfColumn,
+const CardTitle = styled.h2`
+	font-size: 1.5rem;
+	text-align: center;
+	color: ${Colors.lightShade};
+	letter-spacing: 2px;
+	word-spacing: 100vw;
+	line-height: 1.2;
+`;
+
+export {Button, PrimaryButton, SecondaryButton, Card, CardTitle, Container, Caption, HalfColumn,
 		Section}

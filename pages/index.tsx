@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import Image from "next/image";
 import Link from "next/link";
-import { Section, Container, Caption } from "../components/global/Basics";
+import { Button, PrimaryButton,SecondaryButton,Section, Container, Caption } from "../components/global/Basics";
 
 import { Model } from "../assets/models/me";
 
@@ -36,15 +36,38 @@ const Hero = styled.div`
 `;
 
 const HeroSection = styled.div`
-	width: 50%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	place-items: center;
 	gap: 0.5rem;
 	text-align: center;
 
-	@media (max-width: 750px) {
-		width: 80%;
+	@media (min-width: 1000px) {
+		width: 100%;
+	}
+
+	@media (min-width: 750px) {
+		width: 45%;
+	}
+`;
+
+const CustomCanvas = styled(Canvas)`
+	width: 100%;
+	height: 100%;
+
+	@media (min-width: 1100px) {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (max-width: 1000px) {
+		width: 50%;
+		height: 50%;
+	}
+
+	@media (max-width: 770px) {
+		display: none;
 	}
 `;
 
@@ -76,50 +99,6 @@ const HeroButtonContainer = styled.div`
 	gap: 1rem;
 `;
 
-const HeroPrimaryButton = styled.button`
-	border: none;
-	background-color: ${Colors.primary};
-	text-transform: uppercase;
-	font-family: monospace;
-	opacity: 0.7;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-
-	& a {
-		color: ${Colors.lightShade};
-	}
-
-	&:hover {
-		font-weight: 600;
-		opacity: 1;
-	}
-
-	&:hover a {
-		color: ${Colors.primary};
-	}
-`;
-
-const HeroButton = styled.button`
-	border: 1px solid ${Colors.primary};
-	background-color: ${Colors.lightShade};
-	color: ${Colors.darkAccent};
-	text-transform: uppercase;
-	font-family: monospace;
-	opacity: 0.7;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-
-	&:hover {
-		font-weight: 600;
-		opacity: 1;
-		border: 1px solid ${Colors.lightShade};
-	}
-
-	&:hover a {
-		color: ${Colors.primary};
-	}
-`;
-
 const HeroSectionImage = styled(Image)`
 	width: 70%;
 	height: 100%;
@@ -143,21 +122,6 @@ const HeroSectionImage = styled(Image)`
 	}
 `;
 
-const ThreeDRenders = styled(Image)`
-	min-width: 300px;
-	max-width: 400px;
-	object-fit: cover;
-	margin: 0 0.5rem;
-
-	@media (max-width: 1500px) {
-		width: 20%;
-	}
-
-	@media (max-width: 450px) {
-		width: 100%;
-	}
-`;
-
 export default function Home() {
 	return (
 		<Page>
@@ -173,29 +137,20 @@ export default function Home() {
 							multimedia skills.
 						</HeroParagraph>
 						<HeroButtonContainer>
-							<HeroPrimaryButton className="animate__animated animate__slideInLeft ">
+							<PrimaryButton className="animate__animated animate__slideInLeft ">
 								<Link href="/services">Commission a service</Link>
-							</HeroPrimaryButton>
-							<HeroButton className="animate__animated animate__slideInLeft">
+							</PrimaryButton>
+							<SecondaryButton className="animate__animated animate__slideInLeft">
 								<Link href="/projects">View my projects</Link>
-							</HeroButton>
+							</SecondaryButton>
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
-						{/* <HeroSectionImage
-						className="animate__animated animate__slideInRight"
-							src={HeroImage}
-							alt="KaleCream"
-							width={450}
-							height={450}
-							placeholder="blur"
-							style={{ filter: "grayscale(45%)" }}
-						/> */}
-						<Canvas
+						<CustomCanvas className="animate__animated animate__slideInLeft"
 							camera={{ position: [2, 0, 12.25], fov: 15 }}
 							style={{
-								width: "600px",
-								height: "800px",
+								width: "300px",
+								height: "600px",
 							}}
 						>
 							<ambientLight intensity={1.25} />
@@ -205,37 +160,10 @@ export default function Home() {
 								<Model position={[0.025, -0.9, 0]}/>
 							</Suspense>
 							<OrbitControls />
-						</Canvas>
+						</CustomCanvas>
 					</HeroSection>
 				</Hero>
 			</Section>
-			{/* <Section>
-				<Container>
-					{ThreeD.map((ThreeD, index) => (
-						<>
-							<ThreeDRenders
-							className={"animate__animated animate__fadeInUp"}
-								key={index}
-								src={ThreeD.src}
-								alt={""}
-								width={1000}
-								height={300}
-								placeholder="blur"
-								blurDataURL={ThreeD.src}
-							/>
-						</>
-					))}
-				</Container>
-				<p
-						style={{
-							textAlign: "center",
-							margin: "2rem 0 2rem 0",
-						}}
-					>
-						My last three r/Daily3D renders.<br/> I'm working on making at least 52 renders for 2023 to keep up with
-						the practice of daily3D.
-					</p>
-			</Section> */}
 		</Page>
 	);
 }
