@@ -10,24 +10,16 @@ import {
 import { useEffect, useState } from "react";
 import { create } from "domain";
 import "animate.css";
-import { Section, Container, Card, Button } from "../components/global";
+import { Section, Container, Card, CardTitle, Button } from "../components/global";
 import Projects from "../data/projectsData";
-
-const ProjectTitle = styled.h3`
-	position: absolute;
-	top: 3rem;
-	text-align: center;
-	color: ${Colors.lightShade};
-`;
 
 const ProjectDescription = styled.p`
 	color: ${Colors.neutral[200]};
 	font-size: 0.85rem;
-	padding: 0 2rem;
 `;
 
 const RigidContainer = styled.div`
-width: 85%;
+	width: 85%;
 	display: flex;
 	flex-direction: column;
 `;
@@ -38,6 +30,7 @@ const ProjectDataPoint= styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
+	margin: 0.25rem 0;
 
 	& li {
 		display: grid;
@@ -68,10 +61,10 @@ export const Directory: any = () => {
 	return (
 		<Page title="Projects">
 			<Section>
-				<Container style={{ margin: 0 }}>
+				<Container>
 					{Projects.map((project, index) => (
 						<Card key={index} className="animate__animated animate__fadeInUp">
-							<ProjectTitle>{project.title}</ProjectTitle>
+							<CardTitle>{project.title}</CardTitle>
 							<ProjectDescription>{project.description}</ProjectDescription>
 							<RigidContainer>
 							{project.technology ? (

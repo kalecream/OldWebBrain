@@ -4,7 +4,14 @@ import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 import "animate.css";
-import { Section, Container, Button } from "../components/global";
+import {
+	Section,
+	Container,
+	Button,
+	PrimaryButton,
+	Card,
+	CardTitle,
+} from "../components/global";
 
 const Sections = [
 	"Illustration",
@@ -20,8 +27,6 @@ const CardContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	width: 90%;
-	height: 100%;
 	row-gap: 2rem;
 
 	@media (max-width: 550px) {
@@ -29,46 +34,43 @@ const CardContainer = styled.div`
 	}
 `;
 
-const Card = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 24%;
-	min-width: 300px;
-	max-width: 500px;
-	min-height: 500px;
-	max-height: 800px;
-	background-color: ${Colors.primary};
-	border-radius: 10px;
-	border: 8px solid ${Colors.darkShade};
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease-in-out;
-	padding: 0 1rem;
-	&:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	}
-`;
-
-const ServiceTitle = styled.h2`
-	letter-spacing: 2px;
-	font-size: 3rem;
-	font-weight: 600;
-	margin-bottom: 2rem;
-	text-align: center;
-	word-spacing: 100vw;
-	line-height: 1.2;
-`;
+// const Card = styled.div`
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	align-items: center;
+// 	width: 24%;
+// 	min-width: 300px;
+// 	max-width: 500px;
+// 	min-height: 500px;
+// 	max-height: 800px;
+// 	background-color: ${Colors.primary};
+// 	border-radius: 10px;
+// 	border: 8px solid ${Colors.darkShade};
+// 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+// 	transition: all 0.3s ease-in-out;
+// 	padding: 0 1rem;
+// 	&:hover {
+// 		transform: translateY(-5px);
+// 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+// 	}
+// `;
 
 const ServiceDescription = styled.p`
 	font-weight: 400;
 	margin-bottom: 1rem;
 	padding: 0 1.5rem;
+	@prefers-color-scheme: dark {
+		color: ${Colors.darkShade};
+	}
+
+	@media (prefers-color-scheme: light) {
+		color: ${Colors.lightShade};
+	}
 `;
 
 const ServiceCost = styled.p`
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 400;
 	margin-bottom: 1rem;
 	outline: none;
@@ -79,7 +81,7 @@ const ServiceCost = styled.p`
 const BlockContainer = styled(Container)`
 	place-items: center;
 	display: grid;
-	width: 100%;
+	height: fit-content;
 `;
 
 export default function Blog() {
@@ -97,7 +99,7 @@ export default function Blog() {
 
 					<CardContainer>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
-							<ServiceTitle>Customer Support</ServiceTitle>
+							<CardTitle>Customer Support</CardTitle>
 							<ServiceDescription>
 								Provide assistance to a variety of customers and adapt to
 								different communication styles.
@@ -108,7 +110,7 @@ export default function Blog() {
 							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
-							<ServiceTitle>3D Modelling</ServiceTitle>
+							<CardTitle>3D Modelling</CardTitle>
 							<ServiceDescription>
 								Accurate and visually appealing models simple 3D model for
 								visualization or design purposes
@@ -119,7 +121,7 @@ export default function Blog() {
 							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
-							<ServiceTitle>Website Design</ServiceTitle>
+							<CardTitle>Website Design</CardTitle>
 							<ServiceDescription>
 								Creation of custom websites that are visually appealing,
 								user-friendly, and optimized for search engines.
@@ -130,7 +132,7 @@ export default function Blog() {
 							</Button>
 						</Card>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
-							<ServiceTitle>Website Creation</ServiceTitle>
+							<CardTitle>Website Creation</CardTitle>
 							<ServiceDescription>
 								{" "}
 								Creation of a custom and effective website that meets the needs
@@ -144,50 +146,53 @@ export default function Blog() {
 						</Card>
 					</CardContainer>
 
-<BlockContainer>
-					<p
-						className="animate__animated animate__fadeInUp"
-						style={{ maxWidth: "55rem", textAlign: "justify" }}
-					>
-						I understand that budget can be a major concern for
-						my clients. That's why I offer flexible pricing options to ensure
-						that I can meet the budget of every client.
-					</p>
-					<p
-						className="animate__animated animate__fadeInUp"
-						style={{ maxWidth: "55rem", textAlign: "justify" }}
-					>
-						I offer a range of services at various price points, so you can
-						choose the level of support that fits your budget. I am also open to
-						negotiating rates for larger projects or longer-term engagements. I
-						believe that everyone should have access to high-quality services,
-						regardless of budget. That's why I am committed to finding solutions
-						that work for you and your financial needs.
-					</p>
-					<p
-						className="animate__animated animate__fadeInUp"
-						style={{ maxWidth: "55rem", textAlign: "justify" }}
-					>
-						Please don't hesitate to contact me to discuss your budget and how I
-						can help you achieve your goals within your means. I look forward to
-						working with you! I am always open to discussing new project ideas
-						and finding ways to meet the unique needs of my clients. Please do
-						not hesitate to contact me to learn more about how I can help you
-						achieve your goals. I currently accept payment for projects through{" "}
-						<a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">
-							Paypal
-						</a>{" "}
-						or Payoneer.
-					</p>
+					<BlockContainer>
+						<p
+							className="animate__animated animate__fadeInUp"
+							style={{ maxWidth: "55rem", textAlign: "justify" }}
+						>
+							I understand that budget can be a major concern for my clients.
+							That's why I offer flexible pricing options to ensure that I can
+							meet the budget of every client.
+						</p>
+						<p
+							className="animate__animated animate__fadeInUp"
+							style={{ maxWidth: "55rem", textAlign: "justify" }}
+						>
+							I offer a range of services at various price points, so you can
+							choose the level of support that fits your budget. I am also open
+							to negotiating rates for larger projects or longer-term
+							engagements. I believe that everyone should have access to
+							high-quality services, regardless of budget. That's why I am
+							committed to finding solutions that work for you and your
+							financial needs.
+						</p>
+						<p
+							className="animate__animated animate__fadeInUp"
+							style={{ maxWidth: "55rem", textAlign: "justify" }}
+						>
+							Please don't hesitate to contact me to discuss your budget and how
+							I can help you achieve your goals within your means. I look
+							forward to working with you! I am always open to discussing new
+							project ideas and finding ways to meet the unique needs of my
+							clients. Please do not hesitate to contact me to learn more about
+							how I can help you achieve your goals. I currently accept payment
+							for projects through{" "}
+							<a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">
+								Paypal
+							</a>{" "}
+							or Payoneer.
+						</p>
 					</BlockContainer>
 
-					<Button
+					<PrimaryButton
+						style={{ margin: "0 auto", width: "fit-content" }}
 						className="animate__animated animate__fadeInUp animated_delay-2s"
 						title="This button sends me an e-mail"
 						href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Custom%20Budget%20%7C%20Project%20Comission&body=Dear%20KaleCream%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20a%20%5Bproject%20type%5D%20from%20you.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D "
 					>
 						I would like to comission a service with a custom budget.
-					</Button>
+					</PrimaryButton>
 				</Container>
 			</Section>
 		</Page>

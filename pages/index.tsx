@@ -36,15 +36,38 @@ const Hero = styled.div`
 `;
 
 const HeroSection = styled.div`
-	width: 50%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	place-items: center;
 	gap: 0.5rem;
 	text-align: center;
 
-	@media (max-width: 750px) {
-		width: 80%;
+	@media (min-width: 1000px) {
+		width: 100%;
+	}
+
+	@media (min-width: 750px) {
+		width: 45%;
+	}
+`;
+
+const CustomCanvas = styled(Canvas)`
+	width: 100%;
+	height: 100%;
+
+	@media (min-width: 1100px) {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (max-width: 1000px) {
+		width: 50%;
+		height: 50%;
+	}
+
+	@media (max-width: 770px) {
+		display: none;
 	}
 `;
 
@@ -123,16 +146,7 @@ export default function Home() {
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
-						{/* <HeroSectionImage
-						className="animate__animated animate__slideInRight"
-							src={HeroImage}
-							alt="KaleCream"
-							width={450}
-							height={450}
-							placeholder="blur"
-							style={{ filter: "grayscale(45%)" }}
-						/> */}
-						<Canvas
+						<CustomCanvas className="animate__animated animate__slideInLeft"
 							camera={{ position: [2, 0, 12.25], fov: 15 }}
 							style={{
 								width: "300px",
@@ -146,7 +160,7 @@ export default function Home() {
 								<Model position={[0.025, -0.9, 0]}/>
 							</Suspense>
 							<OrbitControls />
-						</Canvas>
+						</CustomCanvas>
 					</HeroSection>
 				</Hero>
 			</Section>
