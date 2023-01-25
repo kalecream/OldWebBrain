@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import { useEffect } from "react";
 import { Navigation, Footer } from "../../components/global";
 import styles from "../../styles/Home.module.css";
@@ -39,7 +41,7 @@ export const Page = ({
 					<title>KaleCream {title ? "| " + title : null}</title>
 					<Navigation />
 			</header>
-			
+
 			<main className={styles.main}>
 				<>
 				{title ? <PageTitle>{title}</PageTitle> : null}

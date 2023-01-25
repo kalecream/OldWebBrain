@@ -6,6 +6,7 @@ import { Icons } from "../../assets";
 import Image from "next/image";
 import Directory from "../../data/directory";
 import { useEffect } from "react";
+import ThemeSwitch from "./ThemeSwitch";
 
 const StyledNavigation = styled.nav`
 	top: 0;
@@ -181,7 +182,7 @@ export const Navigation: React.FunctionComponent = () => {
 					</DirectoryListItem>
 				))}
 			</DirectoryList>
-
+			{/* <ThemeSwitch /> */}
 			{/* <NavigationSettings /> */}
 		</StyledNavigation>
 	);

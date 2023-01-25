@@ -1,18 +1,10 @@
-import BlogPage from '../../containers/layout/blogPage';
+---
+title: 'Personal Finance Journey'
+date: '2022-07-11'
+description: 'A list of tools and techniques I have used over the years to manage my personal finances.'
+---
 
-export const meta = {
-title: 'Personal Finance',
-date: '2022-07-11',
-updated: '2022-07-14',
-imgid: '01-personal-finance',
-author: 'Sabrina Medwinter'
-}
-
-# Personal Finance
-
-Recently three persons asked me to list some budgeting apps and spreadsheets so I decided to take a trip down memory lane to some of the tools I've used over the years.
-
-The things I want out of a personal finance tool are:
+### The things I want out of a personal finance tool are:
 
 - The ability to use multiple currencies.
 - Monthly Balance & Visualization
@@ -68,5 +60,3 @@ I started off with beancount because of an [Obsidian](https://obsidian.md/) plug
 A double-entry bookkeeping computer language that lets you define financial transaction records in a text file, read them in memory, generate a variety of reports from them, and provides a web interface.
 
 It's in a style that is similar to ledger. You may want to check out the [reddit community](https://old.reddit.com/r/plaintextaccounting/) or the [plaintextaccounting website](https://plaintextaccounting.org/).
-
-export default ({ children }) => <BlogPage meta={meta}>{children}</BlogPage>

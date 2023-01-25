@@ -46,6 +46,11 @@
     "react-gtm-module": "^2.0.11",
     "react-svg": "^15.1.11",
     "react-waypoint": "^10.3.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-code-titles": "^1.1.0",
+    "rehype-prism-plus": "^1.5.0",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.6",
     "three": "^0.148.0",
     "typescript": "4.8.4"

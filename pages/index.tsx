@@ -21,7 +21,7 @@ import {
 	Container,
 	Caption,
 } from "../components/global/Basics";
-import { ScrollDown } from "../components/global/scrollDown";
+import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
 
@@ -144,6 +144,36 @@ const HeroSectionImage = styled(Image)`
 	}
 `;
 
+const ArticleContainer = styled(Container)`
+	padding: 0 2rem;
+	justify-content: space-around;
+
+	& > article {
+		display: grid;
+		place-items: center;
+		min-width: 400px;
+		max-width: 450px;
+		gap: 0.05 rem;
+
+		& > h2 {
+			font-size: 2rem;
+			text-align: center;
+			letter-spacing: 1px;
+			font-weight: 300;
+			text-transform: capitalize;
+		}
+
+		& p {
+			text-align: justify;
+		}
+	}
+`;
+
+const ArticleDate = styled(Caption)`
+	font-size: 0.8rem;
+	text-align: center;
+`;
+
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
@@ -179,7 +209,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 								height: "600px",
 							}}
 						>
-							<OrbitControls maxDistance={9} minDistance={8} /> 
+							<OrbitControls maxDistance={9} minDistance={8} />
 							<ambientLight intensity={1.25} />
 							<directionalLight intensity={0.4} />
 							<Suspense fallback={null}>
@@ -195,33 +225,34 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 						</CustomCanvas>
 					</HeroSection>
 				</Hero>
-				<ScrollDown  />
+				<ScrollDown />
 			</Section>
 			<Section>
-				<Container>
-					{posts.map((post) => (
-						<article key={post.slug}>
-							{/* <p >
-								{format(parseISO(post.date), "MMMM dd, yyyy")}
-							</p><p >
-								{format(parseISO(post.date), "MMMM dd, yyyy")}
-							</p> */}
-							<h1 className="mb-2 text-xl">
-								<Link
-									legacyBehavior
-									as={`/posts/${post.slug}`}
-									href={`/posts/[slug]`}
-								>
-									<a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
-										Test
-										{post.title}
-									</a>
-								</Link>
-							</h1>
-							<p className="mb-3">{post.description}</p>
-						</article>
-					))}
-				</Container>
+				{posts.length > 0 && (
+					<>
+						<ArticleContainer>
+							{posts.map((post) => (
+								<article key={post.slug}>
+									{post.date && (
+										<ArticleDate className="text-sm text-gray-500">
+											{format(parseISO(post.date), "MMMM dd, yyyy")}
+										</ArticleDate>
+									)}
+									<h2 >
+										<Link
+											legacyBehavior
+											as={`/posts/${post.slug}`}
+											href={`/posts/[slug]`}
+										>
+											<a>{post.title}</a>
+										</Link>
+									</h2>
+									<p className="text-gray-500">{post.description}</p>
+								</article>
+							))}
+						</ArticleContainer>
+					</>
+				)}
 			</Section>
 		</Page>
 	);
