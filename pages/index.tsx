@@ -2,20 +2,42 @@ import * as React from "react";
 
 import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
-import HeroImage from "../assets/images/Under_Construction.webp";
-import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
+
+import { format, parseISO } from "date-fns";
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, PrimaryButton,SecondaryButton,Section, Container, Caption } from "../components/global/Basics";
+import { getAllPosts } from "../lib/api";
+import { PostType } from "../types/post";
+
+import styled from "@emotion/styled";
+import { Colors } from "../styles/colors";
+
+import {
+	Button,
+	PrimaryButton,
+	SecondaryButton,
+	Section,
+	Container,
+	Caption,
+} from "../components/global/Basics";
+import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
 
 import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import {
+	OrbitControls,
+	Environment,
+	PresentationControls,
+} from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+
+type IndexProps = {
+	posts: PostType[];
+};
 
 const Hero = styled.div`
 	background-size: cover;
@@ -122,7 +144,37 @@ const HeroSectionImage = styled(Image)`
 	}
 `;
 
-export default function Home() {
+const ArticleContainer = styled(Container)`
+	padding: 0 2rem;
+	justify-content: space-around;
+
+	& > article {
+		display: grid;
+		place-items: center;
+		min-width: 400px;
+		max-width: 450px;
+		gap: 0.05 rem;
+
+		& > h2 {
+			font-size: 2rem;
+			text-align: center;
+			letter-spacing: 1px;
+			font-weight: 300;
+			text-transform: capitalize;
+		}
+
+		& p {
+			text-align: justify;
+		}
+	}
+`;
+
+const ArticleDate = styled(Caption)`
+	font-size: 0.8rem;
+	text-align: center;
+`;
+
+export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
 			<Section>
@@ -146,24 +198,72 @@ export default function Home() {
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
-						<CustomCanvas className="animate__animated animate__slideInLeft"
-							camera={{ position: [2, 0, 12.25], fov: 15 }}
+						<CustomCanvas
+							className="animate__animated animate__slideInLeft"
+							flat
+							shadows
+							dpr={[1, 2]}
+							camera={{ position: [2, 0, 12], fov: 15 }}
 							style={{
 								width: "300px",
 								height: "600px",
 							}}
 						>
+							<OrbitControls maxDistance={9} minDistance={8} />
 							<ambientLight intensity={1.25} />
-							<ambientLight intensity={0.1} />
 							<directionalLight intensity={0.4} />
 							<Suspense fallback={null}>
-								<Model position={[0.025, -0.9, 0]}/>
+								<PresentationControls
+									global
+									zoom={1}
+									rotation={[0, -Math.PI / 4, 0]}
+									polar={[0, Math.PI / 4]}
+									azimuth={[-Math.PI / 4, Math.PI / 4]}
+								></PresentationControls>
+								<Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
 							</Suspense>
-							<OrbitControls />
 						</CustomCanvas>
 					</HeroSection>
 				</Hero>
+				<ScrollDown />
+			</Section>
+			<Section>
+				{posts.length > 0 && (
+					<>
+						<ArticleContainer>
+							{posts.map((post) => (
+								<article key={post.slug}>
+									{post.date && (
+										<ArticleDate className="text-sm text-gray-500">
+											{format(parseISO(post.date), "MMMM dd, yyyy")}
+										</ArticleDate>
+									)}
+									<h2 >
+										<Link
+											legacyBehavior
+											as={`/posts/${post.slug}`}
+											href={`/posts/[slug]`}
+										>
+											<a>{post.title}</a>
+										</Link>
+									</h2>
+									<p className="text-gray-500">{post.description}</p>
+								</article>
+							))}
+						</ArticleContainer>
+					</>
+				)}
 			</Section>
 		</Page>
 	);
-}
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+	const posts = getAllPosts(["date", "description", "slug", "title"]);
+
+	return {
+		props: { posts },
+	};
+};
+
+export default Home;

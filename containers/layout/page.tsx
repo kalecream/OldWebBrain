@@ -1,10 +1,14 @@
-import { useEffect} from "react";
-import Head from "next/head";
+import { useRouter } from "next/router";
+
+import { useEffect } from "react";
 import { Navigation, Footer } from "../../components/global";
 import styles from "../../styles/Home.module.css";
 import styled from "@emotion/styled";
 import TagManager from "react-gtm-module";
 import { Colors } from "../../styles/colors";
+
+import { MetaProps } from "../../types/layout";
+import Head from "../../components/global/Head";
 
 const PageTitle = styled.h1`
 	font-size: 3rem;
@@ -13,31 +17,40 @@ const PageTitle = styled.h1`
 	color: ${Colors.primary};
 `;
 
-export default function Page({
+type LayoutProps = {
+	children: React.ReactNode;
+	customMeta?: MetaProps;
+	title?: string;
+	description?: string;
+};
+
+export const WEBSITE_HOST_URL = "https://www.kalecream.com";
+
+export const Page = ({
 	children,
 	title,
 	description,
-}: {
-	children: React.ReactNode;
-	title?: string;
-	description?: string;
-}) {
-
+	customMeta,
+}: LayoutProps) => {
 	useEffect(() => {
-		TagManager.initialize({ gtmId: "UA-148483444-1"});
+		TagManager.initialize({ gtmId: "UA-148483444-1" });
 	}, []);
 	return (
-		<div className={styles.container}>
-			<Head>
-				<title>KaleCream {title ? "| " + title : null}</title>
-				<meta name="description" content={description} />
-			</Head>
-			<Navigation />
+		<>
+			<header>
+					<title>KaleCream {title ? "| " + title : null}</title>
+					<Navigation />
+			</header>
+
 			<main className={styles.main}>
+				<>
 				{title ? <PageTitle>{title}</PageTitle> : null}
 				{children}
+				</>
 			</main>
 			<Footer />
-		</div>
+		</>
 	);
-}
+};
+
+export default Page;
