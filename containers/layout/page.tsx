@@ -35,12 +35,10 @@ export const Page = ({
 	}, []);
 	return (
 		<>
-			<Head customMeta={customMeta}>
-				<header>
+			<header>
 					<title>KaleCream {title ? "| " + title : null}</title>
 					<Navigation />
-				</header>
-			</Head>
+			</header>
 			
 			<main className={styles.main}>
 				<>
