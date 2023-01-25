@@ -13,14 +13,26 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
 
-import { Button, PrimaryButton,SecondaryButton,Section, Container, Caption } from "../components/global/Basics";
+import {
+	Button,
+	PrimaryButton,
+	SecondaryButton,
+	Section,
+	Container,
+	Caption,
+} from "../components/global/Basics";
+import { ScrollDown } from "../components/global/scrollDown";
 
 import { Model } from "../assets/models/me";
 
 import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import {
+	OrbitControls,
+	Environment,
+	PresentationControls,
+} from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 type IndexProps = {
@@ -156,76 +168,61 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
-					<CustomCanvas className="animate__animated animate__slideInLeft"
-							camera={{ position: [2, 0, 12.25], fov: 15 }}
+						<CustomCanvas
+							className="animate__animated animate__slideInLeft"
+							flat
+							shadows
+							dpr={[1, 2]}
+							camera={{ position: [2, 0, 12], fov: 15 }}
 							style={{
 								width: "300px",
 								height: "600px",
 							}}
 						>
+							<OrbitControls maxDistance={9} minDistance={8} /> 
 							<ambientLight intensity={1.25} />
-							<ambientLight intensity={0.1} />
 							<directionalLight intensity={0.4} />
 							<Suspense fallback={null}>
-								<Model position={[0.025, -0.9, 0]}/>
+								<PresentationControls
+									global
+									zoom={1}
+									rotation={[0, -Math.PI / 4, 0]}
+									polar={[0, Math.PI / 4]}
+									azimuth={[-Math.PI / 4, Math.PI / 4]}
+								></PresentationControls>
+								<Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
 							</Suspense>
-							<OrbitControls />
 						</CustomCanvas>
 					</HeroSection>
 				</Hero>
+				<ScrollDown  />
 			</Section>
 			<Section>
-				<h2>Blog</h2>
-				{posts.map((post) => (
-					<article key={post.slug} className="mt-12">
-						{/* <p >
-							{format(parseISO(post.date), "MMMM dd, yyyy")}
-						</p><p >
-							{format(parseISO(post.date), "MMMM dd, yyyy")}
-						</p> */}
-						<h1 className="mb-2 text-xl">
-							<Link legacyBehavior as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-								<a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
-									{post.title}
-								</a>
-							</Link>
-						</h1>
-						<p className="mb-3">{post.description}</p>
-						<p>
-							<Link legacyBehavior as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-								<a>Read More</a>
-							</Link>
-						</p>
-					</article>
-				))}
-			</Section>
-			{/* <Section>
 				<Container>
-					{ThreeD.map((ThreeD, index) => (
-						<>
-							<ThreeDRenders
-							className={"animate__animated animate__fadeInUp"}
-								key={index}
-								src={ThreeD.src}
-								alt={""}
-								width={1000}
-								height={300}
-								placeholder="blur"
-								blurDataURL={ThreeD.src}
-							/>
-						</>
+					{posts.map((post) => (
+						<article key={post.slug}>
+							{/* <p >
+								{format(parseISO(post.date), "MMMM dd, yyyy")}
+							</p><p >
+								{format(parseISO(post.date), "MMMM dd, yyyy")}
+							</p> */}
+							<h1 className="mb-2 text-xl">
+								<Link
+									legacyBehavior
+									as={`/posts/${post.slug}`}
+									href={`/posts/[slug]`}
+								>
+									<a className="text-gray-900 dark:text-white dark:hover:text-blue-400">
+										Test
+										{post.title}
+									</a>
+								</Link>
+							</h1>
+							<p className="mb-3">{post.description}</p>
+						</article>
 					))}
 				</Container>
-				<p
-						style={{
-							textAlign: "center",
-							margin: "2rem 0 2rem 0",
-						}}
-					>
-						My last three r/Daily3D renders.<br/> I'm working on making at least 52 renders for 2023 to keep up with
-						the practice of daily3D.
-					</p>
-			</Section> */}
+			</Section>
 		</Page>
 	);
 };
