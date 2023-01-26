@@ -1,0 +1,69 @@
+---
+title: 'Personal Finance for the Working Class: Tools and Techniques'
+date: '2023-01-11'
+description: 'A list of tools and techniques I have used over the years to manage my personal finances. This article is currently a work in progress.'
+---
+
+The features I would like for my ideal personal finance tool are very simple. It needs to have features like:
+
+1. Re-occuring transactions.
+2. The ability to use multiple currencies in my transactions. I mainly use USD, JMD and some cryptocurrencies like ETH and BTC.
+3. Monthly Balance visualisation with a forecasting for my balance throughout the month with my expected expences to let me know if I will run out of money before the end of the month.
+4. Expense Report breakdown for each category by different periods.
+5. Tracking for savings and investments.
+6. Customisable for my expanding financial needs. For example: I live paycheck to paycheck so I need to track my expenses and income on a weekly basis. There is also have a savings account that I want to track on a monthly basis. I also have a few investments that I want to track on a quarterly basis. Later, I will start having an interest in FIRE and a retirement account, but that's not currently possible without a significant increase in income.
+
+I would ultimately love to connect to an API to automate handling expenses, but one of my two local banks does not even allow me to download a CSV file so that dream is a long way off. One does allow me to get a csv that I can then feed into beancount, the other allows me to download a pdf statement (without properly formatted tables) so I need a tool to make the rest of my finance record keeping as painless as possible.
+
+# Tools
+
+## What I use Now
+
+### Beancount with Fava
+
+I started off with beancount because of an [Obsidian](https://obsidian.md/) plug-in called [Ledger-obsidian](https://github.com/tgrosinger/ledger-obsidian). I could not for the life of me get that plug-in to work so I read around the internet for a bit and decided to just use the original [ledger](https://github.com/ledger/ledger) from the CLI as the creator intended. I found it a little counterintuitive and that led me to beancount and fava!
+
+[Fava](https://fava.pythonanywhere.com/example-beancount-file/income_statement/) is a web interface for beancount making it easier to visualize your finance. The best part is that fava and beancount are both written in Python and therefore easily extended to fit my needs.
+
+#### What is beancount?
+
+A double-entry bookkeeping computer language that lets you define financial transaction records in a text file, read them in memory, generate a variety of reports from them, and provides a web interface.
+
+It's in a style that is similar to ledger. You may want to check out the [reddit community](https://old.reddit.com/r/plaintextaccounting/) or the [plaintextaccounting website](https://plaintextaccounting.org/).
+
+## The Journey to Beancount
+
+### Google Sheets / Excel
+
+I started off like most persons with a Google sheet or Excel generated template that has no marcos to automate the process of clearing the sheet monthly and recording that data elsewhere. I've tried:
+
+- creating my own spreadsheet which was great and taught me some formulas and VBA, but tedious. 
+- using several free and paid templates that I found online. My favourites are:
+    - CSsanity's [Budget Template](https://www.cassanity.com/budget-template/). I had the paid version that I will refer from time to time for my long-term investments.
+    - [Budget Template](https://www.vertex42.com/ExcelTemplates/budget-template.html) from Vertex42. I used this for a while and it was great, but I found it not very flexible for my needs and hard to customise.
+    - [Aspire Budgeting](https://aspirebudget.com/) is a google spreadsheet that I came across because of its [reddit community](https://old.reddit.com/r/aspirebudgeting/).  This community has Andriod and iOS apps to make data entry a little easier, however, the voluntary developer who made these apps took a step back recently so [the iOS  app may not be available anymore.](https://old.reddit.com/r/aspirebudgeting/comments/v78yir/time_to_say_goodbye/). At the time that I used it, someone had posted an app script to create recurring transactions, but the appears that creator of Aspire budget has added it to [G suite add-on](https://workspace.google.com/marketplace/app/aspire_budgeting/591997494881) that extends the functionality of the sheet.  It is great for people on a tight budget who know all of their incoming expenses can just automate those expenses so they don't have to keep entering the same things repeatedly.
+
+Once I crossed that bridge, I realised I just hated entering data into a spreadsheet.
+
+### Apps
+
+#### MoneyLover
+
+[Moneylover](https://moneylover.me/), made by Vietnamese company Finsify Co Ltd, is available for [Web](https://web.moneylover.me/), [iOS](https://apps.apple.com/app/apple-store/id486312413) and [Android](https://play.google.com/store/apps/details?id=com.bookmark.money) is the first app I ever bought. The cute visuals and the ability to connect to my Paypal account to automate my expense handling is what drew me in its web.
+
+Unfortunately, I do not remember why I stopped using it. It seems pretty solid in my re-checking of the tool for this article.
+
+##### Features I wanted
+- Monthly Balance & Visualization
+- Weekly Expense Prediction
+
+##### Extra Features
+- Synchronise between multiple devices.
+- Multiple currencies.
+- Add recurring transactions.
+- Keep track of a savings plan.
+- Manage debts and loans.
+- Reports
+- Expense budget envelopes
+- Scan recipts and auto-process them.
+- Not able to access some savings & some other accounts in the web app.
