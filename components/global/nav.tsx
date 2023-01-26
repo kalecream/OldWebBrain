@@ -43,19 +43,13 @@ const DirectoryLinks = styled.a`
 	font-weight: 400;
 	font-size: 0.8rem;
 	color: ${Colors.darkAccent};
-	text-transform: uppercase;
-	font-family: monospace;
+	text-transform: capitalize;
 	opacity: 0.7;
 
 	* hover {
-		font-weight: 600;
+		font-weight: 700;
 		opacity: 1;
 	}
-`;
-
-const DirectoryContainer = styled.div`
-	display: flex;
-	align-items: center;
 `;
 
 const SiteName = styled.a`
@@ -81,7 +75,7 @@ const CTAHeaderButton = styled.button`
 	background-color: ${Colors.lightShade};
 	color: ${Colors.darkAccent};
 	text-transform: uppercase;
-	font-family: monospace;
+	font-family: 'Fira Mono', monospace;
 	font-size: 0.8rem;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;

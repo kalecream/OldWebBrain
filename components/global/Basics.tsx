@@ -63,19 +63,22 @@ const Button = styled.a`
 	background-color: ${Colors.primary};
 	color: ${Colors.neutral[300]};
 
-	text-transform: uppercase;
-	font-family: monospace;
-	font-size: 0.8rem;
-	
+	text-transform: capitalize;
+	font-size: 0.75rem;
+	font-weight: 300;
 	transition: background-color 0.5s ease-in-out;
 
 	&:hover {
 		opacity: 1;
 		border-radius: 5px;
-		font-weight: 600;
 		background-color: ${Colors.darkShade};
 		transition: ease-in-out 0.2s;
+
+		a {
+			font-weight: 600;
+		}
 	}
+
 
 	@media (prefers-color-scheme: light) {
 		border: 2px solid ${Colors.lightShade};

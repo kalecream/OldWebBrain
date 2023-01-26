@@ -9,5 +9,8 @@
         "**/.history": true
     },
     "explorerExclude.backup": {},
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "marquee.widgets.npm-stats.packageNames": [
+        "website"
+    ]
 }

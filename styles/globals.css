@@ -3,6 +3,13 @@
   src: url("./fonts/coolvetica.otf");
 }
 
+/* Google fonts
+
+font-family: 'Fira Mono', monospace;
+font-family: 'Inter', sans-serif;
+font-family: 'Playfair Display', serif;
+*/
+
 :root {
   --color-white: #fafafa;
   --color-black: #454545;
@@ -108,6 +115,7 @@ h3 {
 
 p {
   margin: 1rem 0;
+  font-family: 'Inter', sans-serif;
 
 }
 
