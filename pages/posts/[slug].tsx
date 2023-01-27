@@ -156,12 +156,12 @@ const components = {
   Head,
   Image,
   Link,
-  h1: CustomH1,
-  h2: CustomH2,
-  h3: CustomH3,
-  h4: CustomH4,
-  h5: CustomH5,
-  h6: CustomH6,
+  CustomH1,
+  CustomH2,
+  CustomH3,
+  CustomH4,
+  CustomH5,
+  CustomH6,
 };
 
 const TableOfContents = styled.div`
@@ -194,7 +194,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const [headings, setHeadings] = useState<any[]>([]);
 
   useEffect(() => {
-    const headings = document.querySelectorAll(' h1, h2, h3, h4, h5, h6');
+    const headings = document.querySelectorAll(' h2, h3');
     const headingList = Array.from(headings).map((heading) => ({
       id: heading.id,
       text: heading.textContent,
@@ -205,18 +205,56 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 
   return (
     <Page customMeta={customMeta}>
+      {/* Nest the smaller headers inside the larger headers to denote hierarchy */}
       <TableOfContents>
         <ul>
-          {headings.map((heading) =>
-              (
-            <li key={heading.id}>
-              <Link legacyBehavior href={`#${heading.id}`} >
-                <a>
-                  {heading.text}
-                  </a>
-              </Link>
-            </li>
-          ))}
+          {headings.map((heading) => {
+            if (heading.level === 'H2') {
+              return (
+                <li key={heading.id}>
+                  <Link legacyBehavior href={`#${heading.id}`}>
+                    <a >{heading.text}</a>
+                  </Link>
+                </li>
+              );
+            }
+            if (heading.level === 'H3') {
+              return (
+                <li key={heading.id}>
+                  <Link legacyBehavior href={`#${heading.id}`}>
+                    <a style={{ marginLeft: '20px'}} >{heading.text}</a>
+                  </Link>
+                </li>
+              );
+            }
+            if (heading.level === 'H4') {
+              return (
+                <li key={heading.id}>
+                  <Link legacyBehavior href={`#${heading.id}`}>
+                    <a style={{ marginLeft: '50px'}}>{heading.text}</a>
+                  </Link>
+                </li>
+              );
+            }
+            if (heading.level === 'H5') {
+              return (
+                <li key={heading.id}>
+                  <Link legacyBehavior href={`#${heading.id}`}>
+                    <a style={{ marginLeft: '80px'}}>{heading.text}</a>
+                  </Link>
+                </li>
+              );
+            }
+            if (heading.level === 'H6') {
+              return (
+                <li key={heading.id}>
+                  <Link legacyBehavior href={`#${heading.id}`}>
+                    <a style={{ marginLeft: '40px'}}>{heading.text}</a>
+                  </Link>
+                </li>
+              );
+            }
+          })}
         </ul>
       </TableOfContents>
       <CustomArticle>
