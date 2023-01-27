@@ -7,7 +7,6 @@ import pineapple from '../assets/images/album/pineapple.jpg';
 import plantWindow from '../assets/images/album/plantwindow.jpg';
 import earring from '../assets/images/album/earring.jpg';
 
-
 const ExampleAlbum = [
     Jellyfish,
     bananaSunset,
@@ -27,3 +26,11 @@ const ThreeD = [
 ];
 
 export { ExampleAlbum, ThreeD };
+
+import BiteSizedBingePoster from '../assets/images/bitesizedbinge.webp';
+
+const OtherMultimediarojectPictures = [
+    BiteSizedBingePoster,
+];
+
+export {  OtherMultimediarojectPictures };
