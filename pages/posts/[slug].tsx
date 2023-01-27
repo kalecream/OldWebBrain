@@ -20,6 +20,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import styled from "@emotion/styled";
 
 
 // Custom components/renderers to pass to MDX.
@@ -37,6 +38,50 @@ type PostPageProps = {
   frontMatter: PostType;
 };
 
+const CustomArticle = styled.article`
+  width: 100%;
+  
+  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 750px) {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 750px) {
+    padding: 0 2rem;
+    max-width: 50rem;
+  }
+
+  & h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  & ol, ul {
+    list-style-position: inside;
+
+    & ol li, ul li {
+      text-indent: 2rem;
+    }
+
+    & li {
+    text-indent: 1rem;}
+  }
+
+  & p {
+    text-align: justify;
+    line-height: 1.8;
+  }
+`;
+
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const customMeta: MetaProps = {
     title: `${frontMatter.title}`,
@@ -47,17 +92,17 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   };
   return (
     <Page customMeta={customMeta}>
-      <article>
+      <CustomArticle>
         <h1>
           {frontMatter.title}
         </h1>
-        {/* <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
-          {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
-        </p> */}
+        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
+          {format(parseISO(frontMatter.date? frontMatter.date : ''), 'MMMM dd, yyyy')}
+        </p>
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
-      </article>
+      </CustomArticle>
     </Page>
   );
 };
