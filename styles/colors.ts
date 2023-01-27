@@ -1,10 +1,12 @@
 interface ColorStrings {
   primary: string;
+  secondary: string;
   lightShade: string;
   darkShade: string;
   lightAccent: string;
   darkAccent: string;
   textShadow: string;
+  info: string;
   success: string;
   error: string;
   warning: string;
@@ -24,14 +26,16 @@ interface ColorStrings {
 
 export const Colors:ColorStrings = {
   primary: '#3EB489',
+  secondary: '#2b694d',
   lightShade: '#f4f0f5',
   lightAccent: '#8cb6bb',
   darkShade: '#34373e',
   darkAccent: '#8f8182',
   textShadow: '0 0 1px #fff',
-  success: '#63aa64',
-  error: '#e09a2c',
-  warning: '#f44336',
+  info: '#fd4778',
+  success: '#09b335',
+  error: '#f7c808',
+  warning: '#f90344',
   neutral : {
     100: '#f7f7f5',
     200: '#eaeaea',
