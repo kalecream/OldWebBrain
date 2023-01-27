@@ -21,17 +21,10 @@ import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import styled from "@emotion/styled";
+import { useEffect, useRef, useState } from "react";
 
 
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
-const components = {
-  Head,
-  Image,
-  Link,
-};
+
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
@@ -42,6 +35,7 @@ const CustomArticle = styled.article`
   width: 100%;
   
   margin: 0 auto;
+  margin-left: 300px;
   
   display: flex;
   flex-direction: column;
@@ -56,7 +50,11 @@ const CustomArticle = styled.article`
 
   @media (min-width: 750px) {
     padding: 0 2rem;
-    max-width: 50rem;
+    max-width: 40rem;
+  }
+
+  @media (min-width: 1000px) {
+    max-width: 65rem;
   }
 
   & h1, h2, h3, h4, h5, h6 {
@@ -82,6 +80,108 @@ const CustomArticle = styled.article`
   }
 `;
 
+const CustomH1 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h1 {...rest} />
+      </Link>
+    );
+  }
+  return <h1 {...rest} />;
+};
+
+const CustomH2 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h2 {...rest} />
+      </Link>
+    );
+  }
+  return <h2 {...rest} />;
+};
+
+const CustomH3 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h3 {...rest} />
+      </Link>
+    );
+  }
+  return <h3 {...rest} />;
+};
+
+const CustomH4 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h4 {...rest} />
+      </Link>
+    );
+  }
+  return <h4 {...rest} />;
+};
+
+const CustomH5 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h5 {...rest} />
+      </Link>
+    );
+  }
+  return <h5 {...rest} />;
+};
+
+const CustomH6 = ({ id, ...rest }) => {
+  if (id) {
+    return (
+      <Link href={`#${id}`}>
+        <h6 {...rest} />
+      </Link>
+    );
+  }
+  return <h6 {...rest} />;
+};
+
+
+
+// Custom components/renderers to pass to MDX.
+// Since the MDX files aren't loaded by webpack, they have no knowledge of how
+// to handle import statements. Instead, you must include components in scope
+// here.
+const components = {
+  Head,
+  Image,
+  Link,
+  h1: CustomH1,
+  h2: CustomH2,
+  h3: CustomH3,
+  h4: CustomH4,
+  h5: CustomH5,
+  h6: CustomH6,
+};
+
+const TableOfContents = styled.div`
+  width: 275px;
+  min-width: 250px;
+  max-height: calc(100vh - 4rem);
+  padding: 1rem;
+  align-self: flex-start;
+  position: fixed;
+  top: 5rem;
+  overflow: auto;
+  top: 20%;
+
+  & ul li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+  }
+`;
+
+
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const customMeta: MetaProps = {
     title: `${frontMatter.title}`,
@@ -90,8 +190,35 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
     date: `${frontMatter.date}`,
     type: 'article',
   };
+
+  const [headings, setHeadings] = useState<any[]>([]);
+
+  useEffect(() => {
+    const headings = document.querySelectorAll(' h1, h2, h3, h4, h5, h6');
+    const headingList = Array.from(headings).map((heading) => ({
+      id: heading.id,
+      text: heading.textContent,
+      level: heading.tagName
+    }));
+    setHeadings(headingList);
+  }, []);
+
   return (
     <Page customMeta={customMeta}>
+      <TableOfContents>
+        <ul>
+          {headings.map((heading) =>
+              (
+            <li key={heading.id}>
+              <Link legacyBehavior href={`#${heading.id}`} >
+                <a>
+                  {heading.text}
+                  </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </TableOfContents>
       <CustomArticle>
         <h1>
           {frontMatter.title}
