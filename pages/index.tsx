@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 
 import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
@@ -27,13 +27,13 @@ import { Model } from "../assets/models/me";
 
 import "animate.css";
 import { Suspense } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
 	OrbitControls,
 	Environment,
 	PresentationControls,
+	PerspectiveCamera,
 } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 type IndexProps = {
 	posts: PostType[];
@@ -58,7 +58,7 @@ const Hero = styled.div`
 `;
 
 const HeroSection = styled.div`
-	width: 90%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	place-items: center;
@@ -174,10 +174,53 @@ const ArticleDate = styled(Caption)`
 	text-align: center;
 `;
 
+const angletoRadian = (angle: number) => {
+	return angle * (Math.PI / 180);
+};
+
+const Rotate3DModel = () => {
+	// useFrame((state) => {
+	// 	state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+	// 	state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
+	// 	state.camera.lookAt(0, 0, 0);
+	// });
+
+	// requestAnimationFrame(() => {
+	// 	document.getElementById("hero")?.scrollIntoView();
+	// });
+
+	const orbitControlsRef = React.useRef<any>(null);
+
+	useFrame((state) => {
+		if (!!orbitControlsRef.current) {
+			const { x, y } = state.mouse;
+			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
+			orbitControlsRef.current.update();
+		}
+	});
+
+	useEffect(() => {
+		if (!!orbitControlsRef.current) {
+			// orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
+		}
+	}, [orbitControlsRef.current]);
+
+	return (
+		<>
+			<OrbitControls
+				ref={orbitControlsRef}
+				maxDistance={10}
+				minDistance={8}
+				enableZoom={false}
+			/>
+		</>
+	);
+};
+
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
-			<Section>
+			<Section id="hero">
 				<Hero className={styles.hero}>
 					<HeroSection className={styles.heroText}>
 						<HeroTitle className="animate__animated animate__slideInLeft">
@@ -190,10 +233,10 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 						</HeroParagraph>
 						<HeroButtonContainer>
 							<PrimaryButton className="animate__animated animate__slideInLeft ">
-								<Link href="/services">Commission a service</Link>
+								<Link href="/services">Commission me</Link>
 							</PrimaryButton>
 							<SecondaryButton className="animate__animated animate__slideInLeft">
-								<Link href="/projects">View my projects</Link>
+								<Link href="/projects">Contact Me</Link>
 							</SecondaryButton>
 						</HeroButtonContainer>
 					</HeroSection>
@@ -209,7 +252,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 								height: "600px",
 							}}
 						>
-							<OrbitControls maxDistance={9} minDistance={8} />
+							{/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
 							<ambientLight intensity={1.25} />
 							<directionalLight intensity={0.4} />
 							<Suspense fallback={null}>
@@ -220,6 +263,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 									polar={[0, Math.PI / 4]}
 									azimuth={[-Math.PI / 4, Math.PI / 4]}
 								></PresentationControls>
+								<Rotate3DModel />
 								<Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
 							</Suspense>
 						</CustomCanvas>
@@ -227,7 +271,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 				</Hero>
 				<ScrollDown />
 			</Section>
-			<Section>
+			<Section id="blog-posts">
 				{posts.length > 0 && (
 					<>
 						<ArticleContainer>
@@ -238,7 +282,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 											{format(parseISO(post.date), "MMMM dd, yyyy")}
 										</ArticleDate>
 									)}
-									<h2 >
+									<h2>
 										<Link
 											legacyBehavior
 											as={`/posts/${post.slug}`}
