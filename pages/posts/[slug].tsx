@@ -22,20 +22,42 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import styled from "@emotion/styled";
 import { useEffect, useRef, useState } from "react";
-
-
-
+import { Caption } from "../../components/global";
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
   frontMatter: PostType;
 };
 
+const BlogPage = styled(Page)`
+  display: grid;
+  gap: 1rem;
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "sidebar article sidebar";
+  }
+
+  @media (min-width: 750px) {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar article sidebar";
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar article sidebar";
+  }
+`;
+
 const CustomArticle = styled.article`
   width: 100%;
+  grid-area: article;
   
   margin: 0 auto;
-  margin-left: 300px;
+  
   
   display: flex;
   flex-direction: column;
@@ -45,16 +67,15 @@ const CustomArticle = styled.article`
 
   @media (max-width: 750px) {
     max-width: 100%;
-    padding: 0 1rem;
-  }
 
-  @media (min-width: 750px) {
-    padding: 0 2rem;
-    max-width: 40rem;
+    ul, ol {
+      padding: 0 1.5rem;
+    }
   }
 
   @media (min-width: 1000px) {
     max-width: 65rem;
+    margin-left: 300px;
   }
 
   & h1, h2, h3, h4, h5, h6 {
@@ -66,12 +87,8 @@ const CustomArticle = styled.article`
   & ol, ul {
     list-style-position: inside;
 
-    & ol li, ul li {
-      text-indent: 2rem;
-    }
-
     & li {
-    text-indent: 1rem;}
+    text-indent: 0.5rem;}
   }
 
   & p {
@@ -146,8 +163,6 @@ const CustomH6 = ({ id, ...rest }) => {
   return <h6 {...rest} />;
 };
 
-
-
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
@@ -164,7 +179,7 @@ const components = {
   CustomH6,
 };
 
-const TableOfContents = styled.div`
+const TableOfContents = styled.aside`
   width: 275px;
   min-width: 250px;
   max-height: calc(100vh - 4rem);
@@ -174,10 +189,19 @@ const TableOfContents = styled.div`
   top: 5rem;
   overflow: auto;
   top: 20%;
+  grid-area: sidebar;
 
   & ul li {
     margin-bottom: 0.5rem;
     list-style: none;
+  }
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+
+  @media (min-width: 1300px) {
+    display: block;
   }
 `;
 
@@ -204,7 +228,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   }, []);
 
   return (
-    <Page customMeta={customMeta}>
+    <BlogPage customMeta={customMeta}>
       {/* Nest the smaller headers inside the larger headers to denote hierarchy */}
       <TableOfContents>
         <ul>
@@ -258,17 +282,17 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         </ul>
       </TableOfContents>
       <CustomArticle>
-        <h1>
+        <h1 style={{lineHeight: '1.2', fontSize: '3rem'}}>
           {frontMatter.title}
         </h1>
-        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
+        <Caption>
           {format(parseISO(frontMatter.date? frontMatter.date : ''), 'MMMM dd, yyyy')}
-        </p>
+        </Caption>
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
       </CustomArticle>
-    </Page>
+    </BlogPage>
   );
 };
 

@@ -74,7 +74,7 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+      color-scheme: dark;
       background-color: var(--dark-shades);
       color: var(--light-shades);
   }

@@ -55,7 +55,8 @@ const SiteName = styled.a`
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem 1rem;
-	opacity: 0.4;
+	color: ${Colors.primary};
+	opacity: 0.7;
 
 	& hover {
 		opacity: 1;

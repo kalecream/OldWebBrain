@@ -48,60 +48,36 @@ const Caption = styled.p`
 // Components
 
 const Button = styled.a`
-	width: 100%;
-	margin: 0.25rem auto;
-	padding: 1em 3em;
+	align-items: center;
+	background-image: radial-gradient(100% 100% at 100% 0, ${Colors.primary} 0, ${Colors.secondary} 100%);
+	border-radius: 25px;
+	box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+	box-sizing: border-box;
+	color: ${Colors.lightShade};
 	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	line-height: 1;
+	overflow: hidden;
+	padding: 1rem 2rem;
+	position: relative;
+	text-align: left;
+	text-decoration: none;
+	transition: box-shadow .15s,transform .15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	will-change: box-shadow,transform;
 	opacity: 0.7;
 
-	display: grid;
-	place-items: center;
-
-	border: none;
-	border-radius: 1rem;
-
-	background-color: ${Colors.primary};
-	color: ${Colors.neutral[300]};
-
-	text-transform: capitalize;
-	font-size: 0.75rem;
-	font-weight: 300;
-	transition: background-color 0.5s ease-in-out;
-
-	&:hover {
+	& :hover {
 		opacity: 1;
-		border-radius: 5px;
-		background-color: ${Colors.darkShade};
-		transition: ease-in-out 0.2s;
-
-		a {
-			font-weight: 600;
-		}
+	transform: translateY(-2px);
 	}
-
-
-	@media (prefers-color-scheme: light) {
-		border: 2px solid ${Colors.lightShade};
-
-		&:hover {
-			background-color: ${Colors.primary};
-		}
-	}
-
-	@media (prefers-color-scheme: dark) {
-		border: 1px solid ${Colors.darkShade};
-
-		&:hover {
-			background-color: ${Colors.primary};
-		}
-
-		
-	}
-
 `;
 
 const PrimaryButton = styled(Button)`
-	background-color: ${Colors.primary};
 	color: ${Colors.lightShade};
 	border: none;
 	width: 100%;
@@ -129,30 +105,24 @@ const PrimaryButton = styled(Button)`
 `;
 
 const SecondaryButton = styled(Button)`
-	background-color: transparent;
-	border: 2px solid ${Colors.primary};
-	width: 40%;
-
-	&:hover {
-		background-color: transparent;
-	}
-
-	& a {
-		color: ${Colors.primary};
-	}
+	background-image: radial-gradient(100% 100% at 100% 0, ${Colors.lightShade} 0, ${Colors.lightAccent} 100%);
+	width: 45%;
 
 	@prefers-color-scheme: dark {
-		& hover {
-			border: 2px solid ${Colors.lightShade};
+
+		a {
+			color: ${Colors.lightShade};
 		}
+
 		& a:hover {
 			color: ${Colors.lightShade};
 		}
 	}
 
 	@media (prefers-color-scheme: light) {
-		&:hover {
-			border: 2px solid ${Colors.darkShade};
+
+		a {
+			color: ${Colors.darkShade};
 		}
 
 		& a:hover {

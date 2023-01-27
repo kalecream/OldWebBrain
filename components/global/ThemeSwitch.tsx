@@ -67,7 +67,7 @@ const ThemeSwitch = (): JSX.Element => {
           top: -9px;
           height: 20px;
           width: 20px;
-          border: 2px solid;
+          // border: 2px solid;
           border-color: ${color};
           border-radius: 50%;
           transform: translate(${isDark ? '14px, -14px' : '0, 0'});
