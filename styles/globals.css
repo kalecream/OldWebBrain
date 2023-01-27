@@ -11,18 +11,18 @@ font-family: 'Playfair Display', serif;
 */
 
 :root {
-  --color-white: #fafafa;
-  --color-black: #454545;
-  --grey: #ccc;
+  --color-white: #f4f0f5;
+  --color-black: #34373e;
+  --grey: #454545;
   --color-primary: #979e93;
   /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
-  --light-shades: #f7f7f5;
+  --light-shades: #f4f0f5;
   /* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
-  --light-accent: #9b9884;
+  --light-accent: #8cb6bb;
   /* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.  */
   --dark-accent: #8f8182;
   /* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.  */
-  --dark-shades: #2b3245;
+  --dark-shades: #34373e;
   /*  Use as the text color for dark-on-light designs, or as the background for inverted designs.
    */
   --text-shadow: 0 0 1px #fff;
