@@ -67,10 +67,6 @@ const CustomArticle = styled.article`
 
   @media (max-width: 750px) {
     max-width: 100%;
-
-    ul, ol {
-      padding: 0 1.5rem;
-    }
   }
 
   @media (min-width: 1000px) {
@@ -86,6 +82,15 @@ const CustomArticle = styled.article`
 
   & ol, ul {
     list-style-position: inside;
+
+    @media (max-width: 480px) {
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 1000px) {
+      margin-left: 0;
+      padding: 0 2.5rem;
+    }
 
     & li {
     text-indent: 0.5rem;}
@@ -282,7 +287,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         </ul>
       </TableOfContents>
       <CustomArticle>
-        <h1 style={{lineHeight: '1.2', fontSize: '3rem'}}>
+        <h1 style={{lineHeight: '1.2', fontSize: '2rem', width: '75%'}}>
           {frontMatter.title}
         </h1>
         <Caption>

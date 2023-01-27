@@ -160,9 +160,7 @@ const ArticleContainer = styled(Container)`
 		& > h2 {
 			font-size: 2rem;
 			text-align: center;
-			letter-spacing: 1px;
 			font-weight: 300;
-			text-transform: capitalize;
 		}
 
 		& p {
@@ -225,20 +223,23 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 			<Section id="hero">
 				<Hero className={styles.hero}>
 					<HeroSection className={styles.heroText}>
-						<HeroTitle className="animate__animated animate__slideInLeft">
+						<HeroTitle className="animate__animated animate__slideInUp">
 							Hi <span className={styles.bigEmoji}>👋🏽</span>
 						</HeroTitle>
-						<HeroParagraph className="animate__animated animate__slideInLeft">
-							Thanks for stopping by my website! I'm a generalist from Kingston,
-							Jamaica. I'm currently working on improving my web development and
+						<HeroParagraph className="animate__animated animate__slideInUp">
+						Thanks for stopping by my website! 
+						</HeroParagraph>
+						<HeroParagraph className="animate__animated animate__slideInUp">
+							I'm a generalist from Kingston,
+							Jamaica currently working on improving my web development and
 							multimedia skills.
 						</HeroParagraph>
 						<HeroButtonContainer>
-							<PrimaryButton className="animate__animated animate__slideInLeft ">
-								<Link href="/services">Commission me</Link>
+							<PrimaryButton className="animate__animated animate__slideInUp ">
+								<Link href="/services">Commission </Link>
 							</PrimaryButton>
-							<SecondaryButton className="animate__animated animate__slideInLeft">
-								<Link href="/projects">Contact Me</Link>
+							<SecondaryButton className="animate__animated animate__slideInUp">
+								<Link href="/projects">Contact</Link>
 							</SecondaryButton>
 						</HeroButtonContainer>
 					</HeroSection>

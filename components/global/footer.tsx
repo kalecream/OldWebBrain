@@ -18,6 +18,7 @@ const StyledFooter = styled.footer`
   @media screen and (max-width: 768px) {
 		margin: 0.05rem 1rem;
 		flex-wrap: wrap;
+    justify-content: center;
 	}
 `;
 

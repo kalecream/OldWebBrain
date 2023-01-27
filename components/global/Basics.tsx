@@ -50,7 +50,7 @@ const Caption = styled.p`
 const Button = styled.a`
 	align-items: center;
 	background-image: radial-gradient(100% 100% at 100% 0, ${Colors.primary} 0, ${Colors.secondary} 100%);
-	border-radius: 25px;
+	border-radius: 10px;
 	box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
 	box-sizing: border-box;
 	color: ${Colors.lightShade};
@@ -133,9 +133,9 @@ const SecondaryButton = styled(Button)`
 
 const Card = styled.div`
 	width: 33%;
-	min-width: 325px;
+	min-width: 375px;
 	max-width: 500px;
-	min-height: 300px;
+	min-height: 450px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

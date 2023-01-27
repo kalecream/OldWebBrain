@@ -40,13 +40,27 @@ font-family: 'Playfair Display', serif;
 }
 
 html {
-  
-  padding: 0rem 5rem;
   font-size: 1rem;
   line-height: 1.6;
   background-color: var(--light-shades);
   color: var(--dark-shades);
   font-family: 'Inter', sans-serif;
+
+  @media screen and (max-width: 480px) {
+    padding: 0rem 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0rem 1rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0rem 2rem;
+  }
+    
+  @media screen and (max-width: 1280px) {
+    padding: 0rem 5rem;
+  }
 }
 
 main {
@@ -89,10 +103,14 @@ a:hover {
   }
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Coolvetica';
-  font-weight: 400;
+h1, h2, h3, h4, h5, h6 {
+  
   color: var(--light-accent)
+}
+
+h4, h5 {
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 h1 {
@@ -118,6 +136,23 @@ p {
 }
 
 li {
+  @media screen and (max-width: 450px) {
+    padding: 0 2.5rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 2.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 2.5rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 2.5rem;
+  }
+}
+
+li {
   margin-bottom: 0.5rem;
 }
 
@@ -128,7 +163,7 @@ p, li {
 @media screen and (max-width: 768px) {
 
   p{
-    padding: 0 2rem;
+    padding: 0 2.5rem;
   }
 }
 
