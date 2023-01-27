@@ -40,8 +40,8 @@ const DirectoryListItem = styled.li`
 `;
 
 const DirectoryLinks = styled.a`
-	font-weight: 400;
-	color: ${Colors.darkAccent};
+	font-weight: 500;
+	color: ${Colors.darkShade};
 	text-transform: capitalize;
 	opacity: 0.7;
 
