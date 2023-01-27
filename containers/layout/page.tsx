@@ -10,13 +10,6 @@ import { Colors } from "../../styles/colors";
 import { MetaProps } from "../../types/layout";
 import Head from "../../components/global/Head";
 
-const PageTitle = styled.h1`
-	font-size: 3rem;
-	font-weight: 600;
-	margin-bottom: 1rem;
-	color: ${Colors.primary};
-`;
-
 type LayoutProps = {
 	children: React.ReactNode;
 	customMeta?: MetaProps;
@@ -44,7 +37,6 @@ export const Page = ({
 
 			<main className={styles.main}>
 				<>
-				{title ? <PageTitle>{title}</PageTitle> : null}
 				{children}
 				</>
 			</main>
