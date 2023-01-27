@@ -45,8 +45,8 @@ const DirectoryLinks = styled.a`
 	text-transform: capitalize;
 	opacity: 0.7;
 
-	* hover {
-		font-weight: 700;
+	&:hover {
+		color: ${Colors.primary};
 	}
 `;
 
