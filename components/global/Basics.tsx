@@ -135,7 +135,7 @@ const Card = styled.div`
 	width: 33%;
 	min-width: 325px;
 	max-width: 500px;
-	height: 500px;
+	min-height: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -157,13 +157,23 @@ const Card = styled.div`
 	&:hover {
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 	}
+
+	& p {
+		padding: 0;
+		font-weight: bold;
+	}
+
+	& a {
+		width: 100%;
+	}
 `;
 
 const CardTitle = styled.h2`
-	font-size: 1.5rem;
+	font-size: 3.6rem;
+	font-weight: 900;
+	font-family: 'Playfair Display', serif;
 	text-align: center;
 	color: ${Colors.lightShade};
-	letter-spacing: 2px;
 	word-spacing: 100vw;
 	line-height: 1.2;
 `;

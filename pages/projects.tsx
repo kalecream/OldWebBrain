@@ -19,7 +19,7 @@ const ProjectDescription = styled.p`
 `;
 
 const RigidContainer = styled.div`
-	width: 85%;
+	width: 95%;
 	display: flex;
 	flex-direction: column;
 `;
