@@ -10,7 +10,7 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const StyledNavigation = styled.nav`
 	top: 0;
-	margin: 0 5rem;
+	margin: 2rem 0;
 	justify-content: space-between;
 	display: flex;
 	align-items: center;
@@ -41,14 +41,12 @@ const DirectoryListItem = styled.li`
 
 const DirectoryLinks = styled.a`
 	font-weight: 400;
-	font-size: 0.8rem;
 	color: ${Colors.darkAccent};
 	text-transform: capitalize;
 	opacity: 0.7;
 
 	* hover {
 		font-weight: 700;
-		opacity: 1;
 	}
 `;
 

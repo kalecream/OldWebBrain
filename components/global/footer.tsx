@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
   font-size: 0.65rem;
   display: flex;
   justify-content: space-between;
-  margin: 0 10em;
+  margin: 0;
   padding: 0.5rem 0;
 
   @media screen and (max-width: 768px) {
