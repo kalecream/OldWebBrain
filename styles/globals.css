@@ -11,7 +11,7 @@ font-family: 'Playfair Display', serif;
 */
 
 :root {
-  --color-white: #f4f0f5;
+  --color-white: #fff;
   --color-black: #34373e;
   --grey: #454545;
   --color-primary: #979e93;
@@ -111,10 +111,16 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-p, li, ul {
-  margin: 1rem 0;
-  font-family: 'Inter', sans-serif;
+p {
+  margin-bottom: 1rem;
+}
 
+li {
+  margin-bottom: 0.5rem;
+}
+
+p, li {
+  opacity: 0.9;
 }
 
 @media screen and (max-width: 768px) {
