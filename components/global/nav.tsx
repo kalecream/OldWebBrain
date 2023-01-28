@@ -80,29 +80,6 @@ const SiteName = styled.a`
 	}
 `;
 
-const CTAHeaderButton = styled.button`
-	border: 1px solid ${Colors.primary};
-	background-color: ${Colors.lightShade};
-	color: ${Colors.darkAccent};
-	text-transform: uppercase;
-	font-family: 'Fira Mono', monospace;
-	font-size: 0.8rem;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	margin: 0.5rem 1rem;
-	padding: 0.5rem 1rem;
-
-	&:hover {
-		font-weight: 600;
-		opacity: 1;
-		border: 1px solid ${Colors.lightShade};
-	}
-
-	&:hover a {
-		color: ${Colors.primary};
-	}
-`;
-
 const ThemeToggle = styled.button`
 	display: flex;
 	cursor: pointer;
@@ -175,7 +152,7 @@ export const Navigation: React.FunctionComponent = () => {
 	return (
 		<StyledNavigation className={styles.nav}>
 			<SiteName href="/">
-				<h2>KaleCream</h2>
+				<h1>KaleCream</h1>
 			</SiteName>
 			<DirectoryList>
 				{Directory.map((directory, index) => (

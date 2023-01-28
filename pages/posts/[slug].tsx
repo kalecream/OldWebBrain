@@ -34,21 +34,22 @@ const BlogPage = styled(Page)`
   gap: 1rem;
 
   @media (max-width: 750px) {
+    margin: 0 auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
-    grid-template-areas: "sidebar article sidebar";
+    grid-template-rows: 1fr;
+    grid-template-areas: sidebar article ;
   }
 
   @media (min-width: 750px) {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "sidebar article sidebar";
+    grid-template-areas: sidebar article ;
   }
 
   @media (min-width: 1000px) {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "sidebar article sidebar";
+    grid-template-areas: sidebar article ;
   }
 `;
 
@@ -99,6 +100,35 @@ const CustomArticle = styled.article`
   & p {
     text-align: justify;
     line-height: 1.8;
+  }
+`;
+
+const TableOfContents = styled.aside`
+  width: 275px;
+  min-width: 250px;
+  max-height: calc(100vh - 4rem);
+
+
+  align-self: flex-start;
+  position: fixed;
+  top: 5rem;
+  overflow: auto;
+  top: 20%;
+  grid-area: sidebar;
+
+  & ul li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+
+  @media (min-width: 1000px) {
+    display: block;
+    margin-left: 1rem;
+    padding: 0 2rem;
   }
 `;
 
@@ -183,32 +213,6 @@ const components = {
   CustomH5,
   CustomH6,
 };
-
-const TableOfContents = styled.aside`
-  width: 275px;
-  min-width: 250px;
-  max-height: calc(100vh - 4rem);
-  padding: 1rem;
-  align-self: flex-start;
-  position: fixed;
-  top: 5rem;
-  overflow: auto;
-  top: 20%;
-  grid-area: sidebar;
-
-  & ul li {
-    margin-bottom: 0.5rem;
-    list-style: none;
-  }
-
-  @media (max-width: 1300px) {
-    display: none;
-  }
-
-  @media (min-width: 1300px) {
-    display: block;
-  }
-`;
 
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {

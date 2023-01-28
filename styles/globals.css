@@ -133,12 +133,18 @@ h3 {
 
 p {
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+      padding: 0 2.5rem;
+  }
 }
 
 li {
+
   @media screen and (max-width: 450px) {
     padding: 0 2.5rem;
   }
+
   @media screen and (max-width: 768px) {
     padding: 0 2.5rem;
   }
@@ -158,13 +164,6 @@ li {
 
 p, li {
   opacity: 0.9;
-}
-
-@media screen and (max-width: 768px) {
-
-  p{
-    padding: 0 2.5rem;
-  }
 }
 
 img, image {
