@@ -8,9 +8,9 @@ export const WEBSITE_HOST_URL = "https://www.kalecream.com";
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
 	const router = useRouter();
 	const meta: MetaProps = {
-		title: "KaleCream - Website",
+		title: "KaleCream",
 		description:
-			"Sleep Deprived Father. Senior Web Developer. Lover of all things Ramen and Kpop.",
+			"Web Developer.",
 		image: `${WEBSITE_HOST_URL}/images/site-preview.png`,
 		type: "website",
 		...customMeta,
@@ -23,7 +23,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
 			<meta property="og:url" content={`${WEBSITE_HOST_URL}${router.asPath}`} />
 			<link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
 			<meta property="og:type" content={meta.type} />
-			<meta property="og:site_name" content="KaleCream - Website" />
+			<meta property="og:site_name" content="KaleCream" />
 			<meta property="og:description" content={meta.description} />
 			<meta property="og:title" content={meta.title} />
 			<meta property="og:image" content={meta.image} />
@@ -35,10 +35,6 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
 			{meta.date && (
 				<meta property="article:published_time" content={meta.date} />
 			)}
-			<link
-					href="https://fonts.googleapis.com/css?family=Epilogue"
-					rel="stylesheet"
-				/>
 		</NextHead>
 	);
 };

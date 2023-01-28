@@ -12,14 +12,25 @@ const StyledFooter = styled.footer`
   font-size: 0.65rem;
   display: flex;
   justify-content: space-between;
-  margin: 0;
   padding: 0.5rem 0;
+
+  @media screen and (max-width: 450px) {
+    margin: 0.5rem 0;
+  }
 
   @media screen and (max-width: 768px) {
 		margin: 0.05rem 1rem;
 		flex-wrap: wrap;
     justify-content: center;
 	}
+
+  @media screen and (max-width: 1024px) {
+    margin: 0.05rem 3rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 0.05rem 5rem;
+  }
 `;
 
 const FooterColumn = styled.div`

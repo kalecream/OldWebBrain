@@ -10,8 +10,7 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const StyledNavigation = styled.nav`
 	top: 0;
-	margin: 2rem 0;
-	justify-content: space-between;
+	justify-content: space-around;
 	display: flex;
 	align-items: center;
 	z-index: 1;
@@ -21,9 +20,17 @@ const StyledNavigation = styled.nav`
 	}
 
 	@media screen and (max-width: 768px) {
-		margin: 0.05rem 1rem;
+		margin: 1rem 3rem;
 		flex-wrap: wrap;
 		flex-direction: column;
+	}
+
+	@media screen and (max-width: 1024px) {
+		margin: 2rem 5rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		margin: 3rem 5rem;
 	}
 `;
 
