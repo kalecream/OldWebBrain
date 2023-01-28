@@ -15,7 +15,7 @@ font-family: 'Playfair Display', serif;
   --color-black: #34373e;
   --grey: #454545;
   --secondary: #2b694d;
-  --color-primary: #979e93;
+  --color-primary: #3EB489;
   /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
   --light-shades: #f4f0f5;
   /* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
@@ -105,7 +105,8 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   
-  color: var(--light-accent)
+  color: var(--color-primary);
+  opacity: 0.9;
 }
 
 h4, h5 {

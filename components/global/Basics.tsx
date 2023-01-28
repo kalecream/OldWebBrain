@@ -47,7 +47,7 @@ const Caption = styled.p`
 
 // Components
 
-const Button = styled.a`
+const Button = styled(Link)`
 	align-items: center;
 	background-image: radial-gradient(100% 100% at 100% 0, ${Colors.primary} 0, ${Colors.secondary} 100%);
 	border-radius: 10px;
@@ -73,7 +73,8 @@ const Button = styled.a`
 
 	& :hover {
 		opacity: 1;
-	transform: translateY(-2px);
+		transform: translateY(-2px);
+		background-image: radial-gradient(100% 100% at 100% 0, ${Colors.secondary} 0, ${Colors.primary} 100%);
 	}
 `;
 

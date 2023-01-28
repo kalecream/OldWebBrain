@@ -235,12 +235,10 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 							multimedia skills.
 						</HeroParagraph>
 						<HeroButtonContainer>
-							<PrimaryButton className="animate__animated animate__slideInUp ">
-								<Link href="/services">Commission </Link>
+							<PrimaryButton className="animate__animated animate__slideInUp" href="/services">
+								Commission
 							</PrimaryButton>
-							<SecondaryButton className="animate__animated animate__slideInUp">
-								<Link href="/projects">Contact</Link>
-							</SecondaryButton>
+							<SecondaryButton className="animate__animated animate__slideInUp" href="/projects">Contact</SecondaryButton>
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
