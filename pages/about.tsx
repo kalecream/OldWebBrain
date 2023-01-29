@@ -8,7 +8,8 @@ import Image from "next/image";
 import Books from "../data/books";
 import { Colors } from "../styles/colors";
 import 'animate.css';
-import { Section, HalfColumn } from "../components/global";
+import { Section, HalfColumn, Container, ScrollDown } from "../components/global";
+import CurrentReads from "../components/currentReads";
 
 const PhotoGrid = styled.div`
 	display: flex;
@@ -86,44 +87,19 @@ border-radius: 5px;
 	padding: 0.5rem 1.5rem;
 `;
 
-export const LightTablePage = () => {
+export const AboutPage = () => {
+
+
 	return (
 		<Page title="About">
 			<Section>
-				<DemographicTable className="animate__animated animate__slideInUp">
-					<TableRow>
-						<TableHeader>Reading</TableHeader>
-						<TableData>
-							{Books.map((book) => {
-								if (book.status === "reading") {
-									return (
-										<p key={book.title}>
-											{book.title} by {book.author}
-										</p>
-									);
-								}
-							})}
-							<a href="/read">-- Read History --</a>
-						</TableData>
-					</TableRow>
-					<TableRow>
-						<TableHeader>Watching</TableHeader>
-						<TableData>
-							You’re not the same person once the film has finished [
-							<a href="https://letterboxd.com/andredenervaux/list/youre-not-the-same-person-once-the-film-has/">
-								Link
-							</a>
-							]
-							<br />
-							<a href="https://letterboxd.com/kalecream/stats/">
-								-- Watch History (Letterboxd) --
-							</a>
-						</TableData>
-					</TableRow>
-				</DemographicTable>
+				<Container> I am a late 20s woman from Kingston Jamaica.</Container>
+				<ScrollDown />
 			</Section>
+			
+			<CurrentReads />
 		</Page>
 	);
 };
 
-export default LightTablePage;
+export default AboutPage;
