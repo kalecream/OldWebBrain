@@ -76,6 +76,7 @@ const Button = styled(Link)`
 		transform: translateY(-2px);
 		background-image: radial-gradient(100% 100% at 100% 0, ${Colors.secondary} 0, ${Colors.primary} 100%);
 	}
+
 `;
 
 const PrimaryButton = styled(Button)`
