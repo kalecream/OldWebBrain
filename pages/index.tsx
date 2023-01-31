@@ -35,6 +35,7 @@ import {
 	PerspectiveCamera,
 } from "@react-three/drei";
 import OtherProjects from "../components/home/otherProjects";
+import LatestProjects from "../components/home/latestProjects";
 
 
 type IndexProps = {
@@ -299,6 +300,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 					</>
 				)}
 			</Section>
+			<LatestProjects />
 			{/* <OtherProjects/> */}
 		</Page>
 	);

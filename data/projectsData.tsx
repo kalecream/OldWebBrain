@@ -1,6 +1,7 @@
 const Projects = [
 	{
 		id: 1,
+		display: true,
 		title: "Blue Orange",
 		image:
 			"https://github.com/kalecream/dotfiles/blob/main/images/wallpaper.png?raw=true",
@@ -26,6 +27,7 @@ const Projects = [
 	},
 	{
 		id: 2,
+		display: true,
 		title: "Morning Messages",
 		image:
 			"https://images.unsplash.com/photo-1523145667259-072b00e52735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
@@ -48,6 +50,7 @@ const Projects = [
 	},
 	{
 		id: 3,
+		display: false,
 		title: "Trality Bots",
 		image:
 			"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format",
@@ -66,6 +69,7 @@ const Projects = [
 	},
     {
 		id: 4,
+		display: true,
         title: "Kalecream Website",
         description: (<span>I've rebuilt this website many different times in plain Html/Css/Js, Wordpress and now in Typescript.</span>),
         link: "/",
