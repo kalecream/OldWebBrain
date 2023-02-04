@@ -66,12 +66,13 @@ const CustomArticle = styled.article`
 	align-items: center;
 
 	@media (max-width: 900px) {
-		max-width: 100%;
+		max-width: 50rem;
 	}
 
 	@media (min-width: 900px) {
 		max-width: 40rem;
 		margin-left: 300px;
+		padding: 0 2.5rem;
 	}
 
 	@media (min-width: 1200px) {
@@ -102,11 +103,6 @@ const CustomArticle = styled.article`
 	& p {
 		text-align: justify;
 		line-height: 1.8;
-	}
-
-	@media (max-width: 1000px) {
-		margin-left: 0;
-		padding: 0 2.5rem;
 	}
 `;
 
