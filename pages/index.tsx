@@ -124,29 +124,6 @@ const HeroButtonContainer = styled.div`
 	gap: 1rem;
 `;
 
-const HeroSectionImage = styled(Image)`
-	width: 70%;
-	height: 100%;
-	min-height: 300px;
-	max-height: 1000px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	@media (max-width: 1500px) {
-		width: 100%;
-		height: 50%;
-	}
-
-	@media (max-width: 900px) {
-		width: 80%;
-	}
-
-	@media (max-width: 750px) {
-		display: none;
-	}
-`;
-
 const ArticleContainer = styled(Container)`
 	padding: 0 2rem;
 	justify-content: space-around;
