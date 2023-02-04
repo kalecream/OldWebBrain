@@ -1,25 +1,25 @@
-import * as React from 'react';
-import 'animate.css';
-import styled from '@emotion/styled';
-import { Colors } from '../../styles/colors';
-import Image from 'next/image';
-import Link from 'next/link';
+import * as React from "react";
+import "animate.css";
+import styled from "@emotion/styled";
+import { Colors } from "../../styles/colors";
+import Image from "next/image";
+import Link from "next/link";
 
 // Layout
 const Section = styled.section`
-    width: 100vw;
+	width: 100vw;
 	display: grid;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 `;
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
+	width: 100%;
+	height: 100%;
+	display: flex;
 	flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 	gap: 1rem;
 `;
 
@@ -36,8 +36,6 @@ const HalfColumn = styled.div`
 	}
 `;
 
-
-
 // TYprography
 const Caption = styled.p`
 	font-size: 0.8rem;
@@ -49,9 +47,14 @@ const Caption = styled.p`
 
 const Button = styled(Link)`
 	align-items: center;
-	background-image: radial-gradient(100% 100% at 100% 0, ${Colors.primary} 0, ${Colors.secondary} 100%);
+	background-image: radial-gradient(
+		100% 100% at 100% 0,
+		${Colors.primary} 0,
+		${Colors.secondary} 100%
+	);
 	border-radius: 10px;
-	box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+	box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
 	box-sizing: border-box;
 	color: ${Colors.lightShade};
 	cursor: pointer;
@@ -63,20 +66,23 @@ const Button = styled(Link)`
 	position: relative;
 	text-align: left;
 	text-decoration: none;
-	transition: box-shadow .15s,transform .15s;
+	transition: box-shadow 0.15s, transform 0.15s;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
 	white-space: nowrap;
-	will-change: box-shadow,transform;
+	will-change: box-shadow, transform;
 	opacity: 0.7;
 
 	& :hover {
 		opacity: 1;
 		transform: translateY(-2px);
-		background-image: radial-gradient(100% 100% at 100% 0, ${Colors.secondary} 0, ${Colors.primary} 100%);
+		background-image: radial-gradient(
+			100% 100% at 100% 0,
+			${Colors.secondary} 0,
+			${Colors.primary} 100%
+		);
 	}
-
 `;
 
 const PrimaryButton = styled(Button)`
@@ -85,7 +91,6 @@ const PrimaryButton = styled(Button)`
 	width: 100%;
 
 	@media (prefers-color-scheme: dark) {
-
 		a {
 			color: ${Colors.darkShade};
 		}
@@ -100,7 +105,7 @@ const PrimaryButton = styled(Button)`
 			color: ${Colors.lightShade};
 		}
 
-		a{
+		a {
 			color: ${Colors.lightShade};
 		}
 	}
@@ -138,12 +143,10 @@ const Card = styled.div`
 	min-width: 375px;
 	max-width: 500px;
 	min-height: 450px;
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	justify-content: center;
-	align-items: center;
-	align-self: center;
-	gap: 0.5rem;
+	align-self:auto;
+	gap: 0.2rem;
 	padding: 2rem;
 	border: 3px solid #fff;
 	border-radius: 1rem;
@@ -161,8 +164,11 @@ const Card = styled.div`
 	}
 
 	& p {
-		padding: 0;
-		font-weight: bold;
+		padding: 1rem;
+		font-size: 0.8rem;
+		font-weight: 600;
+		text-align: start;
+		color: ${Colors.lightShade};
 	}
 
 	& a {
@@ -173,12 +179,22 @@ const Card = styled.div`
 const CardTitle = styled.h2`
 	font-size: 3.6rem;
 	font-weight: 900;
-	font-family: 'Playfair Display', serif;
+	font-family: "Playfair Display", serif;
 	text-align: center;
 	color: ${Colors.lightShade};
 	word-spacing: 100vw;
 	line-height: 1.2;
+	text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
 `;
 
-export {Button, PrimaryButton, SecondaryButton, Card, CardTitle, Container, Caption, HalfColumn,
-		Section}
+export {
+	Button,
+	PrimaryButton,
+	SecondaryButton,
+	Card,
+	CardTitle,
+	Container,
+	Caption,
+	HalfColumn,
+	Section,
+};

@@ -12,6 +12,7 @@ import { PostType } from "../types/post";
 
 import styled from "@emotion/styled";
 import { Colors } from "../styles/colors";
+import { Card, CardTitle } from "../components/global/Basics";
 
 import {
 	Button,
@@ -36,7 +37,6 @@ import {
 } from "@react-three/drei";
 import OtherProjects from "../components/home/otherProjects";
 import LatestProjects from "../components/home/latestProjects";
-
 
 type IndexProps = {
 	posts: PostType[];
@@ -125,31 +125,64 @@ const HeroButtonContainer = styled.div`
 `;
 
 const ArticleContainer = styled(Container)`
-	padding: 0 2rem;
-	justify-content: space-around;
+	height: 100vh;
+	padding: 0 5rem;
+`;
 
-	& > article {
-		display: grid;
-		place-items: center;
-		min-width: 400px;
-		max-width: 450px;
-		gap: 0.05 rem;
+const FeaturedPosts = styled.div`
+	width: 65%;
+	float: left;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 
-		& > h2 {
-			font-size: 2rem;
-			text-align: center;
-			font-weight: 300;
-		}
-
-		& p {
-			text-align: justify;
-		}
+	@media (max-width: 1100px) {
+		width: 100%;
 	}
 `;
 
 const ArticleDate = styled(Caption)`
 	font-size: 0.8rem;
 	text-align: center;
+`;
+
+const FeaturedPost = styled(Card)`
+	min-width: 300px;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	placeholder: 1rem;
+	place-items: center;
+	gap: 0.5rem;
+	padding: 1rem;
+`;
+
+const FeaturedPostTitle = styled.h2`
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: 800;
+	font-family: "Playfair Display", serif;
+`;
+
+const FeaturedPostImage = styled.div`
+	width: 100%;
+	min-height: 33%;
+	max-height: 100%;
+`;
+
+const OtherArticles = styled.div`
+	width: 30%;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	flex-wrap: wrap;
+
+	@media (max-width: 1100px) {
+		width: 100%;
+		flex-direction: row;
+	}
 `;
 
 const angletoRadian = (angle: number) => {
@@ -205,18 +238,25 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 							Hi <span className={styles.bigEmoji}>👋🏽</span>
 						</HeroTitle>
 						<HeroParagraph className="animate__animated animate__slideInUp">
-						Thanks for stopping by my website! 
+							Thanks for stopping by my website!
 						</HeroParagraph>
 						<HeroParagraph className="animate__animated animate__slideInUp">
-							I'm a generalist from Kingston,
-							Jamaica currently working on improving my web development and
-							multimedia skills.
+							I'm a generalist from Kingston, Jamaica currently working on
+							improving my web development and multimedia skills.
 						</HeroParagraph>
 						<HeroButtonContainer>
-							<PrimaryButton className="animate__animated animate__slideInUp" href="/services">
+							<PrimaryButton
+								className="animate__animated animate__slideInUp"
+								href="/services"
+							>
 								Commission
 							</PrimaryButton>
-							<SecondaryButton className="animate__animated animate__slideInUp" href="/projects">Contact</SecondaryButton>
+							<SecondaryButton
+								className="animate__animated animate__slideInUp"
+								href="/projects"
+							>
+								Contact
+							</SecondaryButton>
 						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
@@ -254,25 +294,53 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 				{posts.length > 0 && (
 					<>
 						<ArticleContainer>
-							{posts.map((post) => (
-								<article key={post.slug}>
-									{post.date && (
-										<ArticleDate className="text-sm text-gray-500">
-											{format(parseISO(post.date), "MMMM dd, yyyy")}
-										</ArticleDate>
-									)}
-									<h2>
-										<Link
-											legacyBehavior
-											as={`/posts/${post.slug}`}
-											href={`/posts/[slug]`}
-										>
-											<a>{post.title}</a>
-										</Link>
-									</h2>
-									<p className="text-gray-500">{post.description}</p>
-								</article>
-							))}
+							<FeaturedPosts>
+								{posts.slice(0, 2).map(
+									(post) =>
+										post.draft !== false && (
+											<FeaturedPost key={post.slug}>
+												{post.date && (
+													<ArticleDate>
+														{format(parseISO(post.date), "MMMM dd, yyyy")}
+													</ArticleDate>
+												)}
+												{/* <FeaturedPostImage>
+													<Image
+														src={post.image ?? ""}
+														alt={post.title}
+														style={{ objectFit: "cover" }}
+													/>
+												</FeaturedPostImage> */}
+												<CardTitle>
+													<Link
+														as={`/posts/${post.slug}`}
+														href={`/posts/[slug]`}
+													>
+														{post.title}
+													</Link>
+												</CardTitle>
+												<p>{post.description}</p>
+											</FeaturedPost>
+										)
+								)}
+							</FeaturedPosts>
+							<OtherArticles>
+								{posts.slice(3).map((post) => (
+									<article key={post.slug}>
+										{post.date && (
+											<ArticleDate className="text-sm text-gray-500">
+												{format(parseISO(post.date), "MMMM dd, yyyy")}
+											</ArticleDate>
+										)}
+										<h2>
+											<Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+												<FeaturedPostTitle>{post.title}</FeaturedPostTitle>
+											</Link>
+										</h2>
+										<p className="text-gray-500">{post.description}</p>
+									</article>
+								))}
+							</OtherArticles>
 						</ArticleContainer>
 					</>
 				)}
