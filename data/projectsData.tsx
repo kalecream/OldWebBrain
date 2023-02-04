@@ -7,8 +7,8 @@ const Projects = [
 			"https://github.com/kalecream/dotfiles/blob/main/images/wallpaper.png?raw=true",
 		description: (
 			<span>
-				This is a duotone i3wm theme. I installed i3wm because
-				for a while, my mouse wasn't working properly, so I had to use the keyboard to navigate. 
+				This is a duotone i3wm theme. I installed i3wm because for a while, my
+				mouse wasn't working properly, so I had to use the keyboard to navigate.
 			</span>
 		),
 		link: "https://github.com/kalecream/dotfiles",
@@ -67,15 +67,24 @@ const Projects = [
 		language: ["Python"],
 		created: "2022-11-07",
 	},
-    {
+	{
 		id: 4,
 		display: true,
-        title: "Kalecream Website",
-        description: (<span>I've rebuilt this website many different times in plain Html/Css/Js, Wordpress and now in Typescript.</span>),
-        link: "/",
-        technology: [ <a href="https://nextjs.org/">Next.js</a>, <a href="https://threejs.org/">Three.js</a>, <a href="https://greensock.com/gsap/">GSAP</a>], 
-        language: ["TypeScript", "MDX"],
-    }
+		title: "Kalecream Website",
+		description: (
+			<span>
+				I've rebuilt this website many different times in plain Html/Css/Js,
+				Wordpress and now in Typescript.
+			</span>
+		),
+		link: "/",
+		technology: [
+			<a href="https://nextjs.org/">Next.js</a>,
+			<a href="https://threejs.org/">Three.js</a>,
+			<a href="https://greensock.com/gsap/">GSAP</a>,
+		],
+		language: ["TypeScript", "MDX"],
+	},
 ];
 
 export default Projects;
