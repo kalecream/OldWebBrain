@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Coolvetica";
-  src: url("./fonts/coolvetica.otf");
+	font-family: "Coolvetica";
+	src: url("./fonts/coolvetica.otf");
 }
 
 /* Google fonts
@@ -11,225 +11,259 @@ font-family: 'Playfair Display', serif;
 */
 
 :root {
-  --color-white: #fff;
-  --color-black: #34373e;
-  --grey: #454545;
-  --secondary: #2b694d;
-  --color-primary: #3EB489;
-  /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
-  --light-shades: #f4f0f5;
-  /* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
-  --light-accent: #8cb6bb;
-  /* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.  */
-  --dark-accent: #8f8182;
-  /* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.  */
-  --dark-shades: #34373e;
-  /*  Use as the text color for dark-on-light designs, or as the background for inverted designs.
+	--color-white: #fff;
+	--color-black: #34373e;
+	--grey: #454545;
+	--secondary: #2b694d;
+	--color-primary: #3eb489;
+	/* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
+	--light-shades: #f4f0f5;
+	/* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
+	--light-accent: #8cb6bb;
+	/* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.  */
+	--dark-accent: #8f8182;
+	/* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.  */
+	--dark-shades: #34373e;
+	/*  Use as the text color for dark-on-light designs, or as the background for inverted designs.
    */
-  --text-shadow: 0 0 1px #fff;
-  --success: #63aa64;
-  --warning: #e09a2c;
-  --error: #f44336;
+	--text-shadow: 0 0 1px #fff;
+	--success: #63aa64;
+	--warning: #e09a2c;
+	--error: #f44336;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  transition: ease-in-out 0.2s;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	transition: ease-in-out 0.2s;
 }
 
 html {
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: var(--light-shades);
-  color: var(--dark-shades);
-  font-family: 'Inter', sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	background-color: var(--light-shades);
+	color: var(--dark-shades);
+	font-family: "Inter", sans-serif;
 
-  @media screen and (max-width: 480px) {
-    padding: 0rem 0.5rem;
-  }
+	@media screen and (max-width: 480px) {
+		padding: 0rem 0.5rem;
+	}
 
-  @media screen and (max-width: 768px) {
-    padding: 0rem 1rem;
-  }
+	@media screen and (max-width: 768px) {
+		padding: 0rem 1rem;
+	}
 
-  @media screen and (max-width: 1024px) {
-    padding: 0rem 2rem;
-  }
-    
-  @media screen and (max-width: 1280px) {
-    padding: 0rem 5rem;
-  }
+	@media screen and (max-width: 1024px) {
+		padding: 0rem 2rem;
+	}
+
+	@media screen and (max-width: 1280px) {
+		padding: 0rem 5rem;
+	}
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 section {
-  min-height: 75vh;
-  width: 100vw;
-  padding: 1rem 0rem;
+	min-height: 75vh;
+	width: 100vw;
+	padding: 1rem 0rem;
 }
 
 a {
-  text-decoration: none;
-  color: var(--secondary);
-  font-weight: 600;
+	text-decoration: none;
+	color: var(--secondary);
+	font-weight: 600;
 }
 
 a:hover {
-  color: var(--dark-shades);
-  transition: ease-in-out 0.2s;
+	color: var(--dark-shades);
+	transition: ease-in-out 0.2s;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-      color-scheme: dark;
-      background-color: var(--dark-shades);
-      color: var(--light-shades);
-  }
-  .theme-toggle {
-      background-color: var(--color-primary);
-  }
-  .theme-toggle::after {
-      content: '🌙';
-      left: 2px;
-      background-color: var(--light-shades);
-  }
+	html {
+		color-scheme: dark;
+		background-color: var(--dark-shades);
+		color: var(--light-shades);
+	}
+	.theme-toggle {
+		background-color: var(--color-primary);
+	}
+	.theme-toggle::after {
+		content: "🌙";
+		left: 2px;
+		background-color: var(--light-shades);
+	}
 }
 
-h1, h2, h3, h4, h5, h6 {
-  
-  color: var(--color-primary);
-  opacity: 0.9;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-primary);
+	opacity: 0.9;
 }
 
-h4, h5 {
-  font-weight: 600;
-  font-size: 1.5rem;
+h4,
+h5 {
+	font-weight: 600;
+	font-size: 1.5rem;
 }
 
 h1 {
-  font-size: 3.5rem;
-  margin-bottom: 0rem;
-  font-family: "Coolvetica";
-  text-align: center;
+	font-size: 3.5rem;
+	margin-bottom: 0rem;
+	font-family: "Coolvetica";
+	text-align: center;
 }
 
 h2 {
-  padding: 0.25em;
-  font-size: 2.5rem;
-  margin-top: 0;
+	padding: 0.25em;
+	font-size: 2.5rem;
+	margin-top: 0;
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
 }
 
 p {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
-  @media screen and (max-width: 768px) {
-      padding: 0 2.5rem;
-  }
+	@media screen and (max-width: 768px) {
+		padding: 0 2.5rem;
+	}
 }
 
 li {
+	@media screen and (max-width: 450px) {
+		padding: 0 2.5rem;
+	}
 
-  @media screen and (max-width: 450px) {
-    padding: 0 2.5rem;
-  }
+	@media screen and (max-width: 768px) {
+		padding: 0 2.5rem;
+	}
 
-  @media screen and (max-width: 768px) {
-    padding: 0 2.5rem;
-  }
+	@media screen and (max-width: 1024px) {
+		padding: 0 2.5rem;
+	}
 
-  @media screen and (max-width: 1024px) {
-    padding: 0 2.5rem;
-  }
-
-  @media screen and (max-width: 1280px) {
-    padding: 0 2.5rem;
-  }
+	@media screen and (max-width: 1280px) {
+		padding: 0 2.5rem;
+	}
 }
 
 li {
-  margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
-p, li {
-  opacity: 0.9;
+p,
+li {
+	opacity: 0.9;
 }
 
-img, image {
-  border-radius: 15px;
+img,
+image {
+	border-radius: 15px;
 }
 
-.head3{
-  margin-left: 10px;
-  list-style-type: circle;
+.head3 {
+	margin-left: 10px;
+	list-style-type: circle;
 }
-.head4{
-  margin-left: 20px;
-  list-style-type: square;
-}
-
-kbd, .kbd{
-  display: inline-block;
-  padding: .17em .6em .17em .4em;
-  margin: 0 .2em;
-  position: relative;
-  top: -.2em;
-
-  color: #333;
-  font: normal .8em/1  sans-serif;
-  text-decoration: none;
-  box-shadow: inset 0 -.2em .12em -.15em rgba(255, 255, 255, .7);
-  cursor:default;
-  border-radius: .3em;
-  
-  background: -ms-radial-gradient(top, ellipse cover,  #ddd 0%,white 100%);
-  background: radial-gradient(ellipse at top right,  #ddd 0%,white 100%);
+.head4 {
+	margin-left: 20px;
+	list-style-type: square;
 }
 
-kbd::before, .kbd::before, kbd::after, .kbd::after{
-  content:'';
-  position:absolute;
-  left:-.17em;
-  right:-.17em;
-  top:.1em;
-  bottom:-.4em;
-  border-radius: .4em;
+kbd,
+.kbd {
+	display: inline-block;
+	padding: 0.17em 0.6em 0.17em 0.4em;
+	margin: 0 0.2em;
+	position: relative;
+	top: -0.2em;
+
+	color: #333;
+	font: normal 0.8em/1 sans-serif;
+	text-decoration: none;
+	box-shadow: inset 0 -0.2em 0.12em -0.15em rgba(255, 255, 255, 0.7);
+	cursor: default;
+	border-radius: 0.3em;
+
+	background: -ms-radial-gradient(top, ellipse cover, #ddd 0%, white 100%);
+	background: radial-gradient(ellipse at top right, #ddd 0%, white 100%);
+}
+
+kbd::before,
+.kbd::before,
+kbd::after,
+.kbd::after {
+	content: "";
+	position: absolute;
+	left: -0.17em;
+	right: -0.17em;
+	top: 0.1em;
+	bottom: -0.4em;
+	border-radius: 0.4em;
 }
 
 /*white highlight*/
-kbd::before, .kbd::before{
-  z-index:-1;
+kbd::before,
+.kbd::before {
+	z-index: -1;
 
-  border:1px solid gray;
-  background: #a8a8a8;
-  background: radial-gradient(circle 3em at -1.7em 0, white 0%, white 70% ,rgba(255,255,255,0) 80%);
+	border: 1px solid gray;
+	background: #a8a8a8;
+	background: radial-gradient(
+		circle 3em at -1.7em 0,
+		white 0%,
+		white 70%,
+		rgba(255, 255, 255, 0) 80%
+	);
 }
 
-kbd::after, .kbd::after{
-  z-index:-2;
+kbd::after,
+.kbd::after {
+	z-index: -2;
 
-  background: #a8a8a8;
-  background: radial-gradient(ellipse 1em 1.7em at top right, #aaa 0%, #aaa 70%, #ccc 100%);
+	background: #a8a8a8;
+	background: radial-gradient(
+		ellipse 1em 1.7em at top right,
+		#aaa 0%,
+		#aaa 70%,
+		#ccc 100%
+	);
 }
- 
-.kbd-down{
-  top: 0em;
-  box-shadow: inset 0 -.2em .3em -.1em rgba(200, 200, 200, .5);
+
+.kbd-down {
+	top: 0em;
+	box-shadow: inset 0 -0.2em 0.3em -0.1em rgba(200, 200, 200, 0.5);
 }
-.kbd-down::before, .kbd-down::after{
-  top:-.1em;
-  bottom: -.2em;   
+.kbd-down::before,
+.kbd-down::after {
+	top: -0.1em;
+	bottom: -0.2em;
 }
-.kbd-down::before{ box-shadow: inset 0px 1px 6px 0px rgba(0,0,0,1); }
+.kbd-down::before {
+	box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 1);
+}
+
+.head2 {
+	margin-left: 10px;
+	list-style-type: disc;
+}
+.head3 {
+	margin-left: 30px;
+	list-style-type: circle;
+}

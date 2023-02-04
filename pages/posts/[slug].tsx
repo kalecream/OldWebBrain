@@ -22,6 +22,9 @@ import remarkGfm from "remark-gfm";
 import styled from "@emotion/styled";
 import { useEffect, useRef, useState } from "react";
 import { Caption } from "../../components/global";
+import { Colors } from "../../styles/colors";
+
+import { useHeadsObserver } from "../hooks/useObserver";
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -46,6 +49,13 @@ const BlogPage = styled(Page)`
 	}
 
 	@media (min-width: 1000px) {
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: sidebar article;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 0 5rem;
 		grid-template-columns: 1fr 3fr;
 		grid-template-rows: 1fr;
 		grid-template-areas: sidebar article;
@@ -76,8 +86,9 @@ const CustomArticle = styled.article`
 	}
 
 	@media (min-width: 1200px) {
-		max-width: 65rem;
-		margin-left: 300px;
+		max-width: 70rem;
+		margin-left: 500px;
+		margin-top: 5rem;
 	}
 
 	& h1,
@@ -120,7 +131,15 @@ const TableOfContents = styled.aside`
 
 	& ul li {
 		margin-bottom: 0.5rem;
-		list-style: none;
+		font-weight: 300;
+	}
+
+	& ul li:hover {
+		color: ${Colors.primary};
+	}
+
+	& ul li::marker {
+		color: ${Colors.primary};
 	}
 
 	@media (max-width: 900px) {
@@ -216,6 +235,17 @@ const components = {
 	CustomH6,
 };
 
+const getClassName = (level: string) => {
+	switch (level) {
+		case "H2":
+			return "head2";
+		case "H3":
+			return "head3";
+		default:
+			return "head2";
+	}
+};
+
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	const customMeta: MetaProps = {
 		title: `${frontMatter.title}`,
@@ -226,6 +256,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	};
 
 	const [headings, setHeadings] = useState<any[]>([]);
+	const { activeId } = useHeadsObserver();
 
 	useEffect(() => {
 		const headings = document.querySelectorAll(" h2, h3");
@@ -243,51 +274,23 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 			<TableOfContents>
 				<ul>
 					{headings.map((heading) => {
-						if (heading.level === "H2") {
-							return (
-								<li key={heading.id}>
-									<Link legacyBehavior href={`#${heading.id}`}>
-										<a>{heading.text}</a>
-									</Link>
-								</li>
-							);
-						}
-						if (heading.level === "H3") {
-							return (
-								<li key={heading.id}>
-									<Link legacyBehavior href={`#${heading.id}`}>
-										<a style={{ marginLeft: "20px" }}>{heading.text}</a>
-									</Link>
-								</li>
-							);
-						}
-						if (heading.level === "H4") {
-							return (
-								<li key={heading.id}>
-									<Link legacyBehavior href={`#${heading.id}`}>
-										<a style={{ marginLeft: "50px" }}>{heading.text}</a>
-									</Link>
-								</li>
-							);
-						}
-						if (heading.level === "H5") {
-							return (
-								<li key={heading.id}>
-									<Link legacyBehavior href={`#${heading.id}`}>
-										<a style={{ marginLeft: "80px" }}>{heading.text}</a>
-									</Link>
-								</li>
-							);
-						}
-						if (heading.level === "H6") {
-							return (
-								<li key={heading.id}>
-									<Link legacyBehavior href={`#${heading.id}`}>
-										<a style={{ marginLeft: "40px" }}>{heading.text}</a>
-									</Link>
-								</li>
-							);
-						}
+						return (
+							<li
+								key={heading.id}
+								className={getClassName(heading.level)}
+								onClick={(e) => {
+									e.preventDefault();
+									document.querySelector(`#${heading.id}`).scrollIntoView({
+										behavior: "smooth",
+									});
+								}}
+								style={{
+									fontWeight: activeId === heading.id ? "bold" : "normal",
+								}}
+							>
+								{heading.text}
+							</li>
+						);
 					})}
 				</ul>
 			</TableOfContents>
