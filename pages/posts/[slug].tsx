@@ -24,7 +24,7 @@ import { useEffect, useRef, useState } from "react";
 import { Caption } from "../../components/global";
 import { Colors } from "../../styles/colors";
 
-import { useHeadsObserver } from "../hooks/useObserver";
+import { useHeadsObserver } from "../../hooks/useObserver";
 import getReadTime from "../../lib/read-time";
 
 type PostPageProps = {
@@ -109,9 +109,14 @@ const CustomArticle = styled.article`
 	}
 
 	@media (min-width: 1200px) {
-		max-width: 50rem;
+		max-width: 65rem;
 		margin-left: 400px;
 		margin-top: 5rem;
+
+		& p,
+		li {
+			font-size: 1.4rem;
+		}
 	}
 `;
 

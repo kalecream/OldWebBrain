@@ -7,7 +7,7 @@ import { Brands } from "../assets";
 import { Colors } from "../styles/colors";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
-import { useForm } from "./hooks/useForm";
+import { useForm } from "../hooks/useForm";
 
 const CustomImage = styled(Image)`
 	transition: 0.5s;
