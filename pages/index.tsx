@@ -298,29 +298,24 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 								{posts.slice(0, 2).map(
 									(post) =>
 										post.draft !== false && (
-											<FeaturedPost key={post.slug}>
-												{post.date && (
-													<ArticleDate>
-														{format(parseISO(post.date), "MMMM dd, yyyy")}
-													</ArticleDate>
-												)}
-												{/* <FeaturedPostImage>
+											<Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+												<FeaturedPost key={post.slug}>
+													{post.date && (
+														<ArticleDate>
+															{format(parseISO(post.date), "MMMM dd, yyyy")}
+														</ArticleDate>
+													)}
+													{/* <FeaturedPostImage>
 													<Image
 														src={post.image ?? ""}
 														alt={post.title}
 														style={{ objectFit: "cover" }}
 													/>
 												</FeaturedPostImage> */}
-												<CardTitle>
-													<Link
-														as={`/posts/${post.slug}`}
-														href={`/posts/[slug]`}
-													>
-														{post.title}
-													</Link>
-												</CardTitle>
-												<p>{post.description}</p>
-											</FeaturedPost>
+													<CardTitle>{post.title}</CardTitle>
+													<p>{post.description}</p>
+												</FeaturedPost>
+											</Link>
 										)
 								)}
 							</FeaturedPosts>
