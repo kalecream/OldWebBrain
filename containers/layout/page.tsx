@@ -8,7 +8,6 @@ import TagManager from "react-gtm-module";
 import { Colors } from "../../styles/colors";
 
 import { MetaProps } from "../../types/layout";
-import Head from "../../components/global/Head";
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -31,14 +30,12 @@ export const Page = ({
 	return (
 		<>
 			<header>
-					<title>KaleCream {title ? "| " + title : null}</title>
-					<Navigation />
+				<title>KaleCream {title ? "| " + title : null}</title>
+				<Navigation />
 			</header>
 
 			<main className={styles.main}>
-				<>
-				{children}
-				</>
+				<>{children}</>
 			</main>
 			<Footer />
 		</>
