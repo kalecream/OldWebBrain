@@ -345,7 +345,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 					</>
 				)}
 			</Section>
-			<LatestProjects />
+			{/* <LatestProjects /> */}
 			{/* <OtherProjects/> */}
 		</Page>
 	);
