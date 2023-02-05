@@ -1,38 +1,15 @@
-import Example2 from '../assets/images/album/lunch_trio.jpg';
-import Jellyfish from '../assets/images/album/jellyfish.jpg';
-import BWTrees from '../assets/images/album/bw_trees.jpg';
-import bananaSunset from '../assets/images/album/bananasunset.jpg';
-import okra from '../assets/images/album/okra.jpg';
-import pineapple from '../assets/images/album/pineapple.jpg';
-import plantWindow from '../assets/images/album/plantwindow.jpg';
-import earring from '../assets/images/album/earring.jpg';
+import img_20220102 from "../assets/images/3D/2023/plant_20230102_composed.png";
 
-const ExampleAlbum = [
-    Jellyfish,
-    bananaSunset,
-    okra,
-    pineapple,
-];
+import Chess from "../assets/images/3D/chess__alternate_view__by_kalecream.jpg";
+import Park from "../assets/images/3D/park_by_kalecream.jpg";
+import UnderConstruction from "../assets/images/Under_Construction_by_kalecream.webp";
 
-import img_20220102 from '../assets/images/3D/2023/plant_20230102_composed.png'; 
+const ThreeD = [Chess, Park, img_20220102, UnderConstruction];
 
-import Chess from '../assets/images/3D/chess__alternate_view__by_kalecream.jpg';
-import Park from '../assets/images/3D/park_by_kalecream.jpg';
-import UnderConstruction from '../assets/images/Under_Construction_by_kalecream.webp';
+export { ThreeD };
 
-const ThreeD = [
-    Chess,
-    Park,
-    img_20220102,
-    UnderConstruction
-];
+import BiteSizedBingePoster from "../assets/images/bitesizedbinge.webp";
 
-export { ExampleAlbum, ThreeD };
+const OtherMultimediaProjectPictures = [BiteSizedBingePoster];
 
-import BiteSizedBingePoster from '../assets/images/bitesizedbinge.webp';
-
-const OtherMultimediaProjectPictures = [
-    BiteSizedBingePoster
-];
-
-export {  OtherMultimediaProjectPictures };
+export { OtherMultimediaProjectPictures };
