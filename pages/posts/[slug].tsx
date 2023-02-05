@@ -300,7 +300,13 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				</ul>
 			</TableOfContents>
 			<CustomArticle>
-				<h1 style={{ lineHeight: "1.2", fontSize: "2rem" }}>
+				<h1
+					style={{
+						lineHeight: "1.2",
+						fontSize: "5rem",
+						fontFamily: "Playfair Display",
+					}}
+				>
 					{frontMatter.title}
 				</h1>
 				<div style={{ display: "flex", width: "100%" }}>
