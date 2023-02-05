@@ -115,7 +115,7 @@ const CustomArticle = styled.article`
 
 		& p,
 		li {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 `;
