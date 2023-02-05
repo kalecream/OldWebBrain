@@ -72,7 +72,7 @@ const HeroSection = styled.div`
 		width: 100%;
 	}
 
-	@media (min-width: 750px) {
+	@media (min-width: 768px) {
 		width: 45%;
 	}
 `;
