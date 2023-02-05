@@ -76,22 +76,6 @@ const CustomArticle = styled.article`
 	justify-content: center;
 	align-items: center;
 
-	@media (max-width: 900px) {
-		max-width: 50rem;
-	}
-
-	@media (min-width: 900px) {
-		max-width: 40rem;
-		margin-left: 300px;
-		padding: 0 2.5rem;
-	}
-
-	@media (min-width: 1200px) {
-		max-width: 70rem;
-		margin-left: 500px;
-		margin-top: 5rem;
-	}
-
 	& h1,
 	h2,
 	h3 {
@@ -112,6 +96,22 @@ const CustomArticle = styled.article`
 	& p {
 		text-align: justify;
 		line-height: 1.8;
+	}
+
+	@media (max-width: 900px) {
+		max-width: 50rem;
+	}
+
+	@media (min-width: 900px) {
+		max-width: 45rem;
+		margin-left: 300px;
+		padding: 0 2.5rem;
+	}
+
+	@media (min-width: 1200px) {
+		max-width: 50rem;
+		margin-left: 400px;
+		margin-top: 5rem;
 	}
 `;
 
@@ -272,13 +272,15 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 			<TableOfContents>
 				<ul>
 					{headings.map((heading) => {
+						const activeHeader =
+							document.querySelector(`#${heading.id}`) ?? headings[0].id;
 						return (
 							<li
 								key={heading.id}
 								className={getClassName(heading.level)}
 								onClick={(e) => {
 									e.preventDefault();
-									document.querySelector(`#${heading.id}`).scrollIntoView({
+									activeHeader.scrollIntoView({
 										behavior: "smooth",
 									});
 								}}
@@ -296,7 +298,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				<h1 style={{ lineHeight: "1.2", fontSize: "2rem" }}>
 					{frontMatter.title}
 				</h1>
-				<div style={{ display: "flex" }}>
+				<div style={{ display: "flex", width: "100%" }}>
 					<Caption>
 						{format(
 							parseISO(frontMatter.date ? frontMatter.date : ""),
