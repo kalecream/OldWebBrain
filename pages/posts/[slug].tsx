@@ -25,6 +25,7 @@ import { Caption } from "../../components/global";
 import { Colors } from "../../styles/colors";
 
 import { useHeadsObserver } from "../hooks/useObserver";
+import getReadTime from "../../lib/read-time";
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -93,13 +94,10 @@ const CustomArticle = styled.article`
 
 	& h1,
 	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		text-align: center;
+	h3 {
 		font-family: "Inter", sans-serif;
 		font-weight: 600;
+		margin: 2.5rem 0;
 	}
 
 	& ol,
@@ -295,15 +293,20 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				</ul>
 			</TableOfContents>
 			<CustomArticle>
-				<h1 style={{ lineHeight: "1.2", fontSize: "2rem", width: "75%" }}>
+				<h1 style={{ lineHeight: "1.2", fontSize: "2rem" }}>
 					{frontMatter.title}
 				</h1>
-				<Caption>
-					{format(
-						parseISO(frontMatter.date ? frontMatter.date : ""),
-						"MMMM dd, yyyy"
-					)}
-				</Caption>
+				<div style={{ display: "flex" }}>
+					<Caption>
+						{format(
+							parseISO(frontMatter.date ? frontMatter.date : ""),
+							"MMMM dd, yyyy"
+						)}
+					</Caption>
+					<Caption style={{ marginLeft: "1rem" }}>
+						{getReadTime(source.compiledSource)} minute read
+					</Caption>
+				</div>
 				<div className="prose dark:prose-dark">
 					<MDXRemote {...source} components={components} />
 				</div>
