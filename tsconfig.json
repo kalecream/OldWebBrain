@@ -18,7 +18,22 @@
 		"types": [
 			"node",
 			"webpack-env" // here
-		]
+		],
+		"baseUrl": "./",
+		"paths": {
+			"@components/*": ["components/*"],
+			"@pages/*": ["pages/*"],
+			"@styles/*": ["styles/*"],
+			"@assets/*": ["assets/*"],
+			"@constants/*": ["constants/*"],
+			"@utils/*": ["utils/*"],
+			"@layout/*": ["container/layout/*"],
+			"@data/*": ["data/*"],
+			"@hooks/*": ["hooks/*"],
+			"@posts/*": ["posts/*"],
+			"@theme/*": ["theme/*"],
+			"@uploads/*": ["uploads/*"]
+		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"],
 	"exclude": ["node_modules"]
