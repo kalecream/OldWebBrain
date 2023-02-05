@@ -8,11 +8,24 @@
     "dev": "yarn && next dev -p 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
     "export": "npm run build && next export -o _static",
+    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }},
+
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
@@ -69,9 +82,17 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@types/webpack-env": "^1.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "babel": "^6.23.0",
     "babel-loader": "^8.3.0",
-    "prettier": "^2.7.1",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
     "storybook": "^6.5.15",
     "types": "^0.1.1"
   }
