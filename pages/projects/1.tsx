@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const BlueOrange = () => {
+export default const BlueOrange = () => {
 	return (
 		<div>
 			<h1>BlueOrange</h1>
