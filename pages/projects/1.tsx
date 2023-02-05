@@ -1,9 +1,11 @@
 import * as React from "react";
 
-export default const BlueOrange = () => {
+const BlueOrange = () => {
 	return (
 		<div>
 			<h1>BlueOrange</h1>
 		</div>
 	);
 };
+
+export default BlueOrange;
