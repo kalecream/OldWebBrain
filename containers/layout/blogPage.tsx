@@ -4,14 +4,13 @@ import { Navigation, Footer } from "../../components/global";
 import styles from "../../styles/Home.module.css";
 import styled from "@emotion/styled";
 import TagManager from "react-gtm-module";
-import { Colors } from "../../styles/colors";
 import { MDXProvider } from "@mdx-js/react";
 
 const PageTitle = styled.h1`
 	font-size: 3rem;
 	font-weight: 600;
 	margin-bottom: 1rem;
-	color: ${Colors.primary};
+	color: var(--primary);
 `;
 
 const Container = styled.div`
@@ -65,9 +64,9 @@ export default function BlogPage({
 			<BlogLayout>
 				<Container>
 					<BlogPostNavigation />
-				<MDXProvider>
-					<main>{children}</main>
-				</MDXProvider>
+					<MDXProvider>
+						<main>{children}</main>
+					</MDXProvider>
 				</Container>
 			</BlogLayout>
 			<Footer />
