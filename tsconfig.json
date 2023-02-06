@@ -34,7 +34,6 @@
 			"@data/*": ["./data/*"],
 			"@hooks/*": ["./hooks/*"],
 			"@posts/*": ["./posts/*"],
-			"@theme/*": ["./theme/*"],
 			"@uploads/*": ["./uploads/*"]
 		}
 	},

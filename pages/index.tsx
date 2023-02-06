@@ -5,13 +5,11 @@ import Page from "../containers/layout/page";
 
 import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 
 import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
 import { Card, CardTitle } from "../components/global/Basics";
 
 import {
@@ -28,15 +26,15 @@ import { Model } from "../assets/models/me";
 
 import "animate.css";
 import { Suspense } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
 	OrbitControls,
 	Environment,
 	PresentationControls,
 	PerspectiveCamera,
 } from "@react-three/drei";
-import OtherProjects from "../components/home/otherProjects";
-import LatestProjects from "../components/home/latestProjects";
+// import OtherProjects from "../components/home/otherProjects";
+// import LatestProjects from "../components/home/latestProjects";
 
 type IndexProps = {
 	posts: PostType[];
@@ -98,7 +96,7 @@ const CustomCanvas = styled(Canvas)`
 
 const HeroTitle = styled.h1`
 	font-size: 3rem;
-	color: ${Colors.primary};
+	color: var(--primary);
 	opacity: 0.7;
 
 	@media (max-width: 400px) {
@@ -212,7 +210,7 @@ const Rotate3DModel = () => {
 
 	useEffect(() => {
 		if (!!orbitControlsRef.current) {
-			// orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
+			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
 		}
 	}, [orbitControlsRef.current]);
 

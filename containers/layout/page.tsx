@@ -1,11 +1,6 @@
-import { useRouter } from "next/router";
-
 import { useEffect } from "react";
 import { Navigation, Footer } from "../../components/global";
-import styles from "../../styles/Home.module.css";
-import styled from "@emotion/styled";
 import TagManager from "react-gtm-module";
-import { Colors } from "../../styles/colors";
 
 import { MetaProps } from "../../types/layout";
 
@@ -34,7 +29,7 @@ export const Page = ({
 				<Navigation />
 			</header>
 
-			<main className={styles.main}>
+			<main>
 				<>{children}</>
 			</main>
 			<Footer />

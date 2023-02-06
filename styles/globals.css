@@ -10,26 +10,46 @@ font-family: 'Inter', sans-serif;
 font-family: 'Playfair Display', serif;
 */
 
-:root {
-	--color-white: #fff;
-	--color-black: #34373e;
+.light {
+	--primary: #3eb489;
+	--secondary: #2b694d;
+	--tertiary: #8cb6bb;
+
+	--text: #34373e;
+	--body: #fafafa;
 	--grey: #454545;
+	--lightgrey: #8f8182;
+
 	--secondary: #2b694d;
 	--color-primary: #3eb489;
 	/* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
-	--light-shades: #f4f0f5;
-	/* Use this color as the background for your dark-on-light designs, or the text color of an inverted design.  */
-	--light-accent: #8cb6bb;
-	/* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.  */
-	--dark-accent: #8f8182;
-	/* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.  */
-	--dark-shades: #34373e;
-	/*  Use as the text color for dark-on-light designs, or as the background for inverted designs.
-   */
+
 	--text-shadow: 0 0 1px #fff;
 	--success: #63aa64;
 	--warning: #e09a2c;
 	--error: #f44336;
+	--info: #2196f3;
+}
+
+.dark {
+	--primary: #3eb489;
+	--secondary: #2b694d;
+	--tertiary: #8cb6bb;
+
+	--text: #fafafa;
+	--body: #34373e;
+	--grey: #454545;
+	--lightgrey: #8f8182;
+
+	--secondary: #2b694d;
+	--color-primary: #3eb489;
+	/* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
+
+	--text-shadow: 0 0 1px #fff;
+	--success: #63aa64;
+	--warning: #e09a2c;
+	--error: #f44336;
+	--info: #2196f3;
 }
 
 * {
@@ -40,10 +60,10 @@ font-family: 'Playfair Display', serif;
 }
 
 html {
+	background-color: var(--body);
+	color: var(--text);
 	font-size: 1rem;
 	line-height: 1.6;
-	background-color: var(--light-shades);
-	color: var(--dark-shades);
 	font-family: "Inter", sans-serif;
 
 	@media screen and (max-width: 480px) {
@@ -85,22 +105,6 @@ a {
 a:hover {
 	color: var(--dark-shades);
 	transition: ease-in-out 0.2s;
-}
-
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-		background-color: var(--dark-shades);
-		color: var(--light-shades);
-	}
-	.theme-toggle {
-		background-color: var(--color-primary);
-	}
-	.theme-toggle::after {
-		content: "🌙";
-		left: 2px;
-		background-color: var(--light-shades);
-	}
 }
 
 h1,

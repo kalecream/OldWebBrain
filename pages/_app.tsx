@@ -6,8 +6,6 @@ import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import { MetaProps } from "../types/layout";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { darkTheme, lightTheme, GlobalStyles } from "../theme/ThemeConfig";
 
 config.autoAddCss = false;
 export const WEBSITE_HOST_URL = "https://www.kalecream.com";
@@ -16,7 +14,6 @@ export const App = (
 	{ Component, pageProps }: AppProps,
 	{ customMeta }: { customMeta?: MetaProps }
 ): JSX.Element => {
-	const [theme, setTheme] = useState("light");
 	const router = useRouter();
 	const meta: MetaProps = {
 		title: "KaleCream",
@@ -25,32 +22,17 @@ export const App = (
 		type: "website",
 		...customMeta,
 	};
-	let [newColorScheme, setColorScheme] = useState("light");
-
-	const toggleTheme = () => {
-		theme === "light" ? setTheme("dark") : setTheme("light");
-	};
-
-	// Getting the user's Theme preference from the browser
-	useEffect(() => {
-		window
-			.matchMedia("(prefers-color-scheme: dark)")
-			.addEventListener("change", (event) => {
-				event.matches ? setColorScheme("dark") : setColorScheme("light");
-			});
-	}, []);
-
-	// If colour scheme comes back void then return light theme
 
 	return (
+		// Storing theme in localstorage
 		<ThemeProvider
+			storageKey="theme"
 			attribute="class"
 			enableSystem={true}
-			defaultTheme={newColorScheme ?? "light"}
+			// If enableSystem is false, the default theme is light
+			defaultTheme="system"
+			themes={["light", "dark"]}
 		>
-			{/* TODO: createGlobalStyles not functioning in webpack 5 */}
-			{/* <GlobalStyles /> */}
-			{/* <button onClick={toggleTheme}>Switch Theme</button> */}
 			<Head>
 				<title>{meta.title}</title>
 				<meta content={meta.description} name="description" />

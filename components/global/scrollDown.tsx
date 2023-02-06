@@ -3,21 +3,20 @@ import "@emotion/styled";
 
 import { Container } from "../global/Basics";
 import styled from "@emotion/styled";
-import { Colors } from "../../styles/colors";
 
 const Field = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	width: 100%;
-    scale: 0.55;
+	scale: 0.55;
 `;
 
 const Mouse = styled.div`
     opacity: 0.8;
     width: 50px;
 	height: 85px;
-	border: 3px solid ${Colors.primary};
+	border: 3px solid var(--primary) ;
 	border-radius: 60px;
 	position: relative;
 	&::before {
@@ -28,13 +27,13 @@ const Mouse = styled.div`
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: ${Colors.primary};
+		background-color: green;
 		border-radius: 50%;
 		opacity: 1;
 		animation: wheel 2s infinite;
 		-webkit-animation: wheel 2s infinite;
 	}
-}
+
 
 @keyframes wheel {
 	to {

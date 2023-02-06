@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { CustomLink } from "./Basics";
+import { useEffect, useState } from "react";
 
 const StyledFooter = styled.footer`
 	bottom: 0;
@@ -29,7 +30,13 @@ const StyledFooter = styled.footer`
 `;
 
 export const Footer: React.FunctionComponent = () => {
-	const lastWebsiteUpdate = new Date(document.lastModified).toDateString();
+	const [lastWebsiteUpdate, setLastWebsiteUpdate] = useState(
+		new Date().toDateString()
+	);
+
+	useEffect(() => {
+		setLastWebsiteUpdate(new Date(document.lastModified).toDateString());
+	}, []);
 
 	return (
 		<StyledFooter>
