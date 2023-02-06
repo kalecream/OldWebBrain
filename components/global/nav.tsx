@@ -1,11 +1,7 @@
-import * as React from "react";
+import React from "react";
 import styles from "../../styles/nav.module.css";
 import styled from "@emotion/styled";
-import { Colors } from "../../styles/colors";
-import { Icons } from "../../assets";
-import Image from "next/image";
 import Directory from "../../data/directory";
-import { useEffect } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 
 const StyledNavigation = styled.nav`
@@ -52,12 +48,12 @@ const DirectoryListItem = styled.li`
 
 const DirectoryLinks = styled.a`
 	font-weight: 500;
-	color: ${Colors.darkShade};
+	color: var(--text);
 	text-transform: capitalize;
 	opacity: 0.7;
 
 	&:hover {
-		color: ${Colors.primary};
+		color: var(--primary);
 	}
 `;
 
@@ -66,7 +62,7 @@ const SiteName = styled.a`
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem 1rem;
-	color: ${Colors.primary};
+	color: var(--primary);
 	opacity: 0.7;
 
 	& hover {
@@ -80,75 +76,9 @@ const SiteName = styled.a`
 	}
 `;
 
-const ThemeToggle = styled.button`
-	display: flex;
-	cursor: pointer;
-	height: 30px;
-	width: 50px;
-	border: 3px solid var(--color-black);
-	margin-left: auto;
-	position: relative;
-	background-color: var(--color-primary);
-	border-radius: 1rem;
-	transform: rotate(-75deg);
 
-	&:active {
-		animation: switchColor 1s linear;
-	}
-
-	&:before {
-		content: "☀️";
-		z-index: 2;
-		position: absolute;
-		font-size: 0.8rem;
-		top: 0.35rem;
-		left: 1.65rem;
-		transition-duration: 0.4s;
-	}
-
-	&:after {
-		content: "";
-		font-size: 0.9rem;
-		position: absolute;
-		height: 28px;
-		width: 29px;
-		top: -2px;
-		left: 20px;
-		background-color: var(--color-black);
-		border-radius: 50%;
-		border: none;
-		transition-duration: 0.4s;
-	}
-`;
-
-const NavigationSettings = () => {
-	// https://github.com/iseizuu/personal-website/blob/main/pages/index.tsx
-	// const selectTheme = (value: string) => {
-	// 	localStorage.setItem("theme", value);
-	// 	document.querySelector("html").classList.add(localStorage.getItem("theme"));
-
-	// 	if (value === "dark")
-	// 		document.querySelector("html").classList.remove("light");
-	// 	else document.querySelector("html").classList.remove("dark");
-	// };
-
-	// useEffect(() => {
-	// 	document.querySelector("html").classList.add(localStorage.getItem("theme"));
-	// }, []);
-
-	return (
-		<div className={styles.settings}>
-			<ThemeToggle id="theme-toggle" className={styles.themeToggle} />
-		</div>
-	);
-};
 
 export const Navigation: React.FunctionComponent = () => {
-	function toggleTheme() {
-		var body = document.body;
-		body.classList.toggle("dark");
-	}
-
 	return (
 		<StyledNavigation className={styles.nav}>
 			<SiteName href="/">
@@ -163,8 +93,7 @@ export const Navigation: React.FunctionComponent = () => {
 					</DirectoryListItem>
 				))}
 			</DirectoryList>
-			{/* <ThemeSwitch /> */}
-			{/* <NavigationSettings /> */}
+			<ThemeSwitch />
 		</StyledNavigation>
 	);
 };
