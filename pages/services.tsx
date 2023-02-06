@@ -1,26 +1,23 @@
-import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
 import Services from "../data/serviceData";
 import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
 import "animate.css";
 import {
 	Section,
 	Container,
 	Button,
-	PrimaryButton,
 	Card,
 	CardTitle,
 } from "../components/global";
 
-const Sections = [
-	"Illustration",
-	"Websites",
-	"Automation",
-	"Consulting",
-	"Administration",
-	"Content Creation",
-];
+// const Sections = [
+// 	"Illustration",
+// 	"Websites",
+// 	"Automation",
+// 	"Consulting",
+// 	"Administration",
+// 	"Content Creation",
+// ];
 
 const CardContainer = styled.div`
 	display: flex;
@@ -60,22 +57,15 @@ const ServiceDescription = styled.p`
 	font-weight: 400;
 	margin-bottom: 1rem;
 	padding: 0 1.5rem;
-	@prefers-color-scheme: dark {
-		color: ${Colors.darkShade};
-	}
-
-	@media (prefers-color-scheme: light) {
-		color: ${Colors.lightShade};
-	}
 `;
 
 const ServiceCost = styled.p`
-	font-size: 1.2rem;
+	font-size: 2rem !important;
 	font-weight: 400;
 	margin-bottom: 1rem;
 	outline: none;
 	border: none;
-	color: ${Colors.lightShade};
+	color: var(--accent);
 `;
 
 const BlockContainer = styled(Container)`
@@ -97,7 +87,7 @@ export default function Blog() {
 						my clients. These services include:
 					</p>
 
-					<CardContainer>
+					<CardContainer style={{ margin: "2rem" }}>
 						<Card className="animate__animated animate__fadeIn animated_delay-2s">
 							<CardTitle>Customer Support</CardTitle>
 							<ServiceDescription>
@@ -146,7 +136,7 @@ export default function Blog() {
 						</Card>
 					</CardContainer>
 
-					<BlockContainer>
+					<BlockContainer style={{ margin: "2rem" }}>
 						<p
 							className="animate__animated animate__fadeInUp"
 							style={{ maxWidth: "55rem", textAlign: "justify" }}
@@ -185,14 +175,20 @@ export default function Blog() {
 						</p>
 					</BlockContainer>
 
-					<PrimaryButton
-						style={{ margin: "0 auto", maxWidth: "500px", whiteSpace: "normal", lineHeight: "1.5" }}
+					<Button
+						primary
+						style={{
+							margin: "0 auto",
+							maxWidth: "500px",
+							whiteSpace: "normal",
+							lineHeight: "1.5",
+						}}
 						className="animate__animated animate__fadeInUp animated_delay-2s"
 						title="This button sends me an e-mail"
 						href=" mailto:mail@kalecream.com?bcc=sabrinamedwinter@gmail.com&subject=Custom%20Budget%20%7C%20Project%20Comission&body=Dear%20KaleCream%2C%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20the%20possibility%20of%20commissioning%20a%20%5Bproject%20type%5D%20from%20you.%0D%0A%0D%0AThe%20project%20in%20question%20would%20involve%20creating%20%5Bdescription%20of%20project%5D%20and%20I%20am%20willing%20to%20offer%20a%20custom%20budget%20to%20ensure%20that%20we%20can%20bring%20my%20vision%20to%20life.%20I%20am%20flexible%20on%20budget%20and%20would%20be%20happy%20to%20discuss%20specific%20details%20and%20negotiate%20a%20rate%20that%20works%20for%20both%20of%20us.%0D%0A%0D%0AI%20understand%20that%20you%20may%20be%20busy%20with%20other%20projects%2C%20so%20I%20wanted%20to%20reach%20out%20as%20soon%20as%20possible%20to%20see%20if%20you%20might%20be%20interested%20in%20working%20with%20me%20on%20this%20project.%20If%20you%20are%20available%20and%20interested%2C%20I%20would%20love%20to%20discuss%20the%20project%20in%20further%20detail%20and%20see%20if%20we%20might%20be%20able%20to%20collaborate.%0D%0A%0D%0AThank%20you%20for%20considering%20my%20request.%20I%20look%20forward%20to%20potentially%20working%20with%20you.%0D%0A%0D%0ASincerely%2C%0D%0A%5BYour%20Name%5D "
 					>
 						I would like to comission a service with a custom budget.
-					</PrimaryButton>
+					</Button>
 				</Container>
 			</Section>
 		</Page>
