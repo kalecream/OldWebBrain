@@ -13,7 +13,7 @@ const Technologies = [
 
 //TODO: Use GSAP to animate the mapping of the technologies moving left and right across the screen as the user scrolls down the page.
 
-const Tech = () => {
+export const Tech = () => {
 	return (
 		<div className="tech">
 			<h2>Technologies</h2>
