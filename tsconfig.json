@@ -33,8 +33,7 @@
       "@layout/*": ["container/layout/*"],
       "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
-      "@posts/*": ["posts/*"],
-      "@uploads/*": ["uploads/*"]
+      "@posts/*": ["posts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"],
