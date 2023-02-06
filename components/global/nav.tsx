@@ -76,8 +76,6 @@ const SiteName = styled.a`
 	}
 `;
 
-
-
 export const Navigation: React.FunctionComponent = () => {
 	return (
 		<StyledNavigation className={styles.nav}>
