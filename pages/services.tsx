@@ -1,5 +1,5 @@
 import Page from "../containers/layout/page";
-import Services from "../data/serviceData";
+// import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import "animate.css";
 import {
