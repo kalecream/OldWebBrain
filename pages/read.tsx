@@ -1,7 +1,6 @@
 import Page from "../containers/layout/page";
 import Books from "../data/books";
 import styled from "@emotion/styled";
-import * as React from "react";
 
 const StatusNumber = styled.span`
 	color: #ff0000;
@@ -247,98 +246,111 @@ const ReadContainer = styled.div`
 // 	);
 // };
 
+// export const ReadBooks = () => {
+// 	const ReadFilter = Object.entries(Books).filter(
+// 		([key, value]) => value.status === "read"
+// 	);
+// 	const ReadingFilter = Object.entries(Books).filter(
+// 		([key, value]) => value.status === "reading"
+// 	);
+
+// 	const WantReadFilter = Object.entries(Books).filter(
+// 		([key, value]) => value.status === "Want to Read"
+// 	);
+
+// 	return (
+// 		<Page title="Books">
+// 			<section>
+// 				<FlexContainer>
+// 					<div>
+// 						<h2 style={{ textAlign: "center", margin: "2rem" }}>
+// 							Reading <StatusNumber>{ReadingFilter.length}</StatusNumber>
+// 						</h2>
+// 						<ReadingContainer>
+// 							{/* {Books.map((book) => {
+// 								if (book.status === "reading") {
+// 									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+// 									return (
+// 										<BookContainer
+// 											href={searchURL}
+// 											target="_blank"
+// 											rel="noopener noreferrer"
+// 										>
+// 											<Book>
+// 												<img src={book.cover} alt={book.title} />
+// 											</Book>
+// 										</BookContainer>
+// 									);
+// 								}
+// 							})} */}
+// 						</ReadingContainer>
+// 					</div>
+
+// 					<div>
+// 						<h2 style={{ textAlign: "center", margin: "2rem" }}>
+// 							Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber>
+// 						</h2>
+// 						<WantToReadContainer>
+// 							{/* {Books.map((book) => {
+// 								if (book.status === "Want to Read") {
+// 									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+// 									return (
+// 										<li>
+// 											<a href={searchURL} target="_blank">
+// 												{book.title} by{" "}
+// 												{book.author.length == 1
+// 													? book.author
+// 													: book.author.toString().replace(/,/g, " & ")}
+// 											</a>
+// 											<br />
+// 											<BookSummary>{book.summary}</BookSummary>
+// 										</li>
+// 									);
+// 								}
+// 							})} */}
+// 						</WantToReadContainer>
+// 					</div>
+// 				</FlexContainer>
+// 				<h2 style={{ textAlign: "center", margin: "2rem" }}>
+// 					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
+// 				</h2>
+// 				<ReadContainer>
+// 					{/* {Books.map((book) => {
+// 						if (book.status === "read") {
+// 							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+
+// 							return (
+// 								<li>
+// 									<a href={searchURL} target="_blank">
+// 										( {book.finished?.split("-", 1)} ) {book.title} by{" "}
+// 										{book.author}{" "}
+// 										{book.rating && book.rating >= 3 ? (
+// 											<span style={{ color: "red" }}>★</span>
+// 										) : (
+// 											""
+// 										)}
+// 									</a>
+// 									<br />
+// 									<BookSummary>{book.summary}</BookSummary>
+// 								</li>
+// 							);
+// 						}
+// 					})} */}
+// 				</ReadContainer>
+// 			</section>
+// 		</Page>
+// 	);
+// };
+
 export const ReadBooks = () => {
-	const ReadFilter = Object.entries(Books).filter(
-		([key, value]) => value.status === "read"
-	);
-	const ReadingFilter = Object.entries(Books).filter(
-		([key, value]) => value.status === "reading"
-	);
-
-	const WantReadFilter = Object.entries(Books).filter(
-		([key, value]) => value.status === "Want to Read"
-	);
-
 	return (
 		<Page title="Books">
 			<section>
-				<FlexContainer>
-					<div>
-						<h2 style={{ textAlign: "center", margin: "2rem" }}>
-							Reading <StatusNumber>{ReadingFilter.length}</StatusNumber>
-						</h2>
-						<ReadingContainer>
-							{/* {Books.map((book) => {
-								if (book.status === "reading") {
-									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-									return (
-										<BookContainer
-											href={searchURL}
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											<Book>
-												<img src={book.cover} alt={book.title} />
-											</Book>
-										</BookContainer>
-									);
-								}
-							})} */}
-						</ReadingContainer>
-					</div>
-
-					<div>
-						<h2 style={{ textAlign: "center", margin: "2rem" }}>
-							Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber>
-						</h2>
-						<WantToReadContainer>
-							{/* {Books.map((book) => {
-								if (book.status === "Want to Read") {
-									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-									return (
-										<li>
-											<a href={searchURL} target="_blank">
-												{book.title} by{" "}
-												{book.author.length == 1
-													? book.author
-													: book.author.toString().replace(/,/g, " & ")}
-											</a>
-											<br />
-											<BookSummary>{book.summary}</BookSummary>
-										</li>
-									);
-								}
-							})} */}
-						</WantToReadContainer>
-					</div>
-				</FlexContainer>
-				<h2 style={{ textAlign: "center", margin: "2rem" }}>
-					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
-				</h2>
-				<ReadContainer>
-					{/* {Books.map((book) => {
-						if (book.status === "read") {
-							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-
-							return (
-								<li>
-									<a href={searchURL} target="_blank">
-										( {book.finished?.split("-", 1)} ) {book.title} by{" "}
-										{book.author}{" "}
-										{book.rating && book.rating >= 3 ? (
-											<span style={{ color: "red" }}>★</span>
-										) : (
-											""
-										)}
-									</a>
-									<br />
-									<BookSummary>{book.summary}</BookSummary>
-								</li>
-							);
-						}
-					})} */}
-				</ReadContainer>
+				<h2>Books</h2>
+				<p>Coming soon!</p>
 			</section>
 		</Page>
 	);
 };
+
+export default Books;
