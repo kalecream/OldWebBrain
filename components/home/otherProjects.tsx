@@ -2,7 +2,7 @@ import React from "react";
 import { Container, HalfColumn, Section } from "../global";
 import Image from "next/image";
 import "animate.css";
-import { OtherMultimediaProjectPictures, ThreeD } from "../../assets";
+import { OtherMultimediaProjectPictures } from "../../assets";
 import styled from "@emotion/styled";
 import Link from "next/link";
 
@@ -35,11 +35,12 @@ const OtherProjects = () => {
 						>
 							<h1>Bite-Sized Binge</h1>
 						</Link>
-						<p>A 5 minute podcast where I talk about the audiodramas, one-shot
-						manga, short stories etc that I read and enjoy during my pomodoro
-						breaks with the occasional 10 minute episode where I talk about
-						books and movies.
-                        </p>
+						<p>
+							A 5 minute podcast where I talk about the audiodramas, one-shot
+							manga, short stories etc that I read and enjoy during my pomodoro
+							breaks with the occasional 10 minute episode where I talk about
+							books and movies.
+						</p>
 					</HalfColumn>
 					<HalfColumn>
 						<Link
