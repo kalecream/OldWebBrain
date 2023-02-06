@@ -20,9 +20,8 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import styled from "@emotion/styled";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import { Caption } from "../../components/global";
-import { Colors } from "../../styles/colors";
 
 import { useHeadsObserver } from "../../hooks/useObserver";
 import getReadTime from "../../lib/read-time";
@@ -138,11 +137,11 @@ const TableOfContents = styled.aside`
 	}
 
 	& ul li:hover {
-		color: ${Colors.primary};
+		color: var(--primary);
 	}
 
 	& ul li::marker {
-		color: ${Colors.primary};
+		color: var(--primary);
 	}
 
 	@media (max-width: 900px) {
