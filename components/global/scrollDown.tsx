@@ -27,7 +27,7 @@ const Mouse = styled.div`
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: green;
+		background-color: var(--primary);
 		border-radius: 50%;
 		opacity: 1;
 		animation: wheel 2s infinite;
