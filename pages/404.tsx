@@ -82,11 +82,6 @@ const Text404Container = styled.div`
 	}
 `;
 
-const Text404Description = styled.p`
-	margin-top: 0.2rem;
-	color: var(--grey);
-`;
-
 const Text404DescriptionContainer = styled.div`
 	width: 50%;
 	display: flex;
@@ -105,12 +100,8 @@ export const Lost = () => {
 				<Text404Container>
 					<Text404>404</Text404>
 					<Text404DescriptionContainer>
-						<Text404Description>
-							The page you are looking for does not exist.
-						</Text404Description>
-						<Text404Description>
-							Please check the URL and try again.
-						</Text404Description>
+						<p>The page you are looking for does not exist.</p>
+						<p>Please check the URL and try again.</p>
 					</Text404DescriptionContainer>
 				</Text404Container>
 			</Background>
