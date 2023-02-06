@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 
 const StyledFooter = styled.footer`
 	bottom: 0;
+	position: absolute;
+	height: 4rem;
 	font-size: 0.65rem;
-	display: flex;
-	justify-content: space-between;
-	padding: 1rem 0;
-	opacity: 0.7;
+	opacity: 0.75;
 
 	@media screen and (max-width: 450px) {
 		margin: 0.5rem 0;
+		padding: 1rem 0;
 	}
 
 	@media screen and (max-width: 768px) {

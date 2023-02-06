@@ -23,7 +23,7 @@ export const Page = ({
 		TagManager.initialize({ gtmId: "UA-148483444-1" });
 	}, []);
 	return (
-		<>
+		<div style={{ height: "95vh" }}>
 			<header>
 				<title>KaleCream {title ? "| " + title : null}</title>
 				<Navigation />
@@ -33,7 +33,7 @@ export const Page = ({
 				<>{children}</>
 			</main>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

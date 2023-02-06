@@ -1,5 +1,6 @@
 import { useTheme } from "next-themes";
 import React from "react";
+import { useEffect } from "react";
 
 /**
  * Based off of gatsby-theme-novela
@@ -10,6 +11,8 @@ import React from "react";
 
 const ThemeSwitch = () => {
 	const { theme, setTheme } = useTheme();
+
+	useEffect(() => {}, [theme]);
 
 	return (
 		<div
@@ -32,7 +35,7 @@ const ThemeSwitch = () => {
 				}}
 				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 			>
-				{theme === "dark" ? "🔆" : "🔅"}
+				{theme === "dark" ? "🔅" : "🔆"}
 			</button>
 		</div>
 	);
