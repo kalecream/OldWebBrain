@@ -2,7 +2,6 @@ import Page from "../containers/layout/page";
 import Books from "../data/books";
 import styled from "@emotion/styled";
 import * as React from "react";
-import * as d3 from "d3";
 
 const StatusNumber = styled.span`
 	color: #ff0000;
@@ -138,10 +137,9 @@ const WantToReadContainer = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 
 	& > li {
-		list-style-type: '🔖 ';
+		list-style-type: "🔖 ";
 		margin-top: 1rem;
 	}
-
 
 	@media screen and (min-width: 1000px) {
 		width: 45%;
@@ -163,7 +161,7 @@ const ReadContainer = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 
 	& > li {
-		list-style-type: '📖 ';
+		list-style-type: "📖 ";
 	}
 `;
 
@@ -183,41 +181,32 @@ function ReadPages() {
 		([key, value]) => value.status === "read"
 	);
 
-	return(
+	return (
 		<ChartArea>
 			<svg width="100%" height="100%">
 				{ReadFilter.map((book, index) => {
 					const bookName = book[0];
 					let bookPages = 0;
 
-					typeof book[1].pages === "number" ? bookPages = book[1].pages : bookPages = 0;
+					typeof book[1].pages === "number"
+						? (bookPages = book[1].pages)
+						: (bookPages = 0);
 
 					const x = 50 + index * 100;
 					const y = 250 - bookPages / 2;
 
 					return (
-						<g key={bookName
-							.replace(/\s/g, "")
-							.replace(/:/g, "")}>
-							<rect
-								x={x}
-								y={y}
-								width="50"
-								height={bookPages}
-								fill="#ff0000"
-							/>
-							<text
-								x={x + 25}
-								y={y - 10}
-								textAnchor="middle"
-								fill="#fff">
+						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
+							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
+							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
 								{bookName}
 							</text>
 							<text
-								x={x + 25}	
+								x={x + 25}
 								y={y + bookPages + 20}
 								textAnchor="middle"
-								fill="#fff">
+								fill="#fff"
+							>
 								{bookPages}
 							</text>
 						</g>
@@ -225,49 +214,40 @@ function ReadPages() {
 				})}
 			</svg>
 		</ChartArea>
-	)
+	);
 }
 
-function ReadPagesPerMonth()  {
+function ReadPagesPerMonth() {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
 	);
 
-	return(
+	return (
 		<ChartArea>
 			<svg width="100%" height="100%">
 				{ReadFilter.map((book, index) => {
 					const bookName = book[0];
 					let bookPages = 0;
 
-					typeof book[1].pages === "number" ? bookPages = book[1].pages : bookPages = 0;
+					typeof book[1].pages === "number"
+						? (bookPages = book[1].pages)
+						: (bookPages = 0);
 
 					const x = 50 + index * 100;
 					const y = 250 - bookPages / 2;
 
 					return (
-						<g key={bookName
-							.replace(/\s/g, "")
-							.replace(/:/g, "")}>
-							<rect
-								x={x}
-								y={y}
-								width="50"
-								height={bookPages}
-								fill="#ff0000"
-							/>
-							<text
-								x={x + 25}
-								y={y - 10}
-								textAnchor="middle"
-								fill="#fff">
+						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
+							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
+							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
 								{bookName}
 							</text>
 							<text
 								x={x + 25}
 								y={y + bookPages + 20}
 								textAnchor="middle"
-								fill="#fff">
+								fill="#fff"
+							>
 								{bookPages}
 							</text>
 						</g>
@@ -275,93 +255,99 @@ function ReadPagesPerMonth()  {
 				})}
 			</svg>
 		</ChartArea>
-	)
+	);
 }
 
 export default function ReadBooks() {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
 	);
-    const ReadingFilter = Object.entries(Books).filter(
-        ([key, value]) => value.status === "reading"
-    );
+	const ReadingFilter = Object.entries(Books).filter(
+		([key, value]) => value.status === "reading"
+	);
 
-    const WantReadFilter = Object.entries(Books).filter(
-        ([key, value]) => value.status === "Want to Read"
-    );
+	const WantReadFilter = Object.entries(Books).filter(
+		([key, value]) => value.status === "Want to Read"
+	);
 
 	return (
 		<Page title="Books">
 			<section>
-
 				<FlexContainer>
 					<div>
-				<h2 style={{ textAlign: "center", margin: "2rem" }}>Reading <StatusNumber>{ReadingFilter.length}</StatusNumber></h2>
-				<ReadingContainer>
-					{Books.map((book) => {
-						if (book.status === "reading") {
-							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-							return (
-								<BookContainer
-									href={searchURL}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Book>
-										<img src={book.cover} alt={book.title} />
-									</Book>
-								</BookContainer>
-							);
-						}
-					})}
-				</ReadingContainer>
-				</div>
-				
-				<div>
-				<h2 style={{ textAlign: "center", margin: "2rem" }}>Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber></h2>
-				<WantToReadContainer>
-				{Books.map((book) => {
-					if (book.status === "Want to Read") {
-						let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-						return (
-							<li>
-								<a href={searchURL} target="_blank">
-								{book.title} by {
-								book.author.length == 1 ? book.author: book.author.toString().replace(/,/g, ' & ')
+						<h2 style={{ textAlign: "center", margin: "2rem" }}>
+							Reading <StatusNumber>{ReadingFilter.length}</StatusNumber>
+						</h2>
+						<ReadingContainer>
+							{Books.map((book) => {
+								if (book.status === "reading") {
+									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+									return (
+										<BookContainer
+											href={searchURL}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Book>
+												<img src={book.cover} alt={book.title} />
+											</Book>
+										</BookContainer>
+									);
 								}
-								</a>
-								<br/>
-								<BookSummary>{book.summary}</BookSummary>
-							</li>
-						);
-					}
-				})}
-				</WantToReadContainer>
-				</div>
+							})}
+						</ReadingContainer>
+					</div>
+
+					<div>
+						<h2 style={{ textAlign: "center", margin: "2rem" }}>
+							Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber>
+						</h2>
+						<WantToReadContainer>
+							{Books.map((book) => {
+								if (book.status === "Want to Read") {
+									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+									return (
+										<li>
+											<a href={searchURL} target="_blank">
+												{book.title} by{" "}
+												{book.author.length == 1
+													? book.author
+													: book.author.toString().replace(/,/g, " & ")}
+											</a>
+											<br />
+											<BookSummary>{book.summary}</BookSummary>
+										</li>
+									);
+								}
+							})}
+						</WantToReadContainer>
+					</div>
 				</FlexContainer>
 				<h2 style={{ textAlign: "center", margin: "2rem" }}>
 					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
 				</h2>
 				<ReadContainer>
-				{Books.map((book) => {
-					if (book.status === "read") {
-						let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+					{Books.map((book) => {
+						if (book.status === "read") {
+							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 
-						return (
-							<li>
-								<a href={searchURL} target='_blank'>( {book.finished?.split("-", 1)} ) {book.title} by{" "}
-								{book.author}{" "}
-								{book.rating && book.rating >= 3 ? (
-									<span style={{ color: "red" }}>★</span>
-								) : (
-									""
-								)}
-								</a><br/>
-								<BookSummary>{book.summary}</BookSummary>
-							</li>
-						);
-					}
-				})}
+							return (
+								<li>
+									<a href={searchURL} target="_blank">
+										( {book.finished?.split("-", 1)} ) {book.title} by{" "}
+										{book.author}{" "}
+										{book.rating && book.rating >= 3 ? (
+											<span style={{ color: "red" }}>★</span>
+										) : (
+											""
+										)}
+									</a>
+									<br />
+									<BookSummary>{book.summary}</BookSummary>
+								</li>
+							);
+						}
+					})}
 				</ReadContainer>
 			</section>
 		</Page>
