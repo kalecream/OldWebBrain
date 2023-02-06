@@ -1,12 +1,12 @@
 import Page from "../containers/layout/page";
 import Books from "../data/books";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 
-const StatusNumber = styled.span`
-	color: #ff0000;
-	vertical-align: top;
-	font-size: 0.55em;
-`;
+// const StatusNumber = styled.span`
+// 	color: #ff0000;
+// 	vertical-align: top;
+// 	font-size: 0.55em;
+// `;
 
 // const BookContainer = styled.a`
 // 	display: flex;
@@ -101,68 +101,68 @@ const StatusNumber = styled.span`
 // 	}
 // `;
 
-const FlexContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-`;
+// const FlexContainer = styled.div`
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: center;
+// 	justify-content: center;
+// `;
 
-const ReadingContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	jusify-content: center;
-	margin: 2.5rem;
+// const ReadingContainer = styled.div`
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: center;
+// 	jusify-content: center;
+// 	margin: 2.5rem;
 
-	& > * {
-		margin: 3rem 1rem;
-	}
+// 	& > * {
+// 		margin: 3rem 1rem;
+// 	}
 
-	@media (min-width: 1200px) {
-		width: 45%;
-		float: left;
-	}
+// 	@media (min-width: 1200px) {
+// 		width: 45%;
+// 		float: left;
+// 	}
 
-	@media (max-width: 768px) {
-		& > * {
-			margin: 1rem 0;
-		}
-	}
-`;
+// 	@media (max-width: 768px) {
+// 		& > * {
+// 			margin: 1rem 0;
+// 		}
+// 	}
+// `;
 
-const WantToReadContainer = styled.div`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+// const WantToReadContainer = styled.div`
+// 	display: grid;
+// 	grid-template-columns: repeat(2, 1fr);
 
-	& > li {
-		list-style-type: "🔖 ";
-		margin-top: 1rem;
-	}
+// 	& > li {
+// 		list-style-type: "🔖 ";
+// 		margin-top: 1rem;
+// 	}
 
-	@media screen and (min-width: 1000px) {
-		width: 45%;
-	}
+// 	@media screen and (min-width: 1000px) {
+// 		width: 45%;
+// 	}
 
-	@media (max-width: 768px) {
-		& > * {
-			margin: 1rem 0;
-		}
-	}
+// 	@media (max-width: 768px) {
+// 		& > * {
+// 			margin: 1rem 0;
+// 		}
+// 	}
 
-	@media (max-width: 400px) {
-		flex-direction: column;
-	}
-`;
+// 	@media (max-width: 400px) {
+// 		flex-direction: column;
+// 	}
+// `;
 
-const ReadContainer = styled.div`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+// const ReadContainer = styled.div`
+// 	display: grid;
+// 	grid-template-columns: repeat(2, 1fr);
 
-	& > li {
-		list-style-type: "📖 ";
-	}
-`;
+// 	& > li {
+// 		list-style-type: "📖 ";
+// 	}
+// `;
 
 // const ReadPages = () => {
 // 	const ReadFilter = Object.entries(Books).filter(

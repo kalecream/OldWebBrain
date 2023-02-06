@@ -9,13 +9,6 @@
     "build": "next build",
     "start": "next start",
     "export": "npm run build && next export -o _static",
-    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
-    "build-storybook": "build-storybook"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn run type-check"
-    }
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",
@@ -34,7 +27,6 @@
     "@types/react-dom": "18.0.8",
     "animate.css": "^4.1.1",
     "babel-plugin-module-resolver": "^5.0.0",
-    "d3": "^7.6.1",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "emotion": "^11.0.0",
@@ -71,7 +63,6 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.3.0",
     "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.2",
     "types": "^0.1.1"
   }
