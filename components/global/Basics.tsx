@@ -36,17 +36,17 @@ export const HalfColumn = styled.div`
 // TYprography
 export const Caption = styled.p`
 	font-size: 0.8rem;
-	color: grey;
+	color: var(--grey);
 	text-align: center;
 `;
 
 export const CustomLink = styled(Link)`
-	color: green;
+	color: var(--primary);
 	text-decoration: none;
 	transition: color 0.15s;
 
 	&:hover {
-		color: lightgreen;
+		color: var(--secondary);
 		transform: scale(1.05);
 		transform-origin: center;
 		transition: color ease-in-out 0.15s;
@@ -55,97 +55,51 @@ export const CustomLink = styled(Link)`
 
 // Components
 
-export const Button = styled(Link)`
+interface ButtonProps {
+	primary?: boolean;
+	secondary?: boolean;
+}
+
+const primaryBackground = `radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%)`;
+const secondaryBackground = `var(--background)`;
+const boxShadow = `rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset`;
+const border = `2px solid var(--secondary)`;
+
+export const Button = styled(Link)<ButtonProps>`
 	align-items: center;
-	background-image: radial-gradient(
-		100% 100% at 100% 0,
-		lightgreen 0,
-		darkgreen 100%
-	);
+	background-image: ${(props) =>
+		props.primary ? primaryBackground : secondaryBackground};
+	border: ${(props) => (props.primary ? "none" : border)};
 	border-radius: 10px;
-	box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+	box-shadow: ${(props) => (props.primary ? boxShadow : "none")};
 	box-sizing: border-box;
-	color: white;
+	color: ${(props) => (props.primary ? "white" : "var(--secondary)")};
 	cursor: pointer;
 	display: inline-flex;
 	justify-content: center;
+	max-width: 500px;
 	line-height: 1;
 	overflow: hidden;
 	padding: 1rem 2rem;
 	position: relative;
-	text-align: left;
-	text-decoration: none;
-	transition: box-shadow 0.15s, transform 0.15s;
+	transition: box-shadow 0.15s, background-image 0.15s;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
 	white-space: nowrap;
 	will-change: box-shadow, transform;
-	opacity: 0.7;
+	opacity: 0.8;
 
-	& :hover {
+	&:hover {
 		opacity: 1;
 		transform: translateY(-2px);
 		background-image: radial-gradient(
 			100% 100% at 100% 0,
-			darkgreen 0,
-			lightgreen 100%
+			var(--secondary) 0,
+			var(--primary) 100%
 		);
+		color: ${(props) => (props.primary ? "white" : "var(--secondary)")};
 	}
-`;
-
-export const PrimaryButton = styled(Button)`
-	color: white;
-	border: none;
-	width: 100%;
-
-	@media (prefers-color-scheme: dark) {
-		a {
-			color: black;
-		}
-
-		& a:hover {
-			color: black;
-		}
-	}
-
-	@media (prefers-color-scheme: light) {
-		& a:hover {
-			color: white;
-		}
-
-		a {
-			color: white;
-		}
-	}
-`;
-
-export const SecondaryButton = styled(Button)`
-	background-image: radial-gradient(100% 100% at 100% 0, white 0, lightgreen 100%);
-	width: 45%;
-
-	@prefers-color-scheme: dark {
-
-		a {
-			color: white;
-		}
-
-		& a:hover {
-			color: white;
-		}
-	}
-
-	@media (prefers-color-scheme: light) {
-
-		a {
-			color: black;
-		}
-
-		& a:hover {
-			color: black;
-		}
-	} {
 `;
 
 export const Card = styled.div`
@@ -160,9 +114,9 @@ export const Card = styled.div`
 	padding: 2rem;
 	border: 3px solid #fff;
 	border-radius: 1rem;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: ${boxShadow};
 	transition: box-shadow 0.5s ease-in-out;
-	background-color: green;
+	background-color: var(--primary);
     background-image: 
 	linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.45) )
 	background-size: cover;
@@ -170,15 +124,15 @@ export const Card = styled.div`
 	background-repeat: no-repeat;
 
 	&:hover {
-		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 	}
 
 	& p {
 		padding: 1rem;
-		font-size: 0.8rem;
-		font-weight: 600;
 		text-align: start;
-		color: white;
+		color: var(--background);
+		color: var(--background);
+		font-size: 0.8rem;
 	}
 
 	& a {
@@ -191,7 +145,7 @@ export const CardTitle = styled.h2`
 	font-weight: 900;
 	font-family: "Playfair Display", serif;
 	text-align: center;
-	color: white;
+	color: var(--background);
 	word-spacing: 100vw;
 	line-height: 1.2;
 	text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
