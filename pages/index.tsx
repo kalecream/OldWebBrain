@@ -12,14 +12,7 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 import { Card, CardTitle } from "../components/global/Basics";
 
-import {
-	Button,
-	PrimaryButton,
-	SecondaryButton,
-	Section,
-	Container,
-	Caption,
-} from "../components/global/Basics";
+import { Section, Container, Caption } from "../components/global/Basics";
 import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
@@ -27,12 +20,7 @@ import { Model } from "../assets/models/me";
 import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import {
-	OrbitControls,
-	Environment,
-	PresentationControls,
-	PerspectiveCamera,
-} from "@react-three/drei";
+import { OrbitControls, PresentationControls } from "@react-three/drei";
 // import OtherProjects from "../components/home/otherProjects";
 // import LatestProjects from "../components/home/latestProjects";
 
@@ -117,11 +105,6 @@ const HeroParagraph = styled.p`
 	}
 `;
 
-const HeroButtonContainer = styled.div`
-	display: flex;
-	gap: 1rem;
-`;
-
 const ArticleContainer = styled(Container)`
 	height: 100vh;
 	padding: 0 5rem;
@@ -161,12 +144,6 @@ const FeaturedPostTitle = styled.h2`
 	text-align: center;
 	font-weight: 800;
 	font-family: "Playfair Display", serif;
-`;
-
-const FeaturedPostImage = styled.div`
-	width: 100%;
-	min-height: 33%;
-	max-height: 100%;
 `;
 
 const OtherArticles = styled.div`
@@ -242,20 +219,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 							I'm a generalist from Kingston, Jamaica currently working on
 							improving my web development and multimedia skills.
 						</HeroParagraph>
-						<HeroButtonContainer>
-							<PrimaryButton
-								className="animate__animated animate__slideInUp"
-								href="/services"
-							>
-								Commission
-							</PrimaryButton>
-							<SecondaryButton
-								className="animate__animated animate__slideInUp"
-								href="/projects"
-							>
-								Contact
-							</SecondaryButton>
-						</HeroButtonContainer>
 					</HeroSection>
 					<HeroSection>
 						<CustomCanvas

@@ -11,7 +11,7 @@ const Technologies = [
 	"MDX",
 ];
 
-// Use GSAP to animate the mapping of the technologies moving left and right across the screen as the user scrolls down the page.
+//TODO: Use GSAP to animate the mapping of the technologies moving left and right across the screen as the user scrolls down the page.
 
 const Tech = () => {
 	return (
