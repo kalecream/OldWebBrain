@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
 import Page from "../containers/layout/page";
 
 const Background = styled.div`
@@ -14,7 +13,7 @@ const Background = styled.div`
 		flex-wrap: wrap;
 	}
 `;
-
+// TODO: Fix colors
 const Text = styled.h1`
 	@media (max-width: 400px) {
 		font-size: 5rem;
@@ -30,30 +29,20 @@ const Text = styled.h1`
 	letter-spacing: 1rem;
 	text-align: center;
 	color: transparent;
-	stroke: 1px ${Colors.primary};
-	-webkit-text-stroke: 1px ${Colors.neutral};
+	stroke: 1px var(--primary);
+	-webkit-text-stroke: 1px grey;
 	-webkit-text-fill-color: transparent;
 	background: repeating-linear-gradient(
 		45deg,
-		${Colors.darkShade} 25%,
-		${Colors.darkAccent} 50%,
-		${Colors.darkShade} 50%,
-		${Colors.darkAccent} 75%
+		darkgreen 25%,
+		lightgreen 50%,
+		darkgreen 50%,
+		lightgreen 75%
 	);
 	background-size: 100px 100px;
 	background-clip: text;
 	-webkit-background-clip: text;
 	animation: stripeBackgroundPosition 2s linear infinite;
-
-	@media (prefers-color-scheme: dark) {
-		background: repeating-linear-gradient(
-			45deg,
-			${Colors.lightShade} 25%,
-			${Colors.lightAccent} 50%,
-			${Colors.lightShade} 50%,
-			${Colors.lightAccent} 75%
-		);
-	}
 
 	@keyframes stripeBackgroundPosition {
 		0% {
@@ -95,7 +84,7 @@ const TextContainer = styled.div`
 
 const TextDescription = styled.p`
 	margin-top: 0.2rem;
-	color: ${Colors.neutral[500]};
+	color: grey;
 `;
 
 const TextDescriptionContainer = styled.div`
@@ -134,8 +123,8 @@ export const Error = ({ statusCode }) => {
 };
 
 Error.getInitialProps = ({ res, err }) => {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-    return { statusCode }
-}
+	const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+	return { statusCode };
+};
 
 export default Error;
