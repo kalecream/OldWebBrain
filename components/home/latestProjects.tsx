@@ -3,13 +3,13 @@ import { Button, Container, Section } from "../global";
 import Projects from "../../data/projectsData";
 import styled from "@emotion/styled";
 
-interface Project {
-	id: number;
-	title: string;
-	description: string;
-	image: string;
-	created_at: string;
-}
+// interface Project {
+// 	id: number;
+// 	title: string;
+// 	description: string;
+// 	image: string;
+// 	created_at: string;
+// }
 
 const Thirds = styled.div`
 	display: flex;
