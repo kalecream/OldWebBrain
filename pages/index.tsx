@@ -179,7 +179,7 @@ const Rotate3DModel = () => {
 
 	useFrame((state) => {
 		if (!!orbitControlsRef.current) {
-			const { x, y } = state.mouse;
+			const { x } = state.mouse;
 			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
 			orbitControlsRef.current.update();
 		}
