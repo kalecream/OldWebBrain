@@ -1,8 +1,5 @@
-import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
-import HeroImage from "../assets/images/Under_Construction.webp";
 import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
 import RolodexLinks from "../data/rolodex_list";
 
 const Bookmark = styled.div`
@@ -28,16 +25,16 @@ export default function Bookmarks() {
 	return (
 		<Page title="Bookmarks">
 			<Bookmark>
-			{RolodexLinks.map((item) => (
-				
+				{RolodexLinks.map((item) => (
 					<ul>
 						<li>
-							<a href={item.links} target='_blank'>{item.name}</a>
+							<a href={item.links} target="_blank">
+								{item.name}
+							</a>
 							<p>{item.description}</p>
 						</li>
 					</ul>
-				
-			))}
+				))}
 			</Bookmark>
 		</Page>
 	);
