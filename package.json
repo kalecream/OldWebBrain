@@ -24,8 +24,8 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "pre-push": "yarn run type-check"
-    }},
-
+    }
+  },
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
@@ -54,6 +54,7 @@
     "next": "13.0.1",
     "next-mdx-remote": "^4.3.0",
     "next-themes": "^0.2.1",
+    "protonmail-api": "^2.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fontawesome": "^1.7.1",
