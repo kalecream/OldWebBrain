@@ -9,98 +9,98 @@ const StatusNumber = styled.span`
 	font-size: 0.55em;
 `;
 
-const BookContainer = styled.a`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	perspective: 600px;
-	margin: 2.5rem 0;
-`;
+// const BookContainer = styled.a`
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	perspective: 600px;
+// 	margin: 2.5rem 0;
+// `;
 
-const Book = styled.div`
-	margin: 0 1rem;
-	width: 200px;
-	height: 300px;
-	position: relative;
-	transform-style: preserve-3d;
-	transform: rotateY(-30deg);
-	transition: 1s ease;
-	animation: 1s ease 0s 1 initAnimation;
+// const Book = styled.div`
+// 	margin: 0 1rem;
+// 	width: 200px;
+// 	height: 300px;
+// 	position: relative;
+// 	transform-style: preserve-3d;
+// 	transform: rotateY(-30deg);
+// 	transition: 1s ease;
+// 	animation: 1s ease 0s 1 initAnimation;
 
-	&:hover {
-		transform: rotateY(0deg);
-	}
+// 	&:hover {
+// 		transform: rotateY(0deg);
+// 	}
 
-	& > :first-child {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: red;
-		width: 200px;
-		height: 300px;
-		transform: translateZ(25px);
-		background-color: #5e5c64;
-		border-radius: 0 2px 2px 0;
-		box-shadow: 5px 5px 20px #999;
-	}
+// 	& > :first-child {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background-color: red;
+// 		width: 200px;
+// 		height: 300px;
+// 		transform: translateZ(25px);
+// 		background-color: #5e5c64;
+// 		border-radius: 0 2px 2px 0;
+// 		box-shadow: 5px 5px 20px #999;
+// 	}
 
-	&::before {
-		position: absolute;
-		content: " ";
-		background-color: blue;
-		left: 0;
-		top: 3px;
-		width: 48px;
-		height: 294px;
-		transform: translateX(172px) rotateY(90deg);
-		background: linear-gradient(
-			90deg,
-			#fff 0%,
-			#f9f9f9 5%,
-			#fff 10%,
-			#f9f9f9 15%,
-			#fff 20%,
-			#f9f9f9 25%,
-			#fff 30%,
-			#f9f9f9 35%,
-			#fff 40%,
-			#f9f9f9 45%,
-			#fff 50%,
-			#f9f9f9 55%,
-			#fff 60%,
-			#f9f9f9 65%,
-			#fff 70%,
-			#f9f9f9 75%,
-			#fff 80%,
-			#f9f9f9 85%,
-			#fff 90%,
-			#f9f9f9 95%,
-			#fff 100%
-		);
-	}
+// 	&::before {
+// 		position: absolute;
+// 		content: " ";
+// 		background-color: blue;
+// 		left: 0;
+// 		top: 3px;
+// 		width: 48px;
+// 		height: 294px;
+// 		transform: translateX(172px) rotateY(90deg);
+// 		background: linear-gradient(
+// 			90deg,
+// 			#fff 0%,
+// 			#f9f9f9 5%,
+// 			#fff 10%,
+// 			#f9f9f9 15%,
+// 			#fff 20%,
+// 			#f9f9f9 25%,
+// 			#fff 30%,
+// 			#f9f9f9 35%,
+// 			#fff 40%,
+// 			#f9f9f9 45%,
+// 			#fff 50%,
+// 			#f9f9f9 55%,
+// 			#fff 60%,
+// 			#f9f9f9 65%,
+// 			#fff 70%,
+// 			#f9f9f9 75%,
+// 			#fff 80%,
+// 			#f9f9f9 85%,
+// 			#fff 90%,
+// 			#f9f9f9 95%,
+// 			#fff 100%
+// 		);
+// 	}
 
-	&::after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		content: " ";
-		width: 200px;
-		height: 300px;
-		transform: translateZ(-25px);
-		background-color: #5e5c64;
-		border-radius: 0 2px 2px 0;
-		box-shadow: -10px 0 50px 10px #666;
-	}
+// 	&::after {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		content: " ";
+// 		width: 200px;
+// 		height: 300px;
+// 		transform: translateZ(-25px);
+// 		background-color: #5e5c64;
+// 		border-radius: 0 2px 2px 0;
+// 		box-shadow: -10px 0 50px 10px #666;
+// 	}
 
-	@keyframes initAnimation {
-		0% {
-			transform: rotateY(0deg);
-		}
-		100% {
-			transform: rotateY(-30deg);
-		}
-	}
-`;
+// 	@keyframes initAnimation {
+// 		0% {
+// 			transform: rotateY(0deg);
+// 		}
+// 		100% {
+// 			transform: rotateY(-30deg);
+// 		}
+// 	}
+// `;
 
 const FlexContainer = styled.div`
 	display: flex;
@@ -165,100 +165,89 @@ const ReadContainer = styled.div`
 	}
 `;
 
-const BookSummary = styled.small`
-	display: block;
-	font-size: 0.8em;
-	width: 75%;
-`;
+// const ReadPages = () => {
+// 	const ReadFilter = Object.entries(Books).filter(
+// 		([key, value]) => value.status === "read"
+// 	);
 
-const ChartArea = styled.div`
-	width: 100%;
-	height: 300px;
-`;
+// 	return (
+// 		<ChartArea>
+// 			<svg width="100%" height="100%">
+// 				{ReadFilter.map((book, index) => {
+// 					const bookName = book[0];
+// 					let bookPages = 0;
 
-function ReadPages() {
-	const ReadFilter = Object.entries(Books).filter(
-		([key, value]) => value.status === "read"
-	);
+// 					typeof book[1].pages === "number"
+// 						? (bookPages = book[1].pages)
+// 						: (bookPages = 0);
 
-	return (
-		<ChartArea>
-			<svg width="100%" height="100%">
-				{ReadFilter.map((book, index) => {
-					const bookName = book[0];
-					let bookPages = 0;
+// 					const x = 50 + index * 100;
+// 					const y = 250 - bookPages / 2;
 
-					typeof book[1].pages === "number"
-						? (bookPages = book[1].pages)
-						: (bookPages = 0);
+// 					return (
+// 						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
+// 							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
+// 							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
+// 								{bookName}
+// 							</text>
+// 							<text
+// 								x={x + 25}
+// 								y={y + bookPages + 20}
+// 								textAnchor="middle"
+// 								fill="#fff"
+// 							>
+// 								{bookPages}
+// 							</text>
+// 						</g>
+// 					);
+// 				})}
+// 			</svg>
+// 		</ChartArea>
+// 	);
+// };
 
-					const x = 50 + index * 100;
-					const y = 250 - bookPages / 2;
+// const ReadPagesPerMonth = () => {
+// 	const ReadFilter = Object.entries(Books).filter(
+// 		([key, value]) => value.status === "read"
+// 	);
 
-					return (
-						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
-							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
-							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
-								{bookName}
-							</text>
-							<text
-								x={x + 25}
-								y={y + bookPages + 20}
-								textAnchor="middle"
-								fill="#fff"
-							>
-								{bookPages}
-							</text>
-						</g>
-					);
-				})}
-			</svg>
-		</ChartArea>
-	);
-}
+// 	return (
+// 		<ChartArea>
+// 			<svg width="100%" height="100%">
+// 				{ReadFilter.map((book, index) => {
+// 					const bookName = book[0];
+// 					let bookPages = 0;
 
-function ReadPagesPerMonth() {
-	const ReadFilter = Object.entries(Books).filter(
-		([key, value]) => value.status === "read"
-	);
+// 					typeof book[1].pages === "number"
+// 						? (bookPages = book[1].pages)
+// 						: (bookPages = 0);
 
-	return (
-		<ChartArea>
-			<svg width="100%" height="100%">
-				{ReadFilter.map((book, index) => {
-					const bookName = book[0];
-					let bookPages = 0;
+// 					const x = 50 + index * 100;
+// 					const y = 250 - bookPages / 2;
 
-					typeof book[1].pages === "number"
-						? (bookPages = book[1].pages)
-						: (bookPages = 0);
+// 					return (
+// 						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
+// 							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
+// 							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
+// 								{bookName}
+// 							</text>
+// 							<text
+// 								x={x + 25}
+// 								y={y + bookPages + 20}
+// 								textAnchor="middle"
+// 								fill="#fff"
+// 							>
+// 								{bookPages}
+// 							</text>
+// 						</g>
+// 					);
+// 				})}
+// 			</svg>
+// 		</ChartArea>
+// 	);
+// };
 
-					const x = 50 + index * 100;
-					const y = 250 - bookPages / 2;
-
-					return (
-						<g key={bookName.replace(/\s/g, "").replace(/:/g, "")}>
-							<rect x={x} y={y} width="50" height={bookPages} fill="#ff0000" />
-							<text x={x + 25} y={y - 10} textAnchor="middle" fill="#fff">
-								{bookName}
-							</text>
-							<text
-								x={x + 25}
-								y={y + bookPages + 20}
-								textAnchor="middle"
-								fill="#fff"
-							>
-								{bookPages}
-							</text>
-						</g>
-					);
-				})}
-			</svg>
-		</ChartArea>
-	);
-}
-
-export default function ReadBooks() {
+export const ReadBooks = () => {
 	const ReadFilter = Object.entries(Books).filter(
 		([key, value]) => value.status === "read"
 	);
@@ -279,7 +268,7 @@ export default function ReadBooks() {
 							Reading <StatusNumber>{ReadingFilter.length}</StatusNumber>
 						</h2>
 						<ReadingContainer>
-							{Books.map((book) => {
+							{/* {Books.map((book) => {
 								if (book.status === "reading") {
 									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 									return (
@@ -294,7 +283,7 @@ export default function ReadBooks() {
 										</BookContainer>
 									);
 								}
-							})}
+							})} */}
 						</ReadingContainer>
 					</div>
 
@@ -303,7 +292,7 @@ export default function ReadBooks() {
 							Want to Read <StatusNumber>{WantReadFilter.length}</StatusNumber>
 						</h2>
 						<WantToReadContainer>
-							{Books.map((book) => {
+							{/* {Books.map((book) => {
 								if (book.status === "Want to Read") {
 									let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 									return (
@@ -319,7 +308,7 @@ export default function ReadBooks() {
 										</li>
 									);
 								}
-							})}
+							})} */}
 						</WantToReadContainer>
 					</div>
 				</FlexContainer>
@@ -327,7 +316,7 @@ export default function ReadBooks() {
 					Read <StatusNumber>{ReadFilter.length}</StatusNumber>
 				</h2>
 				<ReadContainer>
-					{Books.map((book) => {
+					{/* {Books.map((book) => {
 						if (book.status === "read") {
 							let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 
@@ -347,9 +336,9 @@ export default function ReadBooks() {
 								</li>
 							);
 						}
-					})}
+					})} */}
 				</ReadContainer>
 			</section>
 		</Page>
 	);
-}
+};
