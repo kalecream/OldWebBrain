@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Colors } from "../styles/colors";
 import Page from "../containers/layout/page";
 
 const Background = styled.div`
@@ -30,30 +29,20 @@ const Text404 = styled.h1`
 	letter-spacing: 1rem;
 	text-align: center;
 	color: transparent;
-	stroke: 1px ${Colors.primary};
-	-webkit-text-stroke: 1px ${Colors.neutral};
+	stroke: 1px var(--primary);
+	-webkit-text-stroke: 1px var(--grey);
 	-webkit-text-fill-color: transparent;
 	background: repeating-linear-gradient(
 		45deg,
-		${Colors.darkShade} 25%,
-		${Colors.darkAccent} 50%,
-		${Colors.darkShade} 50%,
-		${Colors.darkAccent} 75%
+		var(--secondary) 25%,
+		var(--primary) 50%,
+		var(--secondary) 50%,
+		var(--primary) 75%
 	);
 	background-size: 100px 100px;
 	background-clip: text;
 	-webkit-background-clip: text;
 	animation: stripeBackgroundPosition 2s linear infinite;
-
-	@media (prefers-color-scheme: dark) {
-		background: repeating-linear-gradient(
-			45deg,
-			${Colors.lightShade} 25%,
-			${Colors.lightAccent} 50%,
-			${Colors.lightShade} 50%,
-			${Colors.lightAccent} 75%
-		);
-	}
 
 	@keyframes stripeBackgroundPosition {
 		0% {
@@ -95,7 +84,7 @@ const Text404Container = styled.div`
 
 const Text404Description = styled.p`
 	margin-top: 0.2rem;
-	color: ${Colors.neutral[500]};
+	color: var(--grey);
 `;
 
 const Text404DescriptionContainer = styled.div`
