@@ -82,7 +82,7 @@ const CustomCanvas = styled(Canvas)`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--primary);
   opacity: 0.7;
 
