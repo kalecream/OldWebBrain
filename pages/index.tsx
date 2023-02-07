@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 
-import styles from "../styles/Home.module.css";
 import Page from "../containers/layout/page";
 
 import { format, parseISO } from "date-fns";
