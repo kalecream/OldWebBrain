@@ -24,6 +24,8 @@ font-family: 'Playfair Display', serif;
   --warning: #e09a2c;
   --error: #f44336;
   --info: #2196f3;
+
+  --caption: var(--lightgrey);
 }
 
 .dark {
@@ -45,6 +47,8 @@ font-family: 'Playfair Display', serif;
   --warning: #e09a2c;
   --error: #f44336;
   --info: #2196f3;
+
+  --caption: var(--lightgrey);
 }
 
 * {
@@ -162,8 +166,13 @@ li {
   }
 }
 
+li > ul {
+  margin-left: 2rem;
+}
+
 li {
   margin-bottom: 0.5rem;
+  list-style-position: outside;
 }
 
 p,
