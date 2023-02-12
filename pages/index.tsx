@@ -109,8 +109,12 @@ const ArticleContainer = styled(Container)`
   padding: 0 5rem;
 `;
 
-const FeaturedPosts = styled.div`
-  width: 65%;
+interface BlogProps {
+  notManyPosts: boolean;
+}
+
+const FeaturedPosts = styled.div<BlogProps>`
+  width: ${(props) => (props.notManyPosts ? "100%" : "65%")};
   float: left;
   display: flex;
   flex-direction: row;
@@ -129,7 +133,7 @@ const ArticleDate = styled(Caption)`
 
 const FeaturedPost = styled(Card)`
   min-width: 300px;
-  min-height: 100px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   placeholder: 1rem;
@@ -145,8 +149,8 @@ const FeaturedPostTitle = styled.h2`
   font-family: "Playfair Display", serif;
 `;
 
-const OtherArticles = styled.div`
-  width: 30%;
+const OtherArticles = styled.div<BlogProps>`
+  width: ${(props) => (props.notManyPosts ? "0%" : "30%")};
   float: left;
   display: flex;
   flex-direction: column;
@@ -254,7 +258,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         {posts.length > 0 && (
           <>
             <ArticleContainer>
-              <FeaturedPosts>
+              <FeaturedPosts notManyPosts={posts.length <= 2 ? true : false}>
                 {posts.slice(0, 2).map(
                   (post) =>
                     post.draft !== false && (
