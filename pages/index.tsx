@@ -81,9 +81,10 @@ const CustomCanvas = styled(Canvas)`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--primary);
   opacity: 0.7;
+  font-weight: 100;
 
   @media (max-width: 400px) {
     font-size: 3rem;
