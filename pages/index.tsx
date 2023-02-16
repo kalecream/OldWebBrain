@@ -9,9 +9,8 @@ import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 
 import styled from "@emotion/styled";
-import { Card, CardTitle } from "../components/global/Basics";
 
-import { Section, Container, Caption } from "../components/global/Basics";
+import { Section, Container } from "../components/global/Basics";
 import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
@@ -104,58 +103,71 @@ const HeroParagraph = styled.p`
   }
 `;
 
-const ArticleContainer = styled(Container)`
-  height: 100vh;
-  padding: 0 5rem;
+const BlogSection = styled(Section)`
+  display: flex;
+  place-items: center;
 `;
 
-const FeaturedPosts = styled.div`
-  width: 65%;
-  float: left;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+const BlogTitle = styled.h2`
+  color: var(--faint);
+  font-size: 5rem;
+  height: 100%;
+  writing-mode: sideways-lr;
+  text-align: center;
+  text-orientation: mixed;
 
   @media (max-width: 1100px) {
-    width: 100%;
+    display: none;
   }
 `;
 
-const ArticleDate = styled(Caption)`
-  font-size: 0.8rem;
-  text-align: center;
-`;
-
-const FeaturedPost = styled(Card)`
-  min-width: 300px;
-  min-height: 100px;
+const ArticleContainer = styled(Container)`
+  padding: 0 5rem;
   display: flex;
-  flex-direction: column;
-  placeholder: 1rem;
-  place-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-`;
-
-const FeaturedPostTitle = styled.h2`
-  font-size: 2.5rem;
-  text-align: center;
-  font-weight: 800;
-  font-family: "Playfair Display", serif;
-`;
-
-const OtherArticles = styled.div`
-  width: 30%;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-  @media (max-width: 1100px) {
-    width: 100%;
-    flex-direction: row;
+const Articles = styled.div`
+  padding: 1rem;
+  width: 400px;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-around;
+
+  & span {
+    font-size: 0.7rem;
+    color: var(--lightgrey);
+  }
+
+  & h2 {
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: "Playfair Display", serif;
+  }
+
+  & h2:hover {
+    cursor: pointer;
+    color: var(--accent);
+  }
+
+  & p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    text-align: justify;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--faint);
+    border-radius: 0.5rem;
   }
 `;
 
@@ -250,56 +262,24 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </Hero>
         <ScrollDown />
       </Section>
-      <Section id="blog-posts">
+      <BlogSection id="blog-posts">
+        <BlogTitle>Blog</BlogTitle>
         {posts.length > 0 && (
-          <>
-            <ArticleContainer>
-              <FeaturedPosts>
-                {posts.slice(0, 2).map(
-                  (post) =>
-                    post.draft !== false && (
-                      <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-                        <FeaturedPost key={post.slug}>
-                          {post.date && (
-                            <ArticleDate>
-                              {format(parseISO(post.date), "MMMM dd, yyyy")}
-                            </ArticleDate>
-                          )}
-                          {/* <FeaturedPostImage>
-													<Image
-														src={post.image ?? ""}
-														alt={post.title}
-														style={{ objectFit: "cover" }}
-													/>
-												</FeaturedPostImage> */}
-                          <CardTitle>{post.title}</CardTitle>
-                          <p>{post.description}</p>
-                        </FeaturedPost>
-                      </Link>
-                    )
-                )}
-              </FeaturedPosts>
-              <OtherArticles>
-                {posts.slice(3).map((post) => (
-                  <article key={post.slug}>
-                    {post.date && (
-                      <ArticleDate className="text-sm text-gray-500">
-                        {format(parseISO(post.date), "MMMM dd, yyyy")}
-                      </ArticleDate>
-                    )}
-                    <h2>
-                      <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-                        <FeaturedPostTitle>{post.title}</FeaturedPostTitle>
-                      </Link>
-                    </h2>
-                    <p className="text-gray-500">{post.description}</p>
-                  </article>
-                ))}
-              </OtherArticles>
-            </ArticleContainer>
-          </>
+          <ArticleContainer>
+            {posts.slice(0, 9).map((post) => (
+              <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+                <Articles key={post.slug}>
+                  {post.date && (
+                    <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
+                  )}
+                  <h2>{post.title}</h2>
+                  <p className="text-gray-500">{post.description}</p>
+                </Articles>
+              </Link>
+            ))}
+          </ArticleContainer>
         )}
-      </Section>
+      </BlogSection>
       {/* <LatestProjects /> */}
       {/* <OtherProjects/> */}
     </Page>
