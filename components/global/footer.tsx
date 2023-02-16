@@ -12,6 +12,10 @@ const StyledFooter = styled.footer`
   @media screen and (max-width: 450px) {
     margin: 0.5rem 0;
     padding: 1rem 0;
+
+    & > * {
+      margin-right: 0.5rem;
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -32,7 +36,7 @@ const StyledFooter = styled.footer`
 export const Footer: React.FunctionComponent = () => {
   return (
     <StyledFooter>
-      KaleCream Limited &copy; {new Date().getFullYear()}
+      <div>KaleCream Limited &copy; {new Date().getFullYear()}</div>
       <CustomLink href="/legal/terms"> Terms of Service</CustomLink>
     </StyledFooter>
   );

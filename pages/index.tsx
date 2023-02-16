@@ -126,8 +126,9 @@ const ArticleContainer = styled(Container)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
 `;
 
 const Articles = styled.div`
@@ -146,10 +147,10 @@ const Articles = styled.div`
   }
 
   & h2 {
+    color: var(--accent);
     padding: 0;
     font-size: 2.5rem;
-    font-weight: 800;
-    font-family: "Playfair Display", serif;
+    font-weight: 600;
   }
 
   & h2:hover {
@@ -162,6 +163,7 @@ const Articles = styled.div`
     font-size: 0.8rem;
     line-height: 1.2rem;
     text-align: justify;
+    color: var(--text);
   }
 
   &:hover {
@@ -262,9 +264,10 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </Hero>
         <ScrollDown />
       </Section>
-      <BlogSection id="blog-posts">
-        <BlogTitle>Blog</BlogTitle>
-        {posts.length > 0 && (
+
+      {posts.length > 0 && (
+        <BlogSection id="blog-posts">
+          <BlogTitle>Blog</BlogTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
@@ -278,8 +281,9 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               </Link>
             ))}
           </ArticleContainer>
-        )}
-      </BlogSection>
+        </BlogSection>
+      )}
+
       {/* <LatestProjects /> */}
       {/* <OtherProjects/> */}
     </Page>

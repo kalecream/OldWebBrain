@@ -8,16 +8,14 @@ font-family: 'Playfair Display', serif;
 .light {
   --primary: #3eb489;
   --secondary: #2b694d;
-  --tertiary: #8cb6bb;
+  --accent: #8cb6bb;
 
   --text: #34373e;
   --body: #fafafa;
   --grey: #454545;
   --lightgrey: #8f8182;
   --faint: rgba(0, 0, 0, 0.1);
-
-  --secondary: #2b694d;
-  --color-primary: #3eb489;
+  --caption: #8f8182;
   /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
 
   --text-shadow: 0 0 1px #fff;
@@ -28,18 +26,16 @@ font-family: 'Playfair Display', serif;
 }
 
 .dark {
-  --primary: #3eb489;
-  --secondary: #2b694d;
-  --tertiary: #8cb6bb;
+  --primary: #86dabb;
+  --secondary: #6fb998;
+  --accent: #b7dce0;
 
   --text: #fafafa;
   --body: #34373e;
   --grey: #454545;
   --lightgrey: #8f8182;
-
-  --secondary: #2b694d;
-  --color-primary: #3eb489;
-  /* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.  */
+  --faint: rgba(0, 0, 0, 0.2);
+  --caption: #8f8182;
 
   --text-shadow: 0 0 1px #fff;
   --success: #63aa64;
