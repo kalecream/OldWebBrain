@@ -47,6 +47,7 @@ const DirectoryListItem = styled.li`
 
 const DirectoryLinks = styled.a`
   font-weight: 500;
+
   color: var(--text);
   text-transform: capitalize;
   opacity: 0.7;
@@ -58,11 +59,13 @@ const DirectoryLinks = styled.a`
 
 const SiteName = styled.a`
   height: 100%;
+  font-size: 2.5rem;
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem;
   color: var(--primary);
   opacity: 0.7;
+  font-weight: 300;
 
   & hover {
     opacity: 1;
@@ -78,9 +81,7 @@ const SiteName = styled.a`
 export const Navigation: React.FunctionComponent = () => {
   return (
     <StyledNavigation>
-      <SiteName href="/">
-        <h1>KaleCream</h1>
-      </SiteName>
+      <SiteName href="/">KaleCream</SiteName>
       <DirectoryList>
         {Directory.map((directory, index) => (
           <DirectoryListItem key={index}>
