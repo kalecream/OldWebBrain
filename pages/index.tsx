@@ -10,7 +10,7 @@ import { PostType } from "../types/post";
 
 import styled from "@emotion/styled";
 
-import { Section, Container } from "../components/global/Basics";
+import { Section, Container, Button } from "../components/global/Basics";
 import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
@@ -19,6 +19,7 @@ import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
+import { MediaProfiles } from "@components/socialmedia";
 // import OtherProjects from "../components/home/otherProjects";
 // import LatestProjects from "../components/home/latestProjects";
 
@@ -50,7 +51,17 @@ const HeroSection = styled.div`
   flex-direction: column;
   place-items: center;
   gap: 0.5rem;
-  text-align: center;
+
+  p {
+    width: 30rem;
+    line-height: 1.6rem;
+    text-align: start;
+
+    @media (max-width: 400px) {
+      font-size: 0.85rem;
+      max-width: 100%;
+    }
+  }
 
   @media (min-width: 1000px) {
     width: 100%;
@@ -59,6 +70,15 @@ const HeroSection = styled.div`
   @media (min-width: 768px) {
     width: 45%;
   }
+`;
+
+const ButtonContainer = styled.div`
+  width: 30rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
 `;
 
 const CustomCanvas = styled(Canvas)`
@@ -77,30 +97,6 @@ const CustomCanvas = styled(Canvas)`
 
   @media (max-width: 770px) {
     display: none;
-  }
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 3.5rem;
-  color: var(--primary);
-  opacity: 0.7;
-  font-weight: 100;
-
-  @media (max-width: 400px) {
-    font-size: 3rem;
-  }
-`;
-
-const HeroParagraph = styled.p`
-  max-width: 25rem;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  text-align: justify;
-  opacity: 0.7;
-
-  @media (max-width: 400px) {
-    font-size: 0.85rem;
-    max-width: 100%;
   }
 `;
 
@@ -223,16 +219,24 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <Section id="hero">
         <Hero>
           <HeroSection>
-            <HeroTitle className="animate__animated animate__slideInUp">
-              Hi <span>👋🏽</span>
-            </HeroTitle>
-            <HeroParagraph className="animate__animated animate__slideInUp">
-              Thanks for stopping by my website!
-            </HeroParagraph>
-            <HeroParagraph className="animate__animated animate__slideInUp">
-              I'm a generalist from Kingston, Jamaica currently working on
+            <p className="animate__animated animate__slideInUp">
+              <b>KaleCream</b>
+              <br />
+              Web Developer + 3D Artist
+            </p>
+            <p className="animate__animated animate__slideInUp">
+              I'm currently living in Kingston, Jamaica currently working on
               improving my web development and multimedia skills.
-            </HeroParagraph>
+            </p>
+            <p className="animate__animated animate__slideInUp">
+              I'm focused on building, improving and maintaining simple, useful
+              tools for myself and others.
+            </p>
+            <ButtonContainer className="animate__animated animate__slideInUp">
+              {MediaProfiles.map((profile) => (
+                <Button href={profile.url}>{profile.name}</Button>
+              ))}
+            </ButtonContainer>
           </HeroSection>
           <HeroSection>
             <CustomCanvas
