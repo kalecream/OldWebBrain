@@ -1,5 +1,6 @@
 const Projects = [
   {
+    id: "001",
     display: true,
     title: "Blue Orange",
     image: "/img/01_BlueOrange.png",
@@ -24,6 +25,7 @@ const Projects = [
     updated: "",
   },
   {
+    id: "002",
     display: true,
     title: "Morning Messages",
     description: (
@@ -44,6 +46,7 @@ const Projects = [
     created: "2021-11-15",
   },
   {
+    id: "003",
     display: true,
     title: "Kalecream Website",
     description: (
