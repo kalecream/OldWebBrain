@@ -73,7 +73,7 @@ export const Button = styled(Link)<ButtonProps>`
   border-radius: 10px;
   box-shadow: ${(props) => (props.primary ? boxShadow : "none")};
   box-sizing: border-box;
-  color: ${(props) => (props.primary ? "white" : "var(--secondary)")};
+  color: ${(props) => (props.primary ? "var(--body)" : "var(--secondary)")};
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -98,7 +98,7 @@ export const Button = styled(Link)<ButtonProps>`
       var(--secondary) 0,
       var(--primary) 100%
     );
-    color: ${(props) => (props.primary ? "white" : "var(--secondary)")};
+    color: var(--body);
   }
 `;
 
