@@ -225,8 +225,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               Web Developer + 3D Artist
             </p>
             <p className="animate__animated animate__slideInUp">
-              I'm currently living in Kingston, Jamaica currently working on
-              improving my web development and multimedia skills.
+              I'm currently living in Kingston, Jamaica working on improving my
+              web development and multimedia skills.
             </p>
             <p className="animate__animated animate__slideInUp">
               I'm focused on building, improving and maintaining simple, useful
