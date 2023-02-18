@@ -39,10 +39,6 @@ const Hero = styled.div`
   @media (max-width: 1100px) {
     flex-wrap: wrap;
   }
-
-  @media (max-width: 400px) {
-    margin: 0 1rem;
-  }
 `;
 
 const HeroSection = styled.div`
@@ -52,23 +48,25 @@ const HeroSection = styled.div`
   place-items: center;
   gap: 0.5rem;
 
-  p {
-    width: 30rem;
-    line-height: 1.6rem;
-    text-align: start;
-
-    @media (max-width: 400px) {
-      font-size: 0.85rem;
-      max-width: 100%;
-    }
-  }
-
   @media (min-width: 1000px) {
     width: 100%;
   }
 
   @media (min-width: 768px) {
     width: 45%;
+  }
+
+  p {
+    line-height: 1.6rem;
+    text-align: start;
+
+    @media (max-width: 1000px) {
+      width: 20rem;
+    }
+
+    @media (min-width: 1000px) {
+      width: 30rem;
+    }
   }
 `;
 
@@ -79,6 +77,14 @@ const ButtonContainer = styled.div`
   gap: 1rem;
   margin-top: 1rem;
   justify-content: flex-start;
+
+  @media (max-width: 1000px) {
+    width: 20rem;
+  }
+
+  @media (min-width: 1000px) {
+    width: 30rem;
+  }
 `;
 
 const CustomCanvas = styled(Canvas)`
