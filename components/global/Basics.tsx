@@ -8,9 +8,9 @@ export const Section = styled.section`
   display: grid;
   justify-content: center;
   align-items: center;
-  
+
   @media (max-width: 750px) {
-  padding: 0 1rem;
+    padding: 0 1rem;
   }
 `;
 
@@ -103,6 +103,12 @@ export const Button = styled(Link)<ButtonProps>`
       var(--primary) 100%
     );
     color: var(--body);
+  }
+
+  @media (max-width: 550px) {
+    padding: 0.5rem 1rem;
+    width: 80%;
+    text-align: center;
   }
 `;
 
