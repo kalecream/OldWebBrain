@@ -45,7 +45,7 @@ font-family: 'Playfair Display', serif;
   --body: #34373e;
   --grey: #b3b3b3;
   --lightgrey: #8f8182;
-  --faint: rgba(0, 0, 0, 0.2);
+  --faint: rgba(0, 0, 0, 0.1);
   --caption: #8f8182;
 
   --success: #63aa64;
@@ -71,22 +71,6 @@ html {
   font-size: 1rem;
   line-height: 1.6;
   font-family: "Inter", sans-serif;
-
-  @media screen and (max-width: 480px) {
-    padding: 0rem 0.5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0rem 1rem;
-  }
-
-  @media screen and (max-width: 1024px) {
-    padding: 0rem 2rem;
-  }
-
-  @media screen and (max-width: 1280px) {
-    padding: 0rem 5rem;
-  }
 }
 
 main {
@@ -94,12 +78,23 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  margin: 0 2rem;
 
-section {
-  min-height: 75vh;
-  width: 100vw;
-  padding: 1rem 0rem;
+  @media screen and (max-width: 340px) {
+    padding: 0 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0rem 3rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0rem 4rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0rem 5rem;
+  }
 }
 
 a {
@@ -120,7 +115,6 @@ h4,
 h5,
 h6 {
   color: var(--color-primary);
-  opacity: 0.9;
 }
 
 h4,
@@ -134,12 +128,20 @@ h1 {
   margin-bottom: 0rem;
   font-family: "Coolvetica";
   text-align: center;
+
+  @media screen and (max-width: 750px) {
+    font-size: 2rem;
+  }
 }
 
 h2 {
   padding: 0.25em;
   font-size: 2.5rem;
   margin-top: 0;
+
+  @media screen and (max-width: 750px) {
+    font-size: 2rem;
+  }
 }
 
 h3 {

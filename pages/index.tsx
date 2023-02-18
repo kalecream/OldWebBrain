@@ -132,6 +132,10 @@ const ArticleContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 750px) {
+    padding: 0 1rem;
+  }
 `;
 
 const Articles = styled.div`
@@ -144,6 +148,10 @@ const Articles = styled.div`
   justify-content: flex-start;
   align-content: space-around;
 
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+
   & span {
     font-size: 0.7rem;
     color: var(--lightgrey);
@@ -154,6 +162,10 @@ const Articles = styled.div`
     padding: 0;
     font-size: 2.5rem;
     font-weight: 600;
+
+    @media (max-width: 750px) {
+      font-size: 2rem;
+    }
   }
 
   & h2:hover {

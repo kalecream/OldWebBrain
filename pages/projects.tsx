@@ -9,7 +9,6 @@ import Projects from "../data/projectsData";
 
 const RigidContainer = styled.div`
   display: flex;
-  margin: 0 10rem;
   flex-wrap: wrap;
   flex-direction: row;
 `;
