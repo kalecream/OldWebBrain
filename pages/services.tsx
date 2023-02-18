@@ -2,7 +2,7 @@ import Page from "../containers/layout/page";
 // import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import "animate.css";
-import { Section, Container, Button } from "../components/global";
+import { Section, Container } from "../components/global";
 import Link from "next/link";
 
 const Sections = [
