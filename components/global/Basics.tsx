@@ -8,6 +8,10 @@ export const Section = styled.section`
   display: grid;
   justify-content: center;
   align-items: center;
+  
+  @media (max-width: 750px) {
+  padding: 0 1rem;
+  }
 `;
 
 export const Container = styled.div`
