@@ -79,7 +79,7 @@ const CustomArticle = styled.article`
   h3 {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
 
   & ol,
@@ -312,9 +312,9 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         >
           {frontMatter.title}
         </h1>
-          <Caption style={{ marginLeft: "1rem" }}>
-            {getReadTime(source.compiledSource)} minute read
-          </Caption>
+        <Caption style={{ marginLeft: "1rem" }}>
+          {getReadTime(source.compiledSource)} minute read
+        </Caption>
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>

@@ -33,20 +33,25 @@ const Hero = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 1100px) {
-    flex-wrap: wrap;
+    height: 40vh;
+  }
+
+  @media (max-width: 550px) {
+    height: 25vh;
   }
 `;
 
 const HeroSection = styled.div`
+  height: fit-content;
   width: 100%;
-  height: 25vh;
+
   display: flex;
   flex-direction: column;
-  place-items: center;
   gap: 0.5rem;
 
   @media (max-width: 750px) {
@@ -59,6 +64,7 @@ const HeroSection = styled.div`
 
   @media (min-width: 768px) {
     width: 45%;
+    margin-bottom: 5rem;
   }
 
   p {
@@ -93,28 +99,20 @@ const ButtonContainer = styled.div`
 `;
 
 const CustomCanvas = styled(Canvas)`
-  width: 100%;
-  height: 100%;
-
-  @media (min-width: 1100px) {
+  @media (min-width: 750px) {
     width: 100%;
     height: 100%;
   }
 
-  @media (max-width: 1000px) {
-    width: 50%;
-    height: 50%;
-  }
-
-  @media (max-width: 770px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
 
 const BlogSection = styled(Section)`
+  margin-top: 5rem;
   display: flex;
   place-items: center;
-  margin: 2rem;
 `;
 
 const ArticleContainer = styled(Container)`
@@ -126,8 +124,8 @@ const ArticleContainer = styled(Container)`
   align-items: center;
   gap: 2rem;
 
-  @media screen and (max-width: 1100px) {
-    padding: 0 3rem;
+  @media screen and (min-width: 750px) {
+    max-width: 50rem;
   }
 
   @media screen and (max-width: 750px) {
@@ -217,7 +215,7 @@ const Rotate3DModel = () => {
     <>
       <OrbitControls
         ref={orbitControlsRef}
-        maxDistance={10}
+        maxDistance={8}
         minDistance={8}
         enableZoom={false}
       />
@@ -258,8 +256,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               dpr={[1, 2]}
               camera={{ position: [2, 0, 12], fov: 15 }}
               style={{
-                width: "300px",
-                height: "600px",
+                width: "375px",
+                height: "500px",
               }}
             >
               {/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}

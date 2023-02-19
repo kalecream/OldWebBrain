@@ -73,6 +73,13 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+body {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-rows: auto 1fr auto;
+  overflow-y: scroll;
+}
+
 main {
   display: flex;
   flex-direction: column;
