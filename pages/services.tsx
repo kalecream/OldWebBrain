@@ -2,7 +2,7 @@ import Page from "../containers/layout/page";
 // import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import "animate.css";
-import { Section} from "../components/global";
+import { Section } from "../components/global";
 import Link from "next/link";
 
 const Sections = [
@@ -70,8 +70,8 @@ const ProjectCard = styled(Link)`
     border-radius: var(--border-radius);
   }
 
-  @media (max-width: 550px) {
-    width: 300px;
+  @media (max-width: 750px) {
+    width: 100%;
     height: max-content;
     padding: 1rem;
     margin: 0 auto;
@@ -110,17 +110,27 @@ const ProjectCard = styled(Link)`
     width: 35%;
     height: 100%;
     object-fit: cover;
+
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 1500px) {
+      width: 35%;
+    }
   }
 `;
 
 const ServicesTerms = styled.div`
-  width: 100%;
-  margin-top: 3rem;
+  margin: 3rem auto;
 
   & > p {
-    margin: 1.5rem 1rem;
     max-width: 55rem;
     text-align: justify;
+
+    @media (max-width: 750px) {
+      margin: 1.5rem 1rem;
+    }
   }
 `;
 
