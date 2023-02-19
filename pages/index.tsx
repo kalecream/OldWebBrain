@@ -11,7 +11,7 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
 import { Section, Container, Button } from "../components/global/Basics";
-import { ScrollDown } from "../components/global";
+// import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
 
@@ -43,10 +43,15 @@ const Hero = styled.div`
 
 const HeroSection = styled.div`
   width: 100%;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   place-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 750px) {
+    margin-top: 5rem;
+  }
 
   @media (min-width: 1000px) {
     width: 100%;
@@ -109,19 +114,7 @@ const CustomCanvas = styled(Canvas)`
 const BlogSection = styled(Section)`
   display: flex;
   place-items: center;
-`;
-
-const BlogTitle = styled.h2`
-  color: var(--faint);
-  font-size: 5rem;
-  height: 100%;
-  writing-mode: sideways-lr;
-  text-align: center;
-  text-orientation: mixed;
-
-  @media (max-width: 1100px) {
-    display: none;
-  }
+  margin: 2rem;
 `;
 
 const ArticleContainer = styled(Container)`
@@ -133,23 +126,30 @@ const ArticleContainer = styled(Container)`
   align-items: center;
   gap: 2rem;
 
-  @media (max-width: 750px) {
-    padding: 0 1rem;
+  @media screen and (max-width: 1100px) {
+    padding: 0 3rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: auto;
+    justify-content: flex-start;
+    justify-items: center;
   }
 `;
 
 const Articles = styled.div`
   padding: 1rem;
-  width: 400px;
+  max-width: 25rem;
   height: fit-content;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: space-around;
 
-  @media (max-width: 750px) {
-    width: 100%;
+  &:hover {
+    cursor: pointer;
+    background-color: var(--faint);
+    border-radius: 0.5rem;
   }
 
   & span {
@@ -179,12 +179,6 @@ const Articles = styled.div`
     line-height: 1.2rem;
     text-align: justify;
     color: var(--text);
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: var(--faint);
-    border-radius: 0.5rem;
   }
 `;
 
@@ -285,12 +279,11 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             </CustomCanvas>
           </HeroSection>
         </Hero>
-        <ScrollDown />
+        {/* <ScrollDown /> */}
       </Section>
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
-          <BlogTitle>Blog</BlogTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>

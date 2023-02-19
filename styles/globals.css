@@ -80,12 +80,8 @@ main {
   align-items: center;
   margin: 0 2rem;
 
-  @media screen and (max-width: 340px) {
+  @media screen and (max-width: 750px) {
     padding: 0 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0rem 3rem;
   }
 
   @media screen and (max-width: 1024px) {
