@@ -2,20 +2,21 @@ import styled from "@emotion/styled";
 import { CustomLink } from "./Basics";
 
 const StyledFooter = styled.footer`
+  margin-top: 2rem;
+  display: flex;
   bottom: 0;
-  height: 4rem;
+  height: 3rem;
   font-size: 0.65rem;
-  opacity: 0.75;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  @media screen and (max-width: 450px) {
-    margin: 0.5rem 0;
-    padding: 1rem 0;
+  & > * {
+    margin-right: 0.5rem;
+  }
 
-    & > * {
-      margin-right: 0.5rem;
-    }
+  @media screen and (min-width: 1024px) {
+    margin: 0.05rem 5rem;
   }
 
   @media screen and (max-width: 768px) {
@@ -24,12 +25,9 @@ const StyledFooter = styled.footer`
     justify-content: center;
   }
 
-  @media screen and (max-width: 1024px) {
-    margin: 0.05rem 3rem;
-  }
-
-  @media screen and (min-width: 1024px) {
-    margin: 0.05rem 5rem;
+  @media screen and (max-width: 450px) {
+    margin: 0.5rem 0;
+    padding: 1rem 0;
   }
 `;
 
