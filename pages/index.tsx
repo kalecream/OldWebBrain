@@ -11,7 +11,7 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
 import { Section, Container, Button } from "../components/global/Basics";
-import { ScrollDown } from "../components/global";
+// import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
 
@@ -33,20 +33,30 @@ const Hero = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 1100px) {
-    flex-wrap: wrap;
+    height: 40vh;
+  }
+
+  @media (max-width: 550px) {
+    height: 25vh;
   }
 `;
 
 const HeroSection = styled.div`
+  height: fit-content;
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  place-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 750px) {
+    margin-top: 5rem;
+  }
 
   @media (min-width: 1000px) {
     width: 100%;
@@ -54,6 +64,7 @@ const HeroSection = styled.div`
 
   @media (min-width: 768px) {
     width: 45%;
+    margin-bottom: 5rem;
   }
 
   p {
@@ -88,40 +99,20 @@ const ButtonContainer = styled.div`
 `;
 
 const CustomCanvas = styled(Canvas)`
-  width: 100%;
-  height: 100%;
-
-  @media (min-width: 1100px) {
+  @media (min-width: 750px) {
     width: 100%;
     height: 100%;
   }
 
-  @media (max-width: 1000px) {
-    width: 50%;
-    height: 50%;
-  }
-
-  @media (max-width: 770px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `;
 
 const BlogSection = styled(Section)`
+  margin-top: 5rem;
   display: flex;
   place-items: center;
-`;
-
-const BlogTitle = styled.h2`
-  color: var(--faint);
-  font-size: 5rem;
-  height: 100%;
-  writing-mode: sideways-lr;
-  text-align: center;
-  text-orientation: mixed;
-
-  @media (max-width: 1100px) {
-    display: none;
-  }
 `;
 
 const ArticleContainer = styled(Container)`
@@ -132,17 +123,32 @@ const ArticleContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (min-width: 750px) {
+    max-width: 50rem;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: auto;
+    justify-content: flex-start;
+    justify-items: center;
+  }
 `;
 
 const Articles = styled.div`
   padding: 1rem;
-  width: 400px;
+  max-width: 25rem;
   height: fit-content;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: space-around;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--faint);
+    border-radius: 0.5rem;
+  }
 
   & span {
     font-size: 0.7rem;
@@ -154,6 +160,10 @@ const Articles = styled.div`
     padding: 0;
     font-size: 2.5rem;
     font-weight: 600;
+
+    @media (max-width: 750px) {
+      font-size: 2rem;
+    }
   }
 
   & h2:hover {
@@ -167,12 +177,6 @@ const Articles = styled.div`
     line-height: 1.2rem;
     text-align: justify;
     color: var(--text);
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: var(--faint);
-    border-radius: 0.5rem;
   }
 `;
 
@@ -211,7 +215,7 @@ const Rotate3DModel = () => {
     <>
       <OrbitControls
         ref={orbitControlsRef}
-        maxDistance={10}
+        maxDistance={8}
         minDistance={8}
         enableZoom={false}
       />
@@ -252,8 +256,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               dpr={[1, 2]}
               camera={{ position: [2, 0, 12], fov: 15 }}
               style={{
-                width: "300px",
-                height: "600px",
+                width: "375px",
+                height: "500px",
               }}
             >
               {/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
@@ -273,12 +277,11 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             </CustomCanvas>
           </HeroSection>
         </Hero>
-        <ScrollDown />
+        {/* <ScrollDown /> */}
       </Section>
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
-          <BlogTitle>Blog</BlogTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>

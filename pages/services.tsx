@@ -2,7 +2,7 @@ import Page from "../containers/layout/page";
 // import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import "animate.css";
-import { Section, Container } from "../components/global";
+import { Section } from "../components/global";
 import Link from "next/link";
 
 const Sections = [
@@ -70,8 +70,8 @@ const ProjectCard = styled(Link)`
     border-radius: var(--border-radius);
   }
 
-  @media (max-width: 550px) {
-    width: 300px;
+  @media (max-width: 750px) {
+    width: 100%;
     height: max-content;
     padding: 1rem;
     margin: 0 auto;
@@ -87,10 +87,15 @@ const ProjectCard = styled(Link)`
     @media (max-width: 550px) {
       font-size: 2rem;
     }
+
+    @media screen and (max-width: 1200px) {
+      max-width: 25rem;
+      line-height: 1.1;
+    }
   }
 
   & > p {
-    width: 25rem;
+    max-width: 25rem;
 
     @media (max-width: 550px) {
       width: 100%;
@@ -101,74 +106,83 @@ const ProjectCard = styled(Link)`
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 100%;
+    padding: 1rem;
+    width: 35%;
     height: 100%;
     object-fit: cover;
+
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 1500px) {
+      width: 35%;
+    }
   }
 `;
 
-const BlockContainer = styled(Container)`
-  place-items: center;
-  display: grid;
-  height: fit-content;
+const ServicesTerms = styled.div`
+  margin: 3rem auto;
+
+  & > p {
+    max-width: 55rem;
+    text-align: justify;
+
+    @media (max-width: 750px) {
+      margin: 1.5rem 1rem;
+    }
+  }
 `;
 
 export default function Services() {
   return (
     <Page title="Let's Work Together">
       <Section>
-        <Container style={{ margin: 0 }}>
-          <CardContainer style={{ margin: "2rem" }}>
-            {Sections.map((section) => (
-              <ProjectCard
-                href={section.link}
-                className="animate__animated animate__fadeInUp"
-              >
-                <h2>{section.name}</h2>
-                <p>{section.description}</p>
-              </ProjectCard>
-            ))}
-          </CardContainer>
+        <CardContainer>
+          {Sections.map((section) => (
+            <ProjectCard
+              href={section.link}
+              className="animate__animated animate__fadeInUp"
+            >
+              <h2>{section.name}</h2>
+              <p>{section.description}</p>
+              <img
+                width={100}
+                height={100}
+                alt={""}
+                src={`/img/Services/${section.name}.svg`}
+              />
+            </ProjectCard>
+          ))}
+        </CardContainer>
 
-          <BlockContainer style={{ margin: "2rem" }}>
-            <p
-              className="animate__animated animate__fadeInUp"
-              style={{ maxWidth: "55rem", textAlign: "justify" }}
-            >
-              I understand that budget can be a major concern for my clients.
-              That's why I offer flexible pricing options to ensure that I can
-              meet the budget of every client.
-            </p>
-            <p
-              className="animate__animated animate__fadeInUp"
-              style={{ maxWidth: "55rem", textAlign: "justify" }}
-            >
-              I offer a range of services at various price points, so you can
-              choose the level of support that fits your budget. I am also open
-              to negotiating rates for larger projects or longer-term
-              engagements. I believe that everyone should have access to
-              high-quality services, regardless of budget. That's why I am
-              committed to finding solutions that work for you and your
-              financial needs.
-            </p>
-            <p
-              className="animate__animated animate__fadeInUp"
-              style={{ maxWidth: "55rem", textAlign: "justify" }}
-            >
-              Please don't hesitate to contact me to discuss your budget and how
-              I can help you achieve your goals within your means. I look
-              forward to working with you! I am always open to discussing new
-              project ideas and finding ways to meet the unique needs of my
-              clients. Please do not hesitate to contact me to learn more about
-              how I can help you achieve your goals. I currently accept payment
-              for projects through{" "}
-              <a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">
-                Paypal
-              </a>{" "}
-              or Payoneer.
-            </p>
-          </BlockContainer>
-        </Container>
+        <ServicesTerms>
+          <p className="animate__animated animate__fadeInUp">
+            I understand that budget can be a major concern for my clients.
+            That's why I offer flexible pricing options to ensure that I can
+            meet the budget of every client.
+          </p>
+          <p className="animate__animated animate__fadeInUp">
+            I offer a range of services at various price points, so you can
+            choose the level of support that fits your budget. I am also open to
+            negotiating rates for larger projects or longer-term engagements. I
+            believe that everyone should have access to high-quality services,
+            regardless of budget. That's why I am committed to finding solutions
+            that work for you and your financial needs.
+          </p>
+          <p className="animate__animated animate__fadeInUp">
+            Please don't hesitate to contact me to discuss your budget and how I
+            can help you achieve your goals within your means. I look forward to
+            working with you! I am always open to discussing new project ideas
+            and finding ways to meet the unique needs of my clients. Please do
+            not hesitate to contact me to learn more about how I can help you
+            achieve your goals. I currently accept payment for projects through{" "}
+            <a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">
+              Paypal
+            </a>{" "}
+            or Payoneer.
+          </p>
+        </ServicesTerms>
       </Section>
     </Page>
   );

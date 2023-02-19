@@ -25,7 +25,7 @@ const StyledNavigation = styled.nav`
   }
 
   @media screen and (min-width: 1024px) {
-    margin: 3rem 5rem;
+    margin: 1.5rem 3rem;
   }
 `;
 
@@ -62,7 +62,7 @@ const SiteName = styled.a`
   font-size: 2.5rem;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   color: var(--primary);
   opacity: 0.7;
   font-weight: 300;

@@ -65,7 +65,6 @@ const BlogPage = styled(Page)`
 const CustomArticle = styled.article`
   width: 100%;
   grid-area: article;
-  padding: 0 2rem;
 
   margin: 0 auto;
 
@@ -80,7 +79,7 @@ const CustomArticle = styled.article`
   h3 {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
 
   & ol,
@@ -300,25 +299,22 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         </ul>
       </TableOfContents>
       <CustomArticle>
+        <Caption>
+          {format(
+            parseISO(frontMatter.date ? frontMatter.date : ""),
+            "MMMM dd, yyyy"
+          )}
+        </Caption>
         <h1
           style={{
             lineHeight: "1.2",
-            fontSize: "4rem",
           }}
         >
           {frontMatter.title}
         </h1>
-        <div style={{ display: "flex", width: "100%" }}>
-          <Caption>
-            {format(
-              parseISO(frontMatter.date ? frontMatter.date : ""),
-              "MMMM dd, yyyy"
-            )}
-          </Caption>
-          <Caption style={{ marginLeft: "1rem" }}>
-            {getReadTime(source.compiledSource)} minute read
-          </Caption>
-        </div>
+        <Caption style={{ marginLeft: "1rem" }}>
+          {getReadTime(source.compiledSource)} minute read
+        </Caption>
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
