@@ -87,6 +87,11 @@ const ProjectCard = styled(Link)`
     @media (max-width: 550px) {
       font-size: 2rem;
     }
+
+    @media screen and (max-width: 1200px) {
+      max-width: 25rem;
+      line-height: 1.1;
+    }
   }
 
   & > p {
@@ -101,7 +106,8 @@ const ProjectCard = styled(Link)`
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 100%;
+    padding: 1rem;
+    width: 35%;
     height: 100%;
     object-fit: cover;
   }
@@ -130,6 +136,12 @@ export default function Services() {
             >
               <h2>{section.name}</h2>
               <p>{section.description}</p>
+              <img
+                width={100}
+                height={100}
+                alt={""}
+                src={`/img/Services/${section.name}.svg`}
+              />
             </ProjectCard>
           ))}
         </CardContainer>
