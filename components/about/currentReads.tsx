@@ -1,6 +1,6 @@
 import * as React from "react";
-import Books from "../data/books";
-import { Container, Section } from "./global";
+import Books from "../../data/books";
+import { Container, Section } from "../global";
 import styled from "@emotion/styled";
 import "animate.css";
 
