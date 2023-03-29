@@ -4296,7 +4296,7 @@ react-spring@8.0.23:
     "@babel/runtime" "^7.3.1"
     prop-types "^15.5.8"
 
-react-spring@^9.0.0-beta.20:
+react-spring@^9.0.0-beta.20, react-spring@^9.7.1:
   version "9.7.1"
   resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.7.1.tgz#8acfed700823490a4d9d4cf131c5fea12d1aaa93"
   integrity sha512-o2+r2DNQDVEuefiz33ZF76DPd/gLq3kbdObJmllGF2IUfv2W6x+ZP0gR97QYCSR4QLbmOl1mPKUBbI+FJdys2Q==
