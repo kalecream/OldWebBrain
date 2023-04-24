@@ -122,6 +122,7 @@ const ArticleContainer = styled(Container)`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  height: fit-content;
   gap: 2rem;
 
   @media screen and (min-width: 750px) {
@@ -137,12 +138,14 @@ const ArticleContainer = styled(Container)`
 
 const Articles = styled.div`
   padding: 1rem;
-  max-width: 25rem;
+  width: 25rem;
   height: fit-content;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border: 1px solid var(--faint);
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;
@@ -290,7 +293,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
                   <h2>{post.title}</h2>
-                  <p className="text-gray-500">{post.description}</p>
+                  <p>{post.description}</p>
                 </Articles>
               </Link>
             ))}
