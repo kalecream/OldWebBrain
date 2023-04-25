@@ -37,8 +37,6 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding-top: 2rem;
-
   @media (max-width: 1100px) {
     height: 40vh;
   }
