@@ -19,6 +19,7 @@ const DirectoryList = styled.ul`
 const StyledFooter = styled.footer`
   display: flex;
   bottom: 0;
+  position: absolute;
   height: 2rem;
   font-size: 0.65rem;
   display: flex;
@@ -33,33 +34,6 @@ const StyledFooter = styled.footer`
   }
 `;
 
-export const Navigation: React.FunctionComponent = () => {
-  return (
-    <StyledNavigation>
-      <SiteName href="/">KaleCream</SiteName>
-      <DirectoryList>
-        {Directory.map((directory, index) => (
-          <DirectoryListItem key={index}>
-            <DirectoryLinks href={directory.links}>
-              {directory.title}
-            </DirectoryLinks>
-          </DirectoryListItem>
-        ))}
-      </DirectoryList>
-      <ThemeSwitch />
-    </StyledNavigation>
-  );
-};
-
-export const Footer: React.FunctionComponent = () => {
-  return (
-    <StyledFooter>
-      <div>KaleCream Limited &copy; {new Date().getFullYear()}</div>
-      <CustomLink href="/legal/terms"> Terms of Service</CustomLink>
-    </StyledFooter>
-  );
-};
-
 // TODO: Desktop navigation
 // TODO: Mobile navigation
 
@@ -70,7 +44,7 @@ interface navProps {
 const StyledNavigation = styled.nav<navProps>`
   top: 0;
   width: 100%;
-  height: 40px;
+  height: 2rem;
   display: absolute;
   justify-content: space-around;
   background-color: var(--background);
@@ -154,3 +128,30 @@ export const SiteName = styled(CustomLink)`
     }
   }
 `;
+
+export const Navigation: React.FunctionComponent = () => {
+  return (
+    <StyledNavigation>
+      <SiteName href="/">KaleCream</SiteName>
+      <DirectoryList>
+        {Directory.map((directory, index) => (
+          <DirectoryListItem key={index}>
+            <DirectoryLinks href={directory.links}>
+              {directory.title}
+            </DirectoryLinks>
+          </DirectoryListItem>
+        ))}
+      </DirectoryList>
+      <ThemeSwitch />
+    </StyledNavigation>
+  );
+};
+
+export const Footer: React.FunctionComponent = () => {
+  return (
+    <StyledFooter>
+      <div>KaleCream Limited &copy; {new Date().getFullYear()}</div>
+      <CustomLink href="/legal/terms"> Terms of Service</CustomLink>
+    </StyledFooter>
+  );
+};

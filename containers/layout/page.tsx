@@ -19,13 +19,14 @@ export const Page = ({
   description,
   customMeta,
 }: LayoutProps) => {
+  const siteTitle = title ? "KaleCream | " + title : "KaleCream";
   useEffect(() => {
     TagManager.initialize({ gtmId: "UA-148483444-1" });
   }, []);
   return (
-    <body style={{ height: "95vh" }}>
+    <body>
       <header>
-        <title>KaleCream {title ? "| " + title : null}</title>
+        <title>{siteTitle}</title>
         <Navigation />
       </header>
 
