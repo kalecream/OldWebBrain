@@ -87,8 +87,11 @@ body {
 
 header {
   top: 0;
-  height: 2rem;
+  width: 100%;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
 main {

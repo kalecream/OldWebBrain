@@ -34,18 +34,13 @@ const StyledFooter = styled.footer`
   }
 `;
 
-// TODO: Desktop navigation
-// TODO: Mobile navigation
-
 interface navProps {
   display?: boolean;
 }
 
 const StyledNavigation = styled.nav<navProps>`
-  top: 0;
+  display: grid;
   width: 100%;
-  height: 2rem;
-  display: absolute;
   justify-content: space-around;
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
@@ -68,10 +63,6 @@ const StyledNavigation = styled.nav<navProps>`
   @media screen and (min-width: 1024px) {
     padding: 3rem 5rem;
     flex-direction: row;
-
-    & > div {
-      width: 50%;
-    }
   }
 `;
 
@@ -79,34 +70,18 @@ const DirectoryListItem = styled.li`
   list-style: none;
 
   & > * {
-    margin: 2.5rem 0;
+    margin: 0 0.5rem;
   }
 `;
 
 const DirectoryLinks = styled(CustomLink)`
-  font-weight: 700;
   color: var(--text);
   text-transform: capitalize;
   opacity: 0.7;
+  font-size: 1rem;
 
   &:hover {
     color: var(--primary);
-  }
-
-  @media screen and (min-width: 1024px) {
-    font-size: 5rem;
-  }
-
-  @media screen and (max-width: 1024px) {
-    font-size: 4rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 3rem;
-  }
-
-  @media screen and (max-width: 450px) {
-    font-size: 1.5rem;
   }
 `;
 
@@ -115,6 +90,7 @@ export const SiteName = styled(CustomLink)`
   display: flex;
   justify-content: center;
   padding: 0.5rem 1rem;
+  font-size: 2rem;
   color: var(--primary);
   opacity: 0.7;
 
@@ -131,7 +107,7 @@ export const SiteName = styled(CustomLink)`
 
 export const Navigation: React.FunctionComponent = () => {
   return (
-    <StyledNavigation>
+    <StyledNavigation display>
       <SiteName href="/">KaleCream</SiteName>
       <DirectoryList>
         {Directory.map((directory, index) => (

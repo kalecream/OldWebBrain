@@ -37,6 +37,8 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
 
+  padding-top: 2rem;
+
   @media (max-width: 1100px) {
     height: 40vh;
   }
@@ -233,8 +235,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         <Hero>
           <HeroSection>
             <p className="animate__animated animate__slideInUp">
-              <b>KaleCream</b>
-              <br />
               Web Developer + 3D Artist
             </p>
             <p className="animate__animated animate__slideInUp">
@@ -258,7 +258,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </HeroSection>
           <HeroSection>
             <CustomCanvas
-              className="animate__animated animate__slideInLeft"
+              className="animate__animated animate__slideInRight"
               flat
               shadows
               dpr={[1, 2]}
