@@ -245,6 +245,11 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               I'm focused on building, improving and maintaining simple, useful
               tools for myself and others.
             </p>
+            <p className="animate__animated animate__slideInUp">
+              My current project is <q>Rougelike Reality</q>, a customisation of
+              my <Link href="https://obsidian.md/">Obsidian vault </Link> to
+              tackle life like the rougelike it is.
+            </p>
             <ButtonContainer className="animate__animated animate__slideInUp">
               {MediaProfiles.map((profile) => (
                 <Button href={profile.url}>{profile.name}</Button>

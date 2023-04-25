@@ -65,6 +65,12 @@ font-family: 'Playfair Display', serif;
   transition: ease-in-out 0.2s;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 html {
   background-color: var(--body);
   color: var(--text);
