@@ -19,7 +19,7 @@ const DirectoryList = styled.ul`
 const StyledFooter = styled.footer`
   display: flex;
   bottom: 0;
-  position: absolute;
+  position: relative;
   height: 2rem;
   font-size: 0.65rem;
   display: flex;

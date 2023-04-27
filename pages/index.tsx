@@ -20,6 +20,8 @@ import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { MediaProfiles } from "@components/socialmedia";
+import LatestProjects from "@components/home/latestProjects";
+import OtherProjects from "@components/home/otherProjects";
 // import OtherProjects from "../components/home/otherProjects";
 // import LatestProjects from "../components/home/latestProjects";
 
@@ -37,26 +39,23 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1100px) {
-    height: 40vh;
-  }
+  // @media (max-width: 1100px) {
+  //   height: 40vh;
+  // }
 
-  @media (max-width: 550px) {
-    height: 25vh;
-  }
+  // @media (max-width: 550px) {
+  //   height: 25vh;
+  // }
 `;
 
 const HeroSection = styled.div`
   height: fit-content;
   width: 100%;
+  margin: 5rem 0;
 
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
-  @media (max-width: 750px) {
-    margin-top: 5rem;
-  }
 
   @media (min-width: 1000px) {
     width: 100%;
@@ -109,10 +108,22 @@ const CustomCanvas = styled(Canvas)`
   }
 `;
 
-const BlogSection = styled(Section)`
-  margin-top: 5rem;
-  display: flex;
-  place-items: center;
+const BlogSection = styled.div`
+  width: 100%;
+
+  & h2 {
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  & .section-title {
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
 `;
 
 const ArticleContainer = styled(Container)`
@@ -121,7 +132,7 @@ const ArticleContainer = styled(Container)`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  place-items: center;
   height: fit-content;
   gap: 2rem;
 
@@ -177,8 +188,8 @@ const Articles = styled.div`
   & p {
     margin: 0;
     font-size: 0.8rem;
+    font-weight: 400;
     line-height: 1.2rem;
-    text-align: justify;
     color: var(--text);
   }
 `;
@@ -288,6 +299,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
+          <h2 className="section-title">Blog</h2>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
@@ -296,7 +308,9 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
                   <h2>{post.title}</h2>
-                  <p>{post.description}</p>
+                  <p>
+                    <span>{post.description}</span>
+                  </p>
                 </Articles>
               </Link>
             ))}
@@ -304,8 +318,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </BlogSection>
       )}
 
-      {/* <LatestProjects /> */}
-      {/* <OtherProjects/> */}
+      <LatestProjects />
+      <OtherProjects />
     </Page>
   );
 };

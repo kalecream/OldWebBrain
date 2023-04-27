@@ -65,12 +65,6 @@ font-family: 'Playfair Display', serif;
   transition: ease-in-out 0.2s;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
 html {
   background-color: var(--body);
   color: var(--text);
@@ -80,6 +74,8 @@ html {
 }
 
 body {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -95,12 +91,14 @@ header {
 }
 
 main {
+  height: 100%;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+  gap: 200px;
 
   @media screen and (max-width: 750px) {
     padding: 0 2rem;

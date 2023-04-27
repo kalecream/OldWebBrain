@@ -6,59 +6,91 @@ import { OtherMultimediaProjectPictures } from "../../assets";
 import styled from "@emotion/styled";
 import Link from "next/link";
 
+const ProjectSection = styled.div`
+  width: 100%;
+  padding: 0 4rem;
+  margin-top: 200px;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`;
+
+const PodcastName = styled.h2`
+  font-size: 3rem;
+  color: var(--primary);
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`;
+
 const ImageText = styled.div`
-	display: flex;
-	margin: 1rem 2rem;
+  display: flex;
+  margin: 1rem 2rem;
 
-	& > div {
-		margin: 3rem 1rem;
-		display: grid;
-		place-items: center;
-	}
+  & > div {
+    margin: 3rem 1rem;
+    display: grid;
+    place-items: center;
+  }
 
-	& img {
-		object-fit: contain;
-	}
+  & img {
+    object-fit: contain;
+  }
+
+  & p {
+    font-size: 0.9rem;
+    width: 25rem;
+  }
 `;
 
 const OtherProjects = () => {
-	return (
-		<Section>
-			<Container>
-				<h2 className="animate__animated animate__fadeInUp">I started...</h2>
-				<ImageText>
-					<HalfColumn>
-						<Link
-							href={
-								"https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
-							}
-						>
-							<h1>Bite-Sized Binge</h1>
-						</Link>
-						<p>
-							A 5 minute podcast where I talk about the audiodramas, one-shot
-							manga, short stories etc that I read and enjoy during my pomodoro
-							breaks with the occasional 10 minute episode where I talk about
-							books and movies.
-						</p>
-					</HalfColumn>
-					<HalfColumn>
-						<Link
-							href={
-								"https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
-							}
-						>
-							<Image
-								alt="Bite Sized Binge Podcast Poster. It is the cartoonized version of a microphone between hamburger buns."
-								src={OtherMultimediaProjectPictures[0]}
-								width={300}
-								height={300}
-							/>
-						</Link>
-					</HalfColumn>
-				</ImageText>
+  return (
+    <ProjectSection>
+      <SectionTitle className="animate__animated animate__fadeInUp">
+        I started...
+      </SectionTitle>
+      <Container>
+        <ImageText>
+          <HalfColumn>
+            <Link
+              href={
+                "https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
+              }
+            >
+              <PodcastName>Bite-Sized Binge</PodcastName>
+            </Link>
+            <p>
+              A 15 minute podcast where I talk about the media I've been
+              consuming around a specific theme each week. <br />
+              <br /> I'm checking out audiodramas, one-shot manga, short stories
+              and music to help explore my own tastes and to keep discovering
+              great stuff I would have otherwise missed.
+            </p>
+          </HalfColumn>
+          <HalfColumn>
+            <Link
+              href={
+                "https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
+              }
+            >
+              <Image
+                alt="Bite Sized Binge Podcast Poster. It is the cartoonized version of a microphone between hamburger buns."
+                src={OtherMultimediaProjectPictures[0]}
+                width={300}
+                height={300}
+              />
+            </Link>
+          </HalfColumn>
+        </ImageText>
 
-				{/* <ImageText>
+        {/* <ImageText>
 					<HalfColumn>
 						<Image
 							src={ThreeD[3]}
@@ -73,9 +105,9 @@ const OtherProjects = () => {
 						pomodoro and crafting sessions. <br/><br/> I do 45+15 and 25+5 sessions for ~12 hours a day.</p>
 					</HalfColumn>
 				</ImageText> */}
-			</Container>
-		</Section>
-	);
+      </Container>
+    </ProjectSection>
+  );
 };
 
 export default OtherProjects;
