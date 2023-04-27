@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, HalfColumn, Section } from "../global";
+import { Container, HalfColumn } from "../global";
 import Image from "next/image";
 import "animate.css";
 import { OtherMultimediaProjectPictures } from "../../assets";
