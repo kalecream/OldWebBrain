@@ -259,6 +259,9 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               my <Link href="https://obsidian.md/">Obsidian vault </Link> to
               tackle life like the rougelike it is.
             </p>
+            <p className="animate__animated animate__slideInUp">
+              This website is actively under construction.
+            </p>
             <ButtonContainer className="animate__animated animate__slideInUp">
               {MediaProfiles.map((profile) => (
                 <Button href={profile.url}>{profile.name}</Button>
