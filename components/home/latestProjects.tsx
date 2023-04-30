@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Container, Section } from "../global";
+import { Button, CapsTitle, Container, Section } from "../global";
 import Projects from "../../data/projectsData";
 import styled from "@emotion/styled";
 
@@ -10,15 +10,6 @@ import styled from "@emotion/styled";
 // 	image: string;
 // 	created_at: string;
 // }
-
-const SectionTitle = styled.h2`
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-`;
 
 const Thirds = styled.div`
   padding-top: 200px;
@@ -63,7 +54,7 @@ const ProjectCard = styled.div`
     url(${(props: { image: string }) => props.image});
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 
@@ -74,13 +65,13 @@ const Overlay = styled.div`
   border-radius: 0.5rem;
   background: linear-gradient(140deg, var(--primary), var(--secondary));
   position: absolute;
-  display: grid;
+  display: flex;
   place-items: center;
   top: 0;
   left: 0;
   z-index: 1;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem 3rem;
   color: #fff;
 `;
 
@@ -89,7 +80,7 @@ const LatestProjects = () => {
     <Section>
       <Thirds>
         <Container style={{ textAlign: "center", margin: "1em 0" }}>
-          <SectionTitle>My Latest Projects !</SectionTitle>
+          <CapsTitle>My Latest Projects !</CapsTitle>
         </Container>
         <Container style={{ overflow: "hidden" }}>
           {Projects.map(
@@ -121,7 +112,10 @@ const LatestProjects = () => {
                         <div className="btn-group">
                           <Button
                             href={`/projects/${project.id}`}
-                            style={{ width: "100%" }}
+                            style={{
+                              color: "var(--body)",
+                              border: "1px solid var(--body)",
+                            }}
                           >
                             View
                           </Button>

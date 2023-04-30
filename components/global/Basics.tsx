@@ -62,17 +62,23 @@ export const CustomLink = styled(Link)`
 interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
+  onColor?: boolean;
 }
 
 const primaryBackground = `radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%)`;
 const secondaryBackground = `var(--background)`;
+const onColor = `var(--body)`;
 const boxShadow = `rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset`;
 const border = `1px solid var(--faint)`;
 
 export const Button = styled(Link)<ButtonProps>`
   align-items: center;
   background-image: ${(props) =>
-    props.primary ? primaryBackground : secondaryBackground};
+    props.primary
+      ? primaryBackground
+      : props.onColor
+      ? onColor
+      : secondaryBackground};
   border: ${(props) => (props.primary ? "none" : border)};
   border-radius: 10px;
   box-shadow: ${(props) => (props.primary ? boxShadow : "none")};
@@ -141,6 +147,7 @@ export const CapsTitle = styled.h3`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  color: var(--accent);
 `;
 
 export const Paragraph = styled.p`
