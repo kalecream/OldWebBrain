@@ -47,7 +47,6 @@ const Hero = styled.section`
 const HeroSection = styled.div`
   height: fit-content;
   width: 100%;
-  margin: 5rem 0;
 
   display: flex;
   flex-direction: column;

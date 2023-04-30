@@ -9,7 +9,6 @@ import Link from "next/link";
 const ProjectSection = styled.div`
   width: 100%;
   padding: 0 4rem;
-  margin-top: 200px;
 `;
 
 const SectionTitle = styled.h2`

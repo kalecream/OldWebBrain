@@ -12,7 +12,6 @@ import styled from "@emotion/styled";
 // }
 
 const Thirds = styled.div`
-  padding-top: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
