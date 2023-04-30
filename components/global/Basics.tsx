@@ -112,6 +112,46 @@ export const Button = styled(Link)<ButtonProps>`
   }
 `;
 
+export const Title = styled.h1`
+  font-size: 3.6rem;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  color: var(--background);
+  word-spacing: 100vw;
+  line-height: 1.2;
+  text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
+`;
+
+export const Subtitle = styled.h2`
+  font-size: 2.4rem;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  color: var(--background);
+  word-spacing: 100vw;
+  line-height: 1.2;
+  text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
+`;
+
+export const CapsTitle = styled.h3`
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`;
+
+export const Paragraph = styled.p`
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  word-spacing: 100vw;
+  line-height: 1.2;
+  text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
+`;
+
 export const Card = styled.div`
 	width: 33%;
 	min-width: 375px;

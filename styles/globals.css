@@ -113,6 +113,11 @@ main {
   }
 }
 
+section {
+  margin: 2rem 0;
+  width: 100%;
+}
+
 a {
   text-decoration: none;
   color: var(--secondary);

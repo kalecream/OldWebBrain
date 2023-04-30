@@ -10,7 +10,12 @@ import { PostType } from "../types/post";
 
 import styled from "@emotion/styled";
 
-import { Section, Container, Button } from "../components/global/Basics";
+import {
+  Section,
+  Container,
+  Button,
+  CapsTitle,
+} from "../components/global/Basics";
 // import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
@@ -29,23 +34,14 @@ type IndexProps = {
   posts: PostType[];
 };
 
-const Hero = styled.div`
+const Hero = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-  // @media (max-width: 1100px) {
-  //   height: 40vh;
-  // }
-
-  // @media (max-width: 550px) {
-  //   height: 25vh;
-  // }
 `;
 
 const HeroSection = styled.div`
@@ -108,21 +104,10 @@ const CustomCanvas = styled(Canvas)`
   }
 `;
 
-const BlogSection = styled.div`
-  width: 100%;
-
+const BlogSection = styled.section`
   & h2 {
     font-weight: 400;
     color: var(--accent);
-  }
-
-  & .section-title {
-    padding: 0;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
   }
 `;
 
@@ -302,7 +287,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
-          <h2 className="section-title">Blog</h2>
+          <CapsTitle>Blog</CapsTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
