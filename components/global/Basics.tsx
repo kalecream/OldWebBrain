@@ -67,7 +67,7 @@ interface ButtonProps {
 const primaryBackground = `radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%)`;
 const secondaryBackground = `var(--background)`;
 const boxShadow = `rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset`;
-const border = `2px solid var(--secondary)`;
+const border = `1px solid var(--faint)`;
 
 export const Button = styled(Link)<ButtonProps>`
   align-items: center;
