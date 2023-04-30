@@ -19,11 +19,11 @@ const SectionTitle = styled.h2`
 `;
 
 const PodcastName = styled.h2`
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--primary);
   font-weight: 400;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 1rem;
 `;
 
@@ -56,16 +56,12 @@ const OtherProjects = () => {
       <Container>
         <ImageText>
           <HalfColumn>
-            <Link
-              href={
-                "https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
-              }
-            >
+            <Link href={"https://anchor.fm/sabrina-medwinter/episodes/"}>
               <PodcastName>Bite-Sized Binge</PodcastName>
             </Link>
             <p>
-              A 15 minute podcast where I talk about the media I've been
-              consuming around a specific theme each week. <br />
+              A ~15 minute podcast where I talk about the media I've been
+              consuming around a specific theme! <br />
               <br /> I'm checking out audiodramas, one-shot manga, short stories
               and music to help explore my own tastes and to keep discovering
               great stuff I would have otherwise missed.
