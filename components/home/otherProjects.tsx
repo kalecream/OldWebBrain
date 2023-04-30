@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, HalfColumn } from "../global";
-import Image from "next/image";
 import "animate.css";
-import { OtherMultimediaProjectPictures } from "../../assets";
 import styled from "@emotion/styled";
 import Link from "next/link";
 
@@ -74,18 +72,15 @@ const OtherProjects = () => {
             </p>
           </HalfColumn>
           <HalfColumn>
-            <Link
-              href={
-                "https://anchor.fm/sabrina-medwinter/episodes/Test-Episode--Bite-Sized-Binge-e1tresd"
-              }
-            >
-              <Image
-                alt="Bite Sized Binge Podcast Poster. It is the cartoonized version of a microphone between hamburger buns."
-                src={OtherMultimediaProjectPictures[0]}
-                width={300}
-                height={300}
-              />
-            </Link>
+            <iframe
+              style={{ borderRadius: "12" }}
+              src="https://open.spotify.com/embed/show/3TEYSulKavQrhebkPLHkth?utm_source=generator&theme=0"
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
           </HalfColumn>
         </ImageText>
 
