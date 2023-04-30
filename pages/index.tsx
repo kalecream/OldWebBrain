@@ -108,6 +108,10 @@ const BlogSection = styled.section`
     font-weight: 400;
     color: var(--accent);
   }
+
+  @media (min-width: 1200px) {
+    width: 75%;
+  }
 `;
 
 const ArticleContainer = styled(Container)`
