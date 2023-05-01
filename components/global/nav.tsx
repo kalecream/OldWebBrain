@@ -48,16 +48,12 @@ const StyledNavigation = styled.nav<navProps>`
 
   @media screen and (max-width: 450px) {
     padding: 1rem 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 1rem 3rem;
     flex-wrap: wrap;
     flex-direction: column;
   }
 
-  @media screen and (max-width: 1024px) {
-    padding: 2rem 5rem;
+  @media screen and (max-width: 768px) {
+    padding: 1rem 3rem;
   }
 
   @media screen and (min-width: 1024px) {
