@@ -40,20 +40,21 @@ const Thirds = styled.div`
 
 const ProjectCard = styled.div`
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
 
   border-radius: 0.5rem;
-  background-color: #fff;
+  background-color: var(--accent);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   object-fit: cover;
   // background-image: url(${(props: { image: string }) => props.image});
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
-    url(${(props: { image: string }) => props.image});
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+  //   url(${(props: { image: string }) => props.image});
 
   &:hover {
-    transform: scale(1.02);
+    animation: hover 0.3s ease-in-out forwards;
+    transform: rotate(1.02deg) scale(0.95);
   }
 `;
 
@@ -62,16 +63,15 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
-  background: linear-gradient(140deg, var(--primary), var(--secondary));
+  // background: linear-gradient(140deg, var(--primary), var(--secondary));
   position: absolute;
-  display: flex;
+  display: grid;
   place-items: center;
   top: 0;
   left: 0;
   z-index: 1;
-  gap: 1rem;
-  padding: 1rem 3rem;
-  color: #fff;
+  padding: 1rem 2rem;
+  color: var(--body;
 `;
 
 const LatestProjects = () => {
@@ -96,8 +96,19 @@ const LatestProjects = () => {
                 >
                   <Overlay>
                     <div className="card-body">
-                      <h5 className="card-title">{project.title}</h5>
-                      <small className="text-muted">{project.created}</small>
+                      <h5
+                        className="card-title"
+                        style={{ alignContent: "flex-start" }}
+                      >
+                        {project.title}
+                      </h5>
+                      <small
+                        className="text-muted"
+                        style={{ paddingBottom: "20px" }}
+                      >
+                        {" "}
+                        {project.created}
+                      </small>
                       <p style={{ textAlign: "start" }}>
                         {project.description}
                       </p>
@@ -108,7 +119,10 @@ const LatestProjects = () => {
                           alignItems: "center",
                         }}
                       >
-                        <div className="btn-group">
+                        <div
+                          className="btn-group"
+                          style={{ alignContent: "flex-end" }}
+                        >
                           <Button
                             href={`/projects/${project.id}`}
                             style={{
