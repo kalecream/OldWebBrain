@@ -109,6 +109,10 @@ const BlogSection = styled.section`
     color: var(--accent);
   }
 
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+
   @media (min-width: 1200px) {
     width: 75%;
   }

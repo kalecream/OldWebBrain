@@ -60,11 +60,9 @@ const OtherProjects = () => {
               <PodcastName>Bite-Sized Binge</PodcastName>
             </Link>
             <p>
-              A ~15 minute podcast where I talk about the media I've been
-              consuming around a specific theme! <br />
-              <br /> I'm checking out audiodramas, one-shot manga, short stories
-              and music to help explore my own tastes and to keep discovering
-              great stuff I would have otherwise missed.
+              I'm checking out audiodramas, one-shot manga, short stories and
+              music to help explore my own tastes and to keep discovering great
+              stuff I would have otherwise missed.
             </p>
           </HalfColumn>
           <HalfColumn>
