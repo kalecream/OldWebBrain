@@ -21,7 +21,8 @@ const SectionTitle = styled.h2`
 const PodcastName = styled.h2`
   font-size: 3.5rem;
   color: var(--primary);
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 1.2;
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 1rem;
@@ -33,8 +34,9 @@ const ImageText = styled.div`
 
   & > div {
     margin: 3rem 1rem;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   & img {
@@ -42,7 +44,6 @@ const ImageText = styled.div`
   }
 
   & p {
-    font-size: 0.9rem;
     width: 25rem;
   }
 `;
