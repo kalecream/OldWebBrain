@@ -57,7 +57,7 @@ const OtherProjects = () => {
       <Container>
         <ImageText>
           <HalfColumn>
-            <Link href={"https://anchor.fm/sabrina-medwinter/episodes/"}>
+            <Link href={"https://open.spotify.com/show/3TEYSulKavQrhebkPLHkth"}>
               <PodcastName>Bite-Sized Binge</PodcastName>
             </Link>
             <p>
