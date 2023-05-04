@@ -49,7 +49,7 @@ const StyledNavigation = styled.nav<navProps>`
   @media screen and (max-width: 450px) {
     padding: 1rem 0;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   @media screen and (max-width: 768px) {

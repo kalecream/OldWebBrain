@@ -130,10 +130,12 @@ const ArticleContainer = styled(Container)`
 
   @media screen and (min-width: 750px) {
     max-width: 50rem;
+    flex-direction: row;
   }
 
   @media screen and (max-width: 750px) {
     padding: auto;
+    flex-direction: column;
     justify-content: flex-start;
     justify-items: center;
   }

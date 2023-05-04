@@ -30,6 +30,8 @@ const PodcastName = styled.h2`
 
 const ImageText = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  width: min-content;
   margin: 1rem 2rem;
 
   & > div {
