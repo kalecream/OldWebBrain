@@ -15,20 +15,21 @@ const RigidContainer = styled.div`
 
 const ProjectDataPoint = styled.ul`
   color: var(--grey);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0.25rem 0;
+  margin: 0.15rem 0;
 
   & li {
     display: flex;
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
+    margin-top: 0.15rem;
+    margin-right: 0.15rem;
   }
 
   & li a:hover {
-    color: var(--background);
+    color: var(--body);
+    color: var(--primary);
   }
 
   & li a {
@@ -43,6 +44,7 @@ const ProjectDataPoint = styled.ul`
 const Emoji = styled.span`
   margin-right: 0.5rem;
   margin-top: 1rem;
+  color: var(--primary);
 `;
 
 const ArticleCard = styled.div`
