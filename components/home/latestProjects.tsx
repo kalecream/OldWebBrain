@@ -2,8 +2,12 @@ import * as React from "react";
 import { Button, CapsTitle, Container, Section } from "../global";
 import Projects from "../../data/projectsData";
 import styled from "@emotion/styled";
+import {
+  faToolbox,
+  faLink,
+  faLanguage,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToolbox, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import "animate.css";
 
 // interface Project {
@@ -44,14 +48,13 @@ const Thirds = styled.div`
 const ProjectCard = styled.div`
   position: relative;
   width: 300px;
-  height: 400px;
+  height: 450px;
 
   border-radius: 0.5rem;
   background-color: var(--accent);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   object-fit: cover;
-  overflow-y: scroll;
   // background-image: url(${(props: { image: string }) => props.image});
   // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
   //   url(${(props: { image: string }) => props.image});
@@ -77,6 +80,47 @@ const Overlay = styled.div`
   padding: 1rem 2rem;
   color: var(--body;
 `;
+const ProjectTitle = styled.h5`
+  align-content: flex-start;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+`;
+
+const ProjectDate = styled.small`
+  position: absolute;
+  top: 4.5rem;
+  left: 2rem;
+  opacity: 0.8;
+`;
+
+const ProjectDescription = styled.p`
+  position: absolute;
+  top: 8rem;
+  left: 2rem;
+  height: 150px;
+  width: 80%;
+  line-height: 1.4;
+  overflow-y: scroll;
+`;
+
+const ProjectTechnologies = styled.div`
+  position: absolute;
+  top: 18rem;
+  left: 2rem;
+  display: flex;
+  overflow-x: scroll;
+  width: 80%;
+`;
+
+const ProjectLanguages = styled.div`
+  position: absolute;
+  top: 23rem;
+  left: 2rem;
+  display: flex;
+  overflow-x: scroll;
+  width: 80%;
+`;
 
 const ProjectDataPoint = styled.ul`
   color: var(--grey);
@@ -84,10 +128,9 @@ const ProjectDataPoint = styled.ul`
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0.25rem 0;
+  margin: 0.15rem 0;
 
   & li {
-    display: flex;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
   }
@@ -97,17 +140,22 @@ const ProjectDataPoint = styled.ul`
   }
 
   & li a {
-    background-color: var(--background);
-    padding: 0.1rem 0.4rem;
-    border-radius: 5px;
-    border: 1px solid var(--secondary);
-    color: var(--secondary);
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--text);
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    color: var(--text);
+    transition: all 0.3s ease-in-out;
   }
 `;
 
 const Emoji = styled.span`
   margin-right: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+`;
+
+const ProjectButton = styled(Button)`
+  color: var(--text);
 `;
 
 const LatestProjects = () => {
@@ -132,51 +180,42 @@ const LatestProjects = () => {
                 >
                   <Overlay>
                     <div className="card-body">
-                      <h5
-                        className="card-title"
-                        style={{ alignContent: "flex-start" }}
-                      >
-                        {project.title}
-                      </h5>
-                      <small
-                        className="text-muted"
-                        style={{
-                          paddingBottom: "1rem",
-                          color: "var(--muted)",
-                        }}
-                      >
-                        {project.created}
-                      </small>
-                      <p style={{ textAlign: "start" }}>
+                      <ProjectTitle>{project.title}</ProjectTitle>
+                      <ProjectDate>{project.created}</ProjectDate>
+                      <ProjectDescription>
                         {project.description}
-                      </p>
-                      {project.technology ? (
-                        <ProjectDataPoint title="Technologies">
-                          <Emoji>
-                            <FontAwesomeIcon icon={faToolbox} />
-                          </Emoji>
-                          {project.technology?.map((tech, index) => (
-                            <li key={index}>{tech}</li>
-                          ))}
-                        </ProjectDataPoint>
-                      ) : null}
-                      {project.language ? (
-                        <ProjectDataPoint>
-                          <Emoji>
-                            <FontAwesomeIcon
-                              icon={faLanguage}
-                              title="Languages"
-                            />
-                          </Emoji>
-                          {project.language?.map((lang, index) => (
-                            <li key={index}>
-                              <a title="Clicking this does nothing right now. Sorry.">
-                                {lang}
-                              </a>
-                            </li>
-                          ))}
-                        </ProjectDataPoint>
-                      ) : null}
+                      </ProjectDescription>
+                      <ProjectTechnologies>
+                        {project.technology ? (
+                          <ProjectDataPoint title="Technologies">
+                            <Emoji>
+                              <FontAwesomeIcon icon={faToolbox} />
+                            </Emoji>
+                            {project.technology?.map((tech, index) => (
+                              <li key={index}>{tech}</li>
+                            ))}
+                          </ProjectDataPoint>
+                        ) : null}
+                      </ProjectTechnologies>
+                      <ProjectLanguages>
+                        {project.language ? (
+                          <ProjectDataPoint>
+                            <Emoji>
+                              <FontAwesomeIcon
+                                icon={faLanguage}
+                                title="Languages"
+                              />
+                            </Emoji>
+                            {project.language?.map((lang, index) => (
+                              <li key={index}>
+                                <a title="Clicking this does nothing right now. Sorry.">
+                                  {lang}
+                                </a>
+                              </li>
+                            ))}
+                          </ProjectDataPoint>
+                        ) : null}
+                      </ProjectLanguages>
                       <div
                         style={{
                           display: "flex",
@@ -186,12 +225,19 @@ const LatestProjects = () => {
                       >
                         <div
                           className="btn-group"
-                          style={{ alignContent: "flex-end" }}
+                          style={{
+                            position: "absolute",
+                            left: "2rem",
+                            bottom: "1rem",
+                          }}
                         >
                           {project.link ? (
-                            <Button secondary href={project.link} target={"_blank"}>
-                              View on Github
-                            </Button>
+                            <ProjectButton
+                              href={project.link}
+                              target={"_blank"}
+                            >
+                              <FontAwesomeIcon icon={faLink} />
+                            </ProjectButton>
                           ) : null}
                         </div>
                       </div>

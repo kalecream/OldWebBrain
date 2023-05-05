@@ -20,7 +20,8 @@ const StyledFooter = styled.footer`
   display: flex;
   bottom: 0;
   position: relative;
-  height: 2rem;
+  height: 4rem;
+  padding: 2rem 0;
   font-size: 0.65rem;
   display: flex;
   flex-wrap: wrap;
@@ -57,7 +58,8 @@ const StyledNavigation = styled.nav<navProps>`
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 3rem 5rem;
+    margin: 0 auto;
+    padding: 2rem 3rem;
     flex-direction: row;
   }
 `;
