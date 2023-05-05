@@ -102,6 +102,7 @@ const ProjectDescription = styled.p`
   width: 80%;
   line-height: 1.4;
   overflow-y: scroll;
+  opacity: 1;
 `;
 
 const ProjectTechnologies = styled.div`
@@ -143,7 +144,6 @@ const ProjectDataPoint = styled.ul`
     padding: 0.3rem 0.6rem;
     border: 1px solid var(--text);
     border-radius: 0.5rem;
-    opacity: 0.8;
     color: var(--text);
     transition: all 0.3s ease-in-out;
   }
@@ -156,6 +156,14 @@ const Emoji = styled.span`
 
 const ProjectButton = styled(Button)`
   color: var(--text);
+`;
+
+const ProjectImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  opacity: 0.2;
 `;
 
 const LatestProjects = () => {
@@ -178,6 +186,7 @@ const LatestProjects = () => {
                   key={project.id}
                   className="col-md-4"
                 >
+                  <ProjectImage src={project.image} alt="" />
                   <Overlay>
                     <div className="card-body">
                       <ProjectTitle>{project.title}</ProjectTitle>
