@@ -164,6 +164,7 @@ const Articles = styled.div`
   & img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 15px;
     margin-bottom: 1rem;
@@ -211,7 +212,7 @@ const Articles = styled.div`
 const PostTags = styled.div`
   width: 100%;
 
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   opacity: 0.7;
 
   & span {
@@ -363,7 +364,9 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <PostTags>
                       <span>
                         {post.tags.map((tag) => (
-                          <Tag href={"/tags/" + tag}>{tag}</Tag>
+                          <Tag href={"/tags/" + tag.replace(/\s+/g, "+")}>
+                            {tag}
+                          </Tag>
                         ))}
                       </span>
                     </PostTags>
