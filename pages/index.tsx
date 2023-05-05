@@ -366,9 +366,11 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
                   <h2>{post.title}</h2>
+
                   <p>
                     <span>{post.description}</span>
                   </p>
+
                   {post.tags && (
                     <PostTags>
                       <span>
