@@ -181,10 +181,6 @@ const Articles = styled.div`
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 600;
-
-    @media (max-width: 750px) {
-      font-size: 2rem;
-    }
   }
 
   & h2:hover {
@@ -206,6 +202,10 @@ const Articles = styled.div`
     width: 400px;
     height: fit-content;
     margin-bottom: 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -220,6 +220,11 @@ const PostTags = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+
+  @media (max-width: 750px) {
+    width: 100%;
+    margin-top: 3rem;
   }
 `;
 
