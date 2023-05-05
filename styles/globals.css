@@ -300,3 +300,9 @@ kbd::after,
   margin-left: 30px;
   list-style-type: circle;
 }
+
+pre {
+  padding: 1rem 2rem;
+  background-color: var(--faint);
+  border-radius: 15px;
+}

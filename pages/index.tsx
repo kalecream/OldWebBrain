@@ -119,7 +119,6 @@ const BlogSection = styled.section`
 `;
 
 const ArticleContainer = styled(Container)`
-  padding: 0 5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -131,6 +130,7 @@ const ArticleContainer = styled(Container)`
   @media screen and (min-width: 750px) {
     max-width: 50rem;
     flex-direction: row;
+    align-items: baseline;
   }
 
   @media screen and (max-width: 750px) {
@@ -143,8 +143,8 @@ const ArticleContainer = styled(Container)`
 
 const Articles = styled.div`
   padding: 2rem;
-  width: 325px;
-  height: fit-content;
+  width: 300px;
+  min-height: 200px;
 
   display: flex;
   flex-direction: column;
@@ -166,8 +166,9 @@ const Articles = styled.div`
 
   & h2 {
     color: var(--accent);
-    padding: 0;
-    font-size: 2rem;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    line-height: 1.2;
     font-weight: 600;
 
     @media (max-width: 750px) {
@@ -186,6 +187,8 @@ const Articles = styled.div`
     font-weight: 400;
     line-height: 1.2rem;
     color: var(--text);
+    height: 50px;
+    text-overflow: ellipsis;
   }
 `;
 
