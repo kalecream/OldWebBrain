@@ -120,6 +120,7 @@ const BlogSection = styled.section`
 `;
 
 const ArticleContainer = styled(Container)`
+  padding: 0 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -145,7 +146,6 @@ const ArticleContainer = styled(Container)`
 const Articles = styled.div`
   padding: 2rem;
   width: 300px;
-  min-height: 225px;
   height: fit-content;
 
   display: flex;
@@ -202,10 +202,33 @@ const Articles = styled.div`
   }
 
   @media (max-width: 750px) {
-    width: 100%;
+    width: 400px;
     height: fit-content;
     margin-bottom: 1rem;
   }
+`;
+
+const PostTags = styled.div`
+  width: 100%;
+
+  margin-top: 1rem;
+  opacity: 0.7;
+
+  & span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+`;
+
+const Tag = styled(Link)`
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--faint);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 400;
 `;
 
 const angletoRadian = (angle: number) => {
@@ -322,7 +345,12 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                 <Articles key={post.slug}>
                   {post.coverImage && (
-                    <Image src={post.coverImage} width={300} height={200} />
+                    <Image
+                      src={post.coverImage}
+                      width={300}
+                      height={200}
+                      alt=""
+                    />
                   )}
                   {post.date && (
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
@@ -331,6 +359,15 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                   <p>
                     <span>{post.description}</span>
                   </p>
+                  {post.tags && (
+                    <PostTags>
+                      <span>
+                        {post.tags.map((tag) => (
+                          <Tag href={"/tags/" + tag}>{tag}</Tag>
+                        ))}
+                      </span>
+                    </PostTags>
+                  )}
                 </Articles>
               </Link>
             ))}
