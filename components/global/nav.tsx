@@ -72,7 +72,7 @@ const DirectoryListItem = styled.li`
   }
 `;
 
-const DirectoryLinks = styled(CustomLink)`
+export const DirectoryLinks = styled(CustomLink)`
   color: var(--text);
   text-transform: capitalize;
   opacity: 0.7;
@@ -108,13 +108,15 @@ export const Navigation: React.FunctionComponent = () => {
     <StyledNavigation display>
       <SiteName href="/">KaleCream</SiteName>
       <DirectoryList>
-        {Directory.map((directory, index) => (
-          <DirectoryListItem key={index}>
-            <DirectoryLinks href={directory.links}>
-              {directory.title}
-            </DirectoryLinks>
-          </DirectoryListItem>
-        ))}
+        {Directory.length > 0
+          ? Directory.map((directory, index) => (
+              <DirectoryListItem key={index}>
+                {/* <DirectoryLinks href={directory.links}>
+                  {directory.title}
+                </DirectoryLinks> */}
+              </DirectoryListItem>
+            ))
+          : null}
       </DirectoryList>
       <ThemeSwitch />
     </StyledNavigation>
