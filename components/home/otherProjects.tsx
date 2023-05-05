@@ -26,6 +26,11 @@ const PodcastName = styled.h2`
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--accent);
+  }
 `;
 
 const ImageText = styled.div`
