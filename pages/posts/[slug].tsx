@@ -221,13 +221,19 @@ const CustomH6 = ({ id, ...rest }) => {
   return <h6 {...rest} />;
 };
 
+const CustomImage = ({ src, ...rest }) => {
+  return (
+    <Image alt="" src={src} {...rest} unoptimized={true} unselectable="on" />
+  );
+};
+
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
   Head,
-  Image,
+  CustomImage,
   Link,
   CustomH1,
   CustomH2,
