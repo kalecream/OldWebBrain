@@ -1,0 +1,67 @@
+---
+title: "Obsidian Garden Tracker"
+date: "2023-05-04"
+draft: false
+tags: ["Obsidian", "Garden", "Tracker", "Dataview", "Minimal Theme"]
+description: "A customized garden tracker that helps you keep track of everything from plant varieties to watering schedules. "
+---
+
+Gardening is a rewarding and fulfilling activity, but it can be overwhelming to keep track of all the details. Between the different types of plants, planting dates, watering schedules, and pest control measures, it's easy to lose track of what needs to be done when. That's where a garden tracker comes in handy. By tracking your garden's progress, you can stay organized and ensure that your plants thrive.
+
+Firstly, we need to create a new note in Obsidian. We'll call it `Plants`. This note will be the main hub for all of our garden tracking information. We'll use the `Dataview` plugin to create a table of all the plants we're growing, and we'll use the `Minimal Theme` to make it look nice.
+
+Then we need to create a new note called `New Plant`. This note will be a template for all of our plants.
+
+We can then plug this into our daily note template with `![[Plant]]]`, so that we can easily see our platn status every day.
+
+## Plants
+
+````text
+---
+cssclass: cards, cards-cover, cards-1-1
+---
+
+```button
+name New Plant
+type note(New Plant) template
+action NewPlant
+```
+
+^button-4ohu
+
+```dataview
+TABLE WITHOUT ID image,
+file.link,
+":luc_droplet: " + water,
+":luc_droplets: " + date(reverse(sort(file.inlinks))[0]) + " (" + (date(today) - date(reverse(sort(file.inlinks))[0])) + ")"  AS "Last watered",
+":luc_sun: " + sun,
+":fas_spray_can_sparkles: " + fertilizer,
+":fas_spray_can: " + last_fertilized,
+":fas_seedling: " + (date(today) - date(sprouted) ) + " (" + sprouted + ")",
+":luc_flask_conical:" + pH,
+":luc_moon: " + harvest
+
+FROM [[Plants]] and #apartment
+```
+
+````
+
+## New Plant Template
+
+```text
+
+[[Plants]] #apartment
+
+image:: ![img](https://placehold.it/100x100)
+
+---
+
+water::
+sun::
+fertilizer::
+last_fertilized::
+sprouted::
+pH::
+harvest::
+
+```
