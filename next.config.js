@@ -18,7 +18,11 @@ const nextConfig = {
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
   swcMinify: true,
-}
+  images: {
+    loader: "akamai",
+    path: "/",
+  },
+};
 
 // Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig)
