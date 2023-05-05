@@ -142,8 +142,8 @@ const ArticleContainer = styled(Container)`
 `;
 
 const Articles = styled.div`
-  padding: 1rem;
-  width: 25rem;
+  padding: 2rem;
+  width: 325px;
   height: fit-content;
 
   display: flex;
@@ -156,17 +156,18 @@ const Articles = styled.div`
     cursor: pointer;
     background-color: var(--faint);
     border-radius: 0.5rem;
+    transform: scale(1.01);
   }
 
   & span {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: var(--lightgrey);
   }
 
   & h2 {
     color: var(--accent);
     padding: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
 
     @media (max-width: 750px) {
