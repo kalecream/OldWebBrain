@@ -63,6 +63,18 @@ const ProjectCard = styled.div`
     animation: hover 0.3s ease-in-out forwards;
     transform: rotate(1.02deg) scale(0.95);
   }
+
+  @keyframes hover {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      transform: rotate(1.02deg) scale(0.95);
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+      height: fit-content;
 `;
 
 //TODO: Move to Basics.tsx
