@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 import Page from "../containers/layout/page";
 
@@ -144,7 +145,8 @@ const ArticleContainer = styled(Container)`
 const Articles = styled.div`
   padding: 2rem;
   width: 300px;
-  min-height: 200px;
+  min-height: 225px;
+  height: fit-content;
 
   display: flex;
   flex-direction: column;
@@ -157,6 +159,14 @@ const Articles = styled.div`
     background-color: var(--faint);
     border-radius: 0.5rem;
     transform: scale(1.01);
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
   }
 
   & span {
@@ -189,6 +199,12 @@ const Articles = styled.div`
     color: var(--text);
     height: 50px;
     text-overflow: ellipsis;
+  }
+
+  @media (max-width: 750px) {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -305,6 +321,9 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                 <Articles key={post.slug}>
+                  {post.coverImage && (
+                    <Image src={post.coverImage} width={300} height={200} />
+                  )}
                   {post.date && (
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
@@ -326,7 +345,14 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts(["date", "description", "slug", "title"]);
+  const posts = getAllPosts([
+    "date",
+    "description",
+    "slug",
+    "title",
+    "coverImage",
+    "tags",
+  ]);
 
   return {
     props: { posts },
