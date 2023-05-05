@@ -349,8 +349,12 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <Image
                       src={post.coverImage}
                       width={300}
-                      height={200}
+                      height={300}
+                      objectFit="cover"
+                      layout="responsive"
+                      priority={true}
                       alt=""
+                      unoptimized={true}
                     />
                   )}
                   {post.date && (
