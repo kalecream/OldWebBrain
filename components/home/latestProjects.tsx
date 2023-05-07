@@ -23,13 +23,12 @@ const Thirds = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   margin: 1rem 0;
   width: 100%;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    width: 100%;
   }
 
   @media (max-width: 1100px) {
@@ -46,18 +45,15 @@ const Thirds = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  position: relative;
   width: 300px;
-  height: 450px;
 
   border-radius: 0.5rem;
   background-color: var(--accent);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  object-fit: cover;
-  // background-image: url(${(props: { image: string }) => props.image});
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
-  //   url(${(props: { image: string }) => props.image});
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  // transition: all 0.3s ease-in-out;
+  // // background-image: url(${(props: { image: string }) => props.image});
+  // // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+  // //   url(${(props: { image: string }) => props.image});
 
   &:hover {
     animation: hover 0.3s ease-in-out forwards;
@@ -73,8 +69,8 @@ const ProjectCard = styled.div`
     }
 
     @media (max-width: 480px) {
-      width: 100%;
-      height: fit-content;
+      width: 100vw;
+      height: auto;
 `;
 
 //TODO: Move to Basics.tsx
@@ -83,87 +79,87 @@ const Overlay = styled.div`
   height: 100%;
   border-radius: 0.5rem;
   // background: linear-gradient(140deg, var(--primary), var(--secondary));
-  position: absolute;
   display: grid;
   place-items: center;
   top: 0;
   left: 0;
   z-index: 1;
-  padding: 1rem 2rem;
-  color: var(--body;
+  padding: 0.5rem;
+  color: var(--body);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+  }
 `;
 const ProjectTitle = styled.h5`
   align-content: flex-start;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
 `;
 
 const ProjectDate = styled.small`
-  position: absolute;
-  top: 4.5rem;
-  left: 2rem;
   opacity: 0.8;
 `;
 
 const ProjectDescription = styled.p`
-  position: absolute;
-  top: 8rem;
-  left: 2rem;
   height: 150px;
   width: 80%;
   line-height: 1.4;
-  overflow-y: scroll;
   opacity: 1;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0.25rem 0;
+  }
 `;
 
 const ProjectTechnologies = styled.div`
-  position: absolute;
-  top: 18rem;
-  left: 2rem;
-  display: flex;
-  overflow-x: scroll;
   width: 80%;
+  color: var(--body);
+  padding: 0.5rem 0;
 `;
 
 const ProjectLanguages = styled.div`
-  position: absolute;
-  top: 23rem;
-  left: 2rem;
-  display: flex;
-  overflow-x: scroll;
   width: 80%;
+  color: var(--body);
+  padding: 0.5rem 0;
 `;
 
 const ProjectDataPoint = styled.ul`
-  color: var(--grey);
-  font-size: 0.85rem;
+  color: var(--body);
+  font-size: 0.7rem;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   list-style: none;
-  margin: 0.15rem 0;
-
-  & li {
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
-  }
+  gap: 0.2rem;
 
   & li a:hover {
     color: var(--background);
   }
 
   & li a {
-    padding: 0.3rem 0.6rem;
-    border: 1px solid var(--text);
+    padding: 0.1rem 0.3rem;
+    border: 1px solid var(--body);
     border-radius: 0.5rem;
-    color: var(--text);
+    color: var(--body);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    & li {
+      margin: 0.1rem;
+      padding: 0;
+    }
   }
 `;
 
 const Emoji = styled.span`
   margin-right: 0.5rem;
   margin-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    margin: 0.15rem;
+  }
 `;
 
 const ProjectButton = styled(Button)`
@@ -172,7 +168,7 @@ const ProjectButton = styled(Button)`
 
 const ProjectImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: 100px;
   object-fit: cover;
   border-radius: 0.5rem;
   opacity: 0.2;
@@ -200,68 +196,59 @@ const LatestProjects = () => {
                 >
                   <ProjectImage src={project.image} alt="" />
                   <Overlay>
-                    <div className="card-body">
-                      <ProjectTitle>{project.title}</ProjectTitle>
-                      <ProjectDate>{project.created}</ProjectDate>
-                      <ProjectDescription>
-                        {project.description}
-                      </ProjectDescription>
-                      <ProjectTechnologies>
-                        {project.technology ? (
-                          <ProjectDataPoint title="Technologies">
-                            <Emoji>
-                              <FontAwesomeIcon icon={faToolbox} />
-                            </Emoji>
-                            {project.technology?.map((tech, index) => (
-                              <li key={index}>{tech}</li>
-                            ))}
-                          </ProjectDataPoint>
-                        ) : null}
-                      </ProjectTechnologies>
-                      <ProjectLanguages>
-                        {project.language ? (
-                          <ProjectDataPoint>
-                            <Emoji>
-                              <FontAwesomeIcon
-                                icon={faLanguage}
-                                title="Languages"
-                              />
-                            </Emoji>
-                            {project.language?.map((lang, index) => (
-                              <li key={index}>
-                                <a title="Clicking this does nothing right now. Sorry.">
-                                  {lang}
-                                </a>
-                              </li>
-                            ))}
-                          </ProjectDataPoint>
-                        ) : null}
-                      </ProjectLanguages>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                        }}
-                      >
-                        <div
-                          className="btn-group"
-                          style={{
-                            position: "absolute",
-                            left: "2rem",
-                            bottom: "1rem",
-                          }}
-                        >
-                          {project.link ? (
-                            <ProjectButton
-                              href={project.link}
-                              target={"_blank"}
-                            >
-                              <FontAwesomeIcon icon={faLink} />
-                            </ProjectButton>
-                          ) : null}
-                        </div>
-                      </div>
+                    <ProjectTitle>{project.title}</ProjectTitle>
+                    <ProjectDate>{project.created}</ProjectDate>
+                    <ProjectDescription>
+                      {project.description}
+                    </ProjectDescription>
+                    <ProjectTechnologies>
+                      {project.technology ? (
+                        <ProjectDataPoint title="Technologies">
+                          <Emoji>
+                            <FontAwesomeIcon icon={faToolbox} />
+                          </Emoji>
+                          {project.technology?.map((tech, index) => (
+                            <li key={index}>{tech}</li>
+                          ))}
+                        </ProjectDataPoint>
+                      ) : null}
+                    </ProjectTechnologies>
+                    <ProjectLanguages>
+                      {project.language ? (
+                        <ProjectDataPoint>
+                          <Emoji>
+                            <FontAwesomeIcon
+                              icon={faLanguage}
+                              title="Languages"
+                            />
+                          </Emoji>
+                          {project.language?.map((lang, index) => (
+                            <li key={index}>
+                              <a title="Clicking this does nothing right now. Sorry.">
+                                {lang}
+                              </a>
+                            </li>
+                          ))}
+                        </ProjectDataPoint>
+                      ) : null}
+                    </ProjectLanguages>
+                    <div
+                      className="btn-group"
+                      style={{
+                        margin: "1rem 0",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      {project.link ? (
+                        <ProjectButton href={project.link} target={"_blank"}>
+                          <FontAwesomeIcon
+                            icon={faLink}
+                            style={{ color: "var(--body)" }}
+                          />
+                        </ProjectButton>
+                      ) : null}
                     </div>
                   </Overlay>
                 </ProjectCard>
