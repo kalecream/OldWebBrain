@@ -32,39 +32,12 @@ type PostPageProps = {
 };
 
 const BlogPage = styled(Page)`
-  display: grid;
+  display: flex;
   gap: 1rem;
-
-  @media (max-width: 750px) {
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: sidebar article;
-  }
-
-  @media (min-width: 750px) {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: sidebar article;
-  }
-
-  @media (min-width: 1000px) {
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: sidebar article;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 0 5rem;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: sidebar article;
-  }
 `;
 
 const CustomArticle = styled.article`
   width: 100%;
-  grid-area: article;
 
   margin: 0 auto;
 
@@ -97,7 +70,11 @@ const CustomArticle = styled.article`
     line-height: 1.4;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 320px) {
+    max-width: 20rem;
+  }
+
+  @media (min-width: 900px) {
     max-width: 50rem;
   }
 
@@ -129,7 +106,6 @@ const TableOfContents = styled.aside`
   top: 5rem;
   overflow: auto;
   top: 20%;
-  grid-area: sidebar;
 
   & ul li {
     margin-bottom: 0.5rem;
