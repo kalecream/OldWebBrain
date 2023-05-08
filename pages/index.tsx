@@ -35,39 +35,43 @@ type IndexProps = {
   posts: PostType[];
 };
 
-const Hero = styled.section`
+const Hero = styled(Section)`
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  place-items: space-around;
+
+  @media (min-width: 1024px) {
+    padding: 10rem 0;
+    margin: 0 auto;
+  }
 `;
 
 const HeroSection = styled.div`
-  height: fit-content;
-  width: 100%;
-
+  height: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
 
-  @media (min-width: 1000px) {
-    width: 100%;
+  @media (min-width: 1024px) {
+    width: 40%;
   }
 
-  @media (min-width: 768px) {
-    width: 45%;
-    margin-bottom: 5rem;
+  @media (max-width: 768px) {
+    width: 100%;
   }
 
   p {
     line-height: 1.6rem;
     text-align: start;
+    padding: 0;
 
-    @media (max-width: 1000px) {
-      width: 20rem;
+    @media (max-width: 1024px) {
+      width: 25rem;
     }
 
     @media (min-width: 1000px) {
@@ -97,9 +101,10 @@ const CustomCanvas = styled(Canvas)`
   @media (min-width: 750px) {
     width: 100%;
     height: 100%;
+    margin-left: 3.5rem;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -283,65 +288,63 @@ const Rotate3DModel = () => {
 export const Home = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Page>
-      <Section id="hero">
-        <Hero>
-          <HeroSection>
-            <p className="animate__animated animate__slideInUp">
-              Web Developer + 3D Artist
-            </p>
-            <p className="animate__animated animate__slideInUp">
-              I'm currently living in Kingston, Jamaica working on improving my
-              web development and multimedia skills.
-            </p>
-            <p className="animate__animated animate__slideInUp">
-              I'm focused on building, improving and maintaining simple, useful
-              tools for myself and others.
-            </p>
-            <p className="animate__animated animate__slideInUp">
-              My current project is <q>Rougelike Reality</q>, a customisation of
-              my <Link href="https://obsidian.md/">Obsidian vault </Link> to
-              tackle life like the rougelike it is.
-            </p>
-            <p className="animate__animated animate__slideInUp">
-              This website is actively under construction.
-            </p>
-            <ButtonContainer className="animate__animated animate__slideInUp">
-              {MediaProfiles.map((profile) => (
-                <Button href={profile.url}>{profile.name}</Button>
-              ))}
-            </ButtonContainer>
-          </HeroSection>
-          <HeroSection>
-            <CustomCanvas
-              className="animate__animated animate__slideInRight"
-              flat
-              shadows
-              dpr={[1, 2]}
-              camera={{ position: [2, 0, 12], fov: 15 }}
-              style={{
-                width: "375px",
-                height: "500px",
-              }}
-            >
-              {/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
-              <ambientLight intensity={1.25} />
-              <directionalLight intensity={0.4} />
-              <Suspense fallback={null}>
-                <PresentationControls
-                  global
-                  zoom={1}
-                  rotation={[0, -Math.PI / 4, 0]}
-                  polar={[0, Math.PI / 4]}
-                  azimuth={[-Math.PI / 4, Math.PI / 4]}
-                ></PresentationControls>
-                <Rotate3DModel />
-                <Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
-              </Suspense>
-            </CustomCanvas>
-          </HeroSection>
-        </Hero>
-        {/* <ScrollDown /> */}
-      </Section>
+      <Hero>
+        <HeroSection>
+          <p className="animate__animated animate__slideInUp">
+            Web Developer + 3D Artist
+          </p>
+          <p className="animate__animated animate__slideInUp">
+            I'm currently living in Kingston, Jamaica working on improving my
+            web development and multimedia skills.
+          </p>
+          <p className="animate__animated animate__slideInUp">
+            I'm focused on building, improving and maintaining simple, useful
+            tools for myself and others.
+          </p>
+          <p className="animate__animated animate__slideInUp">
+            My current project is <q>Rougelike Reality</q>, a customisation of
+            my <Link href="https://obsidian.md/">Obsidian vault </Link> to
+            tackle life like the rougelike it is.
+          </p>
+          <p className="animate__animated animate__slideInUp">
+            This website is actively under construction.
+          </p>
+          <ButtonContainer className="animate__animated animate__slideInUp">
+            {MediaProfiles.map((profile) => (
+              <Button href={profile.url}>{profile.name}</Button>
+            ))}
+          </ButtonContainer>
+        </HeroSection>
+        <HeroSection>
+          <CustomCanvas
+            className="animate__animated animate__slideInRight"
+            flat
+            shadows
+            dpr={[1, 2]}
+            camera={{ position: [2, 0, 12], fov: 15 }}
+            style={{
+              width: "375px",
+              height: "500px",
+            }}
+          >
+            {/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
+            <ambientLight intensity={1.25} />
+            <directionalLight intensity={0.4} />
+            <Suspense fallback={null}>
+              <PresentationControls
+                global
+                zoom={1}
+                rotation={[0, -Math.PI / 4, 0]}
+                polar={[0, Math.PI / 4]}
+                azimuth={[-Math.PI / 4, Math.PI / 4]}
+              ></PresentationControls>
+              <Rotate3DModel />
+              <Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
+            </Suspense>
+          </CustomCanvas>
+        </HeroSection>
+      </Hero>
+      {/* <ScrollDown /> */}
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">

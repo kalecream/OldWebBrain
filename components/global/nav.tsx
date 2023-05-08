@@ -20,8 +20,7 @@ const StyledFooter = styled.footer`
   display: flex;
   bottom: 0;
   position: relative;
-  height: 4rem;
-  padding: 2rem 0;
+  height: 3rem;
   font-size: 0.65rem;
   display: flex;
   flex-wrap: wrap;
