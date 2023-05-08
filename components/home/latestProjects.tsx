@@ -31,7 +31,7 @@ const Thirds = styled.div`
     flex-direction: column;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1024px) {
     flex-direction: row;
 
     & nth-child(1) {
@@ -145,11 +145,9 @@ const ProjectDataPoint = styled.ul`
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 768px) {
-    & li {
-      margin: 0.1rem;
-      padding: 0;
-    }
+  & li {
+    margin: 0.1rem;
+    padding: 0;
   }
 `;
 
