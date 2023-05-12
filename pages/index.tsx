@@ -374,7 +374,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                 <Articles key={post.slug}>
-                  {post.coverImage && (
+                  {/* {post.coverImage && (
                     <Image
                       src={post.coverImage}
                       width={300}
@@ -385,7 +385,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                       alt=""
                       unoptimized={true}
                     />
-                  )}
+                  )} */}
                   {post.date && (
                     <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
