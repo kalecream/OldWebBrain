@@ -160,7 +160,7 @@ const ArticleContainer = styled(Container)`
 
 const Articles = styled.div`
   padding: 2rem;
-  width: 300px;
+  width: 325px;
   height: fit-content;
 
   display: flex;
@@ -188,6 +188,7 @@ const Articles = styled.div`
   & span {
     font-size: 0.9rem;
     color: var(--lightgrey);
+    text-align: center;
   }
 
   & h2 {
@@ -196,6 +197,8 @@ const Articles = styled.div`
     font-size: 1.8rem;
     line-height: 1.2;
     font-weight: 600;
+    height: 5rem;
+    text-align: center;
   }
 
   & h2:hover {
