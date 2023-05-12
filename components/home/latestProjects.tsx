@@ -68,9 +68,16 @@ const ProjectCard = styled.div`
       transform: rotate(1.02deg) scale(0.95);
     }
 
-    @media (max-width: 480px) {
-      width: 100vw;
-      height: auto;
+  @media (max-width: 425px) {
+    width: 325px;
+  }
+
+  @media (min-width: 768px) {
+  
+  }
+
+  @media (min-width: 1024px) {
+  }
 `;
 
 //TODO: Move to Basics.tsx

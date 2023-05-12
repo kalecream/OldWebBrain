@@ -81,6 +81,13 @@ body {
   justify-content: center;
 }
 
+@media screen and (max-width: 375px) {
+  body {
+    display: block;
+    justify-content: center;
+  }
+}
+
 header {
   top: 0;
   width: 100%;
