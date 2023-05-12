@@ -3,7 +3,6 @@ import { Container, HalfColumn } from "../global";
 import "animate.css";
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { LastFilm } from "./letterboxd";
 
 const ProjectSection = styled.div`
   width: 100%;
