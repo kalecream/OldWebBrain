@@ -145,23 +145,22 @@ const ArticleContainer = styled(Container)`
   height: fit-content;
   gap: 2rem;
 
-  @media screen and (min-width: 750px) {
-    max-width: 50rem;
-    flex-direction: row;
-    align-items: baseline;
-  }
-
   @media screen and (max-width: 750px) {
     padding: auto;
     flex-direction: column;
     justify-content: flex-start;
     justify-items: center;
   }
+
+  @media screen and (min-width: 750px) {
+    flex-direction: row;
+    align-items: baseline;
+  }
 `;
 
 const Articles = styled.div`
   padding: 2rem;
-  width: 325px;
+
   height: fit-content;
 
   display: flex;
@@ -215,7 +214,11 @@ const Articles = styled.div`
     color: var(--text);
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 320px) {
+    width: 300px;
+  }
+
+  @media (max-width: 768px) {
     width: 400px;
     height: fit-content;
     margin-bottom: 1rem;
@@ -223,6 +226,12 @@ const Articles = styled.div`
     h2 {
       font-size: 2rem;
     }
+  }
+
+  @media (min-width: 768px) {
+    width: 400px;
+    height: fit-content;
+    margin-bottom: 1rem;
   }
 `;
 

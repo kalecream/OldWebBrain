@@ -3,6 +3,7 @@ import { Container, HalfColumn } from "../global";
 import "animate.css";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { LastFilm } from "./letterboxd";
 
 const ProjectSection = styled.div`
   width: 100%;
@@ -80,37 +81,6 @@ const ImageText = styled.div`
   }
 `;
 
-const Letterboxd = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent);
-  border-radius: 12px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  & a {
-    color: var(--background);
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    border: 1px solid var(--background);
-    transition: all 0.2s ease-in-out;
-  }
-
-  & a:hover {
-    background-color: var(--background);
-    color: var(--accent);
-    cursor: pointer;
-  }
-`;
-
 const OtherProjects = () => {
   return (
     <Container>
@@ -128,16 +98,6 @@ const OtherProjects = () => {
               and etc to help explore my own tastes and to keep discovering
               great stuff!
             </p>
-            <Letterboxd>
-              <p>Most recently watched movie</p>
-              <a
-                href={"https://letterboxd.com/kalecream/film/parasite-2019/1/"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Parasite
-              </a>
-            </Letterboxd>
           </HalfColumn>
           <HalfColumn>
             <iframe

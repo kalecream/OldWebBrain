@@ -78,6 +78,40 @@ const CustomArticle = styled.article`
     line-height: 1.4;
   }
 
+  & a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -0.2rem;
+      left: 0;
+      width: 100%;
+      height: 0.1rem;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+    }
+
+    &:visited {
+      color: var(--primary);
+    }
+  }
+
   & pre {
     background: #303030;
     color: #f1f1f1;
@@ -118,6 +152,16 @@ const CustomArticle = styled.article`
     -moz-box-shadow: inset 0 0 10px #000;
     box-shadow: inset 0 0 10px #000;
     opacity: 0.6;
+  }
+
+  & pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    opacity: 1;
   }
 
   @media (max-width: 768px) {
