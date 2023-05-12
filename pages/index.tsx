@@ -143,6 +143,8 @@ const ArticleContainer = styled(Container)`
   flex-wrap: wrap;
   justify-content: center;
   place-items: center;
+  justify-items: center;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     padding: 0 0.5rem;
@@ -151,8 +153,6 @@ const ArticleContainer = styled(Container)`
   @media screen and (min-width: 768px) {
     padding: 0 2rem;
     flex-direction: column;
-    justify-content: flex-start;
-    justify-items: center;
     gap: 2rem;
   }
 
