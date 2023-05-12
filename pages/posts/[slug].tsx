@@ -248,26 +248,8 @@ const CustomH6 = ({ id, ...rest }) => {
   return <h6 {...rest} />;
 };
 
-const CopyButton = styled.button`
-  &:active {
-    position: fixed;
-    right: 1rem;
-    top: 10px;
-    content: 'Copied!';
-  }
-`;
-
 const CustomPre = ({ children }) => {
-  return (
-    <div>
-      <CopyButton onClick={() => {navigator.clipboard.writeText({children})}}>
-              Copy!
-            </CopyButton>
-      <pre>
-        {children}
-      </pre>
-    </div>
-  );
+  return <pre>{children}</pre>;
 };
 
 const CustomImage = ({ src, ...rest }) => {
