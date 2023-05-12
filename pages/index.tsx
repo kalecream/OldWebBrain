@@ -99,11 +99,13 @@ const ButtonContainer = styled.div`
   margin-top: 1rem;
   justify-content: flex-start;
 
-  @media (max-width: 1000px) {
-    width: 20rem;
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 768px) {
     width: 30rem;
   }
 `;
