@@ -36,8 +36,6 @@ const BlogPage = styled(Page)`
 `;
 
 const CustomArticle = styled.article`
-  width: 90%;
-
   margin: 0 auto;
 
   display: flex;
@@ -47,8 +45,22 @@ const CustomArticle = styled.article`
   h2,
   h3 {
     font-family: "Inter", sans-serif;
-    font-weight: 600;
-    margin: 2rem 0;
+    font-weight: 500;
+  }
+
+  h1 {
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 4rem 0 0.5rem 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 3rem 0 0.5rem 0;
   }
 
   & ol,
@@ -98,42 +110,48 @@ const CustomArticle = styled.article`
     color: #888;
   }
 
-  @media (max-width: 320px) {
-    max-width: 20rem;
+  & code {
+    background: #303030;
+    color: #f1f1f1;
+    padding: 0.1rem 0.3rem;
+    border-radius: 5px;
+    -moz-box-shadow: inset 0 0 10px #000;
+    box-shadow: inset 0 0 10px #000;
+    opacity: 0.6;
   }
 
-  @media (min-width: 900px) {
-    max-width: 50rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 1rem;
+
+    & p {
+      padding: 0;
+    }
   }
 
-  @media (min-width: 900px) {
-    max-width: 45rem;
-    margin-left: 300px;
-    padding: 0 2.5rem;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 65rem;
-    margin-left: 400px;
+  @media (min-width: 1024px) {
+    width: 60%;
+    margin-left: 350px;
     margin-top: 5rem;
 
     & p,
     li {
       font-size: 1rem;
+      max-width: 65rem;
     }
   }
 `;
 
 const TableOfContents = styled.aside`
-  width: 275px;
-  min-width: 250px;
-  max-height: calc(100vh - 4rem);
+  padding: 1rem;
+  border-radius: 15px;
 
   align-self: flex-start;
 
   & ul li {
     margin-bottom: 0.5rem;
     font-weight: 300;
+    padding: 0;
   }
 
   & ul li:hover {
@@ -149,21 +167,19 @@ const TableOfContents = styled.aside`
   }
 
   @media (min-width: 1024px) {
-    display: block;
-    margin-left: 1rem;
+    width: 350px;
+    position: fixed;
+    left: 0;
+    top: 40%;
     padding: 0 2rem;
   }
+`;
 
-  @media (min-width: 1440px) {
-    display: block;
-  }
-
-  @media (min-width: 2560px) {
-    position: fixed;
-    top: 5rem;
-    overflow: auto;
-    top: 20%;
-  }
+const ArticleStatsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  break-inside: avoid;
+  margin-top: 3rem;
 `;
 
 const CustomH1 = ({ id, ...rest }) => {
@@ -232,6 +248,14 @@ const CustomH6 = ({ id, ...rest }) => {
   return <h6 {...rest} />;
 };
 
+const CustomPre = ({ children }) => {
+  return (
+    <div>
+      <pre>{children}</pre>
+    </div>
+  );
+};
+
 const CustomImage = ({ src, ...rest }) => {
   return (
     <Image alt="" src={src} {...rest} unoptimized={true} unselectable="on" />
@@ -252,6 +276,7 @@ const components = {
   CustomH4,
   CustomH5,
   CustomH6,
+  CustomPre,
 };
 
 const getClassName = (level: string) => {
@@ -290,38 +315,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   return (
     <BlogPage customMeta={customMeta}>
       {/* Nest the smaller headers inside the larger headers to denote hierarchy */}
-      <TableOfContents>
-        <ul>
-          {headings.map((heading) => {
-            const activeHeader =
-              document.querySelector(`#${heading.id}`) ?? headings[0].id;
-            return (
-              <li
-                key={heading.id}
-                className={getClassName(heading.level)}
-                onClick={(e) => {
-                  e.preventDefault();
-                  activeHeader.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                style={{
-                  fontWeight: activeId === heading.id ? "bold" : "normal",
-                }}
-              >
-                {heading.text}
-              </li>
-            );
-          })}
-        </ul>
-      </TableOfContents>
       <CustomArticle>
-        <Caption>
-          {format(
-            parseISO(frontMatter.date ? frontMatter.date : ""),
-            "MMMM dd, yyyy"
-          )}
-        </Caption>
         <h1
           style={{
             lineHeight: "1.2",
@@ -329,9 +323,45 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         >
           {frontMatter.title}
         </h1>
-        <Caption style={{ marginLeft: "1rem" }}>
-          {getReadTime(source.compiledSource)} minute read
-        </Caption>
+
+        <TableOfContents>
+          <ul>
+            {headings.map((heading) => {
+              const activeHeader =
+                document.querySelector(`#${heading.id}`) ?? headings[0].id;
+              return (
+                <li
+                  key={heading.id}
+                  className={getClassName(heading.level)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    activeHeader.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                  style={{
+                    fontWeight: activeId === heading.id ? "bold" : "normal",
+                  }}
+                >
+                  {heading.text}
+                </li>
+              );
+            })}
+          </ul>
+        </TableOfContents>
+
+        <ArticleStatsWrapper>
+          <Caption>
+            {format(
+              parseISO(frontMatter.date ? frontMatter.date : ""),
+              "MMMM dd, yyyy"
+            )}
+          </Caption>
+          <Caption style={{ marginLeft: "1rem" }}>
+            {getReadTime(source.compiledSource)} Minute Read
+          </Caption>
+        </ArticleStatsWrapper>
+
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
