@@ -136,23 +136,25 @@ const BlogSection = styled.section`
 `;
 
 const ArticleContainer = styled(Container)`
-  padding: 0 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   place-items: center;
-  height: fit-content;
-  gap: 2rem;
 
-  @media screen and (max-width: 750px) {
-    padding: auto;
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 0 2rem;
     flex-direction: column;
     justify-content: flex-start;
     justify-items: center;
+    gap: 2rem;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     align-items: baseline;
   }
@@ -215,16 +217,15 @@ const Articles = styled.div`
   }
 
   @media (max-width: 320px) {
-    width: 300px;
-  }
+    width: 275px;
 
-  @media (max-width: 768px) {
-    width: 400px;
-    height: fit-content;
-    margin-bottom: 1rem;
+    & h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
 
-    h2 {
-      font-size: 2rem;
+    & p {
+      padding: 0;
     }
   }
 
@@ -232,6 +233,10 @@ const Articles = styled.div`
     width: 400px;
     height: fit-content;
     margin-bottom: 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
   }
 `;
 
