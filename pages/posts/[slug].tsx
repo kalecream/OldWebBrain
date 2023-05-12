@@ -32,20 +32,16 @@ type PostPageProps = {
 };
 
 const BlogPage = styled(Page)`
-  display: flex;
-  gap: 1rem;
+  display: block;
 `;
 
 const CustomArticle = styled.article`
-  width: 100%;
+  width: 90%;
 
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
 
   & h1,
   h2,
@@ -68,6 +64,38 @@ const CustomArticle = styled.article`
   & p {
     text-align: justify;
     line-height: 1.4;
+  }
+
+  & pre {
+    background: #303030;
+    color: #f1f1f1;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    border-top: 4px solid var(--primary);
+    -moz-box-shadow: inset 0 0 10px #000;
+    box-shadow: inset 0 0 10px #000;
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    word-break: keep-all;
+    counter-reset: line;
+  }
+
+  & pre span {
+    display: block;
+    line-height: 1.5rem;
+  }
+
+  pre span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    // border-right: 1px solid #ddd;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    color: #888;
   }
 
   @media (max-width: 320px) {
@@ -102,10 +130,6 @@ const TableOfContents = styled.aside`
   max-height: calc(100vh - 4rem);
 
   align-self: flex-start;
-  position: fixed;
-  top: 5rem;
-  overflow: auto;
-  top: 20%;
 
   & ul li {
     margin-bottom: 0.5rem;
@@ -120,14 +144,25 @@ const TableOfContents = styled.aside`
     color: var(--primary);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     display: none;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1024px) {
     display: block;
     margin-left: 1rem;
     padding: 0 2rem;
+  }
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
+
+  @media (min-width: 2560px) {
+    position: fixed;
+    top: 5rem;
+    overflow: auto;
+    top: 20%;
   }
 `;
 
