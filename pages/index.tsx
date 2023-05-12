@@ -209,8 +209,6 @@ const Articles = styled.div`
     font-weight: 400;
     line-height: 1.2rem;
     color: var(--text);
-    height: 50px;
-    text-overflow: ellipsis;
   }
 
   @media (max-width: 750px) {
