@@ -7,6 +7,13 @@ import Link from "next/link";
 const ProjectSection = styled.div`
   width: 100%;
   padding: 0 4rem;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -35,12 +42,11 @@ const PodcastName = styled.h2`
 
 const ImageText = styled.div`
   display: flex;
-
-  margin: 1rem 2rem;
+  place-content: center;
 
   @media screen and (max-width: 768px) {
     flex-wrap: wrap;
-    width: min-content;
+    width: 100%;
   }
 
   & > div {
@@ -57,15 +63,30 @@ const ImageText = styled.div`
   & p {
     width: 25rem;
   }
+
+  @media screen and (max-width: 425px) {
+    iframe {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & p {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+  }
 `;
 
 const OtherProjects = () => {
   return (
-    <ProjectSection>
+    <Container>
       <SectionTitle className="animate__animated animate__fadeInUp">
         I started...
       </SectionTitle>
-      <Container>
+      <ProjectSection>
         <ImageText>
           <HalfColumn>
             <Link href={"https://open.spotify.com/show/3TEYSulKavQrhebkPLHkth"}>
@@ -105,8 +126,8 @@ const OtherProjects = () => {
 						pomodoro and crafting sessions. <br/><br/> I do 45+15 and 25+5 sessions for ~12 hours a day.</p>
 					</HalfColumn>
 				</ImageText> */}
-      </Container>
-    </ProjectSection>
+      </ProjectSection>
+    </Container>
   );
 };
 

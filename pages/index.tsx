@@ -45,6 +45,7 @@ const Hero = styled(Section)`
   place-items: center;
 
   @media (max-width: 768px) {
+    padding: 8rem 0;
     flex-direction: column;
   }
 
