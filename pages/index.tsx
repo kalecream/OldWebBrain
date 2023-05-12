@@ -42,7 +42,11 @@ const Hero = styled(Section)`
   background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
-  place-items: space-around;
+  place-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   @media (min-width: 1024px) {
     padding: 10rem 0;
@@ -55,27 +59,33 @@ const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 0.5rem;
-
-  @media (min-width: 1024px) {
-    width: 40%;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  gap: 0.15rem;
+  place-items: center;
 
   p {
     line-height: 1.6rem;
     text-align: start;
     padding: 0;
+  }
 
-    @media (max-width: 1024px) {
-      width: 25rem;
+  @media (max-width: 1023px) {
+    width: 100%;
+
+    p {
+      width: 80%;
+      max-width: 25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 40%;
+
+    div {
+      width: 60%;
     }
 
-    @media (min-width: 1000px) {
-      width: 30rem;
+    p {
+      max-width: 30rem;
     }
   }
 `;
