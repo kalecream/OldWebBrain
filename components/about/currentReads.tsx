@@ -121,9 +121,7 @@ const Book = styled.div`
 `;
 
 const CurrentReads = () => {
-  const ReadingFilter = Object.entries(Books).filter(
-    ([key, value]) => value.status === "reading"
-  );
+  const AllReadingBooks = Books.filter((book) => book.status === "reading");
 
   return (
     <Section>
@@ -131,25 +129,22 @@ const CurrentReads = () => {
         className="animate__animated animate__slideInUp"
         style={{ textAlign: "center" }}
       >
-        Reading {ReadingFilter.length} Books
+        Reading {AllReadingBooks.length} Books
       </h2>
       <ReadingContainer>
-        {Books.map((book) => {
-          if (book.status === "reading") {
-            let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
-            return (
-              <BookContainer
-                href={searchURL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+        {AllReadingBooks.map((book) => {
+          book.cover && (
+            <BookContainer
+              href={`https://www.you.com/search?q={book.title}+{book.author}`}
+            >
+              {book.cover && (
                 <Book className="animate__animated animate__slideInUp">
                   <img src={book.cover} alt={book.title} />
                 </Book>
-              </BookContainer>
-            );
-          }
-        })}
+              )}
+            </BookContainer>
+          );
+        }, [])}
       </ReadingContainer>
     </Section>
   );

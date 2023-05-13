@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import Page from "../containers/layout/page";
+import Link from "next/link";
 
 const Background = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -15,9 +17,6 @@ const Background = styled.div`
 `;
 
 const Text404 = styled.h1`
-  @media (max-width: 400px) {
-    font-size: 5rem;
-  }
   position: relative;
   width: auto;
   display: flex;
@@ -25,25 +24,23 @@ const Text404 = styled.h1`
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 20rem;
+  font-family: "Inter", monospace;
+  font-size: 15rem;
   font-weight: 900;
-  letter-spacing: 1rem;
   text-align: center;
   color: transparent;
   stroke: 1px var(--primary);
-  -webkit-text-stroke: 1px var(--grey);
+  -webkit-text-stroke: 0px var(--secondary);
   -webkit-text-fill-color: transparent;
   background: repeating-linear-gradient(
     45deg,
-    var(--secondary) 25%,
-    var(--primary) 50%,
-    var(--secondary) 50%,
+    var(--secondary) 0%,
     var(--primary) 75%
   );
   background-size: 100px 100px;
   background-clip: text;
   -webkit-background-clip: text;
-  animation: stripeBackgroundPosition 2s linear infinite;
+  animation: stripeBackgroundPosition 8s linear infinite;
 
   @keyframes stripeBackgroundPosition {
     0% {
@@ -70,6 +67,10 @@ const Text404 = styled.h1`
       transform: translateX(calc(100px * -1));
     }
   }
+
+  @media (max-width: 425px) {
+    font-size: 6rem;
+  }
 `;
 
 const Text404Container = styled.div`
@@ -89,8 +90,14 @@ const Text404DescriptionContainer = styled.div`
   flex-direction: column;
   place-items: center;
   text-align: center;
-  @media (max-width: 750px) {
+  font-size: 1.2rem;
+
+  @media (max-width: 768px) {
     width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 75rem;
   }
 `;
 
@@ -103,6 +110,7 @@ export const Lost = () => {
           <Text404DescriptionContainer>
             <p>The page you are looking for does not exist.</p>
             <p>Please check the URL and try again.</p>
+            <Link href="/">Back to Home</Link>
           </Text404DescriptionContainer>
         </Text404Container>
       </Background>
