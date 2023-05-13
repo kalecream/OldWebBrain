@@ -19,7 +19,7 @@ const ReadingContainer = styled(Container)`
 
   @media (max-width: 768px) {
     & > * {
-      margin: 1rem 0;
+      margin: 1rem 0.5rem;
     }
   }
 `;
@@ -119,7 +119,7 @@ const Book = styled.div`
 
 const CurrentReads = () => {
   const ReadingFilter = Object.entries(Books).filter(
-    ([key, value]) => value.status === "reading"
+    ([key, value]) => value.status === "reading" && key
   );
 
   return (
