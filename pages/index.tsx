@@ -121,17 +121,10 @@ const CustomCanvas = styled(Canvas)`
 `;
 
 const BlogSection = styled.section`
+  width: 100%;
   & h2 {
     font-weight: 400;
     color: var(--accent);
-  }
-
-  @media (max-width: 750px) {
-    width: 100%;
-  }
-
-  @media (min-width: 1200px) {
-    width: 75%;
   }
 `;
 
@@ -142,14 +135,12 @@ const ArticleContainer = styled(Container)`
   justify-content: center;
   place-items: center;
   justify-items: center;
-  margin: 0 auto;
 
   @media (max-width: 768px) {
     padding: 0 0.5rem;
   }
 
   @media screen and (min-width: 768px) {
-    padding: 0 2rem;
     flex-direction: column;
     gap: 2rem;
   }
