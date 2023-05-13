@@ -100,6 +100,7 @@ const Overlay = styled.div`
   }
 `;
 const ProjectTitle = styled.h5`
+  color: var(--body);
   align-content: flex-start;
 `;
 

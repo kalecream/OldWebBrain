@@ -9,15 +9,12 @@ import Link from "next/link";
 // TODO: add to top page
 
 const ReadingContainer = styled(Container)`
-  margin: 2.5rem;
-
   & > * {
-    margin: 3rem 1rem;
+    margin: 2rem 0rem;
   }
 
-  @media (min-width: 1200px) {
-    float: left;
-    max-width: 800px;
+  @media (min-width: 1024px) {
+    max-width: 1000px;
   }
 
   @media (max-width: 768px) {
@@ -121,7 +118,9 @@ const Book = styled.div`
 `;
 
 const CurrentReads = () => {
-  const AllReadingBooks = Books.filter((book) => book.status === "reading");
+  const ReadingFilter = Object.entries(Books).filter(
+    ([key, value]) => value.status === "reading"
+  );
 
   return (
     <Section>
@@ -129,22 +128,25 @@ const CurrentReads = () => {
         className="animate__animated animate__slideInUp"
         style={{ textAlign: "center" }}
       >
-        Reading {AllReadingBooks.length} Books
+        Reading <span>{ReadingFilter.length}</span> Books
       </h2>
       <ReadingContainer>
-        {AllReadingBooks.map((book) => {
-          book.cover && (
-            <BookContainer
-              href={`https://www.you.com/search?q={book.title}+{book.author}`}
-            >
-              {book.cover && (
+        {Books.map((book) => {
+          if (book.status === "reading") {
+            let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+            return (
+              <BookContainer
+                href={searchURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Book className="animate__animated animate__slideInUp">
                   <img src={book.cover} alt={book.title} />
                 </Book>
-              )}
-            </BookContainer>
-          );
-        }, [])}
+              </BookContainer>
+            );
+          }
+        })}
       </ReadingContainer>
     </Section>
   );

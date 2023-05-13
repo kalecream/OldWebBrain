@@ -28,9 +28,6 @@ import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { MediaProfiles } from "@components/socialmedia";
 import LatestProjects from "@components/home/latestProjects";
 import OtherProjects from "@components/home/otherProjects";
-import CurrentReads from "@components/about/currentReads";
-// import OtherProjects from "../components/home/otherProjects";
-// import LatestProjects from "../components/home/latestProjects";
 
 type IndexProps = {
   posts: PostType[];
@@ -423,7 +420,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       <LatestProjects />
       <OtherProjects />
-      <CurrentReads />
     </Page>
   );
 };

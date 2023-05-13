@@ -39,7 +39,6 @@ interface navProps {
 }
 
 const StyledNavigation = styled.nav<navProps>`
-  display: grid;
   width: 100%;
   justify-content: space-around;
   background-color: var(--background);
@@ -75,7 +74,7 @@ export const DirectoryLinks = styled(CustomLink)`
   color: var(--text);
   text-transform: capitalize;
   opacity: 0.7;
-  font-size: 1rem;
+  font-size: 0.8rem;
 
   &:hover {
     color: var(--primary);
@@ -110,9 +109,9 @@ export const Navigation: React.FunctionComponent = () => {
         {Directory.length > 0
           ? Directory.map((directory, index) => (
               <DirectoryListItem key={index}>
-                {/* <DirectoryLinks href={directory.links}>
+                <DirectoryLinks href={directory.links}>
                   {directory.title}
-                </DirectoryLinks> */}
+                </DirectoryLinks>
               </DirectoryListItem>
             ))
           : null}

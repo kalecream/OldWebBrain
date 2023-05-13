@@ -1,4 +1,8 @@
 const Directory = [
+  {
+    title: "About",
+    links: "/about",
+  },
   // {
   //     title: "Projects",
   //     links: "/projects",
