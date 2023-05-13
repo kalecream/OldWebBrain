@@ -1,4 +1,4 @@
 export * from "./nav";
 export * from "./Basics";
 export * from "./scrollDown";
-export * from "./article";
+export * from "./Article";
