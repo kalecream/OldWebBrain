@@ -74,9 +74,17 @@ const ImageText = styled.div`
     & p {
       width: 100%;
     }
+    iframe {
+      border-radius: 1rem;
+      width: 600px;
+    }
   }
 
   @media screen and (min-width: 1024px) {
+    iframe {
+      border-radius: 1rem;
+      width: 550px;
+    }
   }
 `;
 
@@ -100,7 +108,6 @@ const OtherProjects = () => {
           </HalfColumn>
           <HalfColumn>
             <iframe
-              style={{ borderRadius: "12" }}
               src="https://open.spotify.com/embed/show/3TEYSulKavQrhebkPLHkth?utm_source=generator&theme=0"
               width="100%"
               height="352"
