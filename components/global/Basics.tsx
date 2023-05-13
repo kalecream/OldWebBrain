@@ -207,3 +207,6 @@ export const CardTitle = styled.h2`
   line-height: 1.2;
   text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
 `;
+
+// ARTICLE
+
