@@ -48,7 +48,7 @@ const ProjectCard = styled.div`
   width: 300px;
 
   border-radius: 0.5rem;
-  background-color: var(--accent);
+  background-color: var(--primary);
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
   // transition: all 0.3s ease-in-out;
   // // background-image: url(${(props: { image: string }) => props.image});
