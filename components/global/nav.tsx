@@ -40,15 +40,15 @@ interface navProps {
 
 const StyledNavigation = styled.nav<navProps>`
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
   align-items: center;
 
-  @media screen and (max-width: 450px) {
-    padding: 1rem 0;
+  @media screen and (max-width: 425px) {
     flex-wrap: wrap;
     flex-direction: row;
+    line-height: 1;
   }
 
   @media screen and (max-width: 768px) {
@@ -57,8 +57,20 @@ const StyledNavigation = styled.nav<navProps>`
 
   @media screen and (min-width: 1024px) {
     margin: 0 auto;
-    padding: 2rem 3rem;
+    padding: 2rem 0;
     flex-direction: row;
+
+    & > * {
+      margin: 0 1rem;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 2rem;
+
+    & > * {
+      margin: 0 2rem;
+    }
   }
 `;
 

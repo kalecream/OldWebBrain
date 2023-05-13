@@ -67,7 +67,7 @@ const HeroSection = styled.div`
     padding: 0;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     width: 100%;
 
     p {
