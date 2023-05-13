@@ -85,7 +85,6 @@ const DirectoryListItem = styled.li`
 export const DirectoryLinks = styled(CustomLink)`
   color: var(--text);
   text-transform: capitalize;
-  opacity: 0.7;
   font-size: 0.8rem;
 
   &:hover {
@@ -100,10 +99,9 @@ export const SiteName = styled(CustomLink)`
   padding: 0.5rem 1rem;
   font-size: 2rem;
   color: var(--primary);
-  opacity: 0.7;
 
   & hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 
   @media screen and (max-width: 768px) {

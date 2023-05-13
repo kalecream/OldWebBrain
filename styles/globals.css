@@ -114,12 +114,12 @@ section {
 
 a {
   text-decoration: none;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: 600;
 }
 
 a:hover {
-  color: var(--dark-shades);
+  color: var(--secondary);
   transition: ease-in-out 0.2s;
 }
 
