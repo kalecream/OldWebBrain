@@ -23,10 +23,21 @@ export const Page = ({
   useEffect(() => {
     TagManager.initialize({ gtmId: "UA-148483444-1" });
   }, []);
+
+  if (description === undefined) {
+    description =
+      "KaleCream is a generalist from Kingston, Jamaica who has a blog about web-dev, self-development and other things.";
+  }
+
   return (
     <body>
       <header>
         <title>{siteTitle}</title>
+        {customMeta ? (
+          <meta name="description" content={customMeta.description} />
+        ) : (
+          description && <meta name="description" content={description} />
+        )}
         <Navigation />
       </header>
 
