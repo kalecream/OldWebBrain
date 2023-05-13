@@ -145,6 +145,8 @@ const CurrentReads = () => {
                 </Book>
               </BookContainer>
             );
+          } else {
+            return null;
           }
         })}
       </ReadingContainer>
