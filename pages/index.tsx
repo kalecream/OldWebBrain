@@ -8,11 +8,11 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
-
 import styled from "@emotion/styled";
 
 import { Section, Button, CapsTitle } from "../components/global/Basics";
 import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
+
 // import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
@@ -39,22 +39,30 @@ const Hero = styled(Section)`
   place-items: center;
 
   @media (max-width: 768px) {
-    padding: 8rem 0;
+    padding-top: 8rem;
     flex-direction: column;
   }
 
   @media (min-width: 1024px) {
-    padding: 10rem 0;
+    padding-top: 10rem;
     margin: 0 auto;
+
+    & > div:first-of-type {
+      width: 40%;
+    }
+
+    & > div:last-of-type {
+      width: 25%;
+    }
   }
 `;
 
 const HeroSection = styled.div`
   height: auto;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 0.15rem;
   place-items: center;
 
   p {
@@ -63,7 +71,7 @@ const HeroSection = styled.div`
     padding: 0;
   }
 
-  @media (max-width: 102px) {
+  @media (max-width: 1024px) {
     width: 100%;
 
     p {
@@ -73,14 +81,14 @@ const HeroSection = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 40%;
+    width: 35%;
 
     div {
       width: 60%;
     }
 
     p {
-      max-width: 30rem;
+      max-width: 35rem;
     }
   }
 `;
@@ -105,10 +113,9 @@ const ButtonContainer = styled.div`
 `;
 
 const CustomCanvas = styled(Canvas)`
-  @media (min-width: 750px) {
-    width: 100%;
+  @media (min-width: 768px) {
+    width: fit-content;
     height: 100%;
-    margin-left: 3.5rem;
   }
 
   @media (max-width: 768px) {
