@@ -217,8 +217,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             }}
           >
             {/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
-            <ambientLight intensity={1.25} />
-            <directionalLight intensity={0.4} />
+            <ambientLight />
+            <directionalLight />
             <Suspense fallback={null}>
               <PresentationControls
                 global

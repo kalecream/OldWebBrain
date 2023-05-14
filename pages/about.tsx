@@ -5,7 +5,7 @@ import {
   BacklogGraph,
   BookShelf,
   GenreRadarChart,
-} from "@components/about/backlogGraph";
+} from "../components/about/backlogGraph";
 import Books from "@data/books";
 
 export const About = () => {
