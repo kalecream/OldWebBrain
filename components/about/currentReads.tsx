@@ -8,7 +8,7 @@ import Link from "next/link";
 // TODO:  change to color theme
 // TODO: add to top page
 
-const ReadingContainer = styled(Container)`
+export const ReadingContainer = styled(Container)`
   & > * {
     margin: 2rem 0rem;
   }
@@ -24,16 +24,16 @@ const ReadingContainer = styled(Container)`
   }
 `;
 
-const BookContainer = styled(Link)`
+export const BookContainer = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   perspective: 600px;
-  margin: 2.5rem 0;
+  margin: 0;
 `;
 
-const Book = styled.div`
-  margin: 0 1rem;
+export const Book = styled.div`
+  margin: 0rem -1.5rem;
   width: 200px;
   height: 300px;
   position: relative;
@@ -41,6 +41,7 @@ const Book = styled.div`
   transform: rotateY(-30deg);
   transition: 1s ease;
   animation: 1s ease 0s 1 initAnimation;
+  scale: 0.7;
 
   &:hover {
     transform: rotateY(0deg);
@@ -104,7 +105,7 @@ const Book = styled.div`
     transform: translateZ(-25px);
     background-color: #5e5c64;
     border-radius: 0 2px 2px 0;
-    box-shadow: -10px 0 50px 10px #666;
+    box-shadow: -10px 0 20px 8px var(--faint);
   }
 
   @keyframes initAnimation {
