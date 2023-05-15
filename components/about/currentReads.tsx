@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export const ReadingContainer = styled(Container)`
   & > * {
-    margin: 2rem 0rem;
+    margin: 2rem 0;
   }
 
   @media (min-width: 1024px) {
@@ -57,7 +57,7 @@ export const Book = styled.div`
     transform: translateZ(25px);
     background-color: #5e5c64;
     border-radius: 0 2px 2px 0;
-    box-shadow: 5px 5px 20px #999;
+    box-shadow: 5px 5px 20px var(--faint);
   }
 
   &::before {
@@ -125,12 +125,11 @@ const CurrentReads = () => {
 
   return (
     <Section>
-      <h2
+      <h3
         className="animate__animated animate__slideInUp"
-        style={{ textAlign: "center" }}
       >
         Reading <span>{ReadingFilter.length}</span> Books
-      </h2>
+      </h3>
       <ReadingContainer>
         {Books.map((book) => {
           if (book.status === "reading") {
