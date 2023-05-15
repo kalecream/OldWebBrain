@@ -125,11 +125,6 @@ const CurrentReads = () => {
 
   return (
     <Section>
-      <h3
-        className="animate__animated animate__slideInUp"
-      >
-        Reading <span>{ReadingFilter.length}</span> Books
-      </h3>
       <ReadingContainer>
         {Books.map((book) => {
           if (book.status === "reading") {
