@@ -14,6 +14,7 @@ import styled from "@emotion/styled";
 
 const FAIcon = styled(FontAwesomeIcon)`
   color: var(--primary);
+  scale: 0.8;
 
   &:hover {
     color: var(--accent);

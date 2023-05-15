@@ -40,7 +40,7 @@ interface navProps {
 
 const StyledNavigation = styled.nav<navProps>`
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
   align-items: center;
@@ -76,10 +76,6 @@ const StyledNavigation = styled.nav<navProps>`
 
 const DirectoryListItem = styled.li`
   list-style: none;
-
-  & > * {
-    margin: 0 0.5rem;
-  }
 `;
 
 export const DirectoryLinks = styled(CustomLink)`
@@ -96,8 +92,7 @@ export const SiteName = styled(CustomLink)`
   height: 100%;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary);
 
   & hover {
@@ -109,6 +104,10 @@ export const SiteName = styled(CustomLink)`
       text-align: center;
     }
   }
+`;
+
+const Settings = styled.div`
+  margin: auto;
 `;
 
 export const Navigation: React.FunctionComponent = () => {
@@ -125,8 +124,9 @@ export const Navigation: React.FunctionComponent = () => {
               </DirectoryListItem>
             ))
           : null}
+          <Settings><ThemeSwitch /></Settings>
       </DirectoryList>
-      <ThemeSwitch />
+      
     </StyledNavigation>
   );
 };

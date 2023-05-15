@@ -5,6 +5,11 @@ font-family: 'Inter', sans-serif;
 font-family: 'Playfair Display', serif;
 */
 
+@font-face {
+  font-family: 'Spacetime';
+  src: url(../assets/fonts/spacetime-regular.ttf);
+}
+
 .light {
   --primary: #53c299;
   --secondary: #2b694d;

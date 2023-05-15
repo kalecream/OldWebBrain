@@ -26,11 +26,12 @@ const SectionTitle = styled.h2`
 `;
 
 const PodcastName = styled.h2`
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--primary);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
+  font-family: "SpaceTime", sans-serif;
   text-transform: capitalize;
   margin-bottom: 1rem;
 
