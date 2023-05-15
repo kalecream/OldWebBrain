@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import { Section, Button, CapsTitle } from "../components/global/Basics";
 import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
 
-// import { ScrollDown } from "../components/global";
+import { ScrollDown } from "../components/global";
 
 import { Model } from "../assets/models/me";
 
@@ -64,6 +64,11 @@ const HeroSection = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   place-items: center;
+
+  & h1 {
+    margin-bottom: 2rem;
+    color: var(--primary);
+  }
 
   p {
     line-height: 1.6rem;
@@ -179,6 +184,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
     <Page>
       <Hero>
         <HeroSection>
+          <h1>KaleCream</h1>
           <p className="animate__animated animate__slideInUp">
             Web Developer + 3D Artist
           </p>
@@ -233,7 +239,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </CustomCanvas>
         </HeroSection>
       </Hero>
-      {/* <ScrollDown /> */}
+      <ScrollDown />
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
