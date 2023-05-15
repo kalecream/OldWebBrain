@@ -132,7 +132,8 @@ const BlogSection = styled.section`
   width: 100%;
   & h2 {
     font-weight: 400;
-    color: var(--accent);
+    color: var(--primary);
+    opacity: 1;
   }
 `;
 

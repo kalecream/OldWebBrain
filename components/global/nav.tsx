@@ -81,6 +81,7 @@ const StyledNavigation = styled.nav<navProps>`
 
 const DirectoryListItem = styled.li`
   list-style: none;
+  margin-bottom: 0;
 `;
 
 export const DirectoryLinks = styled(CustomLink)`
