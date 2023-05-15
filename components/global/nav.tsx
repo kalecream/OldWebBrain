@@ -61,12 +61,12 @@ const StyledNavigation = styled.nav<navProps>`
   }
 
   @media screen and (min-width: 1024px) {
-    margin: 0 auto;
+    margin: 0 8rem;
     padding: 2rem 0;
     flex-direction: row;
 
     & > * {
-      margin: 0 1rem;
+      margin: 0;
     }
   }
 

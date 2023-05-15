@@ -18,7 +18,6 @@ const FAIcon = styled(FontAwesomeIcon)`
 
   &:hover {
     color: var(--accent);
-    scale: 1.5;
   }
 `;
 

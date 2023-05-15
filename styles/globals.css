@@ -68,7 +68,7 @@ font-family: 'Playfair Display', serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: ease-in-out 0.2s;
+  transition: ease-out 0.05s;
 }
 
 html {
