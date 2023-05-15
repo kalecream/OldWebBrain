@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import Directory from "../../data/directory";
 import { CustomLink } from "./Basics";
 import ThemeSwitch from "../navigation/ThemeSwitch";
+import { useRouter } from 'next/router';
 
 const DirectoryList = styled.ul`
   right: 0;
@@ -44,6 +45,10 @@ const StyledNavigation = styled.nav<navProps>`
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
   align-items: center;
+
+  & > :only-child {
+    justify-content: end;
+  }
 
   @media screen and (max-width: 425px) {
     flex-wrap: wrap;
@@ -111,9 +116,27 @@ const Settings = styled.div`
 `;
 
 export const Navigation: React.FunctionComponent = () => {
+  const router = useRouter();
+
+  let style = {
+    justifyContent: "center",
+    paddingRight: "0",
+  };
+
+  if (router.pathname === '/') {
+    style.justifyContent = "flex-end";
+  }
+  else if (router.pathname !== '/')
+  {
+    style.justifyContent = "center";
+    }
+  
   return (
-    <StyledNavigation display>
-      <SiteName href="/">KaleCream</SiteName>
+    <StyledNavigation display style={style}>
+      {
+        // if url root is / then don't display, else display
+        router.pathname !== "/" ? <SiteName href="/">KaleCream</SiteName>: null
+      }
       <DirectoryList>
         {Directory.length > 0
           ? Directory.map((directory, index) => (

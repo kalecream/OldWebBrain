@@ -6,6 +6,16 @@ font-family: 'Playfair Display', serif;
 */
 
 @font-face {
+  font-family: "HeyTiny";
+  src: url(../assets/fonts/saturday_august/HeyTiny.ttf);
+}
+
+@font-face {
+  font-family: "Saturday";
+  src: url(../assets/fonts/saturday_august/SaturdayAugust.otf)
+}
+
+@font-face {
   font-family: 'Spacetime';
   src: url(../assets/fonts/spacetime-regular.ttf);
 }
