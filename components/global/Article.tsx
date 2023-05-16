@@ -64,7 +64,7 @@ export const Articles = styled.div`
   }
 
   & h2 {
-    color: var(--accent);
+    color: var(--primary);
     padding: 1rem 0;
     font-size: 1.8rem;
     line-height: 1.2;
