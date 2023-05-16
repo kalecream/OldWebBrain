@@ -51,12 +51,14 @@ const StyledNavigation = styled.nav<navProps>`
   }
 
   @media screen and (max-width: 425px) {
+    margin: 0 1rem;
     flex-wrap: wrap;
     flex-direction: row;
     line-height: 1;
   }
 
   @media screen and (max-width: 768px) {
+    margin: 0 2rem;
     padding: 1rem 3rem;
   }
 
@@ -66,7 +68,7 @@ const StyledNavigation = styled.nav<navProps>`
     flex-direction: row;
 
     & > * {
-      margin: 0;
+      margin: 0 1rem;
     }
   }
 
