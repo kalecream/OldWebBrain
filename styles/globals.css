@@ -24,6 +24,7 @@ font-family: 'Playfair Display', serif;
   --grey: #454545;
   --lightgrey: #8f8182;
   --faint: rgba(0, 0, 0, 0.1);
+  --muted: rgba(0, 0, 0, 0.4);
   --caption: #8f8182;
   --text--header: var(--text);
 
@@ -51,6 +52,7 @@ font-family: 'Playfair Display', serif;
   --grey: #b3b3b3;
   --lightgrey: #8f8182;
   --faint: rgba(255, 255, 255, 0.1);
+  --muted: rgba(255, 255, 255, 0.3);
   --caption: #8f8182;
   --text--header: var(--text);
 

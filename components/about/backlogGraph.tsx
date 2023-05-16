@@ -68,11 +68,31 @@ export const BacklogGraph: FC = () => {
 
   useEffect(() => {
     const bookData: Record<string, { Started: number, Finished: number, Added: number }> = {};
+    let today = new Date();
+    let RelativeLastYearAgo = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
 
     Books.forEach((book) => {
-      const addMonth = new Date(book.added).getMonth();
-      const startMonth = book.started ? new Date(book.started).getMonth() : null;
-      const finishMonth = book.finished ? new Date(book.finished).getMonth() : null;
+      let addMonth = null;
+      let startMonth = null;
+      let finishMonth = null;
+
+      if (book.added && new Date(book.added) > RelativeLastYearAgo) {
+        addMonth = new Date(book.added).getMonth();
+      }
+
+      if (book.started && new Date(book.started) > RelativeLastYearAgo) {
+        startMonth = new Date(book.started).getMonth();
+        if (startMonth = addMonth) {
+          addMonth = null;
+        }
+      }
+
+      if (book.finished && new Date(book.finished) > RelativeLastYearAgo) {
+        finishMonth = new Date(book.finished).getMonth();
+        if (finishMonth = startMonth) {
+          startMonth = null;
+        }
+      }
 
       bookData[addMonth] = bookData[addMonth] || { Started: 0, Finished: 0, Added: 0 };
       bookData[addMonth].Added += 1;
@@ -109,13 +129,12 @@ export const BacklogGraph: FC = () => {
 
   return (
     <CumulativeBookContainer>
-      <BarChart width={900} height={300} data={Data}>
+      <BarChart width={700} height={300} data={Data}>
         <CartesianGrid strokeDasharray="3 6" />
         <XAxis dataKey="month" />
         <YAxis />
         <Tooltip active={false} />
-        <Legend />
-        <Bar dataKey="Started" stackId="a" fill="var(--accent)" />
+        <Bar dataKey="Started" stackId="a" fill="var(--muted)" />
         <Bar
           dataKey="Finished"
           stackId="a"

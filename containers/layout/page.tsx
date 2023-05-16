@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Navigation, Footer } from "../../components/global";
 import TagManager from "react-gtm-module";
-
 import { MetaProps } from "../../types/layout";
 
 type LayoutProps = {

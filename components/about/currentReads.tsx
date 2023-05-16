@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export const ReadingContainer = styled(Container)`
   & > * {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   @media (min-width: 1024px) {
@@ -124,10 +124,10 @@ const CurrentReads = () => {
   );
 
   return (
-    <Section>
+    <Section style={{width: "auto"}}>
       <ReadingContainer>
         {Books.map((book) => {
-          if (book.status === "reading") {
+          if (book.status === "Reading") {
             let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
             return (
               <BookContainer
