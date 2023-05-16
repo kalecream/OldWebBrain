@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Page } from "containers/layout";
 import { Section } from "@components/global";
 import CurrentReads from "@components/about/currentReads";
+import { BacklogGraph } from "@components/about/backlogGraph";
 import Books from "@data/books";
 
 const AboutParagraph = styled.div`
