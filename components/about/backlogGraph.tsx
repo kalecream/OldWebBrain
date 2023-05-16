@@ -17,16 +17,18 @@ export const CumulativeBookContainer = styled.div`
   place-items: center;
   justify-content: center;
 
-  & > h3 {
+  & > * > h3 {
     margin-bottom: 1rem;
     font-weight: 500;
+    text-align: center;
   }
 
-  @media (max-width: 1024px) {
-    display: none;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    display: flex;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,9 +188,9 @@ export const Shelf = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
 `;
 
 export const BookShelf: FC = () => {

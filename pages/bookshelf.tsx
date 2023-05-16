@@ -19,9 +19,8 @@ const BookCase = () => {
             <h1 id="PageTitle">Bookcase</h1>
             <BookShelf />
             <FlexLinks>
-                <Link href="/about">Back to About</Link>
-                <Link href="#PageTitle">Top of Page</Link>
-                <Link href="/">Back to Home</Link>
+                <Link href="/about">&#129120; About</Link>
+                <Link href="#PageTitle">&#129121; Top of Page</Link>
             </FlexLinks>
             
         </Page>
