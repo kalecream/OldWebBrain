@@ -93,18 +93,27 @@ export const BacklogGraph: FC = () => {
           startMonth = null;
         }
       }
-
-      bookData[addMonth] = bookData[addMonth] || { Started: 0, Finished: 0, Added: 0 };
-      bookData[addMonth].Added += 1;
+      
+      if (addMonth !== null) {
+        bookData[addMonth] = bookData[addMonth] || { Started: 0, Finished: 0, Added: 0 };
+        bookData[addMonth].Added += 1;
+      }
 
       if (startMonth !== null) {
         bookData[startMonth] = bookData[startMonth] || { Started: 0, Finished: 0, Added: 0 };
         bookData[startMonth].Started += 1;
+
+        if (addMonth !== null) {
+          bookData[startMonth].Added -= 1;
+        }
       }
 
       if (finishMonth !== null) {
         bookData[finishMonth] = bookData[finishMonth] || { Started: 0, Finished: 0, Added: 0 };
         bookData[finishMonth].Finished += 1;
+        if (startMonth !== null) {
+          bookData[finishMonth].Started -= 1;
+        }
       }
     });
 
@@ -112,16 +121,23 @@ export const BacklogGraph: FC = () => {
     const cumulativeData: BookData[] = [];
     let cumulative = { Started: 0, Finished: 0, Added: 0 };
 
+    let monthIndex = RelativeLastYearAgo.getMonth();
+
     for (let month = 0; month < 12; month++) {
-      cumulative = {
-        Started: (cumulative.Started || 0) + ((bookData[month] && bookData[month].Started) || 0),
-        Finished: (cumulative.Finished || 0) + ((bookData[month] && bookData[month].Finished) || 0),
-        Added: (cumulative.Added || 0) + ((bookData[month] && bookData[month].Added) || 0),
-      };
+      if (bookData[monthIndex]) {
+
+        cumulative = {
+          Started: bookData[monthIndex]?.Started + cumulative.Started || cumulative.Started,
+          Finished: bookData[monthIndex]?.Finished + cumulative.Finished || cumulative.Finished,
+          Added: bookData[monthIndex]?.Added + cumulative.Added || cumulative.Added,
+        };
+      }
       cumulativeData.push({
-        month: new Date(2023, month).toLocaleString('default', { month: 'long' }),
+        month: new Date(RelativeLastYearAgo.getFullYear(), RelativeLastYearAgo.getMonth() + month).toLocaleString('default', { month: 'long' }),
         ...cumulative,
       });
+
+      monthIndex = (monthIndex + 1) % 12;
     }
 
     setData(cumulativeData);
@@ -139,13 +155,36 @@ export const BacklogGraph: FC = () => {
           dataKey="Finished"
           stackId="a"
           fill="var(--primary)"
-          label={{ fontSize: 15, position: "top", fill: "var(--primary)" }}
+          label={<CustomerBarLabel />}
         />
         <Bar dataKey="Added" stackId="a" fill="var(--faint)" />
       </BarChart>
     </CumulativeBookContainer>
   );
 };
+
+const CustomerBarLabel: FC<any> = (props) => {
+  const { x, y, width, height, value } = props;
+
+  if (value <= 0) {
+    return null;
+  }
+
+  return (
+    <text
+      x={x + width / 2}
+      y={y}
+      fill="var(--muted)"
+      fontSize="0.8rem"
+      fontWeight={700}
+      textAnchor="middle"
+      dy={-6}
+    >
+      {value}
+    </text>
+  );
+};
+
 
 export const Shelf = styled.div`
   display: flex;

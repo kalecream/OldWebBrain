@@ -61,7 +61,7 @@ export const About = () => {
           <p>I made this about page because showing you my personality thorugh the things I like is personally preferable to describing it. I've always disliked that tell me a bit about yourself in a personal environment.</p>
           <p>What's my personality like, you ask? Well, imagine if your favorite playlist, Netflix marathon, and book collection had a baby - that's me! But don't take my word for it. Dive into the treasure trove of media below. It's like a mixtape of my soul.
           </p>
-          {/* <p><b>Why KaleCream?</b> I liked making Kale smoothies and just decided to name myself that on the internet.</p> */}
+          <p><b>Why KaleCream?</b> I liked making Kale smoothies and just decided to name myself that on the internet.</p>
 
           <h2>Books</h2>
 
