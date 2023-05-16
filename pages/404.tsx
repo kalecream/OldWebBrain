@@ -25,7 +25,7 @@ const Text404 = styled.h1`
   width: 100%;
   height: 100%;
   font-family: "Inter", monospace;
-  font-size: 15rem;
+  font-size: 8rem;
   font-weight: 900;
   text-align: center;
   color: transparent;
