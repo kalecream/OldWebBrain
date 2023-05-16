@@ -41,6 +41,7 @@ interface navProps {
 
 const StyledNavigation = styled.nav<navProps>`
   width: 100%;
+  margin: 0 1rem;
   justify-content: space-around;
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
