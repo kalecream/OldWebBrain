@@ -59,10 +59,6 @@ export interface BookData {
   Added: number;
 }
 
-export interface BookDataArray {
-  Books: BooksProps[];
-}
-
 export const BacklogGraph: FC = () => {
   const [Data, setData] = useState<BookData[]>([]);
 
@@ -195,8 +191,8 @@ export const Shelf = styled.div`
   margin: 0;
 `;
 
-export const BookShelf: FC<BookDataArray> = ({ Books }) => {
-  const readBooks = Books.filter((book) => book.status === "read");
+export const BookShelf: FC = () => {
+  const readBooks = Books.filter((book) => book.status === "Read");
   const wantToReadBooks = Books.filter(
     (book) => book.status === "Want to Read"
   );

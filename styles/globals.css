@@ -111,8 +111,21 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-}
+  padding-top: 5rem;
+  gap: 2rem;  
+  }
+
+  @media screen and (max-width: 1024px) {
+    main {
+      padding-top: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    main {
+      padding-top: 10rem;
+    }
+  }
 
 section {
   margin: 2rem 0;

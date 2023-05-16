@@ -26,7 +26,7 @@ const SectionTitle = styled.h2`
 `;
 
 const PodcastName = styled.h2`
-  font-size: 4rem;
+  font-size: 2rem;
   color: var(--primary);
   font-weight: 600;
   line-height: 1.2;
@@ -37,6 +37,14 @@ const PodcastName = styled.h2`
   &:hover {
     cursor: pointer;
     color: var(--accent);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 4rem;
   }
 `;
 
@@ -50,7 +58,7 @@ const ImageText = styled.div`
   }
 
   & > div {
-    margin: 3rem 1rem;
+    margin: 2rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,14 +84,14 @@ const ImageText = styled.div`
     }
     iframe {
       border-radius: 1rem;
-      width: 600px;
+      max-width: 500px;
     }
   }
 
   @media screen and (min-width: 1024px) {
     iframe {
       border-radius: 1rem;
-      width: 550px;
+      max-width: 450px;
     }
   }
 `;

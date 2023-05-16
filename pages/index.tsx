@@ -39,12 +39,10 @@ const Hero = styled(Section)`
   place-items: center;
 
   @media (max-width: 768px) {
-    padding-top: 8rem;
     flex-direction: column;
   }
 
   @media (min-width: 1024px) {
-    padding-top: 10rem;
     margin: 0 auto;
 
     & > div:first-of-type {
@@ -99,7 +97,6 @@ const HeroSection = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  width: 30rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -107,7 +104,8 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 70%;
+    max-width: 30rem;
     margin: 0 auto;
     justify-content: center;
   }

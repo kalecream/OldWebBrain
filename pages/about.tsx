@@ -10,6 +10,11 @@ const AboutParagraph = styled.div`
 margin: 0 auto;
 max-width: 40rem;
 text-align: justify;
+
+& > h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
 `;
 
 const AboutImage = styled.img`
@@ -69,7 +74,7 @@ export const About = () => {
 
   return (
     <Page>
-      <Section style={{ marginTop: "5rem", gap: "3rem" }}>
+      <Section>
         <h1>About</h1>
         <AboutParagraph>
         <p>Hey there, internet wanderer! I'm Sabrina aka KaleCream, but you can call me whatever floats your digital boat.</p>
@@ -78,7 +83,7 @@ export const About = () => {
 
            <AboutImage src={"/cats.png"} /> 
 
-          <p>I made this about page because showing you my personality thorugh the things I like is personally preferable to describing it. I've always disliked that tell me a bit about yourself in a personal environment.</p>
+          <p>I made this about page because showing you my personality through the things I like is personally preferable to describing it. I've always disliked that "tell me a bit about yourself" in personal environments.</p>
           <p>What's my personality like, you ask? Well, imagine if your favorite playlist, Netflix marathon, and book collection had a baby - that's me! But don't take my word for it. Dive into the treasure trove of media below. It's like a mixtape of my soul.
           </p>
           <p><b>Why KaleCream?</b> I liked making Kale smoothies and just decided to name myself that on the internet.</p>
@@ -89,6 +94,7 @@ export const About = () => {
 
           <CurrentReads />
           <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores book from before then to ensure that I'm keeping my desired reading pace.</p>
+          <p>Grey is all the books I added, Dark grey is the books that I've started and green are finished books! The number per month is number of finished + started book in <a href="/bookshelf">my Library</a>.</p>
           <BacklogGraph />
         </AboutParagraph>
       </Section>
