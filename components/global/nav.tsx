@@ -57,7 +57,7 @@ const StyledNavigation = styled.nav<navProps>`
     line-height: 1;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 425px) {
     margin: 0 2rem;
     padding: 1rem 3rem;
   }
