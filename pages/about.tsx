@@ -45,7 +45,27 @@ export const About = () => {
     setPercentage([FictionPercentage, NonFictionPercentage]);
   }, []);
 
+  let genreCount: { [genre: string]: number } = {};
 
+  Books.forEach((book) => {
+    if (book.genre) {
+      book.genre.forEach((genre: string) => {
+        if (genre !== 'Fiction' && genre !== 'Non-Fiction') {
+          if (!genreCount[genre]) {
+            genreCount[genre] = 1;
+          } else {
+            genreCount[genre]++;
+          }
+        }
+      });
+    }
+  });
+
+  let topGenres = Object.entries(genreCount)
+  .sort(([,a], [,b]) => b - a)
+  .slice(0, 10)
+  .map(([genre,]) => genre)
+  .join(', ');
 
   return (
     <Page>
@@ -65,10 +85,10 @@ export const About = () => {
 
           <h2>Books</h2>
 
-          <p>I like to read to learn about the world around me or get laughs. A lot. I have <b>{Books.length} books in my library</b>, and I'm always looking for more. I read about {Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction. I'm current reading {Books.filter((book) => book.status === "Reading").length} books, which you can see below. There are book topics that I like more than others. My most frequently read book topics are: {""}. </p> 
+          <p>I like to read to learn about the world around me or get laughs. A lot. I currently have <b>{Books.length} books in my library</b>, and I'm always looking for more. I read about {Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction. I'm current reading {Books.filter((book) => book.status === "Reading").length} books, which you can see below. There are book topics that I like more than others. My most frequently read book tags are: <b>{topGenres}</b>. </p> 
 
           <CurrentReads />
-          <p>This is a graph of my book status backlog for the past year.</p>
+          <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores book from before then to ensure that I'm keeping my desired reading pace.</p>
           <BacklogGraph />
         </AboutParagraph>
       </Section>
