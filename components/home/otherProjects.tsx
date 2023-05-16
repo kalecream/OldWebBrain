@@ -31,7 +31,6 @@ const PodcastName = styled.h2`
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
-  font-family: "SpaceTime", sans-serif;
   text-transform: capitalize;
   margin-bottom: 1rem;
 
