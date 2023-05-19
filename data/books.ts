@@ -345,6 +345,32 @@ const Books = [
     added: "2023-04-01",
     cover: "https://cdn.thestorygraph.com/8qqh5zur09r85rjjq2tk7jx4p17t",
   },
+  {
+    title: "The Secret Network of Nature",
+    author: "Peter Wohlleben",
+    series: "",
+    genre: ["Non-Fiction", "Ecosystems", "Plants"],
+    rating: 5,
+    published: "",
+    format: "Paperback",
+    pages: 0,
+    minutes: 0,
+    status: "Read",
+    added: "2021-12-01",
+    started: "2022-01-06",
+    finished: "2022-01-10",
+    cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528982901l/40528036._SX318_.jpg",
+    bookmarks: [
+      {
+        chapter: "Introduction",
+        bookmark: ["Because of a fish? The earth’s ecosystems, it seems, are just a bit too complex for us to compartmentalise them and draw up simple rules of cause and effect. Even conservation measures can have unexpected results. Would you expect, for example, that the recovery of crane populations in Europe affects the production of Iberian ham?", "Things can also go awry when a new species is added to a habitat: the introduction of a non-native fish, for example, can lead to a massive reduction in the local elk population"],
+      },
+      {
+        chapter: "",
+        bookmark: ["The key is the isotope nitrogen - 15, which in the Pacific Northwest is found almost exclusively in the ocean – or in fish."],
+      },
+    ],
+  },
 ];
 
 export default Books;
