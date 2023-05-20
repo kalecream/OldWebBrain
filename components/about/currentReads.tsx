@@ -55,7 +55,7 @@ export const Book = styled.div`
     width: 200px;
     height: 300px;
     transform: translateZ(25px);
-    background-color: #5e5c64;
+    background-color: var(--primary);
     border-radius: 0 2px 2px 0;
     box-shadow: 5px 5px 20px var(--faint);
   }

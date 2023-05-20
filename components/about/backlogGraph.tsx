@@ -183,6 +183,7 @@ const CustomerBarLabel: FC<any> = (props) => {
   );
 };
 
+// TODO: Combine books and add filters through a form.
 
 export const Shelf = styled.div`
   display: flex;
@@ -232,12 +233,37 @@ export const BookShelf: FC = () => {
               key={book.title}
             >
               <Book>
-                <img
-                  src={book.cover}
-                  alt={book.title}
-                  title={book.summary}
-                  style={{ width: "200px", height: "300px" }}
-                />
+                {book.cover ? (
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    title={book.summary}
+                    style={{ width: "200px", height: "300px" }}
+                  />
+                  // <Image
+                  //   src={book.cover}
+                  //   alt={book.title}
+                  //   title={book.summary}
+                  //   placeholder="blur"
+                  //   blurDataURL={book.cover}
+                  //   width={200}
+                  //   height={300}
+                  //   />
+                ) : (
+                  <div
+                    style={{
+                      width: "200px",
+                      height: "300px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "1rem",
+                        fontSize: "1.2rem",
+                        color: "var(--muted)",
+                      }}
+                    > {book.title}
+                      </div>
+                ) }
               </Book>
             </BookContainer>
           ))}

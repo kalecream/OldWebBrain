@@ -304,5 +304,5 @@ kbd::after,
 pre {
   padding: 1rem 2rem;
   background-color: var(--faint);
-  border-radius: var(--border-radius;
+  border-radius: var(--border-radius);
 }
