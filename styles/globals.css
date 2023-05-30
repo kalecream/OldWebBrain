@@ -66,6 +66,8 @@ font-family: 'Playfair Display', serif;
   --border: 1px solid var(--faint);
   --border-radius: 10px;
   --padding: 1rem 3rem;
+  --padding-small: 0.5rem 1rem;
+  --padding-xtra-small: 0.25rem 0.5rem;
 }
 
 * {

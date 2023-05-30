@@ -15,6 +15,10 @@ export const Section = styled.section`
   }
 `;
 
+export const FullSection = styled(Section)`
+  height: 80vh;
+`;
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;
