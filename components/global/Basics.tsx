@@ -1,6 +1,7 @@
 import "animate.css";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 // Layout
 export const Section = styled.section`
@@ -208,5 +209,15 @@ export const CardTitle = styled.h2`
   text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
 `;
 
-// ARTICLE
+export const WindowWidth = () => {
+  const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+}
 

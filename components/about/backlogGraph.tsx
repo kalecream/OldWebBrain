@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { BookContainer, Book } from "./currentReads";
 import Books from "@data/books";
+import { WindowWidth } from "..";
 
 export const CumulativeBookContainer = styled.div`
   margin: 0 auto;
@@ -141,10 +142,12 @@ export const BacklogGraph: FC = () => {
     setData(cumulativeData);
   }, [Books]);
 
+  const width = WindowWidth() - 150;
+
   return (
     <CumulativeBookContainer>
-      <BarChart width={700} height={300} data={Data}>
-        <CartesianGrid strokeDasharray="3 6" />
+      <BarChart width={width} height={200} data={Data}>
+        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
         <YAxis />
         <Tooltip active={false} />

@@ -5,7 +5,7 @@ const PhotoContainer = styled.div`
     position: relative;
     max-width: 800px;
     top: 60%;
-    left: -30%;
+    left: -35%;
 
     @media (max-width: 1024px) {
     display: none;
@@ -34,7 +34,6 @@ cursor: pointer;
 & img {
     display: block;
   width: 200px;
-  height: 200px;
   pointer-events: none;
 }
 
@@ -49,6 +48,7 @@ cursor: pointer;
     text-align: center;
     font-family: 'Caveat', serif;
     overflow: hidden;
+    line-height: 1;
 }
 `;
 
@@ -63,20 +63,24 @@ const AlbumImages = [
     '/img/album/bananasunset.jpg',
     '/img/album/bw_trees.jpg',
     '/img/album/earring.jpg',
-    '/img/album/jellyfish.jpg',
+  '/img/album/jellyfish.jpg',
+  '/img/album/flamingo.jpg',
+    '/img/album/kitty.jpg',
 ]
 
 const AlbumCaptions = [
     'The Green Thumb I wish I had',
     'Country',
-    'Wire-Wrapped Earring',
-    'Jellyfish at a beach clean-up',
+    'A brief stint in jewelry making',
+  'Jellyfish @ beach clean-up',
+  'Flamingo @ the Zoo',
+    'My fave stray had a kitten!'
 ]
 
 
 const PhotoGalley= () => {
     const picturesRef = useRef<NodeListOf<Element> | null>(null);
-    const emojis = ['💖', '💎', '👑', '🌈', '🔥', '🌊', '🌴', '🌵', '🌾',  '🌻', '🌼', '🌽', '🌿', '🍀', '🍂', '🍃',  '🍊', '🍋',  '🍐', '🍑', '🍒', '🍓', '🍩', '🍪', '🍬', '🍭', '🍮', '✌️', '🎀', '🎁', '🎂', '🦄', '🎐', '✨','🎠', '🎤', '🎥', '💀', '🎨', '🎪']
+    const emojis = ['💖', '💎', '👑', '🌈',  '🌵', '🌿', '🍃',  '🍊', '🍋', '🍑', '🍒','🎀', '✨', '💀']
 
     const randomEmoji = () => {
         return emojis[Math.floor(Math.random() * emojis.length)];
@@ -156,7 +160,7 @@ const PhotoGalley= () => {
             <PhotoContainer>
                 {AlbumImages.map((imagePath, index) => (
                     <Picture key={index} className="Picture">
-                         <img src={imagePath} alt={`Image ${index}`} width={200} height={200} />
+                         <img src={imagePath} alt={AlbumCaptions[index]} />
                         <span>{randomEmoji()} {AlbumCaptions[index]}</span>
                     </Picture>
                 ))}
