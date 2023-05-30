@@ -1,9 +1,5 @@
-import { Page } from "containers/layout";
-import React, { useEffect, useRef, useState } from 'react';
-import { GPhotos } from "@assets/images";
+import React, { useEffect, useRef} from 'react';
 import styled from "@emotion/styled";
-import Image from "next/image";
-import { Section } from "@components/global";
 
 const PhotoContainer = styled.div`
     position: relative;
