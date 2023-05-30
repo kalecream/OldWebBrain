@@ -753,6 +753,22 @@ const Books = [
     added: "2023-05-25",
     started: "2023-05-25",
     finished: "2023-05-25",
+  },
+  {
+    title: "Death by Food Pyramid",
+    author: "Denise Minger",
+    series: "",
+    genre: ["Non-Fiction", "Health"],
+    rating: 0,
+    published: "2014-01-01",
+    format: "Paperback",
+    pages: 336,
+    minutes: 0,
+    cover: "https://m.media-amazon.com/images/I/51h8+6RlqiL._AC_UF1000,1000_QL80_.jpg",
+    status: "Read",
+    added: "2022-05-25",
+    started: "2022-06-25",
+    finished: "2022-06-25",
   }
 ];
 
