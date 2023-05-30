@@ -55,7 +55,6 @@ const Projects = [
         Wordpress and now in Typescript.
       </span>
     ),
-    link: "/",
     technology: [
       <a href="https://nextjs.org/">Next.js</a>,
       <a href="https://threejs.org/">Three.js</a>,
@@ -63,6 +62,21 @@ const Projects = [
     ],
     language: ["TypeScript", "MDX"],
   },
+  {
+    id: "004",
+    display: true,
+    title: "GPT-4 Record",
+    description: (
+      <span>
+        A one-hour paid project to accept a 800 word prompt, perform a specfic action with the prompt and use that output as a second prompt. Both prompts were then saved to an ordinary text file.
+      </span>
+    ),
+    technology: [
+      <a href="https://openai.com/blog/openai-api/">OpenAI API</a>,
+    ],
+    language: ["Python"],
+    created: "2023-05-30",
+  }
 ];
 
 export default Projects;

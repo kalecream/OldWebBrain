@@ -85,34 +85,26 @@ export const Button = styled(Link)<ButtonProps>`
       ? onColor
       : secondaryBackground};
   border: ${(props) => (props.primary ? "none" : border)};
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   box-shadow: ${(props) => (props.primary ? boxShadow : "none")};
-  box-sizing: border-box;
-  color: ${(props) => (props.primary ? "var(--body)" : "var(--secondary)")};
+  color: ${(props) => (props.primary ? "var(--body)" : "var(--primary)")};
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
-  max-width: 500px;
   line-height: 1;
   overflow: hidden;
-  padding: 1rem 2rem;
+  padding: var(--padding);
   position: relative;
   transition: box-shadow 0.15s, background-image 0.15s;
-  user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  opacity: 0.8;
 
   &:hover {
     opacity: 1;
     transform: translateY(-2px);
-    background-image: radial-gradient(
-      100% 100% at 100% 0,
-      var(--secondary) 0,
-      var(--primary) 100%
-    );
+    background-color: var(--primary);
     color: var(--body);
   }
 

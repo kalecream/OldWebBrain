@@ -24,6 +24,7 @@ import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { MediaProfiles } from "@components/socialmedia";
 import LatestProjects from "@components/home/latestProjects";
 import OtherProjects from "@components/home/otherProjects";
+import { ContactForm } from "@components/global/contactForm";
 
 type IndexProps = {
   posts: PostType[];

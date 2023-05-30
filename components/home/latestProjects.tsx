@@ -24,7 +24,7 @@ const Thirds = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 1rem 0;
+  padding: 1rem 0;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -33,6 +33,7 @@ const Thirds = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: row;
+    
 
     & nth-child(1) {
       width: 33%;
@@ -45,15 +46,18 @@ const Thirds = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  width: 300px;
+  min-width: 200px;
+  width: 310px;
+  margin: 20px 0;
 
-  border-radius: 0.5rem;
-  background-color: var(--primary);
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
-  // transition: all 0.3s ease-in-out;
-  // // background-image: url(${(props: { image: string }) => props.image});
-  // // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
-  // //   url(${(props: { image: string }) => props.image});
+  border: 1px solid var(--faint);
+  border-radius: var(--border-radius);
+  background-color: var(--body);
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease-in-out;
+  // background-image: url(${(props: { image: string }) => props.image});
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+  //   url(${(props: { image: string }) => props.image});
 
   &:hover {
     animation: hover 0.3s ease-in-out forwards;
@@ -69,7 +73,7 @@ const ProjectCard = styled.div`
     }
 
   @media (max-width: 425px) {
-    width: 325px;
+    width: 275px;
   }
 
   @media (min-width: 768px) {
@@ -92,7 +96,7 @@ const Overlay = styled.div`
   left: 0;
   z-index: 1;
   padding: 0.5rem;
-  color: var(--body);
+  color: var(--text);
 
   @media (max-width: 768px) {
     width: 100%;
@@ -100,8 +104,10 @@ const Overlay = styled.div`
   }
 `;
 const ProjectTitle = styled.h5`
-  color: var(--body);
+  color: var(--primary);
   align-content: flex-start;
+  margin: 0.5rem 0;
+  margin-top: 2rem;
 `;
 
 const ProjectDate = styled.small`
@@ -112,7 +118,8 @@ const ProjectDescription = styled.p`
   height: 150px;
   width: 80%;
   line-height: 1.4;
-  opacity: 1;
+  opacity: 0.8;
+  margin: 1rem 0;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -122,18 +129,16 @@ const ProjectDescription = styled.p`
 
 const ProjectTechnologies = styled.div`
   width: 80%;
-  color: var(--body);
   padding: 0.5rem 0;
 `;
 
 const ProjectLanguages = styled.div`
   width: 80%;
-  color: var(--body);
   padding: 0.5rem 0;
 `;
 
 const ProjectDataPoint = styled.ul`
-  color: var(--body);
+  color: var(--text);
   font-size: 0.7rem;
   display: flex;
   flex-wrap: wrap;
@@ -146,10 +151,10 @@ const ProjectDataPoint = styled.ul`
   }
 
   & li a {
-    padding: 0.1rem 0.3rem;
-    border: 1px solid var(--body);
-    border-radius: 0.5rem;
-    color: var(--body);
+    padding: var(--padding-xtra-small);
+    border: 1px solid var(--faint);
+    border-radius: var(--border-radius);
+    color: var(--text);
     transition: all 0.3s ease-in-out;
   }
 
@@ -169,7 +174,8 @@ const Emoji = styled.span`
 `;
 
 const ProjectButton = styled(Button)`
-  color: var(--text);
+  background-color: var(--text);
+  border-radius: var(--border-radius);
 `;
 
 const ProjectImage = styled.img`
@@ -195,12 +201,12 @@ const LatestProjects = () => {
                   image={
                     project.image
                       ? project.image.trim()
-                      : "https://media.istockphoto.com/id/1288852672/photo/old-wall-pattern-texture-cement-blue-dark-abstract-blue-color-design-are-light-with-black.jpg"
+                      : ""
                   }
                   key={project.id}
                   className="col-md-4"
                 >
-                  <ProjectImage src={project.image} alt="" />
+                  {/* <ProjectImage src={project.image} alt="" /> */}
                   <Overlay>
                     <ProjectTitle>{project.title}</ProjectTitle>
                     <ProjectDate>{project.created}</ProjectDate>
