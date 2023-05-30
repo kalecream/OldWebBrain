@@ -737,6 +737,22 @@ const Books = [
     cover: "https://m.media-amazon.com/images/I/71v88AfuQSL._AC_UF1000,1000_QL80_.jpg",
     status: "Want to Read",
     added: "2023-05-20",
+  },
+  {
+    title: "Anthem",
+    author: "Ayn Rand",
+    series: "",
+    genre: ["Fiction", "Philosophy"],
+    rating: 3,
+    published: "1938-01-01",
+    format: "Paperback",
+    pages: 105,
+    minutes: 0,
+    cover: "https://4.bp.blogspot.com/-4-02iZjaIAA/VGhlDKSHp3I/AAAAAAAAAkY/Ylh8v2Vk10o/s1600/anthem0001.jpg",
+    status: "Read",
+    added: "2023-05-25",
+    started: "2023-05-25",
+    finished: "2023-05-25",
   }
 ];
 
