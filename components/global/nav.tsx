@@ -4,6 +4,7 @@ import Directory from "../../data/directory";
 import { CustomLink } from "./Basics";
 import ThemeSwitch from "../navigation/ThemeSwitch";
 import { useRouter } from 'next/router';
+import AvailableForWork from "@components/navigation/work";
 
 const DirectoryList = styled.ul`
   right: 0;
@@ -117,6 +118,15 @@ export const SiteName = styled(CustomLink)`
 
 const Settings = styled.div`
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  * {
+    margin: 0 0.5rem;
+  }
 `;
 
 export const Navigation: React.FunctionComponent = () => {
@@ -151,7 +161,10 @@ export const Navigation: React.FunctionComponent = () => {
               </DirectoryListItem>
             ))
           : null}
-          <Settings><ThemeSwitch /></Settings>
+        <Settings>
+          <ThemeSwitch />
+          <AvailableForWork />
+        </Settings>
       </DirectoryList>
       
     </StyledNavigation>
