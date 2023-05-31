@@ -323,7 +323,7 @@ pre {
   display: flex;
   user-select: none;
   gap: 2rem;
-  transform: skewY(-10deg);
+  transform: skewY(-3deg);
   border-top: 3px solid var(--primary);
   border-bottom: 3px solid var(--primary);
   padding: 0.5rem 0;
