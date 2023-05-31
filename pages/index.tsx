@@ -24,7 +24,7 @@ import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { MediaProfiles } from "@components/socialmedia";
 import LatestProjects from "@components/home/latestProjects";
 import OtherProjects from "@components/home/otherProjects";
-import { ContactForm } from "@components/global/contactForm";
+import SkillMarquee from "@components/home/skills";
 
 type IndexProps = {
   posts: PostType[];
@@ -63,11 +63,7 @@ const HeroSection = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   place-items: center;
-
-  & h1 {
-    margin-bottom: 2rem;
-    color: var(--primary);
-  }
+  animation: fadeInFromBelow 1s ease-in-out;
 
   p {
     line-height: 1.6rem;
@@ -95,6 +91,17 @@ const HeroSection = styled.div`
       max-width: 35rem;
     }
   }
+
+  @keyframes fadeInFromBelow {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
 `;
 
 const ButtonContainer = styled.div`
@@ -184,35 +191,28 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
     <Page>
       <Hero>
         <HeroSection>
-          <h1>KaleCream</h1>
-          <p className="animate__animated animate__slideInUp">
-            Web Developer + 3D Artist
+          <div className="hider">
+          <h1 className="sitename">KaleCream</h1>
+          </div>
+          <p >
+          I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. 
           </p>
-          <p className="animate__animated animate__slideInUp">
-            I'm currently living in Kingston, Jamaica working on improving my
-            web development and multimedia skills.
-          </p>
-          <p className="animate__animated animate__slideInUp">
-            I'm focused on building, improving and maintaining simple, useful
-            tools for myself and others.
-          </p>
-          <p className="animate__animated animate__slideInUp">
+          <p >
             My current project is <q>Rougelike Reality</q>, a customisation of
             my <Link href="https://obsidian.md/">Obsidian vault </Link> to
             tackle life like the rougelike it is.
           </p>
-          <p className="animate__animated animate__slideInUp">
-            This website is actively under construction.
-          </p>
-          <ButtonContainer className="animate__animated animate__slideInUp">
-            {MediaProfiles.map((profile) => (
+          
+          <ButtonContainer >
+            <Button primary href="/services">Need a service?</Button>
+            <Button href="#blog-posts">Check out the blog</Button>
+            {/* {MediaProfiles.map((profile) => (
               <Button href={profile.url}>{profile.name}</Button>
-            ))}
+            ))} */}
           </ButtonContainer>
         </HeroSection>
         <HeroSection>
           <CustomCanvas
-            className="animate__animated animate__slideInRight"
             flat
             shadows
             dpr={[1, 2]}
@@ -243,7 +243,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts">
-          <CapsTitle>Blog</CapsTitle>
+          <CapsTitle >Blog</CapsTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
@@ -286,7 +286,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </ArticleContainer>
         </BlogSection>
       )}
-
+      <SkillMarquee/>
       <LatestProjects />
       <OtherProjects />
     </Page>

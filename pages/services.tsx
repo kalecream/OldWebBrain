@@ -55,9 +55,9 @@ const CardContainer = styled.div`
 
 const ProjectCard = styled(Link)`
   display: flex;
-  width: 60rem;
+  width: 55rem;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: var(--padding);
   flex-direction: column;
   border: var(--border);
   border-radius: var(--border-radius);
@@ -78,8 +78,7 @@ const ProjectCard = styled(Link)`
   }
 
   & > h2 {
-    font-size: 4rem;
-    font-family: var(--font-family-heading-accent);
+    font-size: 2rem;
     font-weight: 600;
     padding: 0;
     margin-bottom: 1rem;
@@ -96,6 +95,8 @@ const ProjectCard = styled(Link)`
 
   & > p {
     max-width: 25rem;
+    line-height: 1.5;
+    color: var(--caption);
 
     @media (max-width: 550px) {
       width: 100%;

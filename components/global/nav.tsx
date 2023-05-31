@@ -166,7 +166,6 @@ export const Navigation: React.FunctionComponent = () => {
           <AvailableForWork />
         </Settings>
       </DirectoryList>
-      
     </StyledNavigation>
   );
 };

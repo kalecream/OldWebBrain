@@ -19,6 +19,7 @@ const WorkButton = styled.button`
     &:focus, &:active, &:hover {
         background-color: var(--primary);
         color: var(--body);
+        animation: none;
 
         &::before {
             background-image: none;
@@ -74,17 +75,23 @@ export const AvailableForWork = () => {
     
       const handleMouseLeave = () => {
         setIsHovered(false);
-      };
+    };
+    
+    const handleMouseClick = () => {
+        
+    }
+
 
     return (
         <WorkButton
             className={`animated-button ${isHovered ? "hovered" : ""}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleMouseClick}
         >
             {!isHovered && (<span>Available For Work</span>)}
             {isHovered && (
-        <span className={`animated-button-text in`}>Commission Me!   :)</span>
+        <span className={`animated-button-text in`}>Commission Me!</span>
       )}
         </WorkButton>
     )

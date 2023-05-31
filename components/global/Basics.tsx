@@ -144,7 +144,7 @@ export const CapsTitle = styled.h3`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: var(--caption);
 `;
 
 export const Paragraph = styled.p`

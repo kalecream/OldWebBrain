@@ -35,6 +35,7 @@ font-family: 'Playfair Display', serif;
 
   --border: 1px solid var(--faint);
   --border-radius: 20px;
+  --border-radius-small: 10px;
   --padding: 1rem 3rem;
   --padding-small: 0.5rem 1rem;
   --padding-xtra-small: 0.25rem 0.5rem;
@@ -64,7 +65,8 @@ font-family: 'Playfair Display', serif;
   --info: #2196f3;
 
   --border: 1px solid var(--faint);
-  --border-radius: 10px;
+  --border-radius: 20px;
+  --border-radius-small: 10px;
   --padding: 1rem 3rem;
   --padding-small: 0.5rem 1rem;
   --padding-xtra-small: 0.25rem 0.5rem;
@@ -309,4 +311,113 @@ pre {
   padding: 1rem 2rem;
   background-color: var(--faint);
   border-radius: var(--border-radius);
+}
+
+/*  */
+.skill-marquee {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: -99;
+  display: flex;
+  user-select: none;
+  gap: 2rem;
+  transform: skewY(-10deg);
+  border-top: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding: 0.5rem 0;
+}
+
+.skill-marquee__inner {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  gap: 2rem;
+  height: 100%;
+  animation: marquee 25s linear infinite;
+}
+
+.skill-marquee__inner:hover {
+  animation-play-state: paused;
+}
+
+.skill-marquee__inner:hover .skill-marquee__item {
+  animation-play-state: paused;
+}
+
+.skill-marquee__item {
+  max-width: clamp(20rem, 25vw, 25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-marquee {
+    animation-play-state: paused;
+  }
+}
+
+/*  */
+
+.hider {
+  overflow: hidden;
+}
+
+.sitename {
+  transform: translate3d(0, 0, 0);
+  animation: slide-up 2s ;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.sitename:hover {
+  color: var(--accent);
+}
+
+@keyframes multiColorLetterHover {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--secondary);
+  }
+  50% {
+    color: var(--tertiary);
+  }
+  75% {
+    color: var(--quaternary);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@keyframes slide-up { 
+  0%{ transform: translate3d(0, 100%, 0); }
+  100%{ transform: translate3d(0, 0, 0); }
 }
