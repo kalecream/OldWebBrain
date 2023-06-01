@@ -146,7 +146,7 @@ export const BacklogGraph: FC = () => {
 
   return (
     <CumulativeBookContainer>
-      <BarChart width={width} height={200} data={Data}>
+      <BarChart width={width > 1000 ? 950 : width} height={200} data={Data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
         <YAxis />
