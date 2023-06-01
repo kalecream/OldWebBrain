@@ -198,6 +198,10 @@ p {
   }
 }
 
+p a {
+  color: var(--text);
+}
+
 li {
     padding: 0 2.5rem;
 }
