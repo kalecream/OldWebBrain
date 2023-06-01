@@ -769,6 +769,22 @@ const Books = [
     added: "2022-05-25",
     started: "2022-06-25",
     finished: "2022-06-25",
+  },
+  {
+    title: "My Inventions",
+    author: "Nikola Tesla",
+    series: "",
+    genre: ["Non-Fiction", "Biography"],
+    rating: 0,
+    published: "1919-01-01",
+    format: "Paperback",
+    pages: 96,
+    minutes: 0,
+    cover: "https://m.media-amazon.com/images/I/61iTxSBpy5L._AC_UF1000,1000_QL80_.jpg",
+    status: "Read",
+    added: "2023-06-01",
+    started: "2023-06-01",
+    finished: "2023-06-01",
   }
 ];
 
