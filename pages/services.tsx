@@ -45,23 +45,25 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
-  row-gap: 2rem;
+  align-items: flex-end;
 
-  @media (max-width: 550px) {
-    padding: 0 1rem;
+  * {
+    flex: 1 1 1rem;
+  }
+  
+  @media (min-width: 1024px) {
+    margin: 0 4rem; 
   }
 `;
 
 const ProjectCard = styled(Link)`
   display: flex;
-  width: 55rem;
+  width: fit-content;
   margin: 0 auto;
   padding: var(--padding);
   flex-direction: column;
   border: var(--border);
-  border-radius: var(--border-radius);
-  height: 300px;
+  border-radius: var(--border-radius-small);
 
   // TODO: Fix section hover
   &:hover,
@@ -77,11 +79,18 @@ const ProjectCard = styled(Link)`
     margin: 0 auto;
   }
 
+  @media (min-width: 1024px) {
+    height: 500px;
+    margin: 0 1rem;
+  }
+
   & > h2 {
+    color: var(--primary);
     font-size: 2rem;
     font-weight: 600;
     padding: 0;
     margin-bottom: 1rem;
+    text-align: center;
 
     @media (max-width: 550px) {
       font-size: 2rem;
@@ -96,6 +105,7 @@ const ProjectCard = styled(Link)`
   & > p {
     max-width: 25rem;
     line-height: 1.5;
+    font-size: 0.9rem;
     color: var(--caption);
 
     @media (max-width: 550px) {
@@ -104,20 +114,15 @@ const ProjectCard = styled(Link)`
   }
 
   & img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 1rem;
-    width: 35%;
-    height: 100%;
-    object-fit: cover;
+    padding: 0.5rem;
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 1024px) {
       display: none;
     }
 
-    @media screen and (max-width: 1500px) {
-      width: 35%;
+    @media screen and (min-width: 1024px) {
+      width: 100%;
+      height: 100%;
     }
   }
 `;

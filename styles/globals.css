@@ -200,6 +200,7 @@ p {
 
 p a {
   color: var(--text);
+  border-bottom: 1px solid var(--muted);
 }
 
 li {
