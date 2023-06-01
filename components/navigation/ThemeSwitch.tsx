@@ -13,11 +13,11 @@ import styled from "@emotion/styled";
  */
 
 const FAIcon = styled(FontAwesomeIcon)`
-  color: var(--primary);
+  color: var(--muted);
   scale: 0.8;
 
   &:hover {
-    color: var(--accent);
+    color: var(--primary);
   }
 `;
 
