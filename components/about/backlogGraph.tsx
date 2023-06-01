@@ -68,7 +68,7 @@ export const BacklogGraph: FC = () => {
   useEffect(() => {
     const bookData: Record<string, { Started: number, Finished: number, Added: number }> = {};
     let today = new Date();
-    let RelativeLastYearAgo = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+    let RelativeLastYearAgo = new Date(today.getFullYear() - 1, today.getMonth() + 1, today.getDate());
 
     Books.forEach((book) => {
       let addMonth = null;
