@@ -24,6 +24,8 @@ import LatestProjects from "@components/home/latestProjects";
 import OtherProjects from "@components/home/otherProjects";
 import SkillMarquee from "@components/home/skills";
 
+import "../styles/animations.module.css";
+
 type IndexProps = {
   posts: PostType[];
 };
@@ -235,7 +237,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <ScrollDown />
 
       {posts.length > 0 && (
-        <BlogSection id="blog-posts">
+        <BlogSection id="blog-posts" className="fadeIn--below">
           <CapsTitle >Blog</CapsTitle>
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
@@ -255,8 +257,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                   )}
                   <h2 className="blog--article__title">{post.title}</h2>
 
-                  <p className="blog--article">
-                    <span>{post.description}</span>
+                  <p className="blog--article__description">
+                    {post.description}
                   </p>
 
                   {post.tags && (

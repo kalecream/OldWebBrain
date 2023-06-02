@@ -33,12 +33,12 @@ const Sections = [
     cost: "$20/hour",
     link: "/services/administration",
   },
-  {
-    name: "Content Creation",
-    description: "Create custom content for your business or personal use.",
-    cost: "$20/hour",
-    link: "/services/content-creation",
-  },
+  // {
+  //   name: "Content Creation",
+  //   description: "Create custom content for your business or personal use.",
+  //   cost: "$20/hour",
+  //   link: "/services/content-creation",
+  // },
 ];
 
 const CardContainer = styled.div`
@@ -57,13 +57,12 @@ const CardContainer = styled.div`
 `;
 
 const ProjectCard = styled(Link)`
-  display: flex;
-  width: fit-content;
   margin: 0 auto;
-  padding: var(--padding);
+  padding: var(--padding-small);
+  display: flex;
   flex-direction: column;
   border: var(--border);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius);
 
   // TODO: Fix section hover
   &:hover,
@@ -77,19 +76,19 @@ const ProjectCard = styled(Link)`
     height: max-content;
     padding: 1rem;
     margin: 0 auto;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 1024px) {
-    height: 500px;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
+    height: 350px;
   }
 
   & > h2 {
     color: var(--primary);
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     padding: 0;
-    margin-bottom: 1rem;
     text-align: center;
 
     @media (max-width: 550px) {
@@ -121,7 +120,7 @@ const ProjectCard = styled(Link)`
     }
 
     @media screen and (min-width: 1024px) {
-      width: 100%;
+      width: 277px;
       height: 100%;
     }
   }
@@ -150,14 +149,15 @@ export default function Services() {
               href={section.link}
               className="animate__animated animate__fadeInUp"
             >
-              <h2>{section.name}</h2>
-              <p>{section.description}</p>
-              <img
+               <img
                 width={100}
                 height={100}
                 alt={""}
                 src={`/img/Services/${section.name}.svg`}
               />
+              <h2>{section.name}</h2>
+              {/* <p>{section.description}</p> */}
+             
             </ProjectCard>
           ))}
         </CardContainer>
