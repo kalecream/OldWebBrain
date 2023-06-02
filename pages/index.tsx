@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-// import Image from "next/image";
-
+import "../styles/cards.module.css";
 import Page from "../containers/layout/page";
 
 import { format, parseISO } from "date-fns";
