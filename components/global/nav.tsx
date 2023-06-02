@@ -142,7 +142,7 @@ export const Navigation: React.FunctionComponent = () => {
   }
   else if (router.pathname !== '/')
   {
-    style.justifyContent = "center";
+    style.justifyContent = "flex-end";
     }
   
   return (
