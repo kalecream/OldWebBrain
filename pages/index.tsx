@@ -21,7 +21,6 @@ import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
-import { MediaProfiles } from "@components/socialmedia";
 import LatestProjects from "@components/home/latestProjects";
 import OtherProjects from "@components/home/otherProjects";
 import SkillMarquee from "@components/home/skills";
@@ -242,25 +241,22 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <ArticleContainer>
             {posts.slice(0, 9).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
-                <Articles key={post.slug}>
-                  {/* {post.coverImage && (
-                    <Image
+                <Articles key={post.slug} className="blog--article">
+                  {post.coverImage && (
+                    <img
                       src={post.coverImage}
                       width={300}
                       height={300}
-                      objectFit="cover"
-                      layout="responsive"
-                      priority={true}
                       alt=""
-                      unoptimized={true}
+                      className="blog--article__image"
                     />
-                  )} */}
+                  )}
                   {post.date && (
-                    <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
+                    <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
                   <h2>{post.title}</h2>
 
-                  <p>
+                  <p className="blog--article">
                     <span>{post.description}</span>
                   </p>
 
