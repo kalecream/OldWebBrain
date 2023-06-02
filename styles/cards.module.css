@@ -26,14 +26,14 @@
 
 .blog--article__date {
     font-size: 0.9rem;
-    color: var(--lightgrey);
+    color: var(--muted);
     text-align: center;
 }
 
 .blog--article__title {
     color: var(--primary);
     padding: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.2;
     font-weight: 600;
     height: 5rem;
@@ -45,7 +45,7 @@
     color: var(--accent);
 }
 
-.blog--article--description {
+.blog--article__description {
     margin: 0;
     font-size: 0.8rem;
     font-weight: 400;
@@ -59,12 +59,12 @@
         max-width: 275px;
     }
     
-    .blog--article--title {
+    .blog--article__title {
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
     }
 
-    .blog--article--description {
+    .blog--article__description {
         font-size: 0.7rem;
         padding: 0;
     }
@@ -77,7 +77,7 @@
     margin-bottom: 1rem;
     }
 
-    .blog--article--title {
+    .blog--article__title {
       font-size: 2rem;
     }
   }
