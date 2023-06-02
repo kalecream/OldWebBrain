@@ -16,7 +16,7 @@ export const Section = styled.section`
 `;
 
 export const FullSection = styled(Section)`
-  height: 80vh;
+  height: 60vh;
 `;
 
 export const Container = styled.div`
@@ -217,3 +217,14 @@ export const WindowWidth = () => {
   return width;
 }
 
+export const ComingSoon = () => {
+
+  return (
+    <div>
+      <FullSection>
+      <h1 style={{ fontSize: "10rem", fontStyle: "italics"}}>Coming Soon</h1>
+        <Link href={"/"} style={{ textAlign: "center" }}>⟵  back</Link>
+        </FullSection>
+      </div>
+  );
+  };
