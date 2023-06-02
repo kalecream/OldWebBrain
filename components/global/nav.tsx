@@ -55,7 +55,7 @@ const StyledNavigation = styled.nav<navProps>`
   @media screen and (max-width: 425px) {
     margin: 0 1rem;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     line-height: 1;
   }
 
