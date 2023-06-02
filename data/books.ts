@@ -785,6 +785,22 @@ const Books = [
     added: "2023-06-01",
     started: "2023-06-01",
     finished: "2023-06-01",
+  },
+  {
+    title: "Vampyre",
+    author: "Voltaire",
+    series: "",
+    genre: ["Fiction", "Horror"],
+    rating: 0,
+    published: "1748-01-01",
+    format: "Paperback",
+    pages: 96,
+    minutes: 0,
+    cover: "https://www.jasoncolavito.com/uploads/3/7/5/9/3759274/8927381_orig.jpg",
+    status: "Read",
+    added: "2023-06-01",
+    started: "2023-06-02",
+    finished: "2023-06-02",
   }
 ];
 
