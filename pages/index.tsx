@@ -253,7 +253,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                   {post.date && (
                     <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
-                  <h2>{post.title}</h2>
+                  <h2 className="blog--article__title">{post.title}</h2>
 
                   <p className="blog--article">
                     <span>{post.description}</span>
