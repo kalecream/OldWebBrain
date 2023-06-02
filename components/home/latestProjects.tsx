@@ -33,6 +33,7 @@ const Thirds = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: row;
+    align-content: flex-end;
     
 
     & nth-child(1) {

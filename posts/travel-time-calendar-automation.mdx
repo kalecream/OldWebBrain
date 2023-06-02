@@ -1,12 +1,52 @@
 ---
-title: "Add Travel Time to Calendar Events"
+title: "Add Decompression Time to Events"
 date: "2023-06-02"
 draft: false
-tags: ["Google Calendar","Google Apps Script", "JavaScript", "Automation"]
-description: "A Google Apps Script that adds travel time before and after calendar events with an attached location."
+tags: ["Google Calendar","Google Apps Script", "JavaScript", "Automation", "Meeting Management"]
+description: "A Google Apps Script that adds decompression time before and after calendar events with an attached online location."
 coverImage: "/img/blog/02-park_by_kalecream.jpg"
 ---
 
+My work schedule is often packed with client meetings, leaving little room for decompression or preparation. Using Google's Apps Script, we can use JavaScript to automatically add decompression and preparation time to our calendar events.
+
+This JavaScript function is designed to add a defined decompression and preparation time to your calendar events. The decompression time is added after each event, allowing you to gather your thoughts, while the preparation time is added before the event, ensuring you have enough time to prepare.
+
+The function will only add decompression and preparation time to events with an attached online location (e.g., Google Meet, Zoom, etc.). This ensures that the decompression and preparation time is only added to events that require it. In an upcoming article, I will explain how to add travel time to events with a physical location.
+
+The function is can be run automatically using a time-driven trigger. I recommend running the function once a day or once a week, as it will only add decompression and preparation time to events within the next 7 days.
+
+The function begins by defining the duration for both the decompression and preparation times. Here, decompressionTime is set to 15 minutes, and preparationTime is set to 120 minutes. You can adjust these durations to fit your needs.
+
+The function then fetches your default Google Calendar and sets a date range for searching events (in this case, the next 7 days).
+
+Next, the function checks all the events within this date range. If an event's location field contains a video conference link, the function then calculates decompression and preparation times around the event. It verifies whether there are already decompression and preparation events set around the original event. If not, it creates them.
+
+# Set-Up
+
+## Create a Google Apps Script
+
+1. Go to https://script.google.com/
+2. Click **New Project**
+3. Name the project
+4. Click **Untitled Project** to rename the project
+5. Click **Untitled Project** to open the project
+6. Delete the default code
+7. Paste the code below into the editor
+8. Click **Save**
+9. Click **Run** to run the function as a test to see if it works. You will be asked to authorize the script. Click **Review Permissions** and then **Allow**. You will need to do this every time you run the script.
+
+## Adding a Time-Driven Trigger
+
+1. Click **Edit**
+2. Click **Current project's triggers**
+3. Click **+ Add Trigger**
+4. Select the function name from the first drop-down menu
+5. Select **Time-driven** from the second drop-down menu
+6. Select **Day timer** from the third drop-down menu
+7. Select the time of day you want the function to run
+8. Click **Save**
+
+## Script
 ```
 function addDecompressionAndPreparationTime() {
   // Define the decompression and preparation time duration (in minutes)
