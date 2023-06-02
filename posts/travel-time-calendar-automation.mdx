@@ -1,0 +1,60 @@
+---
+title: "Add Travel Time to Calendar Events"
+date: "2023-06-02"
+draft: false
+tags: ["Google Calendar","Google Apps Script", "JavaScript", "Automation"]
+description: "A Google Apps Script that adds travel time before and after calendar events with an attached location."
+coverImage: "/img/blog/02-park_by_kalecream.jpg"
+---
+
+```
+function addDecompressionAndPreparationTime() {
+  // Define the decompression and preparation time duration (in minutes)
+  const decompressionTime = 15;
+  const preparationTime = 120;
+
+  // Get the calendar
+  const calendar = CalendarApp.getDefaultCalendar();
+
+  // Set the date range for searching events (e.g., within the next 7 days)
+  const today = new Date();
+  const endDate = new Date();
+  endDate.setDate(today.getDate() + 7);
+
+  // Get all events within the date range
+  const events = calendar.getEvents(today, endDate);
+
+  // Iterate through all events
+  events.forEach(event => {
+    // Check if the event's location field contains a video conference link
+    const eventLocation = event.getLocation();
+    const isVideoConference = eventLocation && eventLocation.startsWith("https://");
+
+    if (isVideoConference) {
+      // Get the event start and end times
+      const eventStartTime = event.getStartTime();
+      const eventEndTime = event.getEndTime();
+
+      // Calculate the decompression end time and preparation start time
+      const decompressionEndTime = new Date(eventEndTime.getTime() + decompressionTime * 60000);
+      const preparationStartTime = new Date(eventStartTime.getTime() - preparationTime * 60000);
+
+      // Check if decompression and preparation events already exist
+      const decompressionEvents = calendar.getEvents(eventEndTime, decompressionEndTime, {search: 'Decompression Time'});
+      const preparationEvents = calendar.getEvents(preparationStartTime, eventStartTime, {search: 'Meeting Preparation'});
+
+      // Create new decompression and preparation events if they don't exist
+      if (decompressionEvents.length === 0) {
+        const decompressionEvent = calendar.createEvent('Decompression Time', eventEndTime, decompressionEndTime);
+        decompressionEvent.setColor('11'); // Set the decompression event color (optional)
+      }
+
+      if (preparationEvents.length === 0) {
+        const preparationEvent = calendar.createEvent('Meeting Preparation', preparationStartTime, eventStartTime);
+        preparationEvent.setColor('10'); // Set the preparation event color (optional)
+      }
+    }
+  });
+}
+
+```

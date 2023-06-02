@@ -136,11 +136,6 @@ const CustomCanvas = styled(Canvas)`
 
 const BlogSection = styled.section`
   width: 100%;
-  & h2 {
-    font-weight: 400;
-    color: var(--primary);
-    opacity: 1;
-  }
 `;
 
 const angletoRadian = (angle: number) => {

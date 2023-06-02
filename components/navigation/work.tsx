@@ -78,7 +78,7 @@ export const AvailableForWork = () => {
     };
     
     const handleMouseClick = () => {
-        
+        window.location.href = "/services";
     }
 
 
