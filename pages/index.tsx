@@ -200,7 +200,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           
           <ButtonContainer >
             <Button primary href="/services">Need a service?</Button>
-            <Button href="#blog-posts">Check out the blog</Button>
+            <Button href="/blog">Check out the blog</Button>
             {/* {MediaProfiles.map((profile) => (
               <Button href={profile.url}>{profile.name}</Button>
             ))} */}
