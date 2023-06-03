@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import "animate.css";
 import { Section } from "../components/global";
 import Link from "next/link";
+import { ContactForm } from "@components/global/contactForm";
 
 const Sections = [
   {
@@ -46,10 +47,6 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-end;
-
-  * {
-    flex: 1 1 1rem;
-  }
   
   @media (min-width: 1024px) {
     margin: 0 4rem; 
@@ -57,7 +54,7 @@ const CardContainer = styled.div`
 `;
 
 const ProjectCard = styled(Link)`
-  margin: 0 auto;
+  margin: 0.5rem auto;
   padding: var(--padding-small);
   display: flex;
   flex-direction: column;
@@ -80,13 +77,13 @@ const ProjectCard = styled(Link)`
   }
 
   @media (min-width: 1024px) {
-    margin: 0 0.5rem;
+    margin: 0.5rem;
     height: 350px;
   }
 
   & > h2 {
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     padding: 0;
     text-align: center;
@@ -142,6 +139,7 @@ const ServicesTerms = styled.div`
 export default function Services() {
   return (
     <Page title="Let's Work Together">
+      <h1>Services</h1>
       <Section>
         <CardContainer>
           {Sections.map((section) => (
@@ -189,6 +187,7 @@ export default function Services() {
             or Payoneer.
           </p>
         </ServicesTerms>
+        <ContactForm />
       </Section>
     </Page>
   );

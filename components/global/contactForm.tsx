@@ -10,12 +10,11 @@ const CustomForm = styled.form`
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 1rem;
-	border-radius: 1rem;
 `;
 
 const CustomInput = styled.input`
-	padding: 0.5rem;
-	border: 2px solid lightgrey;
+	padding: var(--padding);
+	border: var(--border);
 	border-radius: 0.5rem;
 	background-color: var(--background);
 	color: var(--text);
@@ -32,9 +31,9 @@ const CustomInput = styled.input`
 `;
 
 const CustomTextArea = styled.textarea`
-	padding: 0.5rem;
-	border: 1px solid lightgrey;
-	border-radius: 0.5rem;
+	padding: var(--padding);
+	border: 1px solid var(--faint);
+	border-radius: var(--border-radius-small);
 	background-color: var(--background);
 	color: var(--text);
 	font-size: 1rem;
@@ -53,7 +52,7 @@ const CustomButton = styled(Button)`
 	padding: 0.5rem;
 	min-width: 100px;
 	min-height: 50px;
-	border-radius: 0.5rem;
+	border-radius: var(--border-radius);
 	background-color: var(--background);
 	color: var(--background);
 	font-size: 1rem;
@@ -85,6 +84,7 @@ export const ContactForm = () => {
 	};
 	return (
 		<CustomForm action="/api/form" name="contact" method="POST">
+			<h1>Contact</h1>
 			<CustomInput
 				type="text"
 				name="name"
@@ -108,7 +108,7 @@ export const ContactForm = () => {
 				required
 			/>
 			<CustomButton onSubmit={onSubmit} href={""} type="submit">
-				Send
+				Send Message
 			</CustomButton>
 		</CustomForm>
 	);
