@@ -5,6 +5,8 @@ import { CustomLink } from "./Basics";
 import ThemeSwitch from "../navigation/ThemeSwitch";
 import { useRouter } from 'next/router';
 import AvailableForWork from "@components/navigation/work";
+import { MediaProfiles } from "@components/socialmedia";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DirectoryList = styled.ul`
   right: 0;
@@ -129,6 +131,18 @@ const Settings = styled.div`
   }
 `;
 
+const SocialMediaList = () => {
+  return (
+    <ul>
+      {MediaProfiles.map((media, index) => (
+          <CustomLink href={media.url} target="_blank" rel="noopener" key={index}>
+            <FontAwesomeIcon icon={media.icon} color="var(--muted)" />
+          </CustomLink>
+      ))}
+    </ul>
+  );
+};
+
 export const Navigation: React.FunctionComponent = () => {
   const router = useRouter();
 
@@ -162,10 +176,12 @@ export const Navigation: React.FunctionComponent = () => {
             ))
           : null}
         <Settings>
+        <SocialMediaList />
           <ThemeSwitch />
           <AvailableForWork />
         </Settings>
       </DirectoryList>
+      
     </StyledNavigation>
   );
 };
