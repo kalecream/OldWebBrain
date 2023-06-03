@@ -16,7 +16,7 @@ export const Section = styled.section`
 `;
 
 export const FullSection = styled(Section)`
-  height: 60vh;
+  min-height: 60vh;
 `;
 
 export const Container = styled.div`
