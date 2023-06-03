@@ -3,7 +3,7 @@ import { CapsTitle, FullSection } from "@components/global";
 import { PostType } from "types/post";
 import { getAllPosts } from "lib/api";
 import { GetStaticProps } from "next";
-import "styles/articles.module.css"
+import "../styles/articles.module.css";
 import styled from "@emotion/styled";
 
 type BlogProps = {
@@ -11,37 +11,36 @@ type BlogProps = {
 };
 
 const BlogContainer = styled.div`
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    height: auto;
-    margin: 0 auto;
-    gap: 2rem;
 `;
 
 const Featured = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;
-    margin-bottom: 1rem;
 
-    @media (min-width: 1024px) {
-        width: 100%;
+    @media (max-width: 421px) {
+        width: 300px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 90%;
     }
 
     @media (min-width: 1024px) {
-        margin-top: 3rem;
         max-width: 600px;
     }
 `;
 
 const FeaturedArticle = styled.div`
-    width: 600px;
-    height: auto;
+    width: 300px;
     padding: 1rem;
-    margin-bottom: 10px;
+    margin: 0 1rem;
     border: var(--border);
     border-radius: var(--border-radius);
 
@@ -52,7 +51,7 @@ const FeaturedArticle = styled.div`
     }
 
     & > h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 600;
         margin: 0;
         text-align: center;
@@ -61,6 +60,16 @@ const FeaturedArticle = styled.div`
     & > p {
         font-size: 1rem;
         margin: 0;
+        padding: 1rem;    }
+
+
+
+    @media (max-width: 421px) {
+        width: 275px;
+    }
+
+    @media (min-width: 421px) {
+        width: 400px;
     }
 `;
 
@@ -68,24 +77,22 @@ const FormerFeatured = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;
-    margin-bottom: 1rem;
+    margin: 0 auto;
 
-    @media (min-width: 1024px) {
-        width: 100%;
+    @media (max-width: 1024px) {
+        max-width: 300px;
     }
 
     @media (min-width: 1024px) {
-        max-width: 600px;
+        max-width: 300px;
     }
 `;
 
 const FormerFeaturedArticle = styled.div`
     display: flex;
     width: 600px;
-    height: auto;
-    padding: 1rem;
-    margin-bottom: 10px;
-    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
     border: var(--border);
     border-radius: var(--border-radius);
 
@@ -100,7 +107,7 @@ const FormerFeaturedArticle = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
+        padding: 0.5rem;
 
         & > h2 {
             font-size: 1.5rem;
@@ -108,29 +115,21 @@ const FormerFeaturedArticle = styled.div`
             margin: 0;
             text-align: center;
         }
-        
+
         & > p {
             font-size: 1rem;
-            margin: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        & > img {
+            display: none;
         }
     }
 `;
 
-const RestofArticles = styled.div`
-    display: block;
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-    margin-bottom: 1rem;
 
-    @media (min-width: 1024px) {
-        width: 100%;
-    }
-
-    @media (min-width: 1024px) {
-        max-width: 600px;
-    }
-`;
 
 export const BlogPage = ({ posts }: BlogProps): JSX.Element => {
     return (
@@ -138,44 +137,34 @@ export const BlogPage = ({ posts }: BlogProps): JSX.Element => {
             <FullSection>
                 <CapsTitle>Blog</CapsTitle>
                 <BlogContainer className="blog-container">
-                    <Featured className="featured">
-                        {posts.slice(0,1).map((post) => {
+                            {posts.slice(0, 1).map((post) => {
                                 return (
                                     <FeaturedArticle className="featured-article">
                                         <img src={post.coverImage} />
                                         <h2>{post.title}</h2>
                                         <p>{post.description}</p>
                                     </FeaturedArticle>
-                                )
+                                );
                             })}
-                    </Featured>
-                    <FormerFeatured className="former-featured">
-                        {posts.slice(1,4).map((post) => {
+                        <FormerFeatured className="former-featured">
+                            {posts.slice(1, posts.length).map((post) => {
                                 return (
                                     <FormerFeaturedArticle className="former-featured-article">
                                         <img src={post.coverImage} />
                                         <div className="former-featured-article-content">
-                                        <h2>{post.title}</h2>
-                                        <p>{post.description}</p>
+                                            <p>{post.date }</p>
+                                            <h2>{post.title}</h2>
+                                            <p>{post.description}</p>
                                         </div>
                                     </FormerFeaturedArticle>
-                                )
-                        })}
-                    </FormerFeatured>
-                    <RestofArticles className="rest-of-articles">
-                        {posts.slice(3, 9).map((post) => {
-                            return (
-                                <div className="regular-article">
-                                    <h2>{post.title}</h2>
-                                    <p>{post.description}</p>
-                                </div>)
-                        })}
-                    </RestofArticles>
+                                );
+                            })}
+                        </FormerFeatured>
                 </BlogContainer>
             </FullSection>
         </Page>
-    )
-}
+    );
+};
 
 export const getStaticProps: GetStaticProps = async () => {
     const posts = getAllPosts([
@@ -192,4 +181,4 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 };
 
-export default BlogPage
+export default BlogPage;
