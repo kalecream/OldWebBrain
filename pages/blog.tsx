@@ -22,18 +22,19 @@ const FormerFeaturedArticle = styled.button`
     width: 500px;
     padding: 0.5rem;
     border: var(--border);
-    border-radius: var(--border-radius);
+    background-color: var(--background);
+    border-radius: var(--border-radius-small);
 
     &:hover {
         cursor: pointer;
-        background-color: var(--primary);
+        background-color: var(--accent);
         color: var(--background);
         border: var(--border);
     }
 
     & > img {
         margin: auto 5px;
-        width: 200px;
+        width: 100px;
         object-fit: cover;
         border-radius: var(--border-radius);
     }
