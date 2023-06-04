@@ -11,6 +11,7 @@ type LayoutProps = {
 };
 
 export const WEBSITE_HOST_URL = "https://www.kalecream.com";
+import Head from "next/head";
 
 export const Page = ({
   children,
@@ -18,7 +19,6 @@ export const Page = ({
   description,
   customMeta,
 }: LayoutProps) => {
-  const siteTitle = title ? "KaleCream | " + title : "KaleCream";
   useEffect(() => {
     TagManager.initialize({ gtmId: "UA-148483444-1" });
   }, []);
@@ -31,7 +31,7 @@ export const Page = ({
   return (
     <body>
       <header>
-        <title>{siteTitle}</title>
+        <title>{title ? "KaleCream | " + title : "KaleCream"}</title>
         {customMeta ? (
           <meta name="description" content={customMeta.description} />
         ) : (

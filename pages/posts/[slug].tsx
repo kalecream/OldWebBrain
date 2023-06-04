@@ -20,7 +20,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { Caption } from "../../components/global";
 
 import { useHeadsObserver } from "../../hooks/useObserver";
@@ -49,8 +49,9 @@ const CustomArticle = styled.article`
   }
 
   h1 {
-    margin-top: 10rem;
     margin-bottom: 4rem;
+    font-size: 5rem;
+    font-weight: 300;
   }
 
   h2 {
@@ -219,6 +220,14 @@ const TableOfContents = styled.aside`
   }
 `;
 
+const RelatedArticlesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 3rem;
+  break-inside: avoid;
+`;
+
 const ArticleStatsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
@@ -334,7 +343,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const customMeta: MetaProps = {
     title: `${frontMatter.title}`,
     description: frontMatter.description,
-    image: `${frontMatter.image}`,
+    image: `${frontMatter.coverImage}`,
     date: `${frontMatter.date}`,
     type: "article",
   };
@@ -343,7 +352,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const { activeId } = useHeadsObserver();
 
   useEffect(() => {
-    const headings = document.querySelectorAll(" h2, h3");
+    const headings = document.querySelectorAll("h2, h3");
     const headingList = Array.from(headings).map((heading) => ({
       id: heading.id,
       text: heading.textContent,
@@ -356,6 +365,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
     <BlogPage customMeta={customMeta}>
       {/* Nest the smaller headers inside the larger headers to denote hierarchy */}
       <CustomArticle>
+      
         <h1
           style={{
             lineHeight: "1.2",
@@ -363,6 +373,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         >
           {frontMatter.title}
         </h1>
+
+        <img src={frontMatter.coverImage} alt="" width={200} style={{margin: "0 auto", padding: "0"}} />
 
         <TableOfContents>
           <ul>
@@ -459,3 +471,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default PostPage;
+
+
+function usePosts() {
+  throw new Error("Function not implemented.");
+}
+

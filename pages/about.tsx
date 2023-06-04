@@ -63,7 +63,7 @@ export const About = () => {
   .join(', ');
 
   return (
-    <Page>
+    <Page title="About">
       <Section>
         <h1>About</h1>
         <AboutParagraph>
