@@ -9,7 +9,7 @@ import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import { Section, Button, CapsTitle } from "../components/global/Basics";
+import { Section, Button, CapsTitle, CustomLink } from "../components/global/Basics";
 import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
 
 import { ScrollDown } from "../components/global";
@@ -264,7 +264,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                   {post.tags && (
                     <PostTags>
                       <span>
-                        {post.tags.map((tag) => (
+                        {post.tags.slice(0,2).map((tag) => (
                           <Tag href={"/tags/" + tag.replace(/\s+/g, "+")}>
                             {tag}
                           </Tag>
@@ -272,9 +272,12 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                       </span>
                     </PostTags>
                   )}
+                  <div className="links">
+                  </div>
                 </Articles>
               </Link>
             ))}
+            <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
           </ArticleContainer>
         </BlogSection>
       )}
