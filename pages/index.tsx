@@ -240,7 +240,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         <BlogSection id="blog-posts" className="fadeIn--below">
           <CapsTitle >Blog</CapsTitle>
           <ArticleContainer>
-            {posts.slice(0, 9).map((post) => (
+            {posts.slice(0, 3).map((post) => (
               <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                 <Articles key={post.slug} className="blog--article">
                   {post.coverImage && (
