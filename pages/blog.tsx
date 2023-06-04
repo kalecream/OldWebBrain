@@ -1,5 +1,5 @@
 import { Page } from "containers/layout";
-import { CapsTitle, FullSection } from "@components/global";
+import { CapsTitle, CustomLink, FullSection } from "@components/global";
 import { PostType } from "types/post";
 import { getAllPosts } from "lib/api";
 import { GetStaticProps } from "next";
@@ -11,92 +11,28 @@ type BlogProps = {
 };
 
 const BlogContainer = styled.div`
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 `;
 
-const Featured = styled.div`
+const FormerFeaturedArticle = styled.button`
     display: flex;
-    flex-direction: column;
-    height: auto;
-
-    @media (max-width: 421px) {
-        width: 300px;
-    }
-
-    @media (max-width: 1024px) {
-        width: 90%;
-    }
-
-    @media (min-width: 1024px) {
-        max-width: 600px;
-    }
-`;
-
-const FeaturedArticle = styled.div`
-    width: 300px;
-    padding: 1rem;
-    margin: 0 1rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
-
-    & > img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--border-radius);
-    }
-
-    & > h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 0;
-        text-align: center;
-    }
-
-    & > p {
-        font-size: 1rem;
-        margin: 0;
-        padding: 1rem;    }
-
-
-
-    @media (max-width: 421px) {
-        width: 275px;
-    }
-
-    @media (min-width: 421px) {
-        width: 400px;
-    }
-`;
-
-const FormerFeatured = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-
-    @media (max-width: 1024px) {
-        max-width: 300px;
-    }
-
-    @media (min-width: 1024px) {
-        max-width: 300px;
-    }
-`;
-
-const FormerFeaturedArticle = styled.div`
-    display: flex;
-    width: 600px;
+    width: 500px;
     padding: 0.5rem;
-    margin: 0.5rem auto;
     border: var(--border);
     border-radius: var(--border-radius);
 
+    &:hover {
+        cursor: pointer;
+        background-color: var(--primary);
+        color: var(--background);
+        border: var(--border);
+    }
+
     & > img {
+        margin: auto 5px;
         width: 200px;
         object-fit: cover;
         border-radius: var(--border-radius);
@@ -107,17 +43,26 @@ const FormerFeaturedArticle = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0.5rem;
+        padding: 1rem;
+
+        & > .post-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            color: var(--muted);
+        }
 
         & > h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin: 0;
+            margin: 0.5rem 0;
             text-align: center;
         }
 
         & > p {
             font-size: 1rem;
+            text-align: justify;
+            opacity: 0.8;
         }
     }
 
@@ -132,34 +77,29 @@ const FormerFeaturedArticle = styled.div`
 
 
 export const BlogPage = ({ posts }: BlogProps): JSX.Element => {
+
+    const GoToArticle = (slug: string) => {
+        console.log(slug)
+    }
+
     return (
         <Page>
             <FullSection>
                 <CapsTitle>Blog</CapsTitle>
                 <BlogContainer className="blog-container">
-                            {posts.slice(0, 1).map((post) => {
+                            {posts.map((post) => {
                                 return (
-                                    <FeaturedArticle className="featured-article">
-                                        <img src={post.coverImage} />
-                                        <h2>{post.title}</h2>
-                                        <p>{post.description}</p>
-                                    </FeaturedArticle>
-                                );
-                            })}
-                        <FormerFeatured className="former-featured">
-                            {posts.slice(1, posts.length).map((post) => {
-                                return (
-                                    <FormerFeaturedArticle className="former-featured-article">
+                                    <FormerFeaturedArticle
+                                        onClick={()=> GoToArticle } className="former-featured-article">
                                         <img src={post.coverImage} />
                                         <div className="former-featured-article-content">
-                                            <p>{post.date }</p>
+                                            <p className="post-date">{post.date }</p>
                                             <h2>{post.title}</h2>
                                             <p>{post.description}</p>
                                         </div>
                                     </FormerFeaturedArticle>
                                 );
                             })}
-                        </FormerFeatured>
                 </BlogContainer>
             </FullSection>
         </Page>
