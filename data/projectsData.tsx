@@ -87,7 +87,7 @@ const Projects = [
       </span>
     ),
     technology: [
-      <a href="">Swagger API</a>
+      <a href="https://sphenery.com/swagger/index.html">Swagger SMTest</a>
     ],
     language: ["React", "Typescript"],
     created: "2023-07-23"
