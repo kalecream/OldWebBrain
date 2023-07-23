@@ -76,6 +76,21 @@ const Projects = [
     ],
     language: ["Python"],
     created: "2023-05-30",
+  },
+  {
+    id: "005",
+    display: true,
+    title: "Swagger Login Test",
+    description: (
+      <span>
+        A register/login form done for a test of the Swagger API.
+      </span>
+    ),
+    technology: [
+      <a href="">Swagger API</a>
+    ],
+    language: ["React", "Typescript"],
+    created: "2023-07-23"
   }
 ];
 
