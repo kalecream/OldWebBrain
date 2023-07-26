@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { Navigation, Footer } from "../../components/global";
 import TagManager from "react-gtm-module";
 import { MetaProps } from "../../types/layout";
-
+import Head from "next/head";
+  
 type LayoutProps = {
   children: React.ReactNode;
   customMeta?: MetaProps;
@@ -10,8 +11,8 @@ type LayoutProps = {
   description?: string;
 };
 
-export const WEBSITE_HOST_URL = "https://www.kalecream.com";
-import Head from "next/head";
+export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
+
 
 export const Page = ({
   children,
@@ -25,20 +26,25 @@ export const Page = ({
 
   if (description === undefined) {
     description =
-      "KaleCream is a generalist from Kingston, Jamaica who has a blog about web-dev, self-development and other things.";
+      "Sabrina is a webdev and 3D artist from Kingston, Jamaica.";
   }
 
   return (
     <body>
-      <header>
-        <title>{title ? "KaleCream | " + title : "KaleCream"}</title>
+      <Head>
+        <title>{title ? "SM | " + title : "SM"}</title>
+        {
+          title &&
+          <meta property="og:title" content={title} key="title" />
+        }
+        
         {customMeta ? (
           <meta name="description" content={customMeta.description} />
         ) : (
           description && <meta name="description" content={description} />
         )}
         <Navigation />
-      </header>
+      </Head>
 
       <main>
         <>{children}</>

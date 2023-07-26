@@ -8,7 +8,7 @@ import { MetaProps } from "../types/layout";
 import { useRouter } from "next/router";
 
 config.autoAddCss = false;
-export const WEBSITE_HOST_URL = "https://www.kalecream.com";
+export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
 
 export const App = (
 	{ Component, pageProps }: AppProps,
@@ -16,7 +16,7 @@ export const App = (
 ): JSX.Element => {
 	const router = useRouter();
 	const meta: MetaProps = {
-		title: "KaleCream",
+		title: "SM",
 		description: "Web Developer.",
 		image: `${WEBSITE_HOST_URL}/images/favicon.svg`,
 		type: "website",
