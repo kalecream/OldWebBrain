@@ -190,7 +190,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <h1 className="sitename">KaleCream</h1>
           </div>
           <p >
-          I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. 
+          I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. I'm always learning and trying out new technologies to improve my work.
           </p>
           <p >
             My current project is <q>Rougelike Reality</q>, a customisation of
