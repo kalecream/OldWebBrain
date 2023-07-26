@@ -8,9 +8,9 @@ interface ProjectStructure {
   image?: string,
   description: ReactNode,
   link?: string,
-  repoName: string,
+  repoName?: string,
   technology: ReactNode[],
-  language: string | string[],
+  language: string[],
   created: string,
   updated?: string
 }
@@ -73,11 +73,13 @@ export const Projects: ProjectStructure[] = [
         Wordpress and now in Typescript.
       </span>
     ),
+    repoName: "",
     technology: [
       <a href="https://nextjs.org/">Next.js</a>,
       <a href="https://threejs.org/">Three.js</a>,
       <a href="https://greensock.com/gsap/">GSAP</a>,
     ],
+    created: "2022-08",
     language: ["TypeScript", "MDX"],
   },
   {
@@ -99,6 +101,8 @@ export const Projects: ProjectStructure[] = [
     id: "005",
     display: true,
     title: "Swagger Login Test",
+    link: "https://sphenery.vercel.app/login",
+    image: "./img/projects/sphenery.webp",
     description: (
       <span>
         A register/login form done for a test of the Swagger API.
@@ -107,6 +111,7 @@ export const Projects: ProjectStructure[] = [
     technology: [
       <a href="https://sphenery.com/swagger/index.html">Swagger SMTest</a>
     ],
+    repoName: "Sphenery",
     language: ["React", "Typescript"],
     created: "2023-07-23"
   }
