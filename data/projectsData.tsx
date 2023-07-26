@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-interface ProjectStructure {
+export interface ProjectStructure {
   id: string,
   display: boolean,
   category? :string,
@@ -31,12 +31,10 @@ export const Projects: ProjectStructure[] = [
     link: "https://github.com/kalecream/dotfiles",
     repoName: "dotfiles",
     technology: [
-      <a href="https://i3wm.org/">i3wm</a>,
-      <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">
-        Rofi
-      </a>,
-      <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty</a>,
-      <a href="https://feh.finalrewind.org/">Feh</a>,
+      <a href="https://i3wm.org/">i3wm </a>,
+      <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi </a>,
+      <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty </a>,
+      <a href="https://feh.finalrewind.org/">Feh </a>,
     ],
     language: ["Bash", "Python"],
     created: "2022-07-07",
@@ -56,9 +54,9 @@ export const Projects: ProjectStructure[] = [
     link: "https://github.com/kalecream/morning-messages",
     repoName: "morning-messages",
     technology: [
-      <a href="https://pywhatkit.herokuapp.com/">PyWhatKit</a>,
-      <a href="https://geopy.readthedocs.io/en/stable/">GeoPy</a>,
-      <a href="https://openweathermap.org/">OpenWeatherMap API</a>,
+      <a href="https://pywhatkit.herokuapp.com/">PyWhatKit </a>,
+      <a href="https://geopy.readthedocs.io/en/stable/">GeoPy </a>,
+      <a href="https://openweathermap.org/">OpenWeatherMap API </a>,
     ],
     language: ["Python"],
     created: "2021-11-15",
@@ -75,12 +73,12 @@ export const Projects: ProjectStructure[] = [
     ),
     repoName: "",
     technology: [
-      <a href="https://nextjs.org/">Next.js</a>,
-      <a href="https://threejs.org/">Three.js</a>,
-      <a href="https://greensock.com/gsap/">GSAP</a>,
+      <a href="https://nextjs.org/">Next.js </a>,
+      <a href="https://threejs.org/">Three.js </a>,
+      <a href="https://greensock.com/gsap/">GSAP </a>,
     ],
     created: "2022-08",
-    language: ["TypeScript", "MDX"],
+    language: ["React", "TypeScript", "MDX"],
   },
   {
     id: "004",
@@ -92,7 +90,7 @@ export const Projects: ProjectStructure[] = [
       </span>
     ),
     technology: [
-      <a href="https://openai.com/blog/openai-api/">OpenAI API</a>,
+      <a href="https://openai.com/blog/openai-api/">OpenAI API </a>,
     ],
     language: ["Python"],
     created: "2023-05-30",
@@ -109,7 +107,7 @@ export const Projects: ProjectStructure[] = [
       </span>
     ),
     technology: [
-      <a href="https://sphenery.com/swagger/index.html">Swagger SMTest</a>
+      <a href="https://sphenery.com/swagger/index.html">Swagger SMTest </a>
     ],
     repoName: "Sphenery",
     language: ["React", "Typescript"],

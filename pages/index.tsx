@@ -25,6 +25,7 @@ import OtherProjects from "@components/home/otherProjects";
 import SkillMarquee from "@components/home/skills";
 
 import "../styles/animations.module.css";
+import ProjectList from "@components/home/projectsList";
 
 type IndexProps = {
   posts: PostType[];
@@ -281,9 +282,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </ArticleContainer>
         </BlogSection>
       )}
-      <SkillMarquee/>
-      <LatestProjects />
-      <OtherProjects />
+      <ProjectList/>
+      {/* <LatestProjects /> */}
     </Page>
   );
 };

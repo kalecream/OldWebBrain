@@ -1,0 +1,58 @@
+.project-wrapper {
+    padding: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project {
+    max-width: 100%;
+    padding: var(--padding);
+    border-bottom: var(--border);
+}
+
+.project:hover {
+    /* background-color: var(--faint);
+    border-radius: var(--border-radius); */
+}
+
+.project-info {
+    text-align: start;
+    position: relative;
+    gap: 1rem;
+}
+.project-lang {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8rem;
+}
+
+.project-lang > * {
+    margin-right: 1rem;
+}
+.project-language {
+    font-weight: 700;
+}
+
+.project-title  {
+    font-size: 1.3rem;
+    text-align: start;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.project-description {
+    max-width: 80%;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.project-year {
+    position: absolute;
+    right:0;
+    bottom: 50%;
+    font-weight: 200;
+}
+
+.project-overlay {
+    z-index: 2;
+    border-radius: var(--border-radius);
+}
