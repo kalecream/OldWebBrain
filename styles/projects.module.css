@@ -6,12 +6,12 @@
 .project {
     max-width: 100%;
     padding: var(--padding);
-    border-bottom: var(--border);
+    /* border-bottom: var(--border); */
+    margin: var(--margin);
 }
 
 .project:hover {
-    /* background-color: var(--faint);
-    border-radius: var(--border-radius); */
+    border: var(--faint);
 }
 
 .project-info {
@@ -23,6 +23,16 @@
     display: flex;
     flex-direction: row;
     font-size: 0.8rem;
+    margin: 1rem 0;
+    opacity: 0.8;
+}
+
+.project-lang > div > a {
+    color: var(--grey);
+}
+
+.project-lang > div > a:not(:last-child)::after{
+    content: "+ ";
 }
 
 .project-lang > * {
@@ -36,6 +46,7 @@
     font-size: 1.3rem;
     text-align: start;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-weight: 500;
 }
 
@@ -43,6 +54,7 @@
     max-width: 80%;
     margin-bottom: 1rem;
     font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 .project-year {
@@ -55,4 +67,8 @@
 .project-overlay {
     z-index: 2;
     border-radius: var(--border-radius);
+}
+
+.project-code a:hover {
+    cursor: help;
 }

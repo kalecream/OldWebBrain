@@ -83,8 +83,8 @@ const ProjectList: React.FC = () => {
               </div>
               <div className={styles["project-description"]}>{project.description}</div>
               <div className={styles["project-lang"]}>
-                {project.repoName && <Link href={`https://github.com/kalecream/${project.repoName}`}>Code</Link> }
-                {project.link && <Link href={project.link}>Demo</Link>                }
+                {project.repoName && <Link className={styles['project-code']} href={`https://github.com/kalecream/${project.repoName}`}>Code</Link> }
+                {project.link && <Link className={styles['project-code']} href={project.link}>Demo</Link>                }
               </div>
               <div className={styles['project-year']}>{project.created.split("-", 1)}</div>
             </div>
