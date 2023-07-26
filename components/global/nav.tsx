@@ -152,19 +152,13 @@ export const Navigation: React.FunctionComponent = () => {
     paddingRight: "0",
   };
 
-  if (router.pathname === '/') {
-    style.justifyContent = "flex-end";
-  }
-  else if (router.pathname !== '/')
-  {
-    style.justifyContent = "flex-end";
-    }
-  
+
+  router && router.pathname === '/' ?  style.justifyContent = "flex-end" :  style.justifyContent = "flex-end";
+
   return (
     <StyledNavigation display style={style}>
       {
-        // if url root is / then don't display, else display
-        router.pathname !== "/" ? <SiteName href="/">KaleCream</SiteName>: null
+        router && router.pathname !== "/" ? <SiteName href="/">KaleCream</SiteName> : ''
       }
       <DirectoryList>
         {Directory.length > 0
