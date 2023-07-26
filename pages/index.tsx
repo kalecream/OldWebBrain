@@ -26,6 +26,7 @@ import SkillMarquee from "@components/home/skills";
 
 import "../styles/animations.module.css";
 import ProjectList from "@components/home/projectsList";
+import TimeLog from "@components/home/logger";
 
 type IndexProps = {
   posts: PostType[];
@@ -237,6 +238,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       </Hero>
       <ScrollDown />
 
+      {/* <TimeLog /> */}
+
       {posts.length > 0 && (
         <BlogSection id="blog-posts" className="fadeIn--below">
           <CapsTitle >Blog</CapsTitle>
@@ -282,7 +285,15 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </ArticleContainer>
         </BlogSection>
       )}
-      <ProjectList/>
+
+      <section>
+        <CapsTitle >projects</CapsTitle>
+        <ProjectList />
+        {/* 
+        TODO: fix image displaying on hover
+         */}
+      </section>
+     
       {/* <LatestProjects /> */}
     </Page>
   );
