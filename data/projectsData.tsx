@@ -1,4 +1,22 @@
-const Projects = [
+import { ReactNode } from "react";
+
+interface ProjectStructure {
+  id: string,
+  display: boolean,
+  category? :string,
+  title: string,
+  image?: string,
+  description: ReactNode,
+  link?: string,
+  repoName: string,
+  technology: ReactNode[],
+  language: string | string[],
+  created: string,
+  updated?: string
+}
+
+
+export const Projects: ProjectStructure[] = [
   {
     id: "001",
     display: true,
