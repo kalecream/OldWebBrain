@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "animate.css";
+import Link from "next/link";
 
 // interface Project {
 // 	id: number;
@@ -47,11 +48,12 @@ const Thirds = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  min-width: 200px;
+  min-width: 400px;
   width: 310px;
   margin: 20px 0;
 
-  border: 1px solid var(--faint);
+  // border: 1px solid var(--faint);
+  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   background-color: var(--body);
   box-shadow: var(--box-shadow);
@@ -192,10 +194,10 @@ const LatestProjects = () => {
     <Section>
       <Thirds>
         <Container style={{ textAlign: "center", margin: "1em 0" }}>
-          <CapsTitle>My Latest Projects !</CapsTitle>
+          <CapsTitle>Projects !</CapsTitle>
         </Container>
         <Container style={{ overflow: "hidden" }}>
-          {Projects.map(
+          {Projects.slice(0,2).map(
             (project) =>
               project.display && (
                 <ProjectCard
@@ -267,6 +269,7 @@ const LatestProjects = () => {
                 </ProjectCard>
               )
           )}
+          <div className="more"><Link href="/projects">More Projects ⟶</Link></div>
         </Container>
       </Thirds>
     </Section>
