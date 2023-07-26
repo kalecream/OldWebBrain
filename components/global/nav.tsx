@@ -190,8 +190,8 @@ export const Navigation: React.FunctionComponent = () => {
 export const Footer: React.FunctionComponent = () => {
   return (
     <StyledFooter>
-      <div>KaleCream Limited &copy; {new Date().getFullYear()}</div>
-      <CustomLink href="/legal/terms"> Terms of Service</CustomLink>
+      <div> sabrina medwinter &copy; {new Date().getFullYear()}</div>
+      {/* <CustomLink href="/legal/terms"> Terms of Service</CustomLink> */}
     </StyledFooter>
   );
 };
