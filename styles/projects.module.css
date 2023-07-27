@@ -1,14 +1,17 @@
 .project-wrapper {
+    max-width: 80rem;
     padding: 4rem 2rem;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .project-tabs {
-    max-width: 75%;
+    max-width: 100%;
     padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .project-tab {
