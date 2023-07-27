@@ -1,17 +1,13 @@
 .project-wrapper {
     padding: 2rem;
-    margin-bottom: 4rem;
+    margin: 0 auto;
 }
 
 .project {
-    max-width: 100%;
+    max-width: 75%;
     padding: var(--padding);
-    /* border-bottom: var(--border); */
+    border-bottom: var(--border);
     margin: var(--margin);
-}
-
-.project:hover {
-    border: var(--faint);
 }
 
 .project-info {
@@ -60,15 +56,11 @@
 .project-year {
     position: absolute;
     right:0;
-    bottom: 50%;
+    bottom: 45%;
     font-weight: 200;
 }
 
 .project-overlay {
-    z-index: 2;
+    z-index: 999;
     border-radius: var(--border-radius);
-}
-
-.project-code a:hover {
-    cursor: help;
 }
