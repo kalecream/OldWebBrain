@@ -16,7 +16,6 @@ export const extractCategories = () => {
 const ProjectList: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("All");
-
   const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,18 +35,18 @@ const ProjectList: React.FC = () => {
       };
   
       overlay.forEach((el) => {
-        el.addEventListener("mousemove", () => {
+        el.addEventListener("mouseenter", () => {
           gsap.to(cursor, 0.3, { scale: 1, autoAlpha: 1 });
-          document.addEventListener("mousemove", moveCircle);
+        });
+
+        el.addEventListener("mousemove", (e) => {
+          moveCircle(e);
         });
   
-        el.addEventListener("mouseout", () => {
+        el.addEventListener("mouseleave", () => {
           gsap.to(cursor, 0.3, { scale: 0.1, autoAlpha: 0 });
-          document.removeEventListener("mousemove", moveCircle);
         });
       })
-      
-  
     }, []);
 
   const handleHover = (image: string | null) => {
@@ -58,6 +57,8 @@ const ProjectList: React.FC = () => {
     setActiveCategory(category);
   };
 
+  const categories = extractCategories();
+
   const filteredProjects =
     activeCategory === "All"
       ? Projects
@@ -65,40 +66,57 @@ const ProjectList: React.FC = () => {
 
   return (
     <div className={styles["project-wrapper"]}>
-      <div className={styles["project-list"]}>
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className={styles.project + ` p-${project.id}`}
-            onMouseEnter={() => handleHover(project.image || "")}
-            onMouseLeave={() => handleHover("")}
-            
+      <div className={styles["project-tabs"]}>
+        <button
+          className={`${styles["project-tab"]} ${activeCategory === "All" ? styles["active"] : ""}`}
+          onClick={() => handleTabChange("All")}
+        > All </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`${styles["project-tab"]} ${
+              activeCategory === category ? styles["active"] : ""
+            }`}
+            onClick={() => handleTabChange(category)}
           >
-            <div className={styles["project-info"]}>
-              <h1 className={styles["project-title"]}>{project.title}</h1>
-              
-              <div className={styles["project-lang"]}>
-                <div className={styles["project-language"]}>{project.language.join(",  ")}</div>
-                <div className="div">{project.technology}</div>
-              </div>
-              <div className={styles["project-description"]}>{project.description}</div>
-              <div className={styles["project-lang"]}>
-                {project.repoName && <Link className={styles['project-code']} href={`https://github.com/kalecream/${project.repoName}`}>Code</Link> }
-                {project.link && <Link className={styles['project-code']} href={project.link}>Demo</Link>                }
-              </div>
-              <div className={styles['project-year']}>{project.created.split("-", 1)}</div>
-            </div>
-            <div ref={cursorRef} className={styles['project-overlay']}></div>
-          </div>
+            {category}
+          </button>
         ))}
-      </div>
-      <div
-        ref={cursorRef}
-        className="cursor"
-        style={{
-          backgroundImage:  selectedImage ? `url(${selectedImage})` : 'none',
-        }}
-      ></div>
+        </div>
+        <div className={styles["project-list"]}>
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className={styles.project + ` p-${project.id}`}
+              onMouseEnter={() => handleHover(project.image || "")}
+              onMouseLeave={() => handleHover("")}
+              
+            >
+              <div className={styles["project-info"]}>
+                <h1 className={styles["project-title"]}>{project.title}</h1>
+                
+                <div className={styles["project-lang"]}>
+                  <div className={styles["project-language"]}>{project.language.join(",  ")}</div>
+                  <div className="div">{project.technology}</div>
+                </div>
+                <div className={styles["project-description"]}>{project.description}</div>
+                <div className={styles["project-lang"]}>
+                  {project.repoName && <Link className={styles['project-code']} href={`https://github.com/kalecream/${project.repoName}`}>Code</Link> }
+                  {project.link && <Link className={styles['project-code']} href={project.link}>Demo</Link>                }
+                </div>
+                <div className={styles['project-year']}>{project.created.split("-", 1)}</div>
+              </div>
+              <div ref={cursorRef} className={styles['project-overlay']}></div>
+            </div>
+          ))}
+        </div>
+        <div
+          ref={cursorRef}
+          className="cursor"
+          style={{
+            backgroundImage:  selectedImage ? `url(${selectedImage})` : 'none',
+          }}
+          ></div>
     </div>
   );
 };

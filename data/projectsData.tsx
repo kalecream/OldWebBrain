@@ -3,7 +3,8 @@ import { ReactNode } from "react";
 export interface ProjectStructure {
   id: string,
   display: boolean,
-  category? :string,
+  category?: string,
+  type: string | string[],
   title: string,
   image?: string,
   description: ReactNode,
@@ -22,13 +23,14 @@ export const Projects: ProjectStructure[] = [
     display: true,
     title: "Blue Orange",
     image: "/img/01_BlueOrange.png",
+    category: 'code',
+    type: 'customisation',
     description: (
       <span>
         This is a duotone i3wm theme. I installed i3wm because for a while, my
         mouse wasn't working properly, so I had to use the keyboard to navigate.
       </span>
     ),
-    link: "https://github.com/kalecream/dotfiles",
     repoName: "dotfiles",
     technology: [
       <a href="https://i3wm.org/">i3wm </a>,
@@ -44,14 +46,15 @@ export const Projects: ProjectStructure[] = [
     id: "002",
     display: true,
     title: "Morning Messages",
+    category: 'code',
+    type: 'automation',
     description: (
       <span>
-        A simple python script to automate the process of sending my boyfriend
+        A simple python script to automate the process of sending
         current news articles and cute kaomoji-filled messages in the morning
-        via Whatsapp Web.
+        via Whatsapp Web to a past partner.
       </span>
     ),
-    link: "https://github.com/kalecream/morning-messages",
     repoName: "morning-messages",
     technology: [
       <a href="https://pywhatkit.herokuapp.com/">PyWhatKit </a>,
@@ -65,13 +68,16 @@ export const Projects: ProjectStructure[] = [
     id: "003",
     display: true,
     title: "Kalecream Website",
+    category: 'code',
+    type: 'website',
     description: (
       <span>
         I've rebuilt this website many different times in plain Html/Css/Js,
         Wordpress and now in Typescript.
       </span>
     ),
-    repoName: "",
+    repoName: "OldWebBrain",
+    link: "https://www.sabrinamedwinter.com/",
     technology: [
       <a href="https://nextjs.org/">Next.js </a>,
       <a href="https://threejs.org/">Three.js </a>,
@@ -84,6 +90,8 @@ export const Projects: ProjectStructure[] = [
     id: "004",
     display: true,
     title: "GPT-4 Record",
+    category: 'code', 
+    type: [ 'automation', 'AI'],
     description: (
       <span>
         A one-hour paid project to accept a 800 word prompt, perform a specfic action with the prompt and use that output as a second prompt. Both prompts were then saved to an ordinary text file.
@@ -99,6 +107,8 @@ export const Projects: ProjectStructure[] = [
     id: "005",
     display: true,
     title: "Swagger Login Test",
+    category: 'code',
+    type: 'test',
     link: "https://sphenery.vercel.app/login",
     image: "./img/projects/sphenery.webp",
     description: (

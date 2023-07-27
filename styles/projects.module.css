@@ -1,6 +1,30 @@
 .project-wrapper {
     padding: 2rem;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-tabs {
+    max-width: 75%;
+    padding-bottom: 2rem;
+}
+
+.project-tab {
+    padding: var(--padding-small);
+    margin-right: 1rem;
+    border-radius: var(--border-radius);
+    outline: none;
+    border: var(--border);
+    color: var(--grey);
+    background-color: transparent;
+    text-transform: capitalize;
+}
+
+.project-tab:active, .project-tab:hover {
+    background-color: var(--grey);
+    color: var(--body);
 }
 
 .project {
