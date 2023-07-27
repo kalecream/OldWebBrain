@@ -19,78 +19,7 @@ export const extractCategories = () => {
 };
 
 const ProjectList: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const cursorRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const cursor = cursorRef.current;
-    const overlays = document.querySelectorAll(".project-overlay");
-
-    const moveCircle = (e: MouseEvent | TouchEvent) => {
-      const cursor = cursorRef.current;
-
-      if (cursor) {
-        const left = e instanceof MouseEvent ? e.pageX : e.touches[0].pageX;
-        const top = e instanceof MouseEvent ? e.pageY : e.touches[0].pageY;
-
-        cursor.style.left = `${left}px`;
-        cursor.style.top = `${top}px`;
-      };
-    }
-
-    overlays.forEach((overlay) => {
-      overlay.addEventListener("mousemove", () => {
-        cursor.style.transform = "scale(1)";
-      });
-
-      overlay.addEventListener("touchmove", function () {
-        cursor.style.transform = "scale(1)";
-      });
-
-      overlay.addEventListener("mouseleave", () => {
-        cursor.style.transform = "scale(0.1)";
-      });
-
-      overlay.addEventListener("mouseout", function () {
-        cursor.style.transform = "scale(0.1)";
-      });
-
-      overlay.addEventListener("touchend", function () {
-        cursor.style.transform = "scale(0.1)";
-      });
-
-      overlay.addEventListener("mousemove", moveCircle);
-      overlay.addEventListener("touchmove", moveCircle);
-
-
-    });
-
-  }, []);
-
-  useEffect(() => {
-    const cursor = cursorRef.current;
-
-    const moveCursor = () => {
-      cursor.style.left = `${cursorPosition.x}px`;
-      cursor.style.top = `${cursorPosition.y}px`;
-    };
-
-    moveCursor();
-
-    // Attach the moveCursor function to the mousemove event for the entire document.
-    document.addEventListener("mousemove", moveCursor);
-
-    // Clean up the event listener on unmount.
-    return () => {
-      document.removeEventListener("mousemove", moveCursor);
-    };
-  }, [cursorPosition]);
-
-  const handleHover = (image: string | null) => {
-    setSelectedImage(image);
-  };
 
   const handleTabChange = (category: string) => {
     setActiveCategory(category);
@@ -126,12 +55,10 @@ const ProjectList: React.FC = () => {
       </div>
       <div className={styles["project-list"]}>
         {filteredProjects.map((project) => (
-          <div ref={cursorRef} className={styles["project-overlay"]}>
+          <div className={styles["project-overlay"]}>
           <div
             key={project.id}
             className={styles.project + ` p-${project.id}`}
-            onMouseEnter={() => handleHover(project.image || "")}
-            onMouseLeave={() => handleHover("")}
           >
             {" "}
             
