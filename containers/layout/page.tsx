@@ -32,12 +32,9 @@ export const Page = ({
   return (
     <body>
       <Head>
-        <title>{title ? "SM | " + title : "SM"}</title>
         {
-          title &&
-          <meta property="og:title" content={title} key="title" />
+          title &&<title>{"SM | " + title}</title>
         }
-        
         {customMeta ? (
           <meta name="description" content={customMeta.description} />
         ) : (
