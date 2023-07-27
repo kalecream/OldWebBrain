@@ -1,5 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef, EffectCallback } from "react";
-import { Projects, ProjectStructure } from "../../data/projectsData";
+import { Projects } from "../../data/projectsData";
 import "animate.css";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -8,7 +8,7 @@ import styles from "../../styles/projects.module.css";
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
   Projects.forEach((project) => {
-    categoriesSet.add(project.category || "Others");
+    categoriesSet.add(project.category);
   });
   return Array.from(categoriesSet);
 };
@@ -88,7 +88,7 @@ const ProjectList: React.FC = () => {
               </div>
               <div className={styles['project-year']}>{project.created.split("-", 1)}</div>
             </div>
-            <div className={styles['project-overlay']}></div>
+            <div ref={cursorRef} className={styles['project-overlay']}></div>
           </div>
         ))}
       </div>
