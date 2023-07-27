@@ -26,7 +26,6 @@ import SkillMarquee from "@components/home/skills";
 
 import "../styles/animations.module.css";
 import ProjectList from "@components/home/projectsList";
-import TimeLog from "@components/home/logger";
 
 type IndexProps = {
   posts: PostType[];
@@ -237,8 +236,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </HeroSection>
       </Hero>
       <ScrollDown />
-
-      {/* <TimeLog /> */}
 
       {posts.length > 0 && (
         <BlogSection id="blog-posts" className="fadeIn--below">

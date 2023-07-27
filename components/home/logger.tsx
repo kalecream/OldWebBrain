@@ -32,29 +32,29 @@ interface TimeLogProps{
 const TimeLog: React.FC = () => {
     const [data, setData] = useState<DayLog[] | undefined>();
 
-    const getCSV = () => {
-        Papa.parse("../../data/log.csv", {
-            header: true,
-            download: true,
-            skipEmptyLines: true,
-            delimiter: ",",
-            complete: (results: ParseResult<DayLog>) => {
-            setData(results)
-            },
-        })
-    }
+    // const getCSV = () => {
+    //     Papa.parse("../../data/log.csv", {
+    //         header: true,
+    //         download: true,
+    //         skipEmptyLines: true,
+    //         delimiter: ",",
+    //         complete: (results: ParseResult<DayLog>) => {
+    //         setData(results)
+    //         },
+    //     })
+    // }
 
 
     useEffect(() => {
-        getCSV();
-        // const parsedData = sampleCSVData
-        // .trim()
-        // .split("\n")
-        // .map((row) => {
-        //     const [datetime, essential, project, social, finance, activism, spiritual, exercise, work] = row.split(",");
-        //     return { datetime: new Date(datetime).toLocaleDateString(), essential: Number(essential), project: Number(project), social: Number(social), finance: Number(finance), activism: Number(activism), spiritual: Number(spiritual), exercise: Number(exercise), work: Number(work)  };
-        // });
-        // setData(parsedData);
+        
+        const parsedData = sampleCSVData
+        .trim()
+        .split("\n")
+        .map((row) => {
+            const [datetime, essential, project, social, finance, activism, spiritual, exercise, work] = row.split(",");
+            return { datetime: new Date(datetime).toLocaleDateString(), essential: Number(essential), project: Number(project), social: Number(social), finance: Number(finance), activism: Number(activism), spiritual: Number(spiritual), exercise: Number(exercise), work: Number(work)  };
+        });
+        setData(parsedData);
     }, [])
 
         return (
