@@ -152,9 +152,6 @@ export const Navigation: React.FunctionComponent = () => {
     paddingRight: "0",
   };
 
-
-  router.pathname === '/' ?  style.justifyContent = "flex-end" :  style.justifyContent = "flex-end";
-
   return (
     <StyledNavigation display style={style}>
       {
