@@ -22,7 +22,7 @@ export const Projects: ProjectStructure[] = [
     id: "001",
     display: true,
     title: "Blue Orange",
-    image: "/img/01_BlueOrange.png",
+    image: "/img/project/001.webp",
     category: 'code',
     type: 'customisation',
     description: (
@@ -110,7 +110,7 @@ export const Projects: ProjectStructure[] = [
     category: 'code',
     type: 'test',
     link: "https://sphenery.vercel.app/login",
-    image: "./img/projects/sphenery.webp",
+    image: "img/project/005.webp",
     description: (
       <span>
         A register/login form done for a test of the Swagger API.
