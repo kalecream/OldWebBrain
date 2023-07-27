@@ -153,7 +153,7 @@ export const Navigation: React.FunctionComponent = () => {
   };
 
 
-  router && router.pathname === '/' ?  style.justifyContent = "flex-end" :  style.justifyContent = "flex-end";
+  router.pathname === '/' ?  style.justifyContent = "flex-end" :  style.justifyContent = "flex-end";
 
   return (
     <StyledNavigation display style={style}>
