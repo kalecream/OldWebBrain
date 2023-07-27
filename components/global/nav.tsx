@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Directory from "../../data/directory";
 import { CustomLink } from "./Basics";
 import ThemeSwitch from "../navigation/ThemeSwitch";
-import { useRouter } from 'next/router';
+import { Router, useRouter } from 'next/router';
 import AvailableForWork from "@components/navigation/work";
 import { MediaProfiles } from "@components/socialmedia";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -145,18 +145,17 @@ const SocialMediaList = () => {
 };
 
 export const Navigation: React.FunctionComponent = () => {
+
   const router = useRouter();
 
   let style = {
-    justifyContent: "center",
+    justifyContent: "flex-end",
     paddingRight: "0",
   };
 
   return (
-    <StyledNavigation display style={style}>
-      {
-        router && router.pathname !== "/" ? <SiteName href="/">KaleCream</SiteName> : ''
-      }
+    <StyledNavigation display style={style} >
+      {router?.pathname && <SiteName href="/">KaleCream</SiteName>}
       <DirectoryList>
         {Directory.length > 0
           ? Directory.map((directory, index) => (
@@ -170,7 +169,7 @@ export const Navigation: React.FunctionComponent = () => {
         <Settings>
         <SocialMediaList />
           <ThemeSwitch />
-          <AvailableForWork />
+          {/* <AvailableForWork /> */}
         </Settings>
       </DirectoryList>
       
@@ -182,7 +181,6 @@ export const Footer: React.FunctionComponent = () => {
   return (
     <StyledFooter>
       <div> sabrina medwinter &copy; {new Date().getFullYear()}</div>
-      {/* <CustomLink href="/legal/terms"> Terms of Service</CustomLink> */}
     </StyledFooter>
   );
 };
