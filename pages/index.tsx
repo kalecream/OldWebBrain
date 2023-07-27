@@ -20,9 +20,6 @@ import "animate.css";
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
-import LatestProjects from "@components/home/latestProjects";
-import OtherProjects from "@components/home/otherProjects";
-import SkillMarquee from "@components/home/skills";
 
 import "../styles/animations.module.css";
 import ProjectList from "@components/home/projectsList";
@@ -242,13 +239,13 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <CapsTitle >Blog</CapsTitle>
           <ArticleContainer>
             {posts.slice(0, 3).map((post) => (
-              <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
+              <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
                 <Articles key={post.slug} className="blog--article">
                   {post.coverImage && (
                     <img
                       src={post.coverImage}
-                      width={300}
-                      height={300}
+                      width={100}
+                      height={100}
                       alt=""
                       className="blog--article__image"
                     />
@@ -266,7 +263,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     <PostTags>
                       <span>
                         {post.tags.slice(0,2).map((tag) => (
-                          <Tag href={"/tags/" + tag.replace(/\s+/g, "+")}>
+                          <Tag key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
                             {tag}
                           </Tag>
                         ))}
