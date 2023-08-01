@@ -155,7 +155,7 @@ export const Navigation: React.FunctionComponent = () => {
 
   return (
     <StyledNavigation display style={style} >
-      {router?.pathname && <SiteName href="/">KaleCream</SiteName>}
+      {router?.pathname !== '/' && <SiteName href="/">KaleCream</SiteName>}
       <DirectoryList>
         {Directory.length > 0
           ? Directory.map((directory, index) => (
