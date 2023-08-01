@@ -30,24 +30,15 @@ export const Page = ({
   }
 
   return (
-    <body>
-      <Head>
-        {
-          title &&<title>{"SM | " + title}</title>
-        }
-        {customMeta ? (
-          <meta name="description" content={customMeta.description} />
-        ) : (
-          description && <meta name="description" content={description} />
-        )}
-        <Navigation />
-      </Head>
+    <>
+      <Navigation />
 
       <main>
         <>{children}</>
       </main>
+
       <Footer />
-    </body>
+    </>
   );
 };
 
