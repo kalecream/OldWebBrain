@@ -35,7 +35,7 @@ export const App = (
 			<header>
 				<title>{meta.title}</title>
 				<meta content={meta.description} name="description" />
-				<link rel="shortcut icon" href="/images/favicon.svg" />
+				<link rel="shortcut icon" href="/img/favicon.svg" />
 				<meta lang="en" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta property="og:type" content={meta.type} />
