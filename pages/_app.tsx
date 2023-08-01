@@ -17,8 +17,8 @@ export const App = (
 	const router = useRouter();
 	const meta: MetaProps = {
 		title: "SM",
-		description: "Web Developer.",
-		image: `${WEBSITE_HOST_URL}/images/favicon.svg`,
+		description: "Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.",
+		image: `${WEBSITE_HOST_URL}/img/favicon.svg`,
 		type: "website",
 		...customMeta,
 	};
@@ -33,7 +33,7 @@ export const App = (
 			defaultTheme="system"
 			themes={["light", "dark"]}
 		>
-			<Head>
+			<header>
 				<title>{meta.title}</title>
 				<meta content={meta.description} name="description" />
 				<link rel="shortcut icon" href="/images/favicon.svg" />
@@ -59,7 +59,7 @@ export const App = (
 					<meta property="article:published_time" content={meta.date} />
 				)}
 				
-			</Head>
+			</header>
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);
