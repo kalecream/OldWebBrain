@@ -1,10 +1,4 @@
-import {
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  EffectCallback,
-} from "react";
+import { useState } from "react";
 import { Projects } from "../../data/projectsData";
 import "animate.css";
 import Link from "next/link";
@@ -60,42 +54,40 @@ const ProjectList: React.FC = () => {
             key={project.id}
             className={styles.project + ` p-${project.id}`}
           >
-            {" "}
-            
-              <div className={styles["project-info"]}>
-                <h1 className={styles["project-title"]}>{project.title}</h1>
+            <div className={styles["project-info"]}>
+              <h1 className={styles["project-title"]}>{project.title}</h1>
 
-                <div className={styles["project-lang"]}>
-                  <div className={styles["project-language"]}>
-                    {project.language.join(",  ")}
-                  </div>
-                  <div className="div">{project.technology}</div>
+              <div className={styles["project-lang"]}>
+                <div className={styles["project-language"]}>
+                  {project.language.join(",  ")}
                 </div>
-                <div className={styles["project-description"]}>
-                  {project.description}
-                </div>
-                <div className={styles["project-lang"]}>
-                  {project.repoName && (
-                    <Link
-                      className={styles["project-code"]}
-                      href={`https://github.com/kalecream/${project.repoName}`}
-                    >
-                      Code
-                    </Link>
-                  )}
-                  {project.link && (
-                    <Link
-                      className={styles["project-code"]}
-                      href={project.link}
-                    >
-                      Demo
-                    </Link>
-                  )}
-                </div>
-                <div className={styles["project-year"]}>
-                  {project.created.split("-", 1)}
-                </div>
+                <div className="div">{project.technology}</div>
               </div>
+              <div className={styles["project-description"]}>
+                {project.description}
+              </div>
+              <div className={styles["project-lang"]}>
+                {project.repoName && (
+                  <Link
+                    className={styles["project-code"]}
+                    href={`https://github.com/kalecream/${project.repoName}`}
+                  >
+                    Code
+                  </Link>
+                )}
+                {project.link && (
+                  <Link
+                    className={styles["project-code"]}
+                    href={project.link}
+                  >
+                    Demo
+                  </Link>
+                )}
+              </div>
+              <div className={styles["project-year"]}>
+                {project.created.split("-", 1)}
+              </div>
+            </div>
             </div>
           </div>
         ))}
