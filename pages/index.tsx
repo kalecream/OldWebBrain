@@ -24,6 +24,7 @@ import { OrbitControls, PresentationControls } from "@react-three/drei";
 import "../styles/cards.module.css";
 import "../styles/animations.module.css";
 import "animate.css";
+import Image from "next/image";
 
 
 type IndexProps = {
@@ -179,6 +180,10 @@ const Rotate3DModel = () => {
   );
 };
 
+const imageLoader  = ({ src, width, quality }) => {
+  return `https://sabrinamedwinter.com/${src}?w=${width}&q=${quality || 75}`
+}
+
 export const Home = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Page>
@@ -240,11 +245,13 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
               <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
                 <Articles key={post.slug} className="blog--article">
                   {post.coverImage && (
-                    <img
+                    <Image
+                      loader={imageLoader}
+                      loading="lazy"
                       src={post.coverImage}
                       width={100}
                       height={100}
-                      alt=""
+                      alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
                     />
                   )}

@@ -19,8 +19,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    loader: "akamai",
-    path: "/",
+    path: "/img/",
+    formats: ['image/webp']
   },
 };
 
