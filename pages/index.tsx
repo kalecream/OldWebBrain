@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import "../styles/cards.module.css";
+import { useEffect, useRef } from "react";
 import Page from "../containers/layout/page";
 
 import { format, parseISO } from "date-fns";
@@ -13,16 +12,19 @@ import { Section, Button, CapsTitle, CustomLink } from "../components/global/Bas
 import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
 
 import { ScrollDown } from "../components/global";
+import ProjectList from "@components/home/projectsList";
 
 import { Model } from "../assets/models/me";
 
-import "animate.css";
+
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
 
+import "../styles/cards.module.css";
 import "../styles/animations.module.css";
-import ProjectList from "@components/home/projectsList";
+import "animate.css";
+
 
 type IndexProps = {
   posts: PostType[];
@@ -151,7 +153,7 @@ const Rotate3DModel = () => {
   // 	document.getElementById("hero")?.scrollIntoView();
   // });
 
-  const orbitControlsRef = React.useRef<any>(null);
+  const orbitControlsRef = useRef<any>(null);
 
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
@@ -168,14 +170,12 @@ const Rotate3DModel = () => {
   }, [orbitControlsRef.current]);
 
   return (
-    <>
       <OrbitControls
         ref={orbitControlsRef}
         maxDistance={8}
         minDistance={8}
         enableZoom={false}
       />
-    </>
   );
 };
 
@@ -199,10 +199,8 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <ButtonContainer >
             <Button primary href="/services">Need a service?</Button>
             <Button href="/blog">Check out the blog</Button>
-            {/* {MediaProfiles.map((profile) => (
-              <Button href={profile.url}>{profile.name}</Button>
-            ))} */}
           </ButtonContainer>
+
         </HeroSection>
         <HeroSection>
           <CustomCanvas
@@ -287,8 +285,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         TODO: fix image displaying on hover
          */}
       </section>
-     
-      {/* <LatestProjects /> */}
     </Page>
   );
 };
