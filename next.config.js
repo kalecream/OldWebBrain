@@ -23,7 +23,7 @@ const nextConfig = {
     formats: ['image/webp']
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: ['/styles'],
   },
 };
 
