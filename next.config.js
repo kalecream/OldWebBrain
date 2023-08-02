@@ -22,6 +22,9 @@ const nextConfig = {
     path: "/img/",
     formats: ['image/webp']
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 };
 
 // Merge MDX config with Next.js config
