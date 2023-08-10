@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { ThemeProvider } from "next-themes";
 import { MetaProps } from "../types/layout";
 import { useRouter } from "next/router";
+import { Head } from "next/document";
 
 config.autoAddCss = false;
 export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
@@ -23,7 +24,34 @@ export const App = (
 	};
 
 	return (
-		// Storing theme in localstorage
+		<>
+			<Head>
+				{/* TODO: Fix header/head mix-up */}
+			<title>{meta.title}</title>
+			<meta content={meta.description} name="description" />
+			<link rel="shortcut icon" href="/img/favicon.svg" />
+			<meta lang="en" />
+			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			<meta property="og:type" content={meta.type} />
+			<meta property="og:site_name" content="KaleCream" />
+			<meta property="og:description" content={meta.description} />
+			<meta property="og:title" content={meta.title} />
+			<meta property="og:image" content={meta.image} />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@kalecream" />
+			<meta name="twitter:title" content={meta.title} />
+			<meta name="twitter:description" content={meta.description} />
+			<meta property="og:type" content={meta.type} />
+			<meta name="twitter:image" content={meta.image} />
+			<meta
+				property="og:url"
+				content={`${WEBSITE_HOST_URL}${router.asPath}`}
+			/>
+			<link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
+			{meta.date && (
+				<meta property="article:published_time" content={meta.date} />
+			)}
+		</Head>
 		<ThemeProvider
 			storageKey="theme"
 			attribute="class"
@@ -33,34 +61,12 @@ export const App = (
 			themes={["light", "dark"]}
 		>
 			<header>
-				<title>{meta.title}</title>
-				<meta content={meta.description} name="description" />
-				<link rel="shortcut icon" href="/img/favicon.svg" />
-				<meta lang="en" />
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<meta property="og:type" content={meta.type} />
-				<meta property="og:site_name" content="KaleCream" />
-				<meta property="og:description" content={meta.description} />
-				<meta property="og:title" content={meta.title} />
-				<meta property="og:image" content={meta.image} />
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:site" content="@kalecream" />
-				<meta name="twitter:title" content={meta.title} />
-				<meta name="twitter:description" content={meta.description} />
-				<meta property="og:type" content={meta.type} />
-				<meta name="twitter:image" content={meta.image} />
-				<meta
-					property="og:url"
-					content={`${WEBSITE_HOST_URL}${router.asPath}`}
-				/>
-				<link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
-				{meta.date && (
-					<meta property="article:published_time" content={meta.date} />
-				)}
+				
 				
 			</header>
 			<Component {...pageProps} />
-		</ThemeProvider>
+			</ThemeProvider>
+			</>
 	);
 };
 

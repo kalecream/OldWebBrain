@@ -31,8 +31,10 @@ export const Page = ({
 
   return (
     <>
-      <Navigation />
-
+      <header>
+        <Navigation />
+      </header>
+      
       <main>
         <>{children}</>
       </main>
