@@ -23,7 +23,7 @@ jobs:
       - name: Bump version and push changes
         run: |
           # Bump version using npm version patch (increment patch version)
-          npm version patch
+          npm version minor
 
           # Push changes back to the repository
           git config --local user.email "action@github.com"
@@ -32,4 +32,4 @@ jobs:
           git push
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION }}
