@@ -9,15 +9,23 @@ const withMDX = require('@next/mdx')({
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
-})
+});
+
+const removeImports = require('next-remove-imports')();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure pageExtensions to include md and mdx
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  // Optionally, add any other Next.js config below
   reactStrictMode: true,
-  swcMinify: true,
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
+  // pwa: {
+  //   dest: 'public',
+  //   disable: process.env.NODE_ENV === 'development',
+  //   register: true, 
+  // },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   images: {
     path: "/img/",
     formats: ['image/webp']
@@ -25,7 +33,10 @@ const nextConfig = {
   sassOptions: {
     includePaths: ['/styles'],
   },
+  experimental: {esmExternals: true}
 };
 
-// Merge MDX config with Next.js config
-module.exports = withMDX(nextConfig)
+
+module.exports = withMDX(removeImports(nextConfig));
+
+
