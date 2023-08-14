@@ -33,7 +33,7 @@
 }
 
 .project-overlay {
-    flex:  1 1 400px;
+    flex:  0 1 400px;
     margin: 0.5rem;
 }
 
