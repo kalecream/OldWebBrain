@@ -100,6 +100,7 @@ export const SiteName = styled(CustomLink)`
   justify-content: center;
   font-size: 1.5rem;
   color: var(--primary);
+  margin: 0 1rem;
 
   & hover {
     opacity: 0.8;
@@ -148,7 +149,7 @@ export const Navigation: React.FunctionComponent = () => {
 
   return (
     <StyledNavigation display style={style} >
-      {router?.pathname !== '/' && <SiteName href="/">KaleCream</SiteName>}
+      {router?.pathname !== '/' && <SiteName href="/">SMedwinter</SiteName>}
       <DirectoryList>
         {Directory.length > 0
           ? Directory.map((directory, index) => (
