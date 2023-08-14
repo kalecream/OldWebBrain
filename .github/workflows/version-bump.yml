@@ -23,8 +23,8 @@ jobs:
           npm version minor
 
           # Push changes back to the repository
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "sabrinamedwinter@gmail.com"
+          git config --local user.name "Sabrina Medwinter"
           git commit -am "Bump version"
           git push
 
