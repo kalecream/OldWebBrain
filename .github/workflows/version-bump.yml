@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Bump version and push changes
         run: |
           # Bump version using npm version patch (increment patch version)
