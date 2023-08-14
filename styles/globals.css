@@ -213,10 +213,6 @@ p a {
 }
 
 li {
-    padding: 0 2.5rem;
-}
-
-li {
   margin-bottom: 0.5rem;
 }
 
@@ -319,12 +315,6 @@ kbd::after,
 .head3 {
   margin-left: 30px;
   list-style-type: circle;
-}
-
-pre {
-  padding: 1rem 2rem;
-  background-color: var(--faint);
-  border-radius: var(--border-radius);
 }
 
 /*  */
@@ -544,6 +534,103 @@ pre {
     }
   }
 
+article {
+  margin: 0 auto;
+  max-width: 55rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+article h1, h2, h3, h4, h5, h6  {
+  font-weight: 400;
+  margin: 2rem;
+}
+
+article p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* article pre {
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-family: monospace;
+} */
+
+article ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+article li {
+  margin-bottom: 0.5rem;
+}
+
+article li::marker {
+  color: var(--muted);
+  text-indent: 1rem !important;
+}
+
+@media (max-width: 1024px) {
+  .article--header {
+    grid-template: flex;
+    flex-direction: column;
+  }
+}
+  
+@media screen and (min-width: 1024px) {
+  .article--header {
+    grid-template: auto / auto 1fr;
+  }
+
+  article {
+    margin-left: 50px;
+  }
+
+}
+
+.article--heading {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.article--image {
+  width: 100%;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.article--image img {
+  margin: 0 auto;
+}
+
+.article--description {
+  color: var(--muted);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.article--details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.article--created, .article--readtime {
+  color: var(--muted);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
 
 /* TABS  */
 .tabs {
@@ -567,4 +654,14 @@ pre {
 
 .fadeIn--below {
     animation: fadeInFromBelow 1s ease-in-out;
+}
+
+/*  custom */
+/*  hide copy button for code */
+.ch-codeblock .ch-code-button {
+  display: none;
+}
+
+.ch-codeblock:hover .ch-code-button {
+  display: block;
 }
