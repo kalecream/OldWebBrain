@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import "animate.css";
 import { Section } from "../components/global";
 import Link from "next/link";
-import { ContactForm } from "@components/global/contactForm";
 
 const Sections = [
   {
@@ -187,7 +186,7 @@ export default function Services() {
             or Payoneer.
           </p>
         </ServicesTerms>
-        <ContactForm />
+        {/* <ContactForm /> */}
       </Section>
     </Page>
   );
