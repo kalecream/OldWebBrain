@@ -44,7 +44,7 @@ interface navProps {
 
 const StyledNavigation = styled.nav<navProps>`
   width: 100%;
-  margin: 0 1rem;
+  margin: 2rem 0;
   justify-content: space-around;
   background-color: var(--background);
   display: ${(props) => (props.display ? "flex" : "none")};
@@ -55,20 +55,13 @@ const StyledNavigation = styled.nav<navProps>`
   }
 
   @media screen and (max-width: 425px) {
-    margin: 0 1rem;
+    margin: 1rem 0;
     flex-wrap: wrap;
     flex-direction: column;
     line-height: 2;
   }
 
-  @media screen and (min-width: 425px) {
-    margin: 0 2rem;
-    padding: 1rem 3rem;
-  }
-
   @media screen and (min-width: 1024px) {
-    margin: 0 4rem;
-    padding: 2rem 0;
     flex-direction: row;
     line-height: 2;
 
@@ -78,7 +71,7 @@ const StyledNavigation = styled.nav<navProps>`
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 2rem;
+    padding: 2rem 0;
 
     & > * {
       margin: 0 1rem;
