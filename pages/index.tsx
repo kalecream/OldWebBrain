@@ -180,7 +180,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <Hero>
         <HeroSection >
           <div className="hider">
-          <h1 className="sitename">KaleCream</h1>
+          <h1 className="sitename">Sabrina Medwinter</h1>
           </div>
           <p >
           I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. I'm always learning and trying out new technologies to improve my work.
