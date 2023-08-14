@@ -1,17 +1,13 @@
 .project-wrapper {
-    max-width: 80rem;
-    padding: 4rem 2rem;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    padding: var(--padding);
 }
 
 .project-tabs {
-    max-width: 100%;
+    margin: 0 auto;
     padding-bottom: 2rem;
     display: flex;
-    justify-content: center;
 }
 
 .project-tab {
@@ -30,14 +26,19 @@
     color: var(--body);
 }
 
-.project {
-    max-width: 75%;
-    padding: var(--padding);
-    border-bottom: var(--border);
-    margin: var(--margin);
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-overlay {
+    flex:  1 1 400px;
+    margin: 0.5rem;
 }
 
 .project-info {
+    width: 100%;
     text-align: start;
     position: relative;
     gap: 1rem;
@@ -74,16 +75,14 @@
 }
 
 .project-description {
-    max-width: 80%;
+    padding: 0.5rem 0;
+    color: var(--muted);
     margin-bottom: 1rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 0.75rem;
+    text-align: justify;
 }
 
 .project-year {
-    position: absolute;
-    right:0;
-    bottom: 45%;
     font-weight: 200;
 }
 

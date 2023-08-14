@@ -9,7 +9,6 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
 import { Section, Button, CapsTitle, CustomLink } from "../components/global/Basics";
-import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
 
 import { ScrollDown } from "../components/global";
 import ProjectList from "@components/home/projectsList";
@@ -21,7 +20,6 @@ import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
 
-import "../styles/cards.module.css";
 import "../styles/animations.module.css";
 import "animate.css";
 import Image from "next/image";
@@ -135,10 +133,6 @@ const CustomCanvas = styled(Canvas)`
   }
 `;
 
-const BlogSection = styled.section`
-  width: 100%;
-`;
-
 const angletoRadian = (angle: number) => {
   return angle * (Math.PI / 180);
 };
@@ -238,55 +232,58 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <ScrollDown />
 
       {posts.length > 0 && (
-        <BlogSection id="blog-posts" className="fadeIn--below">
+        <section id="blog-posts" className="fadeIn--below">
           <CapsTitle >Blog</CapsTitle>
-          <ArticleContainer>
+          <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
-              <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
-                <Articles key={post.slug} className="blog--article">
-                  {post.coverImage && (
+                <div key={post.slug} className="blog--article pancake-child">
+                {/* {post.coverImage && (
+                  <div className="image-wrapper">
                     <Image
                       loader={imageLoader}
                       loading="lazy"
                       src={post.coverImage}
-                      width={100}
-                      height={100}
+                      width={200}
+                      height={200}
                       alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
                     />
-                  )}
+                    </div>
+                  )} */}
                   {post.date && (
                     <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
-                  <h2 className="blog--article__title">{post.title}</h2>
+                    <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}><h2 className="blog--article__title">{post.title}</h2></Link>
 
                   <p className="blog--article__description">
                     {post.description}
                   </p>
 
-                  {post.tags && (
-                    <PostTags>
+                  {/* {post.tags && (
+                    <div className="post-tags">
                       <span>
                         {post.tags.slice(0,2).map((tag) => (
-                          <Tag key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
+                          <div className="post-tag" key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
                             {tag}
-                          </Tag>
+                          </div>
                         ))}
                       </span>
-                    </PostTags>
-                  )}
+                    </div>
+                  )} */}
                   <div className="links">
                   </div>
-                </Articles>
-              </Link>
+                </div>
+              
             ))}
+          
+          </div>
+          {/* TODO: Add weeklogs and tutorials */}
             <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
-          </ArticleContainer>
-        </BlogSection>
+        </section>
       )}
 
       <section>
-        <CapsTitle >projects</CapsTitle>
+        <CapsTitle >Things I've Made</CapsTitle>
         <ProjectList />
         {/* 
         TODO: fix image displaying on hover
