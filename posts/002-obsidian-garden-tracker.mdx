@@ -34,7 +34,8 @@ action NewPlant
 TABLE WITHOUT ID image,
 file.link,
 ":luc_droplet: " + water,
-":luc_droplets: " + date(reverse(sort(file.inlinks))[0]) + " (" + (date(today) - date(reverse(sort(file.inlinks))[0])) + ")"  AS "Last watered",
+":luc_droplets: " + date(reverse(sort(file.inlinks))[0]) + " (" + (date(today) - date(reverse(sort(file.inlinks))[0])) + ")"  /
+AS "Last watered",
 ":luc_sun: " + sun,
 ":fas_spray_can_sparkles: " + fertilizer,
 ":fas_spray_can: " + last_fertilized,

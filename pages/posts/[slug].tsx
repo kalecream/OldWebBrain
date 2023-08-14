@@ -15,13 +15,12 @@ import { PostType } from "../../types/post";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+// import { CH } from "@code-hike/mdx/components";
 import styled from "@emotion/styled";
-import {useEffect, useState } from "react";
-import { Caption } from "../../components/global";
+import { useEffect, useState } from "react";
 
 import { useHeadsObserver } from "../../hooks/useObserver";
 import getReadTime from "../../lib/read-time";
@@ -33,158 +32,6 @@ type PostPageProps = {
 
 const BlogPage = styled(Page)`
   display: block;
-`;
-
-const CustomArticle = styled.article`
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-
-  & h1,
-  h2,
-  h3 {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-  }
-
-  h1 {
-    margin-bottom: 4rem;
-    font-size: 5rem;
-    font-weight: 300;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin: 4rem 0 0.5rem 0;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin: 3rem 0 0.5rem 0;
-  }
-
-  & ol,
-  ul {
-    list-style-position: inside;
-
-    & li {
-      text-indent: 0.5rem;
-      line-height: 1.6;
-    }
-  }
-
-  & p {
-    text-align: justify;
-    line-height: 1.4;
-  }
-
-  & a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: -0.2rem;
-      left: 0;
-      width: 100%;
-      height: 0.1rem;
-      background: var(--primary);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    &:hover:after {
-      transform: scaleX(1);
-    }
-
-    &:visited {
-      color: var(--primary);
-    }
-  }
-
-  & pre {
-    background: #303030;
-    color: #f1f1f1;
-    padding: 2rem 1rem;
-    border-radius: 15px;
-    border-top: 4px solid var(--primary);
-    -moz-box-shadow: inset 0 0 10px #000;
-    box-shadow: inset 0 0 10px #000;
-    white-space: pre-wrap; /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
-    word-break: keep-all;
-    counter-reset: line;
-  }
-
-  & pre span {
-    display: block;
-    line-height: 1.5rem;
-  }
-
-  pre span:before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    // border-right: 1px solid #ddd;
-    padding: 0 0.5em;
-    margin-right: 0.5em;
-    color: #888;
-  }
-
-  & code {
-    background: #303030;
-    color: #f1f1f1;
-    padding: 0.1rem 0.3rem;
-    border-radius: 5px;
-    -moz-box-shadow: inset 0 0 10px #000;
-    box-shadow: inset 0 0 10px #000;
-    opacity: 0.6;
-  }
-
-  & pre code {
-    background: none;
-    color: inherit;
-    padding: 0;
-    border-radius: 0;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    opacity: 1;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 0 1rem;
-
-    & p {
-      padding: 0;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    width: 60%;
-    margin-left: 350px;
-    margin-top: 5rem;
-
-    & p,
-    li {
-      font-size: 1rem;
-      max-width: 65rem;
-    }
-  }
 `;
 
 const TableOfContents = styled.aside`
@@ -212,7 +59,7 @@ const TableOfContents = styled.aside`
   }
 
   @media (min-width: 1024px) {
-    width: 350px;
+    width: 360px;
     position: fixed;
     left: 0;
     top: 40%;
@@ -226,13 +73,6 @@ const RelatedArticlesWrapper = styled.div`
   align-items: flex-start;
   margin-top: 3rem;
   break-inside: avoid;
-`;
-
-const ArticleStatsWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  break-inside: avoid;
-  margin-top: 3rem;
 `;
 
 const CustomH1 = ({ id, ...rest }) => {
@@ -301,10 +141,6 @@ const CustomH6 = ({ id, ...rest }) => {
   return <h6 {...rest} />;
 };
 
-const CustomPre = ({ children }) => {
-  return <pre>{children}</pre>;
-};
-
 const CustomImage = ({ src, ...rest }) => {
   return (
     <Image alt="" src={src} {...rest} unoptimized={true} unselectable="on" />
@@ -316,6 +152,7 @@ const CustomImage = ({ src, ...rest }) => {
 // to handle import statements. Instead, you must include components in scope
 // here.
 const components = {
+  // CH,
   Head,
   CustomImage,
   Link,
@@ -325,7 +162,6 @@ const components = {
   CustomH4,
   CustomH5,
   CustomH6,
-  CustomPre,
 };
 
 const getClassName = (level: string) => {
@@ -364,17 +200,33 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   return (
     <BlogPage customMeta={customMeta}>
       {/* Nest the smaller headers inside the larger headers to denote hierarchy */}
-      <CustomArticle>
-      
-        <h1
-          style={{
-            lineHeight: "1.2",
-          }}
-        >
-          {frontMatter.title}
-        </h1>
+      <article>
+        <div className="article--header">
+          <div className="article--image">
+            <img src={frontMatter.coverImage} alt="" width={400} />
+          </div>
 
-        <img src={frontMatter.coverImage} alt="" width={200} style={{margin: "0 auto", padding: "0"}} />
+          <div className="article--information">
+            <h1 className="article--heading">{frontMatter.title}</h1>
+
+            <p className="article--description">{frontMatter.description}</p>
+
+            <div className="article--details">
+              {frontMatter.date && (
+                <p className="article--created">
+                  {" "}
+                  {format(
+                    parseISO(frontMatter.date ? frontMatter.date : ""),
+                    "MMMM dd, yyyy"
+                  )}
+                </p>
+              )}
+              <p className="article--readtime">
+                {getReadTime(source.compiledSource)} min read
+              </p>
+            </div>
+          </div>
+        </div>
 
         <TableOfContents>
           <ul>
@@ -402,39 +254,42 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           </ul>
         </TableOfContents>
 
-        <ArticleStatsWrapper>
-          <Caption>
-            {format(
-              parseISO(frontMatter.date ? frontMatter.date : ""),
-              "MMMM dd, yyyy"
-            )}
-          </Caption>
-          <Caption style={{ marginLeft: "1rem" }}>
-            {getReadTime(source.compiledSource)} Minute Read
-          </Caption>
-        </ArticleStatsWrapper>
-
         <div className="prose dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
-      </CustomArticle>
+      </article>
     </BlogPage>
   );
 };
+
+ // const { remarkCodeHike } = require("@code-hike/mdx");
+  // [
+        //   remarkCodeHike,
+        //   {
+        //     lineNumbers: true,
+        //     showCopyButton: true,
+        //     theme: "one-dark-pro",
+        //     staticMediaQuery: "not screen, (max-width: 768px)",
+        //     autoImport: false,
+        //     autoLink: true,
+        //   },
+        // ],
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+ 
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [
+        remarkGfm,
+      
+      ],
       rehypePlugins: [
         rehypeSlug,
-        rehypeCodeTitles,
         rehypePrism,
         [
           rehypeAutolinkHeadings,
@@ -471,9 +326,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default PostPage;
-
-
-function usePosts() {
-  throw new Error("Function not implemented.");
-}
-
