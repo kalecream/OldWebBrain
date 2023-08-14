@@ -10,10 +10,12 @@ export interface ProjectStructure {
   description: ReactNode,
   link?: string,
   repoName?: string,
+  sourceLink?: string,
   technology: ReactNode[],
-  language: string[],
+  language?: string[],
   created: string,
   updated?: string
+  status?: string;
 }
 
 
@@ -25,6 +27,7 @@ export const Projects: ProjectStructure[] = [
     image: "/img/project/001.webp",
     category: 'code',
     type: 'customisation',
+    status: 'ongoing',
     description: (
       <span>
         This is a duotone i3wm theme. I installed i3wm because for a while, my
@@ -110,7 +113,7 @@ export const Projects: ProjectStructure[] = [
     category: 'code',
     type: 'test',
     link: "https://sphenery.vercel.app/login",
-    image: "img/project/005.webp",
+    image: "/img/project/005.webp",
     description: (
       <span>
         A register/login form done for a test of the Swagger API.
@@ -122,7 +125,138 @@ export const Projects: ProjectStructure[] = [
     repoName: "Sphenery",
     language: ["React", "Typescript"],
     created: "2023-07-23"
-  }
+  },
+  {
+    id: "006",
+    display: true,
+    title: "Park",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/006.jpg",
+    description: (
+      <span>
+        A test of the sapling plug-in in Blender3D
+      </span>
+    ),
+    technology: [<a >Blender3D</a>],
+    language: [],
+    created: "2019-01-01"
+  },
+  {
+    id: "007",
+    display: true,
+    title: "Bite-Sized Binge Logo",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/007.png",
+    description: (
+      <span>
+        A 3D logo I made for a podcast idea to talk about the media I consume each week. 
+      </span>
+    ),
+    technology: [<a >Blender3D</a>],
+    language: [],
+    created: "2023-01-01"
+  },
+  {
+    id: "008",
+    display: true,
+    title: "Under Construction",
+    category: 'illustration',
+    type: 'production',
+    image: "/img/project/008.webp",
+    description: (
+      <span>
+        An image I made for when my website was one page and under construction.
+      </span>
+    ),
+    technology: [<a >Blender3D</a>],
+    language: [],
+    created: "2022-11-03"
+  },
+  {
+    id: "009",
+    display: true,
+    title: "Strawberry Milkshake",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/009.png",
+    description: (
+      <span>
+        A 3D render of a strawberry milkshake I made.
+      </span>
+    ),
+    technology: ["Blender3D"],
+    created: "2022-11-12",
+  },
+  {
+    id: "010",
+    display: true,
+    title: "Concrete Kiln",
+    category: 'illustration',
+    type: 'plan',
+    image: "/img/project/010.png",
+    description: (
+      <span>
+        A mockup of a concrete kiln I planned to make. This illustration is to scale.
+      </span>
+    ),
+    technology: ["Blender"],
+    created: "2022-11-12"
+  },
+  {
+    id: "011",
+    display: true,
+    title: "Kinder Blocks",
+    category: 'illustration',
+    type: 'art-fight',
+    image: "/img/project/011.jpg",
+    description: (
+      <span>This render was for a competition on Twitter to create a brand for baby toys.</span>
+    ),
+    technology: ["Blender"],
+    created: "2022-11-12",
+  },
+  {
+    id: "012",
+    display: true,
+    title: "Queen",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/012.png",
+    description: (
+      <span>A practice render I made for the idea of a new queen coming onto a chess board.</span>
+    ),
+    technology: ["Blender"],
+    created: "2022-11-12",
+  },
+  {
+    id: "013",
+    display: true,
+    title: "Cake",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/013.png",
+    description: (
+      <span>A practice render I made because I wanted to make more little cakes.</span>
+    ),
+    technology: ["Blender"],
+    created: "2022-11-12",
+  },
+  {
+
+    id: "014",
+    display: true,
+    title: "Cake",
+    category: 'illustration',
+    type: 'practice',
+    image: "/img/project/014.png",
+    description: (
+      <span>A practice render I made because I wanted to make more little cakes.</span>
+    ),
+    technology: ["Blender"],
+    created: "2022-11-12",
+  },
 ];
 
 export default Projects;
