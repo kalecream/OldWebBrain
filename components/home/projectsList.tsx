@@ -19,12 +19,25 @@ const ProjectList: React.FC = () => {
     setActiveCategory(category);
   };
 
+  const getMonthName = (dateString) => {
+    const months = [
+      'January ', 'February ', 'March ', 'April ', 'May ', 'June ',
+      'July ', 'August ', 'September ' , 'October ' , 'November ', 'December '
+    ];
+
+    const dateParts = dateString.split('-');
+    const monthIndex = parseInt(dateParts[1], 10) - 1; // Months are zero-indexed
+
+    if (monthIndex >= 0 && monthIndex < months.length) {
+      return months[monthIndex];
+    } else { return null }
+  };
+
   const categories = extractCategories();
 
-  const filteredProjects =
-    activeCategory === "All"
-      ? Projects
-      : Projects.filter((project) => project.category === activeCategory);
+  const filteredProjects = activeCategory === 'All'
+    ? [...Projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+    : Projects.filter((project) => project.category === activeCategory).sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());;
 
   return (
     <div className={styles["project-wrapper"]}>
@@ -34,7 +47,9 @@ const ProjectList: React.FC = () => {
             activeCategory === "All" ? styles["active"] : ""
           }`}
           onClick={() => handleTabChange("All")}
-        >All</button>
+        >
+          All
+        </button>
         {categories.map((category) => (
           <button
             key={category}
@@ -50,44 +65,74 @@ const ProjectList: React.FC = () => {
       <div className={styles["project-list"]}>
         {filteredProjects.map((project) => (
           <div className={styles["project-overlay"]}>
-          <div
-            key={project.id}
-            className={styles.project + ` p-${project.id}`}
-          >
-            <div className={styles["project-info"]}>
-              <h1 className={styles["project-title"]}>{project.title}</h1>
+            <div
+              key={project.id}
+              className={styles.project + ` p-${project.id}`}
+            >
+              <div className={styles["project-info"]}>
+                <h1 className={styles["project-title"]}>
+                  <div className={styles["project-year"]}>
+                      {getMonthName(project.created)}
+                    {project.created.split("-", 1)}
+                  </div>
+                  {project.title}
+                </h1>
+                {/* // TODO: Add badges for project status */}
+                {/* {project.status &&
+                  <div className="project-status" data-status={project.status}  >
+                    {project.status}
+                  </div>
+                }
 
-              <div className={styles["project-lang"]}>
-                <div className={styles["project-language"]}>
-                  {project.language.join(",  ")}
+                // TODO: Change all images to 1/1 aspect ratio
+                 */}
+                {
+                  
+                  project.image && (
+                    <div className={styles["project-image"]}>
+                      <img
+                        width={400}
+                        src={project.image}
+                        alt={project.title}
+                      />
+                    </div>
+                  )
+                }
+                {project.category == "code" && (
+                  <>
+                    <div className={styles["project-lang"]}>
+                      <div className={styles["project-language"]}>
+                        {project.language.join(",  ")}
+                      </div>
+                      <div className="div">{project.technology}</div>
+                    </div>
+                    
+                  </>
+                )}
+
+                <div className={styles["project-description"]}>
+                      {project.description}
                 </div>
-                <div className="div">{project.technology}</div>
+                
+                <div className={styles["project-lang"]}>
+                  {project.repoName && (
+                    <Link
+                      className={styles["project-code"]}
+                      href={`https://github.com/kalecream/${project.repoName}`}
+                    >
+                      Code
+                    </Link>
+                  )}
+                  {project.link && (
+                    <Link
+                      className={styles["project-code"]}
+                      href={project.link}
+                    >
+                      Demo
+                    </Link>
+                  )}
+                </div>
               </div>
-              <div className={styles["project-description"]}>
-                {project.description}
-              </div>
-              <div className={styles["project-lang"]}>
-                {project.repoName && (
-                  <Link
-                    className={styles["project-code"]}
-                    href={`https://github.com/kalecream/${project.repoName}`}
-                  >
-                    Code
-                  </Link>
-                )}
-                {project.link && (
-                  <Link
-                    className={styles["project-code"]}
-                    href={project.link}
-                  >
-                    Demo
-                  </Link>
-                )}
-              </div>
-              <div className={styles["project-year"]}>
-                {project.created.split("-", 1)}
-              </div>
-            </div>
             </div>
           </div>
         ))}

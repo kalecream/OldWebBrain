@@ -9,29 +9,24 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
 import { Section, Button, CapsTitle, CustomLink } from "../components/global/Basics";
-import { Tag, PostTags, Articles, ArticleContainer } from "@components/global";
 
 import { ScrollDown } from "../components/global";
 import ProjectList from "@components/home/projectsList";
 
 import { Model } from "../assets/models/me";
 
-
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PresentationControls } from "@react-three/drei";
 
-import "../styles/cards.module.css";
 import "../styles/animations.module.css";
 import "animate.css";
-import Image from "next/image";
-
 
 type IndexProps = {
   posts: PostType[];
 };
 
-const Hero = styled(Section)`
+const Hero = styled.section`
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -40,19 +35,20 @@ const Hero = styled(Section)`
   flex-wrap: wrap;
   place-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 
   @media (min-width: 1024px) {
     margin: 0 auto;
+    flex-direction: row;
 
     & > div:first-of-type {
       width: 40%;
     }
 
     & > div:last-of-type {
-      width: 25%;
+      width: 20%;
     }
   }
 `;
@@ -73,7 +69,6 @@ const HeroSection = styled.div`
   }
 
   @media (max-width: 1024px) {
-    width: 100%;
 
     p {
       width: 80%;
@@ -82,7 +77,6 @@ const HeroSection = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: 35%;
 
     div {
       width: 60%;
@@ -135,10 +129,6 @@ const CustomCanvas = styled(Canvas)`
   }
 `;
 
-const BlogSection = styled.section`
-  width: 100%;
-`;
-
 const angletoRadian = (angle: number) => {
   return angle * (Math.PI / 180);
 };
@@ -188,17 +178,12 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Page>
       <Hero>
-        <HeroSection>
+        <HeroSection >
           <div className="hider">
           <h1 className="sitename">KaleCream</h1>
           </div>
           <p >
           I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. I'm always learning and trying out new technologies to improve my work.
-          </p>
-          <p >
-            My current project is <q>Rougelike Reality</q>, a customisation of
-            my <Link href="https://obsidian.md/">Obsidian vault </Link> to
-            tackle life like the rougelike it is.
           </p>
           
           <ButtonContainer >
@@ -238,55 +223,58 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <ScrollDown />
 
       {posts.length > 0 && (
-        <BlogSection id="blog-posts" className="fadeIn--below">
+        <section id="blog-posts" className="fadeIn--below index-section">
           <CapsTitle >Blog</CapsTitle>
-          <ArticleContainer>
+          <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
-              <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
-                <Articles key={post.slug} className="blog--article">
-                  {post.coverImage && (
+                <div key={post.slug} className="blog--article pancake-child">
+                {/* {post.coverImage && (
+                  <div className="image-wrapper">
                     <Image
                       loader={imageLoader}
                       loading="lazy"
                       src={post.coverImage}
-                      width={100}
-                      height={100}
+                      width={200}
+                      height={200}
                       alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
                     />
-                  )}
+                    </div>
+                  )} */}
                   {post.date && (
                     <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
-                  <h2 className="blog--article__title">{post.title}</h2>
+                    <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}><h2 className="blog--article__title">{post.title}</h2></Link>
 
                   <p className="blog--article__description">
                     {post.description}
                   </p>
 
-                  {post.tags && (
-                    <PostTags>
+                  {/* {post.tags && (
+                    <div className="post-tags">
                       <span>
                         {post.tags.slice(0,2).map((tag) => (
-                          <Tag key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
+                          <div className="post-tag" key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
                             {tag}
-                          </Tag>
+                          </div>
                         ))}
                       </span>
-                    </PostTags>
-                  )}
+                    </div>
+                  )} */}
                   <div className="links">
                   </div>
-                </Articles>
-              </Link>
+                </div>
+              
             ))}
+          
+          </div>
+          {/* TODO: Add weeklogs and tutorials */}
             <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
-          </ArticleContainer>
-        </BlogSection>
+        </section>
       )}
 
-      <section>
-        <CapsTitle >projects</CapsTitle>
+      <section >
+        <CapsTitle >Things I've Made</CapsTitle>
         <ProjectList />
         {/* 
         TODO: fix image displaying on hover
