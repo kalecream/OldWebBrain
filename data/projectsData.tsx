@@ -31,7 +31,7 @@ export const Projects: ProjectStructure[] = [
     description: (
       <span>
         This is a duotone i3wm theme. I installed i3wm because for a while, my
-        mouse wasn't working properly, so I had to use the keyboard to navigate.
+        mouse wasn't working properly, so I had to use the keyboard to navigate. Nowadays, I like it because it's fast and minimal. I don't have to size the windows myself.
       </span>
     ),
     repoName: "dotfiles",
@@ -40,10 +40,11 @@ export const Projects: ProjectStructure[] = [
       <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi </a>,
       <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty </a>,
       <a href="https://feh.finalrewind.org/">Feh </a>,
+      <a href="https://github.com/polybar/polybar">Polybar</a>
     ],
     language: ["Bash", "Python"],
     created: "2022-07-07",
-    updated: "",
+    updated: "2023-08-13",
   },
   {
     id: "002",
