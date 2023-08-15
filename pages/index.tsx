@@ -101,12 +101,11 @@ const HeroSection = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: row;
   gap: 1rem;
-  margin-top: 1rem;
-  justify-content: flex-start;
-
+  margin: 1rem auto;
+  
   @media (max-width: 768px) {
+    flex-direction: column;
     width: 70%;
     max-width: 30rem;
     margin: 0 auto;
@@ -114,7 +113,9 @@ const ButtonContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 30rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 `;
 
