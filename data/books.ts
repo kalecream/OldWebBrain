@@ -7,7 +7,7 @@ const Books = [
     summary: "A history of salt and its role in civilization.",
     added: "2023-03-01",
     started: "2023-07-20",
-    finished: "2023-08-12"
+    finished: "2023-08-12",
     cover:
       "https://m.media-amazon.com/images/I/71DhKhlb6wL._AC_UF1000,1000_QL80_.jpg",
   },
