@@ -1,22 +1,13 @@
 const Books = [
   {
-    title: "Under The Black Flag",
-    author: ["David Cordingly"],
-    genre: ["Non-Fiction", "History"],
-    status: "Want to Read",
-    summary:
-      "Investigates the reality of piracy from the 16th to the 19th centuries.",
-    added: "2023-05-01",
-    cover:
-      "https://m.media-amazon.com/images/I/71gEhEFI90L._AC_UF1000,1000_QL80_.jpg",
-  },
-  {
     title: "Salt: A World History",
     author: ["Mark Kurlansky"],
     genre: ["Non-Fiction", "History", "Cooking"],
     status: "Want to Read",
     summary: "A history of salt and its role in civilization.",
     added: "2023-03-01",
+    started: "2023-07-20",
+    finished: "2023-08-12"
     cover:
       "https://m.media-amazon.com/images/I/71DhKhlb6wL._AC_UF1000,1000_QL80_.jpg",
   },
@@ -244,20 +235,6 @@ const Books = [
     status: "Want to Read",
     added: "2022-07-14",
     cover: "https://cdn.thestorygraph.com/9l6cfkpmqw9ucnenjl3mktkrbk45",
-  },
-  {
-    title: "Ar'n't I a Woman?: Female Slaves in the Plantation South",
-    author: "Deborah Gray White",
-    series: "",
-    genre: ["Non-Fiction", "Feminism", "History"],
-    rating: 0,
-    published: "1999-02-01",
-    format: "Paperback",
-    pages: 256,
-    minutes: 0,
-    status: "Want to Read",
-    added: "2022-08-14",
-    cover: "https://cdn.thestorygraph.com/w8f9bsitlmlvy38hy1slq6p4s933",
   },
   {
     title:
