@@ -66,7 +66,7 @@ const ProjectList: React.FC = () => {
       </div>
       <div className={styles["project-list"]}>
         {filteredProjects.map((project) => (
-          <div className={styles["project-overlay"]}>
+          <div key={project.id} className={styles["project-overlay"]}>
             <div
               key={project.id}
               className={styles.project + ` p-${project.id}`}
