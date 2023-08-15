@@ -495,7 +495,7 @@ kbd::after,
 }
 
 .pancake-child {
-    flex: 1 1 275px;
+    flex: 1 1 400px;
     margin: 0.5rem;
 }
 
@@ -504,7 +504,7 @@ kbd::after,
 
 .blog--article {
   padding: 1.2rem;
-  width: 400px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -567,13 +567,14 @@ kbd::after,
 @media (max-width: 768px) {
 
     .blog--article {
-        max-width: 275px;
+        max-width: 400px;
+        margin-bottom: 2rem;
     }
     
     .blog--article__title {
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
-        height: 4rem;
+        height: 5rem;
     }
 
     .blog--article__description {
