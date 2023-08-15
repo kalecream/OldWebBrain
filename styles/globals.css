@@ -105,6 +105,31 @@ body {
   }
 }
 
+details {
+  display: block;
+}
+
+details > summary {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 1rem;
+  margin: 0 2rem;
+}
+
+details > summary::before {
+  content: '📕'; /* Unicode right-pointing triangle */
+  position: absolute;
+  left: 8px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+details[open] > summary::before {
+  content: '📖';
+  transform: rotate(25deg);
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -223,8 +248,43 @@ li {
 
 img,
 image {
-  border-radius: 15px;
+  border-radius: var(--border-radius);
 }
+
+/* ABOUT */
+
+.paragraph  {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 55rem;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+}
+
+.bookshelf {
+  gap: 0.1rem;
+}
+
+.book-list {
+  font-size: 0.7rem;
+}
+
+.book-list a {
+  text-decoration: none !important;
+  color: var(--primary);
+  border: none;;
+}
+
+.book-author {
+  font-style: italic;
+}
+
+.book-finished {
+  font-size: 0.7rem;
+}
+
+/*  */
+
 
 .head3 {
   margin-left: 10px;

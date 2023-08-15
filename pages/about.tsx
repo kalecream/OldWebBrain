@@ -4,20 +4,9 @@ import { Section } from "@components/global";
 import CurrentReads from "@components/about/currentReads";
 import { BacklogGraph } from "@components/about/backlogGraph";
 import Books from "@data/books";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PhotoGalley from "./gallery";
-import { WindowWidth } from "@components/global";
-
-const AboutParagraph = styled.div`
-margin: 0 auto;
-max-width: 45rem;
-text-align: justify;
-
-& > h2 {
-  margin-top: 2rem;
-  text-align: center;
-}
-`;
+import { BookShelf } from "@components/about/backlogGraph";
 
 export const About = () => {
   const [Percentage, setPercentage] = useState([0, 0]);
@@ -66,7 +55,7 @@ export const About = () => {
     <Page title="About">
       <Section>
         <h1>About</h1>
-        <AboutParagraph>
+        <div className="paragraph">
         <p>Hey there, internet wanderer! I'm Sabrina aka KaleCream, but you can call me whatever floats your digital boat.</p>
 
           <p>You see, my story begins in the near ancient times of the internet, crafting Tumblr pages and forum themes. Yep, you heard right! I was chiseling away at code blocks when cat videos were the pinnacle of online entertainment.</p>
@@ -84,10 +73,11 @@ export const About = () => {
           <p>I like to read to learn about the world around me or get laughs. I have <b>{Books.length} books in my library</b> (digital and non-digital), and I'm always looking for more. I prefer { Percentage[0] > Percentage[1] ? "Fiction" : "Non-Fiction" }, so I read about <b>{Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction</b>. I'm currently reading {Books.filter((book) => book.status === "Reading").length} books, which you can see below. My most frequently read book tags are: <b>{topGenres}</b>. </p> 
 
           <CurrentReads />
-          <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores book from before then to ensure that I'm keeping my desired reading pace.</p>
-          <p>Grey is all the books I added, Dark grey is the books that I've started and green are finished books! The number per month is number of finished + started books in <a href="/bookshelf">my Library</a>. </p>
+          <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months.</p>
+          <p>Grey is all the books I added, Dark grey is the books that I've started and Green are finished books! The number per month is number of finished + started books in my Library. </p>
           <BacklogGraph />
-        </AboutParagraph>
+          <BookShelf/>
+        </div>
       </Section>
     </Page>
   );

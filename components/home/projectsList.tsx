@@ -12,14 +12,7 @@ export const extractCategories = () => {
   return Array.from(categoriesSet);
 };
 
-const ProjectList: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-
-  const handleTabChange = (category: string) => {
-    setActiveCategory(category);
-  };
-
-  const getMonthName = (dateString) => {
+export const getMonthName = (dateString) => {
     const months = [
       'January ', 'February ', 'March ', 'April ', 'May ', 'June ',
       'July ', 'August ', 'September ' , 'October ' , 'November ', 'December '
@@ -33,11 +26,20 @@ const ProjectList: React.FC = () => {
     } else { return null }
   };
 
+
+const ProjectList: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  const handleTabChange = (category: string) => {
+    setActiveCategory(category);
+  };
+
+
   const categories = extractCategories();
 
   const filteredProjects = activeCategory === 'All'
     ? [...Projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
-    : Projects.filter((project) => project.category === activeCategory).sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());;
+    : Projects.filter((project) => project.category === activeCategory).sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   return (
     <div className={styles["project-wrapper"]}>
