@@ -133,7 +133,7 @@ export const Projects: ProjectStructure[] = [
     title: "Park",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/006.jpg",
+    image: "/img/project/006.webp",
     description: (
       <span>
         A test of the sapling plug-in in Blender3D
@@ -149,7 +149,7 @@ export const Projects: ProjectStructure[] = [
     title: "Bite-Sized Binge Logo",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/007.png",
+    image: "/img/project/007.webp",
     description: (
       <span>
         A 3D logo I made for a podcast idea to talk about the media I consume each week. 
@@ -181,7 +181,7 @@ export const Projects: ProjectStructure[] = [
     title: "Strawberry Milkshake",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/009.png",
+    image: "/img/project/009.webp",
     description: (
       <span>
         A 3D render of a strawberry milkshake I made.
@@ -196,7 +196,7 @@ export const Projects: ProjectStructure[] = [
     title: "Concrete Kiln",
     category: 'illustration',
     type: 'plan',
-    image: "/img/project/010.png",
+    image: "/img/project/010.webp",
     description: (
       <span>
         A mockup of a concrete kiln I planned to make. This illustration is to scale.
@@ -211,7 +211,7 @@ export const Projects: ProjectStructure[] = [
     title: "Kinder Blocks",
     category: 'illustration',
     type: 'art-fight',
-    image: "/img/project/011.jpg",
+    image: "/img/project/011.webp",
     description: (
       <span>This render was for a competition on Twitter to create a brand for baby toys.</span>
     ),
@@ -224,7 +224,7 @@ export const Projects: ProjectStructure[] = [
     title: "Queen",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/012.png",
+    image: "/img/project/012.webp",
     description: (
       <span>A practice render I made for the idea of a new queen coming onto a chess board.</span>
     ),
@@ -237,7 +237,7 @@ export const Projects: ProjectStructure[] = [
     title: "Cake",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/013.png",
+    image: "/img/project/013.webp",
     description: (
       <span>A practice render I made because I wanted to make more little cakes.</span>
     ),
@@ -251,7 +251,7 @@ export const Projects: ProjectStructure[] = [
     title: "Cake",
     category: 'illustration',
     type: 'practice',
-    image: "/img/project/014.png",
+    image: "/img/project/014.webp",
     description: (
       <span>A practice render I made because I wanted to make more little cakes.</span>
     ),
