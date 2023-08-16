@@ -181,14 +181,6 @@ const ProjectButton = styled(Button)`
   border-radius: var(--border-radius);
 `;
 
-const ProjectImage = styled.img`
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  opacity: 0.2;
-`;
-
 const LatestProjects = () => {
   return (
     <Section>

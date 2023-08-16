@@ -203,7 +203,17 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
       <article>
         <div className="article--header">
           <div className="article--image">
-            <img src={frontMatter.coverImage} alt="" width={400} />
+            <Image
+                      height={0}
+                        width={0}
+                        loader={({ src }) => src}
+                        sizes="100vw"
+                        style={{ width: '400px', height: 'auto' }}
+                        src={frontMatter.coverImage} 
+                      alt={ frontMatter.alt ? frontMatter.alt : '' }
+                      className="blog--article__image"
+                    />
+            {/* <img src={frontMatter.coverImage} alt="" width={400} /> */}
           </div>
 
           <div className="article--information">
