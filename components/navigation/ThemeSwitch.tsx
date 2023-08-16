@@ -34,6 +34,7 @@ const ThemeSwitch = () => {
       }}
     >
       <button
+        name = "theme-switch"
         style={{
           display: "grid",
           placeItems: "center",

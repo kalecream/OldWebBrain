@@ -14,6 +14,9 @@ class CustomDocument extends Document {
 	return (
 		<Html lang="en">
 			<Head>
+				<title>SM</title>
+				<meta name="description" content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry."/>
+				<meta name="robots" content="index, follow"/>
 				<link rel="shortcut icon" href="/img/favicon.svg" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
