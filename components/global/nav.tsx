@@ -51,7 +51,7 @@ export const Navigation: React.FunctionComponent = () => {
         {Directory.length > 0
           ? Directory.map((directory, index) => (
               <div className="directory-list"  key={index}>
-                <Link className="directory-link" name={directory.title} href={directory.links}>
+                <Link className="directory-link" href={directory.links}>
                   {directory.title}
                 </Link>
               </div>
