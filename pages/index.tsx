@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import Page from "../containers/layout/page";
 
+import Image from 'next/image';
+
 import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
 import Link from "next/link";
@@ -8,7 +10,7 @@ import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import { Section, Button, CapsTitle, CustomLink } from "../components/global/Basics";
+import {  Button, CapsTitle, CustomLink } from "../components/global/Basics";
 
 import { ScrollDown } from "../components/global";
 import ProjectList from "@components/home/projectsList";
@@ -229,19 +231,20 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
                 <div key={post.slug} className="blog--article pancake-child">
-                {/* {post.coverImage && (
+                {post.coverImage && (
                   <div className="image-wrapper">
                     <Image
-                      loader={imageLoader}
-                      loading="lazy"
-                      src={post.coverImage}
-                      width={200}
-                      height={200}
+                      height={0}
+                        width={0}
+                        loader={({ src }) => src}
+                        sizes="100vw"
+                        style={{ width: '100', height: 'auto' }}
+                        src={post.coverImage}
                       alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
                     />
                     </div>
-                  )} */}
+                  )}
                   {post.date && (
                     <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
@@ -277,9 +280,6 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       <section >
         <CapsTitle >Things I've Made</CapsTitle>
         <ProjectList />
-        {/* 
-        TODO: fix image displaying on hover
-         */}
       </section>
     </Page>
   );

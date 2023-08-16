@@ -1,5 +1,6 @@
 import React, { useEffect, useRef} from 'react';
 import styled from "@emotion/styled";
+import Image from 'next/image';
 
 const PhotoContainer = styled.div`
     position: relative;
@@ -160,7 +161,16 @@ const PhotoGalley= () => {
             <PhotoContainer>
                 {AlbumImages.map((imagePath, index) => (
                     <Picture key={index} className="Picture">
-                         <img src={imagePath} alt={AlbumCaptions[index]} />
+                    <Image
+                      height={0}
+                        width={0}
+                        loader={({ src }) => src}
+                        sizes="100vw"
+                        style={{ width: '100', height: 'auto' }}
+                        src={imagePath}
+                      alt={AlbumCaptions[index]}
+                      className="blog--article__image"
+                    />
                         <span>{randomEmoji()} {AlbumCaptions[index]}</span>
                     </Picture>
                 ))}

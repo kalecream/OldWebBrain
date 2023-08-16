@@ -3,6 +3,7 @@ import { Projects } from "../../data/projectsData";
 import "animate.css";
 import Link from "next/link";
 import styles from "../../styles/projects.module.css";
+import Image from "next/image";
 
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
@@ -92,8 +93,14 @@ const ProjectList: React.FC = () => {
                   
                   project.image && (
                     <div className={styles["project-image"]}>
-                      <img
-                        width={400}
+                      <Image 
+                        height={0}
+                        width={0}
+                        loader={({ src }) => src}
+                        sizes="100vw"
+                        style={{ width: '100%', height: 'auto' }}
+                        placeholder="blur"
+                        blurDataURL={project.image}
                         src={project.image}
                         alt={project.title}
                       />
