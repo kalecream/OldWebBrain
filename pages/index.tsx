@@ -238,7 +238,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                         width={0}
                         loader={({ src }) => src}
                         sizes="100vw"
-                        style={{ width: '100', height: 'auto' }}
+                        style={{ width: '100px', height: 'auto' }}
                         src={post.coverImage}
                       alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
