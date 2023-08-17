@@ -65,7 +65,7 @@ export const CustomLink = styled(Link)`
 // Components
 
 interface ButtonProps {
-  primary?: boolean;
+  primary?: string;
   secondary?: boolean;
   onColor?: boolean;
 }
