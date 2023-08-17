@@ -36,11 +36,11 @@ export const Projects: ProjectStructure[] = [
     ),
     repoName: "dotfiles",
     technology: [
-      <a href="https://i3wm.org/">i3wm </a>,
-      <a href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi </a>,
-      <a href="https://sw.kovidgoyal.net/kitty/kitty">Kitty </a>,
-      <a href="https://feh.finalrewind.org/">Feh </a>,
-      <a href="https://github.com/polybar/polybar">Polybar</a>
+      <a key="i3wm" href="https://i3wm.org/">i3wm </a>,
+      <a key="rofi" href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">Rofi </a>,
+      <a key="kitty" href="https://sw.kovidgoyal.net/kitty/kitty">Kitty </a>,
+      <a key="feh" href="https://feh.finalrewind.org/">Feh </a>,
+      <a key="pb" href="https://github.com/polybar/polybar">Polybar</a>
     ],
     language: ["Bash", "Python"],
     created: "2022-07-07",
@@ -61,9 +61,9 @@ export const Projects: ProjectStructure[] = [
     ),
     repoName: "morning-messages",
     technology: [
-      <a href="https://pywhatkit.herokuapp.com/">PyWhatKit </a>,
-      <a href="https://geopy.readthedocs.io/en/stable/">GeoPy </a>,
-      <a href="https://openweathermap.org/">OpenWeatherMap API </a>,
+      <a key="pw" href="https://pywhatkit.herokuapp.com/">PyWhatKit </a>,
+      <a key="gp" href="https://geopy.readthedocs.io/en/stable/">GeoPy </a>,
+      <a key="owm" href="https://openweathermap.org/">OpenWeatherMap API </a>,
     ],
     language: ["Python"],
     created: "2021-11-15",
@@ -83,9 +83,9 @@ export const Projects: ProjectStructure[] = [
     repoName: "OldWebBrain",
     link: "https://www.sabrinamedwinter.com/",
     technology: [
-      <a href="https://nextjs.org/">Next.js </a>,
-      <a href="https://threejs.org/">Three.js </a>,
-      <a href="https://greensock.com/gsap/">GSAP </a>,
+      <a key="next" href="https://nextjs.org/">Next.js </a>,
+      <a key="three" href="https://threejs.org/">Three.js </a>,
+      <a key="0033" href="https://greensock.com/gsap/">GSAP </a>,
     ],
     created: "2022-08",
     language: ["React", "TypeScript", "MDX"],
@@ -102,7 +102,7 @@ export const Projects: ProjectStructure[] = [
       </span>
     ),
     technology: [
-      <a href="https://openai.com/blog/openai-api/">OpenAI API </a>,
+      <a key="00401" href="https://openai.com/blog/openai-api/">OpenAI API </a>,
     ],
     language: ["Python"],
     created: "2023-05-30",
@@ -121,7 +121,7 @@ export const Projects: ProjectStructure[] = [
       </span>
     ),
     technology: [
-      <a href="https://sphenery.com/swagger/index.html">Swagger SMTest </a>
+      <a key="00501" href="https://sphenery.com/swagger/index.html">Swagger SMTest </a>
     ],
     repoName: "Sphenery",
     language: ["React", "Typescript"],
@@ -139,7 +139,7 @@ export const Projects: ProjectStructure[] = [
         A test of the sapling plug-in in Blender3D
       </span>
     ),
-    technology: [<a >Blender3D</a>],
+    technology: [<a key="00601" >Blender3D</a>],
     language: [],
     created: "2019-01-01"
   },
@@ -155,7 +155,7 @@ export const Projects: ProjectStructure[] = [
         A 3D logo I made for a podcast idea to talk about the media I consume each week. 
       </span>
     ),
-    technology: [<a >Blender3D</a>],
+    technology: [<a key="00701"  >Blender3D</a>],
     language: [],
     created: "2023-01-01"
   },
@@ -171,7 +171,7 @@ export const Projects: ProjectStructure[] = [
         An image I made for when my website was one page and under construction.
       </span>
     ),
-    technology: [<a >Blender3D</a>],
+    technology: [<a key="00801"  >Blender3D</a>],
     language: [],
     created: "2022-11-03"
   },

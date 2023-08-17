@@ -598,7 +598,7 @@ kbd::after,
     font-size: 0.9rem;
     color: var(--muted);
     text-align: center;
-    height: 0.5rem;
+    height: 1.5rem;
 }
 
 

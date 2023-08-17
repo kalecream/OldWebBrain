@@ -190,7 +190,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           </p>
           
           <ButtonContainer >
-            <Button primary href="/services">Need a service?</Button>
+            <Button primary='true' href="/services">Need a service?</Button>
             <Button href="/blog">Check out the blog</Button>
           </ButtonContainer>
 
@@ -231,20 +231,20 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
                 <div key={post.slug} className="blog--article pancake-child">
-                {post.coverImage && (
+                {/* {post.coverImage && (
                   <div className="image-wrapper">
                     <Image
                       height={0}
                         width={0}
                         loader={({ src }) => src}
                         sizes="100vw"
-                        style={{ width: '100', height: 'auto' }}
+                        style={{ width: '100px', height: 'auto' }}
                         src={post.coverImage}
                       alt={ post.alt ? post.alt : '' }
                       className="blog--article__image"
                     />
                     </div>
-                  )}
+                  )} */}
                   {post.date && (
                     <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
                   )}
