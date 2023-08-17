@@ -6,7 +6,8 @@ const Books = [
     genre: ["Non-Fiction", "History", "Cooking"],
     status: "Read",
     summary: "A history of salt and its role in civilization.",
-    review: "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I didn't think that salt had this big of an impact.",
+    review:
+      "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I didn't think that salt had this big of an impact.",
     added: "2023-03-01",
     started: "2023-07-20",
     finished: "2023-08-12",
@@ -322,7 +323,8 @@ const Books = [
     status: "Read",
     added: "2022-05-01",
     finished: "2022-06-01",
-    cover: "https://m.media-amazon.com/images/I/81ipFtPw8VL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/81ipFtPw8VL._AC_UF1000,1000_QL80_.jpg",
   },
   {
     title: "The Secret Network of Nature",
@@ -332,22 +334,29 @@ const Books = [
     rating: 5,
     published: "",
     format: "Paperback",
-    review: "An excellent paradigm-shifting book about how the world around us is connected & how even well-intended changes can have disastrous effects on ecosystems.",
+    review:
+      "An excellent paradigm-shifting book about how the world around us is connected & how even well-intended changes can have disastrous effects on ecosystems.",
     pages: 0,
     minutes: 0,
     status: "Read",
     added: "2021-12-01",
     started: "2022-01-06",
     finished: "2022-01-10",
-    cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528982901l/40528036._SX318_.jpg",
+    cover:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528982901l/40528036._SX318_.jpg",
     bookmarks: [
       {
         chapter: "Introduction",
-        bookmark: ["Because of a fish? The earth’s ecosystems, it seems, are just a bit too complex for us to compartmentalise them and draw up simple rules of cause and effect. Even conservation measures can have unexpected results. Would you expect, for example, that the recovery of crane populations in Europe affects the production of Iberian ham?", "Things can also go awry when a new species is added to a habitat: the introduction of a non-native fish, for example, can lead to a massive reduction in the local elk population"],
+        bookmark: [
+          "Because of a fish? The earth’s ecosystems, it seems, are just a bit too complex for us to compartmentalise them and draw up simple rules of cause and effect. Even conservation measures can have unexpected results. Would you expect, for example, that the recovery of crane populations in Europe affects the production of Iberian ham?",
+          "Things can also go awry when a new species is added to a habitat: the introduction of a non-native fish, for example, can lead to a massive reduction in the local elk population",
+        ],
       },
       {
         chapter: "",
-        bookmark: ["The key is the isotope nitrogen - 15, which in the Pacific Northwest is found almost exclusively in the ocean – or in fish."],
+        bookmark: [
+          "The key is the isotope nitrogen - 15, which in the Pacific Northwest is found almost exclusively in the ocean – or in fish.",
+        ],
       },
     ],
   },
@@ -361,7 +370,8 @@ const Books = [
     format: "Hardcover",
     pages: 256,
     minutes: 0,
-    cover: "https://m.media-amazon.com/images/I/A1jeInw+RcL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/A1jeInw+RcL._AC_UF1000,1000_QL80_.jpg",
     status: "Read",
     added: "2020-01-01",
     started: "2020-01-01",
@@ -378,8 +388,10 @@ const Books = [
     pages: 640,
     minutes: 0,
     status: "Read",
-    review: "Great read in terms of worldbuilding that isn't eurocentric. I could have done without the repeated sexual violence, but it was still enjoyable after the first couple chapters when I warmed up to the main character.",
-    cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579618622l/50608676.jpg",
+    review:
+      "Great read in terms of worldbuilding that isn't eurocentric. I could have done without the repeated sexual violence, but it was still enjoyable after the first couple chapters when I warmed up to the main character.",
+    cover:
+      "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579618622l/50608676.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
     finished: "2020-10-04",
@@ -395,7 +407,8 @@ const Books = [
     pages: 1074,
     minutes: 0,
     status: "Read",
-    cover: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781439149034/under-the-dome-9781439149034_hr.jpg",
+    cover:
+      "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781439149034/under-the-dome-9781439149034_hr.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
     finished: "2020-08-29",
@@ -433,7 +446,8 @@ const Books = [
     finished: "2020-08-15",
   },
   {
-    title: "The Rules of Life: A Personal Code for Living a Better, Happier, More Successful Life",
+    title:
+      "The Rules of Life: A Personal Code for Living a Better, Happier, More Successful Life",
     author: "Richard Templar",
     series: "",
     genre: ["Non-Fiction", "Self Help"],
@@ -443,7 +457,8 @@ const Books = [
     pages: 240,
     minutes: 0,
     review: "A less manipulative version of 48 Laws of Power.",
-    cover: "https://m.media-amazon.com/images/I/41Qdwb3dIOL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/41Qdwb3dIOL._AC_UF1000,1000_QL80_.jpg",
     status: "Read",
     added: "2020-01-01",
     started: "2020-01-01",
@@ -460,7 +475,8 @@ const Books = [
     pages: 80,
     minutes: 0,
     status: "Read",
-    cover: "https://m.media-amazon.com/images/I/91zdHwFmpRL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/91zdHwFmpRL._AC_UF1000,1000_QL80_.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
     finished: "2020-02-06",
@@ -476,7 +492,8 @@ const Books = [
     pages: 250,
     minutes: 0,
     status: "Read",
-    cover: "https://api.time.com/wp-content/uploads/2014/10/hitchhiker-s-guide-douglas-adams-657242_451_700.jpg",
+    cover:
+      "https://api.time.com/wp-content/uploads/2014/10/hitchhiker-s-guide-douglas-adams-657242_451_700.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
     finished: "2020-06-05",
@@ -492,7 +509,8 @@ const Books = [
     pages: 194,
     minutes: 0,
     status: "Read",
-    cover: "https://jamesclear.com/wp-content/uploads/2016/01/TheRichestManInBabylon-by-GeorgeClason.jpg",
+    cover:
+      "https://jamesclear.com/wp-content/uploads/2016/01/TheRichestManInBabylon-by-GeorgeClason.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
     finished: "2019-02-02",
@@ -508,7 +526,8 @@ const Books = [
     pages: 498,
     minutes: 0,
     status: "Read",
-    cover: "https://dynamic.indigoimages.ca/v1/books/books/0771038518/1.jpg?quality=10&sale=0",
+    cover:
+      "https://dynamic.indigoimages.ca/v1/books/books/0771038518/1.jpg?quality=10&sale=0",
     added: "2019-01-01",
     started: "2019-12-01",
     finished: "2018-11-24",
@@ -527,10 +546,11 @@ const Books = [
     status: "Read",
     added: "2019-01-01",
     started: "2019-12-01",
-    finished: "2018-11-22",   
+    finished: "2018-11-22",
   },
   {
-    title: "The Ghost Map: The Story of London's Most Terrifying Epidemic - and How It Changed Science, Cities, and the Modern World",
+    title:
+      "The Ghost Map: The Story of London's Most Terrifying Epidemic - and How It Changed Science, Cities, and the Modern World",
     author: "Steven Johnson",
     series: "",
     genre: ["Non-Fiction", "History"],
@@ -540,7 +560,8 @@ const Books = [
     pages: 299,
     minutes: 0,
     status: "Read",
-    cover: "https://upload.wikimedia.org/wikipedia/en/5/53/The_Ghost_Map_cover.jpg",
+    cover:
+      "https://upload.wikimedia.org/wikipedia/en/5/53/The_Ghost_Map_cover.jpg",
     added: "2019-01-01",
     started: "2019-12-01",
     finished: "2018-11-20",
@@ -571,14 +592,15 @@ const Books = [
     format: "Paperback",
     pages: 123,
     minutes: 0,
-    cover: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1590930002i/49552.jpg",
+    cover:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1590930002i/49552.jpg",
     status: "Read",
     added: "2019-01-01",
     started: "2019-12-01",
     finished: "2018-11-16",
   },
   {
-    title: "Typee: A Romance of the South Seas, with sequel The Story of Toby", 
+    title: "Typee: A Romance of the South Seas, with sequel The Story of Toby",
     author: "Herman Melville",
     series: "",
     genre: ["Fiction", "Adventure"],
@@ -603,7 +625,8 @@ const Books = [
     format: "Paperback",
     pages: 1264,
     minutes: 0,
-    cover: "https://kbimages1-a.akamaihd.net/164af17b-6987-4165-bfbf-b37c7e84276e/1200/1200/False/the-wealth-of-nations-illustrated-2.jpg",
+    cover:
+      "https://kbimages1-a.akamaihd.net/164af17b-6987-4165-bfbf-b37c7e84276e/1200/1200/False/the-wealth-of-nations-illustrated-2.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -617,7 +640,8 @@ const Books = [
     format: "Paperback",
     pages: 230,
     minutes: 0,
-    cover: "https://press.uchicago.edu/dam/ucp/books/jacket/978/02/26/73/9780226734798.jpg",
+    cover:
+      "https://press.uchicago.edu/dam/ucp/books/jacket/978/02/26/73/9780226734798.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -631,7 +655,8 @@ const Books = [
     format: "Paperback",
     pages: 1168,
     minutes: 0,
-    cover: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Atlas_Shrugged_%281957_1st_ed%29_-_Ayn_Rand.jpg",
+    cover:
+      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Atlas_Shrugged_%281957_1st_ed%29_-_Ayn_Rand.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -645,7 +670,8 @@ const Books = [
     format: "Paperback",
     pages: 274,
     minutes: 0,
-    cover: "https://upload.wikimedia.org/wikipedia/commons/9/93/The-Road-to-Serfdom-First-Edition1.jpg",
+    cover:
+      "https://upload.wikimedia.org/wikipedia/commons/9/93/The-Road-to-Serfdom-First-Edition1.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -659,7 +685,8 @@ const Books = [
     format: "Paperback",
     pages: 1152,
     minutes: 0,
-    cover: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Zentralbibliothek_Z%C3%BCrich_Das_Kapital_Marx_1867.jpg",
+    cover:
+      "https://upload.wikimedia.org/wikipedia/commons/8/8d/Zentralbibliothek_Z%C3%BCrich_Das_Kapital_Marx_1867.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -673,7 +700,8 @@ const Books = [
     format: "Paperback",
     pages: 288,
     minutes: 0,
-    cover: "https://www.readandcobooks.co.uk/wp-content/uploads/conquest-of-bread-kropotkin-9781528715997-cover.jpg",
+    cover:
+      "https://www.readandcobooks.co.uk/wp-content/uploads/conquest-of-bread-kropotkin-9781528715997-cover.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -701,7 +729,8 @@ const Books = [
     format: "Paperback",
     pages: 264,
     minutes: 0,
-    cover: "https://m.media-amazon.com/images/I/71v88AfuQSL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/71v88AfuQSL._AC_UF1000,1000_QL80_.jpg",
     status: "Want to Read",
     added: "2023-05-20",
   },
@@ -715,11 +744,22 @@ const Books = [
     format: "Paperback",
     pages: 105,
     minutes: 0,
-    cover: "https://4.bp.blogspot.com/-4-02iZjaIAA/VGhlDKSHp3I/AAAAAAAAAkY/Ylh8v2Vk10o/s1600/anthem0001.jpg",
+    cover:
+      "https://4.bp.blogspot.com/-4-02iZjaIAA/VGhlDKSHp3I/AAAAAAAAAkY/Ylh8v2Vk10o/s1600/anthem0001.jpg",
     status: "Read",
+    review:
+      "Satire is cringe. The portrayal of individualism was a bit overwhelming. I think it's important to have a balance between individualism and collectivism. While reading this book, it prompted me to reflect on instances where I may have inadvertently prioritized my own individualism at the expense of others. I think it's important to be aware of this and to be mindful of the impact of our actions on others. I believe it is a dangerous mindset to think that we owe nothing to our fellow humans.",
     added: "2023-05-25",
     started: "2023-05-25",
     finished: "2023-05-25",
+    quotes: [
+      "My happiness is not the means to any end. It is the end. It is its own goal. It is its own purpose.",
+      "Neither am I the means to any end others may wish to accomplish . I am not a tool for their use. I am not a servant of their needs. I am not a bandage for their wounds. I am not a sacrifice on their altars.",
+      "We wish to be damned with you, rather than blessed with all our brothers.",
+      "I owe nothing to my brothers, nor do I gather debts from them. I ask none to live for me, nor do I live for any others. I covet no man’s soul, nor is my soul theirs to covet.",
+      "Our dearest one. Fear nothing of the forest. There is no danger in solitude. We have no need of our brothers. Let us forget their good and our evil, let us forget all things save that we are together and that there is joy as a bond between us. ’ ",
+      "I do not grant my love without reason, nor to any chance passer-by who may wish to claim it. I honor men with my love. But honour is a thing to be earned.",
+    ],
   },
   {
     title: "Death by Food Pyramid",
@@ -731,7 +771,8 @@ const Books = [
     format: "Paperback",
     pages: 336,
     minutes: 0,
-    cover: "https://m.media-amazon.com/images/I/51h8+6RlqiL._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/51h8+6RlqiL._AC_UF1000,1000_QL80_.jpg",
     status: "Read",
     added: "2022-05-25",
     started: "2022-06-25",
@@ -747,7 +788,8 @@ const Books = [
     format: "Paperback",
     pages: 96,
     minutes: 0,
-    cover: "https://m.media-amazon.com/images/I/61iTxSBpy5L._AC_UF1000,1000_QL80_.jpg",
+    cover:
+      "https://m.media-amazon.com/images/I/61iTxSBpy5L._AC_UF1000,1000_QL80_.jpg",
     status: "Read",
     added: "2023-06-01",
     started: "2023-06-01",
@@ -763,7 +805,8 @@ const Books = [
     format: "Paperback",
     pages: 96,
     minutes: 0,
-    cover: "https://www.jasoncolavito.com/uploads/3/7/5/9/3759274/8927381_orig.jpg",
+    cover:
+      "https://www.jasoncolavito.com/uploads/3/7/5/9/3759274/8927381_orig.jpg",
     status: "Read",
     added: "2023-06-01",
     started: "2023-06-02",
@@ -773,11 +816,12 @@ const Books = [
     title: "Culinary Reactions: The Everyday Chemistry of Cooking",
     author: "Simon Quellen Fielde",
     series: "",
-    genre: ["Non-Fiction","Cooking"],
+    genre: ["Non-Fiction", "Cooking"],
     rating: 3.5,
     published: "2011-01-01",
     format: "Paperback",
-    summary: "An engaging exploration of the scientific principles behind cooking, offering readers a fascinating glimpse into how everyday ingredients and techniques interact to create the flavors, textures, and aromas we enjoy in our favorite dishes",
+    summary:
+      "An engaging exploration of the scientific principles behind cooking, offering readers a fascinating glimpse into how everyday ingredients and techniques interact to create the flavors, textures, and aromas we enjoy in our favorite dishes",
     pages: 237,
     minutes: 0,
     status: "Read",
@@ -786,7 +830,8 @@ const Books = [
     finished: "2023-8-13",
   },
   {
-    title: "Your Inner Fish: a Journey into the 3.5-Billion-Year History of the Human Body",
+    title:
+      "Your Inner Fish: a Journey into the 3.5-Billion-Year History of the Human Body",
     author: "Neil Shubin",
     genre: ["Non-Fiction", "Science"],
     status: "Read",
@@ -800,7 +845,7 @@ const Books = [
   {
     title: "Frankenstein: Or the Modern Prometheus",
     author: "Mary Shelley",
-    genre: ["Fiction", "Classics","Horror", "Science-Fiction"],
+    genre: ["Fiction", "Classics", "Horror", "Science-Fiction"],
     status: "Read",
     rating: 4.5,
     pages: 239,
@@ -811,12 +856,12 @@ const Books = [
   },
   {
     title: "The Unexpected Guest",
-  author: "Agatha Christie",
-  genre: ["Fiction", "Crime", "Mystery", "Play", "Who-dunn-it"],
-  status: "Read",
-  rating: 4,
-  pages: 100,
-  started: "2023-06-21",
+    author: "Agatha Christie",
+    genre: ["Fiction", "Crime", "Mystery", "Play", "Who-dunn-it"],
+    status: "Read",
+    rating: 4,
+    pages: 100,
+    started: "2023-06-21",
     added: "2023-06-21",
     finished: "2023-06-21",
   },
@@ -827,10 +872,11 @@ const Books = [
     status: "Read",
     rating: 4,
     pages: 272,
-    review: "It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it's a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I wasn't convinced by their optimistic outlook for the future of the workforce.",
+    review:
+      "It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it's a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I wasn't convinced by their optimistic outlook for the future of the workforce.",
     started: "2023-03-25",
     added: "2022-01-28",
-    finished: "2023-07-20"
+    finished: "2023-07-20",
   },
   {
     title: "Uncle Tom's Cabin",
@@ -842,8 +888,8 @@ const Books = [
     review: "One of the most infuriating works I've ever read.",
     started: "2023-05-01",
     added: "2023-05-01",
-    finished: "2023-07-01"
-  }
+    finished: "2023-07-01",
+  },
 ];
 
 export default Books;

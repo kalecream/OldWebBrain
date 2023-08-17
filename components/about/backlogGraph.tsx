@@ -160,6 +160,8 @@ const CustomerBarLabel: FC<any> = (props) => {
 // TODO: Combine books and add filters through a form.
 
 export const BookShelf: FC = () => {
+
+
   const readBooks = Books.filter((book) => book.status === "Read").sort(
     (a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime()
   );
@@ -250,6 +252,16 @@ export const BookShelf: FC = () => {
             //   </Book>
             // </BookContainer>
             <div className="book-list pancake-child">
+            {/* <div className="book-render">
+                 {book.cover && 
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    title={book.summary}
+                    style={{ width: "200px", height: "300px" }}
+                  />
+                }
+              </div> */}
               <a href={`https://www.google.com/search?q=${book.title}`}>
                 {book.title}
               </a>{" "}
@@ -272,7 +284,13 @@ export const BookShelf: FC = () => {
               <p className="book-review">
               {book.review}
               </p>
-          }
+              }
+              {
+                book.quotes &&
+                <q className="book-quote">
+                  {book.quotes[Math.floor(Math.random() * book.quotes.length)]}
+                </q>
+              }
             </div>
           ))}
         </div>

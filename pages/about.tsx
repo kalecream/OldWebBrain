@@ -73,7 +73,7 @@ export const About = () => {
           <p>I like to read to learn about the world around me or get laughs. I have <b>{Books.length} books in my library</b> (digital and non-digital), and I'm always looking for more. I prefer { Percentage[0] > Percentage[1] ? "Fiction" : "Non-Fiction" }, so I read about <b>{Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction</b>. I'm currently reading {Books.filter((book) => book.status === "Reading").length} books, which you can see below. My most frequently read book tags are: <b>{topGenres}</b>. </p> 
 
           <CurrentReads />
-          <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months.</p>
+          <p>This graph below is my book status backlog for the past year. This is relative to this month and ignores books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to Non-Fiction.</p>
           <p>Grey is all the books I added, Dark grey is the books that I've started and Green are finished books! The number per month is number of finished + started books in my Library. </p>
           <BacklogGraph />
           <BookShelf/>
