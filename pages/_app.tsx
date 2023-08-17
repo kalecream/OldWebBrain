@@ -25,12 +25,6 @@ export const App = (
 		...customMeta,
 	};
 
-	useEffect(() => {
-		 const { theme } = router.query;
-    document.body.classList.remove("light", "dark");
-    document.body.classList.add(theme === "dark" ? "dark" : "light");
-  }, [router.query.theme]);
-
 	return (
 		<>
 		<ThemeProvider
