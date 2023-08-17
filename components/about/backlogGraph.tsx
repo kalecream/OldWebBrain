@@ -10,8 +10,7 @@ import {
 } from "recharts";
 import Books from "@data/books";
 import { WindowWidth } from "..";
-import { getMonthName } from '@components/home/projectsList';
-
+import { getMonthName } from "@components/home/projectsList";
 
 export interface BooksProps {
   title: string;
@@ -122,7 +121,7 @@ export const BacklogGraph: FC = () => {
       <BarChart width={width > 1000 ? 950 : width} height={350} data={Data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
-        <YAxis domain={[0, 'dataMax + 2']}  />
+        <YAxis domain={[0, "dataMax + 2"]} />
         <Tooltip active={false} />
         <Bar dataKey="Started" stackId="a" fill="var(--accent)" />
         <Bar
@@ -161,15 +160,19 @@ const CustomerBarLabel: FC<any> = (props) => {
 // TODO: Combine books and add filters through a form.
 
 export const BookShelf: FC = () => {
-  const readBooks = Books.filter((book) => book.status === "Read").sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime());
+  const readBooks = Books.filter((book) => book.status === "Read").sort(
+    (a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime()
+  );
   const wantToReadBooks = Books.filter(
     (book) => book.status === "Want to Read"
   ).sort((a, b) => new Date(b.added).getTime() - new Date(a.added).getTime());
 
   return (
-      <>
+    <>
       <details>
-        <summary><a>{wantToReadBooks.length} Books I'm excited to read next</a></summary>
+        <summary>
+          <a>{wantToReadBooks.length} Books I'm excited to read next</a>
+        </summary>
         <div className="bookshelf pancake">
           {wantToReadBooks.map((book) => (
             // <BookContainer
@@ -187,12 +190,21 @@ export const BookShelf: FC = () => {
             //     />
             //   </Book>
             // </BookContainer>
-            <p className="book-list pancake-child"> <a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a>   <br/><span>by {book.author}</span> </p>
+            <p className="book-list pancake-child">
+              {" "}
+              <a href={`https://www.google.com/search?q=${book.title}`}>
+                {book.title}
+              </a>{" "}
+              <br />
+              <span>by {book.author}</span>{" "}
+            </p>
           ))}
         </div>
-        </details>
+      </details>
       <details open>
-        <summary><a className="read-books-title">{readBooks.length} Read Books</a></summary>
+        <summary>
+          <a className="read-books-title">{readBooks.length} Read Books</a>
+        </summary>
         <div className="bookshelf pancake">
           {readBooks.map((book) => (
             // <BookContainer
@@ -237,10 +249,34 @@ export const BookShelf: FC = () => {
             //     )}
             //   </Book>
             // </BookContainer>
-            <p className="book-list pancake-child"> <a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a> {book.rating && book.rating >= 4 ? (book.rating >= 5 ? <span style={{color: "red"}}>♥</span> : '♥') :  book.rating <= 2.5 && book.rating != 0 ? '×' : ''}  <br /><span className="book-author">by {book.author}</span><br /> <span className="book-finished"> {getMonthName(book.finished)} {book.finished.split("-", 1)}</span>                    </p>
+            <div className="book-list pancake-child">
+              <a href={`https://www.google.com/search?q=${book.title}`}>
+                {book.title}
+              </a>{" "}
+              {book.rating && book.rating >= 4 ? (
+                book.rating >= 5 ? (
+                  <span style={{ color: "red" }}>♥</span>
+                ) : (
+                  "♥"
+                )
+              ) : book.rating <= 2.5 && book.rating != 0 ? (
+                "×"
+              ) : (
+                ""
+              )}{" "}
+              <p className="book-author">by {book.author}</p>
+              <p className="book-finished">
+                {getMonthName(book.finished)} {book.finished.split("-", 1)}
+              </p>
+              {book.review && 
+              <p className="book-review">
+              {book.review}
+              </p>
+          }
+            </div>
           ))}
         </div>
-        </details>
-      </>
+      </details>
+    </>
   );
 };
