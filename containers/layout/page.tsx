@@ -24,13 +24,13 @@ export const Page = ({
     TagManager.initialize({ gtmId: "UA-148483444-1" });
   }, []);
 
-  if (description === undefined) {
-    description =
-      "Sabrina is a webdev and 3D artist from Kingston, Jamaica.";
-  }
 
   return (
     <>
+      <Head>
+       { title ? <title>SM | {title} </title>  : <title>SM</title> }
+       { description ? <meta name="description" content={description}/> : <meta name="description" content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry."/> }
+      </Head>
       <Navigation />
 
       <main>
