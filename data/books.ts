@@ -6,6 +6,7 @@ const Books = [
     genre: ["Non-Fiction", "History", "Cooking"],
     status: "Read",
     summary: "A history of salt and its role in civilization.",
+    review: "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I didn't think that salt had this big of an impact.",
     added: "2023-03-01",
     started: "2023-07-20",
     finished: "2023-08-12",
@@ -331,6 +332,7 @@ const Books = [
     rating: 5,
     published: "",
     format: "Paperback",
+    review: "An excellent paradigm-shifting book about how the world around us is connected & how even well-intended changes can have disastrous effects on ecosystems.",
     pages: 0,
     minutes: 0,
     status: "Read",
@@ -376,6 +378,7 @@ const Books = [
     pages: 640,
     minutes: 0,
     status: "Read",
+    review: "Great read in terms of worldbuilding that isn't eurocentric. I could have done without the repeated sexual violence, but it was still enjoyable after the first couple chapters when I warmed up to the main character.",
     cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579618622l/50608676.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
@@ -439,6 +442,7 @@ const Books = [
     format: "Paperback",
     pages: 240,
     minutes: 0,
+    review: "A less manipulative version of 48 Laws of Power.",
     cover: "https://m.media-amazon.com/images/I/41Qdwb3dIOL._AC_UF1000,1000_QL80_.jpg",
     status: "Read",
     added: "2020-01-01",
@@ -773,6 +777,7 @@ const Books = [
     rating: 3.5,
     published: "2011-01-01",
     format: "Paperback",
+    summary: "An engaging exploration of the scientific principles behind cooking, offering readers a fascinating glimpse into how everyday ingredients and techniques interact to create the flavors, textures, and aromas we enjoy in our favorite dishes",
     pages: 237,
     minutes: 0,
     status: "Read",
@@ -822,9 +827,22 @@ const Books = [
     status: "Read",
     rating: 4,
     pages: 272,
+    review: "It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it's a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I wasn't convinced by their optimistic outlook for the future of the workforce.",
     started: "2023-03-25",
     added: "2022-01-28",
     finished: "2023-07-20"
+  },
+  {
+    title: "Uncle Tom's Cabin",
+    author: "Harriet Beecher Stowe",
+    genre: ["Fiction", "Classics", "Historical"],
+    status: "Read",
+    rating: 3.75,
+    pages: 438,
+    review: "One of the most infuriating works I've ever read.",
+    started: "2023-05-01",
+    added: "2023-05-01",
+    finished: "2023-07-01"
   }
 ];
 

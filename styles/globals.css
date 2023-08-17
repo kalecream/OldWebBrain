@@ -327,21 +327,29 @@ image {
 }
 
 .book-list {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border: 1px dashed var(--faint);
+  border-radius: var(--border-radius);
 }
 
 .book-list a {
   text-decoration: none !important;
   color: var(--primary);
-  border: none;;
+  border: none;
 }
 
-.book-author {
-  font-style: italic;
-}
 
 .book-finished {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.book-review {
+  margin: 1rem auto;
+  font-size: 0.75rem;
+  font-style: italic;
+  text-align: justify;
 }
 
 /*  */
