@@ -8,6 +8,7 @@ const Books = [
     summary: "A history of salt and its role in civilization.",
     review:
       "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I didn't think that salt had this big of an impact.",
+
     added: "2023-03-01",
     started: "2023-07-20",
     finished: "2023-08-12",
@@ -890,6 +891,7 @@ const Books = [
     added: "2023-05-01",
     finished: "2023-07-01",
   },
+
 ];
 
 export default Books;
