@@ -96,7 +96,7 @@ const ProjectList: React.FC = () => {
                       <Image 
                         height={0}
                         width={0}
-                        loader={({ src }) => src}
+                        loader={({ src, width }) => `${src}?w=${width}`}
                         sizes="100vw"
                         style={{ width: '100%', height: 'auto' }}
                         placeholder="blur"
