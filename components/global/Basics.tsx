@@ -78,6 +78,7 @@ const border = `1px solid var(--faint)`;
 
 export const Button = styled(Link)<ButtonProps>`
   align-items: center;
+  max-width: 100%;
   background-image: ${(props) =>
     props.primary
       ? primaryBackground
@@ -99,6 +100,7 @@ export const Button = styled(Link)<ButtonProps>`
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  text-transform: capitalize;
   will-change: box-shadow, transform;
 
   &:hover {
@@ -108,10 +110,9 @@ export const Button = styled(Link)<ButtonProps>`
     color: var(--body);
   }
 
-  @media (max-width: 550px) {
-    padding: 0.5rem 1rem;
-    width: 80%;
-    text-align: center;
+  @media (max-width: 768px) {
+    padding: 2rem 3rem;
+    width: 100%;
   }
 `;
 
