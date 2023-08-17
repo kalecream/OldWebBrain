@@ -328,16 +328,18 @@ image {
 
 .book-list {
   font-size: 0.9rem;
-  padding: 1rem;
+  padding: 2rem;
   border: 1px dashed var(--faint);
   border-radius: var(--border-radius);
 }
 
 .book-list a {
   text-decoration: none !important;
+  font-size: 1rem;
   color: var(--primary);
   border: none;
 }
+
 
 
 .book-finished {
@@ -348,8 +350,44 @@ image {
 .book-review {
   margin: 1rem auto;
   font-size: 0.75rem;
-  font-style: italic;
+  font-style: oblique;
   text-align: justify;
+}
+
+.book-quote {
+  margin: 1rem auto;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 500;
+  text-align: justify;
+}
+
+.book-quote::before {
+  content: "“ ";
+}
+
+.book-quote::after {
+  content: " ”";
+}
+
+.book-quote::before,
+.book-quote::after {
+  color: var(--muted);
+}
+
+.book-quote::before {
+  margin-right: 0.25rem;
+}
+
+.book-quote::after {
+  margin-left: 0.25rem;
+}
+
+.book-quote::before,
+.book-quote::after {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
 }
 
 /*  */
