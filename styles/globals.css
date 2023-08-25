@@ -11,11 +11,11 @@ font-family: 'Playfair Display', serif;
 }
 
 .light {
-  --primary: #339974;
+  --primary: #009B3A;
   --secondary: #2b694d;
   --accent: #8cb6bb;
 
-  --text: #34373e;
+  --text: hsl(222, 10%, 20%);
   --text-shadow: 0 0 1px #fff;
   --box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --font-family-heading: "Inter", sans-serif;
@@ -200,36 +200,22 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 3rem;
-}
-
-.section-content {
-  max-width: 1200px;
+  margin: 3rem 0;
   margin: 0 auto;
+  max-width: 1200px;
   padding: 0 0.5rem;
 }
 
 main {
   height: 100%;
-  width: 100vw;
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
   gap: 2rem;  
-  }
-
-  @media screen and (max-width: 1024px) {
-    main {
-      padding-top: 2rem;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    main {
-      padding-top: 6rem;
-    }
+  padding-top: 1rem;
   }
 
 a {
@@ -554,7 +540,6 @@ kbd::after,
 }
 
 /*  */
-
 .hider {
   overflow: hidden;
 }
