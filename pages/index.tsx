@@ -163,11 +163,14 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             <HeroName name={"Sabrina"} />
           </div>
           <p>
-            A web developer and 3D artist based in Kingston, Jamaica.</p><p> I strive
-            to enhance my skills concurrently by creating functional resources
-            to benefit the broader community. An ongoing journey of exploration
-            drives me to constantly embrace novel technologies and refine my
-            capabilities.
+            <b>A web developer and 3D artist based in Kingston, Jamaica.</b>
+          </p>
+          <p>
+            {" "}
+            I strive to enhance my skills concurrently by creating functional
+            resources to benefit the broader community. An ongoing journey of
+            exploration drives me to constantly embrace novel technologies and
+            refine my capabilities.
           </p>
 
           <ButtonContainer>
