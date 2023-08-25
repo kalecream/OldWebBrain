@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import Page from "../containers/layout/page";
 
-import Image from 'next/image';
-
 import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
 import Link from "next/link";
@@ -10,7 +8,8 @@ import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import {  Button, CapsTitle, CustomLink } from "../components/global/Basics";
+import HeroName from "../components/heroName";
+import { Button, CapsTitle, CustomLink } from "../components/global/Basics";
 
 import { ScrollDown } from "../components/global";
 import ProjectList from "@components/home/projectsList";
@@ -44,14 +43,6 @@ const Hero = styled.section`
   @media (min-width: 1024px) {
     margin: 0 auto;
     flex-direction: row;
-
-    & > div:first-of-type {
-      width: 40%;
-    }
-
-    & > div:last-of-type {
-      width: 20%;
-    }
   }
 `;
 
@@ -66,33 +57,16 @@ const HeroSection = styled.div`
 
   p {
     line-height: 1.6rem;
-    text-align: start;
+    text-align: justify;
+    font-weight: 300;
+    max-width: 25rem;
     padding: 0;
-  }
-
-  @media (max-width: 1024px) {
-
-    p {
-      width: 80%;
-      max-width: 25rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-
-    div {
-      width: 60%;
-    }
-
-    p {
-      max-width: 35rem;
-    }
   }
 
   @keyframes fadeInFromBelow {
     0% {
       opacity: 0;
-      transform: translateY(2rem);
+      transform: translateY(1rem);
     }
     100% {
       opacity: 1;
@@ -103,21 +77,23 @@ const HeroSection = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 1rem;
+
   margin: 1rem auto;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     max-width: 30rem;
     margin: 0 auto;
     justify-content: center;
+    font-size: 1.2rem;
+    gap: 1.5rem;
   }
 
   @media (min-width: 768px) {
-    width: 100%;
     flex-direction: row;
     justify-content: flex-start;
+    gap: 1rem;
   }
 `;
 
@@ -164,36 +140,42 @@ const Rotate3DModel = () => {
   }, [orbitControlsRef.current]);
 
   return (
-      <OrbitControls
-        ref={orbitControlsRef}
-        maxDistance={8}
-        minDistance={8}
-        enableZoom={false}
-      />
+    <OrbitControls
+      ref={orbitControlsRef}
+      maxDistance={8}
+      minDistance={8}
+      enableZoom={false}
+    />
   );
 };
 
-const imageLoader  = ({ src, width, quality }) => {
-  return `https://sabrinamedwinter.com/${src}?w=${width}&q=${quality || 75}`
-}
+const imageLoader = ({ src, width, quality }) => {
+  return `https://sabrinamedwinter.com/${src}?w=${width}&q=${quality || 75}`;
+};
 
 export const Home = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Page>
       <Hero>
-        <HeroSection >
+        <HeroSection>
           <div className="hider">
-          <h1 className="sitename">Sabrina Medwinter</h1>
+            {/* <h1 className="sitename">Sabrina Medwinter</h1> */}
+            <HeroName name={"Sabrina"} />
           </div>
-          <p >
-          I'm a web developer and 3D artist based in Kingston, Jamaica. I strive to enhance my skills in these fields while creating practical tools for both myself and others. I'm always learning and trying out new technologies to improve my work.
+          <p>
+            A web developer and 3D artist based in Kingston, Jamaica.</p><p> I strive
+            to enhance my skills concurrently by creating functional resources
+            to benefit the broader community. An ongoing journey of exploration
+            drives me to constantly embrace novel technologies and refine my
+            capabilities.
           </p>
-          
-          <ButtonContainer >
-            <Button primary='true' href="/services">Need a service?</Button>
+
+          <ButtonContainer>
+            <Button primary="true" href="/services">
+              Need a service?
+            </Button>
             <Button href="/blog">Check out the blog</Button>
           </ButtonContainer>
-
         </HeroSection>
         <HeroSection>
           <CustomCanvas
@@ -227,10 +209,10 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       {posts.length > 0 && (
         <section id="blog-posts" className="fadeIn--below index-section">
-          <CapsTitle >Blog</CapsTitle>
+          <CapsTitle>Blog</CapsTitle>
           <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
-                <div key={post.slug} className="blog--article pancake-child">
+              <div key={post.slug} className="blog--article pancake-child">
                 {/* {post.coverImage && (
                   <div className="image-wrapper">
                     <Image
@@ -245,16 +227,22 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                     />
                     </div>
                   )} */}
-                  {post.date && (
-                    <span className="blog--article__date">{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
-                  )}
-                    <Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}><h2 className="blog--article__title">{post.title}</h2></Link>
+                {post.date && (
+                  <span className="blog--article__date">
+                    {format(parseISO(post.date), "MMMM dd, yyyy")}
+                  </span>
+                )}
+                <Link
+                  as={`/posts/${post.slug}`}
+                  key={post.slug}
+                  href={`/posts/[slug]`}
+                >
+                  <h2 className="blog--article__title">{post.title}</h2>
+                </Link>
 
-                  <p className="blog--article__description">
-                    {post.description}
-                  </p>
+                <p className="blog--article__description">{post.description}</p>
 
-                  {/* {post.tags && (
+                {/* {post.tags && (
                     <div className="post-tags">
                       <span>
                         {post.tags.slice(0,2).map((tag) => (
@@ -265,20 +253,17 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                       </span>
                     </div>
                   )} */}
-                  <div className="links">
-                  </div>
-                </div>
-              
+                <div className="links"></div>
+              </div>
             ))}
-          
           </div>
           {/* TODO: Add weeklogs and tutorials */}
-            <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
+          <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
         </section>
       )}
 
-      <section >
-        <CapsTitle >Things I've Made</CapsTitle>
+      <section>
+        <CapsTitle>Things I've Made</CapsTitle>
         <ProjectList />
       </section>
     </Page>
