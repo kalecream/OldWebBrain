@@ -34,6 +34,10 @@ const Mouse = styled.div`
 		-webkit-animation: wheel 2s infinite;
 	}
 
+	@media (max-width: 768px) {
+		display: none;
+		}
+
 
 @keyframes wheel {
 	to {
