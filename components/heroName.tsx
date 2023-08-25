@@ -3,7 +3,7 @@ import styles from "../styles/heroName.module.css";
 
 const HeroName = ({ name }) => {
   const textArray = useRef(null);
-  const colorArr = ["#fefefe", "#FED100", "#009B3A", "#000000"];
+  const colorArr = ["var(--body)", "#FED100", "#009B3A", "#000000"];
 
   return (
     <>
