@@ -36,3 +36,6 @@ import BiteSizedBingePoster from "../assets/images/bitesizedbinge.webp";
 const OtherMultimediaProjectPictures = [BiteSizedBingePoster];
 
 export { OtherMultimediaProjectPictures };
+
+import LoadingIcon from "./images/loading.webp";
+export { LoadingIcon };

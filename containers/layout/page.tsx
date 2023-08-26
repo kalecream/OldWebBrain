@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigation, Footer } from "../../components/global";
 import TagManager from "react-gtm-module";
 import { MetaProps } from "../../types/layout";
 import Head from "next/head";
-  
+import dynamic from "next/dynamic";
+
 type LayoutProps = {
   children: React.ReactNode;
   customMeta?: MetaProps;
@@ -13,6 +14,12 @@ type LayoutProps = {
 
 export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
 
+const Preloader = dynamic(
+  () => import("../../components/preloader"),
+  {
+    ssr: false,
+  }
+);
 
 export const Page = ({
   children,
@@ -20,24 +27,46 @@ export const Page = ({
   description,
   customMeta,
 }: LayoutProps) => {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     TagManager.initialize({ gtmId: "UA-148483444-1" });
-  }, []);
 
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => {
+      // Clean up any resources if needed
+    };
+  }, []);
 
   return (
     <>
-      <Head>
-       { title ? <title>SM | {title} </title>  : <title>SM</title> }
-       { description ? <meta name="description" content={description}/> : <meta name="description" content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry."/> }
-      </Head>
-      <Navigation />
+      {loading ? (
+          <Preloader onComplete={() => setLoading(false)} />
+      ) : (
+        <>
+          <Head>
+            {title ? <title>SM | {title} </title> : <title>SM</title>}
+            {description ? (
+              <meta name="description" content={description} />
+            ) : (
+              <meta
+                name="description"
+                content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry."
+              />
+            )}
+          </Head>
+          <Navigation />
 
-      <main>
-        <>{children}</>
-      </main>
+          <main>
+            <>{children}</>
+          </main>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 };

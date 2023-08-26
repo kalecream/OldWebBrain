@@ -265,7 +265,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </section>
       )}
 
-      <section>
+      <section style={{ "width": "100%"}}>
         <CapsTitle>Things I've Made</CapsTitle>
         <ProjectList />
       </section>
