@@ -9,7 +9,7 @@ import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
 import HeroName from "../components/heroName";
-import { Button, CapsTitle, CustomLink } from "../components/global/Basics";
+import { Button, CustomLink } from "../components/global/Basics";
 
 import { ScrollDown } from "../components/global";
 import ProjectList from "@components/home/projectsList";
@@ -163,7 +163,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             <HeroName name={"Sabrina"} />
           </div>
           <p>
-            <b>A web developer and 3D artist based in Kingston, Jamaica.</b>
+            <b>Web developer and 3D artist based in Kingston, Jamaica.</b>
           </p>
           <p>
             {" "}
@@ -212,7 +212,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
       {posts.length > 0 && (
         <section id="blog-posts" className="fadeIn--below index-section">
-          <CapsTitle>Blog</CapsTitle>
+          <h2 className="section-title">Blog</h2>
           <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
               <div key={post.slug} className="blog--article pancake-child">
@@ -266,7 +266,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
       )}
 
       <section style={{ "width": "100%"}}>
-        <CapsTitle>Things I've Made</CapsTitle>
+        <h2 className="section-title">Things I've Made</h2>
         <ProjectList />
       </section>
     </Page>

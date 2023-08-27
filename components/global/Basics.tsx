@@ -138,16 +138,6 @@ export const Subtitle = styled.h2`
   text-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
 `;
 
-export const CapsTitle = styled.h3`
-  padding: 0;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: var(--caption);
-`;
-
 export const Paragraph = styled.p`
   font-size: 1.2rem;
   font-weight: 400;
