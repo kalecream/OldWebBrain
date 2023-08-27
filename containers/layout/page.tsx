@@ -34,7 +34,7 @@ export const Page = ({
 
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 3000);
 
     return () => {
       // Clean up any resources if needed
