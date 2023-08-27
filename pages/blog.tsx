@@ -1,5 +1,5 @@
 import { Page } from "containers/layout";
-import { CapsTitle, CustomLink, FullSection } from "@components/global";
+import {  FullSection } from "@components/global";
 import { PostType } from "types/post";
 import { getAllPosts } from "lib/api";
 import { GetStaticProps } from "next";
@@ -86,7 +86,7 @@ export const BlogPage = ({ posts }: BlogProps): JSX.Element => {
     return (
         <Page>
             <FullSection>
-                <CapsTitle>Blog</CapsTitle>
+                <h2 className="section-title">Blog</h2>
                 <BlogContainer className="blog-container">
                             {posts.map((post) => {
                                 return (

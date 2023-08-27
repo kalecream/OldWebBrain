@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, CapsTitle, Container, Section } from "../global";
+import { Button, Container, Section } from "../global";
 import Projects from "../../data/projectsData";
 import styled from "@emotion/styled";
 import {
@@ -186,7 +186,7 @@ const LatestProjects = () => {
     <Section>
       <Thirds>
         <Container style={{ textAlign: "center", margin: "1em 0" }}>
-          <CapsTitle>Projects !</CapsTitle>
+          <h2 className="section-title">Projects !</h2>
         </Container>
         <Container style={{ overflow: "hidden" }}>
           {Projects.slice(0,2).map(
