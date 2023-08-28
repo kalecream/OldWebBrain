@@ -14,13 +14,12 @@ const StyledFooter = styled.footer`
   position: relative;
   height: 3rem;
   font-size: 0.65rem;
-  display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   & > * {
-    margin-right: 0.5rem;
     text-transform: uppercase;
     font-weight: 500;
   }
@@ -59,7 +58,7 @@ export const Navigation: React.FunctionComponent = () => {
           : null}
         </div>
         <div className="settings directory-section">
-        <SocialMediaList />
+        
           <ThemeSwitch />
           {/* <AvailableForWork /> */}
         </div>
@@ -70,6 +69,7 @@ export const Navigation: React.FunctionComponent = () => {
 export const Footer: React.FunctionComponent = () => {
   return (
     <StyledFooter>
+      <SocialMediaList />
       <div> sabrina medwinter &copy; {new Date().getFullYear()}</div>
     </StyledFooter>
   );
