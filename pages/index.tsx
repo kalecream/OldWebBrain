@@ -252,14 +252,15 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
                   {post.tags && (
                     <div className="blog--article__tags">
                       {post.tags.slice(0, 2).map((tag) => (
-                        <div
+                        <Link
                           className="tag"
                           key={tag}
                           href={"/tags/" + tag.replace(/\s+/g, "+")}
                         >
                           {tag}
-                        </div>
+                        </Link>
                       ))}
+                      {/* create tag pages */}
                     </div>
                   )}
                 </div>
