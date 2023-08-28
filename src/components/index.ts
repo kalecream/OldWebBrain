@@ -1,6 +1,6 @@
 export * from "./global";
 export * from "./home";
-export * from "./navigation/ThemeSwitch";
+export * from "./navigation/theme-toggle";
 
 // export * from "./coding";
 // export * from "./about";

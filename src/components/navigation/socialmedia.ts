@@ -1,22 +1,20 @@
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export const MediaProfiles = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/medwinter/",
-    icon: faLinkedin,
+    icon: FaLinkedin,
   },
   {
     name: "Github",
     url: "https://github.com/kalecream",
-    color: "#333333",
-    icon: faGithub,
+    icon: FaGithub ,
 
   },
   {
     name: "Twitter",
     url: "https://twitter.com/SabMedwinter",
-    color: "#333333",
-    icon: faTwitter,
+    icon: FaTwitter ,
   },
 ];

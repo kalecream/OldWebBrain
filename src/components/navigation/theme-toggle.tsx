@@ -1,9 +1,8 @@
 import { useTheme } from "next-themes";
 import React from "react";
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import styled from "@emotion/styled";
+import { FaMoon, FaSun } from "react-icons/fa6";
 
 /**
  * Based off of gatsby-theme-novela
@@ -11,15 +10,6 @@ import styled from "@emotion/styled";
  *
  * https://github.com/ChangoMan/nextjs-typescript-mdx-blog/blob/main/components/ThemeSwitch.tsx
  */
-
-const FAIcon = styled(FontAwesomeIcon)`
-  color: var(--muted);
-  scale: 0.8;
-
-  &:hover {
-    color: var(--primary);
-  }
-`;
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -38,17 +28,17 @@ const ThemeSwitch = () => {
         style={{
           display: "grid",
           placeItems: "center",
-          borderRadius: "50%",
           outline: "none",
           border: "none",
-          fontSize: "1.5rem",
+          fontSize: "1.2rem",
           cursor: "pointer",
           justifyContent: "center",
           backgroundColor: "transparent",
+          color: "var(--muted)",
         }}
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {theme === "dark" ? <FAIcon icon={faSun} /> : <FAIcon icon={faMoon} />}
+        {theme === "dark" ? <FaSun />: <FaMoon/> }
       </button>
     </div>
   );
