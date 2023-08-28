@@ -1,0 +1,15 @@
+@mixin theme($theme) {
+  @if $theme == 'dark' {
+    $color: #fff;
+    $background: #000;
+  } @else if $theme == 'light' {
+    $color: #000;
+    $background: #fff;
+  } @else {
+    $color: #000;
+    $background: #fff;
+  }
+  color: $color;
+  background: $background;
+}
+ 

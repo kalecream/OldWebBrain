@@ -1,21 +1,21 @@
 import { useEffect, useRef } from "react";
-import Page from "../containers/layout/page";
+import Page from "@containers/layout/page";
 import Image from "next/image";
 
 import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import { getAllPosts } from "../lib/api";
+import { getAllPosts } from "../utils/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import HeroName from "../src/components/heroName";
-import { Button, CustomLink } from "../src/components/global/Basics";
+import HeroName from "@components/heroName";
+import { Button } from "@components/global/Basics";
 
-import { ScrollDown } from "../src/components/global";
-import ProjectList from "src/components/home/projectsList";
+import { ScrollDown } from "@components/global";
+import ProjectList from "@components/home/projectsList";
 
-import { Model } from "../assets/models/me";
+import { Model } from "@assets/models/me";
 
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";

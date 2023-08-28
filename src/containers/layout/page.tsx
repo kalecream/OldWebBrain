@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigation, Footer } from "@components/navigation";
+import { Header, Footer } from "@components/navigation";
 import TagManager from "react-gtm-module";
 import { MetaProps } from "../../types/layout";
 import Head from "next/head";
@@ -58,7 +58,7 @@ export const Page = ({
               />
             )}
           </Head>
-          <Navigation />
+          <Header />
 
           <main>
             <>{children}</>

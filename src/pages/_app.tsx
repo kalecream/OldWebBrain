@@ -1,13 +1,12 @@
-import { useEffect } from "react";
+import "../styles/global.scss";
 import { ThemeProvider } from "next-themes";
-import { useRouter } from "next/router";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import type { AppProps } from "next/app";
 
+
+import type { AppProps } from "next/app";
 import { MetaProps } from "../types/layout";
 
-import "../styles/globals.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
@@ -16,7 +15,6 @@ export const App = (
 	{ Component, pageProps }: AppProps,
 	{ customMeta }: { customMeta?: MetaProps }
 ): JSX.Element => {
-	const router = useRouter();
 	const meta: MetaProps = {
 		title: "SM",
 		description: "Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.",
@@ -26,7 +24,6 @@ export const App = (
 	};
 
 	return (
-		<>
 		<ThemeProvider
 			storageKey="theme"
 			attribute="class"
@@ -38,7 +35,6 @@ export const App = (
 			
 			<Component {...pageProps} />
 		</ThemeProvider>
-		</>
 	);
 };
 
