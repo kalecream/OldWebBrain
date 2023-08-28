@@ -5,7 +5,8 @@
 
 .container {
   position: relative;
-  width: 500px;
+  width: 100vw;
+  max-width: 600px;
   height: 275px;
 }
 .container .text-container,
@@ -19,7 +20,7 @@
 .container .text {
   position: absolute;
   top: 50%;
-  font-size: 8rem;
+  font-size: clamp(4rem, 30vw, 10rem);
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   -webkit-text-stroke: 2px var(--muted);
