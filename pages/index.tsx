@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Page from "../containers/layout/page";
+import Image from "next/image";
 
 import { format, parseISO } from "date-fns";
 import { GetStaticProps } from "next";
@@ -216,47 +217,52 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
           <div className="pancake section-content">
             {posts.slice(0, 3).map((post) => (
               <div key={post.slug} className="blog--article pancake-child">
-                {/* {post.coverImage && (
+                {post.coverImage && (
                   <div className="image-wrapper">
                     <Image
                       height={0}
-                        width={0}
-                        loader={({ src }) => src}
-                        sizes="100vw"
-                        style={{ width: '100px', height: 'auto' }}
-                        src={post.coverImage}
-                      alt={ post.alt ? post.alt : '' }
+                      width={0}
+                      loader={({ src }) => src}
+                      sizes="100vw"
+                      style={{ width: "auto", height: "400px" }}
+                      src={post.coverImage}
+                      alt={post.alt ? post.alt : ""}
                       className="blog--article__image"
                     />
-                    </div>
-                  )} */}
-                {post.date && (
-                  <span className="blog--article__date">
-                    {format(parseISO(post.date), "MMMM dd, yyyy")}
-                  </span>
+                  </div>
                 )}
-                <Link
-                  as={`/posts/${post.slug}`}
-                  key={post.slug}
-                  href={`/posts/[slug]`}
-                >
-                  <h2 className="blog--article__title">{post.title}</h2>
-                </Link>
+                <div className="blog--article__section">
+                  {post.date && (
+                    <span className="blog--article__date">
+                      {format(parseISO(post.date), "MMMM dd, yyyy")}
+                    </span>
+                  )}
+                  <Link
+                    as={`/posts/${post.slug}`}
+                    key={post.slug}
+                    href={`/posts/[slug]`}
+                  >
+                    <h2 className="blog--article__title">{post.title}</h2>
+                  </Link>
 
-                <p className="blog--article__description">{post.description}</p>
+                  <p className="blog--article__description">
+                    {post.description}
+                  </p>
 
-                {/* {post.tags && (
-                    <div className="post-tags">
-                      <span>
-                        {post.tags.slice(0,2).map((tag) => (
-                          <div className="post-tag" key={tag} href={"/tags/" + tag.replace(/\s+/g, "+")}>
-                            {tag}
-                          </div>
-                        ))}
-                      </span>
+                  {post.tags && (
+                    <div className="blog--article__tags">
+                      {post.tags.slice(0, 2).map((tag) => (
+                        <div
+                          className="tag"
+                          key={tag}
+                          href={"/tags/" + tag.replace(/\s+/g, "+")}
+                        >
+                          {tag}
+                        </div>
+                      ))}
                     </div>
-                  )} */}
-                <div className="links"></div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -265,7 +271,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
         </section>
       )}
 
-      <section style={{ "width": "100%"}}>
+      <section style={{ width: "100%" }}>
         <h2 className="section-title">Things I've Made</h2>
         <ProjectList />
       </section>
