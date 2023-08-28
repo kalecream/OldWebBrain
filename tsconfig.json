@@ -25,15 +25,15 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
+      "@components/*": ["src/components/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@assets/*": ["assets/*"],
+      "@assets/*": ["src/assets/*"],
       "@constants/*": ["constants/*"],
-      "@utils/*": ["utils/*"],
+      "@utils/*": ["src/utils/*"],
       "@layout/*": ["container/layout/*"],
-      "@data/*": ["data/*"],
-      "@hooks/*": ["hooks/*"],
+      "@data/*": ["src/data/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@posts/*": ["posts/*"]
     }
   },

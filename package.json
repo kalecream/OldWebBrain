@@ -1,6 +1,10 @@
 {
-  "name": "website",
+  "name": "OldWebBrain",
   "version": "0.1.0",
+  "description": "My personal website",
+  "keywords": [],
+  "author": "Sabrina Medwinter",
+  "main": "src/pages/index.tsx",
   "private": true,
   "scripts": {
     "tsc": "tsc",
@@ -9,6 +13,11 @@
     "start": "next start",
     "export": "npm run build && next export -o _static"
   },
+  "browserslist": [
+    "> 0.5%",
+    "not dead",
+    "not ie <= 11"
+  ],
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.10.5",
@@ -41,13 +50,13 @@
     "next-themes": "^0.2.1",
     "oauth-signature": "^1.5.0",
     "papaparse": "^5.4.1",
-    "protonmail-api": "^2.2.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-ga": "^3.3.1",
     "react-gsap": "^3.2.1",
     "react-gtm-module": "^2.0.11",
+    "react-icons": "^4.10.1",
     "react-spring": "^9.7.1",
     "react-svg": "^15.1.11",
     "react-waypoint": "^10.3.0",
@@ -58,8 +67,7 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.6",
-    "three": "^0.148.0",
-    "typescript": "4.8.4"
+    "three": "^0.148.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -68,6 +76,7 @@
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
     "eslint-plugin-react": "^7.32.2",
-    "types": "^0.1.1"
+    "types": "^0.1.1",
+    "typescript": "4.8.4"
   }
 }

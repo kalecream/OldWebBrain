@@ -1,6 +1,6 @@
-import { Page } from "containers/layout";
-import {  FullSection } from "@components/global";
-import { PostType } from "types/post";
+import { Page } from "src/containers/layout";
+import {  FullSection } from "src/components/global";
+import { PostType } from "src/types/post";
 import { getAllPosts } from "lib/api";
 import { GetStaticProps } from "next";
 import "../styles/articles.module.css";

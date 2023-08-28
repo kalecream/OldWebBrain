@@ -8,9 +8,9 @@ import {
   CartesianGrid,
   Legend,
 } from "recharts";
-import Books from "@data/books";
+import Books from "src/data/books";
 import { WindowWidth } from "..";
-import { getMonthName } from "@components/home/projectsList";
+import { getMonthName } from "src/components/home/projectsList";
 
 export interface BooksProps {
   title: string;

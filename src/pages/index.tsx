@@ -9,11 +9,11 @@ import { getAllPosts } from "../lib/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import HeroName from "../components/heroName";
-import { Button, CustomLink } from "../components/global/Basics";
+import HeroName from "../src/components/heroName";
+import { Button, CustomLink } from "../src/components/global/Basics";
 
-import { ScrollDown } from "../components/global";
-import ProjectList from "@components/home/projectsList";
+import { ScrollDown } from "../src/components/global";
+import ProjectList from "src/components/home/projectsList";
 
 import { Model } from "../assets/models/me";
 
@@ -268,7 +268,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
             ))}
           </div>
           {/* TODO: Add weeklogs and tutorials */}
-          <CustomLink href={`/blog`}>More Posts ⟶</CustomLink>
+          {/* <CustomLink href={`/blog`}>More Posts ⟶</CustomLink> */}
         </section>
       )}
 

@@ -1,3 +1,24 @@
+
+@import 'normalize';
+
+//Normalize Box Sizing
+html {
+  box-sizing: border-box;
+  // font-size: var(--font-base-size)
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
 /* Google fonts
 
 font-family: 'Fira Mono', monospace;
@@ -114,7 +135,7 @@ body {
 
 nav {
   width: 100vw;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   justify-content: space-around;
   align-items: center;
   line-height: 3;
@@ -144,6 +165,10 @@ nav {
 
 .directory-link:hover {
   color: var(--text);
+}
+
+.directory-link .active {
+  color: var(--accent);
 }
 
 .settings > * {
@@ -213,10 +238,11 @@ section {
 }
 
 .section-title {
-  font-size: 3rem;
-  font-family: 'Bebas Neue', cursive;
-  margin: 1rem auto;
+  font-size: 2.5rem;
+  font-family: var(--font-family-accent);
+  margin: 0.5rem auto;
   color: var(--body);
+  letter-spacing: -1px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--muted);
   text-shadow: 0 2px var(--muted);

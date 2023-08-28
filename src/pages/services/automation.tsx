@@ -1,5 +1,5 @@
-import { ComingSoon } from "@components/global";
-import { Page } from "containers/layout";
+import { ComingSoon } from "src/components/global";
+import { Page } from "src/containers/layout";
 
 
 const AutomationPage = () => {

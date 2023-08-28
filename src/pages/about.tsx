@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { Page } from "containers/layout";
-import { Section } from "@components/global";
-import CurrentReads from "@components/about/currentReads";
-import { BacklogGraph } from "@components/about/backlogGraph";
-import Books from "@data/books";
+import { Page } from "src/containers/layout";
+import { Section } from "src/components/global";
+import CurrentReads from "src/components/about/currentReads";
+import { BacklogGraph } from "src/components/about/backlogGraph";
+import Books from "src/data/books";
 import { useEffect, useState } from "react";
 import PhotoGalley from "./gallery";
-import { BookShelf } from "@components/about/backlogGraph";
+import { BookShelf } from "src/components/about/backlogGraph";
 
 export const About = () => {
   const [Percentage, setPercentage] = useState([0, 0]);

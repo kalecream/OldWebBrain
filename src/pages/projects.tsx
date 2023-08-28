@@ -4,7 +4,7 @@ import Page from "../containers/layout/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faToolbox, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import "animate.css";
-import { Section, CardTitle, Button } from "../components/global";
+import { Section, CardTitle, Button } from "../src/components/global";
 import Projects from "../data/projectsData";
 
 const RigidContainer = styled.div`

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { LoadingIcon } from "@assets/images";
+import { LoadingIcon } from "src/assets/images";
 
 interface LoaderProps {
   onComplete: () => void;
