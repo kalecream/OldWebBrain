@@ -1,8 +1,8 @@
-import { useTheme } from "next-themes";
-import React from "react";
-import { useEffect } from "react";
-import styled from "@emotion/styled";
-import { FaMoon, FaSun } from "react-icons/fa6";
+import { useTheme } from 'next-themes';
+import React from 'react';
+import { useEffect } from 'react';
+import styled from '@emotion/styled';
+import { FaMoon, FaSun } from 'react-icons/fa6';
 
 /**
  * Based off of gatsby-theme-novela
@@ -12,37 +12,37 @@ import { FaMoon, FaSun } from "react-icons/fa6";
  */
 
 const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
+	const { theme, setTheme } = useTheme();
 
-  useEffect(() => {}, [theme]);
+	useEffect(() => {}, [theme]);
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        placeItems: "center",
-      }}
-    >
-      <button
-        name="theme-switch"
-        aria-label="theme-switch"
-        style={{
-          display: "grid",
-          placeItems: "center",
-          outline: "none",
-          border: "none",
-          fontSize: "1.2rem",
-          cursor: "pointer",
-          justifyContent: "center",
-          backgroundColor: "transparent",
-          color: "var(--muted)",
-        }}
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      >
-        {theme === "dark" ? <FaSun />: <FaMoon/> }
-      </button>
-    </div>
-  );
+	return (
+		<div
+			style={{
+				display: 'flex',
+				placeItems: 'center'
+			}}
+		>
+			<button
+				name="theme-switch"
+				aria-label="theme-switch"
+				style={{
+					display: 'grid',
+					placeItems: 'center',
+					outline: 'none',
+					border: 'none',
+					fontSize: '1.2rem',
+					cursor: 'pointer',
+					justifyContent: 'center',
+					backgroundColor: 'transparent',
+					color: 'var(--muted)'
+				}}
+				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+			>
+				{theme === 'dark' ? <FaSun /> : <FaMoon />}
+			</button>
+		</div>
+	);
 };
 
 export default ThemeSwitch;

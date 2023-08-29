@@ -1,8 +1,8 @@
-import React from "react";
-import "@emotion/styled";
+import React from 'react';
+import '@emotion/styled';
 
-import { Container } from "./_basics/Basics";
-import styled from "@emotion/styled";
+import { Container } from './_basics/Basics';
+import styled from '@emotion/styled';
 
 const Field = styled.div`
 	display: flex;
@@ -13,10 +13,10 @@ const Field = styled.div`
 `;
 
 const Mouse = styled.div`
-    opacity: 0.8;
-    width: 50px;
+	opacity: 0.8;
+	width: 50px;
 	height: 85px;
-	border: 3px solid var(--primary) ;
+	border: 3px solid var(--primary);
 	border-radius: 60px;
 	position: relative;
 	&::before {
@@ -36,22 +36,21 @@ const Mouse = styled.div`
 
 	@media (max-width: 768px) {
 		display: none;
+	}
+
+	@keyframes wheel {
+		to {
+			opacity: 0;
+			top: 60px;
 		}
-
-
-@keyframes wheel {
-	to {
-		opacity: 0;
-		top: 60px;
 	}
-}
 
-@-webkit-keyframes wheel {
-	to {
-		opacity: 0;
-		top: 60px;
+	@-webkit-keyframes wheel {
+		to {
+			opacity: 0;
+			top: 60px;
+		}
 	}
-}
 `;
 
 export const ScrollDown = () => {

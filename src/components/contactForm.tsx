@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { Button } from "./_basics/Basics";
-import { useState } from "react";
+import styled from '@emotion/styled';
+import { Button } from './_basics/Basics';
+import { useState } from 'react';
 
 const CustomForm = styled.form`
 	display: flex;
@@ -70,9 +70,9 @@ const CustomButton = styled(Button)`
 
 export const ContactForm = () => {
 	const [form, setForm] = useState({
-		name: "",
-		email: "",
-		message: "",
+		name: '',
+		email: '',
+		message: ''
 	});
 
 	const handleChange = (e) => {
@@ -85,29 +85,10 @@ export const ContactForm = () => {
 	return (
 		<CustomForm action="/api/form" name="contact" method="POST">
 			<h1>Contact</h1>
-			<CustomInput
-				type="text"
-				name="name"
-				placeholder="Name"
-				value={form.name}
-				onChange={handleChange}
-			/>
-			<CustomInput
-				type="email"
-				name="email"
-				placeholder="Email"
-				value={form.email}
-				onChange={handleChange}
-				required
-			/>
-			<CustomTextArea
-				name="message"
-				placeholder="Message"
-				value={form.message}
-				onChange={handleChange}
-				required
-			/>
-			<CustomButton onSubmit={onSubmit} href={""} type="submit">
+			<CustomInput type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} />
+			<CustomInput type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
+			<CustomTextArea name="message" placeholder="Message" value={form.message} onChange={handleChange} required />
+			<CustomButton onSubmit={onSubmit} href={''} type="submit">
 				Send Message
 			</CustomButton>
 		</CustomForm>

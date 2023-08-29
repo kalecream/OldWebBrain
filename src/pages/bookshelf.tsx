@@ -1,30 +1,29 @@
-import { Page } from "src/containers/layout";
-import { BookShelf } from "src/components/about/backlogGraph";
-import Link from "next/link";
+import { Page } from 'src/containers/layout';
+import { BookShelf } from 'src/components/about/backlogGraph';
+import Link from 'next/link';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const FlexLinks = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 50%;
+	margin: 0 auto;
 `;
 
 const BookCase = () => {
-    return (
-        <Page title="Bookshelf">
-            <h1 id="PageTitle">Bookcase</h1>
-            <BookShelf />
-            <FlexLinks>
-                <Link href="/about">&#129120; About</Link>
-                <Link href="#PageTitle">&#129121; Top of Page</Link>
-            </FlexLinks>
-            
-        </Page>
-    );
+	return (
+		<Page title="Bookshelf">
+			<h1 id="PageTitle">Bookcase</h1>
+			<BookShelf />
+			<FlexLinks>
+				<Link href="/about">&#129120; About</Link>
+				<Link href="#PageTitle">&#129121; Top of Page</Link>
+			</FlexLinks>
+		</Page>
+	);
 };
 
 export default BookCase;

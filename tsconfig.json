@@ -1,42 +1,42 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "noUnusedParameters": false,
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "types": [
-      "node",
-      "webpack-env" // here
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"],
-      "@layout/*": ["src/container/layout/*"],
-      "@data/*": ["src/data/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@posts/*": ["src/posts/*"],
-      "@containers/*": ["src/containers/*"],
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js"],
-  "exclude": ["node_modules", ".next"]
+	"compilerOptions": {
+		"target": "es6",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"noUnusedParameters": false,
+		"noImplicitAny": false,
+		"noImplicitReturns": true,
+		"noUnusedLocals": false,
+		"strictNullChecks": false,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true,
+		"types": [
+			"node",
+			"webpack-env" // here
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@pages/*": ["src/pages/*"],
+			"@styles/*": ["src/styles/*"],
+			"@assets/*": ["src/assets/*"],
+			"@utils/*": ["src/utils/*"],
+			"@layout/*": ["src/container/layout/*"],
+			"@data/*": ["src/data/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@posts/*": ["src/posts/*"],
+			"@containers/*": ["src/containers/*"]
+		}
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js"],
+	"exclude": ["node_modules", ".next"]
 }

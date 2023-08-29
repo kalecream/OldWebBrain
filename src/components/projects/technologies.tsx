@@ -1,15 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Technologies = [
-	"CSS3",
-	"JavaScript",
-	"TypeScript",
-	"React",
-	"Next.js",
-	"Node.js",
-	"Python",
-	"MDX",
-];
+const Technologies = ['CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'MDX'];
 
 //TODO: Use GSAP to animate the mapping of the technologies moving left and right across the screen as the user scrolls down the page.
 

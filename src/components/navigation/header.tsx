@@ -28,9 +28,7 @@ export const Header: React.FunctionComponent = () => {
 
 	return (
 		<nav>
-			<div
-				className={`${style['directory-list']} ${style['directory-section']}`}
-			>
+			<div className={`${style['directory-list']} ${style['directory-section']}`}>
 				{router?.pathname !== '/' && (
 					<Link className={style['site-name']} href="/">
 						Sabrina

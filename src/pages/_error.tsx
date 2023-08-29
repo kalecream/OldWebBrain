@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import Page from "../containers/layout/page";
+import styled from '@emotion/styled';
+import Page from '../containers/layout/page';
 
 const Background = styled.div`
 	background-size: cover;
@@ -32,13 +32,7 @@ const Text = styled.h1`
 	stroke: 1px var(--primary);
 	-webkit-text-stroke: 1px grey;
 	-webkit-text-fill-color: transparent;
-	background: repeating-linear-gradient(
-		45deg,
-		darkgreen 25%,
-		lightgreen 50%,
-		darkgreen 50%,
-		lightgreen 75%
-	);
+	background: repeating-linear-gradient(45deg, darkgreen 25%, lightgreen 50%, darkgreen 50%, lightgreen 75%);
 	background-size: 100px 100px;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -103,18 +97,10 @@ export const Error = ({ statusCode }) => {
 		<Page>
 			<Background>
 				<TextContainer>
-					<Text>
-						{statusCode
-							? `An error ${statusCode} occurred on server`
-							: "An error occurred on client"}
-					</Text>
+					<Text>{statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}</Text>
 					<TextDescriptionContainer>
-						<TextDescription>
-							The page you are looking for does not exist.
-						</TextDescription>
-						<TextDescription>
-							Please check the URL and try again.
-						</TextDescription>
+						<TextDescription>The page you are looking for does not exist.</TextDescription>
+						<TextDescription>Please check the URL and try again.</TextDescription>
 					</TextDescriptionContainer>
 				</TextContainer>
 			</Background>
