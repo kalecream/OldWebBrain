@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { LoadingIcon } from 'src/assets/images';
+import styles from './preloader.module.scss';
 
 interface LoaderProps {
 	onComplete: () => void;
@@ -22,7 +23,6 @@ const LoadingScene = () => {
 		'Compiling dreams into lines of code',
 		'Translating ideas into digital reality',
 		'Debugging the path to innovation',
-		'Building algorithms that shape possibilities',
 		'Constructing digital bridges between imagination and reality',
 		'Creating virtual worlds through keystrokes',
 		'Turning logic into digital artistry',
@@ -38,17 +38,14 @@ const LoadingScene = () => {
 		'Designing with depth and dimension in Blender 3D',
 		'Turning abstract concepts into tangible 3D forms',
 		'Bringing imagination to life through 3D modeling',
-		'Creating worlds where imagination meets the third dimension',
 		// Being Jamaican
 		'Infusing a touch of Jamaica into every digital creation',
 		'Bringing the spirit of Jamaica to the virtual stage',
 		'Crafting digital experiences with a Jamaican heartbeat',
 		'Weaving the warmth of Jamaica into every line of code',
 		'Coding with a dash of Jamaican rhythm',
-		'Animating ideas with a splash of Jamaican colors',
 		'Blending the vibrant culture of Jamaica into the digital canvas',
-		'Transforming pixels into a digital Jamaican tapestry',
-		"Creating digital waves of inspiration from Jamaica's shores"
+		'Transforming pixels into a digital tapestry'
 	];
 
 	const [currentTextIndex, setCurrentTextIndex] = useState(Math.floor(Math.random() * loadingScreenTexts.length));
@@ -62,9 +59,9 @@ const LoadingScene = () => {
 	}, [currentTextIndex]);
 
 	return (
-		<div className="loading">
+		<div className={styles.loading}>
 			<Image loader={({ src }) => src} src={LoadingIcon} width={150} height={250} alt="" />
-			<p className="loading-text">{loadingScreenTexts[currentTextIndex]}</p>
+			<p className={styles["loading-text"]}>{loadingScreenTexts[currentTextIndex]}</p>
 		</div>
 	);
 };

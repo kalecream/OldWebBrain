@@ -1,0 +1,28 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  );
+}
+
+.loading-text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--body);
+  letter-spacing: -1px;
+  margin-top: 4rem;
+  text-align: center;
+  font-family: "Sims Sans SC", sans-serif;
+  max-width: 30rem; /* 480px */
+}
+
+.loading-text .active {
+  display: block;
+}

@@ -1,0 +1,108 @@
+@use '@styles/variables.scss' as *;
+@use '@styles/typography.scss' as *;
+
+
+.icons {
+  display: none;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  max-width: 600px;
+  height: 300px;
+}
+.container .text-container,
+.container .shadow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .text {
+  position: absolute;
+  top: 50%;
+  font-size: clamp(4rem, 25vw, 8rem);
+  font-family: $accent-font;
+  font-weight: bold;
+  -webkit-text-stroke: 2px var(--muted);
+  letter-spacing: -4px;
+  user-select: none;
+  pointer-events: none;
+}
+.container .text .icon {
+  position: absolute;
+  width: clamp(2rem, 1.5vw, 10rem);
+  height: clamp(2rem, 1.5vw, 10rem);
+  stroke-width: 25px;
+  stroke: var(--muted);
+  transform: translate(-50%, -50%);
+  animation: scaleUpdown 2000ms ease-in-out infinite;
+}
+
+.container .text .icon:nth-child(1) {
+  top: 13%;
+  left: 64%;
+  animation-delay: 0;
+}
+
+.container .text-container {
+  z-index: 1;
+}
+.container .text-container .text .icon {
+  fill: var(--body);
+}
+.container .text-container .text:nth-child(1) {
+  opacity: 0;
+  left: 42.5%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 1));
+  z-index: -1;
+}
+.container .text-container .text:nth-child(2) {
+  opacity: 0;
+  left: 45%;
+  transform: translate(-45%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 2));
+  z-index: -2;
+}
+.container .text-container .text:nth-child(3) {
+  opacity: 0;
+  left: 47.5%;
+  transform: translate(-45%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 3));
+  z-index: -3;
+}
+.container .text-container .text:nth-child(4) {
+  opacity: 0;
+  left: 50%;
+  transform: translate(-45%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 4));
+  z-index: -4;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-45%, -60%);
+  }
+  50% {
+    transform: translate(-45%, -30%);
+  }
+}
+@keyframes scaleUpdown {
+  0% {
+    transform: translate(-45%, -50%) scale(1) rotate(0);
+  }
+  50% {
+    transform: translate(-45%, -50%) scale(1.4) rotate(90deg);
+  }
+  100% {
+    transform: translate(-45%, -50%) scale(1) rotate(180deg);
+  }
+}

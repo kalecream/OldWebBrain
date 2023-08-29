@@ -16,7 +16,6 @@
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:storybook/recommended",
-		"next",
 		"prettier",
 		"prettier/@typescript-eslint"
 	],
