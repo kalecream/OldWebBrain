@@ -717,18 +717,17 @@ code {
  pre {
   padding: 0.5rem;
   max-width: 80ch;
-  font-size: 0.7rem;
-  line-height: 0.7em;
+  font-size: 1rem;
   margin-bottom: 1rem;
   background-color: #35435f;
   color: var(--body);
   border-radius: 5px;
   background: 
-        linear-gradient(to right, white 0ch, #78dce8 0ch, #78dce8 3ch, white 3ch, white 18ch, #FFD658 18ch, #FFD658 31ch, white 31ch, white 80ch), 
-        linear-gradient(to right, white 0ch, #a6e22e 0ch, #a6e22e 3ch, white 3ch, white 12ch, #f92672 12ch, #f92672 15ch,  #A7C 15ch,  #A7C 17ch, white 17ch, white 80ch), 
-        linear-gradient(to right, white 0ch, white 0ch, white 4ch, #fd971f 4ch, #fd971f 11ch, white 11ch, white 12ch, #a6e22e 12ch, #a6e22e 15ch, white 15ch, white 16ch, #FFD658 16ch, #FFD658 34ch, #f92672 34ch, #f92672 37ch, white 37ch, white 80ch), 
-        linear-gradient(to right, white 0ch, white 0ch, white 80ch), 
-        linear-gradient(to right, white 0ch, white 0ch, white 80ch); 
+        linear-gradient(to right, var(--text) 0ch, #78dce8 0ch, #78dce8 3ch, var(--text) 3ch, var(--text) 18ch, #FFD658 18ch, #FFD658 31ch, var(--text) 31ch, var(--text) 80ch), 
+        linear-gradient(to right, var(--text) 0ch, #a6e22e 0ch, #a6e22e 3ch, var(--text) 3ch, var(--text) 12ch, #f92672 12ch, #f92672 15ch,  #A7C 15ch,  #A7C 17ch, var(--text) 17ch, var(--text) 80ch), 
+        linear-gradient(to right, var(--text) 0ch, var(--text) 0ch, var(--text) 4ch, #fd971f 4ch, #fd971f 11ch, var(--text) 11ch, var(--text) 12ch, #a6e22e 12ch, #a6e22e 15ch, var(--text) 15ch, var(--text) 16ch, #FFD658 16ch, #FFD658 34ch, #f92672 34ch, #f92672 37ch, var(--text) 37ch, var(--text) 80ch), 
+        linear-gradient(to right, var(--text) 0ch, var(--text) 0ch, var(--text) 80ch), 
+        linear-gradient(to right, var(--text) 0ch, var(--text) 0ch, var(--text) 80ch); 
     background-repeat: no-repeat; 
     background-size: 80ch 30px, 80ch 60px, 80ch 90px, 80ch 120px, 80ch 150px; 
     background-clip: text; 
