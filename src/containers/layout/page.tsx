@@ -3,6 +3,7 @@ import { Header, Footer } from '@components/navigation';
 import { MetaProps } from '../../types/layout';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
+import { Analytics } from '@vercel/analytics/react';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -21,10 +22,9 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-
 		setTimeout(() => {
 			setLoading(false);
-		}, 3000);
+		}, 3500);
 
 		return () => {
 			// Clean up any resources if needed
@@ -36,7 +36,7 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 			{loading ? (
 				<Preloader onComplete={() => setLoading(false)} />
 			) : (
-				<>
+				<html lang="en">
 					<Head>
 						<title>{title ? `SM | ${title}` : 'SM'}</title>
 						<meta property="og:title" content={title ? `SM | ${title}` : 'SM'} key="title" />
@@ -50,14 +50,13 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 							/>
 						)}
 					</Head>
-					<Header />
-
-					<main>
-						<>{children}</>
-					</main>
-
-					<Footer />
-				</>
+					<body>
+						<Header />
+						<main>{children}</main>
+						<Footer />
+						<Analytics />
+					</body>
+				</html>
 			)}
 		</>
 	);
