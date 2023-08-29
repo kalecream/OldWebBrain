@@ -1,4 +1,4 @@
-import Page from "../../containers/layout/page";
+import Page from "@containers/layout/page";
 
 import { format, parseISO } from "date-fns";
 import fs from "fs";
@@ -12,7 +12,7 @@ import Link from "next/link";
 import path from "path";
 import { MetaProps } from "../../types/layout";
 import { PostType } from "../../types/post";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { postFilePaths, POSTS_PATH } from "@utils/mdxUtils";
 
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "rehype-prism-plus";
@@ -22,8 +22,8 @@ import remarkGfm from "remark-gfm";
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 
-import { useHeadsObserver } from "../../hooks/useObserver";
-import getReadTime from "../../lib/read-time";
+import { useHeadsObserver } from "@hooks/useObserver";
+import getReadTime from "@utils/read-time";
 
 type PostPageProps = {
   source: MDXRemoteSerializeResult;
