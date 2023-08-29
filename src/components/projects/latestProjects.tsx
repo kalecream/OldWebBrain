@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Button, Container, Section } from '@components/_basics/Basics';
 import Projects from '../../data/projectsData';
 import styled from '@emotion/styled';
-import { faToolbox, faLink, faLanguage } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaToolbox, FaLanguage, FaGithub } from 'react-icons/fa6';
 import 'animate.css';
 import Link from 'next/link';
 
@@ -187,7 +186,7 @@ const LatestProjects = () => {
 					{Projects.slice(0, 2).map(
 						(project) =>
 							project.display && (
-								<ProjectCard image={project.image ? project.image.trim() : ''} key={project.id} className="col-md-4">
+								<ProjectCard image={project.image ? project.image.trim() : ''} key={project.id}>
 									{/* <ProjectImage src={project.image} alt="" /> */}
 									<Overlay>
 										<ProjectTitle>{project.title}</ProjectTitle>
@@ -197,7 +196,7 @@ const LatestProjects = () => {
 											{project.technology ? (
 												<ProjectDataPoint title="Technologies">
 													<Emoji>
-														<FontAwesomeIcon icon={faToolbox} />
+														<FaToolbox />
 													</Emoji>
 													{project.technology?.map((tech, index) => <li key={index}>{tech}</li>)}
 												</ProjectDataPoint>
@@ -207,7 +206,7 @@ const LatestProjects = () => {
 											{project.language ? (
 												<ProjectDataPoint>
 													<Emoji>
-														<FontAwesomeIcon icon={faLanguage} title="Languages" />
+														<FaLanguage />
 													</Emoji>
 													{project.language?.map((lang, index) => (
 														<li key={index}>
@@ -228,7 +227,7 @@ const LatestProjects = () => {
 										>
 											{project.link ? (
 												<ProjectButton href={project.link} target={'_blank'}>
-													<FontAwesomeIcon icon={faLink} style={{ color: 'var(--body)' }} />
+													<FaGithub />
 												</ProjectButton>
 											) : null}
 										</div>
