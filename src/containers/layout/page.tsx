@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Header, Footer } from '@components/navigation';
-import TagManager from 'react-gtm-module';
 import { MetaProps } from '../../types/layout';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
@@ -22,7 +21,6 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		TagManager.initialize({ gtmId: 'UA-148483444-1' });
 
 		setTimeout(() => {
 			setLoading(false);
