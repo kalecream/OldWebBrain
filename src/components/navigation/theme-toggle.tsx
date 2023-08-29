@@ -24,7 +24,8 @@ const ThemeSwitch = () => {
       }}
     >
       <button
-        name = "theme-switch"
+        name="theme-switch"
+        aria-label="theme-switch"
         style={{
           display: "grid",
           placeItems: "center",
