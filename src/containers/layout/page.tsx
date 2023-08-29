@@ -36,7 +36,7 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 			{loading ? (
 				<Preloader onComplete={() => setLoading(false)} />
 			) : (
-				<html lang="en">
+				<>
 					<Head>
 						<title>{title ? `SM | ${title}` : 'SM'}</title>
 						<meta property="og:title" content={title ? `SM | ${title}` : 'SM'} key="title" />
@@ -56,7 +56,7 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 						<Footer />
 						<Analytics />
 					</body>
-				</html>
+				</>
 			)}
 		</>
 	);
