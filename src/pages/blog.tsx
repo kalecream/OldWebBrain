@@ -1,5 +1,5 @@
 import { Page } from "src/containers/layout";
-import {  FullSection } from "src/components/global";
+import {  FullSection } from "src/components/_basics/Basics";
 import { PostType } from "src/types/post";
 import { getAllPosts } from "@utils/api";
 import { GetStaticProps } from "next";

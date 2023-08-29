@@ -5,10 +5,6 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { MetaProps } from "../types/layout";
 
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-
-config.autoAddCss = false;
 export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
 
 export const App = (

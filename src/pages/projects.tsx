@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import Page from "../containers/layout/page";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToolbox, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import "animate.css";
 import { Section, CardTitle, Button } from "@components/_basics/Basics";
 import Projects from "../data/projectsData";
+
+import { FaToolbox, FaLanguage } from "react-icons/fa6";
 
 const RigidContainer = styled.div`
   display: flex;
@@ -92,7 +92,7 @@ export const Directory: any = () => {
                 {project.technology ? (
                   <ProjectDataPoint title="Technologies">
                     <Emoji>
-                      <FontAwesomeIcon icon={faToolbox} />
+                      <FaToolbox />
                     </Emoji>
                     {project.technology?.map((tech, index) => (
                       <li key={index}>{tech}</li>
@@ -102,7 +102,7 @@ export const Directory: any = () => {
                 {project.language ? (
                   <ProjectDataPoint>
                     <Emoji>
-                      <FontAwesomeIcon icon={faLanguage} title="Languages" />
+                      <FaLanguage />
                     </Emoji>
                     {project.language?.map((lang, index) => (
                       <li key={index}>

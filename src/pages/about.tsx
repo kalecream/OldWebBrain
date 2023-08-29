@@ -1,6 +1,4 @@
-import styled from "@emotion/styled";
 import { Page } from "src/containers/layout";
-import { Section } from "src/components/global";
 import CurrentReads from "src/components/about/currentReads";
 import { BacklogGraph } from "src/components/about/backlogGraph";
 import Books from "src/data/books";
@@ -53,7 +51,7 @@ export const About = () => {
 
   return (
     <Page title="About">
-      <Section>
+      <section>
         <h1>About</h1>
         <div className="paragraph">
         <p>Hey there, internet wanderer! I'm Sabrina aka KaleCream, but you can call me whatever floats your digital boat.</p>
@@ -78,7 +76,7 @@ export const About = () => {
           <BacklogGraph />
           <BookShelf/>
         </div>
-      </Section>
+      </section>
     </Page>
   );
 };

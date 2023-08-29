@@ -1,4 +1,4 @@
-import { ComingSoon } from "src/components/global";
+import { ComingSoon } from "src/components/_basics/Basics";
 import { Page } from "src/containers/layout";
 
 

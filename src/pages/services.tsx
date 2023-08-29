@@ -2,7 +2,6 @@ import Page from "../containers/layout/page";
 // import Services from "../data/serviceData";
 import styled from "@emotion/styled";
 import "animate.css";
-import { Section } from "../src/components/global";
 import Link from "next/link";
 
 const Sections = [
@@ -139,7 +138,7 @@ export default function Services() {
   return (
     <Page title="Let's Work Together">
       <h1>Services</h1>
-      <Section>
+      <section>
         <CardContainer>
           {Sections.map((section) => (
             <ProjectCard
@@ -187,7 +186,7 @@ export default function Services() {
           </p>
         </ServicesTerms>
         {/* <ContactForm /> */}
-      </Section>
+      </section>
     </Page>
   );
 }
