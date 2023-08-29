@@ -1,3 +1,22 @@
-$primary-font: "Inter", sans-serif;
-$accent-font: "Sims Sans SC", sans-serif;
-$secondary-font: 'Bebas Neue', sans-serif;
+@font-face {
+  font-family: "Proxima Nova";
+  font-display: swap; 
+  src: url(../assets/fonts/ProximaNova.otf);
+}
+
+@font-face {
+  font-family: "Sims Sans SC";
+  font-display: swap; 
+  // tells the browser to use the fallback font while the custom font is loading
+  src: url(../assets//fonts/Sim-Sans-Bold-SC.otf);
+}
+
+@font-face {
+  font-family: "Fira Code", monospace;
+  font-display: swap; 
+  src: url(../assets/fonts/FiraCode-Regular.ttf);
+}
+
+$primary-font: "Inter", Arial, Helvetica, sans-serif;
+$accent-font: "Sims Sans SC", Arial, Helvetica, sans-serif;
+$secondary-font: 'Bebas Neue', "Fira Code", monospace;

@@ -21,22 +21,7 @@ body {
   min-height: 100vh;
 }
 
-@font-face {
-  font-family: "Proxima Nova";
-  src: url(../assets/fonts/ProximaNova.otf);
-}
 
-@font-face {
-  font-family: "Sims Sans SC";
-  font-display: swap; 
-  // tells the browser to use the fallback font while the custom font is loading
-  src: url(../assets//fonts/Sim-Sans-Bold-SC.otf);
-}
-
-@font-face {
-  font-family: "Fira Code";
-  src: url(../assets/fonts/FiraCode-Regular.ttf);
-}
 
 .light {
   --primary: #009b3a;
