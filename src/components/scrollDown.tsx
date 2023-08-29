@@ -1,7 +1,7 @@
 import React from "react";
 import "@emotion/styled";
 
-import { Container } from "./Basics";
+import { Container } from "./_basics/Basics";
 import styled from "@emotion/styled";
 
 const Field = styled.div`

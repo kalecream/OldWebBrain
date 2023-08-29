@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button } from "./Basics";
+import { Button } from "./_basics/Basics";
 import { useState } from "react";
 
 const CustomForm = styled.form`

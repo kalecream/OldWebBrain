@@ -1,4 +1,4 @@
-import { Caption } from '../components/global/Basics';
+import { Caption } from '../components/_basics/Basics';
 import img_20220102 from "../assets/images/3D/2023/plant_20230102_composed.png";
 
 import Chess from "../assets/images/3D/chess__alternate_view__by_kalecream.jpg";

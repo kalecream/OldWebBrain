@@ -9,8 +9,8 @@ import {
   Legend,
 } from "recharts";
 import Books from "src/data/books";
-import { WindowWidth } from "..";
-import { getMonthName } from "src/components/home/projectsList";
+import { WindowWidth } from "@utils/windowDimmensions";
+import { getMonthName } from "@components/projects/projectsList";
 
 export interface BooksProps {
   title: string;

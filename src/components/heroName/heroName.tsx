@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import styles from "../styles/heroName.module.css";
+import styles from "./heroName.module.scss";
 
 const HeroName = ({ name }) => {
   const textArray = useRef(null);

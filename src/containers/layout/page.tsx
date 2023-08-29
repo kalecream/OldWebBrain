@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Header, Footer } from "@components/navigation";
 import TagManager from "react-gtm-module";
 import { MetaProps } from "../../types/layout";
@@ -15,7 +15,7 @@ type LayoutProps = {
 export const WEBSITE_HOST_URL = "https://www.sabrinamedwinter.com";
 
 const Preloader = dynamic(
-  () => import("../../components/preloader"),
+  () => import("../../components/preloader/preloader"),
   {
     ssr: false,
   }

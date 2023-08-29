@@ -9,11 +9,11 @@ import { getAllPosts } from "../utils/api";
 import { PostType } from "../types/post";
 import styled from "@emotion/styled";
 
-import HeroName from "@components/heroName";
-import { Button } from "@components/global/Basics";
+import HeroName from "@components/heroName/heroName";
+import { Button } from "@components/_basics/Basics";
 
-import { ScrollDown } from "@components/global";
-import ProjectList from "@components/home/projectsList";
+import { ScrollDown } from "@components/scrollDown";
+import ProjectList from "@components/projects/projectsList";
 
 import { Model } from "@assets/models/me";
 

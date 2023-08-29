@@ -1,6 +1,5 @@
 import * as React from "react";
 import Books from "../../data/books";
-import { Container, Section } from "../global";
 import styled from "@emotion/styled";
 import "animate.css";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import Link from "next/link";
 // TODO:  change to color theme
 // TODO: add to top page
 
-export const ReadingContainer = styled(Container)`
+export const ReadingContainer = styled.section`
   & > * {
     margin: 1rem 0;
   }
@@ -124,7 +123,7 @@ const CurrentReads = () => {
   );
 
   return (
-    <Section style={{width: "auto"}}>
+    <section>
       <ReadingContainer>
         {Books.map((book) => {
           if (book.status === "Reading") {
@@ -145,7 +144,7 @@ const CurrentReads = () => {
           }
         })}
       </ReadingContainer>
-    </Section>
+    </section>
   );
 };
 
