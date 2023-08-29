@@ -29,13 +29,15 @@ font-family: 'Playfair Display', serif;
 */
 
 @font-face {
-  font-family: "Spacetime";
-  src: url(../assets/fonts/spacetime-regular.ttf);
+  font-family: "Proxima Nova";
+  src: url(../assets/fonts/ProximaNova.otf);
 }
 
 @font-face {
   font-family: "Sims Sans SC";
-  src: url(../../public/fonts/Sim-Sans-Bold-SC.otf);
+  font-display: swap; 
+  // tells the browser to use the fallback font while the custom font is loading
+  src: url(../assets//fonts/Sim-Sans-Bold-SC.otf);
 }
 
 .light {
@@ -47,7 +49,7 @@ font-family: 'Playfair Display', serif;
   --text-shadow: 0 0 1px #fff;
   --box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  --font-family-heading: "Inter", sans-serif;
+  --font-family-heading: "Proxima Nova", sans-serif;
   --font-family-accent: "Sims Sans SC", serif;
 
   --body: #fafafa;
