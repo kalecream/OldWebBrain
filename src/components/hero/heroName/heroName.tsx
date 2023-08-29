@@ -10,7 +10,6 @@ const HeroName = ({ name }) => {
 			<div className={styles.container}>
 				<div className={styles['text-container']} ref={textArray}>
 					{Array.from({ length: 4 }).map((_, index) => (
-						<>
 							<span key={index} className={styles.text} style={{ color: colorArr[index % colorArr.length] }}>
 								{name}
 								<div className={styles['icon--container']}>
@@ -19,7 +18,6 @@ const HeroName = ({ name }) => {
 									</svg>
 								</div>
 							</span>
-						</>
 					))}
 				</div>
 			</div>

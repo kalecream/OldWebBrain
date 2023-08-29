@@ -714,17 +714,26 @@ code {
   font-family: 'Fira Code' ,monospace;
 }
 
-article pre {
-  padding: 1rem;
-  max-width: 100%;
+ pre {
+  padding: 0.5rem;
+  max-width: 80ch;
   font-size: 0.7rem;
-  font-weight: 400;
-  line-height: 1.2;
+  line-height: 0.7em;
   margin-bottom: 1rem;
-  font-family: monospace;
   background-color: #35435f;
   color: var(--body);
   border-radius: 5px;
+  background: 
+        linear-gradient(to right, white 0ch, #78dce8 0ch, #78dce8 3ch, white 3ch, white 18ch, #FFD658 18ch, #FFD658 31ch, white 31ch, white 80ch), 
+        linear-gradient(to right, white 0ch, #a6e22e 0ch, #a6e22e 3ch, white 3ch, white 12ch, #f92672 12ch, #f92672 15ch,  #A7C 15ch,  #A7C 17ch, white 17ch, white 80ch), 
+        linear-gradient(to right, white 0ch, white 0ch, white 4ch, #fd971f 4ch, #fd971f 11ch, white 11ch, white 12ch, #a6e22e 12ch, #a6e22e 15ch, white 15ch, white 16ch, #FFD658 16ch, #FFD658 34ch, #f92672 34ch, #f92672 37ch, white 37ch, white 80ch), 
+        linear-gradient(to right, white 0ch, white 0ch, white 80ch), 
+        linear-gradient(to right, white 0ch, white 0ch, white 80ch); 
+    background-repeat: no-repeat; 
+    background-size: 80ch 30px, 80ch 60px, 80ch 90px, 80ch 120px, 80ch 150px; 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    color: transparent;
 }
 
 article ul {
@@ -796,34 +805,7 @@ article li::marker {
   display: inline-block;
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(14, 174, 87, 1) 0%,
-    rgba(12, 116, 117, 1) 90%
-  );
-}
 
-.loading-text {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--body);
-  letter-spacing: -1px;
-  margin-top: 4rem;
-  text-align: center;
-  font-family: "Sims Sans SC", sans-serif;
-  max-width: 30rem; /* 480px */
-}
-
-.loading-text .active {
-  display: block;
-}
 
 /* TABS  */
 .tabs {
