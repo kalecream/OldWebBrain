@@ -75,7 +75,7 @@
 		"storybook": "^7.3.2",
 		"styled-components": "^5.3.6",
 		"three": "^0.148.0",
-		"webpack": "5.0.0"
+		"webpack": "5.76.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
