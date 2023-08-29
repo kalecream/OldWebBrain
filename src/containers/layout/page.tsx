@@ -47,8 +47,9 @@ export const Page = ({
           <Preloader onComplete={() => setLoading(false)} />
       ) : (
         <>
-          <Head>
-            {title ? <title>SM | {title} </title> : <title>SM</title>}
+            <Head>
+              <title>{title ? (`SM | ${title}`) : "SM" }</title>
+            
             {description ? (
               <meta name="description" content={description} />
             ) : (
