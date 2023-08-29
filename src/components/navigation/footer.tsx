@@ -18,7 +18,7 @@ export const SocialMediaList= () => {
             rel="noopener"
             key={media.name}
           >
-          <Icon />
+          <Icon name={media.name} />
           </Link>
         );
       })}
