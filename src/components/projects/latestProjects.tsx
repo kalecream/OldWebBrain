@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Container, Section } from "../global";
+import { Button, Container, Section } from "@components/_basics/Basics";
 import Projects from "../../data/projectsData";
 import styled from "@emotion/styled";
 import {

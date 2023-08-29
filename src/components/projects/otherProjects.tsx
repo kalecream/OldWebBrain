@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, HalfColumn } from "../global";
+import { Container, HalfColumn } from "@components/_basics/Basics";
 import "animate.css";
 import styled from "@emotion/styled";
 import Link from "next/link";
