@@ -13,6 +13,7 @@ export const SocialMediaList= () => {
         return (
           <Link
             href={media.url}
+            aria-label="social media link"
             className={style["social-media"]}
             target="_blank"
             rel="noopener"
