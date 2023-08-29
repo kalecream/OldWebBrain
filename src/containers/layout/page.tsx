@@ -50,12 +50,10 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 							/>
 						)}
 					</Head>
-					<body>
 						<Header />
 						<main>{children}</main>
 						<Footer />
 						<Analytics />
-					</body>
 				</>
 			)}
 		</>
