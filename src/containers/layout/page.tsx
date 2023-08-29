@@ -48,7 +48,8 @@ export const Page = ({
       ) : (
         <>
             <Head>
-              <title>{title ? (`SM | ${title}`) : "SM" }</title>
+              <title>{title ? (`SM | ${title}`) : "SM"}</title>
+              <meta property="og:title" content={title ? (`SM | ${title}`) : "SM"} key="title" />
             
             {description ? (
               <meta name="description" content={description} />
