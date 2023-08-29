@@ -1,0 +1,60 @@
+
+.directory-list {
+  align-items: center;
+}
+
+.directory-section {
+  right: 0;
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.directory-link {
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.directory-link:hover {
+  color: var(--text);
+}
+
+.directory-link .active {
+  color: var(--accent);
+}
+
+.settings > * {
+  margin: 0 0.5rem;
+}
+
+.social-media-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.site-name {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-family-accent);
+  margin: 0 1rem;
+  color: var(--primary);
+}
+
+.sitename:hover {
+  opacity: 0.8;
+}
