@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header, Footer } from '@components/navigation';
 import { MetaProps } from '../../types/layout';
 import Head from 'next/head';
@@ -24,7 +24,7 @@ export const Page = ({ children, title, description, customMeta }: LayoutProps) 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 3500);
+		}, 1800);
 
 		return () => {
 			// Clean up any resources if needed
