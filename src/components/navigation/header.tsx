@@ -27,7 +27,7 @@ export const Header: React.FunctionComponent = () => {
 	const router = useRouter();
 
 	return (
-		<nav>
+		<header>
 			<div className={`${style['directory-list']} ${style['directory-section']}`}>
 				{router?.pathname !== '/' && (
 					<Link className={style['site-name']} href="/">
@@ -47,7 +47,7 @@ export const Header: React.FunctionComponent = () => {
 				<ThemeSwitch />
 				{/* <AvailableForWork /> */}
 			</div>
-		</nav>
+		</header>
 	);
 };
 
