@@ -1,3 +1,7 @@
+$border-radius: 15px;
+$border-radius-large: 25px;
+$border-radius-small: 5px;
+
 @mixin theme($theme) {
   @if $theme == 'dark' {
     $color: #fff;
