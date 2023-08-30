@@ -11,25 +11,7 @@ import { ScrollDown } from '@components/scrollDown';
 import { Model } from '@assets/models/me';
 
 import { Suspense } from 'react';
-
-const HeroContainer = styled.section`
-	width: 100%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	flex-wrap: wrap;
-	place-items: center;
-
-	@media (max-width: 1024px) {
-		flex-direction: column;
-	}
-
-	@media (min-width: 1024px) {
-		margin: 0 auto;
-		flex-direction: row;
-	}
-`;
+import styles from './hero.module.scss';
 
 const HeroSection = styled.div`
   height: auto;
@@ -129,28 +111,29 @@ export const Rotate3DModel = () => {
 
 const Hero = () => {
 	return (
-		<>
-			<HeroContainer>
+		<section className={` ${styles.wrapper} parallax}`}>
+			<div className={styles.container}>
 				<HeroSection>
-					<div className="hider">
-						{/* <h1 className="sitename">Sabrina Medwinter</h1> */}
-						<HeroName name={'Sabrina'} />
+					{/* <HeroName name={'Sabrina'} /> */}
+					<div className={`${styles['text-container']} ${styles.glassmorphic} `}>
+						<p>
+							<b>Web developer and 3D artist based in Kingston, Jamaica.</b>
+						</p>
+						<p>
+							{' '}
+							I strive to enhance my skills concurrently by creating functional resources to benefit the broader
+							community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine
+							my capabilities.
+						</p>
 					</div>
-					<p>
-						<b>Web developer and 3D artist based in Kingston, Jamaica.</b>
-					</p>
-					<p>
-						{' '}
-						I strive to enhance my skills concurrently by creating functional resources to benefit the broader
-						community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine
-						my capabilities.
-					</p>
 
 					<ButtonContainer>
 						<Button primary="true" href="/services">
 							Need a service?
 						</Button>
-						<Button href="/blog">Check out the blog</Button>
+						{/* <Button href="/blog" className="glassmorphic">
+							Check out the blog
+						</Button> */}
 					</ButtonContainer>
 				</HeroSection>
 				<HeroSection>
@@ -180,9 +163,9 @@ const Hero = () => {
 						</Suspense>
 					</CustomCanvas>
 				</HeroSection>
-			</HeroContainer>
+			</div>
 			<ScrollDown />
-		</>
+		</section>
 	);
 };
 
