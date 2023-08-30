@@ -1,0 +1,23 @@
+
+.former-featured-article {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    opacity: 0.5;
+}
+
+.regular-article {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.blog-top {
+    width: 100%;
+}
