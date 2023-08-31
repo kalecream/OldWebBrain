@@ -9,7 +9,7 @@ import { getAllPosts } from '../utils/api';
 import { PostType } from '../types/post';
 import Hero from '@components/hero/hero';
 import { SiteBackground } from '@components/threeJS/scene';
-
+import ImageLoader from '@utils/ImageLoader';
 
 import ProjectList from '@components/projects/projectsList';
 
@@ -18,14 +18,6 @@ import 'animate.css';
 
 type IndexProps = {
 	posts: PostType[];
-};
-
-
-
-
-
-const imageLoader = ({ src, width, quality }) => {
-	return `https://sabrinamedwinter.com/${src}?w=${width}&q=${quality || 75}`;
 };
 
 export const Home = ({ posts }: IndexProps): JSX.Element => {
