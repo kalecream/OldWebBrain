@@ -1,7 +1,13 @@
 // format taken from https://github.com/hyamero/portfolio-3d/blob/main/src/config.tsx
 
 import Head from 'next/head';
-import { HeadProps } from 'src/types/layout';
+
+export interface HeadProps {
+	title: string,
+		description: string,
+		url: string,
+		author: string,
+}
 
 const titleDefault = 'Sabrina Medwinter';
 const defaultDescription =
