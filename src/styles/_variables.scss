@@ -1,6 +1,14 @@
+
+
 $border-radius: 15px;
-$border-radius-large: 25px;
-$border-radius-small: 5px;
+
+$line-height: 1.4;
+
+$heading-font: 'Inter', sans-serif;
+$sims-font: 'Sims Sans SC', serif;
+$body-font: 'Inter', sans-serif;
+
+$blur: blur(20px);
 
 @mixin theme($theme) {
   @if $theme == 'dark' {

@@ -1,3 +1,5 @@
+@use '@styles/variables' as *;
+
 .wrapper {
 	background: transparent;
 	// background-size: cover;
@@ -45,17 +47,14 @@
 .glassmorphic {
 	flex: 1 1 15rem;
 	padding: var(--padding);
-	background: rgba(255, 255, 255, 0.2);
-	// box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	border-radius: var(--border-radius-small);
+	background: rgba(var(--body), 0.2);
+	box-shadow: 1px 4px 16px 0 rgba(2, 4, 36, 0.37);
+	backdrop-filter: $blur;
+	-webkit-backdrop-filter: $blur;
+	border-radius: $border-radius;
 	border: 1px solid rgba(255, 255, 255, 0.23);
 	/* From https://css.glass */
 	background: rgba(255, 255, 255, 0.07);
-	border-radius: 16px;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
+	border-radius: $border-radius;
 	border: 1px solid rgba(255, 255, 255, 0.23);
 }
