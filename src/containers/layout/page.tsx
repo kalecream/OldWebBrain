@@ -9,7 +9,7 @@ type LayoutProps = {
 	children: React.ReactNode;
 	title?: string;
 	description?: string;
-	url: string;
+	url?: string;
 	author?: string;
 };
 
