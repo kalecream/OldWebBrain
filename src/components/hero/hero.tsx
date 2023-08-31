@@ -1,17 +1,12 @@
-import { useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, PresentationControls } from '@react-three/drei';
 import styled from '@emotion/styled';
 
 import HeroName from '@components/hero/heroName/heroName';
 import { Button } from '@components/_basics/Basics';
 
 import { ScrollDown } from '@components/scrollDown';
-
-import { Model } from '@assets/models/me';
-
-import { Suspense } from 'react';
 import styles from './hero.module.scss';
+
+import { SceneViewer, HeroModel } from '@components/threeJS/scene';
 
 const HeroSection = styled.div`
   height: auto;
@@ -64,54 +59,11 @@ const ButtonContainer = styled.div`
 	}
 `;
 
-const CustomCanvas = styled(Canvas)`
-	@media (min-width: 768px) {
-		width: fit-content;
-		height: 100%;
-	}
-
-	@media (max-width: 768px) {
-		display: none;
-	}
-`;
-
-export const angletoRadian = (angle: number) => {
-	return angle * (Math.PI / 180);
-};
-
-export const Rotate3DModel = () => {
-	// useFrame((state) => {
-	// 	state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
-	// 	state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-	// 	state.camera.lookAt(0, 0, 0);
-	// });
-
-	// requestAnimationFrame(() => {
-	// 	document.getElementById("hero")?.scrollIntoView();
-	// });
-
-	const orbitControlsRef = useRef<any>(null);
-
-	useFrame((state) => {
-		if (!!orbitControlsRef.current) {
-			const { x } = state.mouse;
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
-			orbitControlsRef.current.update();
-		}
-	});
-
-	useEffect(() => {
-		if (!!orbitControlsRef.current) {
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
-		}
-	}, [orbitControlsRef.current]);
-
-	return <OrbitControls ref={orbitControlsRef} maxDistance={8} minDistance={8} enableZoom={false} />;
-};
 
 const Hero = () => {
 	return (
 		<section className={` ${styles.wrapper} parallax}`}>
+			<SceneViewer scale={90 } modelPath={"/lost_robot/scene.gltf"} />
 			<div className={styles.container}>
 				<HeroSection>
 					{/* <HeroName name={'Sabrina'} /> */}
@@ -122,8 +74,7 @@ const Hero = () => {
 						<p>
 							{' '}
 							I strive to enhance my skills concurrently by creating functional resources to benefit the broader
-							community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine
-							my capabilities.
+							community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
 						</p>
 					</div>
 
@@ -131,37 +82,13 @@ const Hero = () => {
 						<Button primary="true" href="/services">
 							Need a service?
 						</Button>
-						{/* <Button href="/blog" className="glassmorphic">
+						<Button href="/blog" className="glassmorphic">
 							Check out the blog
-						</Button> */}
+						</Button>
 					</ButtonContainer>
 				</HeroSection>
 				<HeroSection>
-					<CustomCanvas
-						flat
-						shadows
-						dpr={[1, 2]}
-						camera={{ position: [2, 0, 12], fov: 15 }}
-						style={{
-							width: '375px',
-							height: '500px'
-						}}
-					>
-						{/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
-						<ambientLight />
-						<directionalLight />
-						<Suspense fallback={null}>
-							<PresentationControls
-								global
-								zoom={1}
-								rotation={[0, -Math.PI / 4, 0]}
-								polar={[0, Math.PI / 4]}
-								azimuth={[-Math.PI / 4, Math.PI / 4]}
-							></PresentationControls>
-							<Rotate3DModel />
-							<Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
-						</Suspense>
-					</CustomCanvas>
+					<HeroModel />
 				</HeroSection>
 			</div>
 			<ScrollDown />
