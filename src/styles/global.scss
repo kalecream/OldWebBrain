@@ -4,10 +4,14 @@
 @import 'animations';
 @import 'mediaQuery';
 
+
+$primary: #FED100;
+$secondary: #2b694d;
+
 .light {
-	--primary: #009b3a;
+	--primary: #8cbb9f;
 	--secondary: #2b694d;
-	--accent: #8cbb9f;
+	--accent: #FED100;
 
 	--text: #fafafa;
 	--text-shadow: 0 0 1px #fff;
