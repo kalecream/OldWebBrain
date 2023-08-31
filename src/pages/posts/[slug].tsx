@@ -6,24 +6,21 @@ import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import Head from 'next/head';
+
 import Image from 'next/image';
-import Link from 'next/link';
 import path from 'path';
-import { MetaProps } from '../../types/layout';
 import { PostType } from '../../types/post';
 import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
-// import { CH } from "@code-hike/mdx/components";
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
+
+import { CustomComponents } from '@components/blog/customElements';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -67,101 +64,6 @@ const TableOfContents = styled.aside`
 	}
 `;
 
-const RelatedArticlesWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin-top: 3rem;
-	break-inside: avoid;
-`;
-
-const CustomH1 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h1 {...rest} />
-			</Link>
-		);
-	}
-	return <h1 {...rest} />;
-};
-
-const CustomH2 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h2 {...rest} />
-			</Link>
-		);
-	}
-	return <h2 {...rest} />;
-};
-
-const CustomH3 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h3 {...rest} />
-			</Link>
-		);
-	}
-	return <h3 {...rest} />;
-};
-
-const CustomH4 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h4 {...rest} />
-			</Link>
-		);
-	}
-	return <h4 {...rest} />;
-};
-
-const CustomH5 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h5 {...rest} />
-			</Link>
-		);
-	}
-	return <h5 {...rest} />;
-};
-
-const CustomH6 = ({ id, ...rest }) => {
-	if (id) {
-		return (
-			<Link href={`#${id}`}>
-				<h6 {...rest} />
-			</Link>
-		);
-	}
-	return <h6 {...rest} />;
-};
-
-const CustomImage = ({ src, ...rest }) => {
-	return <Image alt="" src={src} {...rest} unoptimized={true} unselectable="on" />;
-};
-
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
-const components = {
-	// CH,
-	Head,
-	CustomImage,
-	Link,
-	CustomH1,
-	CustomH2,
-	CustomH3,
-	CustomH4,
-	CustomH5,
-	CustomH6
-};
-
 const getClassName = (level: string) => {
 	switch (level) {
 		case 'H2':
@@ -174,14 +76,7 @@ const getClassName = (level: string) => {
 };
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
-	const customMeta: MetaProps = {
-		title: `${frontMatter.title}`,
-		description: frontMatter.description,
-		image: `${frontMatter.coverImage}`,
-		date: `${frontMatter.date}`,
-		type: 'article'
-	};
-
+	
 	const [headings, setHeadings] = useState<any[]>([]);
 	const { activeId } = useHeadsObserver();
 
@@ -196,8 +91,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	}, []);
 
 	return (
-		<BlogPage customMeta={customMeta}>
-			{/* Nest the smaller headers inside the larger headers to denote hierarchy */}
+		<BlogPage >
 			<article>
 				<div className="article--header">
 					<div className="article--image">
@@ -255,27 +149,13 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 						})}
 					</ul>
 				</TableOfContents>
-
 				<div className="prose dark:prose-dark">
-					<MDXRemote {...source} components={components} />
+					<MDXRemote {...source} components={CustomComponents} />
 				</div>
 			</article>
 		</BlogPage>
 	);
 };
-
-// const { remarkCodeHike } = require("@code-hike/mdx");
-// [
-//   remarkCodeHike,
-//   {
-//     lineNumbers: true,
-//     showCopyButton: true,
-//     theme: "one-dark-pro",
-//     staticMediaQuery: "not screen, (max-width: 768px)",
-//     autoImport: false,
-//     autoLink: true,
-//   },
-// ],
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`);
@@ -285,10 +165,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 	const mdxSource = await serialize(content, {
 		mdxOptions: {
-			remarkPlugins: [remarkGfm],
+			remarkPlugins: [],
 			rehypePlugins: [
 				rehypeSlug,
-				rehypePrism,
 				[
 					rehypeAutolinkHeadings,
 					{
