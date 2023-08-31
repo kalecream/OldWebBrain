@@ -9,7 +9,7 @@ import { getAllPosts } from '../utils/api';
 import { PostType } from '../types/post';
 import Hero from '@components/hero/hero';
 import { SiteBackground } from '@components/threeJS/scene';
-import ImageLoader from '@utils/ImageLoader';
+// import { ImageLoader } from '@utils/ImageLoader';
 
 import ProjectList from '@components/projects/projectsList';
 
