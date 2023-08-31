@@ -1,7 +1,16 @@
 import React, { Suspense, useRef, useState, useEffect } from 'react';
-import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import { Environment, OrbitControls, PresentationControls, PerspectiveCamera, CameraControls, OrthographicCamera, Preload } from '@react-three/drei';
+import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
+import {
+	Environment,
+	OrbitControls,
+	PresentationControls,
+	PerspectiveCamera,
+	CameraControls,
+	OrthographicCamera,
+	Preload
+} from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import * as THREE from 'three';
 
 import { Model } from '@assets/models/me';
 import { Model as IndexScene } from '@assets/models/Scene';
@@ -81,7 +90,13 @@ export const SiteBackground = (): JSX.Element => {
 	return (
 		<Canvas
 			shadows
-			camera={{ position: [0, 0, 12], fov: 15, near: 0.1, far: 1000 }}
+			camera={{
+				position: [0, 0, 12],
+				fov: 15,
+				near: 0.1,
+				far: 1000,
+				rotation: [-30, 0, 5]
+			}}
 			style={{
 				width: '100vw',
 				height: '100vh',
@@ -92,12 +107,12 @@ export const SiteBackground = (): JSX.Element => {
 			}}
 		>
 			<Preload all />
-			{/* <PerspectiveCamera makeDefault position={[0, -8, -15]}  /> */}
+			<PerspectiveCamera makeDefault position={[4, -8, -15]} />
 			<ambientLight />
 			<pointLight position={[10, 10, 10]} />
 			<Suspense fallback={null}>
-				<IndexScene position={[-10,-80,0]}  />
-				<OrbitControls autoRotate   />
+				<IndexScene position={[-10, -80, 0]} />
+				<OrbitControls autoRotate />
 			</Suspense>
 		</Canvas>
 	);
