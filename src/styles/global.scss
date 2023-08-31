@@ -9,7 +9,7 @@
 	--secondary: #2b694d;
 	--accent: #8cbb9f;
 
-	--text: hsl(222, 10%, 20%);
+	--text: #fafafa;
 	--text-shadow: 0 0 1px #fff;
 	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
 		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -454,14 +454,15 @@ kbd::after,
 .blog--article {
 	flex: 1 1 400px;
 	max-height: 200px;
+	max-width:500px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	background: rgba(var(--body), 0.2);
-	border-radius: var(--border-radius-small);
+	background: rgba(var(--body), 0.4);
+	border-radius: $border-radius;
 	text-align: center;
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: $blur;
+	-webkit-backdrop-filter: $blur;
 	box-shadow:
 		rgba(0, 0, 0, 0.4) 0px 2px 4px,
 		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -482,19 +483,19 @@ kbd::after,
 }
 
 .blog--article__section {
-	padding: 1.8rem;
+	padding: 1rem;
 }
 
 .blog--article__section a h2 {
 	padding: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 0.25rem;
 	display: flex;
 }
 
 .blog--article__image {
 	aspect-ratio: 1/1;
 	object-fit: contain;
-	border-radius: var(--border-radius-small);
+	border-radius: $border-radius;
 }
 
 .blog--article__date {
@@ -515,32 +516,30 @@ kbd::after,
 	color: var(--primary);
 }
 
-.blog--article__description {
-	font-size: 0.9rem;
+.article__description {
+	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1rem;
 	color: var(--text);
-	text-align: justify;
+	text-align: start;
+	margin: 1rem 0;
 }
 
-.blog--article__tags {
-	font-size: 0.7rem;
+.article__tags {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: start;
 	gap: 0.5rem;
-	margin-top: 2rem;
 }
 
-.blog--article__tags .tag {
+.article__tags .tag {
 	padding: 0.2rem 0.5rem;
-	border-radius: var(--border-radius-small);
+	border-radius: $border-radius;
 	background-color: var(--faint);
 	color: var(--text);
-	font-size: 0.7rem;
+	font-size: 0.55rem;
 	font-weight: 400;
 	line-height: 1.2rem;
-	text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -548,7 +547,7 @@ kbd::after,
 		font-size: 1.8rem;
 	}
 
-	.blog--article__description {
+	.article__description {
 		font-size: 0.7rem;
 		padding: 0;
 	}

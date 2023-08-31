@@ -32,7 +32,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 					<h2 className="section-title">Blog</h2>
 					<div className="pancake section-content">
 						{posts.slice(0, 3).map((post) => (
-							<div key={post.slug} className="blog--article pancake-child">
+							<div key={post.slug} className="blog--article pancake-child ">
 								{post.coverImage && (
 									<div className="image-wrapper">
 										<Image
@@ -40,7 +40,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 											width={0}
 											loader={({ src }) => src}
 											sizes="100vw"
-											style={{ width: 'auto', height: '200px' }}
+											style={{ width: 'auto', height: '150px' }}
 											src={post.coverImage}
 											alt={post.alt ? post.alt : ''}
 											className="blog--article__image"
@@ -48,17 +48,17 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 									</div>
 								)}
 								<div className="blog--article__section">
-									{post.date && (
+									{/* {post.date && (
 										<span className="blog--article__date">{format(parseISO(post.date), 'MMMM dd, yyyy')}</span>
-									)}
+									)} */}
 									<Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
 										<h2 className="article__title">{post.title}</h2>
 									</Link>
 
-									<p className="blog--article__description">{post.description}</p>
+									<p className="article__description">{post.description}</p>
 
 									{post.tags && (
-										<div className="blog--article__tags">
+										<div className="article__tags">
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className="tag" key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
 													{tag}
