@@ -1,4 +1,6 @@
 import Page from '@containers/layout/page';
+import { useEffect, useState } from 'react';
+import { CustomComponents } from '@components/blog/customElements';
 
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
@@ -15,12 +17,9 @@ import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
 
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
-
-import { CustomComponents } from '@components/blog/customElements';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -76,7 +75,6 @@ const getClassName = (level: string) => {
 };
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
-	
 	const [headings, setHeadings] = useState<any[]>([]);
 	const { activeId } = useHeadsObserver();
 
@@ -91,7 +89,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	}, []);
 
 	return (
-		<BlogPage >
+		<BlogPage>
 			<article>
 				<div className="article--header">
 					<div className="article--image">
