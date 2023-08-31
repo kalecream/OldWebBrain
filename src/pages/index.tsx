@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { getAllPosts } from '../utils/api';
 import { PostType } from '../types/post';
 import Hero from '@components/hero/hero';
+import { SiteBackground } from '@components/threeJS/scene';
 
 
 import ProjectList from '@components/projects/projectsList';
@@ -30,6 +31,7 @@ const imageLoader = ({ src, width, quality }) => {
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
+			<SiteBackground />
 			<Hero />
 			
 
@@ -46,7 +48,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 											width={0}
 											loader={({ src }) => src}
 											sizes="100vw"
-											style={{ width: 'auto', height: '400px' }}
+											style={{ width: 'auto', height: '200px' }}
 											src={post.coverImage}
 											alt={post.alt ? post.alt : ''}
 											className="blog--article__image"
@@ -58,7 +60,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 										<span className="blog--article__date">{format(parseISO(post.date), 'MMMM dd, yyyy')}</span>
 									)}
 									<Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
-										<h2 className="blog--article__title">{post.title}</h2>
+										<h2 className="article__title">{post.title}</h2>
 									</Link>
 
 									<p className="blog--article__description">{post.description}</p>

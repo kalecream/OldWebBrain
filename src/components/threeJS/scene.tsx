@@ -1,6 +1,6 @@
 import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import { Environment, OrbitControls, PresentationControls, PerspectiveCamera, CameraControls, OrthographicCamera } from '@react-three/drei';
+import { Environment, OrbitControls, PresentationControls, PerspectiveCamera, CameraControls, OrthographicCamera, Preload } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { Model } from '@assets/models/me';
@@ -91,10 +91,10 @@ export const SiteBackground = (): JSX.Element => {
 				zIndex: -999
 			}}
 		>
+			<Preload all />
 			{/* <PerspectiveCamera makeDefault position={[0, -8, -15]}  /> */}
 			<ambientLight />
 			<pointLight position={[10, 10, 10]} />
-			<Environment preset="forest" />
 			<Suspense fallback={null}>
 				<IndexScene position={[-10,-80,0]}  />
 				<OrbitControls autoRotate   />
@@ -120,12 +120,13 @@ export const HeroModel = (): JSX.Element => {
 			flat
 			shadows
 			dpr={[1, 2]}
-			camera={{ position: [2, 0, 12], fov: 15 }}
+			camera={{ position: [2, 0, 12], fov: 30 }}
 			style={{
 				width: '375px',
 				height: '500px'
 			}}
 		>
+			<Preload all />
 			<PerspectiveCamera makeDefault position={[0, 0, 12]} />
 			<ambientLight />
 			<directionalLight />
