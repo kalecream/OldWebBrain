@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Projects } from '../../data/projectsData';
 import 'animate.css';
 import Link from 'next/link';
-import styles from './projects.module.css';
+import styles from './projects.module.scss';
 import Image from 'next/image';
 
 export const extractCategories = () => {

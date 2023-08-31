@@ -1,6 +1,15 @@
 
+$body: #141414;
+$text: #fff;
+$neutral: #ccc;
+$faint: #999;
 
-$border-radius: 15px;
+$border: 1px solid $neutral;
+$border-radius: 8px;
+
+$padding-container: 1rem 3rem;
+$padding-object: 1rem;
+$padding-object-small: 0.5rem;
 
 $line-height: 1.4;
 
@@ -9,6 +18,7 @@ $sims-font: 'Sims Sans SC', serif;
 $body-font: 'Inter', sans-serif;
 
 $blur: blur(20px);
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 
 @mixin theme($theme) {
   @if $theme == 'dark' {
