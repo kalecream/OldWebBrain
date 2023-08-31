@@ -81,7 +81,7 @@ export const Button = styled(Link)<ButtonProps>`
 	max-width: 100%;
 	background-image: ${(props) => (props.primary ? primaryBackground : props.onColor ? onColor : secondaryBackground)};
 	border: ${(props) => (props.primary ? 'none' : border)};
-	border-radius: var(--border-radius);
+	border-radius: 5px;
 	box-shadow: ${(props) => (props.primary ? boxShadow : 'none')};
 	color: ${(props) => (props.primary ? 'var(--body)' : 'var(--primary)')};
 	cursor: pointer;
