@@ -40,7 +40,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 											width={0}
 											loader={({ src }) => src}
 											sizes="100vw"
-											style={{ width: 'auto', height: '150px' }}
+											style={{ width: 'auto', height: '100px' }}
 											src={post.coverImage}
 											alt={post.alt ? post.alt : ''}
 											className="blog--article__image"
@@ -57,16 +57,15 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 
 									<p className="article__description">{post.description}</p>
 
-									{post.tags && (
+									{/* {post.tags && (
 										<div className="article__tags">
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className="tag" key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
 													{tag}
 												</Link>
 											))}
-											{/* create tag pages */}
 										</div>
-									)}
+									)} */}
 								</div>
 							</div>
 						))}
