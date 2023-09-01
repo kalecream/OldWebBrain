@@ -3,13 +3,13 @@ import styles from './heroName.module.scss';
 
 const HeroName = ({ name }) => {
 	const textArray = useRef(null);
-	const colorArr = ['var(--body)', '#FED100', '#009B3A', '#000000'];
+	const colorArr = ['var(--body)', '#FED100', '#009B3A'];
 
 	return (
 		<>
 			<div className={styles.container}>
 				<div className={styles['text-container']} ref={textArray}>
-					{Array.from({ length: 4 }).map((_, index) => (
+					{Array.from({ length: 2 }).map((_, index) => (
 							<span key={index} className={styles.text} style={{ color: colorArr[index % colorArr.length] }}>
 								{name}
 								<div className={styles['icon--container']}>

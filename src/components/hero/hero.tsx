@@ -66,7 +66,7 @@ const Hero = () => {
 			<SceneViewer scale={90 } modelPath={"/lost_robot/scene.gltf"} />
 			<div className={styles.container}>
 				<HeroSection>
-					{/* <HeroName name={'Sabrina'} /> */}
+					<HeroName name={'Sabrina'} />
 					<div className={`${styles['text-container']} ${styles.glassmorphic} `}>
 						<p>
 							<b>Web developer and 3D artist based in Kingston, Jamaica.</b>
