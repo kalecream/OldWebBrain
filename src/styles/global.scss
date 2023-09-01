@@ -93,7 +93,7 @@ header {
 	}
 
 	@include breakpoint-range($from: tablet, $to: desktopSmall) {
-		padding: 1rem 2rem;
+		padding: 1rem 2.5rem;
 	}
 
 	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
