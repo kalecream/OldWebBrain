@@ -37,29 +37,6 @@ const HeroSection = styled.div`
 
 `;
 
-const ButtonContainer = styled.div`
-	display: flex;
-
-	margin: 1rem auto;
-
-	@media (max-width: 768px) {
-		flex-direction: column;
-		width: 80%;
-		max-width: 30rem;
-		margin: 0 auto;
-		justify-content: center;
-		font-size: 1.2rem;
-		gap: 1.5rem;
-	}
-
-	@media (min-width: 768px) {
-		flex-direction: row;
-		justify-content: flex-start;
-		gap: 1rem;
-	}
-`;
-
-
 const Hero = () => {
 	return (
 		<section className={` ${styles.wrapper} parallax}`}>
@@ -76,14 +53,14 @@ const Hero = () => {
 						</p>
 					</div>
 
-					<ButtonContainer>
+					<div className={styles['button-container']}>
 						<Button primary="true" href="/services">
 							Need a service?
 						</Button>
 						<Button href="/blog" className="glassmorphic">
 							Check out the blog
 						</Button>
-					</ButtonContainer>
+					</div>
 				</HeroSection>
 				<HeroSection>
 					<HeroModel />

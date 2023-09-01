@@ -39,6 +39,26 @@
 	font-weight: 600;
 }
 
+.button-container {
+	display: flex;
+	margin: 1rem auto;
+
+	@include breakpoint-range($from: mobile, $to: desktopSmall) {
+		flex-direction: column;
+		width: 80%;
+		margin: 1rem;
+		max-width: 30rem;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+		flex-direction: row;
+		gap: 1rem;
+		width: 100%;
+	}
+}
+
 .glassmorphic {
 	flex: 1 1 10rem;
 	padding: var(--padding);
