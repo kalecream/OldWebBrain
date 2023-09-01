@@ -9,11 +9,19 @@ Title: Lost robot
 
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useLoader, useFrame, useThree } from "@react-three/fiber";
 
 export function Model(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/lost_robot/scene.gltf')
   const { actions } = useAnimations(animations, group)
+
+
+  useThree(({ camera }) => {
+    camera.position.y = 8;
+    camera.lookAt(0, 0, 0);
+  });
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

@@ -17,20 +17,21 @@ import { Model as IndexScene } from '@assets/models/Scene';
 
 import styled from '@emotion/styled';
 
+
 export const angletoRadian = (angle: number) => {
 	return angle * (Math.PI / 180);
 };
 
 export const Rotate3DModel = () => {
 	useFrame((state) => {
-		state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
-		state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-		state.camera.lookAt(0, 0, 0);
+		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+		// state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
+		// state.camera.lookAt(22, 10, 10);
 	});
 
-	requestAnimationFrame(() => {
-		document.getElementById('hero')?.scrollIntoView();
-	});
+	// requestAnimationFrame(() => {
+	// 	document.getElementById('hero')?.scrollIntoView();
+	// });
 
 	const orbitControlsRef = useRef<any>(null);
 
@@ -48,8 +49,12 @@ export const Rotate3DModel = () => {
 		}
 	}, [orbitControlsRef.current]);
 
-	return <OrbitControls ref={orbitControlsRef} maxDistance={8} minDistance={8} enableZoom={false} />;
+	return <OrbitControls ref={orbitControlsRef} maxDistance={6} minDistance={6} enableZoom={true} />;
 };
+
+export const CameraCirleDolly = () => {
+	// make camera circle
+}
 
 export const Scene = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
 	const ref = useRef(null);
@@ -87,22 +92,24 @@ export const SceneViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }): JS
 };
 
 export const SiteBackground = (): JSX.Element => {
+
+
 	return (
 		<Canvas
 			shadows
 			camera={{
-				position: [0, 0, 12],
-				fov: 15,
+				position: [0, 0, -12],
+				fov:50,
 				near: 0.1,
 				far: 1000,
-				rotation: [-30, 0, 5]
+				rotation: [0.707107, -0.707107, 0]
 			}}
 			style={{
 				width: '100vw',
 				height: '100vh',
 				position: 'fixed',
 				filter: 'saturate(1.15) hue-rotate(345deg)',
-				backgroundColor: 'var(--body)',
+				backgroundColor: 'olive',
 				zIndex: -999
 			}}
 		>
@@ -111,7 +118,13 @@ export const SiteBackground = (): JSX.Element => {
 			<ambientLight />
 			<pointLight position={[10, 10, 10]} />
 			<Suspense fallback={null}>
-				<IndexScene position={[-10, -80, 0]} />
+				<PresentationControls
+					global
+					// rotation={[0, -Math.PI / 4, 0]}
+					polar={[0, Math.PI / 4]}
+					azimuth={[-Math.PI / 4, Math.PI / 4]}
+				/>
+				<IndexScene />
 				<OrbitControls autoRotate />
 			</Suspense>
 		</Canvas>
@@ -134,27 +147,25 @@ export const HeroModel = (): JSX.Element => {
 		<HeroCanvas
 			flat
 			shadows
-			dpr={[1, 2]}
-			camera={{ position: [2, 0, 12], fov: 30 }}
+			camera={{ position: [2, 0, 8], fov: 30 }}
 			style={{
-				width: '375px',
+				width: '100%',
 				height: '500px'
 			}}
 		>
 			<Preload all />
-			<PerspectiveCamera makeDefault position={[0, 0, 12]} />
 			<ambientLight />
 			<directionalLight />
 			<Suspense fallback={null}>
 				<PresentationControls
 					global
-					zoom={1}
 					rotation={[0, -Math.PI / 4, 0]}
 					polar={[0, Math.PI / 4]}
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
-				></PresentationControls>
-				{/* <Rotate3DModel /> */}
+				/>
+				<Rotate3DModel />
 				<Model />
+				<OrbitControls zoom={1}/>
 			</Suspense>
 		</HeroCanvas>
 	);
