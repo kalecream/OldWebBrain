@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'rec
 import Books from 'src/data/books';
 import { WindowWidth } from '@utils/windowDimmensions';
 import { GetMonthName } from '@utils/GetMonthName';
+import styles from './books.module.scss';
 
 export interface BooksProps {
 	title: string;
@@ -98,15 +99,15 @@ export const BacklogGraph: FC = () => {
 		setData(cumulativeData);
 	}, [Books]);
 
-	const width = WindowWidth() - 150;
+	const width = WindowWidth() - 50;
 
 	return (
 		<>
-			<BarChart width={width > 1000 ? 950 : width} height={350} data={Data}>
+			<BarChart width={width > 1024 ? 800 : width } height={300} data={Data}>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="month" />
 				<YAxis domain={[0, 'dataMax + 2']} />
-				<Tooltip active={false} />
+				<Tooltip active={true} />
 				<Bar dataKey="Started" stackId="a" fill="var(--accent)" />
 				<Bar dataKey="Finished" stackId="a" fill="var(--primary)" label={<CustomerBarLabel />} />
 			</BarChart>
@@ -122,7 +123,7 @@ const CustomerBarLabel: FC<any> = (props) => {
 	}
 
 	return (
-		<text x={x + width / 2} y={y} fill="var(--muted)" fontSize="0.8rem" fontWeight={700} textAnchor="middle" dy={-6}>
+		<text x={x + width / 2} y={y} fill="#fff" fontSize="0.8rem" fontWeight={700} textAnchor="middle" dy={-6}>
 			{value}
 		</text>
 	);
@@ -140,9 +141,9 @@ export const BookShelf: FC = () => {
 
 	return (
 		<>
-			<details>
+			<details className={ styles.bookDetails}>
 				<summary>
-					<a>{wantToReadBooks.length} Books I'm excited to read next</a>
+					<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
 				<div className="bookshelf pancake">
 					{wantToReadBooks.map((book) => (
@@ -161,63 +162,20 @@ export const BookShelf: FC = () => {
 						//     />
 						//   </Book>
 						// </BookContainer>
-						<p className="book-list pancake-child">
-							{' '}
+						<p className=" pancake-child">
 							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a> <br />
-							<span>by {book.author}</span>{' '}
+							<span>by {book.author}</span>
 						</p>
 					))}
 				</div>
 			</details>
-			<details open>
+			<details open className={ styles.bookDetails}>
 				<summary>
 					<a className="read-books-title">{readBooks.length} Read Books</a>
 				</summary>
 				<div className="bookshelf pancake">
 					{readBooks.map((book) => (
-						// <BookContainer
-						//   href={`https://www.you.com/search?q=${book.title}+${book.author}`}
-						//   target="_blank"
-						//   rel="noopener noreferrer"
-						//   key={book.title}
-						// >
-						//   <Book>
-						//     {book.cover ? (
-						//       <img
-						//         src={book.cover}
-						//         alt={book.title}
-						//         title={book.summary}
-						//         style={{ width: "200px", height: "300px" }}
-						//       />
-						//     ) : (
-						//       // <Image
-						//       //   src={book.cover}
-						//       //   alt={book.title}
-						//       //   title={book.summary}
-						//       //   placeholder="blur"
-						//       //   blurDataURL={book.cover}
-						//       //   width={200}
-						//       //   height={300}
-						//       //   />
-						//       <div
-						//         style={{
-						//           width: "200px",
-						//           height: "300px",
-						//           display: "flex",
-						//           justifyContent: "center",
-						//           alignItems: "center",
-						//           padding: "1rem",
-						//           fontSize: "1.2rem",
-						//           color: "var(--muted)",
-						//         }}
-						//       >
-						//         {" "}
-						//         {book.title}
-						//       </div>
-						//     )}
-						//   </Book>
-						// </BookContainer>
-						<div className="book-list pancake-child">
+						<p className={` pancake-child ${styles.bookList}`}>
 							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a>{' '}
 							{book.rating && book.rating >= 4 ? (
 								book.rating >= 5 ? (
@@ -238,7 +196,7 @@ export const BookShelf: FC = () => {
 							{book.quotes && (
 								<q className="book-quote">{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
 							)}
-						</div>
+						</p>
 					))}
 				</div>
 			</details>

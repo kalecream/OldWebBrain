@@ -1,56 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
-
-const PhotoContainer = styled.div`
-	position: relative;
-	max-width: 800px;
-	top: 60%;
-	left: -35%;
-
-	@media (max-width: 1024px) {
-		display: none;
-	}
-
-	@media (min-width: 1024px) {
-		max-width: 800px;
-		margin-right: 2rem;
-	}
-`;
-
-const Picture = styled.div`
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: 5px solid var(--body);
-	border-radius: var(--border-radius);
-	background: var(--body);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-	transform: translate(-50%, -50%);
-	user-select: none;
-	cursor: pointer;
-
-	& img {
-		display: block;
-		width: 200px;
-		pointer-events: none;
-	}
-
-	& span {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 200px;
-		height: 50px;
-		padding: 12px 24px;
-		font-size: 1rem;
-		text-align: center;
-		font-family: 'Caveat', serif;
-		overflow: hidden;
-		line-height: 1;
-	}
-`;
+import styles from './books.module.scss';
 
 interface Functions {
 	update: (event: MouseEvent | TouchEvent) => void;
@@ -154,9 +105,9 @@ const PhotoGalley = () => {
 	}, []);
 
 	return (
-		<PhotoContainer>
+		<div className={styles.photoContainer}>
 			{AlbumImages.map((imagePath, index) => (
-				<Picture key={index} className="Picture">
+				<div key={index} className={styles.picture}>
 					<Image
 						height={0}
 						width={0}
@@ -165,14 +116,13 @@ const PhotoGalley = () => {
 						style={{ width: '100', height: 'auto' }}
 						src={imagePath}
 						alt={AlbumCaptions[index]}
-						className="blog--article__image"
 					/>
 					<span>
 						{randomEmoji()} {AlbumCaptions[index]}
 					</span>
-				</Picture>
+				</div>
 			))}
-		</PhotoContainer>
+		</div>
 	);
 };
 
