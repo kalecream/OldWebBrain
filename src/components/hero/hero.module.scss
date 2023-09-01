@@ -35,8 +35,12 @@
 	}
 }
 
+.text-container p b {
+	font-weight: 600;
+}
+
 .glassmorphic {
-	flex: 1 1 15rem;
+	flex: 1 1 10rem;
 	padding: var(--padding);
 	background: rgba(var(--body), 0.2);
 	box-shadow: 1px 4px 16px 0 rgba(2, 4, 36, 0.37);

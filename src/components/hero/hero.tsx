@@ -69,12 +69,10 @@ const Hero = () => {
 					<HeroName name={'Sabrina'} />
 					<div className={`${styles['text-container']} ${styles.glassmorphic} `}>
 						<p>
-							<b>Web developer and 3D artist based in Kingston, Jamaica.</b>
+							<b>Web developer  based in Kingston, Jamaica.</b>
 						</p>
 						<p>
-							{' '}
-							I strive to enhance my skills concurrently by creating functional resources to benefit the broader
-							community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
+							 An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
 						</p>
 					</div>
 
