@@ -4,7 +4,7 @@ import 'animate.css';
 import Link from 'next/link';
 import styles from './projects.module.scss';
 import Image from 'next/image';
-import { getMonthName } from '@utils/GetMonthName';
+import { GetMonthName } from '@utils/GetMonthName';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
@@ -56,7 +56,7 @@ const ProjectList: React.FC = () => {
 							<div className={styles['project-info']}>
 								<h1 className={styles['project-title']}>
 									<div className={styles['project-year']}>
-										{getMonthName(project.created)}
+										{GetMonthName(project.created)}
 										{project.created.split('-', 1)}
 									</div>
 									{project.title}
