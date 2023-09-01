@@ -232,7 +232,7 @@ export const BookShelf: FC = () => {
 							)}{' '}
 							<p className="book-author">by {book.author}</p>
 							<p className="book-finished">
-								{getMonthName(book.finished)} {book.finished.split('-', 1)}
+								{GetMonthName(book.finished)} {book.finished.split('-', 1)}
 							</p>
 							{book.review && <p className="book-review">{book.review}</p>}
 							{book.quotes && (
