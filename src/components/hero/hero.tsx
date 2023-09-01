@@ -1,50 +1,18 @@
-import styled from '@emotion/styled';
-
 import HeroName from '@components/hero/heroName/heroName';
-import { Button } from '@components/_basics/Basics';
-
 import { ScrollDown } from '@components/scrollDown';
 import styles from './hero.module.scss';
-
+import button from '@components/_basics/button.module.scss';
 import { SceneViewer, HeroModel } from '@components/threeJS/scene';
-
-const HeroSection = styled.div`
-  height: auto;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  place-items: center;
-  animation: fadeInFromBelow 1s ease-in-out;
-
-  p {
-    line-height: 1.6rem;
-    text-align: justify;
-    font-weight: 300;
-    max-width: 25rem;
-    padding: 0;
-  }
-
-  @keyframes fadeInFromBelow {
-    0% {
-      opacity: 0;
-      transform: translateY(1rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-`;
+import Link from 'next/link';
 
 const Hero = () => {
 	return (
-		<section className={` ${styles.wrapper} parallax}`}>
-			<SceneViewer scale={90 } modelPath={"/lost_robot/scene.gltf"} />
+		<section>
+			<SceneViewer scale={90} modelPath={"/lost_robot/scene.gltf"} />
 			<div className={styles.container}>
-				<HeroSection>
-					<HeroName name={'Sabrina'} />
-					<div className={`${styles['text-container']} ${styles.glassmorphic} `}>
+				<div className={styles.heroSection}>
+					<HeroName name={'sabrina'} />
+					<div className={`${styles['text-container']} ${styles.glassmorphic}`}>
 						<p>
 							<b>Web developer  based in Kingston, Jamaica.</b>
 						</p>
@@ -54,17 +22,17 @@ const Hero = () => {
 					</div>
 
 					<div className={styles['button-container']}>
-						<Button primary="true" href="/services">
+						<Link className={button.primary} href="/services">
 							Need a service?
-						</Button>
-						<Button href="/blog" className="glassmorphic">
+						</Link>
+						<Link className={button.secondary} href="#blog" >
 							Check out the blog
-						</Button>
+						</Link>
 					</div>
-				</HeroSection>
-				<HeroSection>
+				</div>
+				<div className={styles.heroSection}>
 					<HeroModel />
-				</HeroSection>
+				</div>
 			</div>
 			<ScrollDown />
 		</section>

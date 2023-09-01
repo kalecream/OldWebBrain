@@ -109,7 +109,6 @@ export const SiteBackground = (): JSX.Element => {
 				height: '100vh',
 				position: 'fixed',
 				filter: 'saturate(1.15) hue-rotate(345deg)',
-				backgroundColor: 'olive',
 				zIndex: -999
 			}}
 		>

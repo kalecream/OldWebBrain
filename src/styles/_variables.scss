@@ -6,7 +6,8 @@ $neutral: #ccc;
 $faint: #999;
 
 $border: 1px solid $neutral;
-$border-radius: 8px;
+$border-faint: 1px solid $faint;
+$border-radius: 5px;
 
 $padding-container: 1rem 3rem;
 $padding-object: 1rem;
@@ -20,6 +21,7 @@ $body-font: 'Inter', sans-serif;
 
 $blur: blur(20px);
 $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+$gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
 
 @mixin theme($theme) {
   @if $theme == 'dark' {

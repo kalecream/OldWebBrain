@@ -28,10 +28,10 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 			
 
 			{posts.length > 0 && (
-				<section id="blog-posts" className="fadeIn--below index-section">
+				<section id="blog" className="fadeIn--below index-section">
 					<h2 className="section-title">Blog</h2>
 					<div className="pancake section-content">
-						{posts.slice(0, 3).map((post) => (
+						{posts.slice(0, 8).map((post) => (
 							<div key={post.slug} className="blog--article pancake-child ">
 								{post.coverImage && (
 									<div className="image-wrapper">

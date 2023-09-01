@@ -59,6 +59,23 @@
 	}
 }
 
+.heroSection {
+	 height: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  place-items: center;
+
+  p {
+    line-height: 1.6rem;
+    text-align: justify;
+    font-weight: 300;
+    max-width: 25rem;
+    padding: 0;
+  }
+}
+
 .glassmorphic {
 	flex: 1 1 10rem;
 	padding: var(--padding);

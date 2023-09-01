@@ -1,0 +1,50 @@
+@import '@styles/variables.scss';
+@import '@styles/mediaQuery';
+
+.primary,
+.secondary {
+	align-items: center;
+	width: 100%;
+	
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	line-height: 1;
+	overflow: hidden;
+	padding: $padding-object;
+	position: relative;
+	user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	text-transform: capitalize;
+	will-change: box-shadow, transform;
+	border-radius: $border-radius;
+
+	&:hover {
+		opacity: 1;
+		transform: translateY(-2px);
+		background-color: $secondary;
+		color: $text;
+		transition:
+			box-shadow 0.15s,
+			background-image 0.15s;
+	}
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		padding: 2rem 3rem;
+		max-width: 30rem;
+	}
+}
+
+.primary {
+	background-image: $primary;
+	box-shadow: $box-shadow;
+	background-color: $primary;
+	color: $body;
+}
+
+.secondary {
+	background-image: transparent;
+	color: $primary;
+	border: 1px solid rgba($color: $faint, $alpha: 0.3);
+}
