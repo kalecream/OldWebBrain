@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import Books from 'src/data/books';
 import { WindowWidth } from '@utils/windowDimmensions';
-import { getMonthName } from '@components/projects/projectsList';
+import { GetMonthName } from '@utils/GetMonthName';
 
 export interface BooksProps {
 	title: string;

@@ -1,5 +1,5 @@
 import { Page } from 'src/containers/layout';
-import { BookShelf } from 'src/components/about/backlogGraph';
+import { BookShelf } from '@components/books/backlogGraph';
 import Link from 'next/link';
 
 import styled from 'styled-components';

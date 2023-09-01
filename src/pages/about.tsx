@@ -1,10 +1,10 @@
 import { Page } from 'src/containers/layout';
-import CurrentReads from 'src/components/about/currentReads';
-import { BacklogGraph } from 'src/components/about/backlogGraph';
+import CurrentReads from '@components/books/currentReads';
+import { BacklogGraph } from '@components/books/backlogGraph';
 import Books from 'src/data/books';
 import { useEffect, useState } from 'react';
 import PhotoGalley from './gallery';
-import { BookShelf } from 'src/components/about/backlogGraph';
+import { BookShelf } from '@components/books/backlogGraph';
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
