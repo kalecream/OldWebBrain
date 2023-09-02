@@ -469,7 +469,7 @@ kbd::after,
 .article__tags {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: start;
+	justify-content: flex-start;
 	gap: 0.5rem;
 }
 
