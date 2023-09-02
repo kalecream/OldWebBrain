@@ -4,12 +4,14 @@ Command: npx gltfjsx@6.1.3 me.glb
 */
 
 import React, { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
-export function Model(props) {
-	const { nodes, materials } = useGLTF('/me.glb');
+export function Model() {
+	const group = useRef();
+	const { nodes, materials} = useGLTF('/me.glb');
+	
 	return (
-		<group {...props} dispose={null}>
+		<group ref={group} dispose={null}>
 			<primitive object={nodes.Hips} />
 			<skinnedMesh
 				geometry={nodes.Wolf3D_Body.geometry}

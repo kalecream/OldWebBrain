@@ -8,7 +8,8 @@ import Link from 'next/link';
 import { getAllPosts } from '../utils/api';
 import { PostType } from '../types/post';
 import Hero from '@components/hero/hero';
-
+import { SiteBackground } from '@components/threeJS/scene';
+// import { ImageLoader } from '@utils/ImageLoader';
 
 import ProjectList from '@components/projects/projectsList';
 
@@ -19,26 +20,19 @@ type IndexProps = {
 	posts: PostType[];
 };
 
-
-
-
-
-const imageLoader = ({ src, width, quality }) => {
-	return `https://sabrinamedwinter.com/${src}?w=${width}&q=${quality || 75}`;
-};
-
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
+			<SiteBackground />
 			<Hero />
 			
 
 			{posts.length > 0 && (
-				<section id="blog-posts" className="fadeIn--below index-section">
+				<section id="blog" className="fadeIn--below index-section">
 					<h2 className="section-title">Blog</h2>
 					<div className="pancake section-content">
-						{posts.slice(0, 3).map((post) => (
-							<div key={post.slug} className="blog--article pancake-child">
+						{posts.slice(0, 8).map((post) => (
+							<div key={post.slug} className="blog--article pancake-child ">
 								{post.coverImage && (
 									<div className="image-wrapper">
 										<Image
@@ -46,7 +40,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 											width={0}
 											loader={({ src }) => src}
 											sizes="100vw"
-											style={{ width: 'auto', height: '400px' }}
+											style={{ width: 'auto', height: '100px' }}
 											src={post.coverImage}
 											alt={post.alt ? post.alt : ''}
 											className="blog--article__image"
@@ -54,25 +48,24 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 									</div>
 								)}
 								<div className="blog--article__section">
-									{post.date && (
+									{/* {post.date && (
 										<span className="blog--article__date">{format(parseISO(post.date), 'MMMM dd, yyyy')}</span>
-									)}
+									)} */}
 									<Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`}>
-										<h2 className="blog--article__title">{post.title}</h2>
+										<h2 className="article__title">{post.title}</h2>
 									</Link>
 
-									<p className="blog--article__description">{post.description}</p>
+									<p className="article__description">{post.description}</p>
 
-									{post.tags && (
-										<div className="blog--article__tags">
+									{/* {post.tags && (
+										<div className="article__tags">
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className="tag" key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
 													{tag}
 												</Link>
 											))}
-											{/* create tag pages */}
 										</div>
-									)}
+									)} */}
 								</div>
 							</div>
 						))}

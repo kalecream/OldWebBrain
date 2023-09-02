@@ -1,188 +1,41 @@
-import { useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, PresentationControls } from '@react-three/drei';
-import styled from '@emotion/styled';
-
 import HeroName from '@components/hero/heroName/heroName';
-import { Button } from '@components/_basics/Basics';
-
 import { ScrollDown } from '@components/scrollDown';
-
-import { Model } from '@assets/models/me';
-
-import { Suspense } from 'react';
-
-const HeroContainer = styled.section`
-	width: 100%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	flex-wrap: wrap;
-	place-items: center;
-
-	@media (max-width: 1024px) {
-		flex-direction: column;
-	}
-
-	@media (min-width: 1024px) {
-		margin: 0 auto;
-		flex-direction: row;
-	}
-`;
-
-const HeroSection = styled.div`
-  height: auto;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  place-items: center;
-  animation: fadeInFromBelow 1s ease-in-out;
-
-  p {
-    line-height: 1.6rem;
-    text-align: justify;
-    font-weight: 300;
-    max-width: 25rem;
-    padding: 0;
-  }
-
-  @keyframes fadeInFromBelow {
-    0% {
-      opacity: 0;
-      transform: translateY(1rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-`;
-
-const ButtonContainer = styled.div`
-	display: flex;
-
-	margin: 1rem auto;
-
-	@media (max-width: 768px) {
-		flex-direction: column;
-		width: 80%;
-		max-width: 30rem;
-		margin: 0 auto;
-		justify-content: center;
-		font-size: 1.2rem;
-		gap: 1.5rem;
-	}
-
-	@media (min-width: 768px) {
-		flex-direction: row;
-		justify-content: flex-start;
-		gap: 1rem;
-	}
-`;
-
-const CustomCanvas = styled(Canvas)`
-	@media (min-width: 768px) {
-		width: fit-content;
-		height: 100%;
-	}
-
-	@media (max-width: 768px) {
-		display: none;
-	}
-`;
-
-export const angletoRadian = (angle: number) => {
-	return angle * (Math.PI / 180);
-};
-
-export const Rotate3DModel = () => {
-	// useFrame((state) => {
-	// 	state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
-	// 	state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-	// 	state.camera.lookAt(0, 0, 0);
-	// });
-
-	// requestAnimationFrame(() => {
-	// 	document.getElementById("hero")?.scrollIntoView();
-	// });
-
-	const orbitControlsRef = useRef<any>(null);
-
-	useFrame((state) => {
-		if (!!orbitControlsRef.current) {
-			const { x } = state.mouse;
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
-			orbitControlsRef.current.update();
-		}
-	});
-
-	useEffect(() => {
-		if (!!orbitControlsRef.current) {
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
-		}
-	}, [orbitControlsRef.current]);
-
-	return <OrbitControls ref={orbitControlsRef} maxDistance={8} minDistance={8} enableZoom={false} />;
-};
+import styles from './hero.module.scss';
+import button from '@components/_basics/button.module.scss';
+import { SceneViewer, HeroModel } from '@components/threeJS/scene';
+import Link from 'next/link';
 
 const Hero = () => {
 	return (
-		<>
-			<HeroContainer>
-				<HeroSection>
-					<div className="hider">
-						{/* <h1 className="sitename">Sabrina Medwinter</h1> */}
-						<HeroName name={'Sabrina'} />
+		<section>
+			<SceneViewer scale={90} modelPath={"/lost_robot/scene.gltf"} />
+			<div className={styles.container}>
+				<div className={styles.heroSection}>
+					<HeroName name={'sabrina'} />
+					<div className={`${styles['text-container']} ${styles.glassmorphic}`}>
+						<p>
+							<b>Web developer  based in Kingston, Jamaica.</b>
+						</p>
+						<p>
+							 An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
+						</p>
 					</div>
-					<p>
-						<b>Web developer and 3D artist based in Kingston, Jamaica.</b>
-					</p>
-					<p>
-						{' '}
-						I strive to enhance my skills concurrently by creating functional resources to benefit the broader
-						community. An ongoing journey of exploration drives me to constantly embrace novel technologies and refine
-						my capabilities.
-					</p>
 
-					<ButtonContainer>
-						<Button primary="true" href="/services">
+					<div className={styles['button-container']}>
+						<Link className={button.primary} href="mailto:sabrinamedwinter@gmail.com?bcc=mail@kalecream.com&subject=Project%20Proposal&body=Hi%20Sabrina%2C%0D%0A%0D%0AProject%20Description%3A%0D%0A%0D%0ABudget%3A%0D%0A%0D%0AWhat%20goals%20are%20you%20looking%20to%20achieve%20with%20this%20project%3F%0D%0A%0D%0AHave%20you%20ever%20worked%20with%20a%20freelancer%20before%3F%0D%0A%0D%0AWhen%20do%20you%20need%20this%20project%20completed%20by%3F%0D%0A%0D%0AIs%20there%20anything%20else%20I%20should%20know%3F%0D%0A%0D%0A%0D%0ABest%2C">
 							Need a service?
-						</Button>
-						<Button href="/blog">Check out the blog</Button>
-					</ButtonContainer>
-				</HeroSection>
-				<HeroSection>
-					<CustomCanvas
-						flat
-						shadows
-						dpr={[1, 2]}
-						camera={{ position: [2, 0, 12], fov: 15 }}
-						style={{
-							width: '375px',
-							height: '500px'
-						}}
-					>
-						{/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
-						<ambientLight />
-						<directionalLight />
-						<Suspense fallback={null}>
-							<PresentationControls
-								global
-								zoom={1}
-								rotation={[0, -Math.PI / 4, 0]}
-								polar={[0, Math.PI / 4]}
-								azimuth={[-Math.PI / 4, Math.PI / 4]}
-							></PresentationControls>
-							<Rotate3DModel />
-							<Model position={[0.025, -0.9, 0]} rotation={[0.1, -0.75, 0]} />
-						</Suspense>
-					</CustomCanvas>
-				</HeroSection>
-			</HeroContainer>
+						</Link>
+						<Link className={button.secondary} href="#blog" >
+							Check out the blog
+						</Link>
+					</div>
+				</div>
+				{/* <div className={styles.heroSection}>
+					<HeroModel />
+				</div> */}
+			</div>
 			<ScrollDown />
-		</>
+		</section>
 	);
 };
 

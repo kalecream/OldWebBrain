@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Button, Container, Section } from '@components/_basics/Basics';
+import { Container, Section } from '@components/_basics/Basics';
 import Projects from '../../data/projectsData';
 import styled from '@emotion/styled';
 import { FaToolbox, FaLanguage, FaGithub } from 'react-icons/fa6';
 import 'animate.css';
 import Link from 'next/link';
+import button from '@components/_basic/button.module.scss';
 
 // interface Project {
 // 	id: number;
@@ -170,11 +171,6 @@ const Emoji = styled.span`
 	}
 `;
 
-const ProjectButton = styled(Button)`
-	background-color: var(--text);
-	border-radius: var(--border-radius);
-`;
-
 const LatestProjects = () => {
 	return (
 		<Section>
@@ -226,9 +222,9 @@ const LatestProjects = () => {
 											}}
 										>
 											{project.link ? (
-												<ProjectButton href={project.link} target={'_blank'}>
+												<Link className={button.secondary}  href={project.link} target={'_blank'}>
 													<FaGithub />
-												</ProjectButton>
+												</Link>
 											) : null}
 										</div>
 									</Overlay>

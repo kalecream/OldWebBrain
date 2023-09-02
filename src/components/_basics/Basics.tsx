@@ -1,7 +1,7 @@
 import 'animate.css';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // Layout
 export const Section = styled.section`
@@ -62,56 +62,7 @@ export const CustomLink = styled(Link)`
 	}
 `;
 
-// Components
-
-interface ButtonProps {
-	primary?: string;
-	secondary?: boolean;
-	onColor?: boolean;
-}
-
-const primaryBackground = `radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%)`;
-const secondaryBackground = `var(--background)`;
-const onColor = `var(--body)`;
 const boxShadow = `rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset`;
-const border = `1px solid var(--faint)`;
-
-export const Button = styled(Link)<ButtonProps>`
-	align-items: center;
-	max-width: 100%;
-	background-image: ${(props) => (props.primary ? primaryBackground : props.onColor ? onColor : secondaryBackground)};
-	border: ${(props) => (props.primary ? 'none' : border)};
-	border-radius: var(--border-radius);
-	box-shadow: ${(props) => (props.primary ? boxShadow : 'none')};
-	color: ${(props) => (props.primary ? 'var(--body)' : 'var(--primary)')};
-	cursor: pointer;
-	display: inline-flex;
-	justify-content: center;
-	line-height: 1;
-	overflow: hidden;
-	padding: var(--padding);
-	position: relative;
-	transition:
-		box-shadow 0.15s,
-		background-image 0.15s;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	white-space: nowrap;
-	text-transform: capitalize;
-	will-change: box-shadow, transform;
-
-	&:hover {
-		opacity: 1;
-		transform: translateY(-2px);
-		background-color: var(--primary);
-		color: var(--body);
-	}
-
-	@media (max-width: 768px) {
-		padding: 2rem 3rem;
-		width: 100%;
-	}
-`;
 
 export const Title = styled.h1`
 	font-size: 3.6rem;

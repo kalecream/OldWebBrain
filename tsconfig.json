@@ -34,7 +34,8 @@
 			"@data/*": ["src/data/*"],
 			"@hooks/*": ["src/hooks/*"],
 			"@posts/*": ["src/posts/*"],
-			"@containers/*": ["src/containers/*"]
+			"@containers/*": ["src/containers/*"],
+			"@public/*": ["public/*"],
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js"],

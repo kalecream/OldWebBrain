@@ -1,0 +1,91 @@
+@use '@styles/variables' as *;
+@import '@styles/mediaQuery';
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	place-items: center;
+	margin: 0 auto;
+
+	@include breakpoint-range($from: mobile, $to: desktopSmall) {
+		flex-direction: column;
+	}
+
+	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+		flex-direction: row;
+	}
+}
+
+.hero-half {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+
+	@include breakpoint-range($from: mobile, $to: desktopSmall) {
+		width: 100%;
+	}
+
+	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+		width: 50%;
+		flex-direction: row;
+	}
+}
+
+.text-container p b {
+	font-weight: 600;
+}
+
+.button-container {
+	display: flex;
+	margin: 1rem auto;
+
+	@include breakpoint-range($from: mobile, $to: desktopSmall) {
+		flex-direction: column;
+		width: 80%;
+		margin: 1rem;
+		max-width: 30rem;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+		flex-direction: row;
+		gap: 1rem;
+		width: 100%;
+	}
+}
+
+.heroSection {
+	 height: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  place-items: center;
+
+  p {
+    line-height: 1.6rem;
+    text-align: justify;
+    font-weight: 300;
+    max-width: 25rem;
+    padding: 0;
+  }
+}
+
+.glassmorphic {
+	flex: 1 1 10rem;
+	padding: var(--padding);
+	background: rgba(var(--body), 0.2);
+	box-shadow: 1px 4px 16px 0 rgba(2, 4, 36, 0.37);
+	backdrop-filter: $blur;
+	-webkit-backdrop-filter: $blur;
+	border-radius: $border-radius;
+	border: 1px solid rgba(255, 255, 255, 0.23);
+	/* From https://css.glass */
+	background: rgba(255, 255, 255, 0.07);
+	border-radius: $border-radius;
+}

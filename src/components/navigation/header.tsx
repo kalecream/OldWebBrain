@@ -28,12 +28,13 @@ export const Header: React.FunctionComponent = () => {
 
 	return (
 		<header>
-			<div className={`${style['directory-list']} ${style['directory-section']}`}>
-				{router?.pathname !== '/' && (
+			{router?.pathname !== '/' && (
 					<Link className={style['site-name']} href="/">
 						Sabrina
 					</Link>
 				)}
+			<div className={`${style['directory-list']} ${style['directory-section']}`}>
+				
 				{Directory.length > 0 &&
 					Directory.map((directory, index) => (
 						<div className={style['directory-list']} key={index}>

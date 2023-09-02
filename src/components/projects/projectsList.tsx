@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Projects } from '../../data/projectsData';
 import 'animate.css';
 import Link from 'next/link';
-import styles from './projects.module.css';
+import styles from './projects.module.scss';
 import Image from 'next/image';
+import { GetMonthName } from '@utils/GetMonthName';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
@@ -11,32 +12,6 @@ export const extractCategories = () => {
 		categoriesSet.add(project.category);
 	});
 	return Array.from(categoriesSet);
-};
-
-export const getMonthName = (dateString) => {
-	const months = [
-		'January ',
-		'February ',
-		'March ',
-		'April ',
-		'May ',
-		'June ',
-		'July ',
-		'August ',
-		'September ',
-		'October ',
-		'November ',
-		'December '
-	];
-
-	const dateParts = dateString.split('-');
-	const monthIndex = parseInt(dateParts[1], 10) - 1; // Months are zero-indexed
-
-	if (monthIndex >= 0 && monthIndex < months.length) {
-		return months[monthIndex];
-	} else {
-		return null;
-	}
 };
 
 const ProjectList: React.FC = () => {
@@ -81,7 +56,7 @@ const ProjectList: React.FC = () => {
 							<div className={styles['project-info']}>
 								<h1 className={styles['project-title']}>
 									<div className={styles['project-year']}>
-										{getMonthName(project.created)}
+										{GetMonthName(project.created)}
 										{project.created.split('-', 1)}
 									</div>
 									{project.title}

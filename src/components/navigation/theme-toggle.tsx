@@ -2,7 +2,7 @@ import { useTheme } from 'next-themes';
 import React from 'react';
 import { useEffect } from 'react';
 import styled from '@emotion/styled';
-import { FaMoon, FaSun } from 'react-icons/fa6';
+import { FaMoon, FaSun, FaCircleHalfStroke } from 'react-icons/fa6';
 
 /**
  * Based off of gatsby-theme-novela
@@ -31,15 +31,15 @@ const ThemeSwitch = () => {
 					placeItems: 'center',
 					outline: 'none',
 					border: 'none',
-					fontSize: '1.2rem',
+					fontSize: '1rem',
 					cursor: 'pointer',
 					justifyContent: 'center',
 					backgroundColor: 'transparent',
-					color: 'var(--muted)'
+					color: '#c1c1c1'
 				}}
 				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 			>
-				{theme === 'dark' ? <FaSun /> : <FaMoon />}
+				{theme === 'dark' ? <FaCircleHalfStroke /> : <FaCircleHalfStroke style={{ transform: 'rotateY(180deg)'}} />}
 			</button>
 		</div>
 	);
