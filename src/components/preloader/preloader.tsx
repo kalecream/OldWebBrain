@@ -53,7 +53,7 @@ const LoadingScene = () => {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setCurrentTextIndex(Math.floor(Math.random() * loadingScreenTexts.length));
-		}, 2500);
+		}, 3000);
 
 		return () => clearTimeout(timer);
 	}, [currentTextIndex]);
