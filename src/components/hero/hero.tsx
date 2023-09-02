@@ -22,7 +22,7 @@ const Hero = () => {
 					</div>
 
 					<div className={styles['button-container']}>
-						<Link className={button.primary} href="/services">
+						<Link className={button.primary} href="mailto:sabrinamedwinter@gmail.com?bcc=mail@kalecream.com&subject=Project%20Proposal&body=Hi%20Sabrina%2C%0D%0A%0D%0AProject%20Description%3A%0D%0A%0D%0ABudget%3A%0D%0A%0D%0AWhat%20goals%20are%20you%20looking%20to%20achieve%20with%20this%20project%3F%0D%0A%0D%0AHave%20you%20ever%20worked%20with%20a%20freelancer%20before%3F%0D%0A%0D%0AWhen%20do%20you%20need%20this%20project%20completed%20by%3F%0D%0A%0D%0AIs%20there%20anything%20else%20I%20should%20know%3F%0D%0A%0D%0A%0D%0ABest%2C">
 							Need a service?
 						</Link>
 						<Link className={button.secondary} href="#blog" >
@@ -30,9 +30,9 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
-				<div className={styles.heroSection}>
+				{/* <div className={styles.heroSection}>
 					<HeroModel />
-				</div>
+				</div> */}
 			</div>
 			<ScrollDown />
 		</section>

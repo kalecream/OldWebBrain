@@ -1,39 +1,33 @@
 import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
-import {
-	Environment,
-	OrbitControls,
-	PresentationControls,
-	PerspectiveCamera,
-	CameraControls,
-	OrthographicCamera,
-	Preload
-} from '@react-three/drei';
+import { OrbitControls, PresentationControls, PerspectiveCamera, Preload, Stage, Html } from '@react-three/drei';
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import * as THREE from 'three';
 
 import { Model } from '@assets/models/me';
 import { Model as IndexScene } from '@assets/models/Scene';
 
 import styled from '@emotion/styled';
 
-
 export const angletoRadian = (angle: number) => {
 	return angle * (Math.PI / 180);
 };
 
-export const Rotate3DModel = () => {
+export const CustomOrbital = () => {
+	const orbitControlsRef = useRef<any>(null);
+
 	useFrame((state) => {
 		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
 		// state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-		// state.camera.lookAt(22, 10, 10);
+		state.camera.position.x = 45;
+		state.camera.position.y = 15;
+		state.camera.position.z = 25;
+		//controls.update() must be called after any manual changes to the camera's transform
 	});
 
 	// requestAnimationFrame(() => {
 	// 	document.getElementById('hero')?.scrollIntoView();
 	// });
-
-	const orbitControlsRef = useRef<any>(null);
 
 	useFrame((state) => {
 		if (!!orbitControlsRef.current) {
@@ -52,11 +46,34 @@ export const Rotate3DModel = () => {
 	return <OrbitControls ref={orbitControlsRef} maxDistance={6} minDistance={6} enableZoom={true} />;
 };
 
-export const CameraCirleDolly = () => {
-	// make camera circle
-}
+const SiteOrbital = () => {
+	const orbitControlsRef = useRef<any>(null);
 
-export const Scene = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
+	useFrame((state) => {
+		state.camera.position.y = 200; // down <- --> up
+		state.camera.position.z = -90; // further away <<- -> closer
+		// state.camera.position.x = 25; // --> around <--
+		state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+	});
+
+	useFrame((state) => {
+		if (!!orbitControlsRef.current) {
+			const { x } = state.mouse;
+			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
+			orbitControlsRef.current.update();
+		}
+	});
+
+	useEffect(() => {
+		if (!!orbitControlsRef.current) {
+			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
+		}
+	}, [orbitControlsRef.current]);
+
+	return <OrbitControls ref={orbitControlsRef} />;
+};
+
+export const Scene = ({ modelPath, scale = 40 }) => {
 	const ref = useRef(null);
 	const gltf = useLoader(GLTFLoader, modelPath);
 	const [hovered, hover] = useState(false);
@@ -68,7 +85,6 @@ export const Scene = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
 			<primitive
 				ref={ref}
 				object={gltf.scene}
-				position={position}
 				scale={hovered ? scale * 1.2 : scale}
 				onPointerOver={(event) => hover(true)}
 				onPointerOut={(event) => hover(false)}
@@ -77,14 +93,14 @@ export const Scene = ({ modelPath, scale = 40, position = [0, 0, 0] }) => {
 	);
 };
 
-export const SceneViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }): JSX.Element => {
+export const SceneViewer = ({ modelPath, scale = 40 }): JSX.Element => {
 	return (
 		<Canvas shadows dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
 			<ambientLight />
 			<spotLight position={[10, 10, 10]} rotation={0.15} />
 			<pointLight position={[-10, -10, -10]} />
 			<Suspense fallback={null}>
-				<Scene modelPath={modelPath} scale={scale} position={position} />
+				<Scene modelPath={modelPath} scale={scale} />
 				<OrbitControls />
 			</Suspense>
 		</Canvas>
@@ -92,17 +108,13 @@ export const SceneViewer = ({ modelPath, scale = 40, position = [0, 0, 0] }): JS
 };
 
 export const SiteBackground = (): JSX.Element => {
-
-
 	return (
 		<Canvas
 			shadows
 			camera={{
-				position: [0, 0, -12],
-				fov:50,
-				near: 0.1,
-				far: 1000,
-				rotation: [0.707107, -0.707107, 0]
+				fov: 15,
+				near: 0.5,
+				far: 1000
 			}}
 			style={{
 				width: '100vw',
@@ -112,19 +124,18 @@ export const SiteBackground = (): JSX.Element => {
 				zIndex: -999
 			}}
 		>
-			<Preload all />
-			<PerspectiveCamera makeDefault position={[4, -8, -15]} />
-			<ambientLight />
-			<pointLight position={[10, 10, 10]} />
-			<Suspense fallback={null}>
-				<PresentationControls
-					global
-					// rotation={[0, -Math.PI / 4, 0]}
-					polar={[0, Math.PI / 4]}
-					azimuth={[-Math.PI / 4, Math.PI / 4]}
-				/>
+			{/* <fog color="#161616" attach="fog" near={8} far={30} /> */}
+			<EffectComposer>
+				<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
+				<Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+				<Noise opacity={0.015} />
+				{/* <Vignette eskil={false} offset={0.2} darkness={1} /> */}
+			</EffectComposer>
+			<Suspense fallback={<Html center>Loading.</Html>}>
+				<Stage preset="rembrandt" intensity={4} environment="forest" />
+				<ambientLight />
 				<IndexScene />
-				<OrbitControls autoRotate />
+				<SiteOrbital />
 			</Suspense>
 		</Canvas>
 	);
@@ -146,25 +157,26 @@ export const HeroModel = (): JSX.Element => {
 		<HeroCanvas
 			flat
 			shadows
-			camera={{ position: [2, 0, 8], fov: 30 }}
+			camera={{ fov: 30 }}
 			style={{
 				width: '100%',
-				height: '500px'
+				height: '100vh'
 			}}
 		>
 			<Preload all />
-			<ambientLight />
-			<directionalLight />
 			<Suspense fallback={null}>
 				<PresentationControls
 					global
 					rotation={[0, -Math.PI / 4, 0]}
-					polar={[0, Math.PI / 4]}
+					polar={[0, Math.PI / 2]}
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
-				<Rotate3DModel />
+				<PerspectiveCamera makeDefault position={[-4, -4, 0]} />
+				<Stage preset="rembrandt" intensity={1} environment="city" />
+				<ambientLight />
+				<directionalLight />
+				<CustomOrbital />
 				<Model />
-				<OrbitControls zoom={1}/>
 			</Suspense>
 		</HeroCanvas>
 	);
