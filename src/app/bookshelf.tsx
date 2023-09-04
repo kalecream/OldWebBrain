@@ -1,4 +1,3 @@
-import { Page } from 'src/containers/layout';
 import { BookShelf } from '@components/books/backlogGraph';
 import Link from 'next/link';
 
@@ -15,14 +14,14 @@ const FlexLinks = styled.div`
 
 const BookCase = () => {
 	return (
-		<Page title="Bookshelf">
+		<>
 			<h1 id="PageTitle">Bookcase</h1>
 			<BookShelf />
 			<FlexLinks>
 				<Link href="/about">&#129120; About</Link>
 				<Link href="#PageTitle">&#129121; Top of Page</Link>
 			</FlexLinks>
-		</Page>
+		</>
 	);
 };
 

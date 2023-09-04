@@ -1,3 +1,4 @@
+'use client';
 import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, PresentationControls, PerspectiveCamera, Preload, Stage, Html } from '@react-three/drei';

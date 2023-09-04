@@ -1,4 +1,4 @@
-import { Page } from 'src/containers/layout';
+'use client'
 import CurrentReads from '@components/books/currentReads';
 import { BacklogGraph } from '@components/books/backlogGraph';
 import Books from 'src/data/books';
@@ -44,7 +44,6 @@ export const About = () => {
 		.join(', ');
 
 	return (
-		<Page title="About">
 			<section>
 				<h1>About</h1>
 				<div className={styles.paragraph}>
@@ -95,7 +94,6 @@ export const About = () => {
 				</div>
 				<BookShelf />
 			</section>
-		</Page>
 	);
 };
 

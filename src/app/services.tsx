@@ -1,4 +1,3 @@
-import Page from '../containers/layout/page';
 // import Services from "../data/serviceData";
 import styled from '@emotion/styled';
 import 'animate.css';
@@ -134,8 +133,7 @@ const ServicesTerms = styled.div`
 
 export default function Services() {
 	return (
-		<Page title="Let's Work Together">
-			<h1>Services</h1>
+		<>
 			<section>
 				<CardContainer>
 					{Sections.map((section) => (
@@ -168,6 +166,6 @@ export default function Services() {
 				</ServicesTerms>
 				{/* <ContactForm /> */}
 			</section>
-		</Page>
+		</>
 	);
 }
