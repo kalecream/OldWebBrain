@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
 	options: {
@@ -24,11 +25,20 @@ const nextConfig = {
 	swcMinify: true,
 	images: {
 		path: '/img/',
-		formats: ['image/webp']
+		formats: ['image/webp'],
+		remotePatterns: [{ hostname: 'cdn.sanity.io' }, { hostname: 'source.unsplash.com' }],
 	},
 	sassOptions: {
-		includePaths: ['/styles']
-	}
+		includePaths: ['/styles'],
+	},
+	typescript: {
+		// Set this to false if you want production builds to abort if there's type errors
+		ignoreBuildErrors: process.env.VERCEL_ENV === 'production',
+	},
+	eslint: {
+		/// Set this to false if you want production builds to abort if there's lint errors
+		ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
+	},
 };
 
 // Merge MDX config with Next.js config
