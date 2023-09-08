@@ -35,9 +35,9 @@
 			"@hooks/*": ["frontend/src/hooks/*"],
 			"@posts/*": ["frontend/src/posts/*"],
 			"@containers/*": ["frontend/src/containers/*"],
-			"@public/*": ["public/*"],
+			"@public/*": ["frontend/public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js"],
-	"exclude": ["node_modules", ".next"]
+	"exclude": ["node_modules"]
 }
