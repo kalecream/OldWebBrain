@@ -1,0 +1,53 @@
+@import '@styles/variables';
+@import '@styles/mediaQuery';
+
+.indicator {
+    height: 1rem;
+    width: 1rem;
+
+    @include breakpoint-range($from:mobile, $to: tablet) {
+        display: none;
+    }
+
+    @include breakpoint-range($from: tablet) {
+        display: block;
+    }
+
+}
+
+.card {
+    display: flex;
+    margin: 1rem 0;
+
+    @include breakpoint-range($from:mobile, $to: desktopSmall) {
+        flex-direction: column;
+    }
+
+    @include breakpoint-range($from: desktopSmall) {
+        flex-direction: row;
+    }
+
+    & h2 {
+font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+    }
+
+    &__body {
+ display: flex;
+    flex-direction: column;
+    }
+
+    &__title {
+font-weight: 400;;
+    }
+
+    &__dates {
+       color: var(--textColorFade);
+    }
+
+    &__points {
+        margin: 1rem;
+         color: var(--textColorFade);
+    }
+}
