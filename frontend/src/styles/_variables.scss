@@ -1,19 +1,11 @@
 $primary: #fed100;
 $secondary: #2b694d;
-$body: #141414;
-$text: #fff;
-$neutral: #ccc;
-$faint: #999;
 
-$border: 1px solid $neutral;
-$border-faint: 1px solid $faint;
 $border-radius: 5px;
 
 $padding-container: 1rem 3rem;
 $padding-object: 1rem;
 $padding-object-small: 0.5rem;
-
-$line-height: 1.4;
 
 $heading-font: 'Inter', sans-serif;
 $sims-font: 'Sims Sans SC', serif;
@@ -23,18 +15,92 @@ $blur: blur(20px);
 $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 $gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
 
-@mixin theme($theme) {
-  @if $theme == 'dark' {
-    $color: #fff;
-    $background: #000;
-  } @else if $theme == 'light' {
-    $color: #000;
-    $background: #fff;
-  } @else {
-    $color: #000;
-    $background: #fff;
-  }
-  color: $color;
-  background: $background;
-}
+
+// https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+$themes: (
+  light: (
+    primary: #fed100,
+    secondary: #2b694d,
+    backgroundColor: #fff,
+    textColor: #222,
+    textColorFade: rgba(34, 34, 34, 0.8),
+    captionColor: #aaa,
+    buttonTextColor: $secondary,
+    buttonTextTransform: none,
+    buttonTextHoverColor: $secondary,
+    buttonColor: #fff,
+    buttonBorder: 2px solid #ddd,
+    border: 1px solid #ddd,
+    borderRadius: $border-radius,
+    paddingContainer: $padding-container,
+    paddingObject: $padding-object,
+    paddingObjectSmall: $padding-object-small,
+    boxShadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+  ),
+  dark: (
+    primary: #fed100,
+    secondary: #2b694d,
+    backgroundColor: #222,
+    textColor: #ddd,
+    textColorFade: rgba(221, 221, 221, 0.8),
+    captionColor: #aaa,
+    buttonTextColor: #aaa,
+    buttonTextTransform: uppercase,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid #aaa,
+    border: 1px solid #aaa,
+    borderRadius: $border-radius,
+    paddingContainer: $padding-container,
+    paddingObject: $padding-object,
+    paddingObjectSmall: $padding-object-small,
+    boxShadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+  ),
+);
+// TODO: ! change all sass modules back into css variables
+
+// https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables
+@each $name, $map in $themes {
+    .#{$name} {
+        @each $key, $value in $map {
+            --#{$key}: #{$value};
+        }
+    }
+} 
+
+// @mixin themify( $themes: $themes ) {
+//   @each $theme, $map in $themes {
+
+//     .theme-#{$theme} & {
+//       $theme-map: () !global;
+//       @each $key, $submap in $map {
+//         $value: map-get(map-get($themes, $theme), '#{$key}');
+//         $theme-map: map-merge($theme-map, ($key: $value)) !global;
+//       }
+
+//       @content;
+//       $theme-map: null !global;
+//     }
+
+//   }
+// }
+
+
+// @function themed($key) {
+//   @return map-get($theme-map, $key);
+// }
+
+//TODO: If you're going to be adding a lot of themes or a theme will be touching a lot of stuff, you might want to set up your SCSS files a little differently so that all the theming doesn't bloat your main CSS file (like the example above would do). One way to do this might be to create a themes.scss file and replicate any selector paths that need theming and have a second build script that outputs just the themes.scss file.
  
+//  https://www.kevinpowell.co/article/dynamic-text-color-with-sass/
+@mixin dynamicText($background) {
+  $color: #fff;
+  @if (lightness($background) > 50) {
+    $color: #000;
+  }
+} 
+
+@mixin dynamicColor($color) {
+  background: $color;
+  color: text($color);
+}
