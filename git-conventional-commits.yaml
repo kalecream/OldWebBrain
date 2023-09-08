@@ -35,11 +35,11 @@ changelog:
   commitRangeUrl: https://github.com/kalecream/OldWebBrain/compare/%from%...%to%?diff=split
 
   # GitHub Issues
-  issueRegexPattern: "#[0-9]+"
-  issueUrl: https://github.com/kalecream/OldWebBrain/issues/%issue%
+  # issueRegexPattern: "#[0-9]+"
+  # issueUrl: https://github.com/kalecream/OldWebBrain/issues/%issue%
 
   ## Jira Issues
-  # issueRegexPattern: "[A-Z][A-Z0-9]+-[0-9]+"
-  # issueUrl: https://WORKSPACE.atlassian.net/browse/%issue%
+  issueRegexPattern: "[A-Z][A-Z0-9]+-[0-9]+"
+  issueUrl: https://kalecream.atlassian.net/browse/%issue%
 
 # https://github.com/Blazity/next-enterprise/blob/main/git-conventional-commits.yaml
