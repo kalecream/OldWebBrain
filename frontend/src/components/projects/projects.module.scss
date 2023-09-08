@@ -3,29 +3,29 @@
 .project-wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding:$padding-container;
+    padding:var(--paddingObject);
 }
 
 .project-tabs {
     margin: 0 auto;
-    padding-bottom: $padding-object-small;
+    padding-bottom: var(--paddingObjectSmall);
     display: flex;
 }
 
 .project-tab {
-    padding: $padding-object;
-    border-radius: $border-radius;
+    padding: var(--paddingObject);
+    border-radius: var(--borderRadius);
     outline: none;
-    border: $neutral;
-    color: $neutral;
+    border: var(--border);
+    color: var(--textColorFade);
     background-color: transparent;
     text-transform: capitalize;
     backdrop-filter: $blur;
 }
 
 .project-tab:active, .project-tab:hover {
-    background-color: $neutral;
-    color: $body;
+    background-color: var(--primary);
+    color: var(--backgroundColor);
 }
 
 .project-list {
@@ -37,11 +37,11 @@
 .project-overlay {
     flex:  0 1 320px;
     margin: 1rem;
-    background-color: rgba($color: $body, $alpha: 1.0);
+    background-color: var(--backgroundColor);
     backdrop-filter: $blur;
-    padding: $padding-object;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
+    padding: var(--paddingObject);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
 }
 
 .project-info {
@@ -80,12 +80,12 @@
     margin-top: 1rem;
     font-weight: 500;
     text-shadow: none;
-    color: rgba($color: $text, $alpha: 0.9);
+    color: rgba($color: var(--textColor), $alpha: 0.9);
 }
 
 .project-description {
     padding: 0.5rem 0;
-    color: rgba($color: $text, $alpha: 0.8);
+    color: rgba($color: var(--textColor), $alpha: 0.8);
     font-size: 0.8rem;
     text-shadow: none;
 }

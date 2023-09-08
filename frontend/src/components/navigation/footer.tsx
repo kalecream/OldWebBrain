@@ -1,4 +1,4 @@
-import { MediaProfiles } from 'frontend/src/components/navigation/socialmedia';
+import { MediaProfiles } from '@components/navigation/socialmedia';
 import Link from 'next/link';
 import style from './footer.module.scss';
 

@@ -3,6 +3,7 @@ import Page from '../containers/layout/page';
 import styled from '@emotion/styled';
 import 'animate.css';
 import Link from 'next/link';
+import {WorkExperience} from '@components/work/WorkExperience';
 
 const Sections = [
 	{

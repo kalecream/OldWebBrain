@@ -1,8 +1,8 @@
-import HeroName from 'frontend/src/components/hero/heroName/heroName';
-import { ScrollDown } from 'frontend/src/components/scrollDown';
+import HeroName from '@components/hero/heroName/heroName';
+import { ScrollDown } from '@components/scrollDown';
 import styles from './hero.module.scss';
 import button from '@components/_basics/button.module.scss';
-import { SceneViewer, HeroModel } from 'frontend/src/components/threeJS/scene';
+import { SceneViewer, HeroModel } from '@components/threeJS/scene';
 import Link from 'next/link';
 
 const Hero = () => {

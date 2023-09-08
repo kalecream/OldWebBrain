@@ -25,19 +25,19 @@
 		],
 		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["frontend/src/components/*"],
-			"@pages/*": ["frontend/src/pages/*"],
-			"@styles/*": ["frontend/src/styles/*"],
-			"@assets/*": ["frontend/src/assets/*"],
-			"@utils/*": ["frontend/src/utils/*"],
-			"@layout/*": ["frontend/src/container/layout/*"],
-			"@data/*": ["frontend/src/data/*"],
-			"@hooks/*": ["frontend/src/hooks/*"],
-			"@posts/*": ["frontend/src/posts/*"],
-			"@containers/*": ["frontend/src/containers/*"],
-			"@public/*": ["frontend/public/*"]
+			"@components/*": ["src/components/*"],
+			"@pages/*": ["src/pages/*"],
+			"@styles/*": ["src/styles/*"],
+			"@assets/*": ["src/assets/*"],
+			"@utils/*": ["src/utils/*"],
+			"@layout/*": ["src/container/layout/*"],
+			"@data/*": ["src/data/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@posts/*": ["src/posts/*"],
+			"@containers/*": ["src/containers/*"],
+			"@public/*": ["public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", ".next"]
 }

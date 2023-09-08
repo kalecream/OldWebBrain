@@ -28,8 +28,8 @@
 	position: absolute;
 	top: 50%;
 	font-size: clamp(4rem, 25vw, 8rem);
-	font-family: $accent-font;
-	-webkit-text-stroke: 2px rgba($color: $neutral, $alpha: 0.5);
+	font-family: var(--accentFont);
+	-webkit-text-stroke: 2px rgba($color: var(--borderColor), $alpha: 0.5);
 	letter-spacing: -2px;
 	user-select: none;
 	pointer-events: none;
@@ -40,7 +40,7 @@
 	width: clamp(2rem, 1.5vw, 10rem);
 	height: clamp(2rem, 1.5vw, 10rem);
 	stroke-width: 25px;
-	stroke: rgba($color: $neutral, $alpha: 0.5);
+	stroke: rgba($color: var(--borderColor), $alpha: 0.5);
 	transform: translate(-50%, -50%);
 	animation: scaleUpdown 2000ms ease-in-out infinite;
 }

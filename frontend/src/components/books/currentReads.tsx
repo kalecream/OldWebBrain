@@ -3,7 +3,8 @@ import Books from '../../data/books';
 import Link from 'next/link';
 import styles from './books.module.scss';
 
-// TODO:  change to color theme
+// TODO:  
+
 // TODO: add to top page
 
 const CurrentReads = () => {

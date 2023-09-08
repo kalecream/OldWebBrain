@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Projects } from '../../data/projectsData';
+import { Projects } from '@data/projectsData';
 import 'animate.css';
 import Link from 'next/link';
 import styles from './projects.module.scss';
 import Image from 'next/image';
-import { GetMonthName } from 'frontend/src/utils/GetMonthName';
+import { GetMonthName } from '@utils/GetMonthName';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
