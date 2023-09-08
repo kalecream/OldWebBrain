@@ -13,7 +13,13 @@ $body-font: 'Inter', sans-serif;
 
 $blur: blur(20px);
 $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-$gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
+$gradient:  radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  );
+$circle-gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
+$transition: all 0.3s ease-in-out;
 
 
 // https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
@@ -36,6 +42,12 @@ $themes: (
     paddingObject: $padding-object,
     paddingObjectSmall: $padding-object-small,
     boxShadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+    transition: $transition,
+    loadingBackground: $gradient,
+    loadingTextColor: #fff,
+    bodyFont: $body-font,
+    headingFont: $heading-font,
+    accentFont: $sims-font,
   ),
   dark: (
     primary: #fed100,
@@ -55,6 +67,12 @@ $themes: (
     paddingObject: $padding-object,
     paddingObjectSmall: $padding-object-small,
     boxShadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+    transition: $transition,
+    loadingBackground: $gradient,
+    loadingTextColor: #fff,
+    bodyFont: $body-font,
+    headingFont: $heading-font,
+    accentFont: $sims-font,
   ),
 );
 // TODO: ! change all sass modules back into css variables

@@ -67,8 +67,8 @@
 html {
 	background-color: var(--body);
 	color: var(--text);
-	line-height: $line-height;
-	font-family: $body-font;
+	line-height: 1.2;
+	font-family: var(--bodyFont);
 }
 
 header {
