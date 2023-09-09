@@ -1,7 +1,7 @@
-import { Page } from 'frontend/src/containers/layout';
-import { FullSection } from 'frontend/src/components/_basics/Basics';
-import { PostType } from 'frontend/src/types/post';
-import { getAllPosts } from 'frontend/src/utils/api';
+import { Page } from '@containers/layout';
+import { FullSection } from '@components/_basics/Basics';
+import { PostType } from '../types/post';
+import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
 import '../styles/articles.module.css';
 import styled from '@emotion/styled';

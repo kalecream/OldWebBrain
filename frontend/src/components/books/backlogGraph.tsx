@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
-import Books from 'frontend/src/data/books';
-import { WindowWidth } from 'frontend/src/utils/windowDimmensions';
-import { GetMonthName } from 'frontend/src/utils/GetMonthName';
+import Books from '@data/books';
+import { WindowWidth } from '@utils/windowDimmensions';
+import { GetMonthName } from '@utils/GetMonthName';
 import styles from './books.module.scss';
 
 export interface BooksProps {
