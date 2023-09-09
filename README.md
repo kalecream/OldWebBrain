@@ -14,6 +14,7 @@
 ```bash
 # Install dependencies
 yarn 
+
 # View the website at: 
 # http://localhost:3001
 yarn dev
@@ -32,13 +33,21 @@ npx prisma generate
 npx prisma db push
 
 # See the tables
- npx prisma studio
+npx prisma studio
 
 ```
 
 > [!NOTE]
 >  If you have problems with environment variable not being found, make sure the .env file is just .env and not .env.local with the prisma information.
 
+```bash
+# Update database after schema change
+npx prisma migrate dev --create-only --name "migration-name"
+
+npx prisma migrate dev
+```
+> [!WARNING]
+> Your tables will be dropped and you will lose data unless you edit the migration file to renaming instead of dropping. It's a simple SQL query. Here is an [SQL Cheatsheet](https://www.sqltutorial.org/sql-cheat-sheet/).
 ---
 
 <a href="https://ko-fi.com/sabrinamedwinter">
