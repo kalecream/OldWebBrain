@@ -1,6 +1,6 @@
-import Page from 'frontend/src/containers/layout/page';
+import Page from '@containers/layout/page';
 import { useEffect, useState } from 'react';
-import { CustomComponents } from 'frontend/src/components/blog/customElements';
+import { CustomComponents } from '@components/blog/customElements';
 
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
@@ -11,24 +11,20 @@ import { serialize } from 'next-mdx-remote/serialize';
 
 import Image from 'next/image';
 import path from 'path';
-import { PostType } from '../../types/post';
-import { postFilePaths, POSTS_PATH } from 'frontend/src/utils/mdxUtils';
+import { PostType } from '@pages/blog';
+import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import styled from '@emotion/styled';
 
-import { useHeadsObserver } from 'frontend/src/hooks/useObserver';
-import getReadTime from 'frontend/src/utils/read-time';
+import { useHeadsObserver } from '@hooks/useObserver';
+import getReadTime from '@utils/read-time';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
 	frontMatter: PostType;
 };
-
-const BlogPage = styled(Page)`
-	display: block;
-`;
 
 const TableOfContents = styled.aside`
 	padding: 1rem;
@@ -89,7 +85,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	}, []);
 
 	return (
-		<BlogPage>
+		<Page style={{display: 'block'}}>
 			<article>
 				<div className="article--header">
 					<div className="article--image">

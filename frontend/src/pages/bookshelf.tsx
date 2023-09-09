@@ -1,5 +1,5 @@
-import { Page } from 'frontend/src/containers/layout';
-import { BookShelf } from 'frontend/src/components/books/backlogGraph';
+import { Page } from '@containers/layout';
+import { BookShelf } from '@components/books/backlogGraph';
 import Link from 'next/link';
 
 import styled from 'styled-components';
@@ -15,12 +15,12 @@ const FlexLinks = styled.div`
 
 const BookCase = () => {
 	return (
-		<Page title="Bookshelf">
-			<h1 id="PageTitle">Bookcase</h1>
+		<Page>
+			<h1 id="pageTitle">Bookcase</h1>
 			<BookShelf />
 			<FlexLinks>
 				<Link href="/about">&#129120; About</Link>
-				<Link href="#PageTitle">&#129121; Top of Page</Link>
+				<Link href="#pageTitle">&#129121; Top of Page</Link>
 			</FlexLinks>
 		</Page>
 	);
