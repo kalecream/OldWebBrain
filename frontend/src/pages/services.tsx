@@ -4,6 +4,22 @@ import styled from '@emotion/styled';
 import 'animate.css';
 import Link from 'next/link';
 import {WorkExperience} from '@components/work/WorkExperience';
+import prisma from '@utils/prisma';
+
+// const services = await prisma.user.create({
+//     data: {
+//         username,
+//         emailEncrypted: encrypted,
+//         emailIv: iv,
+//         password: hashedPassword,
+//         profile: {
+//             create: {}, // create a UserProfile that assumes the created user's UUID as a relation
+//         },
+//     },
+//     select: {
+//         id: true,
+//     },
+// });
 
 const Sections = [
 	{
@@ -31,12 +47,6 @@ const Sections = [
 		cost: '$20/hour',
 		link: '/services/administration'
 	}
-	// {
-	//   name: "Content Creation",
-	//   description: "Create custom content for your business or personal use.",
-	//   cost: "$20/hour",
-	//   link: "/services/content-creation",
-	// },
 ];
 
 const CardContainer = styled.div`
@@ -135,12 +145,12 @@ const ServicesTerms = styled.div`
 
 export default function Services() {
 	return (
-		<Page title="Let's Work Together">
+		<Page>
 			<h1>Services</h1>
 			<section>
 				<CardContainer>
 					{Sections.map((section) => (
-						<ProjectCard href={section.link} className="animate__animated animate__fadeInUp">
+						<ProjectCard href={section.link}>
 							<img width={100} height={100} alt={''} src={`/img/Services/${section.name}.svg`} />
 							<h2>{section.name}</h2>
 							{/* <p>{section.description}</p> */}
@@ -167,7 +177,8 @@ export default function Services() {
 						<a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">Paypal</a> or Payoneer.
 					</p>
 				</ServicesTerms>
-				{/* <ContactForm /> */}
+
+				<WorkExperience />
 			</section>
 		</Page>
 	);

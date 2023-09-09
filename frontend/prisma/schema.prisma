@@ -1,0 +1,123 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+enum Role {
+  ADMIN
+  CONTRACTOR
+  CUSTOMER
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String?
+  email     String?   @unique
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  projects  Project[]
+  role      Role      @default(CUSTOMER)
+
+  @@map(name: "users")
+}
+
+model Books {
+  isbn      String    @id @default(cuid())
+  title     String?
+  author    String?
+  rating    Int?      @default(0)
+  genre     String[]
+  status    String    @default("unread")
+  summary   String
+  review    String?
+  started   DateTime?
+  finished  DateTime?
+  cover     String?
+  pages     Int?
+  minutes   Int?
+  series    String?
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map(name: "books")
+}
+
+model Courses {
+  id        Int       @id @default(autoincrement())
+  title     String?
+  author    String?
+  rating    Int?      @default(0)
+  status    String
+  summary   String
+  review    String?
+  started   DateTime?
+  finished  DateTime?
+  type      String?
+  where     String?
+  topic     String?
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map(name: "courses")
+}
+
+model TimeLog {
+  project   Project   @relation(fields: [projectId], references: [id])
+  projectId String
+  scope     String
+  started   DateTime? @default(now())
+  finished  DateTime?
+  notes     String?
+  createdAt DateTime  @id @unique @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+}
+
+model Service {
+  id          String    @id @default(cuid())
+  category    String    @default("service")
+  title       String
+  display     Boolean   @default(true)
+  description String
+  link        String?
+  image       String?
+  linkText    String?
+  cost        Decimal   @default(0) @db.Decimal(8, 2)
+  costDay     Decimal   @default(0) @db.Decimal(8, 2)
+  createdAt   DateTime  @default(now()) @map(name: "created_at")
+  updatedAt   DateTime  @updatedAt @map(name: "updated_at")
+  Project     Project[]
+
+  @@map(name: "services")
+}
+
+model Project {
+  id          String      @id @default(cuid())
+  title       String?
+  display     Boolean   @default(true)
+  status      String
+  description String
+  type        String?
+  link        String?
+  repoName    String?
+  sourceLink  String?
+  technology  String[]
+  language    String[]
+  createdAt   DateTime  @default(now()) @map(name: "created_at")
+  updatedAt   DateTime  @updatedAt @map(name: "updated_at")
+  timeLog     TimeLog[]
+  User        User?     @relation(fields: [userId], references: [email])
+  userId      String?
+  service     Service?  @relation(fields: [serviceId], references: [id])
+  serviceId   String?
+
+  @@map(name: "projects")
+}
+
+// npx prisma db push
