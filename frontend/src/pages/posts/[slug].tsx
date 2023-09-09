@@ -17,7 +17,7 @@ import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import styled from '@emotion/styled';
-import { Page } from '@containe'
+import { Page } from '@containers/layout/page';
 
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
