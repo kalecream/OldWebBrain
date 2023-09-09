@@ -6,6 +6,7 @@ yarn.lock
 
 # dependencies
 **/node_modules
+/node_modules
 /.pnp
 .pnp.js
 
@@ -23,6 +24,7 @@ yarn.lock
 # misc
 .DS_Store
 *.pem
+.env
 
 # debug
 npm-debug.log*
