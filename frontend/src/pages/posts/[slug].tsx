@@ -85,7 +85,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	}, []);
 
 	return (
-		<Page style={{display: 'block'}}>
+		<Page >
 			<article>
 				<div className="article--header">
 					<div className="article--image">
@@ -147,7 +147,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
 			</article>
-		</BlogPage>
+		</Page>
 	);
 };
 
