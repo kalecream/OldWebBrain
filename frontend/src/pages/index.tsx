@@ -10,6 +10,7 @@ import Hero from '@components/hero/hero';
 import { SiteBackground } from '@components/threeJS/scene';
 // import { ImageLoader } from '@utils/ImageLoader';
 import ProjectList from '@components/projects/projectsList';
+import Head from '@components/Head';
 
 type IndexProps = {
 	posts: PostType[];
@@ -18,6 +19,7 @@ type IndexProps = {
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
+			<Head title='Sabrina Medwinter' description='Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.'  />
 			<SiteBackground />
 			<Hero />
 			
