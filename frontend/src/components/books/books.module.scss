@@ -9,8 +9,8 @@
 
 	& a {
 		text-decoration: none;
-		color: $text;
-		border-bottom: 2px solid $primary;
+		color: var(--textColor);
+		border-bottom: 2px solid var(--primary);
 		margin-bottom: 0.15rem;
 	}
 }
@@ -183,7 +183,7 @@
 .bookList {
 	font-size: 0.9rem;
 	padding: 1rem;
-	border: 1px dashed rgba($color: $neutral, $alpha: 0.3);
+	border: 1px dashed rgba($color: var(--borderColor), $alpha: 0.3);
 	border-radius: $border-radius;
 
 	& a {
@@ -213,9 +213,9 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	border: 5px solid $neutral;
-	border-radius: $border-radius;
-	background: $body;
+	border: 5px solid var(--borderColor);
+	border-radius: ar(--borderRadius);
+	background: var(--backgroundColor);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 	transform: translate(-50%, -50%);
 	user-select: none;
@@ -236,7 +236,7 @@
 		padding: 12px 24px;
 		font-size: 1rem;
 		text-align: center;
-		font-family: 'Caveat', serif;
+		font-family: 'Caveat', 'Inter', sans-serif;
 		overflow: hidden;
 		line-height: 1;
 	}
