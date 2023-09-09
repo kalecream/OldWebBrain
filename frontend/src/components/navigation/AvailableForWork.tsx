@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './AvailableForWork.module.css';
+import styles from './AvailableForWork.module.scss';
 
 export const AvailableForWork = () => {
 	const [isHovered, setIsHovered] = useState(false);
