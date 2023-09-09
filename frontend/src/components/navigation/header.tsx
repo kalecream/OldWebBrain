@@ -1,7 +1,7 @@
 import Directory from '@data/directory';
 import ThemeSwitch from './theme-toggle';
 import { useRouter } from 'next/router';
-import AvailableForWork from "@components/navigation/looking-work";
+import AvailableForWork from "@components/navigation/AvailableForWork";
 import Link from 'next/link';
 import style from './header.module.scss';
 // import { FaBars } from 'react-icons/fa6';

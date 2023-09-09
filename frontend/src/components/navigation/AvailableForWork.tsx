@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import styles from '../../styles/nav.module.css';
+import { useState } from 'react';
+import styles from './AvailableForWork.module.css';
 
 export const AvailableForWork = () => {
 	const [isHovered, setIsHovered] = useState(false);
