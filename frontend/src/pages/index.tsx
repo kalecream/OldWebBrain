@@ -1,20 +1,15 @@
 
 import Page from '@containers/layout/page';
 import Image from 'next/image';
-
-import { format, parseISO } from 'date-fns';
+// import { format, parseISO } from 'date-fns';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { getAllPosts } from '../utils/api';
-import { PostType } from '../types/post';
+import { getAllPosts } from '@utils/api';
+import { PostType } from './blog';
 import Hero from '@components/hero/hero';
 import { SiteBackground } from '@components/threeJS/scene';
 // import { ImageLoader } from '@utils/ImageLoader';
-
 import ProjectList from '@components/projects/projectsList';
-
-import '../styles/animations.module.css';
-import 'animate.css';
 
 type IndexProps = {
 	posts: PostType[];

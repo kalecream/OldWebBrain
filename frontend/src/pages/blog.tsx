@@ -1,13 +1,17 @@
 import { Page } from '@containers/layout';
 import { FullSection } from '@components/_basics/Basics';
-import { PostType } from '../types/post';
 import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
-import '../styles/articles.module.css';
+import '@styles/articles.module.css';
 import styled from '@emotion/styled';
 
-type BlogProps = {
-	posts: PostType[];
+export type PostType = {
+	[x: string]: any;
+	date?: string;
+	description?: string;
+	image?: string;
+	slug: string;
+	title: string;
 };
 
 const BlogContainer = styled.div`
@@ -75,7 +79,7 @@ const FormerFeaturedArticle = styled.button`
 	}
 `;
 
-export const BlogPage = ({ posts }: BlogProps): JSX.Element => {
+export const BlogPage = ({ posts }: PostType): JSX.Element => {
 	const GoToArticle = (slug: string) => {
 		console.log(slug);
 	};
