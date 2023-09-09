@@ -1,11 +1,11 @@
-import { Page } from 'frontend/src/containers/layout';
-import CurrentReads from 'frontend/src/components/books/currentReads';
-import { BacklogGraph } from 'frontend/src/components/books/backlogGraph';
-import Books from 'frontend/src/data/books';
+import { Page } from '@containers/layout';
+import CurrentReads from '@components/books/currentReads';
+import { BacklogGraph } from '@components/books/backlogGraph';
+import Books from '@data/books';
 import { useEffect, useState } from 'react';
 // import PhotoGalley from '../components/books/gallery';
 import styles from '@components/books/books.module.scss';
-import { BookShelf } from 'frontend/src/components/books/backlogGraph';
+import { BookShelf } from '@components/books/backlogGraph';
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
