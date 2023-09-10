@@ -19,15 +19,15 @@ export const CustomOrbital = () => {
 	useFrame((state) => {
 		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
 		// state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-		state.camera.position.x = 45;
-		state.camera.position.y = 15;
-		state.camera.position.z = 25;
+		state.camera.position.x = 15;
+		state.camera.position.y = 24;
+		state.camera.position.z = 20;
 		//controls.update() must be called after any manual changes to the camera's transform
 	});
 
-	// requestAnimationFrame(() => {
-	// 	document.getElementById('hero')?.scrollIntoView();
-	// });
+	requestAnimationFrame(() => {
+		document.getElementById('hero')?.scrollIntoView();
+	});
 
 	useFrame((state) => {
 		if (!!orbitControlsRef.current) {
@@ -43,7 +43,7 @@ export const CustomOrbital = () => {
 		}
 	}, [orbitControlsRef.current]);
 
-	return <OrbitControls ref={orbitControlsRef} maxDistance={6} minDistance={6} enableZoom={true} />;
+	return <OrbitControls ref={orbitControlsRef} maxDistance={6} minDistance={6} />;
 };
 
 const SiteOrbital = () => {
@@ -96,7 +96,7 @@ export const Scene = ({ modelPath, scale = 40 }) => {
 
 export const SceneViewer = ({ modelPath, scale = 40 }): JSX.Element => {
 	return (
-		<Canvas shadows dpr={[1, 2]} camera={{ fov: 25, position: [0, 0, 8] }}>
+		<Canvas shadows camera={{ fov: 30, position: [0, 0, 0] }}>
 			<ambientLight />
 			<spotLight position={[10, 10, 10]} rotation={0.15} />
 			<pointLight position={[-10, -10, -10]} />
@@ -166,10 +166,10 @@ export const HeroModel = (): JSX.Element => {
 		<HeroCanvas
 			flat
 			shadows
-			camera={{ fov: 30 }}
+			camera={{ fov: 50 }}
 			style={{
 				width: '100%',
-				height: '100vh'
+				height: '75vh'
 			}}
 		>
 			<Preload all />
@@ -177,10 +177,9 @@ export const HeroModel = (): JSX.Element => {
 				<PresentationControls
 					global
 					rotation={[0, -Math.PI / 4, 0]}
-					polar={[0, Math.PI / 2]}
-					azimuth={[-Math.PI / 4, Math.PI / 4]}
+					polar={[0, Math.PI / 4]}
+					azimuth={[-Math.PI / 2, Math.PI / 2]}
 				/>
-				{/* <PerspectiveCamera makeDefault position={[-4, -4, 0]} /> */}
 				<ambientLight />
 				<directionalLight />
 				<CustomOrbital />
