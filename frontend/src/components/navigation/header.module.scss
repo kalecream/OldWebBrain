@@ -1,4 +1,3 @@
-@import '@styles/variables.scss';
 @import '@styles//animations.scss';
 
 .directory-list {
@@ -22,11 +21,11 @@
 }
 
 .directory-link:hover {
-  color: var(--text);
+  color: var(--textColor);
 }
 
 .directory-link .active {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 .settings > * {
@@ -50,9 +49,9 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-	font-family: $sims-font;
+	font-family: var(--accentFont);
   margin: 0 1rem;
   color: var(--primary);
 }

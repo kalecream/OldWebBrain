@@ -13,6 +13,7 @@
 }
 
 .project-tab {
+    @include blur;
     padding: var(--paddingObject);
     border-radius: var(--borderRadius);
     outline: none;
@@ -20,7 +21,6 @@
     color: var(--textColorFade);
     background-color: transparent;
     text-transform: capitalize;
-    backdrop-filter: $blur;
 }
 
 .project-tab:active, .project-tab:hover {
@@ -35,10 +35,10 @@
 }
 
 .project-overlay {
+    @include blur;
     flex:  0 1 320px;
     margin: 1rem;
     background-color: var(--backgroundColor);
-    backdrop-filter: $blur;
     padding: var(--paddingObject);
     border-radius: var(--borderRadius);
     box-shadow: var(--boxShadow);
@@ -59,7 +59,7 @@
 }
 
 .project-lang > div > a {
-    color: var(--grey);
+    color: var(--textColorFade);
 }
 
 .project-lang > div > a:not(:last-child)::after{

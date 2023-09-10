@@ -8,7 +8,6 @@ import Link from 'next/link';
 const Hero = () => {
 	return (
 		<section>
-			<SceneViewer scale={90} modelPath={"/lost_robot/scene.gltf"} />
 			<div className={styles.container}>
 				<div className={styles.heroSection}>
 					<HeroName name={'sabrina'} />

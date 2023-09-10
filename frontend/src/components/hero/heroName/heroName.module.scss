@@ -28,11 +28,13 @@
 	position: absolute;
 	top: 50%;
 	font-size: clamp(4rem, 25vw, 8rem);
-	font-family: var(--accentFont);
-	-webkit-text-stroke: 2px rgba($color: var(--borderColor), $alpha: 0.5);
+	font-family: var(--accentFont), sans-serif;
+	text-transform: capitalize;
+	-webkit-text-stroke: 2px solid var(--border);
 	letter-spacing: -2px;
 	user-select: none;
 	pointer-events: none;
+	stroke: var(--border);
 
 }
 .container .text .icon {
@@ -43,12 +45,14 @@
 	stroke: rgba($color: var(--borderColor), $alpha: 0.5);
 	transform: translate(-50%, -50%);
 	animation: scaleUpdown 2000ms ease-in-out infinite;
+	color: var(--textColor);
 }
 
 .container .text .icon:nth-child(1) {
-	top: 13%;
-	left: 64%;
+	top: 11%;
+	left: 63%;
 	animation-delay: 0;
+	color: var(--secondary);
 }
 
 .container .text-container {
@@ -64,6 +68,7 @@
 	animation: upDown 2000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1));
 	z-index: -1;
+	color: var(--textColor);
 }
 .container .text-container .text:nth-child(2) {
 	opacity: 0;

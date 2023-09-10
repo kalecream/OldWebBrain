@@ -3,7 +3,7 @@ import styles from './heroName.module.scss';
 
 const HeroName = ({ name }) => {
 	const textArray = useRef(null);
-	const colorArr = ['var(--body)', '#FED100', '#009B3A'];
+	const colorArr = ['var(--textColor)', 'var(--secondary)', 'var(--primary)'];
 
 	return (
 		<>

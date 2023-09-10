@@ -4,65 +4,155 @@
 @import 'animations';
 @import 'mediaQuery';
 
-.light {
-	--primary: $primary;
-	--secondary: $secondary;
-	--accent: $accent;
+// .light {
+// 	--primary: $primary;
+// 	--secondary: $secondary;
+// 	--accent: $accent;
 
-	--text: #fafafa;
-	--text-shadow: 0 0 1px #fff;
-	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+// 	--text: #fafafa;
+// 	--text-shadow: 0 0 1px #fff;
+// 	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+// 		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-	--body: #34373e;
-	--grey: #b3b3b3;
+// 	--body: #34373e;
+// 	--grey: #b3b3b3;
 
-	--lightgrey: #8f8182;
-	--faint: rgba(0, 0, 0, 0.1);
-	--muted: rgba(0, 0, 0, 0.4);
-	--caption: #8f8182;
-	--text--header: var(--text);
+// 	--lightgrey: #8f8182;
+// 	--faint: rgba(0, 0, 0, 0.1);
+// 	--textColorFade: rgba(0, 0, 0, 0.4);
+// 	--caption: #8f8182;
+// 	--text--header: var(--text);
 
-	--success: #63aa64;
-	--warning: #e09a2c;
-	--error: #f44336;
-	--info: #2196f3;
+// 	--success: #63aa64;
+// 	--warning: #e09a2c;
+// 	--error: #f44336;
+// 	--info: #2196f3;
 
-	--border: 1px solid var(--faint);
-	--margin: 1rem 3rem;
-	--padding: 1rem 3rem;
-	--padding-small: 0.5rem 1rem;
-	--padding-xtra-small: 0.25rem 0.5rem;
-}
+// 	--border: 1px solid var(--faint);
+// 	--margin: 1rem 3rem;
+// 	--padding: 1rem 3rem;
+// 	--padding-small: 0.5rem 1rem;
+// 	--padding-xtra-small: 0.25rem 0.5rem;
+// }
 
-.dark {
-	--primary: $primary;
-	--secondary: $secondary;
-	--accent: $accent;
-	--text: #fafafa;
-	--text-shadow: 0 0 1px #000;
-	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+// .dark {
+// 	--primary: $primary;
+// 	--secondary: $secondary;
+// 	--accent: $accent;
+// 	--text: #fafafa;
+// 	--text-shadow: 0 0 1px #000;
+// 	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+// 		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-	--body: #34373e;
-	--grey: #b3b3b3;
-	--lightgrey: #8f8182;
-	--faint: rgba(255, 255, 255, 0.1);
-	--muted: rgba(255, 255, 255, 0.3);
-	--caption: #8f8182;
-	--text--header: var(--text);
+// 	--body: #34373e;
+// 	--grey: #b3b3b3;
+// 	--lightgrey: #8f8182;
+// 	--faint: rgba(255, 255, 255, 0.1);
+// 	--textColorFade: rgba(255, 255, 255, 0.3);
+// 	--caption: #8f8182;
+// 	--text--header: var(--text);
 
-	--success: #63aa64;
-	--warning: #e09a2c;
-	--error: #f44336;
-	--info: #2196f3;
+// 	--success: #63aa64;
+// 	--warning: #e09a2c;
+// 	--error: #f44336;
+// 	--info: #2196f3;
 
-	--border: 1px solid var(--faint);
-	--margin: 1rem 3rem;
-	--padding: 1rem 3rem;
-	--padding-small: 0.5rem 1rem;
-	--padding-xtra-small: 0.25rem 0.5rem;
-}
+// 	--border: 1px solid var(--faint);
+// 	--margin: 1rem 3rem;
+// 	--padding: 1rem 3rem;
+// 	--padding-small: 0.5rem 1rem;
+// 	--padding-xtra-small: 0.25rem 0.5rem;
+// }
+
+$primary: #fed100;
+$secondary: #2b694d;
+
+$border-radius: 5px;
+
+$padding-container: 1rem 3rem;
+$padding-object: 1rem;
+$padding-object-small: 0.5rem;
+
+$heading-font: 'Inter', sans-serif;
+$accentFont: 'Sims Sans SC', serif;
+$body-font: 'Inter', sans-serif;
+
+$blur: 20px;
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+$gradient:  radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 174, 87, 1) 0%,
+    rgba(12, 116, 117, 1) 90%
+  );
+$circle-gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
+$transition: all 0.3s ease-in-out;
+
+// https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+$themes: (
+  light: (
+    primary: #2b694d,
+    secondary: #FED100,
+    backgroundColor: #fff,
+    textColor: #222,
+    textColorFade: rgba(34, 34, 34, 0.8),
+    captionColor: #aaa,
+    buttonTextColor: $secondary,
+    buttonTextTransform: none,
+    buttonTextHoverColor: $secondary,
+    buttonColor: #fff,
+    buttonBorder: 2px solid rgba(255, 255, 255, 0.23),
+    border: 1px solid rgba(255, 255, 255, 0.23),
+    borderColor: rgba(255, 255, 255, 0.23),
+    borderRadius: $border-radius,
+    paddingContainer: $padding-container,
+    paddingObject: $padding-object,
+    paddingObjectSmall: $padding-object-small,
+    boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
+    transition: $transition,
+    loadingBackground: $gradient,
+    loadingTextColor: #fff,
+    bodyFont: $body-font,
+    headingFont: $heading-font,
+    accentFont: --accentFont,
+  ),
+  dark: (
+    primary: #fed100,
+    secondary: #2b694d,
+    backgroundColor: #222,
+    textColor: #ddd,
+    textColorFade: rgba(221, 221, 221, 0.8),
+    captionColor: #aaa,
+    buttonTextColor: #aaa,
+    buttonTextTransform: uppercase,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid rgba(0, 0, 0, 0.23),
+    border: 1px solid rgba(0, 0, 0, 0.23),
+    borderColor: rgba(0, 0, 0, 0.23),
+    borderRadius: $border-radius,
+    paddingContainer: $padding-container,
+    paddingObject: $padding-object,
+    paddingObjectSmall: $padding-object-small,
+    boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
+    transition: $transition,
+    loadingBackground: $gradient,
+    loadingTextColor: #fff,
+    bodyFont: $body-font,
+    headingFont: $heading-font,
+    accentFont: --accentFont,
+  ),
+);
+// TODO: ! change all sass modules back into css variables
+
+// https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables
+@each $name, $map in $themes {
+    .#{$name} {
+        @each $key, $value in $map {
+            --#{$key}: #{$value};
+        }
+    }
+} 
+
 
 html {
 	background-color: var(--body);
@@ -92,7 +182,7 @@ header {
 		padding: 1rem 2.5rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+	@include breakpoint-range($from: desktopSmall) {
 		padding: 1rem 3rem;
 	}
 }
@@ -102,6 +192,7 @@ main {
 }
 
 footer {
+	@include blur;
 	display: flex;
 	bottom: 0;
 	position: relative;
@@ -113,8 +204,6 @@ footer {
 	gap: 0.5rem;
 	text-transform: uppercase;
 	font-weight: 600;
-	backdrop-filter: $blur;
-	-webkit-backdrop-filter: $blur;
 }
 
 section {
@@ -126,23 +215,22 @@ section {
 }
 
 section h1 {
-	font-family: var($heading-font);
+	font-family: var(--headingFont);
 	margin: 0.5rem auto;
-	color: var(--body);
+	color: var(--textColor);
 	letter-spacing: -1px;
 	// -webkit-text-stroke-width: 1px;
-	// -webkit-text-stroke-color: var(--muted);
-	text-shadow: 1px 3px var(--muted);
+	// -webkit-text-stroke-color: var(--textColorFade);
+	text-shadow: 1px 3px var(--textColorFade);
 }
 
 .glassmorphic {
-	padding: var(--padding);
-	background: rgba(var(--body), 0.2);
+	@include blur;
+	padding: var(--paddingContainer);
+	background: rgba(var(--backgroundColor), 0.2);
 	box-shadow: 0 8px 32px 0 rgba(30, 30, 135, 0.37);
-	backdrop-filter: blur(20px);
 	border: 1px solid rgba(255, 255, 255, 0.23);
-	-webkit-backdrop-filter: blur(20px);
-	border-radius: $border-radius;
+	border-radius: var(--borderRadius);
 }
 
 .parallax {
@@ -174,8 +262,8 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--text--header);
-	font: $heading-font;
+	color: var(--textColor);
+	font: var(--headingFont);
 }
 
 h1 {
@@ -213,7 +301,7 @@ p {
 }
 
 p a {
-	color: var(--text);
+	color: var(--textColor);
 	border-bottom: 1px solid var(--borderColor);
 }
 
@@ -256,7 +344,7 @@ image {
 
 .book-quote::before,
 .book-quote::after {
-	color: var(--muted);
+	color: var(--textColorFade);
 }
 
 .book-quote::before {
@@ -363,11 +451,11 @@ kbd::after,
 }
 
 .sitename {
-	color: var(--text);
+	color: var(--textColor);
 }
 
 .sitename:hover {
-	color: var(--accent);
+	color: var(--primary);
 }
 
 /* containers  */
@@ -386,18 +474,17 @@ kbd::after,
 /* cards */
 
 .blog--article {
+	@include blur;
 	flex: 1 1 400px;
 
 	display: flex;
 
 	justify-content: center;
-	background: rgba(var(--body), 0.4);
-	border-radius: $border-radius;
+	background: rgba(var(--backgroundColor), 0.4);
+	border-radius: var(--borderRadius);
 	text-align: center;
-	backdrop-filter: $blur;
-	-webkit-backdrop-filter: $blur;
-	box-shadow: 1px 4px 16px 0 rgba(2, 4, 36, 0.37);
-	border: 1px solid rgba(255, 255, 255, 0.23);
+	box-shadow: var(--boxShadow);
+	border: var(--border);
 
 	@include breakpoint-range($from: mobile, $to: desktopSmall) {
 		flex: 1 1 200px;
@@ -445,13 +532,13 @@ kbd::after,
 
 .blog--article__date {
 	font-size: 0.9rem;
-	color: var(--muted);
+	color: var(--textColorFade);
 }
 
 .article__title {
 	color: var(--text);
 	line-height: 1;
-	font-family: var($sims-font);
+	font-family: var(--accentFont);
 	font-size: 1rem;
 	text-align: start;
 }
@@ -555,7 +642,7 @@ article li {
 }
 
 article li::marker {
-	color: var(--muted);
+	color: var(--textColorFade);
 	text-indent: 1rem !important;
 }
 
@@ -578,7 +665,7 @@ article li::marker {
 	font-size: 3.5rem;
 	font-weight: 600;
 	color: var(--primary);
-	font-family: var($sims-font);
+	font-family: var(--accentFont);
 }
 
 .article--image {
@@ -592,7 +679,7 @@ article li::marker {
 }
 
 .article--description {
-	color: var(--muted);
+	color: var(--textColorFade);
 	font-size: 1.2rem;
 	margin-bottom: 3rem;
 }
@@ -607,7 +694,7 @@ article li::marker {
 
 .article--created,
 .article--readtime {
-	color: var(--muted);
+	color: var(--textColorFade);
 	font-size: 1.2rem;
 	margin-bottom: 1rem;
 	display: inline-block;
@@ -615,7 +702,7 @@ article li::marker {
 
 /* TABS  */
 .tabs {
-	border: 1px solid var(--grey);
+	border: var(--border);
 	padding: 2rem;
 }
 
@@ -649,10 +736,22 @@ canvas:active {
 
 ::-webkit-scrollbar-thumb {
 	outline: 1px solid rgba($primary, 0.3);
-	border-radius: $border-radius;
+	border-radius: var(--border-radius);
 }
 
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-	background: $primary;
+	background: var(--primary);
+}
+
+@mixin blur {
+  background-color: rgba(255, 255, 255, .9);
+
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .backdrop-blur {
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur($blur);
+    backdrop-filter: blur($blur);
+  }
+}
 }
