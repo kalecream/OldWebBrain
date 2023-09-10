@@ -118,7 +118,7 @@
 		transform: translateZ(-25px);
 		background-color: #5e5c64;
 		border-radius: 0 2px 2px 0;
-		box-shadow: -10px 0 20px 8px var(--faint);
+		box-shadow: var(--boxShadow);
 	}
 }
 
@@ -132,11 +132,10 @@
 }
 
 .bookDetails {
+	@include blur;
 	display: block;
 	width: 90%;
 	margin: 1rem auto;
-	backdrop-filter: $blur;
-	-webkit-backdrop-filter: $blur;
 
 	&[open] > summary::before {
 		content: '📖';
@@ -145,8 +144,8 @@
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		width: 90%;
-		border: 1px solid rgba(255, 255, 255, 0.23);
-		border-radius: $border-radius;
+		border: var(--border);
+		border-radius: var(--borderRadius);
 	}
 
 	@include breakpoint-range($from: tablet, $to: desktopLarge) {
@@ -183,8 +182,8 @@
 .bookList {
 	font-size: 0.9rem;
 	padding: 1rem;
-	border: 1px dashed rgba($color: var(--borderColor), $alpha: 0.3);
-	border-radius: $border-radius;
+	border: var(--border);
+	border-radius: var(--borderRadius);
 
 	& a {
 		font-size: 1rem;
