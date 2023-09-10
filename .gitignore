@@ -48,3 +48,4 @@ next-env.d.ts
 #studio
 studio/node_modules
 **/.next
+frontend/node_modules
