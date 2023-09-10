@@ -1,30 +1,22 @@
 import { useState } from 'react';
 import styles from './AvailableForWork.module.scss';
+import { useRouter } from 'next/router';
 
 export const AvailableForWork = () => {
-	const [isHovered, setIsHovered] = useState(false);
-
-	const handleMouseEnter = () => {
-		setIsHovered(true);
-	};
-
-	const handleMouseLeave = () => {
-		setIsHovered(false);
-	};
-
-	const handleMouseClick = () => {
-		window.location.href = '/services';
-	};
+	const [hovered, setHovered] = useState(false);
+	const router = useRouter();
 
 	return (
 		<button
-			className={styles['work-button'] + `animated-button  ${isHovered ? 'hovered' : ''}`}
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
-			onClick={handleMouseClick}
+			type="button"
+			className={styles['work-button']}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}
+			onClick={() => router.push('/services')}
 		>
-			{!isHovered && <span>Available For Work</span>}
-			{isHovered && <span className={`animated-button-text in`}>Commission Me!</span>}
+		<span>
+				{ hovered ? 'Commission Me!' : 'Available For Work'}
+			</span>
 		</button>
 	);
 };
