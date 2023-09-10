@@ -10,7 +10,7 @@ import Hero from '@components/hero/hero';
 import { SiteBackground } from '@components/threeJS/scene';
 // import { ImageLoader } from '@utils/ImageLoader';
 import ProjectList from '@components/projects/projectsList';
-import Head from '@components/Head';
+import Head from 'next/head';
 
 type IndexProps = {
 	posts: PostType[];
@@ -19,11 +19,25 @@ type IndexProps = {
 export const Home = ({ posts }: IndexProps): JSX.Element => {
 	return (
 		<Page>
-			<Head title='Sabrina Medwinter' description='Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.'  />
+		<Head>
+		<title>Sabrina Medwinter</title>
+				<meta property="og:title" content="Sabrina Medwinter" />
+		<meta name="description" content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry." />
+		<meta property="og:description" content="Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry." />
+		<meta property="og:url" content="https://www.sabrinamedwinter.com"/>
+				<meta name="og:site_name" content="Sabrina Medwinter" />
+		<meta name="og:image" content={'@assets/opengraph/thumbnail.png'} />
+		<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:site" content="@SabMedwinter" />
+		<meta
+					name="keywords"
+					content="Software Engineer, Web Developer, Frontend Developer, Creative Developer, React Developer, Filipino Developer, 3D Develper"
+				/>
+					<meta name="robots" content="index,follow" />
+		</Head>
 			<SiteBackground />
 			<Hero />
-			
-
+	
 			{posts.length > 0 && (
 				<section id="blog" className="fadeIn--below index-section">
 					<h2 className="section-title">Blog</h2>
