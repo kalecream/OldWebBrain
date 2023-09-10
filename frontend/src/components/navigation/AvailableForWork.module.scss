@@ -1,7 +1,7 @@
 @import '@styles/mediaQuery';
 
 .work-button {
-    width: 200px;
+    width: 150px;
     border: var(--border);
     border-radius: var(--borderRadius);
     background-color: var(--backgroundColor);
@@ -13,7 +13,7 @@
     animation: workScroll 5s infinite;
 
     @media (prefers: reduced-motion ) {
-        
+        animation: none;
     }
 
     @include breakpoint-range($from: mobile) {

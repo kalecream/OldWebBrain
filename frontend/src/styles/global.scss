@@ -74,7 +74,7 @@ $padding-object: 1rem;
 $padding-object-small: 0.5rem;
 
 $heading-font: 'Inter', sans-serif;
-$accentFont: 'Sims Sans SC', serif;
+$accentFont: 'Sims Sans SC', sans-serif;
 $body-font: 'Inter', sans-serif;
 
 $blur: 20px;
@@ -139,7 +139,7 @@ $themes: (
     loadingTextColor: #fff,
     bodyFont: $body-font,
     headingFont: $heading-font,
-    accentFont: --accentFont,
+    accentFont: $accentFont,
   ),
 );
 // TODO: ! change all sass modules back into css variables
