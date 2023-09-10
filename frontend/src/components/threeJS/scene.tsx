@@ -130,6 +130,13 @@ export const SiteBackground = (): JSX.Element => {
 				<ambientLight />
 				{/* <PerspectiveCamera makeDefault position={[-4.3114, 5.0151, 0.97904]} /> */}
 				<IndexScene />
+
+				<PresentationControls
+					global
+					rotation={[0, -Math.PI / 4, 0]}
+					polar={[0, Math.PI / 2]}
+					azimuth={[-Math.PI / 4, Math.PI / 4]}
+				/>
 				
 				{/* <SiteOrbital /> */}
 			</Suspense>
@@ -174,7 +181,6 @@ export const HeroModel = (): JSX.Element => {
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
 				{/* <PerspectiveCamera makeDefault position={[-4, -4, 0]} /> */}
-				<Stage preset="rembrandt" intensity={1} environment="city" />
 				<ambientLight />
 				<directionalLight />
 				<CustomOrbital />

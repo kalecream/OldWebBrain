@@ -29,9 +29,9 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
-				{/* <div className={styles.heroSection}>
+				<div className={styles.heroSection}>
 					<HeroModel />
-				</div> */}
+				</div>
 			</div>
 			<ScrollDown />
 		</section>
