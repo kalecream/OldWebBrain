@@ -50,10 +50,11 @@ const SiteOrbital = () => {
 	const orbitControlsRef = useRef<any>(null);
 
 	useFrame((state) => {
-		state.camera.position.y = 200; // down <- --> up
-		state.camera.position.z = -90; // further away <<- -> closer
-		// state.camera.position.x = 25; // --> around <--
-		state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+		state.camera.position.y = 2.1403; // down <- --> up
+		state.camera.position.z = -0.42659; // further away <<- -> closer
+		state.camera.position.x = 0;// --> around <--
+		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+		// state.camera.position.z = Math.sin(state.clock.getElapsedTime()) * 5;
 	});
 
 	useFrame((state) => {
@@ -112,31 +113,32 @@ export const SiteBackground = (): JSX.Element => {
 		<Canvas
 			shadows
 			camera={{
-				fov: 15,
-				near: 0.5,
-				far: 1000
+				fov: 50,
+				near: 0,
+				far: 100
 			}}
 			style={{
 				width: '100vw',
 				height: '100vh',
 				position: 'fixed',
 				filter: 'saturate(1.15) hue-rotate(345deg)',
-				zIndex: -999
 			}}
 		>
-			{/* <fog color="#161616" attach="fog" near={8} far={30} /> */}
+			{/* <fog color="#161616" attach="fog" near={8} far={50} /> */}
+			<Suspense fallback={<Html center>Loading...</Html>}>
+				 {/* <Stage preset="rembrandt" intensity={4}  />  */}
+				<ambientLight />
+				{/* <PerspectiveCamera makeDefault position={[-4.3114, 5.0151, 0.97904]} /> */}
+				<IndexScene />
+				
+				{/* <SiteOrbital /> */}
+			</Suspense>
 			<EffectComposer>
 				<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
 				<Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
 				<Noise opacity={0.015} />
-				{/* <Vignette eskil={false} offset={0.2} darkness={1} /> */}
+				<Vignette eskil={false} offset={0.2} darkness={1} />
 			</EffectComposer>
-			<Suspense fallback={<Html center>Loading.</Html>}>
-				<Stage preset="rembrandt" intensity={4} environment="forest" />
-				<ambientLight />
-				<IndexScene />
-				<SiteOrbital />
-			</Suspense>
 		</Canvas>
 	);
 };
@@ -171,7 +173,7 @@ export const HeroModel = (): JSX.Element => {
 					polar={[0, Math.PI / 2]}
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
-				<PerspectiveCamera makeDefault position={[-4, -4, 0]} />
+				{/* <PerspectiveCamera makeDefault position={[-4, -4, 0]} /> */}
 				<Stage preset="rembrandt" intensity={1} environment="city" />
 				<ambientLight />
 				<directionalLight />
