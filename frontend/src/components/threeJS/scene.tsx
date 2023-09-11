@@ -45,35 +45,7 @@ export const CustomOrbital = () => {
 		}
 	}, [orbitControlsRef.current]);
 
-	return <OrbitControls ref={orbitControlsRef} maxDistance={6} minDistance={6} />;
-};
-
-const SiteOrbital = () => {
-	const orbitControlsRef = useRef<any>(null);
-
-	useFrame((state) => {
-		state.camera.position.y = 2.1403; // down <- --> up
-		state.camera.position.z = -0.42659; // further away <<- -> closer
-		state.camera.position.x = 0;// --> around <--
-		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
-		// state.camera.position.z = Math.sin(state.clock.getElapsedTime()) * 5;
-	});
-
-	useFrame((state) => {
-		if (!!orbitControlsRef.current) {
-			const { x } = state.mouse;
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
-			orbitControlsRef.current.update();
-		}
-	});
-
-	useEffect(() => {
-		if (!!orbitControlsRef.current) {
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
-		}
-	}, [orbitControlsRef.current]);
-
-	return <OrbitControls ref={orbitControlsRef} />;
+	return <OrbitControls ref={orbitControlsRef} maxDistance={4} minDistance={4} />;
 };
 
 export const Scene = ({ modelPath, scale = 40 }) => {
@@ -122,17 +94,11 @@ export const SiteBackground = (): JSX.Element => {
 				zIndex: -999,
 			}}
 		>
-			<fog color="#161616" attach="fog" near={8} far={50} />
+			{/* <fog color="#161616" attach="fog" near={8} far={50} /> */}
 			<Suspense
 				fallback={
 				<Html center>
-					<Image 
-					height={0} 
-					width={0} 
-					loader={({ src }) => src} 
-					sizes="100vw"
-					 style={{ width: '100vw', height: 'auto', top: 0, left: 0 }}
-							src={Placeholder} alt="" />
+					Loading
 					</Html>}>
 				<ambientLight />
 				<IndexScene />
@@ -143,13 +109,12 @@ export const SiteBackground = (): JSX.Element => {
 					polar={[0, Math.PI / 2]}
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
-				{/* <SiteOrbital /> */}
 			</Suspense>
 			<EffectComposer>
 				<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-				<Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
-				<Noise opacity={0.015} />
-				<Vignette eskil={false} offset={0.2} darkness={1} />
+				<Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={300} />
+				<Noise opacity={0.02} />
+				<Vignette eskil={false} offset={0.1} darkness={1} />
 			</EffectComposer>
 		</Canvas>
 	);
