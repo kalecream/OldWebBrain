@@ -4,7 +4,7 @@
     width: 150px;
     border: var(--border);
     border-radius: var(--borderRadius);
-    background-color: var(--backgroundColor);
+    background-color: transparent;
     font-weight: 600;
     color: var(--textColor);
     text-align: center;
@@ -47,7 +47,6 @@
 }
 
 .work-button:focus, .work-button:active, .work-button:hover {
-    background-color: var(--secondary);
     color: var(--backgroundColor);
     animation: none;
 }
