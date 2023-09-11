@@ -10,7 +10,7 @@
 	& a {
 		text-decoration: none;
 		color: var(--textColor);
-		border-bottom: 2px solid var(--primary);
+		// border-bottom: 2px solid var(--primary);
 		margin-bottom: 0.15rem;
 	}
 }
@@ -27,6 +27,7 @@
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		& > * {
 			margin: 0;
+			text-decoration: none;
 		}
 	}
 
@@ -157,7 +158,6 @@
 	cursor: pointer;
 	user-select: none;
 	text-transform: capitalize;
-	left: 5%;
 
 	&::before {
 		content: '📕'; // 📕 📗 📘 📙 📔 📓 📒 📚 📖
