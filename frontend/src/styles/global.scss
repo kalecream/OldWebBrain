@@ -469,7 +469,6 @@ kbd::after,
 /* cards */
 
 .blog__article {
-	flex: 1 1 450px;
 	display: flex;
 	justify-content: center;
 	border-radius: var(--borderRadius);
@@ -493,8 +492,8 @@ cursor: pointer;
 	}
 
 	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
-		flex: 1 1 300px;
-		height: 100px;
+		flex: 1 1 350px;
+		height: 175px;
 		max-width: 400px;
 		flex-direction: row;
 	}

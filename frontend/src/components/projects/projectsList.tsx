@@ -33,7 +33,7 @@ const ProjectList: React.FC = () => {
 		<div className={styles['project-wrapper']}>
 			<div className={styles['project-tabs']}>
 				<button
-					className={`${styles['project-tab'] + `glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
+					className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
 					onClick={() => handleTabChange('All')}
 				>
 					All
@@ -41,7 +41,7 @@ const ProjectList: React.FC = () => {
 				{categories.map((category) => (
 					<button
 						key={category}
-						className={`${styles['project-tab']} ${activeCategory === category ? styles['active'] : ''}`}
+						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === category ? styles['active'] : ''}`}
 						onClick={() => handleTabChange(category)}
 					>
 						{category}
@@ -50,7 +50,7 @@ const ProjectList: React.FC = () => {
 			</div>
 			<div className={styles['project-list']}>
 				{filteredProjects.map((project) => (
-					<div key={project.id} className={styles['project-overlay'] + `glassmorphic`}>
+					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
 								<h1 className={styles['project-title']}>
