@@ -1,12 +1,14 @@
-import React, { Suspense, useRef, useState, useEffect } from 'react';
+import { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, PresentationControls, PerspectiveCamera, Preload, Stage, Html } from '@react-three/drei';
+import { OrbitControls, PresentationControls, PerspectiveCamera, Preload, Html } from '@react-three/drei';
 import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { Model } from '@assets/models/me';
 import { Model as IndexScene } from '@assets/models/Scene';
 
+import Image from 'next/image';
+import Placeholder from '@assets/images/indexBackground.webp';
 import styled from '@emotion/styled';
 
 export const angletoRadian = (angle: number) => {
@@ -112,32 +114,25 @@ export const SiteBackground = (): JSX.Element => {
 	return (
 		<Canvas
 			shadows
-			camera={{
-				fov: 50,
-				near: 0,
-				far: 100
-			}}
 			style={{
 				width: '100vw',
 				height: '100vh',
 				position: 'fixed',
 				filter: 'saturate(1.15) hue-rotate(345deg)',
+				zIndex: -999,
 			}}
 		>
-			{/* <fog color="#161616" attach="fog" near={8} far={50} /> */}
-			<Suspense fallback={<Html center>Loading...</Html>}>
-				 {/* <Stage preset="rembrandt" intensity={4}  />  */}
+			<fog color="#161616" attach="fog" near={8} far={50} />
+			<Suspense fallback={<Html center><Image height={0} width={0} loader={({src})=>src} sizes="100vw" style={{width: '100vw', height: 'auto', top: 0, left: 0}} src={Placeholder} alt=""/></Html>}>
 				<ambientLight />
-				{/* <PerspectiveCamera makeDefault position={[-4.3114, 5.0151, 0.97904]} /> */}
 				<IndexScene />
-
+				<directionalLight />
 				<PresentationControls
 					global
 					rotation={[0, -Math.PI / 4, 0]}
 					polar={[0, Math.PI / 2]}
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
-				
 				{/* <SiteOrbital /> */}
 			</Suspense>
 			<EffectComposer>
