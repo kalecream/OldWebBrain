@@ -53,7 +53,7 @@
 
 	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
 		flex-direction: row;
-		gap: 1rem;
+		max-width: 35rem;
 		width: 100%;
 	}
 }
