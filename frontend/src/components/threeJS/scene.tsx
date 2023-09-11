@@ -123,7 +123,17 @@ export const SiteBackground = (): JSX.Element => {
 			}}
 		>
 			<fog color="#161616" attach="fog" near={8} far={50} />
-			<Suspense fallback={<Html center><Image height={0} width={0} loader={({src})=>src} sizes="100vw" style={{width: '100vw', height: 'auto', top: 0, left: 0}} src={Placeholder} alt=""/></Html>}>
+			<Suspense
+				fallback={
+				<Html center>
+					<Image 
+					height={0} 
+					width={0} 
+					loader={({ src }) => src} 
+					sizes="100vw"
+					 style={{ width: '100vw', height: 'auto', top: 0, left: 0 }}
+							src={Placeholder} alt="" />
+					</Html>}>
 				<ambientLight />
 				<IndexScene />
 				<directionalLight />
