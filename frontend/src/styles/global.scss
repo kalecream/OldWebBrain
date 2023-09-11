@@ -218,12 +218,11 @@ section h1 {
 .glassmorphic {
 	//  background-color: rgba(255, 255, 255, .4);
 	padding: var(--paddingContainer);
-	box-shadow: var(--boxShadow);
+	// box-shadow: var(--boxShadow);
 	border: 1px solid rgba(255, 255, 255, 0.23);
 	border-radius: var(--borderRadius);
-
 	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    background-color: rgba(255, 255, 255, .5);
+    // background-color: rgba(255, 255, 255, .5);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
@@ -618,7 +617,7 @@ pre {
 	font-size: 1rem;
 	margin-bottom: 1rem;
 	background-color: #35435f;
-	color: var(--body);
+	color: var(--backgroundColor);
 	border-radius: 5px;
 }
 
@@ -727,7 +726,7 @@ canvas:active {
 
 ::-webkit-scrollbar-thumb {
 	outline: 1px solid rgba($primary, 0.3);
-	border-radius: var(--border-radius);
+	border-radius: var(--borderRadius);
 }
 
 ::-webkit-scrollbar-thumb:hover,

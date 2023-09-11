@@ -86,4 +86,9 @@
 	/* From https://css.glass */
 	background: rgba(255, 255, 255, 0.07);
 	border-radius: var(--borderRadius);
+	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    // background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
 }

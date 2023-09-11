@@ -2,7 +2,7 @@
 
 .work-button {
     width: 150px;
-    border: var(--border);
+    border: none;
     border-radius: var(--borderRadius);
     background-color: transparent;
     font-weight: 600;
@@ -10,7 +10,7 @@
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
-    animation: workScroll 5s infinite;
+    // animation: workScroll 5s infinite;
 
     @media (prefers: reduced-motion ) {
         animation: none;
@@ -22,8 +22,7 @@
     }
 
     @include breakpoint-range($from: mobile, $to: tablet) {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
     }
 
     @include breakpoint-range($from: tablet) {
