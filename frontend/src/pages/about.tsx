@@ -44,7 +44,7 @@ export const About = () => {
 		.join(', ');
 
 	return (
-		<Page title="About">
+		<Page>
 			<section>
 				<h1>About</h1>
 				<div className={styles.paragraph}>
