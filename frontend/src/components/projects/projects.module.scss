@@ -10,10 +10,10 @@
     margin: 0 auto;
     padding-bottom: var(--paddingObjectSmall);
     display: flex;
+    gap: 0.5rem;
 }
 
 .project-tab {
-    @include blur;
     padding: var(--paddingObject);
     border-radius: var(--borderRadius);
     outline: none;
@@ -35,7 +35,6 @@
 }
 
 .project-overlay {
-    @include blur;
     flex:  0 1 320px;
     margin: 1rem;
     background-color: var(--backgroundColor);

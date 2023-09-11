@@ -43,7 +43,7 @@ export const Home = ({ posts }: IndexProps): JSX.Element => {
 					<h2 className="section-title">Blog</h2>
 					<div className="pancake section-content">
 						{posts.slice(0, 8).map((post) => (
-							<div key={post.slug} className="blog--article pancake-child ">
+							<div key={post.slug} className="blog__article pancake-child  glassmorphic">
 								{post.coverImage && (
 									<div className="image-wrapper">
 										<Image

@@ -27,7 +27,7 @@ export const SocialMediaList = () => {
 
 export const Footer: React.FunctionComponent = () => {
 	return (
-		<footer>
+		<footer className='glassmorphic'>
 			<SocialMediaList />
 			<div> sabrina medwinter &copy; {new Date().getFullYear()}</div>
 		</footer>

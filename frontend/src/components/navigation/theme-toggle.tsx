@@ -1,8 +1,7 @@
 import { useTheme } from 'next-themes';
 import React from 'react';
 import { useEffect } from 'react';
-import styled from '@emotion/styled';
-import { FaMoon, FaSun, FaCircleHalfStroke } from 'react-icons/fa6';
+import { FaCircleHalfStroke } from 'react-icons/fa6';
 
 /**
  * Based off of gatsby-theme-novela
