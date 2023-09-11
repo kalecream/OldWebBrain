@@ -70,7 +70,7 @@
 		transform: translateZ(25px);
 		background-color: var(--primary);
 		border-radius: 0 2px 2px 0;
-		box-shadow: 5px 5px 20px var(--faint);
+		box-shadow: 5px 5px 20px var(--textColorFade);
 	}
 
 	&::before {
@@ -132,7 +132,6 @@
 }
 
 .bookDetails {
-	@include blur;
 	display: block;
 	width: 90%;
 	margin: 1rem auto;
@@ -148,7 +147,7 @@
 		border-radius: var(--borderRadius);
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopLarge) {
+	@include breakpoint-range($from: tablet) {
 		width: 100%;
 	}
 }
@@ -173,7 +172,7 @@
 		padding: 1rem;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopLarge) {
+	@include breakpoint-range($from: tablet) {
 		margin: 0 2rem;
 		padding: 1rem;
 	}
@@ -243,6 +242,6 @@
 	@include breakpoint-range($from: tablet, $to: desktopSmall) {
 	}
 
-	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+	@include breakpoint-range($from: desktopSmall) {
 	}
 }
