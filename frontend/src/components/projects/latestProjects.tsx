@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { Container, Section } from 'frontend/src/components/_basics/Basics';
-import Projects from '../../data/projectsData';
+import { Container, Section } from '@components/_basics/Basics';
+import Projects from '@data/projectsData';
 import styled from '@emotion/styled';
 import { FaToolbox, FaLanguage, FaGithub } from 'react-icons/fa6';
-import 'animate.css';
 import Link from 'next/link';
 import button from '@components/_basic/button.module.scss';
 
