@@ -1,8 +1,10 @@
+@use "sass:color";
 @import 'normalize';
 @import 'variables';
 @import 'typography';
 @import 'animations';
 @import 'mediaQuery';
+
 
 // .light {
 // 	--primary: $primary;
@@ -210,9 +212,13 @@ section h1 {
 	margin: 0.5rem auto;
 	color: var(--textColor);
 	letter-spacing: -1px;
-	// -webkit-text-stroke-width: 1px;
-	// -webkit-text-stroke-color: var(--textColorFade);
 	text-shadow: 1px 3px var(--textColorFade);
+}
+
+.section-title {
+	// filter: invert(100%);
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--backgroundColor);
 }
 
 .glassmorphic {
