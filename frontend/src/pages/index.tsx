@@ -1,4 +1,3 @@
-
 import Page from '@containers/layout/page';
 import Image from 'next/image';
 // import { format, parseISO } from 'date-fns';

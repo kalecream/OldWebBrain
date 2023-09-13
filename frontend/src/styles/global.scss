@@ -471,6 +471,8 @@ kbd::after,
 .blog__article {
 	display: flex;
 	justify-content: center;
+	align-items: center;;
+	background-color: var(--backgroundColor);
 	border-radius: var(--borderRadius);
 	text-align: center;
 	box-shadow: var(--boxShadow);
@@ -732,5 +734,4 @@ canvas:active {
 ::-webkit-scrollbar-thumb:active {
 	background: var(--primary);
 }
-
 
