@@ -1,10 +1,10 @@
-import Page from '../containers/layout/page';
+import Page from '@containers/layout/page';
 // import Services from "../data/serviceData";
-import styled from '@emotion/styled';
 import 'animate.css';
 import Link from 'next/link';
-import {WorkExperience} from '@components/work/WorkExperience';
-import prisma from '@utils/prisma';
+// import {WorkExperience} from '@components/work/WorkExperience';
+// import prisma from '@utils/prisma'; 
+import styles from '@components/services/Services.module.scss';
 
 // const services = await prisma.user.create({
 //     data: {
@@ -49,116 +49,22 @@ const Sections = [
 	}
 ];
 
-const CardContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-end;
-
-	@media (min-width: 1024px) {
-		margin: 0 4rem;
-	}
-`;
-
-const ProjectCard = styled(Link)`
-	margin: 0.5rem auto;
-	padding: var(--padding-small);
-	display: flex;
-	flex-direction: column;
-	border: var(--border);
-	border-radius: var(--border-radius);
-
-	// TODO: Fix section hover
-	&:hover,
-	&:active {
-		background: var(--faint);
-		border-radius: var(--border-radius);
-	}
-
-	@media (max-width: 750px) {
-		width: 100%;
-		height: max-content;
-		padding: 1rem;
-		margin: 0 auto;
-		margin-bottom: 1rem;
-	}
-
-	@media (min-width: 1024px) {
-		margin: 0.5rem;
-		height: 350px;
-	}
-
-	& > h2 {
-		color: var(--primary);
-		font-size: 1.5rem;
-		font-weight: 600;
-		padding: 0;
-		text-align: center;
-
-		@media (max-width: 550px) {
-			font-size: 2rem;
-		}
-
-		@media screen and (max-width: 1200px) {
-			max-width: 25rem;
-			line-height: 1.1;
-		}
-	}
-
-	& > p {
-		max-width: 25rem;
-		line-height: 1.5;
-		font-size: 0.9rem;
-		color: var(--caption);
-
-		@media (max-width: 550px) {
-			width: 100%;
-		}
-	}
-
-	& img {
-		padding: 0.5rem;
-
-		@media screen and (max-width: 1024px) {
-			display: none;
-		}
-
-		@media screen and (min-width: 1024px) {
-			width: 277px;
-			height: 100%;
-		}
-	}
-`;
-
-const ServicesTerms = styled.div`
-	margin: 3rem auto;
-
-	& > p {
-		max-width: 55rem;
-		text-align: justify;
-
-		@media (max-width: 750px) {
-			margin: 1.5rem 1rem;
-		}
-	}
-`;
-
-export default function Services() {
+export const Services = () => {
 	return (
 		<Page>
 			<h1>Services</h1>
 			<section>
-				<CardContainer>
+				<div className='pancake-container'>
 					{Sections.map((section) => (
-						<ProjectCard href={section.link}>
+						<Link className='pancake-child' href={section.link}>
 							<img width={100} height={100} alt={''} src={`/img/Services/${section.name}.svg`} />
 							<h2>{section.name}</h2>
 							{/* <p>{section.description}</p> */}
-						</ProjectCard>
+						</Link>
 					))}
-				</CardContainer>
+				</div>
 
-				<ServicesTerms>
+				<div className={styles.terms}>
 					<p className="animate__animated animate__fadeInUp">
 						I understand that budget can be a major concern for my clients. That's why I offer flexible pricing options
 						to ensure that I can meet the budget of every client.
@@ -176,10 +82,12 @@ export default function Services() {
 						can help you achieve your goals. I currently accept payment for projects through{' '}
 						<a href="https://paypal.me/SabrinaMedwinter?locale.x=en_US">Paypal</a> or Payoneer.
 					</p>
-				</ServicesTerms>
+				</div>
 
-				<WorkExperience />
+				{/* <WorkExperience /> */}
 			</section>
 		</Page>
 	);
 }
+
+export default Services;
