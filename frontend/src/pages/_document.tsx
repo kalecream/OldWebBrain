@@ -1,4 +1,4 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { Html, Main, NextScript } from 'next/document';
 import Document, { DocumentContext } from 'next/document';
 import { WEBSITE_HOST_URL } from './_app';
 
@@ -10,10 +10,6 @@ class CustomDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
-				<Head>
-					<meta name="robots" content="index, follow" />
-					<link rel="shortcut icon" href="/img/favicon.svg" />
-				</Head>
 				<body>
 					<Main />
 					<NextScript />
