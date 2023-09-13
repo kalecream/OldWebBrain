@@ -1,6 +1,5 @@
-import '../styles/global.scss';
+import '@styles/global.scss';
 import { ThemeProvider } from 'next-themes';
-
 import type { AppProps } from 'next/app';
 import { MetaProps } from '../types/layout';
 import Head from 'next/head';
@@ -54,7 +53,7 @@ const defaultDescription =
 				<meta name="og:title" content={meta.title} />
 				<meta name="og:type" content="site" />
 				<meta name="og:url" content={WEBSITE_HOST_URL} />
-				<meta name="og:image" content={'@assets/opengraph/thumbnail.png'} />
+				<meta name="og:image" content={'https://i.imgur.com/iNuJgj3.png'} />
 				<meta name="og:site_name" content="Sabrina Medwinter" />
 				<meta name="og:description" content={meta.description} />
 				{/* <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
@@ -62,15 +61,15 @@ const defaultDescription =
 				<link rel="apple-touch-icon" sizes="32x32" href="/icons/favicon-32x32.png" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" /> */}
 				<link rel="manifest" href="/manifest.json" />
-				<link rel="mask-icon" color="#000000" href="/icons/safari-pinned-tab.svg" />
-				<link rel="apple-touch-startup-image" href="@assets/opengraph/thumbnail.png" />
+				{/* <link rel="mask-icon" color="#000000" href="/icons/safari-pinned-tab.svg" /> */}
+				<link rel="apple-touch-startup-image" href="https://i.imgur.com/iNuJgj3.png" />
 
 				{/* Meta Tags for HTML pages on Mobile */}
 				{/* <meta name="format-detection" content="telephone=yes"/>
         <meta name="HandheldFriendly" content="true"/>  */}
 				<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0" />
 				<meta name="theme-color" content="#000" />
-				<link rel="shortcut icon" href="@assets/opengraph/thumbnail.png" />
+				<link rel="shortcut icon" href="https://i.imgur.com/iNuJgj3.png" />
 
 				{/* 
       Twitter Summary card
