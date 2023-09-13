@@ -1,6 +1,4 @@
-import React from 'react';
-import { Container, HalfColumn } from 'frontend/src/components/_basics/Basics';
-import 'animate.css';
+import { Container, HalfColumn } from '@components/_basics/Basics';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 

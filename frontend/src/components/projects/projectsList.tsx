@@ -76,7 +76,7 @@ const ProjectList: React.FC = () => {
 											width={0}
 											loader={({ src, width }) => `${src}?w=${width}`}
 											sizes="100vw"
-											style={{ width: '100%', height: 'auto' }}
+											style={{ width: 'auto', height: '250px', margin: '0 auto', display: 'flex' }}
 											placeholder="blur"
 											blurDataURL={project.image}
 											src={project.image}
