@@ -1,4 +1,4 @@
-import { PostType } from './post';
+import { PostType } from '@pages/blog';
 
 export interface MetaProps extends Pick<PostType, 'date' | 'description' | 'image' | 'title'> {
 	/**
