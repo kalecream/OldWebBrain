@@ -12,9 +12,12 @@ export const Header: React.FunctionComponent = () => {
 	return (
 		<header className='glassmorphic'>
 			{router?.pathname !== '/' && (
+				<>
 					<Link className={style['site-name']} href="/">
 						sabrina
 					</Link>
+					{/* <AvailableForWork /> */}
+					</>
 				)}
 			<div className={`${style['directory-list']} ${style['directory-section']}`}>
 				
@@ -29,7 +32,7 @@ export const Header: React.FunctionComponent = () => {
 			</div>
 			<div className={`${style.settings}  ${style['directory-section']}`}>
 				<ThemeSwitch />
-				<AvailableForWork />
+				
 			</div>
 		</header>
 	);
