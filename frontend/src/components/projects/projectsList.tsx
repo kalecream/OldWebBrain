@@ -30,7 +30,8 @@ const ProjectList: React.FC = () => {
 			  );
 
 	return (
-		<div className={styles['project-wrapper']}>
+		<section className={styles['project-wrapper']}>
+			<h2 className="section-title">Things I've Made</h2>
 			<div className={styles['project-tabs']}>
 				<button
 					className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
@@ -112,7 +113,7 @@ const ProjectList: React.FC = () => {
 					</div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 
