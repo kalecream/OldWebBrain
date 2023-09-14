@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react';
 import { Page } from '@containers/layout';
+import Books from '@data/books';
 import CurrentReads from '@components/books/currentReads';
 import { BacklogGraph } from '@components/books/backlogGraph';
-import Books from '@data/books';
-import { useEffect, useState } from 'react';
+import { BookShelf } from '@components/books/backlogGraph';
 // import PhotoGalley from '../components/books/gallery';
 import styles from '@components/books/books.module.scss';
-import { BookShelf } from '@components/books/backlogGraph';
+
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
@@ -68,9 +69,6 @@ export const About = () => {
 						collection had a baby - that's me! But don't take my word for it. Dive into the treasure trove of media
 						below. It's like a mixtape of my soul.
 					</p>
-					<p>
-						<b>Why KaleCream?</b> I liked making Kale smoothies and just decided to name myself that on the internet.
-					</p>
 
 					<h2 style={{ textAlign: 'center' }}>Books</h2>
 
@@ -87,9 +85,7 @@ export const About = () => {
 
 					<CurrentReads />
 					<p>
-						This graph below is my book status backlog for the past year. This is relative to this month and ignores
-						books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months
-						with 70/30 Fiction to Non-Fiction.
+						This graph below is my book status backlog for the past rolling year. This ignores	books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to Non-Fiction.
 					</p>
 					<BacklogGraph />
 				</div>
