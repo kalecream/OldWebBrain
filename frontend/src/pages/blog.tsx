@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 // import { ImageLoader } from '@utils/ImageLoader';
 // import { format, parseISO } from 'date-fns';
-import styles from '@styles/articles.module.scss';
+import styles from '@components/blog/articles.module.scss';
 
 export type PostType = {
 	[x: string]: any;
