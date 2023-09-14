@@ -1,4 +1,3 @@
-import { Container, HalfColumn } from '@components/_basics/Basics';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
@@ -96,11 +95,11 @@ const ImageText = styled.div`
 
 const OtherProjects = () => {
 	return (
-		<Container>
+		<section>
 			<SectionTitle className="animate__animated animate__fadeInUp">I started...</SectionTitle>
 			<ProjectSection>
 				<ImageText>
-					<HalfColumn>
+					<div className='half__column'>
 						<Link href={'https://open.spotify.com/show/3TEYSulKavQrhebkPLHkth'}>
 							<PodcastName>Bite-Sized Binge</PodcastName>
 						</Link>
@@ -108,8 +107,8 @@ const OtherProjects = () => {
 							I'm checking out audiodramas, movies, manga, short stories, music and etc to help explore my own tastes
 							and to keep discovering great stuff!
 						</p>
-					</HalfColumn>
-					<HalfColumn>
+					</div >
+					<div className='half__column'>
 						<iframe
 							src="https://open.spotify.com/embed/show/3TEYSulKavQrhebkPLHkth?utm_source=generator&theme=0"
 							width="100%"
@@ -118,26 +117,25 @@ const OtherProjects = () => {
 							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 							loading="lazy"
 						></iframe>
-					</HalfColumn>
+					</div >
 				</ImageText>
-
 				{/* <ImageText>
-					<HalfColumn>
+					<div className='half__column'>
 						<Image
 							src={ThreeD[3]}
 							alt="Under Construction"
 							width={500}
 							height={500}
 						/>
-					</HalfColumn>
-					<HalfColumn>
+					</div className='half__column'>
+					<div className='half__column'>
 						<h1>KaleCream </h1> 
                         <p>I also have a YouTube channel where I vlog or live-stream my
 						pomodoro and crafting sessions. <br/><br/> I do 45+15 and 25+5 sessions for ~12 hours a day.</p>
-					</HalfColumn>
+					</div className='half__column'>
 				</ImageText> */}
 			</ProjectSection>
-		</Container>
+		</section>
 	);
 };
 

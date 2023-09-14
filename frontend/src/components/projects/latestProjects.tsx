@@ -1,45 +1,10 @@
-import { Container, Section } from '@components/_basics/Basics';
 import Projects from '@data/projectsData';
 import styled from '@emotion/styled';
 import { FaToolbox, FaLanguage, FaGithub } from 'react-icons/fa6';
 import Link from 'next/link';
 import button from '@components/_basic/button.module.scss';
 
-// interface Project {
-// 	id: number;
-// 	title: string;
-// 	description: string;
-// 	image: string;
-// 	created_at: string;
-// }
-
-const Thirds = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 2rem;
-	padding: 1rem 0;
-	width: 100%;
-
-	@media (max-width: 768px) {
-		flex-direction: column;
-	}
-
-	@media (max-width: 1024px) {
-		flex-direction: row;
-		align-content: flex-end;
-
-		& nth-child(1) {
-			width: 33%;
-		}
-
-		& nth-child(2) {
-			width: 66%;
-		}
-	}
-`;
-
+// TODO convert to scss modules
 const ProjectCard = styled.div`
   min-width: 400px;
   width: 310px;
@@ -80,7 +45,6 @@ const ProjectCard = styled.div`
   }
 `;
 
-//TODO: Move to Basics.tsx
 const Overlay = styled.div`
 	width: 100%;
 	height: 100%;
@@ -171,12 +135,10 @@ const Emoji = styled.span`
 
 const LatestProjects = () => {
 	return (
-		<Section>
-			<Thirds>
-				<Container style={{ textAlign: 'center', margin: '1em 0' }}>
+		<section>
+			<div className='thirds'>
 					<h2 className="section-title">Projects !</h2>
-				</Container>
-				<Container style={{ overflow: 'hidden' }}>
+				<div style={{ overflow: 'hidden' }}>
 					{Projects.slice(0, 2).map(
 						(project) =>
 							project.display && (
@@ -232,9 +194,9 @@ const LatestProjects = () => {
 					<div className="more">
 						<Link href="/projects">More Projects ⟶</Link>
 					</div>
-				</Container>
-			</Thirds>
-		</Section>
+				</div>
+			</div>
+		</section>
 	);
 };
 
