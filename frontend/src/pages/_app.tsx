@@ -1,8 +1,8 @@
-import '@styles/global.scss';
 import { ThemeProvider } from 'next-themes';
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { MetaProps } from '../types/layout';
-import Head from 'next/head';
+import '@styles/global.scss';
 
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
