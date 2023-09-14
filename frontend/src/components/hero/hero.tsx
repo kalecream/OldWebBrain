@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { HeroModel } from '@components/threeJS/scene';
+// import { HeroModel } from '@components/threeJS/scene';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import styles from './hero.module.scss';
 import button from '@components/_basics/button.module.scss';
+
 
 const Hero = () => {
 	return (
@@ -36,7 +37,7 @@ const Hero = () => {
 				</div>
 
 				<div className={styles.heroSection}>
-					<HeroModel />
+					{/* <HeroModel /> */}
 				</div>
 			</div>
 			<ScrollDown />
