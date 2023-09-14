@@ -1,9 +1,9 @@
+import Link from 'next/link';
+import { HeroModel } from '@components/threeJS/scene';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import styles from './hero.module.scss';
 import button from '@components/_basics/button.module.scss';
-import { SceneViewer, HeroModel } from '@components/threeJS/scene';
-import Link from 'next/link';
 
 const Hero = () => {
 	return (
@@ -14,10 +14,13 @@ const Hero = () => {
 					<div className={`${styles['text-container']} `}>
 						<p>
 							<center>
-								<b>Web developer  based in Kingston, Jamaica.</b></center>
+								<b>
+									Web developer  based in Kingston, Jamaica.
+								</b>
+							</center>
 						</p>
 						<p>
-							 An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
+							An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my skillset.
 						</p>
 					</div>
 
@@ -30,6 +33,7 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
+
 				<div className={styles.heroSection}>
 					<HeroModel />
 				</div>
