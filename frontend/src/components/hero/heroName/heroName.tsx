@@ -8,7 +8,7 @@ const HeroName = ({ name }) => {
 	return (
 		<>
 			<div className={styles.container}>
-				<div className={styles['text-container']} ref={textArray}>
+				<div className={styles.text__container} ref={textArray}>
 					{Array.from({ length: 2 }).map((_, index) => (
 							<span key={index} className={styles.text} style={{ color: colorArr[index % colorArr.length] }}>
 								{name}

@@ -10,11 +10,15 @@
 	max-width: 480px;
 	height: 200px;
 
-	@include breakpoint-range($from: mobile, $to: phone) {
+	@include breakpoint-range($from: mobile, $to: tablet) {
 		display: none;
 	}
+
+	@include breakpoint-range($from: tablet, $to: desktop) {
+		display: block;
+	}
 }
-.container .text-container,
+.container .text__container,
 .container .shadow-container {
 	position: absolute;
 	top: 0;
@@ -50,37 +54,45 @@
 	top: 11%;
 	left: 63%;
 	animation-delay: 0;
-	color: var(--secondary);
+	color: var(--primary);
 }
 
-.container .text-container {
+.container .text .icon:nth-child(1) {
+	top: 11%;
+	left: 63%;
+	animation-delay: 0;
+	color: var(--primary);
+}
+
+.container .text__container {
 	z-index: 1;
 }
-.container .text-container .text .icon {
-	fill: var(--body);
+.container .text__container .text .icon {
+	fill: var(--textColor);
 }
-.container .text-container .text:nth-child(1) {
+
+.container .text__container .text:nth-child(1) {
 	opacity: 0;
 	left: 42.5%;
 	transform: translate(-50%, -50%);
-	// animation: upDown 2000ms ease-in-out infinite;
+	animation: upDown 2000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1));
 	z-index: -1;
 	color: var(--textColor);
 }
-.container .text-container .text:nth-child(2) {
+.container .text__container .text:nth-child(2) {
 	opacity: 0;
 	left: 44%;
 	transform: translate(-45%, -50%);
-	// animation: upDown 2000ms ease-in-out infinite;
+	animation: upDown 2000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1.5));
 	z-index: -2;
 }
-.container .text-container .text:nth-child(3) {
+.container .text__container .text:nth-child(3) {
 	opacity: 0;
 	left: 45%;
 	transform: translate(-45%, -50%);
-	// animation: upDown 2000ms ease-in-out infinite;
+	animation: upDown 2000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1.8));
 	z-index: -3;
 }
