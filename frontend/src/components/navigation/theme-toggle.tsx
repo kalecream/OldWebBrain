@@ -1,5 +1,4 @@
 import { useTheme } from 'next-themes';
-import React from 'react';
 import { useEffect } from 'react';
 import { FaCircleHalfStroke } from 'react-icons/fa6';
 
@@ -34,7 +33,8 @@ const ThemeSwitch = () => {
 					cursor: 'pointer',
 					justifyContent: 'center',
 					backgroundColor: 'transparent',
-					color: 'var(--primary)'
+					color: 'var(--backgroundColor)',
+					opacity: 0.85
 				}}
 				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 			>
