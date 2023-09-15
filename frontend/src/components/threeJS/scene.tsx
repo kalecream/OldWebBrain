@@ -98,7 +98,7 @@ export const SiteBackground = (): JSX.Element => {
 			<Suspense
 				fallback={
 				<Html center>
-					Loading
+						<div className="subtleBackground"/>
 					</Html>}>
 				<ambientLight />
 				<IndexScene />
