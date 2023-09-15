@@ -54,13 +54,13 @@ const ProjectList: React.FC = () => {
 					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
-								<h1 className={styles['project-title']}>
+								<h2 className={styles['project-title']}>
 									<div className={styles['project-year']}>
 										{GetMonthName(project.created)}
 										{project.created.split('-', 1)}
 									</div>
 									{project.title}
-								</h1>
+								</h2>
 								{/* // TODO: Add badges for project status */}
 								{/* {project.status &&
                   <div className="project-status" data-status={project.status}  >
