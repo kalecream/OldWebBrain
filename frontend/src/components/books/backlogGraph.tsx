@@ -123,7 +123,7 @@ const CustomerBarLabel: FC<any> = (props) => {
 	}
 
 	return (
-		<text x={x + width / 2} y={y} fill="#fff" fontSize="0.8rem" fontWeight={700} textAnchor="middle" dy={-6}>
+		<text x={x + width / 2} y={y} fill="var(--primary)" fontSize="0.8rem" fontWeight={700} textAnchor="middle" dy={-6}>
 			{value}
 		</text>
 	);
@@ -179,7 +179,7 @@ export const BookShelf: FC = () => {
 							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a>{' '}
 							{book.rating && book.rating >= 4 ? (
 								book.rating >= 5 ? (
-									<span style={{ color: 'red' }}>♥</span>
+									<span style={{ color: 'var(--primary)', scale: 0.5 }}>♥</span>
 								) : (
 									'♥'
 								)
