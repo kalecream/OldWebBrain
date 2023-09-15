@@ -332,3 +332,47 @@
 	vertical-align: middle;
 	line-height: 0;
 }
+
+.coding__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem auto;
+}
+
+.coding {
+	min-height: 200px;
+	width: clamp(100px, 100%, 200px);
+	margin: 1rem auto;
+	border: var(--border);
+	border-radius: var(--borderRadius);
+	padding: 1rem;
+	box-shadow: var(--boxShadow);
+	text-align: center;
+
+	& p {
+		margin-bottom: 1rem;
+	}
+}
+
+.code__language {
+	font-size: 1.2rem;
+	color: var(--primary);
+	font-weight: 500;
+}
+
+.code__rank {
+
+	line-height: 1;
+	font-size: 0.75rem;
+	font-weight: 500;
+	color: var(--textColorFade);
+	
+}
+
+.code__placement {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--textColor);;
+	}
