@@ -47,15 +47,10 @@ export const About = () => {
 	return (
 		<Page>
 			<section>
-				<h1>About</h1>
+				<h1 className='section-title'>About</h1>
+				{/* TODO: examine this for why its a different style */}
 				<div className={styles.paragraph}>
 					<p>Hey there, internet wanderer! I'm Sabrina.</p>
-
-					<p>
-						You see, my story begins in the near ancient times of the internet, crafting Tumblr pages and forum themes.
-						Yep, you heard right! I was chiseling away at code blocks when cat videos were the pinnacle of online
-						entertainment.
-					</p>
 
 					{/* <PhotoGalley /> */}
 					{/* TODO: Fix photogallery on about */}
