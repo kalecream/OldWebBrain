@@ -7,7 +7,7 @@ export const Header: React.FunctionComponent = () => {
 	const router = useRouter();
 
 	return (
-		<header className='glassmorphic'>
+		<header className=''>
 			{router?.pathname !== '/' && (
 				<>
 					<Link className={style['site-name']} href="/">
