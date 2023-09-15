@@ -33,7 +33,7 @@ const ThemeSwitch = () => {
 					cursor: 'pointer',
 					justifyContent: 'center',
 					backgroundColor: 'transparent',
-					color: 'var(--backgroundColor)',
+					color: 'var(--primary)',
 					opacity: 0.85
 				}}
 				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
