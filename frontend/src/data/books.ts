@@ -820,7 +820,16 @@ const Books = [
 		format: 'Paperback',
 		started: '2023-05-27',
 		added: '2023-05-31',
-		finished: '2023-05-31'
+		finished: '2023-05-31',
+		review: 'Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein{\'}s monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human.. I highly recommend it.',
+		quotes: [
+			'The fallen angel becomes a malignant devil. Yet even that enemy of God and man had friends and associates in his desolation; I am alone.',
+			'Hateful day when I received life!{\'} I exclaimed in agony. {\'}Accursed creator{ \!} Why did you form a monster so hideous that even you turned from me in disgust? God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours, more horrid even from the very resemblance. Satan had his companions, fellow-devils, to admire and encourage him; but I am solitary and abhorred.',
+			'Nothing is so painful to the human mind as a great and sudden change.',
+			'Why did I not die? More miserable than man ever was before, why did I not sink into forgetfulness and rest? Death snatches away many blooming children, the only hopes of their doting parents: how many brides and youthful lovers have been one day in the bloom of health and hope, and the next a prey for worms and the decay of the tomb! Of what materials was I made, that I could thus resist so many shocks, which, like the turning of the wheel, continually renewed the torture? But I was doomed to live.',
+			'I do know that for the sympathy of one living being, I would make peace with all. I have love in me the likes of which you can scarcely imagine and rage the likes of which you would not believe. If I cannot satisfy the one, I will indulge the other.',
+			'Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge, and how much happier that man is who believes his native town to be his world, than he who aspires to become greater than his nature will allow'
+		]
 	},
 	{
 		title: 'The Unexpected Guest',
