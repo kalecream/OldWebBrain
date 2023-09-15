@@ -3,67 +3,6 @@
 @import 'animations';
 @import 'mediaQuery';
 
-
-// .light {
-// 	--primary: $primary;
-// 	--secondary: $secondary;
-// 	--accent: $accent;
-
-// 	--text: #fafafa;
-// 	--text-shadow: 0 0 1px #fff;
-// 	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-// 		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-// 	--body: #34373e;
-// 	--grey: #b3b3b3;
-
-// 	--lightgrey: #8f8182;
-// 	--faint: rgba(0, 0, 0, 0.1);
-// 	--textColorFade: rgba(0, 0, 0, 0.4);
-// 	--caption: #8f8182;
-// 	--text--header: var(--text);
-
-// 	--success: #63aa64;
-// 	--warning: #e09a2c;
-// 	--error: #f44336;
-// 	--info: #2196f3;
-
-// 	--border: 1px solid var(--faint);
-// 	--margin: 1rem 3rem;
-// 	--padding: 1rem 3rem;
-// 	--padding-small: 0.5rem 1rem;
-// 	--padding-xtra-small: 0.25rem 0.5rem;
-// }
-
-// .dark {
-// 	--primary: $primary;
-// 	--secondary: $secondary;
-// 	--accent: $accent;
-// 	--text: #fafafa;
-// 	--text-shadow: 0 0 1px #000;
-// 	--box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-// 		rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-// 	--body: #34373e;
-// 	--grey: #b3b3b3;
-// 	--lightgrey: #8f8182;
-// 	--faint: rgba(255, 255, 255, 0.1);
-// 	--textColorFade: rgba(255, 255, 255, 0.3);
-// 	--caption: #8f8182;
-// 	--text--header: var(--text);
-
-// 	--success: #63aa64;
-// 	--warning: #e09a2c;
-// 	--error: #f44336;
-// 	--info: #2196f3;
-
-// 	--border: 1px solid var(--faint);
-// 	--margin: 1rem 3rem;
-// 	--padding: 1rem 3rem;
-// 	--padding-small: 0.5rem 1rem;
-// 	--padding-xtra-small: 0.25rem 0.5rem;
-// }
-
 $primary: rgb(17, 158, 160) ;
 $secondary: rgba(14, 174, 87, 1);
 $borderRadius: 5px;
@@ -718,16 +657,18 @@ canvas:active {
 }
 
 ::-webkit-scrollbar {
-	width: 0.15rem;
+	width: 3px;
+	background-origin: padding-box;
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-	background: var(--backgroundColor);
+	// background: var(--backgroundColor);
+	background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-	outline: 1px solid rgba($primary, 0.3);
+	background-color: var(--primary);
 	border-radius: var(--borderRadius);
 }
 
