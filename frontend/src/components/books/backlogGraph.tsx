@@ -4,6 +4,7 @@ import Books from '@data/books';
 import { WindowWidth } from '@utils/windowDimmensions';
 import { GetMonthName } from '@utils/GetMonthName';
 import styles from './books.module.scss';
+import Link from 'next/link';
 
 export interface BooksProps {
 	title: string;
@@ -103,7 +104,7 @@ export const BacklogGraph: FC = () => {
 
 	return (
 		<>
-			<BarChart width={width > 1024 ? 800 : width } height={300} data={Data}>
+			<BarChart width={width > 1024 ? 800 : width} height={300} data={Data}>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="month" />
 				<YAxis domain={[0, 'dataMax + 2']} />
@@ -141,7 +142,7 @@ export const BookShelf: FC = () => {
 
 	return (
 		<>
-			<details className={ styles.bookDetails}>
+			<details className={styles.bookDetails}>
 				<summary>
 					<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
@@ -169,7 +170,7 @@ export const BookShelf: FC = () => {
 					))}
 				</div>
 			</details>
-			<details open className={ styles.bookDetails}>
+			<details open className={styles.bookDetails}>
 				<summary>
 					<a className="read-books-title">{readBooks.length} Read Books</a>
 				</summary>
@@ -203,3 +204,58 @@ export const BookShelf: FC = () => {
 		</>
 	);
 };
+
+export const RandomBooks: FC = () => {
+
+	const randomBooks =
+		Books.filter((book) => book.status === 'Read')
+			.sort(() => Math.random() - Math.random());
+
+	return (
+		<div className={styles.random}>
+			{
+				randomBooks.slice(0, 4).map((book) => (
+					<div className={`${styles.books__random}`}>
+						<p>
+							<Link
+								className={styles.book__title}
+								href={`https://www.google.com/search?q=${book.title}`
+								}>
+								{book.title}
+							</Link>
+							{book.rating && book.rating >= 4 ? (
+								book.rating >= 5 ? (
+									<span
+										className={`${styles.book__review__indicator} ${styles.book_loved}`}>
+										♥
+									</span>
+								) : (
+										<span className={`${styles.book__review__indicator}`}>
+											♥
+										</span>
+								)
+							) : book.rating <= 2.5 && book.rating != 0 ? (
+									<span className={`${styles.book__review__indicator}`}>
+										×
+									</span>
+							) : (
+								''
+							)}
+							<br />
+							<span className={styles.book__author}>
+								by {book.author}
+							</span>
+						</p>
+						<p className={styles.book__finished}>
+							{GetMonthName(book.finished)} {book.finished.split('-', 1)}
+						</p>
+						{book.review && <p className={styles.book__review}>{book.review}</p>}
+						{book.quotes && (
+							<q className={styles.book__quote}>{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
+						)}
+					</div>
+				))
+			}
+		</div>
+	)
+}

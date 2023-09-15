@@ -97,7 +97,7 @@ $themes: (
     buttonTextHoverColor: $secondary,
     buttonColor: #fff,
     buttonBorder: 2px solid rgba(255, 255, 255, 0.3),
-    border: 1px solid rgba(255, 255, 255, 0.3),
+    border: 1px solid rgba(255, 255, 255, 0.4),
     borderColor: rgba(255, 255, 255, 0.4),
     borderRadius: $borderRadius,
     paddingContainer: $padding-container,
@@ -204,25 +204,19 @@ section {
 		padding-top: 4rem;
 	}
 
+	& h1 {
+		font-family: var(--accentFont);
+		margin: 1rem auto;
+		color: var(--textColor);
+		letter-spacing: -1px;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: var(--backgroundColor);
+	}
+
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		padding: 0 1rem;
 	}
 }
-
-section h1 {
-	font-family: var(--headingFont);
-	margin: 0.5rem auto;
-	color: var(--textColor);
-	letter-spacing: -1px;
-	text-shadow: 1px 3px var(--textColorFade);
-}
-
-.section-title {
-	// filter: invert(100%);
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: var(--backgroundColor);
-}
-
 
 .container__wide__tall {
 	width: 100%;
@@ -276,6 +270,12 @@ section h1 {
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		background-attachment: scroll;
 	}
+}
+
+.subtleBackground {
+	background-color: var(--backgroundColor);
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 a {
@@ -346,56 +346,6 @@ img,
 image {
 	border-radius: var(--borderRadius);
 }
-
-.book-finished {
-	font-size: 0.75rem;
-	font-weight: 500;
-}
-
-.book-review {
-	margin: 1rem auto;
-	font-size: 0.75rem;
-	font-style: oblique;
-	text-align: justify;
-}
-
-.book-quote {
-	margin: 1rem auto;
-	font-size: 0.75rem;
-	font-style: italic;
-	font-weight: 500;
-	text-align: justify;
-}
-
-.book-quote::before {
-	content: '“ ';
-}
-
-.book-quote::after {
-	content: ' ”';
-}
-
-.book-quote::before,
-.book-quote::after {
-	color: var(--textColorFade);
-}
-
-.book-quote::before {
-	margin-right: 0.25rem;
-}
-
-.book-quote::after {
-	margin-left: 0.25rem;
-}
-
-.book-quote::before,
-.book-quote::after {
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 0;
-}
-
-/*  */
 
 .head3 {
 	margin-left: 10px;

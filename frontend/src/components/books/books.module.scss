@@ -12,29 +12,41 @@
 		// border-bottom: 2px solid var(--primary);
 		margin-bottom: 0.15rem;
 	}
+
+	& b {
+		font-weight: 600;
+	}
 }
 
 // CurrentReads
 
-.reading {
+.reading,.random {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
-	min-height: 0;
-	place-items: center;
-	place-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
-		& > * {
-			margin: 0;
-			text-decoration: none;
-		}
+		gap: 0.5rem;
 	}
 
 	@include breakpoint-range($from: tablet, $to: desktopLarge) {
-		& > * {
-			margin: 1rem 0.5rem;
-		}
+		gap: 1.5rem;
 	}
+}
+
+.books__random {
+	min-height: 300px;
+	width: clamp(250px, 30vw, 400px);
+	border: var(--border);
+	border-radius: var(--borderRadius);
+	box-shadow: var(--boxShadow);
+	transition: 0.3s ease;
+	padding: var(--paddingObject);
+	margin: 0.5rem;
 }
 
 .books {
@@ -243,4 +255,80 @@
 
 	@include breakpoint-range($from: desktopSmall) {
 	}
+}
+
+.book__title {
+	font-weight: 600;
+	color: var(--primary) !important;
+	// text-shadow: 1px 1px var(--borderColor);
+}
+
+.book__author {
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.book__finished {
+	font-size: 0.75rem;
+	font-weight: 500;
+}
+
+.book__review {
+	margin: 1rem auto;
+	font-size: 0.85rem;
+	font-weight: 400;
+	// text-align: justify;
+}
+
+.book__review__indicator {
+	font-size: 0.5rem;
+	display: inline-flex;
+	align-items: center;
+	margin: 0 0.5rem;
+	color: var(--secondary);
+}
+
+.book__loved {
+	color: var(--primary);
+}
+
+.book__hated {
+	rotate: 180deg;
+}
+
+.book__quote {
+	margin: 1rem auto;
+	font-size: 0.75rem;
+	font-style: italic;
+	font-weight: 500;
+	text-align: justify;
+}
+
+.book__quote::before {
+	content: '“ ';
+}
+
+.book__quote::after {
+	content: ' ”';
+}
+
+.book__quote::before,
+.book__quote::after {
+	color: var(--textColorFade);
+}
+
+.book__quote::before {
+	margin-right: 0.25rem;
+}
+
+.book__quote::after {
+	margin-left: 0.25rem;
+}
+
+.book__quote::before,
+.book__quote::after {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 0;
 }

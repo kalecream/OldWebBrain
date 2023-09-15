@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Page } from '@containers/layout';
 import Books from '@data/books';
 import CurrentReads from '@components/books/currentReads';
-import { BacklogGraph } from '@components/books/backlogGraph';
+import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
 import { BookShelf } from '@components/books/backlogGraph';
 // import PhotoGalley from '../components/books/gallery';
 import styles from '@components/books/books.module.scss';
@@ -44,10 +44,14 @@ export const About = () => {
 		.map(([genre]) => genre)
 		.join(', ');
 
+	const wantToReadBooks = Books.filter((book) => book.status === 'Want to Read').sort(
+		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime()
+	);
+
 	return (
 		<Page>
 			<section>
-				<h1 className='section-title'>About</h1>
+				<h1>About</h1>
 				{/* TODO: examine this for why its a different style */}
 				<div className={styles.paragraph}>
 					<p>Hey there, internet wanderer! I'm Sabrina.</p>
@@ -80,11 +84,14 @@ export const About = () => {
 
 					<CurrentReads />
 					<p>
-						This graph below is my book status backlog for the past rolling year. This ignores	books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to Non-Fiction.
+						This graph below is my book status backlog for the past rolling year. This ignores	books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to Non-Fiction. I have <b>{wantToReadBooks.length} books in my backlog. </b>
 					</p>
 					<BacklogGraph />
+					<p>
+						I used to show all my read books, but I would now prefer to show you a short and random list of books I've read.
+					</p>
+					<RandomBooks />
 				</div>
-				<BookShelf />
 			</section>
 		</Page>
 	);
