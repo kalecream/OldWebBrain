@@ -7,16 +7,15 @@ export const Header: React.FunctionComponent = () => {
 	const router = useRouter();
 
 	return (
-		<header className=''>
+		<header className={router && router?.pathname == '/' ? `` : `glassmorphic`}>
 			{router?.pathname !== '/' && (
 				<>
 					<Link className={style['site-name']} href="/">
 						sabrina
 					</Link>
-					</>
-				)}
+				</>
+			)}
 			<div className={`${style['directory-list']} ${style['directory-section']}`}>
-				
 				{Directory.length > 0 &&
 					Directory.map((directory, index) => (
 						<div className={style['directory-list']} key={index}>
