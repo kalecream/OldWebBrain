@@ -12,7 +12,7 @@ const Books = [
 		added: '2023-03-01',
 		started: '2023-07-20',
 		finished: '2023-08-12',
-		cover: 'https://m.media-amazon.com/images/I/71DhKhlb6wL._AC_UF1000,1000_QL80_.jpg'
+		cover: 'https://m.media-amazon.com/images/I/71DhKhlb6wL._AC_UF1000,1000_QL80_.jpg',
 	},
 	{
 		title: 'Drawing for the Absolute Beginner',
@@ -22,7 +22,7 @@ const Books = [
 		added: '2023-02-01',
 		cover: 'https://m.media-amazon.com/images/I/9182z1eq+pL.jpg',
 		summary:
-			'A series of fun, hands-on exercises help you practice and perfect your strokes—24 mini-demos lead up to 9 full step-by-step demos.'
+			'A series of fun, hands-on exercises help you practice and perfect your strokes—24 mini-demos lead up to 9 full step-by-step demos.',
 	},
 	{
 		title: 'The Noma Guide To Fermentation',
@@ -31,7 +31,7 @@ const Books = [
 		status: 'Want to Read',
 		cover: 'https://images-na.ssl-images-amazon.com/images/I/A1c8GBj5l-L._AC_UL900_SR615,900_.jpg',
 		summary: 'A guide to fermentation from the chefs at Noma.',
-		added: '2023-05-01'
+		added: '2023-05-01',
 	},
 	{
 		title: 'The Geometry of Hand-Sewing',
@@ -42,7 +42,7 @@ const Books = [
 		added: '2023-02-01',
 		started: '2023-03-01',
 		cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504917301l/34227598._SX318_.jpg',
-		summary: 'A guide to hand-sewing with a focus on geometry.'
+		summary: 'A guide to hand-sewing with a focus on geometry.',
 	},
 	{
 		title: 'It',
@@ -56,7 +56,7 @@ const Books = [
 		finished: '2022-12-31',
 		cover: 'https://cdna.artstation.com/p/assets/images/images/009/360/872/large/luca-lonardi-cover-it-nologo.jpg',
 		summary:
-			'A group of bullied kids band together when a shapeshifting monster, taking the appearance of a clown, begins hunting children.'
+			'A group of bullied kids band together when a shapeshifting monster, taking the appearance of a clown, begins hunting children.',
 	},
 	{
 		title: 'Relics',
@@ -74,7 +74,7 @@ const Books = [
 		finished: '2023-02-21',
 		review: '',
 		cover: 'https://m.media-amazon.com/images/I/91fmA7u27GL.jpg',
-		summary: 'A group of people are trapped in a museum as a horde of monsters attack.'
+		summary: 'A group of people are trapped in a museum as a horde of monsters attack.',
 	},
 	{
 		title: 'Night Shift',
@@ -92,7 +92,7 @@ const Books = [
 		finished: '2022-11-21',
 		review: '',
 		summary: "Stephen King's first collection of short stories.",
-		cover: 'https://m.media-amazon.com/images/I/81JQ7zUy5PL.jpg'
+		cover: 'https://m.media-amazon.com/images/I/81JQ7zUy5PL.jpg',
 	},
 	{
 		title: 'How to Cook Everything: The Basics',
@@ -111,7 +111,7 @@ const Books = [
 		review: '',
 		cover:
 			'https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg',
-		summary: 'A guide to cooking basics.'
+		summary: 'A guide to cooking basics.',
 	},
 	{
 		title: 'The Lost Art of Reading Nature’s Signs',
@@ -128,7 +128,7 @@ const Books = [
 		started: '2023-01-01',
 		Reading: '2023-03-01',
 		cover: 'https://m.media-amazon.com/images/I/914ZQIPOX6L.jpg',
-		summary: "A guide to Reading nature's signs. More useful for persons who live in the UK, but I still learnt a lot."
+		summary: "A guide to Reading nature's signs. More useful for persons who live in the UK, but I still learnt a lot.",
 	},
 	{
 		title: 'The End of Night: Searching for Natural Darkness in an Age of Artificial Light',
@@ -143,7 +143,7 @@ const Books = [
 		status: 'Want to Read',
 		added: '2023-05-13',
 		cover: 'https://m.media-amazon.com/images/I/710DJnpTSnL.jpg',
-		summary: 'A book about light pollution.'
+		summary: 'A book about light pollution.',
 	},
 	{
 		title: 'Humans Before Humanity',
@@ -157,7 +157,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2023-05-13',
-		cover: 'https://m.media-amazon.com/images/I/41qU8AwchnL._SX331_BO1,204,203,200_.jpg'
+		cover: 'https://m.media-amazon.com/images/I/41qU8AwchnL._SX331_BO1,204,203,200_.jpg',
 	},
 	{
 		title: 'Ready for Revolution: The Life and Struggles of Stokely Carmichael (Kwame Ture)',
@@ -171,7 +171,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2023-05-13',
-		cover: 'https://cdn.thestorygraph.com/zf9uzp1uuhuft8puzfjmj1ls8o91'
+		cover: 'https://cdn.thestorygraph.com/zf9uzp1uuhuft8puzfjmj1ls8o91',
 	},
 	{
 		title: "Don't Even Think About It: Why Our Brains Are Wired to Ignore Climate Change",
@@ -185,7 +185,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2023-05-13',
-		cover: 'https://cdn.thestorygraph.com/pk9rp9rmqa72tk7y0r7xj80g2o7r'
+		cover: 'https://cdn.thestorygraph.com/pk9rp9rmqa72tk7y0r7xj80g2o7r',
 	},
 	{
 		title: "Origins: How Earth's History Shaped Human History",
@@ -199,7 +199,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-05-13',
-		cover: 'https://cdn.thestorygraph.com/0hk7fcs9nojpdv4hjvhiwv2275wh'
+		cover: 'https://cdn.thestorygraph.com/0hk7fcs9nojpdv4hjvhiwv2275wh',
 	},
 	{
 		title: 'Silent Earth: Averting the Insect Apocalypse',
@@ -213,7 +213,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-06-14',
-		cover: 'https://cdn.thestorygraph.com/fmt946vk3fglc9kmyi4wr8urlrkl'
+		cover: 'https://cdn.thestorygraph.com/fmt946vk3fglc9kmyi4wr8urlrkl',
 	},
 	{
 		title: 'Tapestries of Life: Uncovering the Lifesaving Secrets of the Natural World',
@@ -227,7 +227,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-07-14',
-		cover: 'https://cdn.thestorygraph.com/9l6cfkpmqw9ucnenjl3mktkrbk45'
+		cover: 'https://cdn.thestorygraph.com/9l6cfkpmqw9ucnenjl3mktkrbk45',
 	},
 	{
 		title: 'Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge, and the Teachings of Plants',
@@ -241,7 +241,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-06-14',
-		cover: 'https://cdn.thestorygraph.com/zyuqpgcgubmhi2ssxnmsrpnr5atu'
+		cover: 'https://cdn.thestorygraph.com/zyuqpgcgubmhi2ssxnmsrpnr5atu',
 	},
 	{
 		title: 'Rain: A Natural and Cultural History',
@@ -255,7 +255,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-03-14',
-		cover: 'https://cdn.thestorygraph.com/my5ksitgwlq7g22j70jorirwbk1v'
+		cover: 'https://cdn.thestorygraph.com/my5ksitgwlq7g22j70jorirwbk1v',
 	},
 	{
 		title: "Living in Data: A Citizen's Guide to a Better Information Future",
@@ -269,7 +269,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-10-14',
-		cover: 'https://cdn.thestorygraph.com/tyhqo8rdy27xag76x1ii1i4zwtf4'
+		cover: 'https://cdn.thestorygraph.com/tyhqo8rdy27xag76x1ii1i4zwtf4',
 	},
 	{
 		title: 'The Clean Coder: A Code of Conduct for Professional Programmers',
@@ -283,7 +283,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2022-02-14',
-		cover: 'https://cdn.thestorygraph.com/smo1261i2ug7zhya95djah2y8tk6'
+		cover: 'https://cdn.thestorygraph.com/smo1261i2ug7zhya95djah2y8tk6',
 	},
 	{
 		title: 'The Hidden Half of Nature: The Microbial Roots of Life and Health',
@@ -297,7 +297,7 @@ const Books = [
 		minutes: 0,
 		status: 'Want to Read',
 		added: '2023-05-14',
-		cover: 'https://cdn.thestorygraph.com/t5cw6kpcyqeip0aghwvqg1ynji14'
+		cover: 'https://cdn.thestorygraph.com/t5cw6kpcyqeip0aghwvqg1ynji14',
 	},
 	{
 		title: 'The Revenant',
@@ -312,7 +312,7 @@ const Books = [
 		status: 'Read',
 		added: '2022-05-01',
 		finished: '2022-06-01',
-		cover: 'https://m.media-amazon.com/images/I/81ipFtPw8VL._AC_UF1000,1000_QL80_.jpg'
+		cover: 'https://m.media-amazon.com/images/I/81ipFtPw8VL._AC_UF1000,1000_QL80_.jpg',
 	},
 	{
 		title: 'The Secret Network of Nature',
@@ -336,16 +336,16 @@ const Books = [
 				chapter: 'Introduction',
 				bookmark: [
 					'Because of a fish? The earth’s ecosystems, it seems, are just a bit too complex for us to compartmentalise them and draw up simple rules of cause and effect. Even conservation measures can have unexpected results. Would you expect, for example, that the recovery of crane populations in Europe affects the production of Iberian ham?',
-					'Things can also go awry when a new species is added to a habitat: the introduction of a non-native fish, for example, can lead to a massive reduction in the local elk population'
-				]
+					'Things can also go awry when a new species is added to a habitat: the introduction of a non-native fish, for example, can lead to a massive reduction in the local elk population',
+				],
 			},
 			{
 				chapter: '',
 				bookmark: [
-					'The key is the isotope nitrogen - 15, which in the Pacific Northwest is found almost exclusively in the ocean – or in fish.'
-				]
-			}
-		]
+					'The key is the isotope nitrogen - 15, which in the Pacific Northwest is found almost exclusively in the ocean – or in fish.',
+				],
+			},
+		],
 	},
 	{
 		title: 'Odd Bits: How to Cook the Rest of the Animal',
@@ -361,7 +361,7 @@ const Books = [
 		status: 'Read',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-10-14'
+		finished: '2020-10-14',
 	},
 	{
 		title: 'Black Leopard, Red Wolf',
@@ -379,7 +379,17 @@ const Books = [
 		cover: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579618622l/50608676.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-10-04'
+		finished: '2020-10-04',
+		quotes: [
+			'A man will suffer misery to get to the bottom of truth, but he will not suffer boredom',
+			'“He is my friend.” “Nobody ever gets betrayed by their enemy.”',
+			'When kings fall they fall on top of us.',
+			'If you lived all your life with monsters, what was monstrous?',
+			'You could have a family of one and still drive them apart.',
+			'I am content with much. This world never gives me anything, and yet I have everything I want.',
+			'We don{\'}t own truth.Truth is truth and nothing you can do about it even if you hide it, or kill it, or even tell it.It was truth before you open your mouth and say, That there is a true thing',	
+
+		]
 	},
 	{
 		title: 'Under The Dome',
@@ -396,7 +406,10 @@ const Books = [
 			'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781439149034/under-the-dome-9781439149034_hr.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-08-29'
+		finished: '2020-08-29',
+		quotes: [
+			'When the dawn was still long hours away, bad thoughts took on flesh and began to walk. In the middle of the night thoughts became zombies.',
+		],
 	},
 	{
 		title: 'The Restaurant at the End of the Universe',
@@ -412,7 +425,7 @@ const Books = [
 		cover: 'https://m.media-amazon.com/images/I/71LRPTEbMoL.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-08-22'
+		finished: '2020-08-22',
 	},
 	{
 		title: 'Birdbox',
@@ -428,7 +441,7 @@ const Books = [
 		cover: 'https://m.media-amazon.com/images/I/71X08SP9+pL.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-08-15'
+		finished: '2020-08-15',
 	},
 	{
 		title: 'The Rules of Life: A Personal Code for Living a Better, Happier, More Successful Life',
@@ -445,7 +458,7 @@ const Books = [
 		status: 'Read',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-04-27'
+		finished: '2020-04-27',
 	},
 	{
 		title: 'The Communist Manifesto',
@@ -461,7 +474,7 @@ const Books = [
 		cover: 'https://m.media-amazon.com/images/I/91zdHwFmpRL._AC_UF1000,1000_QL80_.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-02-06'
+		finished: '2020-02-06',
 	},
 	{
 		title: "The Hitchhiker's Guide to the Galaxy",
@@ -477,7 +490,7 @@ const Books = [
 		cover: 'https://api.time.com/wp-content/uploads/2014/10/hitchhiker-s-guide-douglas-adams-657242_451_700.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2020-06-05'
+		finished: '2020-06-05',
 	},
 	{
 		title: 'The Richest Man in Babylon',
@@ -493,7 +506,7 @@ const Books = [
 		cover: 'https://jamesclear.com/wp-content/uploads/2016/01/TheRichestManInBabylon-by-GeorgeClason.jpg',
 		added: '2020-01-01',
 		started: '2020-01-01',
-		finished: '2019-02-02'
+		finished: '2019-02-02',
 	},
 	{
 		title: 'Sapiens: A Brief History of Humankind',
@@ -509,7 +522,7 @@ const Books = [
 		cover: 'https://dynamic.indigoimages.ca/v1/books/books/0771038518/1.jpg?quality=10&sale=0',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2018-11-24'
+		finished: '2018-11-24',
 	},
 	{
 		title: 'Reaper Man',
@@ -525,7 +538,7 @@ const Books = [
 		status: 'Read',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2018-11-22'
+		finished: '2018-11-22',
 	},
 	{
 		title:
@@ -542,7 +555,7 @@ const Books = [
 		cover: 'https://upload.wikimedia.org/wikipedia/en/5/53/The_Ghost_Map_cover.jpg',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2018-11-20'
+		finished: '2018-11-20',
 	},
 	{
 		title: 'Thus Spoke Zarathustra',
@@ -558,7 +571,7 @@ const Books = [
 		status: 'Read',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2018-11-18'
+		finished: '2018-11-18',
 	},
 	{
 		title: 'The Stranger',
@@ -575,7 +588,7 @@ const Books = [
 		status: 'Read',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2018-11-16'
+		finished: '2018-11-16',
 	},
 	{
 		title: 'Typee: A Romance of the South Seas, with sequel The Story of Toby',
@@ -591,7 +604,7 @@ const Books = [
 		status: 'Read',
 		added: '2019-01-01',
 		started: '2019-12-01',
-		finished: '2017-04-30'
+		finished: '2017-04-30',
 	},
 	{
 		title: 'The Wealth of Nations',
@@ -606,7 +619,7 @@ const Books = [
 		cover:
 			'https://kbimages1-a.akamaihd.net/164af17b-6987-4165-bfbf-b37c7e84276e/1200/1200/False/the-wealth-of-nations-illustrated-2.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'Capitalism and Freedom',
@@ -620,7 +633,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://press.uchicago.edu/dam/ucp/books/jacket/978/02/26/73/9780226734798.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'Atlas Shrugged',
@@ -634,7 +647,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Atlas_Shrugged_%281957_1st_ed%29_-_Ayn_Rand.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'The Road to Serfdom',
@@ -648,7 +661,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://upload.wikimedia.org/wikipedia/commons/9/93/The-Road-to-Serfdom-First-Edition1.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'Das Kapital',
@@ -663,7 +676,7 @@ const Books = [
 		cover:
 			'https://upload.wikimedia.org/wikipedia/commons/8/8d/Zentralbibliothek_Z%C3%BCrich_Das_Kapital_Marx_1867.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'The Conquest of Bread',
@@ -677,7 +690,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://www.readandcobooks.co.uk/wp-content/uploads/conquest-of-bread-kropotkin-9781528715997-cover.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'Socialism: Utopian and Scientific',
@@ -691,7 +704,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://m.media-amazon.com/images/I/51H6qkHDj7L.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'The Road to Wigan Pier',
@@ -705,7 +718,7 @@ const Books = [
 		minutes: 0,
 		cover: 'https://m.media-amazon.com/images/I/71v88AfuQSL._AC_UF1000,1000_QL80_.jpg',
 		status: 'Want to Read',
-		added: '2023-05-20'
+		added: '2023-05-20',
 	},
 	{
 		title: 'Anthem',
@@ -730,8 +743,8 @@ const Books = [
 			'We wish to be damned with you, rather than blessed with all our brothers.',
 			'I owe nothing to my brothers, nor do I gather debts from them. I ask none to live for me, nor do I live for any others. I covet no man’s soul, nor is my soul theirs to covet.',
 			'Our dearest one. Fear nothing of the forest. There is no danger in solitude. We have no need of our brothers. Let us forget their good and our evil, let us forget all things save that we are together and that there is joy as a bond between us. ’ ',
-			'I do not grant my love without reason, nor to any chance passer-by who may wish to claim it. I honor men with my love. But honour is a thing to be earned.'
-		]
+			'I do not grant my love without reason, nor to any chance passer-by who may wish to claim it. I honor men with my love. But honour is a thing to be earned.',
+		],
 	},
 	{
 		title: 'Death by Food Pyramid',
@@ -747,7 +760,12 @@ const Books = [
 		status: 'Read',
 		added: '2022-05-25',
 		started: '2022-06-25',
-		finished: '2022-06-25'
+		finished: '2022-06-25',
+		quotes: [
+			'Sometimes you do have to take someone else’s word for it. And sometimes you will want to defer to an authority with a greater science background than yours. Still, that doesn’t mean you should forfeit your critical thinking skills. Consider the source always.',
+			'Science is still evolving. So is our understanding of what it’s dredged up. And most importantly, there’s no magic-pill diet that will work equally well for all people. It’s a reality just as frustrating as it is liberating, and one many health gurus will never admit to you (or to themselves, perhaps). After all, uncertainty isn’t very profitable.',
+			'',
+		],
 	},
 	{
 		title: 'My Inventions',
@@ -763,7 +781,7 @@ const Books = [
 		status: 'Read',
 		added: '2023-06-01',
 		started: '2023-06-01',
-		finished: '2023-06-01'
+		finished: '2023-06-01',
 	},
 	{
 		title: 'Vampyre',
@@ -779,7 +797,7 @@ const Books = [
 		status: 'Read',
 		added: '2023-06-01',
 		started: '2023-06-02',
-		finished: '2023-06-02'
+		finished: '2023-06-02',
 	},
 	{
 		title: 'Culinary Reactions: The Everyday Chemistry of Cooking',
@@ -796,7 +814,7 @@ const Books = [
 		status: 'Read',
 		added: '2023-08-01',
 		started: '2023-08-02',
-		finished: '2023-8-13'
+		finished: '2023-8-13',
 	},
 	{
 		title: 'Your Inner Fish: a Journey into the 3.5-Billion-Year History of the Human Body',
@@ -808,7 +826,7 @@ const Books = [
 		format: 'Paperback',
 		added: '2022-01-16',
 		started: '2022-01-16',
-		finished: '2023-03-03'
+		finished: '2023-03-03',
 	},
 	{
 		title: 'Frankenstein: Or the Modern Prometheus',
@@ -821,15 +839,16 @@ const Books = [
 		started: '2023-05-27',
 		added: '2023-05-31',
 		finished: '2023-05-31',
-		review: 'Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein{\'}s monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human.. I highly recommend it.',
+		review:
+			"Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein{'}s monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human.. I highly recommend it.",
 		quotes: [
 			'The fallen angel becomes a malignant devil. Yet even that enemy of God and man had friends and associates in his desolation; I am alone.',
-			'Hateful day when I received life!{\'} I exclaimed in agony. {\'}Accursed creator{ \!} Why did you form a monster so hideous that even you turned from me in disgust? God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours, more horrid even from the very resemblance. Satan had his companions, fellow-devils, to admire and encourage him; but I am solitary and abhorred.',
+			"Hateful day when I received life!{'} I exclaimed in agony. {'}Accursed creator{ !} Why did you form a monster so hideous that even you turned from me in disgust? God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours, more horrid even from the very resemblance. Satan had his companions, fellow-devils, to admire and encourage him; but I am solitary and abhorred.",
 			'Nothing is so painful to the human mind as a great and sudden change.',
 			'Why did I not die? More miserable than man ever was before, why did I not sink into forgetfulness and rest? Death snatches away many blooming children, the only hopes of their doting parents: how many brides and youthful lovers have been one day in the bloom of health and hope, and the next a prey for worms and the decay of the tomb! Of what materials was I made, that I could thus resist so many shocks, which, like the turning of the wheel, continually renewed the torture? But I was doomed to live.',
 			'I do know that for the sympathy of one living being, I would make peace with all. I have love in me the likes of which you can scarcely imagine and rage the likes of which you would not believe. If I cannot satisfy the one, I will indulge the other.',
-			'Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge, and how much happier that man is who believes his native town to be his world, than he who aspires to become greater than his nature will allow'
-		]
+			'Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge, and how much happier that man is who believes his native town to be his world, than he who aspires to become greater than his nature will allow',
+		],
 	},
 	{
 		title: 'The Unexpected Guest',
@@ -840,7 +859,7 @@ const Books = [
 		pages: 100,
 		started: '2023-06-21',
 		added: '2023-06-21',
-		finished: '2023-06-21'
+		finished: '2023-06-21',
 	},
 	{
 		title: 'AI Superpowers: China, Silicon Valley, and the New World Order',
@@ -853,7 +872,7 @@ const Books = [
 			"It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it's a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I wasn't convinced by their optimistic outlook for the future of the workforce.",
 		started: '2023-03-25',
 		added: '2022-01-28',
-		finished: '2023-07-20'
+		finished: '2023-07-20',
 	},
 	{
 		title: "Uncle Tom's Cabin",
@@ -865,8 +884,8 @@ const Books = [
 		review: "One of the most infuriating works I've ever read.",
 		started: '2023-05-01',
 		added: '2023-05-01',
-		finished: '2023-07-01'
-	}
+		finished: '2023-07-01',
+	},
 ];
 
 export default Books;
