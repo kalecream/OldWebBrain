@@ -3,7 +3,7 @@
 @import 'animations';
 @import 'mediaQuery';
 
-$primary: rgb(17, 158, 160) ;
+$primary: rgb(17, 158, 160);
 $secondary: rgba(14, 174, 87, 1);
 $borderRadius: 5px;
 $padding-container: 1rem 3rem;
@@ -14,84 +14,98 @@ $accentFont: 'Sims Sans SC', sans-serif;
 $body-font: 'Inter', sans-serif;
 $blur: 20px;
 $box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-$gradient:  radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(14, 174, 87, 1) 0%,
-    rgba(12, 116, 117, 1) 90%
-  );
+$gradient: radial-gradient(circle farthest-corner at 10% 20%, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);
 $circle-gradient: radial-gradient(100% 100% at 100% 0, var(--primary) 0, var(--secondary) 100%);
 $transition: all 0.3s ease-in-out;
 
 // https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
 $themes: (
-  light: (
-    primary: $secondary,
-    secondary: $primary,
-    backgroundColor: #fff,
-    textColor: #222,
-    textColorFade: rgba(34, 34, 34, 0.8),
-    captionColor: #aaa,
-    buttonTextColor: $secondary,
-    buttonTextTransform: none,
-    buttonTextHoverColor: $secondary,
-    buttonColor: #fff,
-    buttonBorder: 2px solid rgba(255, 255, 255, 0.3),
-    border: 1px solid rgba(255, 255, 255, 0.4),
-    borderColor: rgba(255, 255, 255, 0.4),
-    borderRadius: $borderRadius,
-    paddingContainer: $padding-container,
-    paddingObject: $padding-object,
-    paddingObjectSmall: $padding-object-small,
-    boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
-    transition: $transition,
-    loadingBackground: $gradient,
-    loadingTextColor: #fff,
-    bodyFont: $body-font,
-    headingFont: $heading-font,
-    accentFont: $accentFont,
-  ),
-  dark: (
-    primary: $primary,
-    secondary: $secondary,
-    backgroundColor: #222,
-    textColor: #ddd,
-    textColorFade: rgba(221, 221, 221, 0.8),
-    captionColor: #aaa,
-    buttonTextColor: #aaa,
-    buttonTextTransform: uppercase,
-    buttonTextHoverColor: #ddd,
-    buttonColor: #333,
-    buttonBorder: 1px solid rgba(0, 0, 0, 0.23),
-    border: 1px solid rgba(0, 0, 0, 0.23),
-    borderColor: rgba(0, 0, 0, 0.23),
-    borderRadius: $borderRadius,
-    paddingContainer: $padding-container,
-    paddingObject: $padding-object,
-    paddingObjectSmall: $padding-object-small,
-    boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
-    transition: $transition,
-    loadingBackground: $gradient,
-    loadingTextColor: #fff,
-    bodyFont: $body-font,
-    headingFont: $heading-font,
-    accentFont: $accentFont,
-  ),
+	light: (
+		primary: $secondary,
+		secondary: $primary,
+		backgroundColor: #fff,
+		textColor: #222,
+		textColorFade: rgba(34, 34, 34, 0.8),
+		captionColor: #aaa,
+		buttonTextColor: $secondary,
+		buttonTextTransform: none,
+		buttonTextHoverColor: $secondary,
+		buttonColor: #fff,
+		buttonBorder: 2px solid rgba(255, 255, 255, 0.3),
+		border: 1px solid rgba(255, 255, 255, 0.4),
+		borderColor: rgba(255, 255, 255, 0.4),
+		borderRadius: $borderRadius,
+		paddingContainer: $padding-container,
+		paddingObject: $padding-object,
+		paddingObjectSmall: $padding-object-small,
+		boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
+		transition: $transition,
+		loadingBackground: $gradient,
+		loadingTextColor: #fff,
+		bodyFont: $body-font,
+		headingFont: $heading-font,
+		accentFont: $accentFont,
+		// backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png')
+		backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
+	),
+	dark: (
+		primary: $primary,
+		secondary: $secondary,
+		backgroundColor: #222,
+		textColor: #ddd,
+		textColorFade: rgba(221, 221, 221, 0.8),
+		captionColor: #aaa,
+		buttonTextColor: #aaa,
+		buttonTextTransform: uppercase,
+		buttonTextHoverColor: #ddd,
+		buttonColor: #333,
+		buttonBorder: 1px solid rgba(0, 0, 0, 0.23),
+		border: 1px solid rgba(0, 0, 0, 0.23),
+		borderColor: rgba(0, 0, 0, 0.23),
+		borderRadius: $borderRadius,
+		paddingContainer: $padding-container,
+		paddingObject: $padding-object,
+		paddingObjectSmall: $padding-object-small,
+		boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2),
+		transition: $transition,
+		loadingBackground: $gradient,
+		loadingTextColor: #fff,
+		bodyFont: $body-font,
+		headingFont: $heading-font,
+		accentFont: $accentFont,
+		backgroundImage: url('https://www.transparenttextures.com/patterns/asfalt-light.png')
+	),
 );
 
 // source: https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables
 @each $name, $map in $themes {
-    .#{$name} {
-        @each $key, $value in $map {
-            --#{$key}: #{$value};
-        }
-    }
-} 
-
+	.#{$name} {
+		@each $key, $value in $map {
+			--#{$key}: #{$value};
+		}
+	}
+}
 
 html {
 	color: var(--textColor);
 	line-height: 1.2;
 	font-family: var(--bodyFont);
+}
+
+body {
+	background-color: var(--backgroundColor);
+	background-image: var(--backgroundImage);
+	background-repeat: repeat;
+}
+
+main {
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		padding: 1rem;
+	}
+
+	@include breakpoint-range($from: tablet, $to: desktopSmall) {
+		padding: 1rem  2.5rem;
+	}
 }
 
 header {
@@ -167,7 +181,7 @@ section {
 	gap: 1rem;
 }
 
-.thirds{
+.thirds {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -176,7 +190,7 @@ section {
 	padding: 1rem 0;
 	width: 100%;
 
-	@include breakpoint-range( $from: mobile, $to: tablet ){
+	@include breakpoint-range($from: mobile, $to: tablet) {
 		flex-direction: column;
 	}
 
@@ -193,10 +207,10 @@ section {
 	// border: 1px solid rgba(255, 255, 255, 0.23);
 	border-radius: var(--borderRadius);
 	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    // background-color: rgba(255, 255, 255, .5);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-}
+		// background-color: rgba(255, 255, 255, .5);
+		-webkit-backdrop-filter: blur(20px);
+		backdrop-filter: blur(20px);
+	}
 }
 
 .parallax {
@@ -215,9 +229,9 @@ section {
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--backgroundColor);
-background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+	background-image: url('https://www.transparenttextures.com/patterns/argyle.png');
 	background-repeat: repeat;
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 a {
@@ -269,6 +283,7 @@ h3 {
 
 p {
 	margin-bottom: 0.8rem;
+	backdrop-filter: blur($blur);
 
 	@media screen and (max-width: 768px) {
 		padding: 0 2.5rem;
@@ -414,7 +429,7 @@ kbd::after,
 .blog__article {
 	display: flex;
 	justify-content: center;
-	align-items: center;;
+	align-items: center;
 	background-color: var(--backgroundColor);
 	border-radius: var(--borderRadius);
 	text-align: center;
@@ -422,8 +437,8 @@ kbd::after,
 	border: var(--border);
 
 	&:hover {
-cursor: pointer;
-	background-color: var(--textColorFade);
+		cursor: pointer;
+		background-color: var(--textColorFade);
 	}
 
 	& > * {
@@ -679,4 +694,3 @@ canvas:active {
 ::-webkit-scrollbar-thumb:active {
 	background: var(--primary);
 }
-
