@@ -83,29 +83,6 @@
 	font-family: var(--bodyFont);
 }
 
-.project__status{
-	content: ' ';
-	margin-left: 0.5rem;
-	border-radius: 50%;
-	background: var(--textColorFade);
-	width: 8px;
-	height: 8px;
-	display: inline-block;
-	vertical-align: middle;
-
-	&.ongoing {
-		background: green;
-	}
-
-	&.completed {
-		background: yellow;
-	}
-
-	&.archived {
-		background: red;
-	}
-}
-
 .project-description {
 	padding: 0.5rem 0;
 	color: var(--textColor);

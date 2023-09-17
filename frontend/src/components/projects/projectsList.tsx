@@ -43,8 +43,9 @@ const ProjectList: React.FC = () => {
 				{categories.map((category) => (
 					<button
 						key={category}
-						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === category ? styles['active'] : ''
-							}`}
+						className={`${styles['project-tab'] + ` glassmorphic`} ${
+							activeCategory === category ? styles['active'] : ''
+						}`}
 						onClick={() => handleTabChange(category)}
 					>
 						{category}
@@ -61,9 +62,10 @@ const ProjectList: React.FC = () => {
 										{GetMonthName(project.created)}
 										{project.created.split('-', 1)}
 									</div>
+
 									{project.title}
 									<span
-										className={`${styles.project__status}  ${project.status}`}
+										className={`project__status ${project.status}`}
 										title={project.status}
 										aria-label={project.status}
 									></span>
@@ -90,11 +92,10 @@ const ProjectList: React.FC = () => {
 									</div>
 								)}
 
-								
-										<div className={styles['project-lang']}>
-											<div className={styles['project-language']}>{project.language?.join(',  ')}</div>
-											<div className="div">{project.technology}</div>
-										</div>
+								<div className={styles['project-lang']}>
+									<div className={styles['project-language']}>{project.language?.join(',  ')}</div>
+									<div className="div">{project.technology}</div>
+								</div>
 
 								<div className={styles['project-description']}>{project.description}</div>
 
