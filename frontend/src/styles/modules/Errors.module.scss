@@ -8,6 +8,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    background-image: var(--loadingBackground);
+
+	& a {
+		color: var(--textColor);
+	}
+
 
     @include breakpoint-range($from: mobile, $to: desktopSmall) {
         flex-wrap: wrap;
@@ -59,7 +65,7 @@
 
 .error__description {
 margin-top: 0.2rem;
-	color: var(--textColorFade);
+	color: var(--textColor);
 }
 
 .error_description_container {

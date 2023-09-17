@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './projects.module.scss';
 import Image from 'next/image';
 import { GetMonthName } from '@utils/GetMonthName';
+import { FaFileImage } from 'react-icons/fa6';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
@@ -26,12 +27,12 @@ const ProjectList: React.FC = () => {
 		activeCategory === 'All'
 			? [...Projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
 			: Projects.filter((project) => project.category === activeCategory).sort(
-					(a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
-			  );
+				(a, b) => new Date(b.created).getTime() - new Date(a.created).getTime(),
+			);
 
 	return (
 		<section className={styles['project-wrapper']}>
-			<h2 className="section-title">Things I've Made</h2>
+			<h2>Things I've Made</h2>
 			<div className={styles['project-tabs']}>
 				<button
 					className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
@@ -42,7 +43,8 @@ const ProjectList: React.FC = () => {
 				{categories.map((category) => (
 					<button
 						key={category}
-						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === category ? styles['active'] : ''}`}
+						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === category ? styles['active'] : ''
+							}`}
 						onClick={() => handleTabChange(category)}
 					>
 						{category}
@@ -54,30 +56,26 @@ const ProjectList: React.FC = () => {
 					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
-								<h2 className={styles['project-title']}>
+								<h2 className={styles.project__title}>
 									<div className={styles['project-year']}>
 										{GetMonthName(project.created)}
 										{project.created.split('-', 1)}
 									</div>
 									{project.title}
+									<span
+										className={`${styles.project__status}  ${project.status}`}
+										title={project.status}
+										aria-label={project.status}
+									></span>
 								</h2>
-								{/* // TODO: Add badges for project status */}
-								{/* {project.status &&
-                  <div className="project-status" data-status={project.status}  >
-                    {project.status}
-                  </div>
-                }
-
-                // TODO: Change all images to 1/1 aspect ratio
-                 */}
 								{project.image && (
-									<div className={styles['project-image']}>
+									<div className={styles.project__image}>
 										<Image
 											height={0}
 											width={0}
 											loader={({ src, width }) => `${src}?w=${width}`}
 											sizes="100vw"
-											style={{ width: 'auto', height: '250px', margin: '0 auto', display: 'flex' }}
+											style={{ width: 'auto', minWidth: '150px', height: '150px', margin: '0 auto', display: 'flex' }}
 											placeholder="blur"
 											blurDataURL={project.image}
 											src={project.image}
@@ -85,14 +83,18 @@ const ProjectList: React.FC = () => {
 										/>
 									</div>
 								)}
-								{project.category == 'code' && (
-									<>
+
+								{!project.image && (
+									<div className={styles.project__image}>
+										<FaFileImage style={{ fontSize: '5rem', margin: 'auto' }} />
+									</div>
+								)}
+
+								
 										<div className={styles['project-lang']}>
-											<div className={styles['project-language']}>{project.language.join(',  ')}</div>
+											<div className={styles['project-language']}>{project.language?.join(',  ')}</div>
 											<div className="div">{project.technology}</div>
 										</div>
-									</>
-								)}
 
 								<div className={styles['project-description']}>{project.description}</div>
 
