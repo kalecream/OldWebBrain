@@ -4,7 +4,7 @@ import { OrbitControls, PresentationControls, PerspectiveCamera, Preload, Html }
 import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-import { Model } from '@assets/models/me';
+import { Model } from '@assets/models/bsb';
 import { Model as IndexScene } from '@assets/models/Scene';
 
 import Image from 'next/image';
@@ -78,12 +78,6 @@ export const SiteBackground = (): JSX.Element => {
 					azimuth={[-Math.PI / 4, Math.PI / 4]}
 				/>
 			</Suspense>
-			<EffectComposer>
-				<DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-				<Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={300} />
-				<Noise opacity={0.02} />
-				<Vignette eskil={false} offset={0.1} darkness={1} />
-			</EffectComposer>
 		</Canvas>
 	);
 };
@@ -100,26 +94,25 @@ export const HeroModel = (): JSX.Element => {
 	//controls.update() must be called after any manual changes to the camera's transform
 	// });
 
-	useEffect(() => {
-		if (!!orbitControlsRef.current) {
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
-		}
+	// useEffect(() => {
+	// 	if (!!orbitControlsRef.current) {
+	// 		orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
+	// 	}
 
-		
-	}, [orbitControlsRef.current]);
+	// }, [orbitControlsRef.current]);
 	return (
 		<Canvas
 			flat
 			shadows
-			camera={{ fov: 50 }}
+			camera={{ fov: 60 }}
 			style={{
-				width: '100%',
-				height: '75vh',
+				width: 'clamp(500px,40vw,650px)',
+				height: '700px',
 				margin: 'auto',
 			}}
 		>
 			<Preload all />
-			<Suspense fallback={null}>
+			<Suspense fallback={<Html center>Loading..</Html>}>
 				<PresentationControls
 					global
 					rotation={[0, -Math.PI / 4, 0]}
@@ -128,10 +121,15 @@ export const HeroModel = (): JSX.Element => {
 				/>
 				<ambientLight />
 				<directionalLight />
-				{/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
-				<OrbitControls ref={orbitControlsRef} maxDistance={4} minDistance={4} />
+				<OrbitControls autoRotate ref={orbitControlsRef} maxDistance={3.9} minDistance={3.9} />
+				{/* TODO: add roughness map to model */}
 				<Model />
 			</Suspense>
+			<EffectComposer>
+				<Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={300} />
+				<Noise opacity={0.02} />
+				<Vignette eskil={false} offset={0.1} darkness={1} />
+			</EffectComposer>
 		</Canvas>
 	);
 };
