@@ -9,43 +9,9 @@ import { Model as IndexScene } from '@assets/models/Scene';
 
 import Image from 'next/image';
 import Placeholder from '@assets/images/indexBackground.webp';
-import styled from '@emotion/styled';
 
 export const angletoRadian = (angle: number) => {
 	return angle * (Math.PI / 180);
-};
-
-export const CustomOrbital = () => {
-	const orbitControlsRef = useRef<any>(null);
-
-	useFrame((state) => {
-		// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
-		// state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
-		state.camera.position.x = 15;
-		state.camera.position.y = 24;
-		state.camera.position.z = 20;
-		//controls.update() must be called after any manual changes to the camera's transform
-	});
-
-	requestAnimationFrame(() => {
-		document.getElementById('hero')?.scrollIntoView();
-	});
-
-	useFrame((state) => {
-		if (!!orbitControlsRef.current) {
-			const { x } = state.mouse;
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(-x * 20));
-			orbitControlsRef.current.update();
-		}
-	});
-
-	useEffect(() => {
-		if (!!orbitControlsRef.current) {
-			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
-		}
-	}, [orbitControlsRef.current]);
-
-	return <OrbitControls ref={orbitControlsRef} maxDistance={4} minDistance={4} />;
 };
 
 export const Scene = ({ modelPath, scale = 40 }) => {
@@ -97,9 +63,11 @@ export const SiteBackground = (): JSX.Element => {
 			{/* <fog color="#161616" attach="fog" near={8} far={50} /> */}
 			<Suspense
 				fallback={
-				<Html center>
-						<div className="subtleBackground"/>
-					</Html>}>
+					<Html center>
+						<div className="subtleBackground" />
+					</Html>
+				}
+			>
 				<ambientLight />
 				<IndexScene />
 				<directionalLight />
@@ -120,26 +88,34 @@ export const SiteBackground = (): JSX.Element => {
 	);
 };
 
-const HeroCanvas = styled(Canvas)`
-	@media (min-width: 768px) {
-		width: fit-content;
-		height: 100%;
-	}
-
-	@media (max-width: 768px) {
-		display: none;
-	}
-`;
-
 export const HeroModel = (): JSX.Element => {
+	const orbitControlsRef = useRef<any>(null);
+
+	// useFrame((state) => {
+	// state.camera.position.x = Math.sin(state.clock.getElapsedTime()) * 5;
+	// state.camera.position.z = Math.cos(state.clock.getElapsedTime()) * 5;
+	// state.camera.position.x = 15;
+	// state.camera.position.y = 24;
+	// state.camera.position.z = 12;
+	//controls.update() must be called after any manual changes to the camera's transform
+	// });
+
+	useEffect(() => {
+		if (!!orbitControlsRef.current) {
+			orbitControlsRef.current.setAzimuthalAngle(angletoRadian(0));
+		}
+
+		
+	}, [orbitControlsRef.current]);
 	return (
-		<HeroCanvas
+		<Canvas
 			flat
 			shadows
 			camera={{ fov: 50 }}
 			style={{
 				width: '100%',
-				height: '75vh'
+				height: '75vh',
+				margin: 'auto',
 			}}
 		>
 			<Preload all />
@@ -152,9 +128,10 @@ export const HeroModel = (): JSX.Element => {
 				/>
 				<ambientLight />
 				<directionalLight />
-				<CustomOrbital />
+				{/* <PerspectiveCamera makeDefault position={[0, 0, 12]} /> */}
+				<OrbitControls ref={orbitControlsRef} maxDistance={4} minDistance={4} />
 				<Model />
 			</Suspense>
-		</HeroCanvas>
+		</Canvas>
 	);
 };
