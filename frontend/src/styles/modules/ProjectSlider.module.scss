@@ -11,6 +11,7 @@
 }
 
  .drag__zone {
+        margin: 2rem 0;
         display: flex;
         justify-content: flex-start;
         position: relative;
@@ -27,16 +28,17 @@
 }
 
 .drag__item {
-        width: 25vw;
-        margin: 1em;
+        // width: 75vw;
+        margin: 1rem 0.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid red;
+        // border: 1px solid red;
+        border-radius: var(--borderRadius);
 
         & .drag__item__image {
             width: 100%;
-            padding-top: 140%;
+            height: clamp(250px, 30vh, 450px);
             position: relative;
             overflow: visible;
 
@@ -46,6 +48,29 @@
                 transform-origin: top;
                 width: 100%;
                 height: 100%;
+            }
+        }
+
+        & .drag__item__year {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.5rem;
+            background-color: var(--backgroundColor);
+            border-radius: var(--borderRadius);
+            color: var(--textColor);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        & .drag__item__title {
+            width: 100%;
+            color: var(--textColor);
+            text-align: center;
+            margin: 0.5rem 0;
+
+            &:hover {
+                color: var(--primaryColor);
             }
         }
     }
