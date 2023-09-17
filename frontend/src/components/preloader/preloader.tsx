@@ -51,6 +51,10 @@ const LoadingScene = () => {
 	const [currentTextIndex, setCurrentTextIndex] = useState(Math.floor(Math.random() * loadingScreenTexts.length));
 
 	useEffect(() => {
+
+		let header = document.getElementById('header');
+		header.style.display = 'none';
+
 		const timer = setTimeout(() => {
 			setCurrentTextIndex(Math.floor(Math.random() * loadingScreenTexts.length));
 		}, 3000);

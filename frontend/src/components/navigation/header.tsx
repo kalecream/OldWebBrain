@@ -1,13 +1,14 @@
 import Directory from '@data/directory';
 import ThemeSwitch from './theme-toggle';
-import { useRouter } from 'next/router';import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import style from './header.module.scss';
 
 export const Header: React.FunctionComponent = () => {
 	const router = useRouter();
 
 	return (
-		<header className={router && router?.pathname == '/' ? `` : `glassmorphic`}>
+		<header id="header" className={router && router?.pathname == '/' ? `` : `glassmorphic`}>
 			{router?.pathname !== '/' && (
 				<>
 					<Link className={style['site-name']} href="/">
