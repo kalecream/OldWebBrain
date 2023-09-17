@@ -3,63 +3,63 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProjectsData from '@data/projectsData';
 import styles from '@styles/modules/ProjectSlider.module.scss';
-import * as PIXI from 'pixi.js';
+// import * as PIXI from 'pixi.js';
 import { GetMonthName } from '@utils/GetMonthName';
 
 export const ProjectSlider = () => {
     const loadRef = useRef(null);
 
-    let targ, //target - the element to drag
-        coordX, //inital x value
-        offsetX, // offset after cursor moved
-        drag; //boolean - is drag on or off
+    // let targ, //target - the element to drag
+    //     coordX, //inital x value
+    //     offsetX, // offset after cursor moved
+    //     drag; //boolean - is drag on or off
 
-    const dragStart = (e) => {
-        //  determine event object
-        if (!e) {
-            var r = window.event;
-        }
-        if (e.preventDefault) e.preventDefault();
+    // const dragStart = (e) => {
+    //     //  determine event object
+    //     if (!e) {
+    //         var r = window.event;
+    //     }
+    //     if (e.preventDefault) e.preventDefault();
 
-        //  IE uses srcElement, others use target
-        targ = e.target ? e.target : e.srcElement;
+    //     //  IE uses srcElement, others use target
+    //     targ = e.target ? e.target : e.srcElement;
 
-        if (targ.className !== 'drag__item') { return };
-        // calculate event X coords
-        offsetX = e.clientX;
+    //     if (targ.className !== 'drag__item') { return };
+    //     // calculate event X coords
+    //     offsetX = e.clientX;
 
-        // assign default for left
-        if (!targ.style.left) {
-            targ.styles.left = '0px'
-        };
+    //     // assign default for left
+    //     if (!targ.style.left) {
+    //         targ.styles.left = '0px'
+    //     };
 
-        //  calc int value for left
-        coordX = parseInt(targ.style.left);
-        drag = true;
+    //     //  calc int value for left
+    //     coordX = parseInt(targ.style.left);
+    //     drag = true;
 
-        // move div element
-        document.onmousemove = dragDiv;
-        return false;
-    }
+    //     // move div element
+    //     document.onmousemove = dragDiv;
+    //     return false;
+    // }
 
-    let dragDiv = (e) => {
-        if (!drag) { return };
-        if (!e) { let e = window.event };
-        targ.style.left = coordX + e.clientX - offsetX + 'px';
-        return false;
-    }
+    // let dragDiv = (e) => {
+    //     if (!drag) { return };
+    //     if (!e) { let e = window.event };
+    //     targ.style.left = coordX + e.clientX - offsetX + 'px';
+    //     return false;
+    // }
 
-    let stopDrag = () => {
-        drag = false;
-    }
+    // let stopDrag = () => {
+    //     drag = false;
+    // }
 
-    window.onload = () => {
-        document.getElementById('loadMore').onmousedown = dragStart;
-        document.getElementById('loadMore').onmouseup = stopDrag;
-        if (loadRef.current) {
-            displacement();
-        }
-    }
+    // window.onload = () => {
+    //     document.getElementById('loadMore').onmousedown = dragStart;
+    //     document.getElementById('loadMore').onmouseup = stopDrag;
+    //     if (loadRef.current) {
+    //         displacement();
+    //     }
+    // }
 
     // const app = new PIXI.Application();
     // document.body.appendChild(app.view);
