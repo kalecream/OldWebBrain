@@ -104,7 +104,7 @@ export const BacklogGraph: FC = () => {
 
 	return (
 		<>
-			<BarChart width={width > 1024 ? 800 : width} height={300} data={Data}>
+			<BarChart width={width > 1024 ? 800 : width} height={300} data={Data} style={{ margin: '0 auto' }}>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="month" />
 				<YAxis domain={[0, 'dataMax + 2']} />
