@@ -46,7 +46,7 @@ $themes: (
 		headingFont: $heading-font,
 		accentFont: $accentFont,
 		// backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png')
-		backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
+		backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
 	),
 	dark: (
 		primary: $primary,
@@ -73,7 +73,7 @@ $themes: (
 		bodyFont: $body-font,
 		headingFont: $heading-font,
 		accentFont: $accentFont,
-		backgroundImage: url('https://www.transparenttextures.com/patterns/asfalt-light.png')
+		backgroundImage: url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
 	),
 );
 
@@ -104,7 +104,7 @@ main {
 	}
 
 	@include breakpoint-range($from: tablet, $to: desktopSmall) {
-		padding: 1rem  2.5rem;
+		padding: 1rem 2.5rem;
 	}
 }
 
@@ -285,8 +285,8 @@ p {
 	margin-bottom: 0.8rem;
 	backdrop-filter: blur($blur);
 
-	@media screen and (max-width: 768px) {
-		padding: 0 2.5rem;
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		margin: 0 2.5rem;
 	}
 }
 
@@ -694,3 +694,30 @@ canvas:active {
 ::-webkit-scrollbar-thumb:active {
 	background: var(--primary);
 }
+
+// This project styling cannot go in CSS modules
+//  see link below for why
+// https://stackoverflow.com/questions/72000811/nextjs-avoid-change-css-classname-after-run
+
+.project__status{
+	content: ' ';
+	margin-left: 0.5rem;
+	border-radius: 50%;
+	// background: var(--textColorFade);
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+span.project__status.ongoing {
+		background: var(--secondary);
+	}
+
+span.project__status.completed {
+		background: var(--primary);
+	}
+
+span.project__status.archived {
+		background: red;
+	}
