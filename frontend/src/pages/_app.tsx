@@ -22,7 +22,6 @@ const defaultDescription =
 	'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.';
 
 	return (
-		
 		<ThemeProvider
 			storageKey="theme"
 			attribute="class"
@@ -36,7 +35,7 @@ const defaultDescription =
 				<meta charSet="utf-8" />
 				<meta name="language" content="english" />
 				<meta httpEquiv="content-type" content="text/html" />
-				<meta name="author" content={  'Sabrina Medwinter'} />
+				<meta name="author" content={'Sabrina Medwinter'} />
 
 				{/* Search Engine Optimization Meta Tags */}
 				<title>{meta.title ?? defaultTitle}</title>
@@ -60,7 +59,7 @@ const defaultDescription =
 				<link rel="apple-touch-icon" sizes="16x16" href="/icons/favicon-16x16.png" />
 				<link rel="apple-touch-icon" sizes="32x32" href="/icons/favicon-32x32.png" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" /> */}
-				<link rel="manifest" href="/manifest.json" />
+				{/* <link rel="manifest" href="/manifest.json" /> */}
 				{/* <link rel="mask-icon" color="#000000" href="/icons/safari-pinned-tab.svg" /> */}
 				<link rel="apple-touch-startup-image" href="https://i.imgur.com/iNuJgj3.png" />
 

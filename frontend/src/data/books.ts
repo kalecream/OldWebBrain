@@ -13,6 +13,15 @@ const Books = [
 		started: '2023-07-20',
 		finished: '2023-08-12',
 		cover: 'https://m.media-amazon.com/images/I/71DhKhlb6wL._AC_UF1000,1000_QL80_.jpg',
+		quotes: [
+			'In every age, people are certain that only the things they have deemed valuable have true value. The search for love and the search for wealth are always the two best stories. But while a love story is timeless, the story of a quest for wealth, given enough time, will always seem like the vain pursuit of a mirage.',
+			'The Roman army required salt for its soldiers and for its horses and livestock. At times soldiers were even paid in salt, which was the origin of the word salary and the expression “worth his salt” or “earning his salt.” In fact, the Latin word sal became the French word solde, meaning pay, which is the origin of the word, soldier.',
+			'Salt is so common, so easy to obtain, and so inexpensive that we have forgotten that from the beginning of civilization until about 100 years ago, salt was one of the most sought-after commodities in human history.',
+			'It takes two years for the salt to reach the center of a wheel of Parmigiano-Reggiano cheese.',
+			'When these early settlers hunted, they would leave red herring along their trail because the strong smell would confuse wolves, which is the origin of the expression red herring, meaning “a false trail.',
+			'Pastrami, of Romanian origin, is dried, spiced, and salted beef, smoked over hardwood sawdust and then steamed. The name may come from pastra, the Romanian verb “to preserve.',
+			'In the first century A.D., Pliny estimated that the average Roman citizen consumed only 25 grams of salt a day. The modern American consumes even less if the salt content of packaged food is not included.',
+		],
 	},
 	{
 		title: 'Drawing for the Absolute Beginner',
@@ -387,9 +396,8 @@ const Books = [
 			'If you lived all your life with monsters, what was monstrous?',
 			'You could have a family of one and still drive them apart.',
 			'I am content with much. This world never gives me anything, and yet I have everything I want.',
-			'We don{\'}t own truth.Truth is truth and nothing you can do about it even if you hide it, or kill it, or even tell it.It was truth before you open your mouth and say, That there is a true thing',	
-
-		]
+			"We don't own truth.Truth is truth and nothing you can do about it even if you hide it, or kill it, or even tell it.It was truth before you open your mouth and say, That there is a true thing",
+		],
 	},
 	{
 		title: 'Under The Dome',
@@ -426,6 +434,11 @@ const Books = [
 		added: '2020-01-01',
 		started: '2020-01-01',
 		finished: '2020-08-22',
+		quotes: [
+			"Don't Panic.",
+			'Would it save you a lot of time if I just gave up and went mad now?',
+			"If there's anything more important than my ego around, I want it caught and shot now.",
+		],
 	},
 	{
 		title: 'Birdbox',
@@ -459,6 +472,11 @@ const Books = [
 		added: '2020-01-01',
 		started: '2020-01-01',
 		finished: '2020-04-27',
+		quotes: [
+			'In order to love people usefully you need to be focused on them and not yourself.',
+			'Somewhere out there is someone who wants exactly the kind of person you are, complete with all the flaws and failings you come with.',
+			"you would be surprised how many people seriously limit their dreams. They're your dreams for heaven's sake. There should be no limit to them. Plans have to be realistic; dreams don't.",
+		],
 	},
 	{
 		title: 'The Communist Manifesto',
@@ -475,6 +493,7 @@ const Books = [
 		added: '2020-01-01',
 		started: '2020-01-01',
 		finished: '2020-02-06',
+		quotes: ['The ruling ideas of each age have ever been the ideas of its ruling class.'],
 	},
 	{
 		title: "The Hitchhiker's Guide to the Galaxy",
@@ -507,6 +526,12 @@ const Books = [
 		added: '2020-01-01',
 		started: '2020-01-01',
 		finished: '2019-02-02',
+		quotes: [
+			'Advice is one thing that is freely given away, but watch that you only take what is worth having.',
+			'Learning was of two kinds: the one being the things we learned and knew, and the other being the training that taught us how to find out what we did not know?',
+			"The hungrier one becomes, the clearer one's mind works— also the more sensitive one becomes to the odors of food.",
+			'',
+		],
 	},
 	{
 		title: 'Sapiens: A Brief History of Humankind',
@@ -556,6 +581,13 @@ const Books = [
 		added: '2019-01-01',
 		started: '2019-12-01',
 		finished: '2018-11-20',
+		quotes: [
+			'And of course, if they do recognize that they are living through a historical crisis, it’s often too late—because, like it or not, the primary way that ordinary people create this distinct genre of history is by dying.',
+			'(Plagues and political unrest have a long history of following the same cycles.)',
+			'And so this is why the whole world has suddenly taken an interest in whether Thai poultry workers get their flu shots: because the world wants to ensure that H5N1 stays as far away as possible from ordinary flu viruses.',
+			'The greatest risk of a deliberately planned urban epidemic is not that we won’t have a vaccine, it’s that we won’t recognize the outbreak until it’s too late for the vaccine to stop the spread of disease.',
+			'But the finest minds of the era were also devoted to an equally pressing question: What are we going to do with all of this shit?',
+		],
 	},
 	{
 		title: 'Thus Spoke Zarathustra',
@@ -589,6 +621,9 @@ const Books = [
 		added: '2019-01-01',
 		started: '2019-12-01',
 		finished: '2018-11-16',
+		quotes: [
+			"After another moment's silence she mumbled that I was peculiar, that that was probably why she loved me but that one day I might disgust her for the very same reason.",
+		],
 	},
 	{
 		title: 'Typee: A Romance of the South Seas, with sequel The Story of Toby',
@@ -605,6 +640,9 @@ const Books = [
 		added: '2019-01-01',
 		started: '2019-12-01',
 		finished: '2017-04-30',
+		quotes: [
+			'A high degree of refinement, however, does not seem to subdue our wicked propensities so much after all; and were civilization itself to be estimated by some of its results, it would seem perhaps better for what we call the barbarous part of the world to remain unchanged.',
+		],
 	},
 	{
 		title: 'The Wealth of Nations',
@@ -827,6 +865,11 @@ const Books = [
 		added: '2022-01-16',
 		started: '2022-01-16',
 		finished: '2023-03-03',
+		quotes: [
+			"We would never have scales, feathers, or breasts if we didn't have teeth in the first place.",
+			'When you see these deep similarities among different organs and bodies, you begin to recognize that the diverse inhabitants of our world are just variations on a theme.',
+			'We humans are part of a lineage that has traded smell for sight. We now rely on vision more than on smell, and this is reflected in our genome. In this trade-off, our sense of smell was deemphasized, and many of our olfactory genes became functionless.',
+		],
 	},
 	{
 		title: 'Frankenstein: Or the Modern Prometheus',
@@ -840,10 +883,10 @@ const Books = [
 		added: '2023-05-31',
 		finished: '2023-05-31',
 		review:
-			"Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein{'}s monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human.. I highly recommend it.",
+			"Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein's monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human.. I highly recommend it.",
 		quotes: [
 			'The fallen angel becomes a malignant devil. Yet even that enemy of God and man had friends and associates in his desolation; I am alone.',
-			"Hateful day when I received life!{'} I exclaimed in agony. {'}Accursed creator{ !} Why did you form a monster so hideous that even you turned from me in disgust? God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours, more horrid even from the very resemblance. Satan had his companions, fellow-devils, to admire and encourage him; but I am solitary and abhorred.",
+			"Hateful day when I received life!' I exclaimed in agony. 'Accursed creator{ !} Why did you form a monster so hideous that even you turned from me in disgust? God, in pity, made man beautiful and alluring, after his own image; but my form is a filthy type of yours, more horrid even from the very resemblance. Satan had his companions, fellow-devils, to admire and encourage him; but I am solitary and abhorred.",
 			'Nothing is so painful to the human mind as a great and sudden change.',
 			'Why did I not die? More miserable than man ever was before, why did I not sink into forgetfulness and rest? Death snatches away many blooming children, the only hopes of their doting parents: how many brides and youthful lovers have been one day in the bloom of health and hope, and the next a prey for worms and the decay of the tomb! Of what materials was I made, that I could thus resist so many shocks, which, like the turning of the wheel, continually renewed the torture? But I was doomed to live.',
 			'I do know that for the sympathy of one living being, I would make peace with all. I have love in me the likes of which you can scarcely imagine and rage the likes of which you would not believe. If I cannot satisfy the one, I will indulge the other.',
@@ -885,6 +928,11 @@ const Books = [
 		started: '2023-05-01',
 		added: '2023-05-01',
 		finished: '2023-07-01',
+		quotes: [
+			'Perhaps it is impossible for a person who does no good not to do harm.',
+			'Scenes of blood and cruelty are shocking to our ear and heart. What man has nerve to do, man has not nerve to hear.',
+			'Death! Strange that there should be such a word, and such a thing, and we ever forget it; that one should be living, warm and beautiful, full of hopes, desires and wants, one day, and the next be gone, utterly gone, and forever!',
+		],
 	},
 ];
 

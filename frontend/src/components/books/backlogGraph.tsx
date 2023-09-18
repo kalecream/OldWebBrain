@@ -56,7 +56,7 @@ export const BacklogGraph: FC = () => {
 			if (startMonth !== null) {
 				bookData[startMonth] = bookData[startMonth] || {
 					Started: 0,
-					Finished: 0
+					Finished: 0,
 				};
 				bookData[startMonth].Started += 1;
 			}
@@ -64,7 +64,7 @@ export const BacklogGraph: FC = () => {
 			if (finishMonth !== null) {
 				bookData[finishMonth] = bookData[finishMonth] || {
 					Started: 0,
-					Finished: 0
+					Finished: 0,
 				};
 				bookData[finishMonth].Finished += 1;
 				if (startMonth !== null) {
@@ -83,15 +83,15 @@ export const BacklogGraph: FC = () => {
 			if (bookData[monthIndex]) {
 				cumulative = {
 					Started: bookData[monthIndex]?.Started + cumulative.Started || cumulative.Started,
-					Finished: bookData[monthIndex]?.Finished + cumulative.Finished || cumulative.Finished
+					Finished: bookData[monthIndex]?.Finished + cumulative.Finished || cumulative.Finished,
 				};
 			}
 			cumulativeData.push({
 				month: new Date(RelativeLastYearAgo.getFullYear(), RelativeLastYearAgo.getMonth() + month).toLocaleString(
 					'default',
-					{ month: 'long' }
+					{ month: 'long' },
 				),
-				...cumulative
+				...cumulative,
 			});
 
 			monthIndex = (monthIndex + 1) % 12;
@@ -105,10 +105,9 @@ export const BacklogGraph: FC = () => {
 	return (
 		<>
 			<BarChart width={width > 1024 ? 800 : width} height={300} data={Data} style={{ margin: '0 auto' }}>
-				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="month" />
-				<YAxis domain={[0, 'dataMax + 2']} />
-				<Tooltip active={true} />
+				<YAxis domain={[0, 'dataMax + 3']} />
+				{/* <Tooltip active={true} /> */}
 				<Bar dataKey="Started" stackId="a" fill="var(--secondary)" />
 				<Bar dataKey="Finished" stackId="a" fill="var(--primary)" label={<CustomerBarLabel />} />
 			</BarChart>
@@ -134,10 +133,10 @@ const CustomerBarLabel: FC<any> = (props) => {
 
 export const BookShelf: FC = () => {
 	const readBooks = Books.filter((book) => book.status === 'Read').sort(
-		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime()
+		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime(),
 	);
 	const wantToReadBooks = Books.filter((book) => book.status === 'Want to Read').sort(
-		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime()
+		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
 	return (
@@ -176,7 +175,7 @@ export const BookShelf: FC = () => {
 				</summary>
 				<div className="bookshelf pancake">
 					{readBooks.map((book) => (
-						<p className={` pancake-child ${styles.bookList}`}>
+						<p key={book.title} className={` pancake-child ${styles.bookList}`}>
 							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a>{' '}
 							{book.rating && book.rating >= 4 ? (
 								book.rating >= 5 ? (
@@ -206,56 +205,39 @@ export const BookShelf: FC = () => {
 };
 
 export const RandomBooks: FC = () => {
-
-	const randomBooks =
-		Books.filter((book) => book.status === 'Read')
-			.sort(() => Math.random() - Math.random());
+	const randomBooks = Books.filter((book) => book.status === 'Read').sort(() => Math.random() - Math.random());
 
 	return (
 		<div className={styles.random}>
-			{
-				randomBooks.slice(0, 4).map((book) => (
-					<div className={`${styles.books__random}`}>
-						<p>
-							<Link
-								className={styles.book__title}
-								href={`https://www.google.com/search?q=${book.title}`
-								}>
-								{book.title}
-							</Link>
-							{book.rating && book.rating >= 4 ? (
-								book.rating >= 5 ? (
-									<span
-										className={`${styles.book__review__indicator} ${styles.book_loved}`}>
-										♥
-									</span>
-								) : (
-										<span className={`${styles.book__review__indicator}`}>
-											♥
-										</span>
-								)
-							) : book.rating <= 2.5 && book.rating != 0 ? (
-									<span className={`${styles.book__review__indicator}`}>
-										×
-									</span>
+			{randomBooks.slice(0, 4).map((book) => (
+				<div key={book.title} className={`${styles.books__random}`}>
+					<p>
+						<Link className={styles.book__title} href={`https://www.google.com/search?q=${book.title}`}>
+							{book.title}
+						</Link>
+						{book.rating && book.rating >= 4 ? (
+							book.rating >= 5 ? (
+								<span className={`${styles.book__review__indicator} ${styles.book_loved}`}>♥</span>
 							) : (
-								''
-							)}
-							<br />
-							<span className={styles.book__author}>
-								by {book.author}
-							</span>
-						</p>
-						<p className={styles.book__finished}>
-							{GetMonthName(book.finished)} {book.finished.split('-', 1)}
-						</p>
-						{book.review && <p className={styles.book__review}>{book.review}</p>}
-						{book.quotes && (
-							<q className={styles.book__quote}>{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
+								<span className={`${styles.book__review__indicator}`}>♥</span>
+							)
+						) : book.rating <= 2.5 && book.rating != 0 ? (
+							<span className={`${styles.book__review__indicator}`}>×</span>
+						) : (
+							''
 						)}
-					</div>
-				))
-			}
+						<br />
+						<span className={styles.book__author}>by {book.author}</span>
+					</p>
+					<p className={styles.book__finished}>
+						{GetMonthName(book.finished)} {book.finished.split('-', 1)}
+					</p>
+					{book.review && <p className={styles.book__review}>{book.review}</p>}
+					{book.quotes && (
+						<q className={styles.book__quote}>{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
+					)}
+				</div>
+			))}
 		</div>
-	)
-}
+	);
+};

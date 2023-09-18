@@ -7,8 +7,8 @@ import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
 import styles from '@components/books/books.module.scss';
 import { CodersrankSummary } from '@components/books/CodersRank';
 import Link from 'next/link';
-// TODO: rename the components folders properly
 
+// TODO: rename the components folders properly
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
@@ -47,7 +47,7 @@ export const About = () => {
 		.join(', ');
 
 	const wantToReadBooks = Books.filter((book) => book.status === 'Want to Read').sort(
-		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime()
+		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
 	return (
@@ -73,7 +73,13 @@ export const About = () => {
 
 					<h2 style={{ textAlign: 'center' }}>Coding</h2>
 
-					 I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in making pretty pages online then. I'm learning and experimenting every day to hone my craft. Here are the rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for <Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>
+					<p>
+						{' '}
+						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
+						making pretty pages online then. I'm learning and experimenting every day to hone my craft. Here are the
+						rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for{' '}
+						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>
+					</p>
 
 					<CodersrankSummary />
 
@@ -92,13 +98,18 @@ export const About = () => {
 
 					<CurrentReads />
 					<p>
-						This graph below is my book status backlog for the past rolling year. This ignores	books from before then to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to Non-Fiction. I have <b>{wantToReadBooks.length} books in my backlog. </b>
+						This graph below is my book status backlog for the past rolling year. This ignores books from before then to
+						ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
+						Non-Fiction. I have <b>{wantToReadBooks.length} books in my backlog. </b>
 					</p>
 					<BacklogGraph />
 					<p>
-						I used to show all my read books, but I would now prefer to show you a short and random list of books I've read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the book.
+						I used to show all my read books, but I would now prefer to show you a short and random list of books I've
+						read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the
+						book.
 					</p>
 					<RandomBooks />
+
 				</div>
 			</section>
 		</Page>
