@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
-import { FaCircleHalfStroke } from 'react-icons/fa6';
+import { FaToggleOff, FaToggleOn } from 'react-icons/fa6';
 
 /**
  * Based off of gatsby-theme-novela
@@ -18,12 +18,13 @@ const ThemeSwitch = () => {
 		<div
 			style={{
 				display: 'flex',
-				placeItems: 'center'
+				placeItems: 'center',
 			}}
 		>
 			<button
 				name="theme-switch"
 				aria-label="theme-switch"
+				title="theme switch"
 				style={{
 					display: 'grid',
 					placeItems: 'center',
@@ -34,11 +35,10 @@ const ThemeSwitch = () => {
 					justifyContent: 'center',
 					backgroundColor: 'transparent',
 					color: 'var(--primary)',
-					opacity: 0.85
 				}}
 				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
 			>
-				{theme === 'dark' ? <FaCircleHalfStroke /> : <FaCircleHalfStroke style={{ transform: 'rotateY(180deg)'}} />}
+				{theme === 'dark' ? <FaToggleOn /> : <FaToggleOff />}
 			</button>
 		</div>
 	);
