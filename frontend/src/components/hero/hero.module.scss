@@ -15,36 +15,7 @@
 	}
 }
 
-.hero-half {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	padding: 1rem;
 
-	@include breakpoint-range($from: mobile, $to: desktopSmall) {
-		width: 100%;
-	}
-
-	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
-		width: 50%;
-		flex-direction: row;
-	}
-}
-
-
-
-.text-container {
-	background-color: var(--backgroundColor);
-	padding: var(--paddingContainer);
-	border-radius: var(--borderRadius);
-}
-
-.text-container p b {
-	font-weight: 600;
-}
 
 .button-container {
 	display: flex;
@@ -74,11 +45,33 @@
   flex-wrap: wrap;
   place-items: center;
 
-  p {
-    font-weight: 300;
+  .text-container {
+	background-color: var(--backgroundColor);
+	padding: var(--paddingContainer);
+	border-radius: var(--borderRadius);
+	font-weight: 300;
     max-width: 25rem;
+  }
+
+  b {
+	font-weight: 600;
+  }
+
+  p {    
     padding: 0;
   }
+
+  @include breakpoint-range($from: mobile, $to: desktopSmall) {
+		&:last-child {
+			display: none;
+		}
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		&:last-child {
+			display: block;
+		}
+	}
 }
 
 .glassmorphic {
