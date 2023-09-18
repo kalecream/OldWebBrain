@@ -64,8 +64,8 @@ const LoadingScene = () => {
 
 	return (
 		<div className={styles.loading}>
-			<Image loader={({ src }) => src} src={LoadingIcon} width={150} height={250} alt="" />
-			<p className={styles["loading-text"]}>{loadingScreenTexts[currentTextIndex]}</p>
+			<Image loader={({ src }) => src} src={LoadingIcon} width={150} height={250} alt="" unoptimized priority />
+			<p className={styles['loading-text']}>{loadingScreenTexts[currentTextIndex]}</p>
 		</div>
 	);
 };
