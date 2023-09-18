@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FaGlobeAmericas } from 'react-icons/fa';
 import styles from '@components/books/books.module.scss';
-
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 // interface CoderLanguage {
 // 	score: number;
@@ -32,51 +33,56 @@ export const CodersrankSummary = () => {
 	
 	return (
 		<div className={styles.coding__container}>
-			{
-				CodersRankData && Object.keys(CodersRankData).map((language) => (
-					!IgnoreList.includes(language) && (
-					<div
-						className={styles.coding}
-						key={language}>
-						<p className={styles.code__language}>
-							{/* TODO: Fix language image */}
-							{/* <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`} />{' '} */}
-							{language}
-							{/* TODO: Add technologies */}
-						</p>
-						<div className={styles.code__rank }>
-							<FaGlobeAmericas />
-							<span className={styles.code__placement}>
-								{' '}Top{' '}
-								{(CodersRankData[language].world_wide_rank / CodersRankData[language].world_wide_all * 100).toFixed(1)}%
-							</span>
-							<p>
-								<span
-								>{CodersRankData[language].world_wide_rank}</span> {' '}of{' '}
-								<span>{CodersRankData[language].world_wide_all}</span>
-							</p>
-						</div>
-						<div  className={styles.code__rank }>
-							🇯🇲
-							<span className={styles.code__placement}>
-								{' '}Top{' '}
-								{(CodersRankData[language].country_rank / CodersRankData[language].country_all * 100).toFixed(1)}%
-							</span>
-							<p>
-							<span>
-								{CodersRankData[language].country_rank}
-							</span>
-								{' '}of{' '}
-							<span>
-								{CodersRankData[language].country_all}
-								</span>
+			{CodersRankData &&
+				Object.keys(CodersRankData).map(
+					(language) =>
+						!IgnoreList.includes(language) && (
+							<div className={styles.coding} key={language}>
+								<p className={styles.code__language}>
+									{/* TODO: Fix language image */}
+									{/* <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`} />{' '} */}
+									{language}
+									{/* TODO: Add technologies */}
 								</p>
-						</div>
-				</div>)
-				)
-				)
-
-			}
+								<div className={styles.code__rank}>
+									<FaGlobeAmericas />
+									<span className={styles.code__placement}>
+										{' '}
+										Top{' '}
+										{(
+											(CodersRankData[language].world_wide_rank / CodersRankData[language].world_wide_all) *
+											100
+										).toFixed(1)}
+										%
+									</span>
+									<p>
+										<span>{CodersRankData[language].world_wide_rank}</span> of{' '}
+										<span>{CodersRankData[language].world_wide_all}</span>
+									</p>
+								</div>
+								<div className={styles.code__rank}>
+									🇯🇲
+									<span className={styles.code__placement}>
+										{' '}
+										Top{' '}
+										{((CodersRankData[language].country_rank / CodersRankData[language].country_all) * 100).toFixed(1)}%
+									</span>
+									<p>
+										<span>{CodersRankData[language].country_rank}</span> of{' '}
+										<span>{CodersRankData[language].country_all}</span>
+									</p>
+								</div>
+							</div>
+						),
+				)}
+			{!CodersRankData && (
+				<div className={styles.coding}>
+					<Skeleton height={50} width={50} />
+					<Skeleton height={50} width={50} />
+					<Skeleton height={50} width={50} />
+					<Skeleton height={50} width={50} />
+				</div>
+			)}
 		</div>
-	)
+	);
 };
