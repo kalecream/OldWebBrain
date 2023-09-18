@@ -17,7 +17,7 @@
     opacity: 0.8;
 	width: 50px;
 	height: 85px;
-	border: 3px solid var(--backgroundColor);
+	border: 3px solid var(--textColorFade);
 	border-radius: 50px;
 	position: relative;
 	&::before {
@@ -28,7 +28,7 @@
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: var(--backgroundColor);
+		background-color: var(--textColorFade);
 		border-radius: 50%;
 		opacity: 1;
 		animation: wheel 2s infinite;
@@ -38,6 +38,10 @@
     @include breakpoint-range($from: mobile, $to: tablet) {
        display: none;
     }
+
+	@include breakpoint-range($from: tablet) {
+		display: block;
+	}
 }
 
 
