@@ -49,20 +49,36 @@
 	position: relative;
 	gap: 1rem;
 }
+
 .project-lang {
 	display: flex;
 	flex-direction: row;
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	margin: 1rem 0;
 	opacity: 0.8;
+	justify-content: center;
+
+	& > div {
+		width: 50%;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .project-lang > div > a {
 	color: var(--textColorFade);
+
+	&:hover {
+		color: var(--secondary);
+	}
 }
 
 .project-lang > div > a:not(:last-child)::after {
-	content: '+ ';
+	content: ',';
+	margin-right: 3px;
 }
 
 .project-lang > * {
@@ -104,5 +120,10 @@
 	display: flex;
 	width: 100%;
 	height: 150px;
+	color: var(--textColorFade);
+}
+
+.project__code {
+	font-size: 1.2rem;
 	color: var(--textColorFade);
 }
