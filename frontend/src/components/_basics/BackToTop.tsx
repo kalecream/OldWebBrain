@@ -1,6 +1,8 @@
 import { FaArrowUp } from 'react-icons/fa6';
 import styles from '@styles/modules/BackToTop.module.scss';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+
+export const isBrowser = () => typeof window !== 'undefined';
 
 export const BackToTop = () => {
 	const TopButton = useRef(null);
@@ -8,6 +10,7 @@ export const BackToTop = () => {
 	const scrollDetect = () => {
 		var lastScroll = 0;
 
+		if (!isBrowser()) return;
 		window.onscroll = () => {
 			let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -28,9 +31,11 @@ export const BackToTop = () => {
 	scrollDetect();
 
 	const handleClick = () => {
-		if (typeof window !== 'undefined') {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		}
+		if (!isBrowser()) return;
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
 	};
 
 	return (
