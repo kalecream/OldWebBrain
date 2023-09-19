@@ -16,7 +16,7 @@
 		}
 	}
 
-	@include breakpoint-range($from: tablet ) {
+	@include breakpoint-range($from: tablet) {
 		p {
 			max-width: 40rem;
 			margin: 0 auto;
@@ -41,7 +41,8 @@
 
 // CurrentReads
 
-.reading,.random {
+.reading,
+.random {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -50,7 +51,7 @@
 	width: 100%;
 	margin: 1rem auto;
 
-	& > * >img {
+	& > * > img {
 		user-select: none;
 	}
 
@@ -69,7 +70,7 @@
 		margin: 0 auto;
 		justify-content: center;
 	}
-	
+
 }
 
 .books__random {
@@ -78,7 +79,7 @@
 	box-shadow: var(--boxShadow);
 	transition: 0.3s ease;
 	padding: var(--paddingObject);
-	
+
 	background-color: var(--backgroundColor);
 
 	@include breakpoint-range($from: mobile) {
@@ -88,14 +89,19 @@
 	@include breakpoint-range($from: tablet) {
 		width: clamp(350px, 40vw, 400px);
 		min-height: 300px;
+
+		.book__title {
+			font-weight: 500;
+			letter-spacing: -0.6px;
+		}
 	}
 
 	@include breakpoint-range($from: desktop) {
 		.book__title {
 			font-size: 1.5rem;
 			line-height: 1;
-			letter-spacing: -1px;
-			text-align: start;
+		
+
 		}
 	}
 }
@@ -145,30 +151,28 @@
 		width: 48px;
 		height: 294px;
 		transform: translateX(172px) rotateY(90deg);
-		background: linear-gradient(
-			90deg,
-			#fff 0%,
-			#f9f9f9 5%,
-			#fff 10%,
-			#f9f9f9 15%,
-			#fff 20%,
-			#f9f9f9 25%,
-			#fff 30%,
-			#f9f9f9 35%,
-			#fff 40%,
-			#f9f9f9 45%,
-			#fff 50%,
-			#f9f9f9 55%,
-			#fff 60%,
-			#f9f9f9 65%,
-			#fff 70%,
-			#f9f9f9 75%,
-			#fff 80%,
-			#f9f9f9 85%,
-			#fff 90%,
-			#f9f9f9 95%,
-			#fff 100%
-		);
+		background: linear-gradient(90deg,
+				#fff 0%,
+				#f9f9f9 5%,
+				#fff 10%,
+				#f9f9f9 15%,
+				#fff 20%,
+				#f9f9f9 25%,
+				#fff 30%,
+				#f9f9f9 35%,
+				#fff 40%,
+				#f9f9f9 45%,
+				#fff 50%,
+				#f9f9f9 55%,
+				#fff 60%,
+				#f9f9f9 65%,
+				#fff 70%,
+				#f9f9f9 75%,
+				#fff 80%,
+				#f9f9f9 85%,
+				#fff 90%,
+				#f9f9f9 95%,
+				#fff 100%);
 	}
 
 	&::after {
@@ -189,6 +193,7 @@
 	0% {
 		transform: rotateY(0deg);
 	}
+
 	100% {
 		transform: rotateY(-30deg);
 	}
@@ -301,11 +306,9 @@
 		line-height: 1;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {
-	}
+	@include breakpoint-range($from: tablet, $to: desktopSmall) {}
 
-	@include breakpoint-range($from: desktopSmall) {
-	}
+	@include breakpoint-range($from: desktopSmall) {}
 }
 
 .book__title {
@@ -394,7 +397,7 @@
 		margin: 1rem auto;
 	}
 
-	@include breakpoint-range($from:  tablet) {
+	@include breakpoint-range($from: tablet) {
 		margin: 2rem auto;
 	}
 
@@ -402,7 +405,7 @@
 		padding: var(--paddingContainer);
 		gap: 1rem;
 	}
-	
+
 }
 
 .coding {
@@ -441,14 +444,15 @@
 	font-size: 0.75rem;
 	font-weight: 500;
 	color: var(--textColorFade);
-	
+
 }
 
 .code__placement {
-		font-size: 1rem;
-		font-weight: 500;
-		color: var(--textColor);;
-	}
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--textColor);
+	;
+}
 
 .backlogChart {
 	margin: 1rem auto;
