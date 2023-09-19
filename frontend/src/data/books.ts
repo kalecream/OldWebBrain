@@ -934,6 +934,19 @@ const Books = [
 			'Death! Strange that there should be such a word, and such a thing, and we ever forget it; that one should be living, warm and beautiful, full of hopes, desires and wants, one day, and the next be gone, utterly gone, and forever!',
 		],
 	},
+	{
+		title: 'Huareo: Story of a Jamaican Cacique',
+		author: 'Fred W. Kennedy',
+		genre: ['Fiction', 'Historical', 'Caribbean'],
+		status: 'Reading',
+		rating: 4,
+		pages: 160,
+		format: 'Paperback',
+		started: '2023-09-01',
+		added: '2023-09-01',
+		finished: null,
+		cover: 'https://ianrandlepublishers.com/wp-content/uploads/2020/06/Huareo.jpg',
+	},
 ];
 
 export default Books;
