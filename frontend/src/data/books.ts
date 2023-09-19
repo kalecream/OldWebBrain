@@ -947,6 +947,19 @@ const Books = [
 		finished: null,
 		cover: 'https://ianrandlepublishers.com/wp-content/uploads/2020/06/Huareo.jpg',
 	},
+	{
+		title: 'Next.js Quick Start Guide: Server-side rendering done right',
+		author: 'Dan Bahrami',
+		genre: ['Non-Fiction', 'Programming', 'Web Development', 'React', 'Next.js'],
+		status: 'Read',
+		rating: 3,
+		pages: 190,
+		format: 'Paperback',
+		started: '2023-09-10',
+		added: '2023-09-10',
+		finished: '2023-09-10',
+		review: 'A good introduction to Next.js. It needs to be updated for the app router now.',
+	},
 ];
 
 export default Books;
