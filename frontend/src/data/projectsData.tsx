@@ -37,16 +37,16 @@ export const Projects: ProjectStructure[] = [
 		repoName: 'dotfiles',
 		technology: [
 			<a key="i3wm" href="https://i3wm.org/">
-				i3wm{' '}
+				i3wm
 			</a>,
 			<a key="rofi" href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">
-				Rofi{' '}
+				Rofi
 			</a>,
 			<a key="kitty" href="https://sw.kovidgoyal.net/kitty/kitty">
-				Kitty{' '}
+				Kitty
 			</a>,
 			<a key="feh" href="https://feh.finalrewind.org/">
-				Feh{' '}
+				Feh
 			</a>,
 			<a key="pb" href="https://github.com/polybar/polybar">
 				Polybar
@@ -72,13 +72,13 @@ export const Projects: ProjectStructure[] = [
 		repoName: 'morning-messages',
 		technology: [
 			<a key="pw" href="https://pywhatkit.herokuapp.com/">
-				PyWhatKit{' '}
+				PyWhatKit
 			</a>,
 			<a key="gp" href="https://geopy.readthedocs.io/en/stable/">
-				GeoPy{' '}
+				GeoPy
 			</a>,
 			<a key="owm" href="https://openweathermap.org/">
-				OpenWeatherMap API{' '}
+				OpenWeatherMap API
 			</a>,
 		],
 		language: ['Python'],
@@ -102,13 +102,13 @@ export const Projects: ProjectStructure[] = [
 		link: 'https://www.sabrinamedwinter.com/',
 		technology: [
 			<a key="next" href="https://nextjs.org/">
-				Next.js{' '}
+				Next.js
 			</a>,
 			<a key="three" href="https://threejs.org/">
-				React-Three-Fiber{' '}
+				React-Three-Fiber
 			</a>,
 			<a key="0033" href="https://greensock.com/gsap/">
-				GSAP{' '}
+				GSAP
 			</a>,
 			<a key="0034" href={'https://sanity.io/'}>
 				Sanity
@@ -130,13 +130,12 @@ export const Projects: ProjectStructure[] = [
 		description: (
 			<span>
 				A one-hour paid project to accept a 800 word prompt, perform a specfic action with the prompt and use that
-				output as a second prompt. Both prompts were then saved to an ordinary text file. The source is not available
-				because it was released by the client.
+				output as a second prompt. Both prompts were then saved to an ordinary text file.
 			</span>
 		),
 		technology: [
 			<a key="00401" href="https://openai.com/blog/openai-api/">
-				OpenAI API{' '}
+				OpenAI API
 			</a>,
 		],
 		language: ['Python'],
@@ -151,10 +150,14 @@ export const Projects: ProjectStructure[] = [
 		type: 'test',
 		link: 'https://sphenery.vercel.app/login',
 		image: '/img/project/005.webp',
-		description: <span>A form done for a test of a Swagger API.</span>,
+		description: (
+			<span>
+				A login/registration form with refresh token done for a test of a Swagger API for a Front-End take-home test.
+			</span>
+		),
 		technology: [
 			<a key="00501" href="https://sphenery.com/swagger/index.html">
-				Swagger SMTest{' '}
+				Swagger SMTest
 			</a>,
 		],
 		repoName: 'Sphenery',
@@ -170,7 +173,7 @@ export const Projects: ProjectStructure[] = [
 		image: '/img/project/006.webp',
 		status: 'completed',
 		description: (
-			<span>A test of the sapling plug-in in Blender3D. This model is set as the background of this website.</span>
+			<span>A test of the sapling plug-in in Blender3D. This model was set as the background of this website.</span>
 		),
 		technology: [<a key="00601">Blender3D</a>],
 		language: ['∅'],
@@ -204,7 +207,7 @@ export const Projects: ProjectStructure[] = [
 		status: 'completed',
 		description: (
 			<span>
-				A placeholder image I made for when my website was under construction. It still is Under Construction.
+				A placeholder image I made for when my website was under construction. It still is under construction.
 			</span>
 		),
 		technology: [<a key="00801">Blender3D</a>],
@@ -219,7 +222,7 @@ export const Projects: ProjectStructure[] = [
 		type: 'practice',
 		image: '/img/project/009.webp',
 		status: 'completed',
-		description: <span>A 3D render of a strawberry milkshake I made after for a dailySketch</span>,
+		description: <span>A 3D render of a strawberry milkshake I made after for a dailySketch prompt.</span>,
 		technology: ['Blender3D'],
 		language: ['∅'],
 		created: '2022-11-12',
@@ -296,9 +299,7 @@ export const Projects: ProjectStructure[] = [
 		type: 'practice',
 		image: '/img/project/014.webp',
 		status: 'completed',
-		description: (
-			<span>I wanted to do the infamous beginner donut again, but ended up doing a breakfast scene again.</span>
-		),
+		description: <span>I wanted to do the infamous beginner donut again, but ended up doing a breakfast scene.</span>,
 		language: ['∅'],
 		technology: [<a key="01401">Blender3D</a>],
 		created: '2022-11-12',
