@@ -3,7 +3,7 @@ import { HeroModel } from '@components/threeJS/HeroModel';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import styles from './hero.module.scss';
-import button from '@components/_basics/button.module.scss';
+import button from '@styles/modules/button.module.scss';
 
 const Hero = () => {
 	return (
