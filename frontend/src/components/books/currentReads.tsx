@@ -3,10 +3,6 @@ import Books from '../../data/books';
 import Link from 'next/link';
 import styles from './books.module.scss';
 
-// TODO:  
-
-// TODO: add to top page
-
 const CurrentReads = () => {
 	return (
 		<div className={styles.reading}>
@@ -14,7 +10,14 @@ const CurrentReads = () => {
 				if (book.status === 'Reading') {
 					let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
 					return (
-						<Link key={book.title} className={styles.books} href={searchURL} target="_blank" rel="noopener noreferrer">
+						<Link
+							title={book.title}
+							key={book.title}
+							className={styles.books}
+							href={searchURL}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<div className={styles.book}>
 								<img src={book.cover} alt={book.title} />
 							</div>

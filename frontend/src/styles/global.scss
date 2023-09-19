@@ -99,11 +99,17 @@ body {
 }
 
 main {
+	margin: 0 auto; 
+
 	@include breakpoint-range($from: mobile, $to: tablet) {
-		padding: 1rem;
+		padding: 0rem;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {
+	@include breakpoint-range($from: tablet) {
+		width: 90%;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
 		padding: 1rem 2.5rem;
 	}
 }
@@ -152,6 +158,8 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
+	padding: 2rem 1rem;
 
 	&:first-of-type {
 		padding-top: 4rem;
@@ -721,3 +729,42 @@ span.project__status.completed {
 span.project__status.archived {
 		background: red;
 	}
+.desktop-block {
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: block;
+	}
+}
+
+.desktop-flex{
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: flex;
+	}
+}
+
+.mobile-block {
+	@include breakpoint-range($from: mobile) {
+		display: block;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: none;
+	}
+}
+
+.mobile-flex{
+	@include breakpoint-range($from: mobile) {
+		display: flex;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: block;
+	}
+}
