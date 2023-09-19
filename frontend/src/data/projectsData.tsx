@@ -173,7 +173,7 @@ export const Projects: ProjectStructure[] = [
 			<span>A test of the sapling plug-in in Blender3D. This model is set as the background of this website.</span>
 		),
 		technology: [<a key="00601">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2019-01-01',
 	},
 	{
@@ -191,7 +191,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		technology: [<a key="00701">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2023-01-01',
 	},
 	{
@@ -208,7 +208,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		technology: [<a key="00801">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2022-11-03',
 	},
 	{
@@ -221,7 +221,7 @@ export const Projects: ProjectStructure[] = [
 		status: 'completed',
 		description: <span>A 3D render of a strawberry milkshake I made after for a dailySketch</span>,
 		technology: ['Blender3D'],
-		language: [],
+		language: ['∅'],
 		created: '2022-11-12',
 	},
 	{
@@ -238,7 +238,7 @@ export const Projects: ProjectStructure[] = [
 				scale.
 			</span>
 		),
-		language: [],
+		language: ['∅'],
 		technology: [<a key="01001">Blender3D</a>],
 		created: '2022-11-12',
 	},
@@ -254,7 +254,7 @@ export const Projects: ProjectStructure[] = [
 			<span>This render was done as a late entry for a competition on Twitter to create a brand for baby toys.</span>
 		),
 		technology: [<a key="01101">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2022-11-12',
 	},
 	{
@@ -267,7 +267,7 @@ export const Projects: ProjectStructure[] = [
 		status: 'completed',
 		description: <span>A practice render I made for the idea of a new queen coming onto a chess board.</span>,
 		technology: [<a key="01101">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2022-11-12',
 	},
 	{
@@ -285,7 +285,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		technology: [<a key="01301">Blender3D</a>],
-		language: [],
+		language: ['∅'],
 		created: '2022-11-12',
 	},
 	{
@@ -299,6 +299,7 @@ export const Projects: ProjectStructure[] = [
 		description: (
 			<span>I wanted to do the infamous beginner donut again, but ended up doing a breakfast scene again.</span>
 		),
+		language: ['∅'],
 		technology: [<a key="01401">Blender3D</a>],
 		created: '2022-11-12',
 	},
