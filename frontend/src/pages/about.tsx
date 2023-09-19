@@ -7,6 +7,7 @@ import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
 import styles from '@components/books/books.module.scss';
 import { CodersrankSummary } from '@components/books/CodersRank';
 import Link from 'next/link';
+import { BackToTop } from '@components/_basics/BackToTop';
 
 // TODO: rename the components folders properly
 
@@ -109,9 +110,9 @@ export const About = () => {
 						book.
 					</p>
 					<RandomBooks />
-
 				</div>
 			</section>
+			<BackToTop />
 		</Page>
 	);
 };
