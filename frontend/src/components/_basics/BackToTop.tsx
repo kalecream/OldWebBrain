@@ -1,6 +1,6 @@
 import { FaArrowUp } from 'react-icons/fa6';
 import styles from '@styles/modules/BackToTop.module.scss';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const BackToTop = () => {
 	const TopButton = useRef(null);
@@ -35,7 +35,9 @@ export const BackToTop = () => {
 	};
 
 	const handleClick = () => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		useEffect(() => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}, []);
 	};
 
 	return (
