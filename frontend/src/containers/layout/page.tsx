@@ -3,14 +3,13 @@ import { Header, Footer } from '@components/navigation';
 import { Header as MetaHead } from '@components/navigation';
 import dynamic from 'next/dynamic';
 import { Analytics } from '@vercel/analytics/react';
+import { BackToTop } from '@components/_basics/BackToTop';
 
 const Preloader = dynamic(() => import('@components/preloader/preloader'), {
-	ssr: false
+	ssr: false,
 });
 
-export const Page = ({
-	children
-}) => {
+export const Page = ({ children }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
@@ -32,6 +31,7 @@ export const Page = ({
 				</>
 			)}
 			<Analytics />
+			<BackToTop />
 		</>
 	);
 };
