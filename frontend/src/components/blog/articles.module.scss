@@ -86,3 +86,36 @@
 		}
     }
 }
+
+.table-of-contents {
+	padding: 1rem;
+	border-radius: 15px;
+
+	align-self: flex-start;
+
+	& ul li {
+		margin-bottom: 0.5rem;
+		font-weight: 300;
+		padding: 0;
+	}
+
+	& ul li:hover {
+		color: var(--primary);
+	}
+
+	& ul li::marker {
+		color: var(--primary);
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		width: 360px;
+		position: fixed;
+		left: 0;
+		top: 40%;
+		padding: 0 2rem;
+	}
+}
