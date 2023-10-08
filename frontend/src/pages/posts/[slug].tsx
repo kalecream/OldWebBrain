@@ -1,13 +1,14 @@
 import Page from '@containers/layout/page';
-import { useEffect, useState } from 'react';
+import { Key,  useEffect, useState } from 'react';
 import { CustomComponents } from '@components/blog/customElements';
-
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
+import { remarkCodeHike } from "@code-hike/mdx"
+
 
 import Image from 'next/image';
 import path from 'path';
@@ -16,47 +17,21 @@ import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import styled from '@emotion/styled';
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
+import { ReactNode } from '@mdx-js/react/lib';
+
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
 	frontMatter: PostType;
 };
 
-const TableOfContents = styled.aside`
-	padding: 1rem;
-	border-radius: 15px;
-
-	align-self: flex-start;
-
-	& ul li {
-		margin-bottom: 0.5rem;
-		font-weight: 300;
-		padding: 0;
-	}
-
-	& ul li:hover {
-		color: var(--primary);
-	}
-
-	& ul li::marker {
-		color: var(--primary);
-	}
-
-	@media (max-width: 768px) {
-		display: none;
-	}
-
-	@media (min-width: 1024px) {
-		width: 360px;
-		position: fixed;
-		left: 0;
-		top: 40%;
-		padding: 0 2rem;
-	}
-`;
+type HeadingProps = {
+	id: Key | any,
+	text: ReactNode,
+	level: string,
+}
 
 const getClassName = (level: string) => {
 	switch (level) {
@@ -70,7 +45,8 @@ const getClassName = (level: string) => {
 };
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
-	const [headings, setHeadings] = useState<any[]>([]);
+	const [headings, setHeadings] = useState<HeadingProps[]>([]);
+	// Above should be heading props
 	const { activeId } = useHeadsObserver();
 
 	useEffect(() => {
@@ -87,7 +63,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 		<Page >
 			<article>
 				<div className="article--header">
-					<div className="article--image">
+					<figure className="article--image">
 						<Image
 							height={0}
 							width={0}
@@ -99,7 +75,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 							className="blog--article__image"
 						/>
 						{/* <img src={frontMatter.coverImage} alt="" width={400} /> */}
-					</div>
+					</figure>
 
 					<div className="article--information">
 						<h1 className="article--heading">{frontMatter.title}</h1>
@@ -118,7 +94,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					</div>
 				</div>
 
-				<TableOfContents>
+				<aside className="table-of-contents">
 					<ul>
 						{headings.map((heading) => {
 							const activeHeader = document.querySelector(`#${heading.id}`) ?? headings[0].id;
@@ -141,8 +117,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 							);
 						})}
 					</ul>
-				</TableOfContents>
-				<div className="prose dark:prose-dark">
+				</aside>
+				<div className="prose">
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
 			</article>
@@ -156,24 +132,42 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 	const { content, data } = matter(source);
 
-	const mdxSource = await serialize(content, {
-		mdxOptions: {
-			remarkPlugins: [],
-			rehypePlugins: [
-				rehypeSlug,
-				[
-					rehypeAutolinkHeadings,
-					{
-						properties: {
-							className: ['anchor']
+	const mdxSource = await serialize(
+		content,
+		{
+			mdxOptions: {
+				remarkPlugins: [
+					[
+						remarkCodeHike,
+						{
+							autoImport: false,
+							theme: "material-default",
+							lineNumbers: true,
+							showCopyButton: true,
+							autoLink: true,
+							staticMediaQuery: "not screen, (max-width: 768px)",
+
+						},
+					],
+				],
+				rehypePlugins: [
+					rehypeSlug,
+					[
+						rehypeAutolinkHeadings,
+						{
+							properties: {
+								className: ['anchor']
+							}
 						}
-					}
-				]
-			],
-			format: 'mdx'
-		},
-		scope: data
-	});
+					]
+				],
+				format: 'mdx',
+				useDynamicImport: true,
+			},
+			// made available to the arguments of any custom mdx component
+			scope: data
+		}
+	);
 	return {
 		props: {
 			source: mdxSource,

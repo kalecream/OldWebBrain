@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import { CH } from '@code-hike/mdx/components';
 
 const CustomH1 = ({ id, ...rest }) => {
 	if (id) {
@@ -77,6 +78,7 @@ export const CustomComponents = {
 	Head,
     Link,
     Image,
+	CH,
 	CustomH1,
 	CustomH2,
 	CustomH3,
