@@ -14,7 +14,7 @@ const Hero = () => {
 					<div className={`${styles['text-container']} `}>
 						<center>
 							<p>
-								<b>Web developer based in Kingston, Jamaica.</b>
+								<b>Web developer</b><br/> based in Kingston, Jamaica.
 							</p>
 						</center>
 
