@@ -110,15 +110,9 @@ export const Projects: ProjectStructure[] = [
 			<a key="0033" href="https://greensock.com/gsap/">
 				GSAP
 			</a>,
-			<a key="0034" href={'https://sanity.io/'}>
-				Sanity
-			</a>,
-			<a key="0035" href={'https://prisma.io'}>
-				Prisma
-			</a>,
 		],
 		created: '2022-08',
-		language: ['React', 'TypeScript', 'MDX', 'ProsgreSQL'],
+		language: ['React', 'TypeScript', 'MDX'],
 	},
 	{
 		id: '004',
