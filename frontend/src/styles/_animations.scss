@@ -1,15 +1,6 @@
-@keyframes fadeInFromBelow {
-    0% {
-      opacity: 0;
-      transform: translateY(2rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-}
-}
 
-.fadeIn--below {
+
+.fadeIn__below {
     animation: fadeInFromBelow 1s ease-in-out;
 }
 
@@ -50,8 +41,19 @@
   }
 }
 
+@keyframes fadeInFromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .skill-marquee, .fadeIn--below, .sitename  {
+  .skill-marquee, .fadeIn__below, .sitename  {
     animation-play-state: paused;
   }
 }
