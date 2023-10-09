@@ -1,4 +1,5 @@
 ---
+id: 002
 title: "Garden Tracker"
 date: "2023-05-04"
 draft: false
@@ -7,17 +8,21 @@ description: "A customized garden tracker that helps you keep track of everythin
 coverImage: "/img/blog/category/brain.png"
 ---
 
+<CH.Section>
 Gardening is a rewarding and fulfilling activity, but it can be overwhelming to keep track of all the details. Between the different types of plants, planting dates, watering schedules, and pest control measures, it's easy to lose track of what needs to be done when. That's where a garden tracker comes in handy. By tracking your garden's progress, you can stay organized and ensure that your plants thrive.
 
-Firstly, we need to create a new note in Obsidian. We'll call it `Plants`. This note will be the main hub for all of our garden tracking information. We'll use the `Dataview` plugin to create a table of all the plants we're growing, and we'll use the `Minimal Theme` to make it look nice.
+Firstly, we need to create a new note in [Obsidian](https://obsidian.md/). We'll call it [Plants.md](). This note will be the main hub for all of our garden tracking information. We'll use the [Dataview ](https://github.com/blacksmithgu/obsidian-dataview) to create a table of all the plants we're growing, and I used it with Minimal Theme.
 
-Then we need to create a new note called `New Plant`. This note will be a template for all of our plants.
+Then, we need to create a new note called [New_Plant.md](). This note will be a template for all of our plants.
 
-We can then plug this into our daily note template with `![[Plant]]]`, so that we can easily see our platn status every day.
+</CH.Section>
 
-## Plants
 
-````text
+<CH.Code>
+
+
+
+````md Plants.md
 ---
 cssclass: cards, cards-cover, cards-1-1
 ---
@@ -27,8 +32,6 @@ name New Plant
 type note(New Plant) template
 action NewPlant
 ```
-
-^button-4ohu
 
 ```dataview
 TABLE WITHOUT ID image,
@@ -48,15 +51,9 @@ FROM [[Plants]] and #apartment
 
 ````
 
-## New Plant Template
-
-```text
-
-[[Plants]] #apartment
-
+```md New_Plant.md
+category:: [[Plants]] #apartment
 image:: ![img](https://placehold.it/100x100)
-
----
 
 water::
 sun::
@@ -67,3 +64,12 @@ pH::
 harvest::
 
 ```
+
+```md DailyNote.md
+---
+---
+
+![[Plants.md]]
+```
+
+</CH.Code>
