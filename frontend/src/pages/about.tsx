@@ -77,15 +77,11 @@ export const About = () => {
 					<p>
 						{' '}
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
-						making pretty pages online then. I'm learning and experimenting every day to hone my craft.
+						making pretty pages online then. I'm learning and experimenting every day to hone my craft. You can view the <Link href="/changelog">changelog for this website</Link>!
 						
 						{/* Here are the
 						rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for{' '}
 						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link> */}
-					</p>
-
-					<p>
-						You can also view the <Link href="/changelog">changelog for this website</Link>.
 					</p>
 
 					{/* <CodersrankSummary /> */}
