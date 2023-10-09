@@ -652,3 +652,13 @@ span.project__status.archived {
 		display: block;
 	}
 }
+
+// CodeHike Component CSS
+.ch-codeblock .ch-code-button {
+	display: none;
+  }
+  
+  .ch-codeblock:hover .ch-code-button {
+	display: block;
+  }
+  
