@@ -26,12 +26,11 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 				<div className={ styles.container}>
 					{posts.map((post) => {
 						return (
-							<Link className={styles.article__featured} href={post.slug} >
-								<img src={post.coverImage} />
-								<div className='former-featured-article-content'>
-									<p className='post-date'>{post.date}</p>
-									<h2>{post.title}</h2>
-									<p>{post.description}</p>
+							<Link className={`${styles.article}`} href={post.slug} >
+								<div className={styles.article__section}>
+									<p className={ styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</p>
+									<h2 className={styles.article__title}>{post.title}</h2>
+									<p className={styles.article__description}>{post.description}</p>
 								</div>
 							</Link>
 						);
@@ -67,13 +66,13 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 								)} */}
 								<div className={styles.article__section}>
 									{post.date && (
-										<span className={styles.article__date}>{format(parseISO(post.date), 'MMMM dd, yyyy')}</span>
+										<span className={styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
 									)}
 									<h2 className={styles.article__title}>{post.title}</h2>
 
 									<p className={styles.article__description}>{post.description}</p>
 
-									{post.tags && (
+									{/* {post.tags && (
 										<div className={styles.article__tags}>
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className={styles.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
@@ -81,13 +80,13 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 												</Link>
 											))}
 										</div>
-									)}
+									)} */}
 								</div>
 							</Link>
 						))}
 					</div>
 					{/* TODO: Add weeklogs and tutorials */}
-					{/* <CustomLink href={`/blog`}>More Posts ⟶</CustomLink> */}
+					<Link href={`/blog`}>More Posts ⟶</Link>
 				</section>
 			)}
 		</>

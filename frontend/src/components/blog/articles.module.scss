@@ -1,24 +1,5 @@
 @import '@styles/mediaQuery';
 
-.former-featured-article {
-    width: 300px;
-    height: auto;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    opacity: 0.5;
-}
-
-.regular-article {
-    width: 300px;
-    height: auto;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: var(--border);
-    border-radius: var(--border-radius);
-}
-
 .blog-top {
     width: 100%;
 }
@@ -27,64 +8,6 @@
     display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
-	justify-content: center;
-}
-
-.article__featured {
-    flex: 1 1 500px;
-	padding: var(--paddingObjectSmall);
-	border: var(--border);
-	background-color: var(--backgroundColor);
-	border-radius: var(--borderRadius);
-
-	&:hover {
-		cursor: pointer;
-		background-color: var(--secondary);
-		color: var(--backgroundColor);
-		border: var(--border);
-	}
-
-	& > img {
-		margin: auto 5px;
-		width: 100px;
-		object-fit: cover;
-		border-radius: var(--border-radius);
-	}
-
-	& > .former-featured-article-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: var(--paddingObject);
-
-		& > .post-date {
-			font-size: 0.8rem;
-			font-weight: 600;
-			margin: 0.5rem 0;
-			color: var(--textColorFade);
-		}
-
-		& > h2 {
-			font-size: 1.3rem;
-			font-weight: 600;
-			margin: 0.5rem 0;
-			text-align: center;
-		}
-
-		& > p {
-			font-size: 1rem;
-			text-align: justify;
-			opacity: 0.8;
-		}
-	}
-
-    @include breakpoint-range($from: mobile, $to: tablet) {
-        flex: 1 1 300px;
-        & > img {
-			display: none;
-		}
-    }
 }
 
 .table-of-contents {
@@ -123,13 +46,16 @@
 //  article cards
 .article {
 	display: flex;
+	flex: 1 1 300px;
+	max-width: 400px;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--backgroundColor);
+	// background-color: var(--backgroundColor);
 	border-radius: var(--borderRadius);
-	text-align: center;
+	text-align: start;
 	// box-shadow: var(--boxShadow);
 	border: var(--border);
+	backdrop-filter: blur(20px);
 
 	&:hover {
 		cursor: pointer;
@@ -141,14 +67,10 @@
 	}
 
 	@include breakpoint-range($from: mobile) {
-		flex: 1 1 300px;
-		max-width: 350px;
 		flex-direction: column;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		flex: 1 1 450px;
-		max-width: 500px;
 		flex-direction: row;
 	}
 
@@ -167,36 +89,33 @@
 		padding: 1rem;
 	}
 
-	&__section a h2 {
-		padding: 0;
-		margin: 0.05rem 0;
-		display: flex;
-	}
-
 	&__date {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
+		font-weight: 300;
 		color: var(--textColorFade);
+		font-family: var(--headingFont);
 	}
 
 	&__title {
+		padding: 0;
+		margin: 1rem 0;
 		color: var(--text);
-		font-family: var(--bodyFont);
+		font-family: var(--headingFont);
+		font-weight: 500;
 	line-height: 1;
-	font-size: 1rem;
-	text-align: center;
+	font-size: 1.3rem;
 
-	@include breakpoint-range($from: mobile) {
-		font-size: 1.5rem;
-	}
+		@include breakpoint-range($from: mobile, $to: tablet) {
+			font-size: 1.5rem;
+			margin-left: 2rem;
+		}
 	}
 
 	&__description {
-		font-size: 0.85rem;
+		font-size: 1rem;
 	font-weight: 400;
 	line-height: 1rem;
-	color: var(--textColorFade);
-	text-align: start;
-	margin: 0 1.5rem;
+	color: var(--textColor);
 
 	@include breakpoint-range($from: mobile) {
 		font-size: 0.8rem;
@@ -221,5 +140,3 @@
 	line-height: 1.2rem;
 	}
 }
-
-
