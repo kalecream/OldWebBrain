@@ -141,7 +141,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 						remarkCodeHike,
 						{
 							autoImport: false,
-							theme: "material-default",
+							// @todo make a custom theme
+							theme: "github-dark-dimmed",
 							lineNumbers: true,
 							showCopyButton: true,
 							autoLink: true,
