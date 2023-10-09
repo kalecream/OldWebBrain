@@ -217,7 +217,7 @@ export const Projects: ProjectStructure[] = [
 		image: '/img/project/009.webp',
 		status: 'completed',
 		description: <span>A 3D render of a strawberry milkshake I made after for a dailySketch prompt.</span>,
-		technology: ['Blender3D'],
+		technology: [<a key="00901">Blender3D</a>],
 		language: ['∅'],
 		created: '2022-11-12',
 	},
