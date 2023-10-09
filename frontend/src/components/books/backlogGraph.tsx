@@ -209,7 +209,7 @@ export const RandomBooks: FC = () => {
 
 	return (
 		<div className={styles.random}>
-			{randomBooks.slice(0, 4).map((book) => (
+			{randomBooks.slice(0, 2).map((book) => (
 				<div key={book.title} className={`${styles.books__random}`}>
 					<p>
 						<Link className={styles.book__title} href={`https://www.google.com/search?q=${book.title}`}>
