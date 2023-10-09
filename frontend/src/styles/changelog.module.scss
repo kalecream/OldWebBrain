@@ -1,0 +1,124 @@
+@import '@styles/mediaQuery';
+
+
+.release {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    min-width: 400px;
+    margin: 0 auto;
+    justify-content: flex-start;
+
+    &__container {
+        background-color: var(--backgroundColor);
+    }
+
+    &__content {
+        justify-content: flex-start;
+        position: relative;
+        
+    }
+
+    &__timeline {
+        position: sticky;
+
+        @include breakpoint-range($from: mobile) {
+            & > svg {
+                margin-left: -12px;
+            }
+        }
+
+        @include breakpoint-range($from: desktopSmall) {
+            & > svg {
+                margin-left: -12px;
+            }
+        }
+    }
+
+    &__left {
+    
+        h2 {
+            max-width: 400px;
+            font-weight: 500;
+        }
+
+        
+       
+        @include breakpoint-range($from: desktopSmall) {
+            width: 450px;
+        }
+    }
+
+    &__details {
+        padding: 2rem 0;
+        padding-left: 20px;
+        border-left: 1px solid var(--textColorFade);
+        display: flex;
+        gap: 2rem;
+        backdrop-filter: blur(20px);
+
+        p {
+            backdrop-filter: none;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        @include breakpoint-range($from: mobile) {
+            flex-direction: column;
+        }
+
+        @include breakpoint-range($from: desktopSmall) {
+            flex-direction: row;
+        }
+    }
+
+    &__markdown {
+        flex-wrap: wrap;
+        p, p a {
+            margin: 0;
+
+            @include breakpoint-range($from: mobile) {
+                max-width: 25rem;
+            }
+
+            @include breakpoint-range($from: desktopSmall) {
+                max-width: 55rem;
+            }
+        }
+
+        ul {
+            margin: 0.5rem;
+        }
+
+        li {
+            // list-style: none;
+
+            a {
+                font-size: 0.8rem;
+            }
+
+            @include breakpoint-range($from: mobile) {
+                max-width: 15rem;
+            }
+
+            @include breakpoint-range($from: desktopSmall) {
+                max-width: 55rem;
+            }
+        }
+
+        // release title
+        a h2 {
+            font-size: 2rem;
+            margin-bottom: 0;
+           
+        }
+
+        h2{
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: var(--bodyFont);
+            margin: 0.5rem 0;
+        }
+    }
+}

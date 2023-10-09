@@ -82,6 +82,10 @@ export const About = () => {
 						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>
 					</p>
 
+					<p>
+						You can also view the <Link href="/changelog">changelog for this website</Link>.
+					</p>
+
 					{/* <CodersrankSummary /> */}
 
 					<h2 style={{ textAlign: 'center' }}>Books</h2>
