@@ -415,7 +415,7 @@ kbd::after,
 }
 
 .pancake-child {
-	flex: 1 1 400px;
+	flex: 1 1 350px;
 	margin: 1rem;
 }
 
@@ -432,114 +432,8 @@ kbd::after,
 	}
 }
 
-/* cards */
-
-.blog__article {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--backgroundColor);
-	border-radius: var(--borderRadius);
-	text-align: center;
-	box-shadow: var(--boxShadow);
-	border: var(--border);
-
-	&:hover {
-		cursor: pointer;
-		background-color: var(--textColorFade);
-	}
-
-	& > * {
-		margin: 0 auto;
-	}
-
-	@include breakpoint-range($from: mobile, $to: desktopSmall) {
-		flex: 1 1 200px;
-		max-width: 300px;
-		flex-direction: column;
-	}
-
-	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
-		flex: 1 1 350px;
-		height: 175px;
-		max-width: 400px;
-		flex-direction: row;
-	}
-}
-
-.image-wrapper {
-	margin: 0 auto;
-}
-
-.blog--article__section {
-	padding: 1rem;
-}
-
-.blog--article__section a h2 {
-	padding: 0;
-	margin: 0.05rem 0;
-	display: flex;
-}
-
-.blog--article__image {
-	aspect-ratio: 1/1;
-	object-fit: contain;
-	border-radius: 2px;
-	place-items: center;
-}
-
-.blog--article__date {
-	font-size: 0.9rem;
-	color: var(--textColorFade);
-}
-
-.article__title {
-	color: var(--text);
-	line-height: 1;
-	font-family: var(--accentFont);
-	font-size: 1rem;
-	text-align: start;
-}
-
-.article__title:hover {
-	cursor: pointer;
-	color: var(--accent);
-}
-
-.article__description {
-	font-size: 0.75rem;
-	font-weight: 400;
-	line-height: 1rem;
-	color: var(--textColorFade);
-	text-align: start;
-	margin: 0.5rem 0;
-}
-
-.article__tags {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	gap: 0.5rem;
-}
-
-.article__tags .tag {
-	padding: 0.2rem 0.5rem;
-	border-radius: var(--borderRadius);
-	color: var(--textColorFade);
-	font-size: 0.55rem;
-	font-weight: 400;
-	line-height: 1.2rem;
-}
-
-@media (max-width: 768px) {
-	.blog--article__title {
-		font-size: 1.8rem;
-	}
-
-	.article__description {
-		font-size: 0.7rem;
-		padding: 0;
-	}
+.image__wrapper {
+	margin: auto;
 }
 
 @media (min-width: 768px) {
