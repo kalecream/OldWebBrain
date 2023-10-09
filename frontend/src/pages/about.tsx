@@ -82,7 +82,7 @@ export const About = () => {
 						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>
 					</p>
 
-					<CodersrankSummary />
+					{/* <CodersrankSummary /> */}
 
 					<h2 style={{ textAlign: 'center' }}>Books</h2>
 
