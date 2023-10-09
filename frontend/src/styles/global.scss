@@ -115,10 +115,9 @@ main {
 }
 
 header {
-	// there's two bars whenever i make it sticky ???
-	position: fixed;
+	position: sticky;
 	top: 0;
-	width: 100vw;
+	width: 99.8vw;
 	justify-content: space-between;
 	align-items: center;
 	display: flex;
