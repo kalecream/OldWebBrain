@@ -56,6 +56,12 @@
 	// box-shadow: var(--boxShadow);
 	border: var(--border);
 	backdrop-filter: blur(20px);
+	padding: var(--paddingContainer);
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+	background: var(--articleCardBackground);
+
+
 
 	&:hover {
 		cursor: pointer;
@@ -116,6 +122,7 @@
 	font-weight: 400;
 	line-height: 1rem;
 	color: var(--textColor);
+	background-color:  var(--articleCardBackground);
 
 	@include breakpoint-range($from: mobile) {
 		font-size: 0.8rem;

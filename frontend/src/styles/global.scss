@@ -6,7 +6,7 @@
 $primary: rgb(17, 158, 160);
 $secondary: rgba(14, 174, 87, 1);
 $borderRadius: 5px;
-$padding-container: 1rem 3rem;
+$padding-container: 1.5rem 3rem;
 $padding-object: 1rem;
 $padding-object-small: 0.5rem;
 $heading-font: 'Inter', sans-serif;
@@ -47,6 +47,7 @@ $themes: (
 		accentFont: $accentFont,
 		// backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png')
 		backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
+		articleCardBackground: #dff6cb,
 	),
 	dark: (
 		primary: $primary,
@@ -74,6 +75,7 @@ $themes: (
 		headingFont: $heading-font,
 		accentFont: $accentFont,
 		backgroundImage: url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
+		articleCardBackground: #343632,
 	),
 );
 
@@ -84,6 +86,11 @@ $themes: (
 			--#{$key}: #{$value};
 		}
 	}
+}
+
+:root {
+	--mask: linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
+    radial-gradient(farthest-side,#000 98%,#0000) 0 0/50px 50px round;
 }
 
 html {
