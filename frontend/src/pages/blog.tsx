@@ -115,10 +115,7 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 								<div className={styles.article__section}>
 									
 									<h2 className={styles.log__title}>
-									{post.date && (
-										<span className={styles.log__date}>{format(parseISO(post.date), 'yyyy MMM dd ')}</span>
-									)}
-										{' ('} {format(parseISO(post.date), 'ww ')} {') '} {post.title}</h2>
+									{' '} {format(parseISO(post.date), 'yyyy-ww ')} {'| '} {post.title}</h2>
 
 									<p className={styles.log__description}>{post.description}</p>
 
