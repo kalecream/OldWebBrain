@@ -33,10 +33,9 @@ const Hero = () => {
 						>
 							Need a service?
 						</Link>
-						{/* TODO: add this link to the blog once it exists again */}
 						<Link
 							className={button.secondary + ` glassmorphic`}
-							href="/blog"
+							href="#blog"
 						>
 							Check out the blog
 						</Link>
