@@ -1,0 +1,51 @@
+---
+id: 003
+title: "Auto-Archive Old Emails"
+date: "2023-11-21"
+draft: false
+tags: ["Google", "Apps Script", "Gmail", "Automation"]
+description: "A daily app script to automatically archive old emails from 72 hours ago unless they have been starred."
+coverImage: "/img/blog/category/brain.png"
+---
+
+# Set-Up
+
+## Create a Google Apps Script
+
+1. Go to https://script.google.com/
+2. Click **New Project**
+3. Name the project
+4. Click **Untitled Project** to rename the project
+5. Click **Untitled Project** to open the project
+6. Delete the default code
+7. Paste the code below into the editor
+8. Click **Save**
+9. Click **Run** to run the function as a test to see if it works. You will be asked to authorize the script. Click **Review Permissions** and then **Allow**. You will need to do this every time you run the script.
+
+## Adding a Time-Driven Trigger
+
+1. Click **Edit**
+2. Click **Current project's triggers**
+3. Click **+ Add Trigger**
+4. Select the function name from the first drop-down menu
+5. Select **Time-driven** from the second drop-down menu
+6. Select **Day timer** from the third drop-down menu
+7. Select the time of day you want the function to run
+8. Click **Save**
+
+## Script
+
+
+
+```js script.js
+const archiveEmails = () => {
+  const now = new Date();
+  const old = new Date(now.getTime() - 72 * 60 * 60 * 1000);
+  const date = Utilities.formatDate(old, Session.getScriptTimeZone(), "yyyy/MM/dd");
+  const mail = GmailApp.search('in:inbox before:' + date + ' -is:starred');
+  
+  for (let i = 0; i < mail.length; i++) {
+    mail[i].moveToArchive();
+  }
+}
+```
