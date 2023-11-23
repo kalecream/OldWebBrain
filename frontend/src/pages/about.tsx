@@ -70,6 +70,8 @@ export const About = () => {
 						What's my personality like, you ask? Well, imagine if your favorite playlist, Netflix marathon, and book
 						collection had a baby - that's me! But don't take my word for it. Dive into the treasure trove of media
 						below. It's like a mixtape of my soul.
+
+						I have a <Link href="/rolodex">Rolodex</Link> dedicated to the most interesting persons, websites and articles I've come across on the internet. Most of these are places I frequent so this page also doubles as my bookmarks.
 					</p>
 
 					<h2 style={{ textAlign: 'center' }}>Coding</h2>
@@ -77,11 +79,11 @@ export const About = () => {
 					<p>
 						{' '}
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
-						making pretty pages online then. I'm learning and experimenting every day to hone my craft. You can view the <Link href="/changelog">changelog for this website</Link>!
+						making pretty pages online then. I'm learning and experimenting every day to hone my craft. You can view the <Link href="/changelog">changelog for this website</Link>! I also really like learning through the blogging of others. 
 						
 						{/* Here are the
 						rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for{' '}
-						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link> */}
+						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>  */}
 					</p>
 
 					{/* <CodersrankSummary /> */}
@@ -112,6 +114,28 @@ export const About = () => {
 						book.
 					</p>
 					<RandomBooks />
+
+					<br/><br/>
+
+					<h2 style={{ textAlign: 'center' }}>Games</h2>
+
+					<p>In my free time, I sleep. In my free-er times, I play one of these:</p>
+
+	
+						<p>
+							<b><Link href="https://www.legendsofidleon.com/">IdleOn</Link></b> An MMORPG that I can leave and get more rewards the longer I stay away, but also has a ton of little interactive things I can do when I feel like being active.
+						</p>
+						<p>
+							<b><Link href="https://www.wolvesville.com/?ref=landing">Wolvesville</Link></b> Another MMO that is a quick round game based on the party game, Mafia.
+						</p>
+						<p>
+							<b><Link href="https://shatteredpixel.com/shatteredpd/">Shattered Pixel Dungeon</Link></b> Loooooong rogue-like offline game I can play on my phone. I've been playing this game for more than a a decade. It took me years to beat it the first time. It's cute fun and open-source!
+						</p>
+						<p><b>Etrian Odyssey II: Heroes of Lagaard</b> A dungeon crawler made for the DS where I have never in my life seen the end. It's tedious, but passes the time when I'm stuck in a long queue.
+						</p> 
+
+
+
 				</div>
 			</section>
 		</Page>
