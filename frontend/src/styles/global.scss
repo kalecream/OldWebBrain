@@ -3,7 +3,7 @@
 @import 'animations';
 @import 'mediaQuery';
 
-$primary: #3C0753 ;
+$primary: #b797c5 ;
 $secondary: #720455 ;
 $borderRadius: 5px;
 $padding-container: 1.5rem 3rem;
@@ -25,7 +25,7 @@ $themes: (
 		secondary: $primary,
 		backgroundColor: #f2f0e9,
 		textColor: #222,
-		textColorFade: rgba(34, 34, 34, 0.4),
+		textColorFade: #030637,
 		captionColor: #aaa,
 		buttonTextColor: $secondary,
 		buttonTextTransform: none,
@@ -47,7 +47,7 @@ $themes: (
 		accentFont: $accentFont,
 		backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png'),
 		// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
-		articleCardBackground: #dff6cb,
+		articleCardBackground: #910A67,
 	),
 	dark: (
 		primary: $primary,
@@ -75,7 +75,7 @@ $themes: (
 		headingFont: $headingFont,
 		accentFont: $accentFont,
 		backgroundImage: url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
-		articleCardBackground: #343632,
+		articleCardBackground: #910A67,
 	),
 );
 
