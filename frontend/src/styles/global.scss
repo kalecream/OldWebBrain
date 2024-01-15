@@ -3,8 +3,8 @@
 @import 'animations';
 @import 'mediaQuery';
 
-$primary: rgb(17, 158, 160);
-$secondary: rgba(14, 174, 87, 1);
+$primary: #3C0753 ;
+$secondary: #720455 ;
 $borderRadius: 5px;
 $padding-container: 1.5rem 3rem;
 $padding-object: 1rem;
@@ -23,7 +23,7 @@ $themes: (
 	light: (
 		primary: $secondary,
 		secondary: $primary,
-		backgroundColor: #fff,
+		backgroundColor: #f2f0e9,
 		textColor: #222,
 		textColorFade: rgba(34, 34, 34, 0.4),
 		captionColor: #aaa,
@@ -320,7 +320,7 @@ h3 {
 
 p {
 	margin-bottom: 0.8rem;
-	backdrop-filter: blur($blur);
+	// backdrop-filter: blur($blur);
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		margin: 0 2.5rem;
