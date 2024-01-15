@@ -191,57 +191,6 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 						{/* TODO: Add weeklogs and tutorials */}
 						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
 					</div>
-					<div>
-						<h2 className="section-title">Week Notes</h2>
-						<div className="pancake section-content">
-							{posts.slice(0, 4).map(
-								(post) =>
-									post.tags.includes('log') && (
-										<Link
-											as={`/posts/${post.slug}`}
-											key={post.slug}
-											href={`/posts/[slug]`}
-											className={`${styles.log} pancake-child`}
-										>
-											{/* {post.coverImage && (
-									<div className={'image__wrapper'}>
-										<Image
-											height={0}
-											width={0}
-											loader={({ src }) => src}
-											sizes='100vw'
-											style={{ width: 'auto', height: '100px' }}
-											src={post.coverImage}
-											alt={post.alt ? post.alt : ''}
-											className={styles.article__image}
-										/>
-									</div>
-								)} */}
-											<div className={styles.article__section}>
-												<h2 className={styles.log__title}>
-													<span className={styles.log__date}>{format(parseISO(post.date), '[yyyy-ww] ')}</span> {'    '}{' '}
-													{post.title}
-												</h2>
-
-												<p className={styles.log__description}>{post.description}</p>
-
-												{/* {post.tags && (
-										<div className={styles.article__tags}>
-											{post.tags.slice(0, 2).map((tag) => (
-												<Link className={styles.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
-													{tag}
-												</Link>
-											))}
-										</div>
-									)} */}
-											</div>
-										</Link>
-									),
-							)}
-						</div>
-						{posts.length == 0 && <p>Nothing here yet!</p>}
-						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
-					</div>
 				</section>
 			)}
 		</>
