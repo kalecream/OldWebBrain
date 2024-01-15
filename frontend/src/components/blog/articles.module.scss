@@ -96,24 +96,17 @@
 	}
 
 	&__section {
-		padding: 1rem;
-	}
-
-	&__date {
-		font-size: 0.8rem;
-		font-weight: 300;
-		color: var(--textColorFade);
-		font-family: var(--headingFont);
+		padding: 15px;
 	}
 
 	&__title {
 		padding: 0;
-		margin: 1rem 0;
-		color: var(--text);
+		margin: 0.5rem 0;
+		color: var(--backgroundColor);
 		font-family: var(--headingFont);
 		font-weight: 500;
-		line-height: 1;
-		font-size: 1.3rem;
+		line-height: 1.1;
+		font-size: 1.5rem;
 
 		@include breakpoint-range($from: mobile, $to: tablet) {
 			font-size: 1.5rem;
@@ -122,14 +115,16 @@
 	}
 
 	&__description {
+		margin: 0;
+		padding: 0;
 		font-size: 1rem;
 		font-weight: 400;
-		line-height: 1rem;
-		color: var(--textColor);
+		line-height: 1.2rem;
+		color: var(--backgroundColor);
 		background-color: var(--articleCardBackground);
 
 		@include breakpoint-range($from: mobile) {
-			font-size: 0.8rem;
+			font-size: 1rem;
 		}
 	}
 
