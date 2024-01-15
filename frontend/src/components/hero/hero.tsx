@@ -35,7 +35,7 @@ const Hero = () => {
 						</Link>
 						<Link
 							className={button.secondary + ` glassmorphic`}
-							href="#blog"
+							href="/blog"
 						>
 							Check out the blog
 						</Link>

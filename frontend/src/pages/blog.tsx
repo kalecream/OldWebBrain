@@ -2,8 +2,6 @@ import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
 import { Page } from '@containers/layout';
 import Link from 'next/link';
-import Image from 'next/image';
-// import { ImageLoader } from '@utils/ImageLoader';
 import styles from '@components/blog/articles.module.scss';
 import { format, parseISO } from 'date-fns';
 
@@ -16,43 +14,145 @@ export type PostType = {
 	title?: string;
 };
 
+type Year = {
+	date: string;
+	months: Month[];
+};
+
+type Month = {
+	date: string;
+	name: string;
+	posts: PostType[];
+};
+
+let years: Year[] = [];
+const monthNames = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+];
+
 export const BlogPage = ({ posts }: PostType): JSX.Element => {
+
+	const removeDupicates = (data) => {
+		return data.filter((value, i) => data.indexOf(value) === i);
+	}
+	
+	posts.forEach((post) => {
+		const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
+
+		let year: Year | undefined = years.find((year) => year.date === yearDate);
+		if (!year) {
+			year = {
+				date: yearDate,
+				months: [],
+			};
+			years.push(year);
+		}
+
+		let month = year.months.find((month) => month.date === monthDate);
+		if (!month) {
+			const monthIndex = parseInt(monthDate) - 1;
+			const monthName = monthNames[monthIndex];
+			month = {
+				date: monthDate,
+				name: monthName,
+				posts: [],
+			};
+			year.months.push(month);
+		}
+
+		month.posts.push({
+			...post,
+			date: dayDate,
+		});
+	});
+
+	years
+		.sort((a, b) => parseInt(b.date) - parseInt(a.date))
+		.forEach((year) => {
+			year.months
+				.sort((a, b) => parseInt(b.date) - parseInt(a.date))
+				.forEach((month) => {
+					month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+				});
+			
+		})
+	
+	years.forEach(year => {
+			year.months.forEach(month => {
+				year.months
+					.forEach((month) => {
+						removeDupicates(month.posts)
+					})
+			})
+		});
+	console.log(years);
 
 	return (
 		<Page>
-			<section>
-				<h2 className='section-title'>Blog</h2>
-				<div className={ styles.container}>
-					{posts.map((post) => {
-						return (
-							<Link className={`${styles.article}`} href={post.slug} >
-								<div className={styles.article__section}>
-									<p className={ styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</p>
-									<h2 className={styles.article__title}>{post.title}</h2>
-									<p className={styles.article__description}>{post.description}</p>
-								</div>
-							</Link>
-						);
-					})}
-				</div>
+			<section className={styles.section}>
+				<h2 className="section-title">Blog</h2>
+				<ul>
+					<li className={styles.nolist}>
+						{years.map((year) => (
+							<>
+								{year.months.map((month, i) => (
+									<ul>
+										<li className={styles.nolist} key={i}>
+											<h2 className={styles.month}>
+												<span>{month.name}</span> <span>{i === 0 && year.date}</span>
+											</h2>
+										</li>
+										{month.posts.map((post) => (
+											<Link className={styles.link} href={post.slug} key={post.slug}>
+												<div className={styles.list__section}>
+													<div>
+														<span className={styles.list__date}>{post.date}</span>
+														<h3 className={styles.list__title}>{post.title}</h3>
+													</div>
+													<p className={styles.list__description}>{post.description}</p>
+												</div>
+											</Link>
+										))}
+									</ul>
+								))}
+							</>
+						))}
+					</li>
+				</ul>
 			</section>
 		</Page>
 	);
 };
 
-export const BlogList = ({ posts }: PostType ): JSX.Element => {
-
+export const BlogList = ({ posts }: PostType): JSX.Element => {
 	return (
 		<>
 			{posts.length > 0 && (
-				<section id='blog' className='fadeIn__below' >
-					<div className='pancake'>
-					<h2 className='section-title'>Posts</h2>
-					<div className='pancake section-content'>
-						{posts.slice(0, 4).map((post) => (
-							!post.tags.includes('log') &&  (
-							<Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`} className={`${styles.article} pancake-child`}>
-								{/* {post.coverImage && (
+				<section id="blog" className="fadeIn__below">
+					<div className="pancake">
+						<h2 className="section-title">Posts</h2>
+						<div className="pancake section-content">
+							{posts.slice(0, 4).map(
+								(post) =>
+									!post.tags.includes('log') && (
+										<Link
+											as={`/posts/${post.slug}`}
+											key={post.slug}
+											href={`/posts/[slug]`}
+											className={`${styles.article} pancake-child`}
+										>
+											{/* {post.coverImage && (
 									<div className={'image__wrapper'}>
 										<Image
 											height={0}
@@ -66,15 +166,15 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 										/>
 									</div>
 								)} */}
-								<div className={styles.article__section}>
-									{post.date && (
-										<span className={styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
-									)}
-									<h2 className={styles.article__title}>{post.title}</h2>
+											<div className={styles.article__section}>
+												{post.date && (
+													<span className={styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
+												)}
+												<h2 className={styles.article__title}>{post.title}</h2>
 
-									<p className={styles.article__description}>{post.description}</p>
+												<p className={styles.article__description}>{post.description}</p>
 
-									{/* {post.tags && (
+												{/* {post.tags && (
 										<div className={styles.article__tags}>
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className={styles.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
@@ -83,22 +183,27 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 											))}
 										</div>
 									)} */}
-								</div>
-							</Link>
-							)
-						))}
-					</div>
-					{/* TODO: Add weeklogs and tutorials */}
-					{posts.length > 4 && (
-						<Link href={`/blog`}>More Posts ⟶</Link>)}
+											</div>
+										</Link>
+									),
+							)}
 						</div>
-						<div>
-					<h2 className='section-title'>Week Notes</h2>
-					<div className='pancake section-content'>
-							{posts.slice(0, 4).map((post) => (
-							post.tags.includes('log') &&  (
-							<Link as={`/posts/${post.slug}`} key={post.slug} href={`/posts/[slug]`} className={`${styles.log} pancake-child`}>
-								{/* {post.coverImage && (
+						{/* TODO: Add weeklogs and tutorials */}
+						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
+					</div>
+					<div>
+						<h2 className="section-title">Week Notes</h2>
+						<div className="pancake section-content">
+							{posts.slice(0, 4).map(
+								(post) =>
+									post.tags.includes('log') && (
+										<Link
+											as={`/posts/${post.slug}`}
+											key={post.slug}
+											href={`/posts/[slug]`}
+											className={`${styles.log} pancake-child`}
+										>
+											{/* {post.coverImage && (
 									<div className={'image__wrapper'}>
 										<Image
 											height={0}
@@ -112,14 +217,15 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 										/>
 									</div>
 								)} */}
-								<div className={styles.article__section}>
-									
-									<h2 className={styles.log__title}>
-									<span className={styles.log__date}>{format(parseISO(post.date), '[yyyy-ww] ')}</span> {'    '} {post.title}</h2>
+											<div className={styles.article__section}>
+												<h2 className={styles.log__title}>
+													<span className={styles.log__date}>{format(parseISO(post.date), '[yyyy-ww] ')}</span> {'    '}{' '}
+													{post.title}
+												</h2>
 
-									<p className={styles.log__description}>{post.description}</p>
+												<p className={styles.log__description}>{post.description}</p>
 
-									{/* {post.tags && (
+												{/* {post.tags && (
 										<div className={styles.article__tags}>
 											{post.tags.slice(0, 2).map((tag) => (
 												<Link className={styles.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
@@ -128,28 +234,25 @@ export const BlogList = ({ posts }: PostType ): JSX.Element => {
 											))}
 										</div>
 									)} */}
-								</div>
-							</Link>
-							)
-						))}
-					</div>
-						{posts.length == 0 && (
-							<p>Nothing here yet!</p>
-					)}
-					{posts.length > 4 && (
-						<Link href={`/blog`}>More Posts ⟶</Link>)}
+											</div>
+										</Link>
+									),
+							)}
 						</div>
+						{posts.length == 0 && <p>Nothing here yet!</p>}
+						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
+					</div>
 				</section>
 			)}
 		</>
-	)
+	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const posts = getAllPosts(['date', 'description', 'slug', 'title', 'coverImage', 'tags']);
 
 	return {
-		props: { posts }
+		props: { posts },
 	};
 };
 
