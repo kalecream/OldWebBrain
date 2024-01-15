@@ -1,4 +1,4 @@
-import Page from '@containers/layout/page';
+import Page from '@containers/layout/BlogPage';
 import { Key,  useEffect, useState } from 'react';
 import { CustomComponents } from '@components/blog/customElements';
 import { format, parseISO } from 'date-fns';
@@ -9,8 +9,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { remarkCodeHike } from "@code-hike/mdx"
 
-
-import Image from 'next/image';
 import path from 'path';
 import { PostType } from '@pages/blog';
 import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
@@ -63,19 +61,6 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 		<Page >
 			<article>
 				<div className="article--header">
-					<figure className="article--image">
-						<Image
-							height={0}
-							width={0}
-							loader={({ src }) => src}
-							sizes="100vw"
-							style={{ width: '400px', height: 'auto' }}
-							src={frontMatter.coverImage}
-							alt={frontMatter.alt ? frontMatter.alt : ''}
-							className="blog--article__image"
-						/>
-						{/* <img src={frontMatter.coverImage} alt="" width={400} /> */}
-					</figure>
 
 					<div className="article--information">
 						<h1 className="article--heading">{frontMatter.title}</h1>

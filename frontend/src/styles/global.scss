@@ -45,8 +45,8 @@ $themes: (
 		bodyFont: $body-font,
 		headingFont: $headingFont,
 		accentFont: $accentFont,
-		// backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png')
-		backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
+		backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png'),
+		// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
 		articleCardBackground: #dff6cb,
 	),
 	dark: (
@@ -477,24 +477,29 @@ kbd::after,
 
 article {
 	margin: 0 auto;
-	max-width: 55rem;
+	max-width: 45rem;
 
 	display: flex;
 	flex-direction: column;
 }
 
+article h1, article h2, article h3 {
+	text-align: center;
+}
+
 article p {
-	font-size: 1.2rem;
-	line-height: 1.6;
+	font-size: 1.1rem;
+	line-height: 1.4;
 }
 
 code {
 	font-family: 'Fira Code', monospace;
 }
 
-article ul {
+article ul, article ol {
 	list-style: none;
-	padding: 0;
+	padding: 2rem;
+	font-size: 1.1rem;
 	margin: 0;
 }
 
@@ -523,41 +528,29 @@ article li::marker {
 .article--heading {
 	line-height: 1.2;
 	margin-bottom: 1rem;
-	font-size: 3.5rem;
-	font-weight: 600;
-	color: var(--primary);
-	font-family: var(--accentFont);
-}
-
-.article--image {
-	width: 100%;
-	display: flex;
-	margin-bottom: 0.5rem;
-}
-
-.article--image img {
-	margin: 0 auto;
+	font-size: 2.5rem;
+	font-weight: 300;
+	// color: var(--primary);
 }
 
 .article--description {
-	color: var(--textColorFade);
-	font-size: 1.2rem;
-	margin-bottom: 3rem;
+	opacity: 0.65;
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
 }
 
 .article--details {
+	opacity: 0.65;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 2rem;
 }
 
 .article--created,
 .article--readtime {
-	color: var(--textColorFade);
-	font-size: 1.2rem;
-	margin-bottom: 1rem;
+	font-size: 1rem;
+	margin-bottom: 0;
 	display: inline-block;
 }
 
