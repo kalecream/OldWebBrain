@@ -3,7 +3,6 @@ import { GetStaticProps } from 'next';
 import { Page } from '@containers/layout';
 import Link from 'next/link';
 import styles from '@components/blog/articles.module.scss';
-import { format, parseISO } from 'date-fns';
 
 export type PostType = {
 	[x: string]: any;
@@ -167,9 +166,7 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 									</div>
 								)} */}
 											<div className={styles.article__section}>
-												{post.date && (
-													<span className={styles.article__date}>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
-												)}
+												
 												<h2 className={styles.article__title}>{post.title}</h2>
 
 												<p className={styles.article__description}>{post.description}</p>
