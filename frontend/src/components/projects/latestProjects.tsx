@@ -2,7 +2,7 @@ import Projects from '@data/projectsData';
 import styled from '@emotion/styled';
 import { FaToolbox, FaLanguage, FaGithub } from 'react-icons/fa6';
 import Link from 'next/link';
-import button from '@components/_basic/button.module.scss';
+import button from '@styles/modules/button.module.scss';
 
 // TODO convert to scss modules
 const ProjectCard = styled.div`

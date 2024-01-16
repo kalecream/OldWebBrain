@@ -4,6 +4,7 @@ import { Page } from '@containers/layout';
 import Link from 'next/link';
 import styles from '@components/blog/articles.module.scss';
 import { useMemo } from 'react';
+import { LatestProject } from '@components/projects';
 
 export type PostType = {
 	[x: string]: any;
@@ -42,64 +43,59 @@ const monthNames = [
 ];
 
 export const BlogPage = ({ posts }: PostType): JSX.Element => {
-
 	useMemo(() => {
+		const removeDupicates = (data) => {
+			return data.filter((value, i) => data.indexOf(value) === i);
+		};
 
-	const removeDupicates = (data) => {
-		return data.filter((value, i) => data.indexOf(value) === i);
-	}
-	
-	posts.forEach((post) => {
-		const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
+		posts.forEach((post) => {
+			const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
 
-		let year: Year | undefined = years.find((year) => year.date === yearDate);
-		if (!year) {
-			year = {
-				date: yearDate,
-				months: [],
-			};
-			years.push(year);
-		}
+			let year: Year | undefined = years.find((year) => year.date === yearDate);
+			if (!year) {
+				year = {
+					date: yearDate,
+					months: [],
+				};
+				years.push(year);
+			}
 
-		let month = year.months.find((month) => month.date === monthDate);
-		if (!month) {
-			const monthIndex = parseInt(monthDate) - 1;
-			const monthName = monthNames[monthIndex];
-			month = {
-				date: monthDate,
-				name: monthName,
-				posts: [],
-			};
-			year.months.push(month);
-		}
+			let month = year.months.find((month) => month.date === monthDate);
+			if (!month) {
+				const monthIndex = parseInt(monthDate) - 1;
+				const monthName = monthNames[monthIndex];
+				month = {
+					date: monthDate,
+					name: monthName,
+					posts: [],
+				};
+				year.months.push(month);
+			}
 
-		month.posts.push({
-			...post,
-			date: dayDate,
+			month.posts.push({
+				...post,
+				date: dayDate,
+			});
 		});
-	});
 
-	years
-		.sort((a, b) => parseInt(b.date) - parseInt(a.date))
-		.forEach((year) => {
-			year.months
-				.sort((a, b) => parseInt(b.date) - parseInt(a.date))
-				.forEach((month) => {
-					month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
-				});
-			
-		})
-	
-	years.forEach(year => {
-			year.months.forEach(month => {
+		years
+			.sort((a, b) => parseInt(b.date) - parseInt(a.date))
+			.forEach((year) => {
 				year.months
+					.sort((a, b) => parseInt(b.date) - parseInt(a.date))
 					.forEach((month) => {
-						removeDupicates(month.posts)
-					})
-			})
-		});
-	}, [posts])
+						month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+					});
+			});
 
+		years.forEach((year) => {
+			year.months.forEach((month) => {
+				year.months.forEach((month) => {
+					removeDupicates(month.posts);
+				});
+			});
+		});
+	}, [posts]);
 
 	return (
 		<Page>
@@ -142,9 +138,9 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 	return (
 		<>
 			{posts.length > 0 && (
-				<section id="blog" className="fadeIn__below">
+				<section id="blog">
 					<div className="pancake">
-						<h2 className="section-title">Posts</h2>
+						<h2 className="section-title">Latest Posts</h2>
 						<div className="pancake section-content">
 							{posts.slice(0, 4).map(
 								(post) =>
@@ -170,7 +166,6 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 									</div>
 								)} */}
 											<div className={styles.article__section}>
-												
 												<h2 className={styles.article__title}>{post.title}</h2>
 
 												<p className={styles.article__description}>{post.description}</p>
@@ -189,8 +184,11 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 									),
 							)}
 						</div>
-						{/* TODO: Add weeklogs and tutorials */}
 						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
+					</div>
+					<div>
+						<h2 className="section-title">Random Creation</h2>
+						<LatestProject />
 					</div>
 				</section>
 			)}
