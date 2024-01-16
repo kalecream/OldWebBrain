@@ -101,34 +101,33 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 		<Page>
 			<section className={styles.section}>
 				<h2 className="section-title">Blog</h2>
-				<ul>
-					<li className={styles.nolist}>
-						{years.map((year) => (
-							<>
-								{year.months.map((month, i) => (
-									<ul>
-										<li className={styles.nolist} key={i}>
-											<h2 className={styles.month}>
-												<span>{month.name}</span> <span>{i === 0 && year.date}</span>
-											</h2>
-										</li>
-										{month.posts.map((post) => (
-											<Link className={styles.link} href={`/posts/${post.slug}`} key={post.slug}>
-												<div className={styles.list__section}>
-													<div>
-														<span className={styles.list__date}>{post.date}</span>
-														<h3 className={styles.list__title}>{post.title}</h3>
-													</div>
-													<p className={styles.list__description}>{post.description}</p>
+				
+				{years.map((year) => (
+						<ul key={year.date}>
+						<li className={styles.nolist} key={year.date}>
+							{year.months.map((month, i) => (
+								<ul key={i}>
+									<li className={styles.nolist}>
+										<h2 className={styles.month}>
+											<span>{month.name}</span> <span>{i === 0 && year.date}</span>
+										</h2>
+									</li>
+									{month.posts.map((post,i) => (
+										<Link className={styles.link} href={`/posts/${post.slug}`} key={i}>
+											<div className={styles.list__section}>
+												<div>
+													<span className={styles.list__date}>{post.date}</span>
+													<h3 className={styles.list__title}>{post.title}</h3>
 												</div>
-											</Link>
-										))}
-									</ul>
-								))}
-							</>
-						))}
-					</li>
-				</ul>
+												<p className={styles.list__description}>{post.description}</p>
+											</div>
+										</Link>
+									))}
+								</ul>
+							))}
+						</li>
+						</ul>
+					))}
 			</section>
 		</Page>
 	);
