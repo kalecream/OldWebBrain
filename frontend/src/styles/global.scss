@@ -163,20 +163,11 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
-	padding: 2rem 1rem;
+	margin: 1rem auto;
+	padding: 1rem;
 
 	&:first-of-type {
-		padding-top: 4rem;
-	}
-
-	& h1 {
-		font-family: var(--accentFont);
-		margin: 1rem auto;
-		color: var(--textColor);
-		letter-spacing: -1px;
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: var(--backgroundColor);
+		padding-top: 2rem;
 	}
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
@@ -186,16 +177,16 @@ section {
 
 #blog {
 	display: flex;
-	
 	justify-content: center;
 	align-items: baseline;
 	text-align: center;
+	gap: 1.5rem;
 
 	@include breakpoint-range($from: mobile) {
 		& > div {
 			width: 100%;
 		}
-
+		
 		flex-direction: column;
 	}
 	
@@ -290,6 +281,8 @@ h5,
 h6 {
 	color: var(--textColor);
 	font: var(--headingFont);
+	font-weight: 300;
+	letter-spacing: -2px;
 }
 
 h1 {
@@ -319,7 +312,7 @@ h3 {
 }
 
 p {
-	 font-size: clamp(1rem, -0.8750rem + 8.3333vw, 1.2rem);
+	 font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1.1rem);
 	margin-bottom: 0.8rem;
 	// backdrop-filter: blur($blur);
 
