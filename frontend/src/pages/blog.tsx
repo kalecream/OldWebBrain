@@ -95,7 +95,6 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 					})
 			})
 		});
-	console.log(years);
 
 	return (
 		<Page>
