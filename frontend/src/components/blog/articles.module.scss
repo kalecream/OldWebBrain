@@ -17,7 +17,6 @@
 .table-of-contents {
 	padding: 1rem;
 	border-radius: 15px;
-
 	align-self: flex-start;
 
 	& ul li {
@@ -225,11 +224,11 @@
 	}
 
 	&__date:nth-of-type(odd) {
-		color: var(--accent);
+		color: var(--primary);
 	}
 
-	&__date:nth-child(even) {
-		color: var(--primary);
+	&__date:nth-of-type(even) {
+		color: var(--secondary);
 	}
 
 	&__title {
