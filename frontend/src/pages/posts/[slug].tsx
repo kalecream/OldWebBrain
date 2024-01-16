@@ -1,4 +1,5 @@
 import Page from '@containers/layout/BlogPage';
+import Head from 'next/head';
 import { Key,  useEffect, useState } from 'react';
 import { CustomComponents } from '@components/blog/customElements';
 import { format, parseISO } from 'date-fns';
@@ -60,6 +61,16 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	return (
 		<Page >
 			<article>
+				<Head>
+					<meta name="twitter:title" content={`SM | ${frontMatter.title}`} />
+					<meta name="twitter:description" content={frontMatter.description} />
+					<meta name="og:description"  content={frontMatter.description} />
+					<meta name="twitter:image" content={frontMatter.image} />
+					<meta name="og:image" content={frontMatter.image} />
+					<meta name="og:type" content="article" />
+					<meta name="twitter:site" content="@SabMedwinter" />
+					<meta name="og:site_name" content="Sabrina Medwinter" />
+				</Head>
 				<div className="article--header">
 
 					<div className="article--information">
