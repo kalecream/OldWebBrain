@@ -18,7 +18,7 @@ import rehypeSlug from 'rehype-slug';
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
-
+import article from '@components/blog/articles.module.scss';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -79,7 +79,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					</div>
 				</div>
 
-				<aside className="table-of-contents">
+				<aside className={article['table-of-contents']}>
 					<ul>
 						{headings.map((heading) => {
 							const activeHeader = document.querySelector(`#${heading.id}`) ?? headings[0].id;

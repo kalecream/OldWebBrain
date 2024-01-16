@@ -33,16 +33,18 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
+	@include breakpoint-range($from: mobile) {
 		display: none;
 	}
 
-	@media (min-width: 1024px) {
-		width: 360px;
+	@include breakpoint-range($from: desktopLarge) {
+		display: block;
+		width: 450px;
 		position: fixed;
 		left: 0;
-		top: 40%;
-		padding: 0 2rem;
+		top: 45%;
+		padding: 0 1rem;
+		font-size: 0.8rem;
 	}
 }
 
