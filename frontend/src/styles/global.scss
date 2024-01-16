@@ -164,14 +164,13 @@ section {
 	justify-content: center;
 	align-items: center;
 	margin: 1rem auto;
-	padding: 1rem;
 
-	// &:first-of-type {
-	// 	padding-top: 2rem;
-	// }
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
+	}
+
+	@include breakpoint-range($from:tablet) {
+		padding: 0.5rem;
 	}
 }
 
@@ -282,37 +281,26 @@ h6 {
 	color: var(--textColor);
 	font: var(--headingFont);
 	font-weight: 300;
-	letter-spacing: -2px;
+	margin-bottom: 1rem;
 }
 
 h1 {
-	font-size: 3.5rem;
+	font-size: clamp(2rem, 2vw,3.5rem);
 	margin-bottom: 0rem;
 	text-align: center;
-
-	@media screen and (max-width: 750px) {
-		font-size: 2rem;
-	}
 }
 
 h2 {
-	padding: 0.25em;
-	font-size: 2.5rem;
+	font-size: clamp(1.5rem, 2vw,2.5rem);
 	margin-top: 0;
-	margin-bottom: 2rem;
-
-	@media screen and (max-width: 750px) {
-		font-size: 2rem;
-	}
 }
 
 h3 {
-	font-size: 1.5rem;
-	margin-bottom: 0.5rem;
+	font-size:clamp(1.4rem,2vw, 2rem);
 }
 
 p {
-	 font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1.1rem);
+	 font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1rem);
 	margin-bottom: 0.8rem;
 	// backdrop-filter: blur($blur);
 
