@@ -485,11 +485,24 @@ article {
 
 article h1, article h2, article h3 {
 	text-align: center;
+	font-weight: 300;
+}
+
+article h1 {
+	font-size: 2rem;
+}
+
+article h2 {
+	font-size: 1.75rem;
+}
+
+article h3 {
+	font-size: 1.5rem;
 }
 
 article p {
 	font-size: 1.1rem;
-	line-height: 1.4;
+	line-height: 1.6;
 }
 
 code {
@@ -497,18 +510,17 @@ code {
 }
 
 article ul, article ol {
-	list-style: none;
 	padding: 2rem;
 	font-size: 1.1rem;
 	margin: 0;
 }
 
 article li {
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.8rem;
 }
 
 article li::marker {
-	color: var(--textColorFade);
+	color: var(--textColor);
 	text-indent: 1rem !important;
 }
 
