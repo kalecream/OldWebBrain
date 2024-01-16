@@ -12,7 +12,7 @@ export const Header: React.FunctionComponent = () => {
 			{router?.pathname !== '/' && (
 				<>
 					<Link className={style['site-name']} href="/">
-						sabrina
+						sab
 					</Link>
 				</>
 			)}
