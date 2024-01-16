@@ -113,7 +113,7 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 											</h2>
 										</li>
 										{month.posts.map((post) => (
-											<Link className={styles.link} href={post.slug} key={post.slug}>
+											<Link className={styles.link} href={`/posts/${post.slug}`} key={post.slug}>
 												<div className={styles.list__section}>
 													<div>
 														<span className={styles.list__date}>{post.date}</span>
