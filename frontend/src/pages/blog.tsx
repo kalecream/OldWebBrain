@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import { Page } from '@containers/layout';
 import Link from 'next/link';
 import styles from '@components/blog/articles.module.scss';
+import { useMemo } from 'react';
 
 export type PostType = {
 	[x: string]: any;
@@ -41,6 +42,8 @@ const monthNames = [
 ];
 
 export const BlogPage = ({ posts }: PostType): JSX.Element => {
+
+	useMemo(() => {
 
 	const removeDupicates = (data) => {
 		return data.filter((value, i) => data.indexOf(value) === i);
@@ -95,6 +98,8 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 					})
 			})
 		});
+	}, [posts])
+
 
 	return (
 		<Page>
