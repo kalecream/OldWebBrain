@@ -192,8 +192,7 @@ export const OtherProjects = () => {
 						<h1>Bite-Sized Binge</h1>
 					</Link>
 					<p className={styles['description']}>
-						I'm checking out audiodramas, movies, manga, short stories, music and etc to help explore my own tastes and
-						to keep discovering great stuff!
+						An audiojournal to log audiodramas, movies, manga, podcasts, books, short stories, music and other forms of media to help explore my own tastes.
 					</p>
 				</div>
 				<div>
@@ -212,7 +211,7 @@ export const OtherProjects = () => {
 					<Link href={'https://www.youtube.com/channel/UCOwvKgIjl13Z30wA_mfxYfw'}><h1>KaleCream </h1></Link>
 					
 					<p className={styles['description']}>
-						I also have a YouTube channel where I vlog or live-stream my pomodoro and crafting sessions for the sake of accountability.
+						A YouTube channel where I vlog  my pomodoro work/crafting sessions for the sake of accountability.
 					</p>
 				</div>
 				<iframe

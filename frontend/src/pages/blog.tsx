@@ -187,7 +187,7 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
 					</div>
 					<div>
-						<h2 className="section-title">Random Creation</h2>
+						<h2 className="section-title">Latest Creation</h2>
 						<LatestProject />
 					</div>
 				</section>
