@@ -3,11 +3,10 @@ import { Page } from '@containers/layout';
 import Books from '@data/books';
 import CurrentReads from '@components/books/currentReads';
 import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
-// import PhotoGalley from '../components/books/gallery';
+// import PhotoGalley from '@components/books/gallery';
 import styles from '@components/books/books.module.scss';
-import { CodersrankSummary } from '@components/books/CodersRank';
+// import { CodersrankSummary } from '@components/books/CodersRank';
 import Link from 'next/link';
-import { BackToTop } from '@components/_basics/BackToTop';
 
 // TODO: rename the components folders properly
 
