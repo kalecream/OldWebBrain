@@ -3,24 +3,23 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { MetaProps } from '../types/layout';
 import '@styles/global.scss';
-import "@code-hike/mdx/dist/index.css"
+import '@code-hike/mdx/dist/index.css';
 
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
 export const App = ({ Component, pageProps }: AppProps, { customMeta }: { customMeta?: MetaProps }): JSX.Element => {
-
 	const meta: MetaProps = {
 		title: 'SM',
 		description:
 			'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
 		image: `${WEBSITE_HOST_URL}/img/favicon.svg`,
 		type: 'website',
-		...customMeta
+		...customMeta,
 	};
 
 	const defaultTitle = 'Sabrina Medwinter';
-const defaultDescription =
-	'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.';
+	const defaultDescription =
+		'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.';
 
 	return (
 		<ThemeProvider
@@ -77,6 +76,9 @@ const defaultDescription =
         Be sure validate your Twitter card markup on the documentation site. */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@SabMedwinter" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" />
+				<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
 			</Head>
 			<Component {...pageProps} />
 		</ThemeProvider>
