@@ -5,7 +5,7 @@ import CurrentReads from '@components/books/currentReads';
 import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
 // import PhotoGalley from '@components/books/gallery';
 import styles from '@components/books/books.module.scss';
-// import { CodersrankSummary } from '@components/books/CodersRank';
+import { CodersrankSummary } from '@components/books/CodersRank';
 import Link from 'next/link';
 
 // TODO: rename the components folders properly
@@ -54,7 +54,6 @@ export const About = () => {
 		<Page>
 			<section>
 				<h1>About</h1>
-				{/* TODO: examine this for why its a different style */}
 				<div className={styles.paragraph}>
 					<p>Hey there, internet wanderer! I'm Sabrina.</p>
 
@@ -73,21 +72,20 @@ export const About = () => {
 						I have a <Link href="/rolodex">Rolodex</Link> dedicated to the most interesting persons, websites and articles I've come across on the internet. Most of these are places I frequent so this page also doubles as my bookmarks.
 					</p>
 
-					<h2 style={{ textAlign: 'center' }}>Coding</h2>
+					<h2>Coding</h2>
 
 					<p>
-						{' '}
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
 						making pretty pages online then. I'm learning and experimenting every day to hone my craft. You can view the <Link href="/changelog">changelog for this website</Link>! I also really like learning through the blogging of others. 
 						
-						{/* Here are the
+						Here are the
 						rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for{' '}
-						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link>  */}
+						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link> 
 					</p>
 
-					{/* <CodersrankSummary /> */}
+					<CodersrankSummary />
 
-					<h2 style={{ textAlign: 'center' }}>Books</h2>
+					<h2>Books</h2>
 
 					<p>
 						I like to read to learn about the world around me or get laughs. I have{' '}
@@ -114,9 +112,9 @@ export const About = () => {
 					</p>
 					<RandomBooks />
 
-					<br/><br/>
+					<br/>
 
-					<h2 style={{ textAlign: 'center' }}>Games</h2>
+					<h2>Games</h2>
 
 					<p>In my free time, I sleep. In my free-er times, I play one of these:</p>
 
