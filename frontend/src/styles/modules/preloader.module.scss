@@ -1,0 +1,24 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-image: var(--loadingBackground);
+}
+
+.loading-text {
+  font-size: clamp(2rem,30%,2.5rem);
+  color: var(--loadingTextColor);
+  letter-spacing: -1px;
+  margin-top: 3rem;
+  text-align: center;
+  // font-family: var(--accentFont);
+  // @todo undecided whether to use the SIMS font (--accentFont) or not
+  max-width: 35rem;
+}
+
+.loading-text .active {
+  display: block;
+}
