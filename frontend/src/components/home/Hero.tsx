@@ -12,12 +12,10 @@ export const Hero = () => {
 				<div className={styles.heroSection}>
 					<HeroName name={'sabrina'} />
 					<div className={`${styles['text-container']} `}>
-						<center>
 							<p>
 								<b>Web developer</b>
 								<br /> based in Kingston, Jamaica.
 							</p>
-						</center>
 					</div>
 
 					<div className={styles['button-container']}>
