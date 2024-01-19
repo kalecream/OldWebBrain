@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import { MetaProps } from '../types/layout';
 import '@styles/global.scss';
 import '@code-hike/mdx/dist/index.css';
+import OpenGraphImage from '@assets/opengraph/thumbnail.svg';
 
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
@@ -52,7 +53,7 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 				<meta name="og:title" content={meta.title} />
 				<meta name="og:type" content="site" />
 				<meta name="og:url" content={WEBSITE_HOST_URL} />
-				<meta name="og:image" content={'https://i.imgur.com/iNuJgj3.png'} />
+				<meta name="og:image" content={OpenGraphImage} />
 				<meta name="og:site_name" content="Sabrina Medwinter" />
 				<meta name="og:description" content={meta.description} />
 				{/* <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />

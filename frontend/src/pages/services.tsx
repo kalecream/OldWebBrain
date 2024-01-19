@@ -1,6 +1,6 @@
-import { Page } from '@containers/layout';
-import Image from 'next/image';
-import serviceStyles from '@styles/modules/services.module.scss';
+import { Page } from '@containers/Page';
+// import Image from 'next/image';
+import serviceStyles from '@styles/modules/Services.module.scss';
 import Link from 'next/link';
 
 export const Service = () => {

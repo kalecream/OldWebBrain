@@ -1,0 +1,33 @@
+import Books from '@data/books';
+import Link from 'next/link';
+import styles from '@styles/modules/Books.module.scss';
+
+const CurrentReads = () => {
+	return (
+		<div className={styles.reading}>
+			{Books.map((book) => {
+				if (book.status === 'Reading') {
+					let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+					return (
+						<Link
+							title={book.title}
+							key={book.title}
+							className={styles.books}
+							href={searchURL}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<div className={styles.book}>
+								<img src={book.cover} alt={book.title} />
+							</div>
+						</Link>
+					);
+				} else {
+					return null;
+				}
+			})}
+		</div>
+	);
+};
+
+export default CurrentReads;

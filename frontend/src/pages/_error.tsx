@@ -1,4 +1,4 @@
-import Page from '@containers/layout/page';
+import Page from '@containers/Page';
 import styles from '@styles/modules/Errors.module.scss';
 import Link from 'next/link';
 

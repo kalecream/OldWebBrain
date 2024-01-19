@@ -1,8 +1,8 @@
 import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
-import { Page } from '@containers/layout';
+import { Page } from '@containers/Page';
 import Link from 'next/link';
-import styles from '@components/blog/articles.module.scss';
+import styles from '@styles/modules/articles.module.scss';
 import { useMemo } from 'react';
 import { LatestProject } from '@components/projects';
 

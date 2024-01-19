@@ -1,7 +1,7 @@
-import Page from '@containers/layout/BlogPage';
+import { BlogPage } from '@containers/BlogPage';
 import Head from 'next/head';
 import { Key,  useEffect, useState } from 'react';
-import { CustomComponents } from '@components/blog/customElements';
+import { CustomComponents } from '@components/blog/CustomElements';
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -19,7 +19,7 @@ import rehypeSlug from 'rehype-slug';
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
-import article from '@components/blog/articles.module.scss';
+import article from '@styles/modules/articles.module.scss';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -59,7 +59,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	}, []);
 
 	return (
-		<Page >
+		<BlogPage >
 			<article>
 				<Head>
 					<meta name="twitter:title" content={`SM | ${frontMatter.title}`} />
@@ -118,7 +118,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
 			</article>
-		</Page>
+		</BlogPage>
 	);
 };
 
