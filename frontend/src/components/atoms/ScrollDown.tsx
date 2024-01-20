@@ -1,8 +1,10 @@
-import styles from '@styles/modules/ScrollDown.module.scss';
+import mouse from '@styles/modules/ScrollDown.module.scss';
+
 export const ScrollDown = () => {
 	return (
-		<div className={styles.field}>
-				<div className={styles.mouse} />
-			</div>
+		<div className={mouse.field}>
+			<span className={mouse.label}>scroll down</span>
+			<div className={mouse.mouse} />
+		</div>
 	);
 };
