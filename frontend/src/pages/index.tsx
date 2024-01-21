@@ -14,7 +14,6 @@ export const Home = ({ posts }: PostType): JSX.Element => {
 			<Hero />
 			{/* TODO: move blog posts to Sanity} */}
 			<BlogList posts={posts} />
-			<OtherProjects />
 			<ProjectList />
 			{/* <ProjectSlider /> */}
 		</Page>
