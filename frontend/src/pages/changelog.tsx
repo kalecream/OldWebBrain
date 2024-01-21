@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Page } from '@containers/layout';
-import Link from 'next/link';
-import { format, parseISO } from 'date-fns';
+import { Page } from '@containers/Page';
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import styles from '@styles/changelog.module.scss'
+import styles from '@styles/modules/Changelog.module.scss'
 
 interface MarkdownRendererProps {
   markdown: string;
