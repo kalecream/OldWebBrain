@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Projects } from '@data/projectsData';
 import Link from 'next/link';
-import styles from '@styles/modules/projects.module.scss';
+import styles from '@styles/modules/Projects.module.scss';
 import Image from 'next/image';
 import { GetMonthName } from '@utils/GetMonthName';
 import { FaCode, FaFileImage, FaRegEye } from 'react-icons/fa6';
@@ -77,7 +77,7 @@ export const ProjectList: React.FC = () => {
 											width={0}
 											loader={({ src, width }) => `${src}?w=${width}`}
 											sizes="100vw"
-											style={{ width: 'auto', minWidth: '150px', height: '150px', margin: '0 auto', display: 'flex' }}
+											style={{ width: 'clamp(150px,100%,300px)', height: 'clamp(150px,100%,300px)', margin: '0 auto', display: 'flex' }}
 											placeholder="blur"
 											blurDataURL={project.image}
 											src={project.image}
@@ -88,7 +88,7 @@ export const ProjectList: React.FC = () => {
 
 								{!project.image && (
 									<div className={styles.project__image}>
-										<FaFileImage style={{ fontSize: '5rem', margin: 'auto' }} />
+										<FaFileImage style={{ fontSize: '5rem', margin: 'auto', height:'clamp(150px,100%,300px)'  }} />
 									</div>
 								)}
 
@@ -138,7 +138,7 @@ export const LatestProject = () => {
 				loader={({ src, width }) => `${src}?w=${width}`}
 				sizes="100vw"
 				style={{
-					width: 'clamp(250px, 100%, 1080px)',
+					width: 'clamp(250px, 100%, 580px)',
 					height: 'clamp(200px, 100%, 500px)',
 					margin: '0 auto',
 					display: 'flex',
