@@ -5,8 +5,8 @@
 
 $primary: #b797c5 ;
 $secondary: #720455 ;
-$borderRadius: 5px;
-$padding-container: 1.5rem 3rem;
+$borderRadius: 4px;
+$padding-container: 1rem 1.5rem;
 $padding-object: 1rem;
 $padding-object-small: 0.5rem;
 $headingFont: 'Inter', sans-serif;
@@ -97,6 +97,7 @@ html {
 	color: var(--textColor);
 	line-height: 1.2;
 	font-family: var(--bodyFont);
+	transition: $transition;
 }
 
 body {
@@ -113,11 +114,11 @@ main {
 	}
 
 	@include breakpoint-range($from: tablet) {
-		width: 90%;
+		padding: 1rem;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		padding: 1rem 2.5rem;
+		padding: 1rem 2rem;
 	}
 }
 
@@ -130,16 +131,16 @@ header {
 	flex-wrap: wrap;
 	z-index: 5;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include breakpoint-range($from: mobile) {
 		padding: 1rem;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {
+	@include breakpoint-range($from: tablet) {
 		padding: 1rem 2.5rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
-		padding: var(--paddingContainer);
+	@include breakpoint-range($from: desktop) {
+		padding: 2rem 4rem;
 	}
 }
 
@@ -163,22 +164,31 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 1rem auto;
+
+
+	& h2 {
+		text-align: center;
+	}
 
 	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
+		margin: 3rem auto;
 	}
 
 	@include breakpoint-range($from:tablet) {
 		padding: 0.5rem;
+		margin: 0.5rem auto;
 	}
+}
+
+b {
+	font-weight: 600;
 }
 
 #blog {
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
-	text-align: center;
 	gap: 1.5rem;
 
 	@include breakpoint-range($from: mobile) {
@@ -228,11 +238,12 @@ section {
 }
 
 .glassmorphic {
-	//  background-color: rgba(255, 255, 255, .4);
+	background: rgba(var(--backgroundColor), 0.2);
 	padding: var(--paddingContainer);
 	// box-shadow: var(--boxShadow);
 	// border: 1px solid rgba(255, 255, 255, 0.23);
 	border-radius: var(--borderRadius);
+
 	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 		// background-color: rgba(255, 255, 255, .5);
 		-webkit-backdrop-filter: blur(20px);
