@@ -26,9 +26,9 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 		<ThemeProvider
 			storageKey="theme"
 			attribute="class"
-			enableSystem={true}
+			// enableSystem={true}
 			// If enableSystem is false, the default theme is light
-			defaultTheme="system"
+			// defaultTheme="system"
 			themes={['light', 'dark']}
 		>
 			<Head>
@@ -43,7 +43,7 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 				<meta name="description" content={meta.description ?? defaultDescription} />
 				<meta
 					name="keywords"
-					content="Software Engineer, Web Developer, Frontend Developer, Creative Developer, React Developer, Filipino Developer, 3D Develper"
+					content="Software Engineer, Web Developer, Frontend Developer, Creative Developer, React Developer, 3D Develper, Jamaica website creator, Jamaica website developer"
 				/>
 				<meta name="robots" content="index,follow" />
 				<meta name="distribution" content="web" />
@@ -69,7 +69,7 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
         <meta name="HandheldFriendly" content="true"/>  */}
 				<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0" />
 				<meta name="theme-color" content="#000" />
-				<link rel="shortcut icon" href={`${WEBSITE_HOST_URL}/img/favicon.svg`} />
+				<link rel="shortcut icon" href={`${WEBSITE_HOST_URL}/thumbnail.svg`} />
 
 				{/* 
       Twitter Summary card
@@ -77,6 +77,7 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
         Be sure validate your Twitter card markup on the documentation site. */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@SabMedwinter" />
+				<meta name="twitter:image" content={`${WEBSITE_HOST_URL}/img/favicon.svg`} />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
 				<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />

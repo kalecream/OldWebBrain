@@ -20,6 +20,7 @@ import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
 import article from '@styles/modules/Articles.module.scss';
+import { WEBSITE_HOST_URL } from '@pages/_app';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -65,7 +66,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					<meta name="twitter:title" content={`SM | ${frontMatter.title}`} />
 					<meta name="twitter:description" content={frontMatter.description} />
 					<meta name="og:description"  content={frontMatter.description} />
-					<meta name="twitter:image" content={frontMatter.image} />
+					<meta name="twitter:image" content={`${WEBSITE_HOST_URL}/${frontMatter.image}`} />
 					<meta name="og:image" content={frontMatter.image} />
 					<meta name="og:type" content="article" />
 					<meta name="twitter:site" content="@SabMedwinter" />
