@@ -2,9 +2,8 @@ import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
 import { Page } from '@containers/Page';
 import Link from 'next/link';
-import styles from '@styles/modules/articles.module.scss';
+import styles from '@styles/modules/Articles.module.scss';
 import { useMemo } from 'react';
-import { LatestProject } from '@components/projects';
 
 export type PostType = {
 	[x: string]: any;
@@ -42,12 +41,9 @@ const monthNames = [
 	'December',
 ];
 
-export const BlogPage = ({ posts }: PostType): JSX.Element => {
-	useMemo(() => {
-		const removeDupicates = (data) => {
-			return data.filter((value, i) => data.indexOf(value) === i);
-		};
+export const SortPostsByMonths = ({ posts }: PostType) => {
 
+	useMemo(() => {
 		posts.forEach((post) => {
 			const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
 
@@ -87,21 +83,10 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 						month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
 					});
 			});
-
-		years.forEach((year) => {
-			year.months.forEach((month) => {
-				year.months.forEach((month) => {
-					removeDupicates(month.posts);
-				});
-			});
-		});
 	}, [posts]);
 
 	return (
-		<Page>
-			<section className={styles.section}>
-				<h2 className="section-title">Blog</h2>
-				
+		<div  className={styles.section}>
 				{years.map((year) => (
 						<ul key={year.date}>
 						<li className={styles.nolist} key={year.date}>
@@ -128,6 +113,18 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 						</li>
 						</ul>
 					))}
+		</div>
+	)
+
+};
+
+export const BlogPage = ({ posts }: PostType): JSX.Element => {
+
+	return (
+		<Page>
+			<section className={styles.section}>
+				<h2 className="section-title">Blog</h2>
+				{SortPostsByMonths({posts})}
 			</section>
 		</Page>
 	);
@@ -138,10 +135,11 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 		<>
 			{posts.length > 0 && (
 				<section id="blog">
-					<div className="pancake">
-						<h2 className="section-title">Latest Posts</h2>
+					<div className={`pancake` + styles.container}>
+						<h2>Latest Posts</h2>
 						<div className="pancake section-content">
-							{posts.slice(0, 4).map(
+						{SortPostsByMonths({posts})}
+							{/* {posts.slice(0, 4).map(
 								(post) =>
 									!post.tags.includes('log') && (
 										<Link
@@ -163,7 +161,7 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 											className={styles.article__image}
 										/>
 									</div>
-								)} */}
+								)} 
 											<div className={styles.article__section}>
 												<h2 className={styles.article__title}>{post.title}</h2>
 
@@ -177,17 +175,13 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 												</Link>
 											))}
 										</div>
-									)} */}
+									)} 
 											</div>
 										</Link>
 									),
-							)}
+							)} */}
 						</div>
 						{posts.length > 4 && <Link href={`/blog`}>More Posts ⟶</Link>}
-					</div>
-					<div>
-						<h2 className="section-title">Latest Creation</h2>
-						<LatestProject />
 					</div>
 				</section>
 			)}

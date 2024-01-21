@@ -8,6 +8,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
+
+	& h2 {
+		text-align: center;
+	}
 }
 
 .section {
@@ -248,5 +252,6 @@
 		font-size: 00.9rem;
 		padding-top: 0.5rem;
 		opacity: 0.75;
+		
 	}
 }
