@@ -1,0 +1,62 @@
+@import '@styles/mediaQuery';
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	place-items: center;
+	margin: 0 auto;
+
+	@include breakpoint-range($from: mobile, $to: desktopSmall) {
+		flex-direction: column;
+	}
+
+	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
+		flex-direction: row;
+	}
+}
+
+.section {
+	height: auto;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	place-items: center;
+	margin: 0 auto;
+}
+
+.cta {
+	@extend .section;
+
+	.text {
+		padding: var(--paddingContainer);
+		border-radius: var(--borderRadius);
+		font-weight: 300;
+		max-width: 25rem;
+		text-align: center;
+	}
+
+	@include breakpoint-range($from: desktop) {
+		position: absolute;
+		bottom: 10%;
+		left: 10%;
+	}
+}
+
+.model {
+	@extend .section;
+
+	@include breakpoint-range($from: mobile) {
+		display: none
+	}
+
+	@include breakpoint-range($from: tablet) {
+		display: flex;
+	}
+
+	@include breakpoint-range($from: desktop) {
+		position: absolute;
+		bottom: 30%;
+		right: 8%;
+	}
+}

@@ -2,38 +2,33 @@ import Link from 'next/link';
 import { HeroModel } from '@components/threeJS/HeroModel';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
-import styles from '@styles/modules/hero.module.scss';
-import button from '@styles/modules/button.module.scss';
+import hero from '@styles/modules/Hero.module.scss';
+import button from '@styles/modules/Button.module.scss';
 
 const Hero = () => {
 	return (
 		<section>
-			<div className={styles.container}>
-				<div className={styles.heroSection}>
+			<div className={hero.container}>
+				<div className={hero.cta}>
 					<HeroName name={'sabrina'} />
-					<div className={`${styles['text-container']} `}>
+					<div className={hero.text}>
 						<center>
 							<p>
 								<b>Web developer</b><br/> based in Kingston, Jamaica.
 							</p>
 						</center>
-
-						{/* <p>
-							An ongoing journey of exploration drives me to constantly embrace novel technologies and refine my
-							skillset.
-						</p> */}
-						{/* TODO: rewrite cringe paragraph */}
 					</div>
 
-					<div className={styles['button-container']}>
+					<div className={button.container}>
 						<Link
-							title="Email me at sabrinamedwinter@gmail.com"
+							title="Professional Services"
 							className={button.primary}
 							href="/services"
 						>
 							Need a service?
 						</Link>
 						<Link
+							title="Blog Posts"
 							className={button.secondary + ` glassmorphic`}
 							href="/blog"
 						>
@@ -41,7 +36,7 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
-				<div className={styles.heroSection}>
+				<div className={hero.model}>
 					<HeroModel />
 				</div>
 			</div>
