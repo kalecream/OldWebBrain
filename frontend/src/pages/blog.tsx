@@ -2,9 +2,8 @@ import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
 import { Page } from '@containers/layout';
 import Link from 'next/link';
-import styles from '@components/blog/articles.module.scss';
 import { useMemo } from 'react';
-import { LatestProject } from '@components/projects';
+// import { LatestProject } from '@components/projects';
 import blog from '@styles/modules/BlogSummary.module.scss'
 
 export type PostType = {
@@ -100,27 +99,27 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 
 	return (
 		<Page>
-			<section className={styles.section}>
+			<section className={blog.section}>
 				<h2 className="section-title">Blog</h2>
 				
 				{years.map((year) => (
 						<ul key={year.date}>
-						<li className={styles.nolist} key={year.date}>
+						<li className={blog.nolist} key={year.date}>
 							{year.months.map((month, i) => (
 								<ul key={i}>
-									<li className={styles.nolist}>
-										<h2 className={styles.month}>
+									<li className={blog.nolist}>
+										<h2 className={blog.month}>
 											<span>{month.name}</span> <span>{i === 0 && year.date}</span>
 										</h2>
 									</li>
 									{month.posts.map((post,i) => (
-										<Link className={styles.link} href={`/posts/${post.slug}`} key={i}>
-											<div className={styles.list__section}>
+										<Link className={blog.link} href={`/posts/${post.slug}`} key={i}>
+											<div className={blog.list__section}>
 												<div>
-													<span className={styles.list__date}>{post.date}</span>
-													<h3 className={styles.list__title}>{post.title}</h3>
+													<span className={blog.list__date}>{post.date}</span>
+													<h3 className={blog.list__title}>{post.title}</h3>
 												</div>
-												<p className={styles.list__description}>{post.description}</p>
+												<p className={blog.list__description}>{post.description}</p>
 											</div>
 										</Link>
 									))}
@@ -145,15 +144,15 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 											style={{ width: 'auto', height: '100px' }}
 											src={post.coverImage}
 											alt={post.alt ? post.alt : ''}
-											className={styles.article__image}
+											className={blog.article__image}
 										/>
 									</div>
 								)} */}
 
 								{/* {post.tags && (
-										<div className={styles.article__tags}>
+										<div className={blog.article__tags}>
 											{post.tags.slice(0, 2).map((tag) => (
-												<Link className={styles.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
+												<Link className={blog.article__tag} key={tag} href={'/tags/' + tag.replace(/\s+/g, '+')}>
 													{tag}
 												</Link>
 											))}
