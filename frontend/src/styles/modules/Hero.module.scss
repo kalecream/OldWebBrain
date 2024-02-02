@@ -56,7 +56,8 @@
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 30%;
-		right: 8%;
+		bottom: 10%;
+		// right: 8%;
+		// margin:auto
 	}
 }

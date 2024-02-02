@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { HeroModel } from '@components/threeJS/HeroModel';
+import Image from 'next/image';
+// import { HeroModel } from '@components/threeJS/HeroModel';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import hero from '@styles/modules/Hero.module.scss';
 import button from '@styles/modules/Button.module.scss';
+import Valentine from '@assets/images/valentine.webp';
 
 const Hero = () => {
 	return (
@@ -37,7 +39,8 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className={hero.model}>
-					<HeroModel />
+					{/* <HeroModel /> */}
+					<Image loader={({ src }) => src} src={Valentine} width={0} height={0} sizes='100vw' style={{width:'auto', height: 'clamp(200px, 40vw,1000px)'}} alt="A picture of a 3D rendered Valentine's day cupcake with be mine written above it" unoptimized priority />
 				</div>
 			</div>
 			<ScrollDown />
