@@ -1,7 +1,7 @@
 import Page from '@containers/layout/page';
 import Hero from '@components/hero/hero';
 // import { SiteBackground } from '@components/threeJS/scene';
-import ProjectList, { OtherProjects } from '@components/projects/projectsList';
+import ProjectList from '@components/projects/projectsList';
 import { BlogList, PostType } from './blog';
 import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next/types';

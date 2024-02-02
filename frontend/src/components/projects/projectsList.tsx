@@ -138,7 +138,7 @@ export const LatestProject = () => {
 				loader={({ src, width }) => `${src}?w=${width}`}
 				sizes="100vw"
 				style={{
-					width: 'clamp(250px, 100%, 1080px)',
+					width: 'clamp(250px, 100%, 480px)',
 					height: 'clamp(200px, 100%, 500px)',
 					margin: '0 auto',
 					display: 'flex',
