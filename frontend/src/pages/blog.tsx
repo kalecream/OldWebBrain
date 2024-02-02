@@ -220,7 +220,6 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 			{posts.length > 0 && (
 				<section id="blog">
 					<div className="pancake">
-						<h2 className="section-title">Latest Posts</h2>
 						<div className="pancake section-content">
 						{years.map((year) => (
 						<ul key={year.date}>
