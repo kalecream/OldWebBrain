@@ -1,6 +1,6 @@
 import Page from '@containers/layout/BlogPage';
 import Head from 'next/head';
-import { Key,  useEffect, useState } from 'react';
+import { Key, useEffect, useState } from 'react';
 import { CustomComponents } from '@components/blog/customElements';
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
@@ -8,7 +8,7 @@ import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import { remarkCodeHike } from "@code-hike/mdx"
+import { remarkCodeHike } from '@code-hike/mdx';
 
 import path from 'path';
 import { PostType } from '@pages/blog';
@@ -27,10 +27,10 @@ type PostPageProps = {
 };
 
 type HeadingProps = {
-	id: Key | any,
-	text: ReactNode,
-	level: string,
-}
+	id: Key | any;
+	text: ReactNode;
+	level: string;
+};
 
 const getClassName = (level: string) => {
 	switch (level) {
@@ -53,18 +53,18 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 		const headingList = Array.from(headings).map((heading) => ({
 			id: heading.id,
 			text: heading.textContent,
-			level: heading.tagName
+			level: heading.tagName,
 		}));
 		setHeadings(headingList);
 	}, []);
 
 	return (
-		<Page >
+		<Page>
 			<article>
 				<Head>
 					<meta name="twitter:title" content={`SM | ${frontMatter.title}`} />
 					<meta name="twitter:description" content={frontMatter.description} />
-					<meta name="og:description"  content={frontMatter.description} />
+					<meta name="og:description" content={frontMatter.description} />
 					<meta name="twitter:image" content={frontMatter.image} />
 					<meta name="og:image" content={frontMatter.image} />
 					<meta name="og:type" content="article" />
@@ -72,7 +72,6 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					<meta name="og:site_name" content="Sabrina Medwinter" />
 				</Head>
 				<div className="article--header">
-
 					<div className="article--information">
 						<h1 className="article--heading">{frontMatter.title}</h1>
 
@@ -101,11 +100,11 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 									onClick={(e) => {
 										e.preventDefault();
 										activeHeader.scrollIntoView({
-											behavior: 'smooth'
+											behavior: 'smooth',
 										});
 									}}
 									style={{
-										fontWeight: activeId === heading.id ? 'bold' : 'normal'
+										fontWeight: activeId === heading.id ? 'bold' : 'normal',
 									}}
 								>
 									{heading.text}
@@ -118,6 +117,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
 			</article>
+			<div id="commento"></div>
+			<script defer src="https://cdn.commento.io/js/commento.js"></script>
 		</Page>
 	);
 };
@@ -128,48 +129,44 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 	const { content, data } = matter(source);
 
-	const mdxSource = await serialize(
-		content,
-		{
-			mdxOptions: {
-				remarkPlugins: [
-					[
-						remarkCodeHike,
-						{
-							autoImport: false,
-							// @todo make a custom theme
-							theme: "github-dark-dimmed",
-							lineNumbers: true,
-							showCopyButton: true,
-							autoLink: true,
-							staticMediaQuery: "not screen, (max-width: 768px)",
-
+	const mdxSource = await serialize(content, {
+		mdxOptions: {
+			remarkPlugins: [
+				[
+					remarkCodeHike,
+					{
+						autoImport: false,
+						// @todo make a custom theme
+						theme: 'github-dark-dimmed',
+						lineNumbers: true,
+						showCopyButton: true,
+						autoLink: true,
+						staticMediaQuery: 'not screen, (max-width: 768px)',
+					},
+				],
+			],
+			rehypePlugins: [
+				rehypeSlug,
+				[
+					rehypeAutolinkHeadings,
+					{
+						properties: {
+							className: ['anchor'],
 						},
-					],
+					},
 				],
-				rehypePlugins: [
-					rehypeSlug,
-					[
-						rehypeAutolinkHeadings,
-						{
-							properties: {
-								className: ['anchor']
-							}
-						}
-					]
-				],
-				format: 'mdx',
-				useDynamicImport: true,
-			},
-			// made available to the arguments of any custom mdx component
-			scope: data
-		}
-	);
+			],
+			format: 'mdx',
+			useDynamicImport: true,
+		},
+		// made available to the arguments of any custom mdx component
+		scope: data,
+	});
 	return {
 		props: {
 			source: mdxSource,
-			frontMatter: data
-		}
+			frontMatter: data,
+		},
 	};
 };
 
@@ -182,7 +179,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false
+		fallback: false,
 	};
 };
 
