@@ -50,6 +50,7 @@
 		"cheerio": "^1.0.0-rc.12",
 		"clsx": "^1.2.1",
 		"date-fns": "^2.29.3",
+		"disqus-react": "^1.1.5",
 		"dotenv": "^16.0.3",
 		"emotion": "^11.0.0",
 		"emotion-normalize": "^11.0.1",

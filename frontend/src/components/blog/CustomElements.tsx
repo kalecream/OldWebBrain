@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import { CH } from '@code-hike/mdx/components';
-import { MusicPlaylist } from './Playlist/MusicPlaylist';
 
 const CustomH1 = ({ id, ...rest }) => {
 	if (id) {
@@ -85,5 +84,4 @@ export const CustomComponents = {
 	CustomH4,
 	CustomH5,
 	CustomH6,
-	MusicPlaylist
 };
