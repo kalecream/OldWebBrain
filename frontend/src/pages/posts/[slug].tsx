@@ -1,7 +1,7 @@
 import Page from '@containers/layout/BlogPage';
 import Head from 'next/head';
 import { Key, useEffect, useState } from 'react';
-import { CustomComponents } from '@components/blog/customElements';
+import { CustomComponents } from '@components/blog/CustomElements';
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -19,6 +19,7 @@ import rehypeSlug from 'rehype-slug';
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
+import { DisqusComments } from '@components/blog';
 import article from '@components/blog/articles.module.scss';
 
 type PostPageProps = {
@@ -116,9 +117,10 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				<div className="prose">
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
+				<div className={article.comments}>
+					<DisqusComments postId={frontMatter.id} title={frontMatter.title} slug={frontMatter.slug} />
+				</div>
 			</article>
-			<div id="commento"></div>
-			<script defer src="https://cdn.commento.io/js/commento.js"></script>
 		</Page>
 	);
 };
