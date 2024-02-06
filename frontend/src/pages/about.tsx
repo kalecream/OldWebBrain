@@ -72,7 +72,7 @@ export const About = () => {
 						I have a <Link href="/rolodex">Rolodex</Link> dedicated to the most interesting persons, websites and articles I've come across on the internet. Most of these are places I frequent so this page also doubles as my bookmarks.
 					</p>
 
-					<h2>Coding</h2>
+					{/* <h2>Coding</h2>
 
 					<p>
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
@@ -83,7 +83,7 @@ export const About = () => {
 						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link> 
 					</p>
 
-					<CodersrankSummary />
+					<CodersrankSummary /> */}
 
 					<h2>Books</h2>
 
@@ -134,6 +134,7 @@ export const About = () => {
 
 
 				</div>
+
 			</section>
 		</Page>
 	);
