@@ -5,7 +5,7 @@ const NowPage = () => {
 	return (
 		<Page>
 			<section>
-				<h2>Now</h2>
+				<h2>Now.</h2>
 				
 
                 <div className='prose'>
@@ -23,12 +23,12 @@ const NowPage = () => {
                     </ul>
                 </div>
                 {/* TODO: style past */}
-				{/* <div>
+				<div>
                     <details>
-                        <summary><h3 style={{margin: 0}}>In The Past</h3></summary>
-                        <p>I just started this page</p>
+                        <summary>Behind Me.</summary>
+                        <p>A clean slate.</p>
                     </details>
-                </div> */}
+                </div>
 			</section>
 		</Page>
 	);
