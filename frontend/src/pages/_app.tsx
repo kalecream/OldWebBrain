@@ -76,9 +76,6 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
         Be sure validate your Twitter card markup on the documentation site. */}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@SabMedwinter" />
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" />
-				<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
 			</Head>
 			<Component {...pageProps} />
 		</ThemeProvider>
