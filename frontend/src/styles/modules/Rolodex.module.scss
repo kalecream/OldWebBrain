@@ -1,0 +1,21 @@
+.container{
+    gap: 1rem;
+}
+
+.link {
+    border: var(--border);
+    padding: var(--paddingContainer);
+    border-radius: var(--borderRadius);
+    width: clamp(200px, 35vw, 500px);
+
+    & a h3 {
+        color: var(--teritary);
+        margin: 0;
+    }
+    & a p {
+        color: var(--textColor);
+        font-weight: 400;
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+}
