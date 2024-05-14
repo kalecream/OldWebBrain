@@ -13,7 +13,7 @@ export const Home = ({ posts }: PostType): JSX.Element => {
 			{/* <SiteBackground /> */}
 			<Hero />
 			{/* TODO: move blog posts to Sanity} */}
-			<BlogList posts={posts} />
+			{/* <BlogList posts={posts} /> */}
 			<ProjectList />
 			{/* <ProjectSlider /> */}
 		</Page>
