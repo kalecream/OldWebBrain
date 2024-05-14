@@ -2,7 +2,7 @@ import { getAllPosts } from '@utils/api';
 import { GetStaticProps } from 'next';
 import { Page } from '@containers/layout';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useEffect } from 'react';
 // import { LatestProject } from '@components/projects';
 import blog from '@styles/modules/BlogSummary.module.scss'
 
@@ -43,12 +43,9 @@ const monthNames = [
 ];
 
 export const BlogPage = ({ posts }: PostType): JSX.Element => {
-	useMemo(() => {
-		const removeDupicates = (data) => {
-			return data.filter((value, i) => data.indexOf(value) === i);
-		};
+	useEffect(() => {
 
-		posts.forEach((post) => {
+		posts && posts.forEach((post) => {
 			const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
 
 			let year: Year | undefined = years.find((year) => year.date === yearDate);
@@ -88,13 +85,6 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 					});
 			});
 
-		years.forEach((year) => {
-			year.months.forEach((month) => {
-				year.months.forEach((month) => {
-					removeDupicates(month.posts);
-				});
-			});
-		});
 	}, [posts]);
 
 	return (
@@ -102,7 +92,7 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 			<section className={blog.section}>
 				<h2 className="section-title">Blog</h2>
 				
-				{years.map((year) => (
+				{ years.map((year) => (
 						<ul key={year.date}>
 						<li className={blog.nolist} key={year.date}>
 							{year.months.map((month, i) => (
@@ -160,11 +150,8 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 									)} */}
 
 export const BlogList = ({ posts }: PostType): JSX.Element => {
-	useMemo(() => {
-		const removeDupicates = (data) => {
-			return data.filter((value, i) => data.indexOf(value) === i);
-		};
-
+	useEffect(() => {
+	
 		posts.forEach((post) => {
 			const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
 
@@ -205,13 +192,7 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 					});
 			});
 
-		years.forEach((year) => {
-			year.months.forEach((month) => {
-				year.months.forEach((month) => {
-					removeDupicates(month.posts);
-				});
-			});
-		});
+
 	}, [posts]);
 	
 	return (
