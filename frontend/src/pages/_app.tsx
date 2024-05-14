@@ -7,15 +7,7 @@ import '@code-hike/mdx/dist/index.css';
 
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
-export const App = ({ Component, pageProps }: AppProps, { customMeta }: { customMeta?: MetaProps }): JSX.Element => {
-	const meta: MetaProps = {
-		title: 'SM',
-		description:
-			'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
-		image: `${WEBSITE_HOST_URL}/img/favicon.svg`,
-		type: 'website',
-		...customMeta,
-	};
+export const App = ({ Component }: AppProps): JSX.Element => {
 
 	const defaultTitle = 'Sabrina Medwinter';
 	const defaultDescription =
@@ -38,8 +30,8 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 				<meta name="author" content={'Sabrina Medwinter'} />
 
 				{/* Search Engine Optimization Meta Tags */}
-				<title>{meta.title ?? defaultTitle}</title>
-				<meta name="description" content={meta.description ?? defaultDescription} />
+				<title>{ defaultTitle}</title>
+				<meta name="description" content={ defaultDescription} />
 				<meta
 					name="keywords"
 					content="Software Engineer, Web Developer, Frontend Developer, Creative Developer, React Developer, Filipino Developer, 3D Develper"
@@ -49,12 +41,12 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 				{/* 
       Facebook Open Graph meta tags
         documentation: https://developers.facebook.com/docs/sharing/opengraph */}
-				<meta name="og:title" content={meta.title} />
+				<meta name="og:title" content={defaultTitle} />
 				<meta name="og:type" content="site" />
 				<meta name="og:url" content={WEBSITE_HOST_URL} />
 				<meta name="og:image" content={'https://i.imgur.com/iNuJgj3.png'} />
 				<meta name="og:site_name" content="Sabrina Medwinter" />
-				<meta name="og:description" content={meta.description} />
+				<meta name="og:description" content={defaultDescription} />
 				{/* <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 				<link rel="apple-touch-icon" sizes="16x16" href="/icons/favicon-16x16.png" />
 				<link rel="apple-touch-icon" sizes="32x32" href="/icons/favicon-32x32.png" />
@@ -77,7 +69,7 @@ export const App = ({ Component, pageProps }: AppProps, { customMeta }: { custom
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@SabMedwinter" />
 			</Head>
-			<Component {...pageProps} />
+			<Component/>
 		</ThemeProvider>
 	);
 };
