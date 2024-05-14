@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import styled from '@emotion/styled';
 import Image from 'next/image';
 import styles from './books.module.scss';
 
