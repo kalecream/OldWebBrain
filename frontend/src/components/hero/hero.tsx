@@ -22,13 +22,13 @@ const Hero = () => {
 					</div>
 
 					<div className={button.container}>
-						<Link
+						{/* <Link
 							title="Professional Services"
 							className={button.primary}
 							href="/services"
 						>
 							Need a service?
-						</Link>
+						</Link> */}
 						<Link
 							title="Blog Posts"
 							className={button.secondary + ` glassmorphic`}
@@ -40,7 +40,7 @@ const Hero = () => {
 				</div>
 				<div className={hero.model}>
 					{/* <HeroModel /> */}
-					<Image loader={({ src }) => src} src={Valentine} width={0} height={0} sizes='100vw' style={{width:'auto', height: 'clamp(200px, 40vw,1000px)'}} alt="A picture of a 3D rendered Valentine's day cupcake with be mine written above it" unoptimized priority />
+					<Image loader={({ src }) => src} src={Valentine} width={0} height={0} sizes='100vw' style={{width:'auto', height: 'clamp(200px, 40vw,1000px)'}} alt="A picture of a 3D rendered Valentine's day cupcake with be mine written above it" />
 				</div>
 			</div>
 			<ScrollDown />
