@@ -1,0 +1,16 @@
+@import '@styles/mediaQuery';
+
+.behind {
+    
+    summary {
+        opacity: 0.45;
+
+        &:hover {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.heading {
+    text-indent: 1rem;
+}
