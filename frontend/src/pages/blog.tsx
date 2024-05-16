@@ -152,7 +152,7 @@ export const BlogPage = ({ posts }: PostType): JSX.Element => {
 export const BlogList = ({ posts }: PostType): JSX.Element => {
 	useEffect(() => {
 	
-		posts.forEach((post) => {
+		posts && posts.forEach((post) => {
 			const [yearDate, monthDate, dayDate] = post.date.split(' ')[0].split('-');
 
 			let year: Year | undefined = years.find((year) => year.date === yearDate);
@@ -197,7 +197,7 @@ export const BlogList = ({ posts }: PostType): JSX.Element => {
 	
 	return (
 		<>
-			{posts.length > 0 && (
+			{posts && posts.length > 0 && (
 				<section id="blog">
 					<div className="pancake">
 						<div className="pancake section-content">

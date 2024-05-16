@@ -1,6 +1,6 @@
 import { Page } from '@containers/layout';
 import { Key, ReactFragment, useEffect, useState } from 'react';
-import { format, parseISO } from 'date-fns';
+// import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -15,11 +15,11 @@ import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useHeadsObserver } from '@hooks/useObserver';
-import getReadTime from '@utils/read-time';
+// import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
 // import { DiscussionEmbed } from 'disqus-react';
-import article from '@components/blog/articles.module.scss';
-import { CustomComponents } from '@components/blog/CustomElements';
+// import article from '@components/blog/articles.module.scss';
+// import { CustomComponents } from '@components/blog/CustomElements';
 
 type PostPageProps = {
 	source: MDXRemoteSerializeResult;
@@ -61,7 +61,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	return (
 		<Page>
 			<article>
-				<div className="article--header">
+				{/* <div className="article--header">
 					<div className="article--information">
 						<h1 className="article--heading">{frontMatter.title}</h1>
 
@@ -106,7 +106,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				<div className="prose">
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
-				{/* <div className={article.comments}>
+				<div className={article.comments}>
 					<DiscussionEmbed
 						shortname="sabrinamedwinter"
 						config={{
