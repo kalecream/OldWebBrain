@@ -1,5 +1,4 @@
-import Page from '@containers/layout/BlogPage';
-import Head from 'next/head';
+import { Page } from '@containers/layout';
 import { Key, ReactFragment, useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
@@ -18,7 +17,7 @@ import rehypeSlug from 'rehype-slug';
 import { useHeadsObserver } from '@hooks/useObserver';
 import getReadTime from '@utils/read-time';
 import { ReactNode } from '@mdx-js/react/lib';
-import { DiscussionEmbed } from 'disqus-react';
+// import { DiscussionEmbed } from 'disqus-react';
 import article from '@components/blog/articles.module.scss';
 import { CustomComponents } from '@components/blog/CustomElements';
 
@@ -62,16 +61,6 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 	return (
 		<Page>
 			<article>
-				<Head>
-					<meta name="twitter:title" content={`SM | ${frontMatter.title}`} />
-					<meta name="twitter:description" content={frontMatter.description} />
-					<meta name="og:description" content={frontMatter.description} />
-					<meta name="twitter:image" content={frontMatter.image} />
-					<meta name="og:image" content={frontMatter.image} />
-					<meta name="og:type" content="article" />
-					<meta name="twitter:site" content="@SabMedwinter" />
-					<meta name="og:site_name" content="Sabrina Medwinter" />
-				</Head>
 				<div className="article--header">
 					<div className="article--information">
 						<h1 className="article--heading">{frontMatter.title}</h1>
@@ -117,7 +106,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 				<div className="prose">
 					<MDXRemote {...source} components={CustomComponents} />
 				</div>
-				<div className={article.comments}>
+				{/* <div className={article.comments}>
 					<DiscussionEmbed
 						shortname="sabrinamedwinter"
 						config={{
@@ -127,7 +116,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
 							language: 'en_EN',
 						}}
 					/>
-				</div>
+				</div> */}
 			</article>
 		</Page>
 	);
