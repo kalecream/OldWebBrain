@@ -15,17 +15,16 @@ const NowPage = () => {
 						on while trying to see which web-rings were still active.
                     </p>
                     <div className='prose'>
-                        <h3 className={style.heading}>🌱 2024-Spring</h3>
+                        <h3 className={style.heading}>2024-Spring</h3>
                         <p>
 						These aren't exactly goals, but a collection of things/experiences I'm trying to complete. I'll likely update the points with a blog post to show progress.
 					</p>
 					<p>
-						<ul>
+                            <ul className={style.spring}>
 							
-                            <li>Exploring individualism vs caring for self as a member of a community.</li>
+                           
                             <li>Completing my guide on my relationship with myself and others.</li>
                             <li>Advancing in the C25K program.</li>
-                            <li>A v1.0.0 version of this website.</li>
                             <li>Creating a GBStudio game as a love letter to a muse.</li>
 						</ul>
                         </p>
@@ -35,7 +34,12 @@ const NowPage = () => {
 				<div>
                     <details className={style.behind}>
 						<summary>Behind Me.</summary>
-						<p>A clean slate.</p>
+                        <div>
+                            <h3 className={style.heading}>2023-Winter</h3>
+                            <ul className={style.winter}>
+                            <li>Started exploring individualism vs caring for self as a member of a community.</li>
+                            </ul>
+                        </div>
 					</details>
 				</div>
 			</section>
