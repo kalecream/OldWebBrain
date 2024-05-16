@@ -24,7 +24,7 @@ export const Scene = ({ modelPath, scale = 40 }) => {
 	);
 };
 
-export const SceneViewer = ({ modelPath, scale = 40 }): JSX.Element => {
+export const SceneViewer = ({ modelPath, scale = 40 }) => {
 	return (
 		<Canvas shadows camera={{ fov: 30, position: [0, 0, 0] }}>
 			<ambientLight />
