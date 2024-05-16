@@ -1,13 +1,17 @@
 @import '@styles/mediaQuery';
 
 .behind {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
+    margin-top: 2rem;
+    width: 90%;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &[open] > summary {
+        text-decoration: line-through;
+    }
     
     summary {
-        opacity: 0.45;
+        opacity: 0.5;
 
         &::marker {
             content: none;
@@ -20,10 +24,13 @@
 }
 
 .heading {
-    text-indent: 2.5rem;
+    @include breakpoint-range($from: mobile, $to: tablet ) {
+        text-indent: 2rem;
+    }
+
 }
 
-.spring, .winter {
+.spring, .winter, .doing {
 
     li {
         text-indent: 0.5rem;
@@ -54,5 +61,11 @@
 .winter {
     li::marker {
             content: '🌰';
+    }
+}
+
+.doing {
+    & li > a {
+        font-weight: 400;
     }
 }
