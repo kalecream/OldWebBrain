@@ -113,11 +113,11 @@ const Books = [
 		format: 'Hardcover',
 		pages: 496,
 		minutes: 0,
-		status: 'Reading',
+		status: 'Read',
 		added: '2022-10-01',
 		started: '2022-11-13',
 		finished: '2022-11-21',
-		review: '',
+		review: '2024-05-16',
 		cover:
 			'https://www.oregonlive.com/resizer/U02OoZYlWTSIQQ5eBpgqiWQpoEY=/800x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/image.oregonlive.com/home/olive-media/width2048/img/foodday_impact/photo/how-to-cook-everything-the-basics-by-mark-bittman-ef093aafacc6c3cf.jpg',
 		summary: 'A guide to cooking basics.',
