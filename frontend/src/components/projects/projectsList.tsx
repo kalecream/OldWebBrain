@@ -28,7 +28,7 @@ const ProjectList: React.FC = () => {
 			? [...Projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
 			: Projects.filter((project) => project.category === activeCategory).sort(
 					(a, b) => new Date(b.created).getTime() - new Date(a.created).getTime(),
-			  );
+				);
 
 	return (
 		<section className={styles['project-wrapper']}>
@@ -57,63 +57,66 @@ const ProjectList: React.FC = () => {
 					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
-								<h2 className={styles.project__title}>
-									<div className={styles['project-year']}>
-										{GetMonthName(project.created)}
-										{project.created.split('-', 1)}
-									</div>
+								<div className={styles.project__box}>
+									<h2 className={styles.project__title}>
+										<div className={styles['project-year']}>
+											{GetMonthName(project.created)}
+											{project.created.split('-', 1)}
+										</div>
 
-									{project.title}
-									<span
-										className={`project__status ${project.status}`}
-										title={project.status}
-										aria-label={project.status}
-									></span>
-								</h2>
-								{project.image && (
-									<div className={styles.project__image}>
-										<Image
-											height={0}
-											width={0}
-											loader={({ src, width }) => `${src}?w=${width}`}
-											sizes="100vw"
-											style={{ width: 'auto', minWidth: '150px', height: '150px', margin: '0 auto', display: 'flex' }}
-											placeholder="blur"
-											blurDataURL={project.image}
-											src={project.image}
-											alt={project.title}
-										/>
-									</div>
-								)}
+										{project.title}
+										<span
+											className={`project__status ${project.status}`}
+											title={project.status}
+											aria-label={project.status}
+										></span>
+									</h2>
+									{project.image && (
+										<div className={styles.project__image}>
+											<Image
+												height={0}
+												width={0}
+												loader={({ src, width }) => `${src}?w=${width}`}
+												sizes="100vw"
+												style={{ width: 'auto', minWidth: '150px', height: '150px', margin: '0 auto', display: 'flex' }}
+												placeholder="blur"
+												blurDataURL={project.image}
+												src={project.image}
+												alt={project.title}
+											/>
+										</div>
+									)}
 
-								{!project.image && (
-									<div className={styles.project__image}>
-										<FaFileImage style={{ fontSize: '5rem', margin: 'auto' }} />
-									</div>
-								)}
-
-								<div className={styles['project-lang']}>
-									<div className={styles['project-language']}>{project.language?.join(',  ')}</div>
-									<div className="div">{project.technology}</div>
+									{/* {!project.image && (
+										<div className={styles.project__image}>
+											<FaFileImage style={{ fontSize: '3rem', margin: 'auto' }} />
+										</div>
+									)} */}
 								</div>
+								<div className={styles.project__box}>
+									<div className={styles['project-lang']}>
+										{project.repoName && (
+											<Link
+												title="View Code"
+												className={styles.project__code}
+												href={`https://github.com/kalecream/${project.repoName}`}
+											>
+												<FaCode />
+											</Link>
+										)}
 
-								<div className={styles['project-description']}>{project.description}</div>
+										{project.link && (
+											<Link title="View Project" className={styles.project__code} href={project.link}>
+												<FaRegEye />
+											</Link>
+										)}
+									</div>
 
-								<div className={styles['project-lang']}>
-									{project.repoName && (
-										<Link
-											title="View Code"
-											className={styles.project__code}
-											href={`https://github.com/kalecream/${project.repoName}`}
-										>
-											<FaCode />
-										</Link>
-									)}
-									{project.link && (
-										<Link title="View Project" className={styles.project__code} href={project.link}>
-											<FaRegEye />
-										</Link>
-									)}
+									<div className={styles['project-lang']}>{project.language?.join(',  ')}</div>
+
+									<div className={styles['project-lang']}>{project.technology}</div>
+
+									<div className={styles.project__description}>{project.description}</div>
 								</div>
 							</div>
 						</div>
@@ -192,7 +195,8 @@ export const OtherProjects = () => {
 						<h1>Bite-Sized Binge</h1>
 					</Link>
 					<p className={styles['description']}>
-						An audiojournal to log audiodramas, movies, manga, podcasts, books, short stories, music and other forms of media to help explore my own tastes.
+						An audiojournal to log audiodramas, movies, manga, podcasts, books, short stories, music and other forms of
+						media to help explore my own tastes.
 					</p>
 				</div>
 				<div>
@@ -208,10 +212,12 @@ export const OtherProjects = () => {
 			</div>
 			<div className={`${styles.others} pancake`}>
 				<div>
-					<Link href={'https://www.youtube.com/channel/UCOwvKgIjl13Z30wA_mfxYfw'}><h1>KaleCream </h1></Link>
-					
+					<Link href={'https://www.youtube.com/channel/UCOwvKgIjl13Z30wA_mfxYfw'}>
+						<h1>KaleCream </h1>
+					</Link>
+
 					<p className={styles['description']}>
-						A YouTube channel where I vlog  my pomodoro work/crafting sessions for the sake of accountability.
+						A YouTube channel where I vlog my pomodoro work/crafting sessions for the sake of accountability.
 					</p>
 				</div>
 				<iframe
