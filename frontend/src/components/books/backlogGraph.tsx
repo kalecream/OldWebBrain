@@ -104,7 +104,7 @@ export const BacklogGraph: FC = () => {
 
 	return (
 		<>
-			<BarChart width={width > 1024 ? (width * 0.75)  : width} height={300} data={Data} className={styles.backlogChart}>
+			<BarChart width={width > 1024 ? width * 0.75 : width} height={300} data={Data} className={styles.backlogChart}>
 				<XAxis dataKey="month" />
 				{/* <YAxis domain={[0, 'dataMax + 3']} /> */}
 				<Tooltip active={true} />
@@ -209,35 +209,56 @@ export const RandomBooks: FC = () => {
 
 	return (
 		<div className={styles.random}>
-			{randomBooks.filter((book) => book.review ).slice(0, 1).map((book) => (
-				<div key={book.title} className={`${styles.books__random}`}>
-					<p>
-						<Link className={styles.book__title} href={`https://www.google.com/search?q=${book.title}`}>
-							{book.title}
+			{randomBooks
+				.filter((book) => book.review)
+				.slice(0, 1)
+				.map((book) => (
+					<div key={book.title} className={`${styles.books__random}`}>
+						<div className={styles.book__info}>
+							<p>
+								<Link className={styles.book__title} href={`https://www.google.com/search?q=${book.title}`}>
+									{book.title}
+								</Link>
+								{book.rating && book.rating >= 4 ? (
+									book.rating >= 5 ? (
+										<span className={`${styles.book__review__indicator} ${styles.book_loved}`}>♥</span>
+									) : (
+										<span className={`${styles.book__review__indicator}`}>♥</span>
+									)
+								) : book.rating <= 2.5 && book.rating != 0 ? (
+									<span className={`${styles.book__review__indicator}`}>×</span>
+								) : (
+									''
+								)}
+								<br />
+								<span className={styles.book__author}>by {book.author}</span>
+							</p>
+							<p className={styles.book__finished}>
+								Read{' '}
+								{GetMonthName(book.started) == GetMonthName(book.finished) ?  GetMonthName(book.started) :
+								GetMonthName(book.started) + 'to ' + GetMonthName(book.finished)} {book.finished.split('-', 1) }
+							</p>
+							{book.review && <p className={styles.book__review}>{book.review}</p>}
+							{book.quotes && (
+								<q className={styles.book__quote}>{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
+							)}
+						</div>
+						<div>
+						<Link
+							title={book.title}
+							key={book.title}
+							className={styles.books}
+							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<div className={styles.book}>
+								<img src={book.cover} alt={''} />
+							</div>
 						</Link>
-						{book.rating && book.rating >= 4 ? (
-							book.rating >= 5 ? (
-								<span className={`${styles.book__review__indicator} ${styles.book_loved}`}>♥</span>
-							) : (
-								<span className={`${styles.book__review__indicator}`}>♥</span>
-							)
-						) : book.rating <= 2.5 && book.rating != 0 ? (
-							<span className={`${styles.book__review__indicator}`}>×</span>
-						) : (
-							''
-						)}
-						<br />
-						<span className={styles.book__author}>by {book.author}</span>
-					</p>
-					<p className={styles.book__finished}>
-						{GetMonthName(book.finished)} {book.finished.split('-', 1)}
-					</p>
-					{book.review && <p className={styles.book__review}>{book.review}</p>}
-					{book.quotes && (
-						<q className={styles.book__quote}>{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
-					)}
-				</div>
-			))}
+						</div>
+					</div>
+				))}
 		</div>
 	);
 };

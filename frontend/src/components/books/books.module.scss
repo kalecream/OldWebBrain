@@ -74,13 +74,18 @@
 }
 
 .books__random {
+	display: flex;
 	border: var(--border);
 	border-radius: var(--borderRadius);
-	box-shadow: var(--boxShadow);
 	transition: 0.3s ease;
 	padding: var(--paddingObject);
 
 	background-color: var(--backgroundColor);
+
+	& .book__info {
+		height:fit-content;
+		margin: auto;
+	}
 
 	@include breakpoint-range($from: mobile) {
 		width: 90%;
@@ -90,16 +95,18 @@
 		width: clamp(350px, 40vw, 400px);
 		min-height: 300px;
 
-		.book__title {
-			font-weight: 500;
-			letter-spacing: -0.6px;
+		.book__title a {
+			font-weight: 400;
 			font-size: 1rem;
+			width: 25rem;
 		}
 	}
 
 	@include breakpoint-range($from: desktop) {
-		.book__title {
-			font-size: 1.5rem;
+		width: clamp(550px, 40vw, 800px);
+
+		.book__title a {
+			font-size: 1.2rem;
 			line-height: 1;
 		}
 	}
@@ -310,6 +317,14 @@
 	@include breakpoint-range($from: desktopSmall) {}
 }
 
+.book_info {
+
+	@include breakpoint-range($from: tablet) {
+		padding: var(--paddingContainer);
+	}
+
+}
+
 .book__title {
 	font-weight: 600;
 	color: var(--primary) !important;
@@ -331,7 +346,6 @@
 	margin: 1rem auto;
 	font-size: 0.85rem;
 	font-weight: 400;
-	// text-align: justify;
 }
 
 .book__review__indicator {
@@ -358,13 +372,13 @@
 	text-align: justify;
 }
 
-.book__quote::before {
-	content: '“ ';
-}
+// .book__quote::before {
+// 	content: '“ ';
+// }
 
-.book__quote::after {
-	content: ' ”';
-}
+// .book__quote::after {
+// 	content: ' ”';
+// }
 
 .book__quote::before,
 .book__quote::after {
