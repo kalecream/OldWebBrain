@@ -63,11 +63,11 @@ export const About = () => {
 					{/* TODO: Fix photogallery on about */}
 
 					<p>
-						I made this about page because showing you my personality through the things I like is personally preferable to describing it. I've always disliked that "tell me a bit about yourself" in personal environments.
+						I made this about page because showing you my personality through the things I like is personally preferable
+						to describing it. I've always disliked that "tell me a bit about yourself" in personal environments.
 					</p>
 					<p>
-						What's my personality like, you ask? Well, imagine if your favorite playlist, Netflix marathon, and book
-						collection had a baby - that's me! But don't take my word for it. Dive into the treasure trove of media
+						What's my personality like, you ask? Dive into the treasure trove of media
 						below. It's like a mixtape of my soul. I have a <Link href="/rolodex">Rolodex</Link> dedicated to the most
 						interesting persons, websites and articles I've come across on the internet. Most of these are places I
 						frequent so this page also doubles as my bookmarks.
@@ -100,7 +100,7 @@ export const About = () => {
 
 					<p>
 						I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
-						below. My 10 most frequently read book tags are: <b>{topGenres}</b>.
+						below. My 10 most frequently read book tags are: {topGenres}.
 					</p>
 
 					<p>
@@ -111,7 +111,7 @@ export const About = () => {
 					<p>
 						This graph below is my book status backlog for the past rolling year. This ignores books from before then to
 						ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-						Non-Fiction. I have <b>{wantToReadBooks.length} books in my backlog. </b>
+						Non-Fiction. I have {wantToReadBooks.length} books in my backlog.
 					</p>
 					<BacklogGraph />
 					<p>
@@ -126,28 +126,23 @@ export const About = () => {
 					<p>In my free time, I sleep. In my free-er times, I play one of these:</p>
 
 					<p>
-						<b>
-							<Link href="https://www.legendsofidleon.com/">IdleOn</Link>
-						</b>{' '}
-						An MMORPG that I can leave and get more rewards the longer I stay away, but also has a ton of little
-						interactive things I can do when I feel like being active.
+						<Link href="https://www.legendsofidleon.com/">IdleOn</Link> : An MMORPG that I can leave and get more
+						rewards the longer I stay away, but also has a ton of little interactive things I can do when I feel like
+						being active.
 					</p>
 					<p>
-						<b>
-							<Link href="https://www.wolvesville.com/?ref=landing">Wolvesville</Link>
-						</b>{' '}
-						Another MMO that is a quick round game based on the party game, Mafia.
+						<Link href="https://www.wolvesville.com/?ref=landing">Wolvesville</Link> : Another MMO that is a quick round
+						game based on the party game, Mafia.
 					</p>
 					<p>
-						<b>
-							<Link href="https://shatteredpixel.com/shatteredpd/">Shattered Pixel Dungeon</Link>
-						</b>{' '}
-						Loooooong rogue-like offline game I can play on my phone. I've been playing this game for more than a a
-						decade. It took me years to beat it the first time. It's cute fun and open-source!
+						<Link href="https://shatteredpixel.com/shatteredpd/">Shattered Pixel Dungeon</Link> : Loooooong rogue-like
+						offline game I can play on my phone. I've been playing this game for more than a a decade. It took me years
+						to beat it the first time. It's cute fun and open-source!
 					</p>
 					<p>
-						<b>Etrian Odyssey II: Heroes of Lagaard</b> A dungeon crawler made for the DS where I have never in my life
-						seen the end. It's tedious, but passes the time when I'm stuck in a long queue.
+						<Link href={'https://en.wikipedia.org/wiki/Etrian_Odyssey_II'}>Etrian Odyssey II: Heroes of Lagaard</Link> :
+						A dungeon crawler made for the DS where I have never in my life seen the end. It's tedious, but passes the
+						time when I'm stuck in a long queue.
 					</p>
 				</div>
 			</section>

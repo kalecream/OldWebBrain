@@ -248,7 +248,7 @@ export const RandomBooks: FC = () => {
 							title={book.title}
 							key={book.title}
 							className={styles.books}
-							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
+							href={`https://www.duckduckgo.com/?q=${book.title}+${book.author}`}
 							target="_blank"
 							rel="noopener noreferrer"
 						>

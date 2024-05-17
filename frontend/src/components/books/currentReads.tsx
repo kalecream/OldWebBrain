@@ -8,7 +8,7 @@ const CurrentReads = () => {
 		<div className={styles.reading}>
 			{Books.map((book) => {
 				if (book.status === 'Reading') {
-					let searchURL = `https://www.you.com/search?q=${book.title}+${book.author}`;
+					let searchURL = `https://www.duckduckgo.com/?q=${book.title}+${book.author}`;
 					return (
 						<Link
 							title={book.title}
