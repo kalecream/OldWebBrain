@@ -29,13 +29,13 @@ const Hero = () => {
 						>
 							Need a service?
 						</Link> */}
-						<Link
+						{/* <Link
 							title="Blog Posts"
 							className={button.secondary + ` glassmorphic`}
 							href="/blog"
 						>
 							Check out the blog
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 				<div className={hero.model}>
