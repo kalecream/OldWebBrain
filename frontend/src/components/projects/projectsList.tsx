@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 import { Projects } from '@data/projectsData';
 import Link from 'next/link';

@@ -1,10 +1,30 @@
+// const {
+// 	remarkCodeHike,
+//   } = require("@code-hike/mdx")
+
 /** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
+	options: {
+		remarkPlugins: [
+			[
+				// remarkCodeHike,
+				// {
+				// 	autoImport: false,
+				// 	// @todo make a custom theme
+				// 	theme: 'github-dark-dimmed',
+				// 	lineNumbers: true,
+				// 	showCopyButton: true,
+				// 	autoLink: true,
+				// 	staticMediaQuery: 'not screen, (max-width: 768px)',
+				// },
+			],
+		],
+	},
 });
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-	enabled: process.env.ANALYZE === 'true'
+	enabled: process.env.ANALYZE === 'true',
 });
 
 /** @type {import('next').NextConfig} */
@@ -20,7 +40,7 @@ const nextConfig = {
 		remotePatterns: [{ hostname: 'cdn.sanity.io' }, { hostname: 'source.unsplash.com' }],
 	},
 	sassOptions: {
-		includePaths: ['/styles'],
+		includePaths: ['src/app/styles'],
 	},
 	typescript: {
 		// Set this to false if you want production builds to abort if there's type errors

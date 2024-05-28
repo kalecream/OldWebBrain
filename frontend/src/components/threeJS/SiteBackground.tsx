@@ -2,7 +2,7 @@ import { PresentationControls, Html  } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
-import { Model as IndexScene } from '@assets/models/Scene';
+import { Model as IndexScene } from 'src/assets/models/Scene';
 
 export const SiteBackground = (): JSX.Element => {
 	return (

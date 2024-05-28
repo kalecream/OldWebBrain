@@ -3,8 +3,8 @@
 @import 'animations';
 @import 'mediaQuery';
 
-$primary: #b797c5 ;
-$secondary: #720455 ;
+$primary: #b797c5;
+$secondary: #720455;
 $borderRadius: 5px;
 $padding-container: 1.5rem 3rem;
 $padding-object: 1rem;
@@ -20,8 +20,7 @@ $transition: all 0.3s ease-in-out;
 
 // https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
 $themes: (
-	light: (
-		primary: $secondary,
+	light: (primary: $secondary,
 		secondary: $primary,
 		backgroundColor: #f2f0e9,
 		textColor: #222,
@@ -46,11 +45,9 @@ $themes: (
 		headingFont: $headingFont,
 		accentFont: $accentFont,
 		backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png'),
-		// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png'),
-		articleCardBackground: #910A67,
+		// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
 	),
-	dark: (
-		primary: $primary,
+	dark: (primary: $primary,
 		secondary: $secondary,
 		backgroundColor: #222,
 		textColor: #ddd,
@@ -80,9 +77,12 @@ $themes: (
 );
 
 // source: https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables
-@each $name, $map in $themes {
+@each $name,
+$map in $themes {
 	.#{$name} {
-		@each $key, $value in $map {
+
+		@each $key,
+		$value in $map {
 			--#{$key}: #{$value};
 		}
 	}
@@ -90,7 +90,33 @@ $themes: (
 
 :root {
 	--mask: linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
-    radial-gradient(farthest-side,#000 98%,#0000) 0 0/50px 50px round;
+		radial-gradient(farthest-side, #000 98%, #0000) 0 0/50px 50px round;
+	--primary: #450133;
+	--secondary: #b797c5;
+	--backgroundColor: #f2f0e9;
+	--textColor: #222;
+	--textColorFade: #030637;
+	--captionColor: #aaa;
+	--buttonTextColor: #720455;
+	--buttonTextTransform: none;
+	--buttonTextHoverColor: #720455;
+	--buttonColor: #fff;
+	--buttonBorder: 2px solid rgba(255, 255, 255, 0.35);
+	--border: 1px solid rgba(0, 0, 0, 0.1);
+	--borderColor: rgba(255, 255, 255, 0.4);
+	--borderRadius: 5px;
+	--paddingContainer: 1.5rem 3rem;
+	--paddingObject: 1rem;
+	--paddingObjectSmall: 0.5rem;
+	--boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
+	--transition:  all 0.3s ease-in-out;
+	--loadingBackground: radial-gradient(circle farthest-corner at 10% 20%, #b797c5 0%, #720455; 90%);
+	--loadingTextColor: #fff;
+	--bodyFont: 'Inter', sans-serif;
+	--headingFont:  'Inter', sans-serif;
+	--accentFont: 'Sims Sans SC', sans-serif;
+	--backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
+	// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
 }
 
 html {
@@ -106,7 +132,7 @@ body {
 }
 
 main {
-	margin: 0 auto; 
+	margin: 0 auto;
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		padding: 0rem;
@@ -169,7 +195,7 @@ section {
 		padding: 0 1rem;
 	}
 
-	@include breakpoint-range($from:tablet) {
+	@include breakpoint-range($from: tablet) {
 		padding: 0.5rem;
 	}
 }
@@ -185,10 +211,10 @@ section {
 		& > div {
 			width: 100%;
 		}
-		
+
 		flex-direction: column;
 	}
-	
+
 	@include breakpoint-range($from: desktopSmall) {
 		& > div {
 			width: 50%;
@@ -233,6 +259,7 @@ section {
 	// box-shadow: var(--boxShadow);
 	// border: 1px solid rgba(255, 255, 255, 0.23);
 	border-radius: var(--borderRadius);
+
 	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 		// background-color: rgba(255, 255, 255, .5);
 		-webkit-backdrop-filter: blur(20px);
@@ -289,22 +316,22 @@ h6 {
 }
 
 h1 {
-	font-size: clamp(2rem, 2vw,3.5rem);
+	font-size: clamp(2rem, 2vw, 3.5rem);
 	margin-bottom: 0rem;
 	text-align: center;
 }
 
 h2 {
-	font-size: clamp(1.5rem, 2vw,2.5rem);
+	font-size: clamp(1.5rem, 2vw, 2.5rem);
 	margin-top: 0;
 }
 
 h3 {
-	font-size:clamp(1.4rem,2vw, 2rem);
+	font-size: clamp(1.4rem, 2vw, 2rem);
 }
 
 p {
-	 font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1rem);
+	font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1rem);
 	margin-bottom: 0.8rem;
 	// backdrop-filter: blur($blur);
 
@@ -331,6 +358,7 @@ image {
 	margin-left: 10px;
 	list-style-type: circle;
 }
+
 .head4 {
 	margin-left: 20px;
 	list-style-type: square;
@@ -390,11 +418,13 @@ kbd::after,
 	top: 0em;
 	box-shadow: inset 0 -0.2em 0.3em -0.1em rgba(200, 200, 200, 0.5);
 }
+
 .kbd-down::before,
 .kbd-down::after {
 	top: -0.1em;
 	bottom: -0.2em;
 }
+
 .kbd-down::before {
 	box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 1);
 }
@@ -403,6 +433,7 @@ kbd::after,
 	margin-left: 10px;
 	list-style-type: disc;
 }
+
 .head3 {
 	margin-left: 30px;
 	list-style-type: circle;
@@ -419,6 +450,18 @@ kbd::after,
 
 .sitename:hover {
 	color: var(--primary);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.badge {
+	display: inline-flex;
+	place-items: center;
+	border: var(--border);
+	border-radius: var(--borderRadius);
+	text-decoration: none;
 }
 
 /* containers  */
@@ -473,7 +516,9 @@ article {
 	flex-direction: column;
 }
 
-article h1, article h2, article h3 {
+article h1,
+article h2,
+article h3 {
 	text-align: center;
 	font-weight: 300;
 }
@@ -499,7 +544,8 @@ code {
 	font-family: 'Fira Code', monospace;
 }
 
-article ul, article ol {
+article ul,
+article ol {
 	padding: 2rem;
 	font-size: 1.1rem;
 	margin: 0;
@@ -572,6 +618,7 @@ canvas {
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
@@ -606,7 +653,7 @@ canvas:active {
 //  see link below for why
 // https://stackoverflow.com/questions/72000811/nextjs-avoid-change-css-classname-after-run
 
-.project__status{
+.project__status {
 	content: ' ';
 	margin-left: 0.5rem;
 	border-radius: 50%;
@@ -618,16 +665,17 @@ canvas:active {
 }
 
 span.project__status.ongoing {
-		background: var(--secondary);
-	}
+	background: var(--secondary);
+}
 
 span.project__status.completed {
-		background: var(--primary);
-	}
+	background: var(--primary);
+}
 
 span.project__status.archived {
-		background: red;
-	}
+	background: red;
+}
+
 .desktop-block {
 	@include breakpoint-range($from: mobile) {
 		display: none;
@@ -638,7 +686,7 @@ span.project__status.archived {
 	}
 }
 
-.desktop-flex{
+.desktop-flex {
 	@include breakpoint-range($from: mobile) {
 		display: none;
 	}
@@ -658,7 +706,7 @@ span.project__status.archived {
 	}
 }
 
-.mobile-flex{
+.mobile-flex {
 	@include breakpoint-range($from: mobile) {
 		display: flex;
 	}
@@ -671,9 +719,8 @@ span.project__status.archived {
 // CodeHike Component CSS
 .ch-codeblock .ch-code-button {
 	display: none;
-  }
-  
-  .ch-codeblock:hover .ch-code-button {
+}
+
+.ch-codeblock:hover .ch-code-button {
 	display: block;
-  }
-  
+}

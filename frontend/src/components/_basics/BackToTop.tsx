@@ -1,3 +1,4 @@
+"use client"
 import { FaArrowUp } from 'react-icons/fa6';
 import styles from '@styles/modules/BackToTop.module.scss';
 import { useEffect, useRef } from 'react';

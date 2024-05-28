@@ -6,11 +6,19 @@ const Directory = [
 	{
 		title: 'Now',
 		links: '/now'
+	},
+	// {
+	// 	title: 'Work',
+	// 	links: '/work',
+	// },
+	{
+		title: 'Blog',
+		links: '/blog'
+	},
+	{
+		title: 'Changelog',
+		links: '/changelog',
 	}
-	//   {
-	//     title: "Services",
-	//     links: "/services",
-	//   },
 ];
 
 export default Directory;

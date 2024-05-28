@@ -1,5 +1,5 @@
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-import { Model } from '@assets/models/ball';
+import { Model } from 'src/assets/models/ball';
 import { Preload, Html } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';

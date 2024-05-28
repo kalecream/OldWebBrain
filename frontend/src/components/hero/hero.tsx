@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link';
 import Image from 'next/image';
 // import { HeroModel } from '@components/threeJS/HeroModel';
@@ -12,11 +13,12 @@ const Hero = () => {
 		<section>
 			<div className={hero.container}>
 				<div className={hero.cta}>
-					<HeroName name={'sabrina'} />
+					<HeroName name={'Sabrina'} />
 					<div className={hero.text}>
 						<center>
 							<p>
-								<b>Web developer</b><br/> based in Kingston, Jamaica.
+								<b>Web developer</b>
+								<br /> based in Kingston, Jamaica.
 							</p>
 						</center>
 					</div>
@@ -29,18 +31,22 @@ const Hero = () => {
 						>
 							Need a service?
 						</Link> */}
-						{/* <Link
-							title="Blog Posts"
-							className={button.secondary + ` glassmorphic`}
-							href="/blog"
-						>
+						<Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">
 							Check out the blog
-						</Link> */}
+						</Link>
 					</div>
 				</div>
 				<div className={hero.model}>
 					{/* <HeroModel /> */}
-					<Image unoptimized loader={({ src }) => src} src={Valentine} width={0} height={0} sizes='100vw' style={{width:'auto', height: 'clamp(200px, 40vw,1000px)'}} alt="A picture of a 3D rendered Valentine's day cupcake with be mine written above it" />
+					<Image
+						src={Valentine}
+						loader={({ src, width }) => `${src}?w=${width}`}
+						width={0}
+						height={0}
+						sizes="100vw"
+						style={{ width: 'auto', height: 'clamp(200px, 40vw,1000px)' }}
+						alt=""
+					/>
 				</div>
 			</div>
 			<ScrollDown />

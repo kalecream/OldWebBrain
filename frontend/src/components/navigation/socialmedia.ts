@@ -21,10 +21,10 @@ export const MediaProfiles = [
 		url: 'https://codepen.io/medwinter',
 		icon: FaCodepen
 	},
-	{
-		name: 'BlueSky',
-		url: 'https://bsky.app/profile/medwinter.bsky.social',
-		icon: FaTwitter
-		// TODO: Check if Font Awesome added a bluesky icon if they haven't make an icon type hthat is either fontawesome icon or svg
-	}
+	// {
+	// 	name: 'BlueSky',
+	// 	url: 'https://bsky.app/profile/medwinter.bsky.social',
+	// 	icon: FaSky
+	// 	// TODO: Check if Font Awesome added a bluesky icon if they haven't make an icon type hthat is either fontawesome icon or svg
+	// }
 ];

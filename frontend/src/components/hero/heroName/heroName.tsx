@@ -1,5 +1,6 @@
+"use client"
 import { useRef } from 'react';
-import styles from './heroName.module.scss';
+import styles from '@styles/modules/heroName.module.scss';
 
 const HeroName = ({ name }) => {
 	const textArray = useRef(null);
