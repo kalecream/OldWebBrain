@@ -98,7 +98,7 @@ export const BlogPosts = () => {
                                           </h2>
                                       </li>
                                       {month.posts.map((post,i) => (
-                                          <Link className={blog.link} href={`/posts/${post.slug}`} key={i}>
+                                          <Link className={blog.link} href={`/blog/${post.slug}`} key={i}>
                                               <div className={blog.list__section}>
                                                   <div>
                                                       <span className={blog.list__date}>{post.metadata.date.slice(-2)}</span>
