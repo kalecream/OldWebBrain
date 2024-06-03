@@ -54,7 +54,7 @@
 .project-overlay {
 	display: flex;
 	flex-direction: row;
-	margin: 1rem;
+	margin: 0.5rem;
 	// background-color: var(--backgroundColor);
 	padding: var(--paddingObject);
 	border: var(--border);
@@ -70,7 +70,7 @@
 	}
 }
 
-.project__box {
+.project__box, .project__box {
 
 	@include breakpoint-range($from: desktopSmall) {
 		margin: 0.25rem;
@@ -79,6 +79,14 @@
 			width: 66%;
 		}
 	}
+}
+
+.project__present {
+	
+	@include breakpoint-range($from: desktopSmall) {
+		min-width: 43%;
+	}
+
 }
 
 .project-info {

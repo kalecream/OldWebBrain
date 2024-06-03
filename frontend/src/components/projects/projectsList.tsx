@@ -58,7 +58,7 @@ const ProjectList: React.FC = () => {
 					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
-								<div className={styles.project__box}>
+								<div className={styles.project__present}>
 									<h2 className={styles.project__title}>
 										<div className={styles['project-year']}>
 											{GetMonthName(project.created)}
@@ -117,7 +117,7 @@ const ProjectList: React.FC = () => {
 
 									<div className={styles['project-lang']}>{project.technology}</div>
 
-									<div className={styles.project__description}>{project.description}</div>
+									<small  className={styles.project__description}>{project.description}</small>
 								</div>
 							</div>
 						</div>

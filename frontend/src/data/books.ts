@@ -882,6 +882,7 @@ const Books = [
 		started: '2023-05-27',
 		added: '2023-05-31',
 		finished: '2023-05-31',
+		cover: 'https://i.imgur.com/Fr2LRpG.jpeg',
 		review:
 			"Mother of Science Fiction indeed. I LOVED this book. It was so much more than I expected from the pop culture depictions of Frankenstein's monster. It was a beautiful, tragic, and thought-provoking story about grief and what it means to be human. I highly recommend it.",
 		quotes: [
@@ -916,6 +917,7 @@ const Books = [
 		started: '2023-03-25',
 		added: '2022-01-28',
 		finished: '2023-07-20',
+		cover: 'https://i.imgur.com/kPu4Ch2.jpeg'
 	},
 	{
 		title: "Uncle Tom's Cabin",
@@ -933,6 +935,7 @@ const Books = [
 			'Scenes of blood and cruelty are shocking to our ear and heart. What man has nerve to do, man has not nerve to hear.',
 			'Death! Strange that there should be such a word, and such a thing, and we ever forget it; that one should be living, warm and beautiful, full of hopes, desires and wants, one day, and the next be gone, utterly gone, and forever!',
 		],
+		cover: 'https://i.imgur.com/Gwk3SUv.jpeg'
 	},
 	{
 		title: 'Huareo: Story of a Jamaican Cacique',
@@ -945,7 +948,7 @@ const Books = [
 		started: '2023-09-01',
 		added: '2023-09-01',
 		finished: null,
-		cover: 'https://ianrandlepublishers.com/wp-content/uploads/2020/06/Huareo.jpg',
+		cover: 'https://i.imgur.com/GAVF0mb.jpeg',
 	},
 	{
 		title: 'Next.js Quick Start Guide: Server-side rendering done right',
@@ -959,6 +962,7 @@ const Books = [
 		added: '2023-09-10',
 		finished: '2023-09-10',
 		review: 'A good introduction to Next.js. It needs to be updated for the app router now.',
+		cover: 'https://i.imgur.com/sbODdtk.jpeg'
 	},
 ];
 

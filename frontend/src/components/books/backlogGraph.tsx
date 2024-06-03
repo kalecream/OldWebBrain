@@ -104,7 +104,7 @@ export const BacklogGraph: FC = () => {
 
 	return (
 		<>
-			<BarChart width={width > 1024 ? width * 0.75 : width} height={300} data={Data} className={styles.backlogChart}>
+			<BarChart width={width > 1024 ? width * 0.6 : width} height={300} data={Data} className={styles.backlogChart}>
 				<XAxis dataKey="month" />
 				{/* <YAxis domain={[0, 'dataMax + 3']} /> */}
 				<Tooltip active={true} />

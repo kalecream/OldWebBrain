@@ -120,46 +120,40 @@ export const About = () => {
 
 				<h2 className="text-center">Games</h2>
 
-				<p>In my free time, I sleep. In my free-er times, I play one of these:</p>
+				<p>
+					My preference is playing indie games and games I physically own.I still play my Gameboy Advance and I own 3
+					different DSes. I dream of getting a steamdeck or switch. Not featured below: several untouched games from{' '}
+					<Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and{' '}
+					<Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. I have 4 main games I play: one online game and the
+					rest being primarily offline.{' '}
+				</p>
 				<div className="pancake">
 					<div className="pancake-child flex column">
 						<Link href="https://www.legendsofidleon.com/">
-							<Image width={200} height={100} src={'https://imgur.com/APzegNB.png'} alt="IdleOn" />
+							<Image width={300} height={150} src={'https://imgur.com/APzegNB.png'} alt="IdleOn" />
 						</Link>
-						<small className='prose-small'>
-							An MMORPG that I can leave and get more rewards the longer I stay away, but also has a ton of little
-							interactive things I can do when I feel like being active.
-						</small>
 					</div>
-					<div  className="pancake-child flex column">
-						<Link href="https://www.wolvesville.com/">
-							<Image width={200} height={80} src="https://i.imgur.com/1jpZE9l.png" alt="Wolvesville" />
-						</Link>
-						<small className='prose-small'>MMO that is a quick round game based on the party game, Mafia.</small>
-					</div>
-					<div  className="pancake-child flex column">
+					<div className="pancake-child flex column">
 						<Link href="https://shatteredpixel.com/shatteredpd/">
-							<Image width={200} height={120} src="https://i.imgur.com/3SmU4xo.png" alt="Shattered Pixel Dungeon" />
+							<Image width={300} height={150} src="https://i.imgur.com/3SmU4xo.png" alt="Shattered Pixel Dungeon" />
 						</Link>
-						<small className='prose-small'>Long rogue-like
-						offline game I can play on my phone. I've been playing this game for more than a a decade. It took me years
-						to beat it the first time.</small>
 					</div>
-					<div  className="pancake-child flex column">
+					<div className="pancake-child flex column">
 						<Link href="https://en.wikipedia.org/wiki/Etrian_Odyssey_II">
-							<Image width={200} height={100} src="https://i.imgur.com/TZBvWt7.png" alt="Etrian Odyssey II: Heroes of Lagaard" />
+							<Image
+								width={300}
+								height={150}
+								src="https://i.imgur.com/TZBvWt7.png"
+								alt="Etrian Odyssey II: Heroes of Lagaard"
+							/>
 						</Link>
-						<small className='prose-small'>A dungeon crawler made for the DS where I have never in my life seen the end. It's tedious, but passes the
-						time when I'm stuck in a long queue.</small>
 					</div>
-					<div  className="pancake-child flex column">
+					<div className="pancake-child flex column">
 						<Link href="https://en.wikipedia.org/wiki/The_World_Ends_with_You">
-							<Image width={200} height={100} src="https://i.imgur.com/SATlGhl.png" alt="World Ends With You" />
+							<Image width={300} height={150} src="https://i.imgur.com/SATlGhl.png" alt="World Ends With You" />
 						</Link>
-						<small className='prose-small'>World Ends With You: Action RPG made for the DS about the importance of community.</small>
 					</div>
 				</div>
-				<p>Not featured: several untouched games from <Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link> </p>
 			</div>
 		</section>
 	);
