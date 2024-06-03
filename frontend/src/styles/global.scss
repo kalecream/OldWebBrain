@@ -468,6 +468,12 @@ kbd::after,
 	text-decoration: none;
 }
 
+.flex {
+	display: flex;
+	place-items: center;
+	
+}
+
 /* containers  */
 
 .pancake {
@@ -479,6 +485,10 @@ kbd::after,
 .pancake-child {
 	flex: 1 1 350px;
 	margin: 1rem;
+}
+
+.column {
+	flex-direction: column;
 }
 
 .half__column {
@@ -510,6 +520,10 @@ kbd::after,
 
 .prose {
 	max-width: 45rem;
+}
+
+.prose-small {
+	max-width: 15rem;
 }
 
 article {

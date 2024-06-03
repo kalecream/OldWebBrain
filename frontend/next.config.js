@@ -1,25 +1,25 @@
-// const {
-// 	remarkCodeHike,
-//   } = require("@code-hike/mdx")
+const { remarkCodeHike, recmaCodeHike } = require('@code-hike/mdx');
 
 /** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
+	jsx: true,
 	options: {
 		remarkPlugins: [
 			[
-				// remarkCodeHike,
-				// {
-				// 	autoImport: false,
-				// 	// @todo make a custom theme
-				// 	theme: 'github-dark-dimmed',
-				// 	lineNumbers: true,
-				// 	showCopyButton: true,
-				// 	autoLink: true,
-				// 	staticMediaQuery: 'not screen, (max-width: 768px)',
-				// },
+				remarkCodeHike,
+				{
+					autoImport: false,
+					// @todo make a custom theme
+					theme: 'github-dark-dimmed',
+					lineNumbers: true,
+					showCopyButton: true,
+					autoLink: true,
+					staticMediaQuery: 'not screen, (max-width: 768px)',
+				},
 			],
 		],
+		recmaPlugins: [[recmaCodeHike]],
 	},
 });
 
@@ -35,9 +35,14 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
-		path: '/img/',
+		// path: '/img/',
 		formats: ['image/webp'],
-		remotePatterns: [{ hostname: 'cdn.sanity.io' }, { hostname: 'source.unsplash.com' }],
+		remotePatterns: [
+			{ hostname: 'cdn.sanity.io' },
+			{ hostname: 'source.unsplash.com' },
+			{ hostname: 'i.imgur.com' },
+			{ hostname: 'imgur.com' },
+		],
 	},
 	sassOptions: {
 		includePaths: ['src/app/styles'],
