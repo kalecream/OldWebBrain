@@ -39,52 +39,62 @@ const monthNames = [
 //     return <ViewCounter allViews={views} slug={slug} />;
 //   }
 
+function ArrowIcon() {
+	return (
+		<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{}}>
+			<path
+				d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+				fill="currentColor"
+			/>
+		</svg>
+	);
+}
+
 export const BlogPosts = () => {
 	let posts = getBlogPosts();
 
-    useMemo(() => {
-	posts &&
-		posts.forEach((post) => {
-			const [yearDate, monthDate, dayDate] = post.metadata.date.split(' ')[0].split('-');
+	useMemo(() => {
+		posts &&
+			posts.forEach((post) => {
+				const [yearDate, monthDate, dayDate] = post.metadata.date.split(' ')[0].split('-');
 
-			let year: Year | undefined = years.find((year) => year.date === yearDate);
-			if (!year) {
-				year = {
-					date: yearDate,
-					months: [],
-				};
-				years.push(year);
-			}
+				let year: Year | undefined = years.find((year) => year.date === yearDate);
+				if (!year) {
+					year = {
+						date: yearDate,
+						months: [],
+					};
+					years.push(year);
+				}
 
-			let month = year.months.find((month) => month.date === monthDate);
-			if (!month) {
-				const monthIndex = parseInt(monthDate) - 1;
-				const monthName = monthNames[monthIndex];
-				month = {
-					date: monthDate,
-					name: monthName,
-					posts: [],
-				};
-				year.months.push(month);
-			}
+				let month = year.months.find((month) => month.date === monthDate);
+				if (!month) {
+					const monthIndex = parseInt(monthDate) - 1;
+					const monthName = monthNames[monthIndex];
+					month = {
+						date: monthDate,
+						name: monthName,
+						posts: [],
+					};
+					year.months.push(month);
+				}
 
-			month.posts.push({
-				...post,
-				date: dayDate,
-			});
-		});
-
-	years
-		.sort((a, b) => parseInt(b.date) - parseInt(a.date))
-		.forEach((year) => {
-			year.months
-				.sort((a, b) => parseInt(b.date) - parseInt(a.date))
-				.forEach((month) => {
-					month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+				month.posts.push({
+					...post,
+					date: dayDate,
 				});
-        });
-        
-    }, [posts])
+			});
+
+		years
+			.sort((a, b) => parseInt(b.date) - parseInt(a.date))
+			.forEach((year) => {
+				year.months
+					.sort((a, b) => parseInt(b.date) - parseInt(a.date))
+					.forEach((month) => {
+						month.posts.sort((a, b) => parseInt(b.date) - parseInt(a.date));
+					});
+			});
+	}, [posts]);
 
 	return (
 		<section>
@@ -100,7 +110,7 @@ export const BlogPosts = () => {
 									</h2>
 									<ul>
 										{month.posts.map((post) => (
-											<li key={post.slug} className='no-marker'>
+											<li key={post.slug} className="no-marker">
 												<Link className={blog.link} href={`/blog/${post.slug}`}>
 													<div className={blog.list__section}>
 														<div>
@@ -120,5 +130,29 @@ export const BlogPosts = () => {
 				</ul>
 			))}
 		</section>
+	);
+};
+
+export const HomePosts = () => {
+	let posts = getBlogPosts();
+
+	return (
+		<div>
+			{posts
+				.sort((a, b) => {
+					if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
+						return -1;
+					}
+					return 1;
+				})
+				.map((post) => (
+					<Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
+                        <ArrowIcon />
+						<div className="w-full flex flex-col">
+							<p className="text-neutral-900 dark:text-neutral-100 tracking-tight">{post.metadata.title}</p>
+						</div>
+					</Link>
+				))}
+		</div>
 	);
 };
