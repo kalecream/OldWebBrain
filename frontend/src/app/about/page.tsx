@@ -135,7 +135,7 @@ export const About = () => {
 					</div>
 					<div className="pancake-child flex column">
 						<Link href="https://shatteredpixel.com/shatteredpd/">
-							<Image width={300} height={150} src="https://i.imgur.com/3SmU4xo.png" alt="Shattered Pixel Dungeon" />
+							<Image width={300} height={150} src="https://i.imgur.com/J6ExEz6.gif" alt="Shattered Pixel Dungeon" />
 						</Link>
 					</div>
 					<div className="pancake-child flex column">
