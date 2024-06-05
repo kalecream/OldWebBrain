@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const NowPage = () => {
 	return (
-		<section>
+		<section className={paragraph}>
 			<h2>Now.</h2>
 
 			<div className="prose">
