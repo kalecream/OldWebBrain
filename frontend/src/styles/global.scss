@@ -200,6 +200,12 @@ section {
 	}
 }
 
+hr {
+	border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
 #blog {
 	display: flex;
 	justify-content: center;
