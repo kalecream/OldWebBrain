@@ -21,13 +21,7 @@ interface BookmarkProps {
 }
 
 const Bookmarks: BookmarkProps[] = [
-	{
-		url: 'https://www.wilsonquarterly.com/quarterly/_/whats-the-best-way-to-die',
-		title: "What's the best way to die?",
-		description: 'An article I found on physician-assisted suicide.',
-		tags: ['death', 'suicide'],
-		type: 'article',
-	},
+	
 	{
 		url: 'https://grimgrains.com/site/home.html',
 		title: 'Grim Grains',
@@ -58,6 +52,13 @@ const Bookmarks: BookmarkProps[] = [
 		tags: ['money'],
 		description: 'A spreadsheet budgeting tool for people who need budgeting analytics, but not too much',
 		type: 'tool',
+	},
+	{
+		url: 'https://www.wilsonquarterly.com/quarterly/_/whats-the-best-way-to-die',
+		title: "What's the best way to die?",
+		description: 'An article I found on physician-assisted suicide.',
+		tags: ['death', 'suicide'],
+		type: 'article',
 	},
 	{
 		url: 'https://www.tasteatlas.com/',
@@ -230,7 +231,7 @@ export const About = () => {
 						{Bookmarks.map((bookmark) => (
 							<div className={style.link}>
 								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child`}>
-									<h3>{bookmark.title}</h3>
+									<h4 style={{fontWeight:'semibold'}}>{bookmark.title}</h4>
 									<p>{bookmark.description}</p>
 								</Link>
 							</div>

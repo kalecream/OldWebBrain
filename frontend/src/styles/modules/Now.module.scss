@@ -33,7 +33,9 @@
 .spring, .winter, .doing {
 
     li {
+        font-weight: 400;
         text-indent: 0.5rem;
+        color: var(--primary);
         &::marker {
             font-size: 0.5rem;
         } 

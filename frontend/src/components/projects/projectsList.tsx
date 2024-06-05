@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { useState } from 'react';
 import { Projects } from '@data/projectsData';
 import Link from 'next/link';
@@ -79,7 +79,12 @@ const ProjectList: React.FC = () => {
 												width={0}
 												loader={({ src, width }) => `${src}?w=${width}`}
 												sizes="100vw"
-												style={{ width: 'auto', minWidth: '150px', height: '150px', margin: '0 auto', display: 'flex' }}
+												style={{
+													width: 'auto',
+													height: '120px',
+													margin: '0 auto',
+													display: 'flex',
+												}}
 												placeholder="blur"
 												blurDataURL={project.image}
 												src={project.image}
@@ -90,7 +95,7 @@ const ProjectList: React.FC = () => {
 
 									{/* {!project.image && (
 										<div className={styles.project__image}>
-											<FaFileImage style={{ fontSize: '3rem', margin: 'auto' }} />
+											<FaFileImage style={{ fontSize: '1rem', margin: 'auto' }} />
 										</div>
 									)} */}
 								</div>
@@ -113,11 +118,13 @@ const ProjectList: React.FC = () => {
 										)}
 									</div>
 
-									<div className={styles['project-lang']}>{project.language?.join(',  ')}</div>
+									<div className={`flex ` + styles['project-lang']}>
+										{project.language && project.language.map((l, i) => <span key={i}>{l.toLowerCase()}</span>)}
 
-									<div className={styles['project-lang']}>{project.technology}</div>
+										{project.technology && project.technology.map((t, i) => <span className={styles.project__tech} key={i} >{t.toLowerCase()}</span>)}
+									</div>
 
-									<small  className={styles.project__description}>{project.description}</small>
+									<small className={styles.project__description}>{project.description}</small>
 								</div>
 							</div>
 						</div>

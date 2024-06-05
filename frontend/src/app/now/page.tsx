@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const NowPage = () => {
 	return (
-		<section className={paragraph}>
+		<section className={style.paragraph}>
 			<h2>Now.</h2>
 
 			<div className="prose">
@@ -22,6 +22,14 @@ const NowPage = () => {
 				<div className={`prose ` + style.paragraph}>
 					<h3 className={style.heading}>2024-Spring</h3>
 
+					<p>
+						This spring is a busy time. I am trying to reorient myself to handle the rest of the year. The quarter
+						started strong, then was blown off track by the stings of poverty and burnout. For a few months, I've also had
+						my head in the clouds using romance as a distraction. I've been better about returning to my goals at the
+						end of this season becoming more focused on refining my personal productivity systems to prevent stalling again
+						rather than powering through to complete my goals while neglecting my real responsibilities.{' '}
+					</p>
+
 					<ul className={style.spring}>
 						<li>Completing my guide on my relationship with myself and others.</li>
 						<li>
@@ -29,15 +37,12 @@ const NowPage = () => {
 						</li>
 						<li>Creating a GBStudio game as a love letter to a muse.</li>
 					</ul>
-					<p>
-						This spring is a busy time. I am trying to reorient myself to handle the rest of the year. The quarter
-						started strong, then was blown off track by the stings of poverty and burnout. For a few months, I also had
-						my head in the clouds using romance as a distraction. I've been better about returning to my goals at the
-						end of this season. I'm more focused on refining my personal productivity systems to prevent stalling again
-						rather than powering through to complete my goals while neglecting my real responsibilities.{' '}
-					</p>
+
+					<hr/>
+
 					<p>wins: diving into reading again, love, strengthening community ties and a stronger sense of self. </p>
-					<p></p>
+					<p>losses: time?</p>
+					
 
 					<details className={style.behind}>
 						<summary>Behind Me.</summary>

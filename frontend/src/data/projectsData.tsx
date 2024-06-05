@@ -11,7 +11,7 @@ export interface ProjectStructure {
 	link?: string;
 	repoName?: string;
 	sourceLink?: string;
-	technology: ReactNode[];
+	technology: string[];
 	language?: string[];
 	created: string;
 	updated?: string;
@@ -35,22 +35,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		repoName: 'dotfiles',
-		technology: [
-			<a key="i3wm" href="https://i3wm.org/">
-				i3wm
-			</a>,
-			<a key="rofi" href="https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html">
-				Rofi
-			</a>,
-			<a key="kitty" href="https://sw.kovidgoyal.net/kitty/kitty">
-				Kitty
-			</a>,
-			<a key="feh" href="https://feh.finalrewind.org/">
-				Feh
-			</a>,
-			<a key="pb" href="https://github.com/polybar/polybar">
-				Polybar
-			</a>,
+		technology: [ 'i3wm', 'rofi', 'feh', 'polybar'
 		],
 		language: ['Bash', 'Python'],
 		created: '2022-07-07',
@@ -71,15 +56,7 @@ export const Projects: ProjectStructure[] = [
 		),
 		repoName: 'morning-messages',
 		technology: [
-			<a key="pw" href="https://pywhatkit.herokuapp.com/">
-				PyWhatKit
-			</a>,
-			<a key="gp" href="https://geopy.readthedocs.io/en/stable/">
-				GeoPy
-			</a>,
-			<a key="owm" href="https://openweathermap.org/">
-				OpenWeatherMap API
-			</a>,
+			'PyWhatKit','GeoPy','OpenWeatherMap'
 		],
 		language: ['Python'],
 		created: '2021-11-15',
@@ -100,16 +77,7 @@ export const Projects: ProjectStructure[] = [
 		),
 		repoName: 'OldWebBrain',
 		link: 'https://www.sabrinamedwinter.com/',
-		technology: [
-			<a key="next" href="https://nextjs.org/">
-				Next.js
-			</a>,
-			<a key="three" href="https://threejs.org/">
-				React-Three-Fiber
-			</a>,
-			<a key="0033" href="https://greensock.com/gsap/">
-				GSAP
-			</a>,
+		technology: ['Next.js','React-Three-Fiber','GSAP'
 		],
 		created: '2022-08',
 		language: ['React', 'TypeScript', 'MDX'],
@@ -127,10 +95,7 @@ export const Projects: ProjectStructure[] = [
 				output as a second prompt. Both prompts were then saved to an ordinary text file.
 			</span>
 		),
-		technology: [
-			<a key="00401" href="https://openai.com/blog/openai-api/">
-				OpenAI API
-			</a>,
+		technology: ['OpenAI'
 		],
 		language: ['Python'],
 		created: '2023-05-30',
@@ -149,10 +114,7 @@ export const Projects: ProjectStructure[] = [
 				A login/registration form with refresh token done for a test of a Swagger API for a Front-End take-home test.
 			</span>
 		),
-		technology: [
-			<a key="00501" href="https://sphenery.com/swagger/index.html">
-				Swagger SMTest
-			</a>,
+		technology: ['Swagger SMTest'
 		],
 		repoName: 'Sphenery',
 		language: ['React', 'Typescript'],
@@ -169,7 +131,7 @@ export const Projects: ProjectStructure[] = [
 		description: (
 			<span>A test of the sapling plug-in in Blender3D. This model was set as the background of this website.</span>
 		),
-		technology: [<a key="00601">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2019-01-01',
 	},
@@ -187,7 +149,7 @@ export const Projects: ProjectStructure[] = [
 				hiatus for now.
 			</span>
 		),
-		technology: [<a key="00701">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2023-01-01',
 	},
@@ -204,7 +166,7 @@ export const Projects: ProjectStructure[] = [
 				A placeholder image I made for when my website was under construction. It still is under construction.
 			</span>
 		),
-		technology: [<a key="00801">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2022-11-03',
 	},
@@ -217,7 +179,7 @@ export const Projects: ProjectStructure[] = [
 		image: '/img/project/009.webp',
 		status: 'completed',
 		description: <span>A 3D render of a strawberry milkshake I made after for a dailySketch prompt.</span>,
-		technology: [<a key="00901">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2022-11-12',
 	},
@@ -236,7 +198,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		language: null,
-		technology: [<a key="01001">Blender3D</a>],
+		technology: ['Blender3D'],
 		created: '2022-11-12',
 	},
 	{
@@ -250,7 +212,7 @@ export const Projects: ProjectStructure[] = [
 		description: (
 			<span>This render was done as a late entry for a competition on Twitter to create a brand for baby toys.</span>
 		),
-		technology: [<a key="01101">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2022-11-12',
 	},
@@ -263,7 +225,7 @@ export const Projects: ProjectStructure[] = [
 		image: '/img/project/012.webp',
 		status: 'completed',
 		description: <span>A practice render I made for the idea of a new queen coming onto a chess board.</span>,
-		technology: [<a key="01101">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2022-11-12',
 	},
@@ -281,7 +243,7 @@ export const Projects: ProjectStructure[] = [
 				more cakes.
 			</span>
 		),
-		technology: [<a key="01301">Blender3D</a>],
+		technology: ['Blender3D'],
 		language: null,
 		created: '2022-11-12',
 	},
@@ -295,9 +257,22 @@ export const Projects: ProjectStructure[] = [
 		status: 'completed',
 		description: <span>I wanted to do the infamous beginner donut again, but ended up doing a breakfast scene.</span>,
 		language: null,
-		technology: [<a key="01401">Blender3D</a>],
+		technology: ['Blender3D'],
 		created: '2022-11-12',
 	},
+	{
+		id: '015',
+		display: true,
+		title: 'Scarecrow',
+		category: 'illustration',
+		type: 'practice',
+		image: 'https://i.imgur.com/2XFtNFp.png',
+		status: 'completed',
+		description: <span>An image I did for pixel daily</span>,
+		language: null,
+		technology: ['LibreSprite'],
+		created: '2018-10-13',
+	}
 ];
 
 export default Projects;
