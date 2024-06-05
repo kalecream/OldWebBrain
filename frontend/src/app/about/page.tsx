@@ -8,6 +8,65 @@ import styles from '@components/books/books.module.scss';
 // import { CodersrankSummary } from '@components/books/CodersRank';
 import Link from 'next/link';
 import Image from 'next/image';
+import style from '@styles/modules/Rolodex.module.scss';
+import pic from '@public/img/album/plants.gif';
+import { ScrollDown } from '@components/scrollDown';
+
+interface BookmarkProps {
+	url: string;
+	title: string;
+	description?: string;
+	tags?: string[];
+	type: string;
+}
+
+const Bookmarks: BookmarkProps[] = [
+	{
+		url: 'https://www.wilsonquarterly.com/quarterly/_/whats-the-best-way-to-die',
+		title: "What's the best way to die?",
+		description: 'An article I found on physician-assisted suicide.',
+		tags: ['death', 'suicide'],
+		type: 'article',
+	},
+	{
+		url: 'https://grimgrains.com/site/home.html',
+		title: 'Grim Grains',
+		description:
+			"A vegan cooking blog with cute illustrations. I've been thinking about blogging about exploring cooking and exploring making a fallback cookbook for myself in a similar format, but I don't want to be a copycat.",
+		tags: ['cooking', 'food'],
+		type: 'website',
+	},
+	{
+		url: 'https://jzhao.xyz/posts/a-failure-resume',
+		title: 'Failure Resume',
+		tags: [''],
+		description:
+			'"A failure resume isn’t just a showcase of failure in and of itself, but also a document of all the spectacular ways you’ve worked hard towards your own goals and accomplishments. In many ways, it validates your struggle and your effort."',
+		type: 'article',
+	},
+	{
+		url: 'https://memo.barrucadu.co.uk/personal-finance.html',
+		title: 'Personal Finance',
+		tags: [''],
+		description:
+			'I had been looking up ways persons were using Ledger. Instead I got a paradigm shift on how I was viewing my personal finances and a cool new blog to follow. I now use beancount, but I come back to this post every now and again. The calculations for short and long runaway (i.e. when we run out of money) are very helpful to consider .',
+		type: 'webpage',
+	},
+	{
+		url: 'https://themeasureofaplan.com/budget-tracking-tool/',
+		title: 'The Measure of A Plan',
+		tags: ['money'],
+		description: 'A spreadsheet budgeting tool for people who need budgeting analytics, but not too much',
+		type: 'tool',
+	},
+	{
+		url: 'https://www.tasteatlas.com/',
+		type: 'website',
+		title: 'Taste Atlas',
+		tags: ['cooking', 'food'],
+		description: 'A map of recipes from all over the world',
+	},
+];
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
@@ -56,22 +115,20 @@ export const About = () => {
 	return (
 		<section>
 			<h1 className="text-center">About</h1>
-			<div className={styles.paragraph}>
-				{/* <PhotoGalley /> */}
-				{/* TODO: Fix photogallery on about */}
+			{/* <PhotoGalley /> */}
+			{/* TODO: Fix photogallery on about */}
+			<section>
+				<div className='flex column center'>
+					<Image src={pic} alt="" height={250} width={400} style={{margin: 'auto'}}/>
+				<p className='prose'>
+					I made this about page because showing you my personality through the things I enjoy & abhor is personally preferable
+					to describing it. I've always disliked that "tell me a bit about yourself" in personal environments. This page is still under construction. When it is complete, there will be a tldr of my bio, then a map of my facets.
+					</p>
+					<ScrollDown />
+				</div>
+				</section>
 
-				<p>
-					I made this about page because showing you my personality through the things I like is personally preferable
-					to describing it. I've always disliked that "tell me a bit about yourself" in personal environments.
-				</p>
-				<p>
-					What's my personality like, you ask? Dive into the treasure trove of media below. It's like a mixtape of my
-					soul. I have a <Link href="/rolodex">Rolodex</Link> dedicated to the most interesting persons, websites and
-					articles I've come across on the internet. Most of these are places I frequent so this page also doubles as my
-					bookmarks.
-				</p>
-
-				{/* <h2>Coding</h2>
+			{/* <h2>Coding</h2>
 
 					<p>
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
@@ -84,77 +141,103 @@ export const About = () => {
 
 					<CodersrankSummary /> */}
 
-				<h2 className="text-center">Books</h2>
+			<section>
+				<div  className={styles.paragraph}>
+					<h2 className="text-center">Books</h2>
 
-				<p>
-					I like to read to learn about the world around me or get laughs. I have{' '}
-					<b>{Books.length} books in my library</b> (digital and non-digital), and I'm always looking for more. I prefer{' '}
-					{Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
-					<b>
-						{Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction
-					</b>
-					.
-				</p>
+					<p>
+						I like to read to learn about the world around me or get laughs. I have{' '}
+						<b>{Books.length} books in my library</b> (digital and non-digital), and I'm always looking for more. I
+						prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
+						<b>
+							{Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction
+						</b>
+						.
+					</p>
 
-				<p>
-					I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
-					below. My 10 most frequently read book tags are: {topGenres}.
-				</p>
+					<p>
+						I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
+						below. My 10 most frequently read book tags are: {topGenres}.
+					</p>
 
-				<p>
-					The last book I read was <b>{ReadBooks[0].title}</b>.
-				</p>
+					<CurrentReads />
+					<p>
+						This graph below is my book status backlog for the past rolling year. This ignores books from before then to
+						ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
+						Non-Fiction. I have {wantToReadBooks.length} books in my backlog.
+					</p>
+					<BacklogGraph />
+					<p>
+						I used to show all my read books, but I would now prefer to show you a short and random list of books I've
+						read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the
+						book. The last book I read was <b>{ReadBooks[0].title}</b>.
+					</p>
+					<RandomBooks />
+				</div>
+			</section>
+			<section  className={styles.paragraph}>
+				<div>
+					<h2 className="text-center">Games</h2>
 
-				<CurrentReads />
-				<p>
-					This graph below is my book status backlog for the past rolling year. This ignores books from before then to
-					ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-					Non-Fiction. I have {wantToReadBooks.length} books in my backlog.
-				</p>
-				<BacklogGraph />
-				<p>
-					I used to show all my read books, but I would now prefer to show you a short and random list of books I've
-					read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the book.
-				</p>
-				<RandomBooks />
-
-				<h2 className="text-center">Games</h2>
-
-				<p>
-					My preference is playing indie games and games I physically own.I still play my Gameboy Advance and I own 3
-					different DSes. I dream of getting a steamdeck or switch. Not featured below: several untouched games from{' '}
-					<Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and{' '}
-					<Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. I have 4 main games I play: one online game and the
-					rest being primarily offline.{' '}
-				</p>
-				<div className="pancake">
-					<div className="pancake-child flex column">
-						<Link href="https://www.legendsofidleon.com/">
-							<Image width={300} height={150} src={'https://imgur.com/APzegNB.png'} alt="IdleOn" />
-						</Link>
-					</div>
-					<div className="pancake-child flex column">
-						<Link href="https://shatteredpixel.com/shatteredpd/">
-							<Image width={300} height={150} src="https://i.imgur.com/J6ExEz6.gif" alt="Shattered Pixel Dungeon" />
-						</Link>
-					</div>
-					<div className="pancake-child flex column">
-						<Link href="https://en.wikipedia.org/wiki/Etrian_Odyssey_II">
-							<Image
-								width={300}
-								height={150}
-								src="https://i.imgur.com/TZBvWt7.png"
-								alt="Etrian Odyssey II: Heroes of Lagaard"
-							/>
-						</Link>
-					</div>
-					<div className="pancake-child flex column">
-						<Link href="https://en.wikipedia.org/wiki/The_World_Ends_with_You">
-							<Image width={300} height={150} src="https://i.imgur.com/SATlGhl.png" alt="World Ends With You" />
-						</Link>
+					<p>
+						My preference is playing indie games and games I physically own. I still play my Gameboy Advance and I own 3
+						different DSes. Not featured below: several untouched games from{' '}
+						<Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and{' '}
+						<Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation nowadays.
+					</p>
+					<div className="pancake">
+						<div className="pancake-child flex column">
+							<Link href="https://www.legendsofidleon.com/">
+								<Image width={300} height={150} src={'https://imgur.com/APzegNB.png'} alt="IdleOn" />
+							</Link>
+						</div>
+						<div className="pancake-child flex column">
+							<Link href="https://shatteredpixel.com/shatteredpd/">
+								<Image width={300} height={150} src="https://i.imgur.com/J6ExEz6.gif" alt="Shattered Pixel Dungeon" />
+							</Link>
+						</div>
+						<div className="pancake-child flex column">
+							<Link href="https://en.wikipedia.org/wiki/Etrian_Odyssey_II">
+								<Image
+									width={300}
+									height={180}
+									src="https://i.imgur.com/TZBvWt7.png"
+									alt="Etrian Odyssey II: Heroes of Lagaard"
+								/>
+							</Link>
+						</div>
+						<div className="pancake-child flex column">
+							<Link href="https://en.wikipedia.org/wiki/The_World_Ends_with_You">
+								<Image width={300} height={150} src="https://i.imgur.com/SATlGhl.png" alt="World Ends With You" />
+							</Link>
+						</div>
+						<div className="pancake-child flex column">
+							<Link href="https://en.wikipedia.org/wiki/Advance_Wars">
+								<Image width={150} height={150} src="https://i.imgur.com/ofu3y5f.jpeg" alt="Advanded Wars" />
+							</Link>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section>
+				<div className={styles.paragraph}>
+					<h2 className="text-center">Rolodex</h2>
+					<p className="prose">
+						These are some bookmarks for pages & media I've enjoyed on the net. In the future when I have areas for this
+						site similar to how I map out my life, the links will be moved to respective sectors.
+					</p>
+					<div className={style.container + ` pancake`}>
+						{Bookmarks.map((bookmark) => (
+							<div className={style.link}>
+								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child`}>
+									<h3>{bookmark.title}</h3>
+									<p>{bookmark.description}</p>
+								</Link>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
 		</section>
 	);
 };
