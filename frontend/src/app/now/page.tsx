@@ -19,7 +19,7 @@ const NowPage = () => {
 					things/experiences I'm trying to complete. I'll likely update the points with a blog post to show progress.
 				</p>
 
-				<div className="prose">
+				<div className={`prose ` + style.paragraph}>
 					<h3 className={style.heading}>2024-Spring</h3>
 
 					<ul className={style.spring}>
