@@ -31,11 +31,11 @@ const NowPage = () => {
 					</p>
 
 					<ul className={style.spring}>
-						<li>Completing my guide on my relationship with myself and others.</li>
+						<li>Completing my <Link href={"https://docs.google.com/document/d/140xQK_9cy4ThBbSxBK3NANQqWoO4CxW0QUZ1HNBhAlU/edit?usp=sharing"}>guide on relationships</Link> I have with myself, family, friends and others.</li>
 						<li>
-							Advancing in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
+							<Link href="https://docs.google.com/spreadsheets/d/1Ao_9w17kz0X82ZlpYiu4AoUsMOThUjBWkbDFai1bIsA/edit?usp=sharing">Advancing</Link> in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
 						</li>
-						<li>Creating a GBStudio game as a love letter to a muse.</li>
+						<li>Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.</li>
 					</ul>
 
 					<hr/>

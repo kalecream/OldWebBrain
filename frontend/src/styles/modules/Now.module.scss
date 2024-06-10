@@ -9,7 +9,7 @@
     &[open] > summary {
         text-decoration: line-through;
     }
-    
+
     summary {
         opacity: 0.5;
 
@@ -24,7 +24,7 @@
 }
 
 .heading {
-    @include breakpoint-range($from: mobile, $to: tablet ) {
+    @include breakpoint-range($from: mobile, $to: tablet) {
         text-indent: 2rem;
     }
 
@@ -34,39 +34,53 @@
     margin-left: 3rem;
 }
 
-.spring, .winter, .doing {
+.paragraph > * > a {
+    text-decoration: wavy;
+}
+
+.spring,
+.winter,
+.doing {
 
     li {
         font-weight: 400;
         text-indent: 0.5rem;
         color: var(--primary);
+
         &::marker {
             font-size: 0.5rem;
-        } 
+        }
+    }
+
+    li a {
+        text-decoration: underline;
+        text-decoration-color: var(--secondary);
+        text-decoration-style: dashed;
+        font-weight: 500;
     }
 }
 
 .spring {
     li::marker {
-            content: '🌱';
+        content: '🌱';
     }
 }
 
 .summer {
     li::marker {
-            content: '🌿';
+        content: '🌿';
     }
 }
 
 .fall {
     li::marker {
-            content: '🍂';
+        content: '🍂';
     }
 }
 
 .winter {
     li::marker {
-            content: '🌰';
+        content: '🌰';
     }
 }
 
