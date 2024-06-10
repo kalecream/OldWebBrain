@@ -21,13 +21,7 @@ interface BookmarkProps {
 }
 
 const Bookmarks: BookmarkProps[] = [
-	{
-		url: 'https://www.wilsonquarterly.com/quarterly/_/whats-the-best-way-to-die',
-		title: "What's the best way to die?",
-		description: 'An article I found on physician-assisted suicide.',
-		tags: ['death', 'suicide'],
-		type: 'article',
-	},
+	
 	{
 		url: 'https://grimgrains.com/site/home.html',
 		title: 'Grim Grains',

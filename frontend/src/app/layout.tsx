@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     locale: 'en_JM',
     type: 'website',
   },
+  alternates: {
+    types: { 'application/rss+xml': 'https://sabrinamedwinter.com/feed.xml' },
+  },
   robots: {
     index: true,
     follow: true,
