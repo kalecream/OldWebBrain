@@ -7,6 +7,7 @@ import { getBlogPosts } from '../../db/blog';
 // import ViewCounter from '../view-counter';
 // import { increment } from '../../db/actions';
 import { unstable_noStore as noStore } from 'next/cache';
+import Link from 'next/link';
 
 export async function generateMetadata({
   params,
@@ -128,6 +129,7 @@ export default function Blog({ params }) {
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={post.content} />
+        <Link href={'/feed.xml'}>RSS.</Link><Link href={'/blog'}>Back to Blog.</Link>
       </article>
     </section>
   );
