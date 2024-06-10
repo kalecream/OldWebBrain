@@ -477,7 +477,8 @@ kbd::after,
 .flex {
 	display: flex;
 	place-items: center;
-	
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 /* containers  */

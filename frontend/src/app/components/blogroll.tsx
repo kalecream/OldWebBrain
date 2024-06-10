@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getBlogPosts } from '../db/blog';
 import blog from '@styles/modules/BlogSummary.module.scss';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 // import { Suspense } from 'react';
 // import ViewCounter from './view-counter';
 // import { getViewsCount } from '../db/queries';
