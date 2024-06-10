@@ -20,12 +20,13 @@ export async function GET() {
     posts.map((post) => {
         feed.item({
           title: post.metadata.title,
-          guid: `https://yourwebsite.com/${post.slug}`,
-          url: `https://yourwebsite.com/${post.slug}`,
+          guid: `https://sabrinamedwinter.com/${post.slug}`,
+          url: `https://sabrinamedwinter.com/${post.slug}`,
           date: post.metadata.update || post.metadata.date,
           description: post.metadata.description,
           author: 'Sabrina Medwinter',
-        //   categories: post.metadata.tags || [],
+			//   categories: post.metadata.tags || [],
+		//   FIXME: Post tags in rss
         });
       });
 

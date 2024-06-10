@@ -22,6 +22,7 @@ export async function generateMetadata({
     date: publishedTime,
     summary: description,
     image,
+    tags
   } = post.metadata;
   let ogImage = image
     ? `https://sabrinamedwinter.com${image}`
@@ -30,6 +31,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: tags,
     openGraph: {
       title,
       description,
