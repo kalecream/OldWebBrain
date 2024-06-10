@@ -20,8 +20,8 @@ export async function GET() {
     posts.map((post) => {
         feed.item({
           title: post.metadata.title,
-          guid: `https://sabrinamedwinter.com/${post.slug}`,
-          url: `https://sabrinamedwinter.com/${post.slug}`,
+          guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
+          url: `https://sabrinamedwinter.com/blog/${post.slug}`,
           date: post.metadata.update || post.metadata.date,
           description: post.metadata.description,
           author: 'Sabrina Medwinter',
