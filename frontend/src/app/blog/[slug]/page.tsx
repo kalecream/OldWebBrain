@@ -116,10 +116,10 @@ export default function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+      <h1 className="title">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
+      <div className="flex justify-between items-center my-1 mb-2">
         <Suspense fallback={<p className="h-5" />}>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
             {formatDate(post.metadata.date)}
@@ -129,9 +129,10 @@ export default function Blog({ params }) {
           <Views slug={post.slug} />
         </Suspense> */}
       </div>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+      <article className="prose">
         <CustomMDX source={post.content} />
-        <Link href={'/feed.xml'}>RSS.</Link><Link href={'/blog'}>Back to Blog.</Link>
+        <div className='flex my-1'>  <Link href={'/feed.xml'}>RSS.</Link><Link href={'/blog'}>Back to Blog.</Link></div>
+      
       </article>
     </section>
   );

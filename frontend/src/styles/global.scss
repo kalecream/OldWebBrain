@@ -127,7 +127,7 @@ html {
 
 body {
 	background-color: var(--backgroundColor);
-	// background-image: var(--backgroundImage);
+	background-image: var(--backgroundImage);
 	background-repeat: repeat;
 }
 
@@ -150,14 +150,15 @@ main {
 header {
 	position: sticky;
 	top: 0;
-	justify-content: space-between;
+	
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	z-index: 5;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include breakpoint-range($from: mobile) {
 		padding: 1rem;
+		justify-content: center;
 	}
 
 	@include breakpoint-range($from: tablet, $to: desktopSmall) {
@@ -165,6 +166,7 @@ header {
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
+		justify-content: space-between;
 		padding: var(--paddingContainer);
 	}
 }
@@ -189,7 +191,6 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0.5rem auto;
 
 	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
@@ -197,6 +198,7 @@ section {
 
 	@include breakpoint-range($from: tablet) {
 		padding: 0.5rem;
+		margin: 0.5rem auto;
 	}
 }
 
@@ -270,6 +272,11 @@ hr {
 		// background-color: rgba(255, 255, 255, .5);
 		-webkit-backdrop-filter: blur(20px);
 		backdrop-filter: blur(20px);
+	}
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		backdrop-filter: none;
+		background-color: var(--backgroundColor);
 	}
 }
 
@@ -480,6 +487,7 @@ kbd::after,
 	flex-wrap: wrap;
 	gap: 1rem;
 	margin: auto;
+	justify-content:center;
 }
 
 /* containers  */
@@ -493,6 +501,19 @@ kbd::after,
 .pancake-child {
 	flex: 1 1 350px;
 	margin: 1rem;
+}
+
+.img-grid {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 100px;
+	justify-content:center;
+	gap: 10px;
+	filter: saturate(33%);
+
+	&:hover {
+		filter: saturate(90%);
+	}
 }
 
 .column {
@@ -509,6 +530,15 @@ kbd::after,
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		width: 100%;
+	}
+}
+.desktop {
+	@include breakpoint-range($from: mobile,  $to: tablet) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: flex;
 	}
 }
 
@@ -542,6 +572,7 @@ article {
 
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
 }
 
 article h1,
@@ -751,4 +782,24 @@ span.project__status.archived {
 
 .ch-codeblock:hover .ch-code-button {
 	display: block;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.items-center {
+	place-items: center;;
+}
+
+.my-1 {
+	margin: 1rem 0;
+}
+
+.mx-1 {
+	margin: 0 1rem;
+}
+
+.mb-4 {
+	margin-bottom: 2rem;
 }

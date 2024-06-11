@@ -31,11 +31,11 @@
 }
 
 .paragraph ul {
-    margin-left: 3rem;
-}
-
-.paragraph > * > a {
-    text-decoration: wavy;
+    @include breakpoint-range($from: mobile, $to: tablet) {
+       width: 90%;
+       margin-left: 1rem;
+    }
+    
 }
 
 .spring,
