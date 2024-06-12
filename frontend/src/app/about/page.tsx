@@ -120,7 +120,7 @@ export const About = () => {
 			{/* TODO: Fix photogallery on about */}
 			<section>
 				<div className='flex column center'>
-					<Image src={pic} alt="" height={250} width={400} style={{margin: 'auto'}}/>
+					<Image src={pic} alt="" height={200} width={300} style={{margin: 'auto'}}/>
 				<p className='prose'>
 					I made this about page because showing you my personality through the things I enjoy & abhor is personally preferable
 					to describing it. I've always disliked that "tell me a bit about yourself" in personal environments. This page is still under construction. When it is complete, there will be a tldr of my bio, then a map of my facets.
