@@ -18,7 +18,7 @@
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		gap: 1rem;
+		gap: 0.5rem;
 	}
 }
 
@@ -54,7 +54,7 @@
 .project-overlay {
 	display: flex;
 	flex-direction: row;
-	margin: 0.5rem;
+
 	// background-color: var(--backgroundColor);
 	padding: var(--paddingObject);
 	border: var(--border);
@@ -63,30 +63,13 @@
 
 	@include breakpoint-range($from: mobile) {
 		flex: 0 1 300px;
+		margin: 0.5rem;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		flex: 0 1 600px;
-	}
-}
-
-.project__box, .project__box {
-
-	@include breakpoint-range($from: desktopSmall) {
+		flex: 0 1 375px;
 		margin: 0.25rem;
-
-		&:first-of-type {
-			width: 66%;
-		}
 	}
-}
-
-.project__present {
-	
-	@include breakpoint-range($from: desktopSmall) {
-		min-width: 43%;
-	}
-
 }
 
 .project-info {
@@ -94,11 +77,6 @@
 	text-align: start;
 	position: relative;
 	gap: 1rem;
-
-	@include breakpoint-range($from: desktopSmall) {
-		display: flex;
-		flex-direction: row;
-	}
 }
 
 .project-lang {
@@ -108,17 +86,8 @@
 	font-size: 0.75rem;
 	font-weight: 500;
 	opacity: 0.8;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		margin: 0.5rem;
-		justify-content: center;
-	}
-
-	@include breakpoint-range($from: desktopSmall) {
-		margin-top: 0.5rem;
-		justify-content: end;
-		width: 100%;
-	}
+	margin: 0.5rem;
+	justify-content: center;
 }
 
 .project__tech {
@@ -146,7 +115,7 @@
 		margin-top: 2.5rem;
 
 		& span {
-			
+
 			width: clamp(200px, 100%, 20rem);
 			right: 0;
 		}
