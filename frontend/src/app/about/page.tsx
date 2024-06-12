@@ -169,7 +169,7 @@ export const About = () => {
 					</p>
 					<BacklogGraph />
 					<p>
-						I used to show all my read books, but I would now prefer to show you a short and random list of books I've
+						<Link href="/bookshelf">I show all my read books</Link>, but I would now prefer to show you a short and random list of books I've
 						read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the
 						book. The last book I read was <b>{ReadBooks[0].title}</b>.
 					</p>

@@ -44,7 +44,6 @@
 .reading,
 .random {
 	display: flex;
-	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
@@ -61,12 +60,13 @@
 
 	@include breakpoint-range($from: tablet) {
 		gap: 1rem;
+		flex-direction: row;
 	}
 }
 
 .random {
 	@include breakpoint-range($from: desktop) {
-		width: 90%;
+		width: 100%;
 		margin: 3rem auto;
 		justify-content: center;
 	}
@@ -88,11 +88,11 @@
 	}
 
 	@include breakpoint-range($from: mobile) {
-		width: 90%;
+		width: 100%;
 	}
 
 	@include breakpoint-range($from: tablet) {
-		width: clamp(350px, 40vw, 400px);
+		width: clamp(650px, 40vw, 800px);
 		min-height: 300px;
 
 		.book__title a {
@@ -103,7 +103,7 @@
 	}
 
 	@include breakpoint-range($from: desktop) {
-		width: clamp(550px, 40vw, 800px);
+		width: clamp(650px, 40vw, 800px);
 
 		.book__title a {
 			font-size: 1.2rem;
@@ -113,11 +113,18 @@
 }
 
 .books {
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	perspective: 600px;
 	margin: 0;
+
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: mobile) {
+		display: flex;
+	}
 }
 
 .book {
