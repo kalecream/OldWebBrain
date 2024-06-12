@@ -270,7 +270,7 @@ hr {
 
 	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 		// background-color: rgba(255, 255, 255, .5);
-		-webkit-backdrop-filter: blur(20px);
+		// -webkit-backdrop-filter: blur(20px);
 		backdrop-filter: blur(20px);
 	}
 
@@ -595,8 +595,9 @@ article h3 {
 }
 
 article p {
-	font-size: 1.1rem;
+	font-size: 1.05rem;
 	line-height: 1.6;
+	margin-bottom: 1rem;
 }
 
 code {
@@ -621,7 +622,7 @@ article li::marker {
 
 @media (max-width: 1024px) {
 	.article--header {
-		grid-template: flex;
+		display: flex;
 		flex-direction: column;
 	}
 }
@@ -687,25 +688,20 @@ canvas:active {
 	cursor: grabbing;
 }
 
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
 	width: 3px;
 	background-origin: padding-box;
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
 	// background: var(--backgroundColor);
 	background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
 	background-color: var(--primary);
 	border-radius: var(--borderRadius);
-}
-
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:active {
-	background: var(--primary);
 }
 
 // This project styling cannot go in CSS modules
