@@ -38,7 +38,7 @@
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 10%;
+		bottom: 15%;
 		left: 10%;
 	}
 }
@@ -46,9 +46,9 @@
 .model {
 	@extend .section;
 
-	@include breakpoint-range($from: mobile) {
-		display: none
-	}
+	// @include breakpoint-range($from: mobile) {
+	// 	display: none
+	// }
 
 	@include breakpoint-range($from: tablet) {
 		display: flex;
@@ -57,7 +57,7 @@
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
 		bottom: 10%;
-		// right: 8%;
+		right: 8%;
 		// margin:auto
 	}
 }

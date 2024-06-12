@@ -4,7 +4,7 @@ import style from '@styles/modules/footer.module.scss';
 
 export const SocialMediaList = () => {
 	return (
-		<div className={style['social-media-list']}>
+		<div className={style['social-media-list'] + ` flex space-between`}>
 			{MediaProfiles.map((media) => {
 				const Icon = media.icon;
 
