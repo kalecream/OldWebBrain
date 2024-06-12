@@ -1,12 +1,12 @@
 import Hero from '@components/hero/hero';
 import ProjectList from '@components/projects/projectsList';
-import { PreloadResources } from './preload';
+// import { PreloadResources } from './preload';
 // import { HomePosts } from './components/blogroll';
 
 export default function Page() {
   return (
     <section>
-      <PreloadResources />
+      {/* <PreloadResources /> */}
       <Hero />
       {/* <HomePosts /> */}
       <ProjectList />

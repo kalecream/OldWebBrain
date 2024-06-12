@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Proxima Nova";
-  font-display: swap; 
-  src: local("Proxima Nova"),url(../assets/fonts/ProximaNova.otf);
+  font-display: swap;
+  src: local("Proxima Nova"), url(../assets/fonts/ProximaNova.otf);
 }
 
 @font-face {
   font-family: "Sims Sans SC";
-  font-display: swap; 
-  src: local("Sims Sans"),url(../assets/fonts/Sim-Sans-Bold-SC.otf);
+  font-display: swap;
+  src: local("Sims Sans"), url(../assets/fonts/Sim-Sans-Bold-SC.otf);
 }
 
 @font-face {
-  font-family: "Fira Code", monospace;
-  font-display: swap; 
+  font-family: "Fira Code";
+  font-display: swap;
   src: local("Fira Code Regular"), url(../assets/fonts/FiraCode-Regular.ttf);
 }
 
 $primary-font: "Proxima Nova", Arial, Helvetica, sans-serif;
 $accent-font: "Sims Sans SC", 'Bebas Neue', 'Open Sans', Arial, sans-serif;
-$secondary-font:"Fira Code", monospace;
+$secondary-font: "Fira Code", monospace;

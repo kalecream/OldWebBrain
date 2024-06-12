@@ -53,7 +53,7 @@
 .container .text .icon:nth-child(1) {
 	top: 11%;
 	left: 63%;
-	animation-delay: 0;
+	// animation-delay: 0;
 	color: var(--primary);
 }
 
@@ -93,7 +93,7 @@
 	left: 45%;
 	transform: translate(-45%, -50%);
 	animation: upDown 2000ms ease-in-out infinite;
-	animation-delay: calc(0s + (0.1s * 1.8));
+	// animation-delay: calc(0s + (0.1s * 1.8));
 	z-index: -3;
 }
 

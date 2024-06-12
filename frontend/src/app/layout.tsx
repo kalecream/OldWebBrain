@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      // noai: true,
+      // noimageai: true
+      // TODO: check when this becomes available in nextjs
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
