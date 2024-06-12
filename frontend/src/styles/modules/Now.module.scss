@@ -12,9 +12,6 @@
 
     summary {
         opacity: 0.6;
-        @include breakpoint-range($from: mobile, $to: tablet) {
-            text-indent: 2rem;
-        }
 
         &::marker {
             content: none;
