@@ -83,24 +83,6 @@ export const Projects: ProjectStructure[] = [
 		language: ['React', 'TypeScript', 'MDX'],
 	},
 	{
-		id: '004',
-		display: true,
-		title: 'GPT-4 Record',
-		category: 'code',
-		type: ['automation', 'AI'],
-		status: 'archived',
-		description: (
-			<span>
-				A one-hour paid project to accept a 800 word prompt, perform a specfic action with the prompt and use that
-				output as a second prompt. Both prompts were then saved to an ordinary text file.
-			</span>
-		),
-		technology: ['OpenAI'
-		],
-		language: ['Python'],
-		created: '2023-05-30',
-	},
-	{
 		id: '005',
 		display: true,
 		title: 'Swagger Login Test',
@@ -260,19 +242,6 @@ export const Projects: ProjectStructure[] = [
 		technology: ['Blender3D'],
 		created: '2022-11-12',
 	},
-	{
-		id: '015',
-		display: true,
-		title: 'Scarecrow',
-		category: 'illustration',
-		type: 'practice',
-		image: 'https://i.imgur.com/2XFtNFp.png',
-		status: 'completed',
-		description: <span>An image I did for pixel daily</span>,
-		language: null,
-		technology: ['LibreSprite'],
-		created: '2018-10-13',
-	}
 ];
 
 export default Projects;

@@ -109,11 +109,11 @@ $map in $themes {
 	--paddingObject: 1rem;
 	--paddingObjectSmall: 0.5rem;
 	--boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
-	--transition:  all 0.3s ease-in-out;
+	--transition: all 0.3s ease-in-out;
 	--loadingBackground: radial-gradient(circle farthest-corner at 10% 20%, #b797c5 0%, #720455; 90%);
 	--loadingTextColor: #fff;
 	--bodyFont: 'Inter', sans-serif;
-	--headingFont:  'Inter', sans-serif;
+	--headingFont: 'Inter', sans-serif;
 	--accentFont: 'Sims Sans SC', sans-serif;
 	--backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
 	// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
@@ -150,7 +150,7 @@ main {
 header {
 	position: sticky;
 	top: 0;
-	
+
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -204,8 +204,8 @@ section {
 
 hr {
 	border: 0;
-    border-bottom: 1px dashed #ccc;
-    background: #999;
+	border-bottom: 1px dashed #ccc;
+	background: #999;
 }
 
 #blog {
@@ -347,10 +347,6 @@ p {
 	font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1rem);
 	margin-bottom: 0.8rem;
 	// backdrop-filter: blur($blur);
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		margin: 0 2.5rem;
-	}
 }
 
 p a {
@@ -487,7 +483,7 @@ kbd::after,
 	flex-wrap: wrap;
 	gap: 1rem;
 	margin: auto;
-	justify-content:center;
+	justify-content: center;
 }
 
 /* containers  */
@@ -499,15 +495,23 @@ kbd::after,
 }
 
 .pancake-child {
-	flex: 1 1 350px;
-	margin: 1rem;
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		flex: 1 1 100%;
+		margin: 1rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		flex: 1 1 300px;
+		margin: 0.25rem;
+	}
+
 }
 
 .img-grid {
 	display: flex;
 	flex-wrap: wrap;
 	flex: 1 1 100px;
-	justify-content:center;
+	justify-content: center;
 	gap: 10px;
 	filter: saturate(33%);
 
@@ -532,8 +536,9 @@ kbd::after,
 		width: 100%;
 	}
 }
+
 .desktop {
-	@include breakpoint-range($from: mobile,  $to: tablet) {
+	@include breakpoint-range($from: mobile, $to: tablet) {
 		display: none;
 	}
 
@@ -785,7 +790,8 @@ span.project__status.archived {
 }
 
 .items-center {
-	place-items: center;;
+	place-items: center;
+	;
 }
 
 .my-1 {

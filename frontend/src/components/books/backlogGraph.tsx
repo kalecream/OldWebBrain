@@ -140,32 +140,28 @@ export const BookShelf: FC = () => {
 	);
 
 	return (
-		<>
+		<section>
 			<details className={styles.bookDetails}>
 				<summary>
 					<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
-				<div className="bookshelf pancake">
+				<div className="bookshelf flex">
 					{wantToReadBooks.map((book) => (
-						// <BookContainer
-						//   href={`https://www.you.com/search?q=${book.title}+${book.author}`}
-						//   target="_blank"
-						//   rel="noopener noreferrer"
-						//   key={book.title}
-						// >
-						//   <Book className="animate__animated animate__slideInUp">
-						//     <img
-						//       src={book.cover}
-						//       alt={book.title}
-						//       title={book.summary}
-						//       style={{ width: "200px", height: "300px" }}
-						//     />
-						//   </Book>
-						// </BookContainer>
-						<p className=" pancake-child">
-							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a> <br />
-							<span>by {book.author}</span>
-						</p>
+						<Link
+						  href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
+						  target="_blank"
+						  rel="noopener noreferrer"
+						  key={book.title}
+						  className={styles.books}
+						>
+						    <img
+						      src={book.cover}
+						      alt={book.title}
+						      title={book.summary}
+							  className={styles.book}
+						      style={{ width: "200px", height: "300px" }}
+						    />
+						</Link>
 					))}
 				</div>
 			</details>
@@ -176,7 +172,7 @@ export const BookShelf: FC = () => {
 				<div className="bookshelf pancake">
 					{readBooks.map((book) => (
 						<p key={book.title} className={` pancake-child ${styles.bookList}`}>
-							<a href={`https://www.google.com/search?q=${book.title}`}>{book.title}</a>{' '}
+							<a href={`https://www.duckduckgo.com/search?q=${book.title}`}>{book.title}</a>{' '}
 							{book.rating && book.rating >= 4 ? (
 								book.rating >= 5 ? (
 									<span style={{ color: 'var(--primary)', scale: 0.5 }}>♥</span>
@@ -200,7 +196,7 @@ export const BookShelf: FC = () => {
 					))}
 				</div>
 			</details>
-		</>
+		</section>
 	);
 };
 

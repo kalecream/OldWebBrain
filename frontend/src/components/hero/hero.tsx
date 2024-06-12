@@ -30,6 +30,7 @@ const Hero = () => {
 							title="Professional Services"
 							className={button.primary}
 							href="mailto:sabrinamedwinter@gmail.com"
+							rel="me"
 						>
 							Need a service?
 						</Link>

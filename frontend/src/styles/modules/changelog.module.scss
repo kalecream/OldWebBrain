@@ -6,7 +6,6 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
-    min-width: 400px;
     margin: 0 auto;
     justify-content: flex-start;
 
@@ -17,7 +16,7 @@
     &__content {
         justify-content: flex-start;
         position: relative;
-        
+
     }
 
     &__timeline {
@@ -37,25 +36,22 @@
     }
 
     &__left {
-    
+
         h2 {
-            max-width: 400px;
+            max-width: 200px;
             font-weight: 500;
+            color: var(--primary);
         }
 
-        
-       
         @include breakpoint-range($from: desktopSmall) {
-            width: 450px;
+            width: clamp(200px, 100%, 350px);
         }
     }
 
     &__details {
-        padding: 2rem 0;
-        padding-left: 20px;
         border-left: 1px solid var(--textColorFade);
+        padding-left: 20px;
         display: flex;
-        gap: 2rem;
         backdrop-filter: blur(20px);
 
         p {
@@ -65,25 +61,44 @@
         }
 
         @include breakpoint-range($from: mobile) {
+
+            flex-direction: column;
+        }
+
+        @include breakpoint-range($from: tablet) {
             flex-direction: column;
         }
 
         @include breakpoint-range($from: desktopSmall) {
             flex-direction: row;
+
         }
     }
 
     &__markdown {
+
+        @include breakpoint-range($from: desktopSmall) {
+            width: clamp(200px, 100%, 450px);
+        }
+
+
         flex-wrap: wrap;
-        p, p a {
+
+        p,
+        p a {
             margin: 0;
+            font-family: 'Fira Code', monospace;
 
             @include breakpoint-range($from: mobile) {
-                max-width: 25rem;
+                max-width: 10rem;
+            }
+
+            @include breakpoint-range($from: tablet) {
+                max-width: 45rem;
             }
 
             @include breakpoint-range($from: desktopSmall) {
-                max-width: 55rem;
+                max-width: 35rem;
             }
         }
 
@@ -93,6 +108,9 @@
 
         li {
             // list-style: none;
+            font-family: 'Fira Code', monospace;
+            letter-spacing: -1px;
+            ;
 
             a {
                 font-size: 0.8rem;
@@ -111,10 +129,10 @@
         a h2 {
             font-size: 2rem;
             margin-bottom: 0;
-           
+
         }
 
-        h2{
+        h2 {
             font-size: 1.2rem;
             font-weight: 500;
             font-family: var(--bodyFont);
