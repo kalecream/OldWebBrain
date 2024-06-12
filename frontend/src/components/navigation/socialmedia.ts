@@ -1,3 +1,4 @@
+import { FaCoffee } from 'react-icons/fa';
 import { FaTwitter, FaGithub, FaLinkedin, FaCodepen, FaRss } from 'react-icons/fa6';
 
 export const MediaProfiles = [
@@ -26,6 +27,11 @@ export const MediaProfiles = [
 		url: 'https://bsky.app/profile/medwinter.bsky.social',
 		icon: FaTwitter,
 		// TODO: Check if Font Awesome added a bluesky icon if they haven't make an icon type hthat is either fontawesome icon or svg
+	},
+	{
+		name: 'Buy Me A Coffee',
+		url: 'https://ko-fi.com/manage/index?method=externallogin',
+		icon: FaCoffee,
 	},
 	{
 		name: 'RSS',

@@ -1,5 +1,5 @@
 "use client"
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from 'next/image';
 // import { HeroModel } from '@components/threeJS/HeroModel';
 import HeroName from '@components/hero/heroName/heroName';
@@ -7,6 +7,8 @@ import { ScrollDown } from '@components/scrollDown';
 import hero from '@styles/modules/Hero.module.scss';
 import button from '@styles/modules/Button.module.scss';
 import Valentine from '@assets/images/valentine.webp';
+import Bop from '@assets/images/bop.webp';
+import Link from 'next/link';
 
 const Hero = () => {
 	return (
@@ -14,7 +16,7 @@ const Hero = () => {
 			<div className={hero.container}>
 				<div className={hero.cta}>
 					<HeroName name={'Sabrina'} />
-					<div className={hero.text}>
+					<div className={`glassmorphic ` + hero.text}>
 						<center>
 							<p>
 								<b>Web developer</b>
@@ -24,22 +26,23 @@ const Hero = () => {
 					</div>
 
 					<div className={button.container}>
-						{/* <Link
+						<Link
 							title="Professional Services"
 							className={button.primary}
-							href="/services"
+							href="mailto:sabrinamedwinter@gmail.com"
 						>
 							Need a service?
-						</Link> */}
-						{/* <Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">
+						</Link>
+						<Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">
 							Check out the blog
-						</Link> */}
+						</Link>
 					</div>
 				</div>
+				
 				<div className={hero.model}>
 					{/* <HeroModel /> */}
 					<Image
-						src={Valentine}
+						src={Bop}
 						loader={({ src, width }) => `${src}?w=${width}`}
 						width={0}
 						height={0}
