@@ -21,7 +21,6 @@ interface BookmarkProps {
 }
 
 const Bookmarks: BookmarkProps[] = [
-	
 	{
 		url: 'https://grimgrains.com/site/home.html',
 		title: 'Grim Grains',
@@ -119,15 +118,17 @@ export const About = () => {
 			{/* <PhotoGalley /> */}
 			{/* TODO: Fix photogallery on about */}
 			<section>
-				<div className='flex column center'>
-					<Image src={pic} alt="" height={200} width={300} style={{margin: 'auto'}}/>
-				<p className='prose'>
-					I made this about page because showing you my personality through the things I enjoy & abhor is personally preferable
-					to describing it. I've always disliked that "tell me a bit about yourself" in personal environments. This page is still under construction. When it is complete, there will be a tldr of my bio, then a map of my facets.
+				<div className="flex column center">
+					<Image src={pic} alt="" height={200} width={300} style={{ margin: 'auto' }} />
+					<p className="prose">
+						I made this about page because showing you my personality through the things I enjoy & abhor is personally
+						preferable to describing it. I've always disliked that "tell me a bit about yourself" in personal
+						environments. This page is still under construction. When it is complete, there will be a tldr of my bio,
+						then a map of my facets.
 					</p>
 					<ScrollDown />
 				</div>
-				</section>
+			</section>
 
 			{/* <h2>Coding</h2>
 
@@ -143,7 +144,7 @@ export const About = () => {
 					<CodersrankSummary /> */}
 
 			<section>
-				<div  className={styles.paragraph}>
+				<div className={styles.paragraph}>
 					<h2 className="text-center">Books</h2>
 
 					<p>
@@ -169,14 +170,15 @@ export const About = () => {
 					</p>
 					<BacklogGraph />
 					<p>
-						<Link href="/bookshelf">I show all my read books</Link>, but I would now prefer to show you a short and random list of books I've
-						read. A small heart means that I have it rated highly, while a cross means that I pretty much hated the
-						book. The last book I read was <b>{ReadBooks[0].title}</b>.
+						<Link href="/bookshelf"><b>I show all my read books</b></Link>, but I would now prefer to show you a short and
+						random list of books I've read. A small heart means that I have it rated highly, while a cross means that I
+						pretty much hated the book. The last book I read was <b>{ReadBooks[0].title}</b>.
 					</p>
 					<RandomBooks />
 				</div>
 			</section>
-			<section  className={styles.paragraph}>
+				
+			<section className={styles.paragraph}>
 				<div>
 					<h2 className="text-center">Games</h2>
 
@@ -209,12 +211,18 @@ export const About = () => {
 						</div>
 						<div className="pancake-child flex column">
 							<Link href="https://en.wikipedia.org/wiki/The_World_Ends_with_You">
-								<Image width={300} height={150} src="https://i.imgur.com/SATlGhl.png" alt="World Ends With You" />
+								<Image width={150} height={150} src="https://i.imgur.com/j6DsuvT.jpeg" alt="World Ends With You" />
 							</Link>
 						</div>
 						<div className="pancake-child flex column">
 							<Link href="https://en.wikipedia.org/wiki/Advance_Wars">
 								<Image width={150} height={150} src="https://i.imgur.com/ofu3y5f.jpeg" alt="Advanded Wars" />
+							</Link>
+						</div>
+
+						<div className="pancake-child flex column">
+							<Link href="https://en.wikipedia.org/wiki/Professor_Layton_and_the_Curious_Village">
+								<Image width={150} height={160} src="https://i.imgur.com/NsBAPjW.jpeg" alt="Professor LAyton and The Curious Village" />
 							</Link>
 						</div>
 					</div>
@@ -231,7 +239,7 @@ export const About = () => {
 						{Bookmarks.map((bookmark) => (
 							<div className={style.link}>
 								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child`}>
-									<h4 style={{fontWeight:'semibold'}}>{bookmark.title}</h4>
+									<h4 style={{ fontWeight: 'semibold' }}>{bookmark.title}</h4>
 									<p>{bookmark.description}</p>
 								</Link>
 							</div>
