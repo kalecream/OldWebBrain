@@ -37,18 +37,6 @@ const NowPage = () => {
 						<li>Rebuilding my non-perishable food pantry.</li>
 						<li>Picking a neglected online course & finishing it (FullStackOpen).</li>
 					</ul>
-					<details>
-						<summary>
-							Goal Tracking
-						</summary>
-						<iframe
-							width="100%"
-							height="441"
-							seamless
-							frameborder="0"
-							src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTPaQWjkzJkztTbgO82GYen5AKZir0DIKBYDOYmVz-Vh9wPJYq9ZNh-tOVKAo7bHQ6LHrXVvpYhaab0/pubchart?oid=1246404764&amp;format=interactive"
-						></iframe>
-					</details>
 
 					<details className={style.behind}>
 						<summary>Behind Me.</summary>
