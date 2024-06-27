@@ -865,6 +865,23 @@ const Books = [
 		review: 'A good introduction to Next.js. It needs to be updated for the app router now.',
 		cover: 'https://i.imgur.com/sbODdtk.jpeg'
 	},
+	{
+		title: 'Wild Fermentation',
+		author: 'Sandor Ellis Katz',
+		genre: ['Non-Fiction', 'Cooking', 'Fermentation'],
+		status: 'Read',
+		rating: 5,
+		pages: 52,
+		started: '2024-06-25',
+		added: '2024-06-25',
+		finished: '2024-06-25',
+		review: 'A perfect booklet for doing some countertop diy fermentation for first-timers',
+		cover: 'https://i.imgur.com/c6PgZop.jpeg',
+		quotes: [
+			'As you watch your fermenting food bubble away as bacteria and yeast work their transformative magic, envision yourself as an agent for change, creating agitation and unrest, releasing bubbles of transformation into the social order. Use your fermented goodies to nourish your family and friends and allies. The life-affirming power of these basic foods contrasts sharply with the lifeless industrially-processed foods that fill supermarket shelves.',
+			'The word fermentation has another connotation. Ideas ferment, as they spread and mutate and inspire movements for change. In the American Heritage dictionary the secondary meaning of fermentation is “unrest, agitation.” I feel equally committed to this aspect of fermentation. As an agent for change, I am a culturural manipulator, proud to be subversive.'
+		]
+	}
 ];
 
 export default Books;
