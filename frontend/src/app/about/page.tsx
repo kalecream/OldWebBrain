@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Books from '@data/books';
 import CurrentReads from '@components/books/currentReads';
-import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
+import { BacklogGraph, BookShelf, RandomBooks } from '@components/books/backlogGraph';
 // import PhotoGalley from '@components/books/gallery';
 import styles from '@components/books/books.module.scss';
 // import { CodersrankSummary } from '@components/books/CodersRank';
@@ -152,7 +152,7 @@ export const About = () => {
 						<b>{Books.length} books in my library</b> (digital and non-digital), and I'm always looking for more. I
 						prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
 						<b>
-							{Percentage[0].toFixed(0)}% fiction and {Percentage[1].toFixed(0)}% non-fiction
+							{Percentage[0].toFixed(1)}% fiction and {Percentage[1].toFixed(1)}% non-fiction
 						</b>
 						.
 					</p>
@@ -169,12 +169,11 @@ export const About = () => {
 						Non-Fiction. I have {wantToReadBooks.length} books in my backlog.
 					</p>
 					<BacklogGraph />
-					<p>
-						<Link href="/bookshelf"><b>I show all my read books</b></Link>, but I would now prefer to show you a short and
-						random list of books I've read. A small heart means that I have it rated highly, while a cross means that I
+					<p>I show all my to-read and read books below. As well as a random book review or my thoughts on the book. A small heart means that I have it rated highly, while a cross means that I
 						pretty much hated the book. The last book I read was <b>{ReadBooks[0].title}</b>.
 					</p>
 					<RandomBooks />
+					<BookShelf />
 				</div>
 			</section>
 				

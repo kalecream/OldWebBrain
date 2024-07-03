@@ -138,6 +138,22 @@
 	animation: 1s ease 0s 1 initAnimation;
 	scale: 0.7;
 
+	img {
+		// padding: var(--paddingObject);
+		height: 100%;
+		top: 10px;
+		font-size: 1.3rem;
+		font-weight: 500;
+		text-align: center;
+		font-family: var(--headingFont);
+		text-transform: capitalize;
+		color: var(--backgroundColor);
+		display: flex;
+	place-items: center;
+	}
+
+
+
 	&:hover {
 		transform: rotateY(0deg);
 	}
@@ -482,3 +498,30 @@
 		margin: 3rem auto;
 	}
 }
+// ==========================
+
+
+.project-tabs {
+	margin: 0 auto;
+	padding-bottom: var(--paddingObjectSmall);
+	display: flex;
+	gap: 0.5rem;
+}
+
+.project-tab {
+	font-size: 0.7rem;
+	padding: var(--paddingObject);
+	border-radius: var(--borderRadius);
+	outline: none;
+	border: var(--border);
+	color: var(--primary);
+	background-color: transparent;
+	text-transform: capitalize;
+}
+
+.project-tab:active,
+.project-tab:hover {
+	background-color: var(--primary);
+	color: var(--backgroundColor);
+}
+
