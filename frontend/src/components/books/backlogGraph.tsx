@@ -1,3 +1,4 @@
+'use client';
 import { FC, useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import Books from '@data/books';
@@ -5,7 +6,6 @@ import { WindowWidth } from '@utils/windowDimmensions';
 import { GetMonthName } from '@utils/GetMonthName';
 import styles from './books.module.scss';
 import Link from 'next/link';
-
 export interface BooksProps {
 	title: string;
 	author: string[] | string;
@@ -131,7 +131,25 @@ const CustomerBarLabel: FC<any> = (props) => {
 
 // TODO: Combine books and add filters through a form.
 
+export const extractGenres = () => {
+	const categoriesSet = new Set<string>();
+	Books.filter((book) => book.status == 'Read').forEach((b) => {
+		b.genre.map((g) => {
+			categoriesSet.add(g);
+		});
+	});
+	return Array.from(categoriesSet);
+};
+
 export const BookShelf: FC = () => {
+	const [activeCategory, setActiveCategory] = useState<string>('All');
+
+	const handleTabChange = (category: string) => {
+		setActiveCategory(category);
+	};
+
+	const categories = extractGenres();
+
 	const readBooks = Books.filter((book) => book.status === 'Read').sort(
 		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime(),
 	);
@@ -139,64 +157,85 @@ export const BookShelf: FC = () => {
 		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
+	const filteredBooks =
+		activeCategory === 'All'
+			? [...readBooks].sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime())
+			: readBooks
+					.filter((project) => project.genre.includes(activeCategory))
+					.sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime());
+
 	return (
-		<section>
+		<div className="desktop">
 			<details className={styles.bookDetails}>
 				<summary>
-					<a>{wantToReadBooks.length} Books To Read</a>
+						<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
 				<div className="bookshelf flex">
 					{wantToReadBooks.map((book) => (
 						<Link
-						  href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
-						  target="_blank"
-						  rel="noopener noreferrer"
-						  key={book.title}
-						  className={styles.books}
+							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							key={book.title}
+							className={styles.books}
 						>
-						    <img
-						      src={book.cover}
-						      alt={book.title}
-						      title={book.summary}
-							  className={styles.book}
-						      style={{ width: "200px", height: "300px" }}
-						    />
+							<div className={styles.book}>
+								<img
+									src={book.cover}
+									alt={book.title}
+									title={book.summary}
+									style={{ width: '200px', height: '300px' }}
+								/>
+							</div>
 						</Link>
 					))}
 				</div>
 			</details>
 			<details open className={styles.bookDetails}>
 				<summary>
-					<a className="read-books-title">{readBooks.length} Read Books</a>
+						<a className="read-books-title">{readBooks.length} Read Books</a>
 				</summary>
+				<div className={`flex items-center ` + styles['project-tabs']}>
+					<button
+						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
+						onClick={() => handleTabChange('All')}
+					>
+						All
+					</button>
+					{categories.map((category) => (
+						<button
+							key={category}
+							className={`${styles['project-tab'] + ` glassmorphic`} ${
+								activeCategory === category ? styles['active'] : ''
+							}`}
+							onClick={() => handleTabChange(category)}
+						>
+							{category}
+						</button>
+					))}
+				</div>
 				<div className="bookshelf pancake">
-					{readBooks.map((book) => (
-						<p key={book.title} className={` pancake-child ${styles.bookList}`}>
-							<a href={`https://www.duckduckgo.com/search?q=${book.title}`}>{book.title}</a>{' '}
-							{book.rating && book.rating >= 4 ? (
-								book.rating >= 5 ? (
-									<span style={{ color: 'var(--primary)', scale: 0.5 }}>♥</span>
-								) : (
-									'♥'
-								)
-							) : book.rating <= 2.5 && book.rating != 0 ? (
-								'×'
-							) : (
-								''
-							)}{' '}
-							<p className="book-author">by {book.author}</p>
-							<p className="book-finished">
-								{GetMonthName(book.finished)} {book.finished.split('-', 1)}
-							</p>
-							{book.review && <p className="book-review">{book.review}</p>}
-							{book.quotes && (
-								<q className="book-quote">{book.quotes[Math.floor(Math.random() * book.quotes.length)]}</q>
-							)}
-						</p>
+					{filteredBooks.map((book) => (
+						<Link
+							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							key={book.title}
+							className={styles.books}
+						>
+							<div className={styles.book} style={{ margin: '0', padding: '0' }}>
+								<img
+									src={book.cover}
+									alt={book.title}
+									title={book.summary}
+									style={{ width: '200px', height: '300px' }}
+								/>
+							</div>
+						</Link>
 					))}
 				</div>
 			</details>
-		</section>
+		</div>
 	);
 };
 
@@ -231,8 +270,10 @@ export const RandomBooks: FC = () => {
 							</p>
 							<p className={styles.book__finished}>
 								Read{' '}
-								{GetMonthName(book.started) == GetMonthName(book.finished) ?  GetMonthName(book.started) :
-								GetMonthName(book.started) + 'to ' + GetMonthName(book.finished)} {book.finished.split('-', 1) }
+								{GetMonthName(book.started) == GetMonthName(book.finished)
+									? GetMonthName(book.started)
+									: GetMonthName(book.started) + 'to ' + GetMonthName(book.finished)}{' '}
+								{book.finished.split('-', 1)}
 							</p>
 							{book.review && <p className={styles.book__review}>{book.review}</p>}
 							{book.quotes && (
@@ -240,18 +281,18 @@ export const RandomBooks: FC = () => {
 							)}
 						</div>
 						<div>
-						<Link
-							title={book.title}
-							key={book.title}
-							className={styles.books}
-							href={`https://www.duckduckgo.com/?q=${book.title}+${book.author}`}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<div className={styles.book}>
-								<img src={book.cover} alt={''} />
-							</div>
-						</Link>
+							<Link
+								title={book.title}
+								key={book.title}
+								className={styles.books}
+								href={`https://www.duckduckgo.com/?q=${book.title}+${book.author}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<div className={styles.book}>
+									<img src={book.cover} alt={''} />
+								</div>
+							</Link>
 						</div>
 					</div>
 				))}
