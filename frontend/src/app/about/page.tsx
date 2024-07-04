@@ -104,7 +104,7 @@ export const About = () => {
 		.map(([genre]) => genre)
 		.join(', ');
 
-	const wantToReadBooks = Books.filter((book) => book.status === 'Want to Read').sort(
+	const wantToReadBooks = Books.filter((book) => book.status === 'Want').sort(
 		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
@@ -169,14 +169,16 @@ export const About = () => {
 						Non-Fiction. I have {wantToReadBooks.length} books in my backlog.
 					</p>
 					<BacklogGraph />
-					<p>I show all my to-read and read books below. As well as a random book review or my thoughts on the book. A small heart means that I have it rated highly, while a cross means that I
-						pretty much hated the book. The last book I read was <b>{ReadBooks[0].title}</b>.
+					<p>
+						I show all my to-read and read books below. As well as a random book review or my thoughts on the book. A
+						small heart means that I have it rated highly, while a cross means that I pretty much hated the book. The
+						last book I read was <b>{ReadBooks[0].title}</b>.
 					</p>
 					<RandomBooks />
 					<BookShelf />
 				</div>
 			</section>
-				
+
 			<section className={styles.paragraph}>
 				<div>
 					<h2 className="text-center">Games</h2>
@@ -201,9 +203,9 @@ export const About = () => {
 						<div className="pancake-child flex column">
 							<Link href="https://en.wikipedia.org/wiki/Etrian_Odyssey_II">
 								<Image
-									width={300}
-									height={180}
-									src="https://i.imgur.com/TZBvWt7.png"
+									width={150}
+									height={150}
+									src="https://i.imgur.com/JbZW1N3.jpg"
 									alt="Etrian Odyssey II: Heroes of Lagaard"
 								/>
 							</Link>
@@ -221,9 +223,30 @@ export const About = () => {
 
 						<div className="pancake-child flex column">
 							<Link href="https://en.wikipedia.org/wiki/Professor_Layton_and_the_Curious_Village">
-								<Image width={150} height={160} src="https://i.imgur.com/NsBAPjW.jpeg" alt="Professor LAyton and The Curious Village" />
+								<Image
+									width={150}
+									height={150}
+									src="https://i.imgur.com/NsBAPjW.jpeg"
+									alt="Professor LAyton and The Curious Village"
+								/>
 							</Link>
 						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div className={styles.paragraph}>
+					<h2 className="text-center">Podcasts</h2>
+					<p className="prose">I mainly listen to audiodramas and horror podcasts.</p>
+					<div className="flex gap">
+						<details>
+							<summary>Fiction</summary>
+							to be filled
+						</details>
+						<details>
+							<summary>Non-Fiction</summary>
+							to be filled
+						</details>
 					</div>
 				</div>
 			</section>

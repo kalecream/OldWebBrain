@@ -100,7 +100,7 @@ export const BacklogGraph: FC = () => {
 		setData(cumulativeData);
 	}, [Books]);
 
-	const width = WindowWidth() - 50;
+	const width = WindowWidth() - 100;
 
 	return (
 		<>
@@ -153,7 +153,7 @@ export const BookShelf: FC = () => {
 	const readBooks = Books.filter((book) => book.status === 'Read').sort(
 		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime(),
 	);
-	const wantToReadBooks = Books.filter((book) => book.status === 'Want to Read').sort(
+	const wantToReadBooks = Books.filter((book) => book.status === 'Want').sort(
 		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
@@ -165,7 +165,7 @@ export const BookShelf: FC = () => {
 					.sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime());
 
 	return (
-		<div className="desktop">
+		<div className="desktop flex">
 			<details className={styles.bookDetails}>
 				<summary>
 						<a>{wantToReadBooks.length} Books To Read</a>
