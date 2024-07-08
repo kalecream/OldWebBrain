@@ -14,8 +14,8 @@ export const SocialMediaList = () => {
 						aria-label="social media link"
 						className={style['social-media']}
 						target="_blank"
-						rel="noopener"
 						key={media.name}
+						rel="me"
 					>
 						<Icon name={media.name} />
 					</Link>
