@@ -840,12 +840,12 @@ const Books = [
 	},
 	{
 		title: 'Gut: The Inside Story of Our Body\'s Most Underrated Organ',
-		author: ['Giulia Enders, Jill Enders'],
-		genre: ['Non-Fiction', 'Biology'],
-		status: 'Reading',
+		author: ['Giulia Enders', 'Jill Enders'],
+		genre: ['Non-Fiction', 'Nutrition'],
+		status: 'Read',
 		pages: 273,
 		started: '2024-06-28',
-		cover: 'https://i.imgur.com/UUjeWOs.jpeg'
+		cover: 'https://i.imgur.com/UUjeWOs.jpeg',
 	},
 	{
 		title: 'The Good Gut',
