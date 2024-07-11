@@ -845,6 +845,7 @@ const Books = [
 		status: 'Read',
 		pages: 273,
 		started: '2024-06-28',
+finished: '2024-07-11',
 		cover: 'https://i.imgur.com/UUjeWOs.jpeg',
 	},
 	{
