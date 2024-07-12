@@ -742,6 +742,18 @@ const Books = [
 		],
 	},
 	{
+		title: 'The Master Book of Herbalism',
+		author: 'Paul Beyerl',
+		genre: ['Non-Fiction', 'Nature'],
+		status: 'Read',
+		rating: 3.5,
+		pages: 415,
+		started: '2024-04-13',
+		added: '2024-04-13',
+		finished: '2024-04-13',
+		cover: 'https://i.imgur.com/uApVtGF.jpg',
+	},
+	{
 		title: 'The Unexpected Guest',
 		author: 'Agatha Christie',
 		genre: ['Fiction', 'Mystery'],
