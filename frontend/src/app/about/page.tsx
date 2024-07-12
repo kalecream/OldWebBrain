@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Books from '@data/books';
+import Pods from '@data/pod';
 import CurrentReads from '@components/books/currentReads';
 import { BacklogGraph, BookShelf, RandomBooks } from '@components/books/backlogGraph';
 // import PhotoGalley from '@components/books/gallery';
@@ -237,16 +238,15 @@ export const About = () => {
 			<section>
 				<div className={styles.paragraph}>
 					<h2 className="text-center">Podcasts</h2>
-					<p className="prose">I mainly listen to audiodramas and horror podcasts.</p>
-					<div className="flex gap">
-						<details>
-							<summary>Fiction</summary>
-							to be filled
-						</details>
-						<details>
-							<summary>Non-Fiction</summary>
-							to be filled
-						</details>
+					<p className="prose">I mainly listen to audiodramas and horror podcasts, but tend to listen to Non-Fiction or Media Podcasts when I'm doing work.</p>
+					<div className="pancake">
+						{Pods.map((p) => (
+							<div className="pancake-child flex column">
+								<Link href={p.url}>
+									<Image width={150} height={150} src={p.cover} alt={p.title} />
+								</Link>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
