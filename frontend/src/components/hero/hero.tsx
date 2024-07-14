@@ -1,4 +1,4 @@
-"use client"
+'use client';
 // import Link from 'next/link';
 import Image from 'next/image';
 // import { HeroModel } from '@components/threeJS/HeroModel';
@@ -20,9 +20,20 @@ const Hero = () => {
 						<center>
 							<p>
 								<b>Web developer</b>
-								<br /> based in Kingston, Jamaica.
+								<br /> based in 🇯🇲 (Jamaica).
 							</p>
-							<p>Hi, I'm <a href="https://www.sabrinamedwinter.com/" className="h-card" rel="me">Sab Medwinter</a>. I original intended this site to be a professional portfolio, but it's evolved into more of a personal showcase as I explore the indie web. </p>
+							<p>
+								Hi, I'm{' '}
+								<a href="https://www.sabrinamedwinter.com/" className="h-card" rel="me">
+									Sab Medwinter
+								</a>
+								.
+							</p>
+							<p>
+								{' '}
+								I originally intended this site to be a professional portfolio, but it's evolved into more of a personal
+								showcase as I explore the indie web.{' '}
+							</p>
 						</center>
 					</div>
 
@@ -40,7 +51,7 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
-				
+
 				<div className={hero.model}>
 					{/* <HeroModel /> */}
 					<Image
