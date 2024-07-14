@@ -238,7 +238,7 @@ export const BookShelf: FC = () => {
 };
 
 export const RandomBooks: FC = () => {
-	const randomBooks = Books.filter((book) => book.status === 'Read').sort(() => Math.random() - Math.random());
+	const randomBooks = Books.filter((book) => book.status === 'Read' && book.review).sort(() => Math.random() - Math.random());
 
 	return (
 		<div className={styles.random}>
