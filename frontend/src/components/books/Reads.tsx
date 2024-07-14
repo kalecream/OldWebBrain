@@ -6,7 +6,7 @@ const Reads = ({ status, limit }: { status: string; limit?: number }) => {
 	const sorting =
 		status == 'Read'
 			? (a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime()
-			: status == 'Read'
+			: status == 'Want'
 				? (a, b) => new Date(b.started).getTime() - new Date(a.started).getTime()
 				: (a, b) => new Date(a.started).getTime() - new Date(b.started).getTime();
 	return (

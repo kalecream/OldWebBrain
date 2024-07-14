@@ -111,6 +111,10 @@ export const About = () => {
 		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
 	);
 
+	const readBooks = Books.filter((book) => book.status === 'Read').sort(
+		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime(),
+	);
+
 	return (
 		<section>
 			<h1 className="text-center">About</h1>
@@ -125,16 +129,32 @@ export const About = () => {
 						environments. This page is still under construction.
 					</p>
 					<div className={`flex row`}>
-						<Link className={button.primary + ` glassmorphic`} href={'#books'} style={{ width: '100px', height: '100px' }}>
+						<Link
+							className={button.primary + ` glassmorphic`}
+							href={'#books'}
+							style={{ width: '100px', height: '100px' }}
+						>
 							Books
 						</Link>
-						<Link className={button.primary + ` glassmorphic`} href={'#games'} style={{ width: '100px', height: '100px' }}>
+						<Link
+							className={button.primary + ` glassmorphic`}
+							href={'#games'}
+							style={{ width: '100px', height: '100px' }}
+						>
 							Games
 						</Link>
-						<Link className={button.primary + ` glassmorphic`} href={'#podcasts'} style={{ width: '100px', height: '100px' }}>
+						<Link
+							className={button.primary + ` glassmorphic`}
+							href={'#podcasts'}
+							style={{ width: '100px', height: '100px' }}
+						>
 							Podcasts
 						</Link>
-						<Link className={button.primary + ` glassmorphic`} href={'#rolodex'} style={{ width: '100px', height: '100px' }}>
+						<Link
+							className={button.primary + ` glassmorphic`}
+							href={'#rolodex'}
+							style={{ width: '100px', height: '100px' }}
+						>
 							Rolodex
 						</Link>
 					</div>
@@ -160,9 +180,8 @@ export const About = () => {
 					<h2 className="text-center">Books</h2>
 					<p className="prose glassmorphic">
 						I like to read to learn about the world around me or get laughs. I have{' '}
-						<b>{Books.filter((book) => book.status != 'Want').length} books in my library</b>,
-						and I'm always looking for more. I prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I
-						read about{' '}
+						<b>{Books.filter((book) => book.status != 'Want').length} books in my library</b>, and I'm always looking
+						for more. I prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
 						<b>
 							{Percentage[0].toFixed(1)}% fiction and {Percentage[1].toFixed(1)}% non-fiction
 						</b>
@@ -170,31 +189,41 @@ export const About = () => {
 					</p>
 					<div className="flex row align-items">
 						<Link className="prose glassmorphic text-center" href="/read#read">
-							<FaArrowLeftLong /> {' '}Last
+							<FaArrowLeftLong /> Last ({readBooks.length})
 						</Link>
-						<Reads status="Read" limit={1} />
+						{
+							<Link
+								title={readBooks[0].title}
+								className={styles.books}
+								href={`https://www.duckduckgo.com/?q=${readBooks[0].title}+${readBooks[0].author}`}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<div className={styles.book}>
+									<img src={readBooks[0].cover} alt={readBooks[0].title} />
+								</div>
+							</Link>
+						}
 						*
 						<Reads status="Want" limit={1} />
 						<Link className="prose glassmorphic text-center" href="/read#want">
-							Next {' '}<FaArrowRightLong />
+							Next ({wantToReadBooks.length}) <FaArrowRightLong />
 						</Link>
 					</div>
-					
 				</div>
-					<p className="prose glassmorphic">
-						I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
-						below. <b>My 10 most frequently read book tags are: {topGenres}.</b>
-					</p>
-					<Reads status="Reading" />
-					<p className="prose glassmorphic">
-						This graph below is my book status backlog for the past rolling year. This ignores books from before then to
-						ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-						Non-Fiction. I have {wantToReadBooks.length} books in my backlog to-read.
-					</p>
+				<p className="prose glassmorphic">
+					I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
+					below. <b>My 10 most frequently read book tags are: {topGenres}.</b>
+				</p>
+				<Reads status="Reading" />
+				<p className="prose glassmorphic">
+					This graph below is my book status backlog for the past rolling year. This ignores books from before then to
+					ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
+					Non-Fiction. I have books in my backlog to-read.
+				</p>
 				<BacklogGraph />
 				<h3 className="text-center">Random Review</h3>
-					<RandomBooks />
-					
+				<RandomBooks />
 			</section>
 
 			<section className={styles.paragraph} id="games">
