@@ -33,6 +33,12 @@ const Bookmarks: BookmarkProps[] = [
 		type: 'website',
 	},
 	{
+		title: 'Kill the Newsletter',
+		url: 'https://kill-the-newsletter.com/',
+		description: 'Convert email newsletters into RSS feeds',
+		type: 'website',
+	},
+	{
 		url: 'https://jzhao.xyz/posts/a-failure-resume',
 		title: 'Failure Resume',
 		tags: [''],
@@ -69,6 +75,17 @@ const Bookmarks: BookmarkProps[] = [
 		tags: ['cooking', 'food'],
 		description: 'A map of recipes from all over the world',
 	},
+	{
+		title: 'Hourly Rate Calculator',
+		url: 'https://clockify.me/hourly-rate-calculator',
+		type: 'website',
+	},
+	{
+		title: 'Dither Me This!',
+		url: 'https://doodad.dev/dither-me-this/',
+		description: 'Tool to reduce image sizes',
+		type: 'website'
+	}
 ];
 
 export const About = () => {
