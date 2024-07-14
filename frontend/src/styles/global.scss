@@ -3,7 +3,7 @@
 @import 'animations';
 @import 'mediaQuery';
 
-$primary: #fe9679;
+$primary: #b39f03;
 $secondary: #00a368;
 $borderRadius: 5px;
 $padding-container: 1.5rem 3rem;
@@ -92,7 +92,7 @@ $map in $themes {
 	--mask: linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
 		radial-gradient(farthest-side, #000 98%, #0000) 0 0/50px 50px round;
 	--primary: #003300;
-	--secondary: #cb8d93;
+	--secondary: #90e202;
 	--backgroundColor: #f2f0e9;
 	--textColor: #222;
 	--textColorFade: #030637;
