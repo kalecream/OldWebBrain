@@ -28,14 +28,31 @@ const NowPage = () => {
 					</p>
 
 					<ul className={style.summer}>
-						<li>Getting my amateur radio licence.</li>
 						<li>
-							Learning to sew to
-							<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently between 1-2)
+							{' '}
+							<progress max="100" value="17" /> Getting my amateur radio licence.
 						</li>
-						<li>Learning beginner Jamaican Sign Language.</li>
-						<li>Rebuilding my non-perishable food pantry.</li>
-						<li>Picking a neglected online course & finishing it (FullStackOpen).</li>
+						<li>
+							{' '}
+							<progress max="100" value="12" /> Calisthenics Foundations
+						</li>
+						<li>
+							{' '}
+							<progress max="100" value="0" /> Learning to sew to
+							<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
+						</li>
+						<li>
+							{' '}
+							<progress max="100" value="2" /> Learning beginner Jamaican Sign Language.
+						</li>
+						<li>
+							{' '}
+							<progress max="100" value="0" /> Rebuilding my non-perishable food pantry.
+						</li>
+						<li>
+							{' '}
+							<progress max="100" value="0" /> {' '}Finishing a neglected online course (FullStackOpen).
+						</li>
 					</ul>
 
 					<details className={style.behind}>
@@ -61,7 +78,8 @@ const NowPage = () => {
 							</p>
 
 							<ul className={style.spring}>
-								<li>
+								<li>{' '}
+							<progress max="100" value="2" /> 
 									Completing my{' '}
 									<Link
 										href={
@@ -72,13 +90,15 @@ const NowPage = () => {
 									</Link>{' '}
 									I have with myself, family, friends and others.
 								</li>
-								<li>
+								<li>{' '}
+							<progress max="100" value="2" /> 
 									<Link href="https://docs.google.com/spreadsheets/d/1Ao_9w17kz0X82ZlpYiu4AoUsMOThUjBWkbDFai1bIsA/edit?usp=sharing">
 										Advancing
 									</Link>{' '}
 									in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
 								</li>
-								<li>
+								<li>{' '}
+							<progress max="100" value="2" /> 
 									Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 								</li>
 							</ul>

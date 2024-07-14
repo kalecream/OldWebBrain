@@ -107,7 +107,7 @@ export const BacklogGraph: FC = () => {
 			<BarChart width={width > 1024 ? width * 0.6 : width} height={300} data={Data} className={styles.backlogChart}>
 				<XAxis dataKey="month" />
 				{/* <YAxis domain={[0, 'dataMax + 3']} /> */}
-				<Tooltip active={true} />
+				{/* <Tooltip active={true} /> */}
 				<Bar dataKey="Started" stackId="a" fill="var(--secondary)" />
 				<Bar dataKey="Finished" stackId="a" fill="var(--primary)" label={<CustomerBarLabel />} />
 			</BarChart>
@@ -128,8 +128,6 @@ const CustomerBarLabel: FC<any> = (props) => {
 		</text>
 	);
 };
-
-// TODO: Combine books and add filters through a form.
 
 export const extractGenres = () => {
 	const categoriesSet = new Set<string>();
@@ -166,7 +164,7 @@ export const BookShelf: FC = () => {
 
 	return (
 		<div className="desktop flex">
-			<details className={styles.bookDetails}>
+			<details open className={styles.bookDetails} id='want'>
 				<summary>
 						<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
@@ -191,7 +189,7 @@ export const BookShelf: FC = () => {
 					))}
 				</div>
 			</details>
-			<details open className={styles.bookDetails}>
+			<details open className={styles.bookDetails} id='read'>
 				<summary>
 						<a className="read-books-title">{readBooks.length} Read Books</a>
 				</summary>
@@ -240,7 +238,7 @@ export const BookShelf: FC = () => {
 };
 
 export const RandomBooks: FC = () => {
-	const randomBooks = Books.filter((book) => book.status === 'Read').sort(() => Math.random() - Math.random());
+	const randomBooks = Books.filter((book) => book.status === 'Read' && book.review).sort(() => Math.random() - Math.random());
 
 	return (
 		<div className={styles.random}>

@@ -37,7 +37,7 @@ const Books = [
 		title: 'The Noma Guide To Fermentation',
 		author: ['René Redzepi', 'David Zilber', 'David Joachim'],
 		genre: ['Non-Fiction', 'Food Perservation'],
-		status: 'Want',
+		status: 'Reading',
 		cover: 'https://images-na.ssl-images-amazon.com/images/I/A1c8GBj5l-L._AC_UL900_SR615,900_.jpg',
 		summary: 'A guide to fermentation from the chefs at Noma.',
 		added: '2023-05-01',
