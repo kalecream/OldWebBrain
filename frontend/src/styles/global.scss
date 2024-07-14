@@ -334,15 +334,15 @@ a {
 	text-decoration: none;
 	color: var(--primary);
 	font-weight: 500;
+
+	&:hover {
+		color: var(--secondary);
+		transition: ease-in-out 0.2s;
+	}
 }
 
 b {
 	font-weight: 500;
-}
-
-a:hover {
-	color: var(--secondary);
-	transition: ease-in-out 0.2s;
 }
 
 h1,
