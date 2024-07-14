@@ -22,6 +22,7 @@ const Hero = () => {
 								<b>Web developer</b>
 								<br /> based in Kingston, Jamaica.
 							</p>
+							<p>Hi, I'm <a href="https://www.sabrinamedwinter.com/" className="h-card" rel="me">Sab Medwinter</a>. I original intended this site to be a professional portfolio, but it's evolved into more of a personal showcase as I explore the indie web. </p>
 						</center>
 					</div>
 
