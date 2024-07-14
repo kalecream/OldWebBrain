@@ -486,6 +486,12 @@ kbd::after,
 	justify-content: center;
 }
 
+.outerglow {
+	&:hover {
+		box-shadow: 0px 0px 10px 5px var(--secondary);
+	}
+}
+
 /* containers  */
 
 .pancake {

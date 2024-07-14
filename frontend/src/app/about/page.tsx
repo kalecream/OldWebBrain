@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Books from '@data/books';
 import Pods from '@data/pod';
-import CurrentReads from '@components/books/currentReads';
+import CurrentReads from '@components/books/Reads';
 import { BacklogGraph, BookShelf, RandomBooks } from '@components/books/backlogGraph';
 // import PhotoGalley from '@components/books/gallery';
 import styles from '@components/books/books.module.scss';
@@ -190,18 +190,18 @@ export const About = () => {
 						<Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and{' '}
 						<Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation nowadays.
 					</p>
-					<div className="pancake">
-						<div className="pancake-child flex column">
+					<div className="flex row">
+						<div className="">
 							<Link href="https://www.legendsofidleon.com/">
 								<Image width={300} height={150} src={'https://imgur.com/APzegNB.png'} alt="IdleOn" />
 							</Link>
 						</div>
-						<div className="pancake-child flex column">
+						<div className="">
 							<Link href="https://shatteredpixel.com/shatteredpd/">
 								<Image width={300} height={150} src="https://i.imgur.com/J6ExEz6.gif" alt="Shattered Pixel Dungeon" />
 							</Link>
 						</div>
-						<div className="pancake-child flex column">
+						<div className="">
 							<Link href="https://en.wikipedia.org/wiki/Etrian_Odyssey_II">
 								<Image
 									width={150}
@@ -211,18 +211,18 @@ export const About = () => {
 								/>
 							</Link>
 						</div>
-						<div className="pancake-child flex column">
+						<div className="">
 							<Link href="https://en.wikipedia.org/wiki/The_World_Ends_with_You">
 								<Image width={150} height={150} src="https://i.imgur.com/j6DsuvT.jpeg" alt="World Ends With You" />
 							</Link>
 						</div>
-						<div className="pancake-child flex column">
+						<div className="">
 							<Link href="https://en.wikipedia.org/wiki/Advance_Wars">
 								<Image width={150} height={150} src="https://i.imgur.com/ofu3y5f.jpeg" alt="Advanded Wars" />
 							</Link>
 						</div>
 
-						<div className="pancake-child flex column">
+						<div className="">
 							<Link href="https://en.wikipedia.org/wiki/Professor_Layton_and_the_Curious_Village">
 								<Image
 									width={150}
@@ -238,13 +238,20 @@ export const About = () => {
 			<section>
 				<div className={styles.paragraph}>
 					<h2 className="text-center">Podcasts</h2>
-					<p className="prose">I mainly listen to audiodramas and horror podcasts, but tend to listen to Non-Fiction or Media Podcasts when I'm doing work.</p>
-					<div className="pancake">
-						{Pods.map((p) => (
-							<div className="pancake-child flex column">
-								<Link href={p.url}>
-									<Image width={150} height={150} src={p.cover} alt={p.title} />
-								</Link>
+					<p className="prose glassmorphic">
+						I mainly listen to audiodramas and horror podcasts, but tend to listen to Non-Fiction or Media Podcasts when
+						I'm doing work. These have been my favourite listens so far.
+					</p>
+					<div className="flex row">
+						{Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
+							<div className="">
+								{p.url ? (
+									<Link href={p.url} >
+										<Image width={125} height={125} src={p.cover} alt={p.title} title={p.title} className={`outerglow`} />
+									</Link>
+								) : (
+									<small>{p.title}</small>
+								)}
 							</div>
 						))}
 					</div>
@@ -257,10 +264,10 @@ export const About = () => {
 						These are some bookmarks for pages & media I've enjoyed on the net. In the future when I have areas for this
 						site similar to how I map out my life, the links will be moved to respective sectors.
 					</p>
-					<div className={style.container + ` pancake`}>
+					<div className={style.container + ` flex`}>
 						{Bookmarks.map((bookmark) => (
-							<div className={style.link}>
-								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child`}>
+							<div className={style.link + ` glassmorphic`}>
+								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child `}>
 									<h4 style={{ fontWeight: 'semibold' }}>{bookmark.title}</h4>
 									<p>{bookmark.description}</p>
 								</Link>
