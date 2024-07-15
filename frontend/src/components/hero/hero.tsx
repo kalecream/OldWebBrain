@@ -20,7 +20,7 @@ const Hero = () => {
 						<center>
 							<p>
 								<b>Web developer</b>
-								<br /> based in 🇯🇲 (Jamaica).
+								<br /> based in 🇯🇲.
 							</p>
 							<p>
 								Hi, I'm{' '}
