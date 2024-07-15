@@ -14,6 +14,7 @@ import style from '@styles/modules/Rolodex.module.scss';
 import pic from '@public/img/album/plants.gif';
 import { ScrollDown } from '@components/scrollDown';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
+import PalestineGraphic from '@assets/images/palestine.gif';
 
 interface BookmarkProps {
 	url: string;
@@ -84,8 +85,8 @@ const Bookmarks: BookmarkProps[] = [
 		title: 'Dither Me This!',
 		url: 'https://doodad.dev/dither-me-this/',
 		description: 'Tool to reduce image sizes',
-		type: 'website'
-	}
+		type: 'website',
+	},
 ];
 
 export const About = () => {
@@ -173,6 +174,13 @@ export const About = () => {
 							style={{ width: '100px', height: '100px' }}
 						>
 							Rolodex
+						</Link>
+						<Link
+							className={button.primary + ` glassmorphic`}
+							href={'#stamps'}
+							style={{ width: '100px', height: '100px' }}
+						>
+							Stamps
 						</Link>
 					</div>
 					<ScrollDown />
@@ -372,6 +380,20 @@ export const About = () => {
 							</div>
 						))}
 					</div>
+				</div>
+			</section>
+
+			<section className={styles.paragraph} id="stamps">
+				<h2 className="text-center">Stamps</h2>
+				<div className="flex">
+					<Link href="https://decolonizepalestine.com/">
+						<Image
+							src={PalestineGraphic}
+							alt="From the river to the sea, Palestine will be the free."
+							width={88}
+							height={44}
+						/>
+					</Link>
 				</div>
 			</section>
 		</section>
