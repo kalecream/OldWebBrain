@@ -12,7 +12,7 @@ export const SocialMediaList = () => {
 					<Link
 						href={media.url}
 						aria-label="social media link"
-						className={style['social-media']}
+						className={style['social-media'] + ` ` + media.className ? media.className : null}
 						target="_blank"
 						key={media.name}
 						rel="me"
@@ -293,7 +293,9 @@ export const Footer: React.FunctionComponent = () => {
 				<Link href="https://notbyai.fyi/">
 					<NoAI />
 				</Link>
-				<Link href="https://en.wikipedia.org/wiki/Creative_Commons_license#Zero,_public_domain"><PublicDomain/></Link>
+				<Link href="https://en.wikipedia.org/wiki/Creative_Commons_license#Zero,_public_domain">
+					<PublicDomain />
+				</Link>
 			</div>
 		</footer>
 	);
