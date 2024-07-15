@@ -7,10 +7,10 @@ const Directory = [
 		title: 'Now',
 		links: '/now'
 	},
-	// {
-	// 	title: 'Work',
-	// 	links: '/work',
-	// },
+	{
+		title: 'Wiki',
+		links: 'https://notes.sabrinamedwinter.com',
+	},
 	{
 		title: 'Blog',
 		links: '/blog'
