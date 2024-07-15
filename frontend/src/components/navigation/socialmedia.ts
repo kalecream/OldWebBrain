@@ -1,5 +1,5 @@
 import { FaCoffee } from 'react-icons/fa';
-import { FaTwitter, FaGithub, FaLinkedin, FaCodepen, FaRss } from 'react-icons/fa6';
+import { FaTwitter, FaGithub, FaLinkedin, FaCodepen, FaRss, FaEnvelope } from 'react-icons/fa6';
 
 export const MediaProfiles = [
 	// {
@@ -27,6 +27,12 @@ export const MediaProfiles = [
 		url: 'https://bsky.app/profile/medwinter.bsky.social',
 		icon: FaTwitter,
 		// TODO: Check if Font Awesome added a bluesky icon if they haven't make an icon type hthat is either fontawesome icon or svg
+	},
+	{
+		name: 'Gmail',
+		url: 'mailto://sabrinamedwinter@gmail.com',
+		icon: FaEnvelope,
+		className: 'h-card u-email',
 	},
 	{
 		name: 'Buy Me A Coffee',

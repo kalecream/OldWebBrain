@@ -20,31 +20,23 @@ const Hero = () => {
 						<center>
 							<p>
 								<b>Web developer</b>
-								<br /> based in 🇯🇲.
+								<br /> based in 🇯🇲
 							</p>
-							<p>
-								Hi, I'm{' '}
-								<a href="https://www.sabrinamedwinter.com/" className="h-card" rel="me">
-									Sab Medwinter
-								</a>
-								.
-							</p>
-							<p>
-								{' '}
-								I originally intended this site to be a professional portfolio, but it's evolved into more of a personal
-								showcase as I explore the indie web.{' '}
+							<p className="p-note">
+								I intended this site to be a professional portfolio, but it has evolved into a personal
+								showcase as I explore the indie web.
 							</p>
 						</center>
 					</div>
 
 					<div className={button.container}>
 						<Link
-							title="Professional Services"
+							title="What I'm up to!"
 							className={button.primary}
-							href="mailto:sabrinamedwinter@gmail.com"
+							href="/now"
 							rel="me"
 						>
-							Need a service?
+							/now!
 						</Link>
 						<Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">
 							Check out the blog
@@ -62,6 +54,7 @@ const Hero = () => {
 						sizes="100vw"
 						style={{ width: 'auto', height: 'clamp(200px, 40vw,1000px)' }}
 						alt=""
+						className="u-photo"
 					/>
 				</div>
 			</div>

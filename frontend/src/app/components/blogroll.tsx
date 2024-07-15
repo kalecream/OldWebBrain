@@ -110,14 +110,14 @@ export const BlogPosts = () => {
 									</h2>
 									<ul>
 										{month.posts.map((post) => (
-											<li key={post.slug} className="no-marker">
-												<Link className={blog.link} href={`/blog/${post.slug}`}>
+											<li key={post.slug} className="no-marker h-entry">
+												<Link className={blog.link + `  u-url`} href={`/blog/${post.slug}`}>
 													<div className={blog.list__section}>
 														<div>
-															<span className={blog.list__date}>{post.metadata.date.slice(-2)}</span>
-															<h3 className={blog.list__title}>{post.metadata.title}</h3>
+															<span className={blog.list__date + ` dt-published`}>{post.metadata.date.slice(-2)}</span>
+															<h3 className={blog.list__title + ` p-name`}>{post.metadata.title}</h3>
 														</div>
-														<p className={blog.list__description}>{post.metadata.description}</p>
+														<p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
 													</div>
 												</Link>
 											</li>
