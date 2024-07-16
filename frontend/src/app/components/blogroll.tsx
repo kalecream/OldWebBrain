@@ -110,7 +110,7 @@ export const BlogPosts = () => {
 									</h2>
 									<ul>
 										{month.posts.map((post) => (
-											<li key={post.slug} className="no-marker h-entry">
+											<li key={post.slug} className="no-marker h-entry glassmorphic">
 												<Link className={blog.link + `  u-url`} href={`/blog/${post.slug}`}>
 													<div className={blog.list__section}>
 														<div>
