@@ -41,7 +41,7 @@ const NowPage = () => {
 							<progress max="100" value="5" /> Learning to sew to
 							<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
 						</li>
-						<li className="glassmorphic"{' '}
+						<li>
 							<progress max="100" value="5" /> Learning beginner Jamaican Sign Language.
 						</li>
 						<li >
