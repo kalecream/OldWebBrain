@@ -64,7 +64,7 @@ const NowPage = () => {
 								<Image src="https://i.imgur.com/ysYbJGt.jpeg" alt="" width={200} height={150} />
 							</div>
 
-							<p className="glassmorphic">
+							<p>
 								This spring is a busy time. I am trying to reorient myself to handle the rest of the year. The quarter
 								started strong, then was blown off track by the stings of poverty and burnout. For a few months, I've
 								also had my head in the clouds using romance as a distraction. I've been better about returning to my
@@ -73,7 +73,7 @@ const NowPage = () => {
 								responsibilities.I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of self. 
 							</p>
 
-							<ul className={style.spring + ` glassmorphic`}>
+							<ul className={style.spring }>
 								<li>
 							<progress max="100" value="2" /> 
 									Completing my{' '}
@@ -103,7 +103,7 @@ const NowPage = () => {
 						<div className={`prose ` + style.paragraph}>
 							<h3>2023-Winter</h3>
 
-							<ul className={style.winter + ` glassmorphic`}>
+							<ul className={style.winter }>
 								<li >Had the idea for this page.</li>
 								<li >Started exploring individualism vs caring for self as a member of a community.</li>
 							</ul>
