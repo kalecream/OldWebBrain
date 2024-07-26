@@ -27,34 +27,32 @@ const NowPage = () => {
 						tasks this season.{' '}
 					</p>
 
-					<ul className={style.summer}>
-						<li className="glassmorphic">
+					<ul className={style.summer + ` glassmorphic`}>
+						<li >
 							{' '}
 							<progress max="100" value="17" /> Getting my amateur radio licence.
 						</li>
-						<li className="glassmorphic">
+						<li >
 							{' '}
 							<progress max="100" value="12" /> Calisthenics Foundations
 						</li>
-						<li className="glassmorphic">
+						<li >
 							{' '}
 							<progress max="100" value="5" /> Learning to sew to
 							<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
 						</li>
-						<li className="glassmorphic">
-							{' '}
+						<li className="glassmorphic"{' '}
 							<progress max="100" value="5" /> Learning beginner Jamaican Sign Language.
 						</li>
-						<li className="glassmorphic">
+						<li >
 							{' '}
 							<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
 						</li>
 					</ul>
 
-					<hr />
-					<h3 className={style.behind}>Behind Me.</h3>
-					<hr/>
-								<h4>2024-Spring</h4>
+					<section>
+					<h2 className={style.behind}>Behind Me.</h2>
+								<h3>2024-Spring</h3>
 
 							<div className="img-grid desktop">
 								<Image src="https://i.imgur.com/Z4rJL6X.jpeg" alt="" width={200} height={150} />
@@ -71,8 +69,8 @@ const NowPage = () => {
 								responsibilities.I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of self. 
 							</p>
 
-							<ul className={style.spring}>
-								<li className="glassmorphic">
+							<ul className={style.spring + ` glassmorphic`}>
+								<li>
 							<progress max="100" value="2" /> 
 									Completing my{' '}
 									<Link
@@ -84,24 +82,27 @@ const NowPage = () => {
 									</Link>{' '}
 									I have with myself, family, friends and others.
 								</li>
-								<li className="glassmorphic">
+								<li>
 							<progress max="100" value="2" /> 
 									<Link href="https://docs.google.com/spreadsheets/d/1Ao_9w17kz0X82ZlpYiu4AoUsMOThUjBWkbDFai1bIsA/edit?usp=sharing">
 										Advancing
 									</Link>{' '}
 									in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
 								</li>
-								<li className="glassmorphic">{' '}
+								<li>{' '}
 							<progress max="100" value="2" /> 
 									Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 								</li>
 							</ul>
-								<h4>2023-Winter</h4>
 
-							<ul className={style.winter}>
-								<li className="glassmorphic">Had the idea for this page.</li>
-								<li className="glassmorphic">Started exploring individualism vs caring for self as a member of a community.</li>
+						<hr className="behind"/>
+								<h3>2023-Winter</h3>
+
+							<ul className={style.winter + ` glassmorphic`}>
+								<li >Had the idea for this page.</li>
+								<li >Started exploring individualism vs caring for self as a member of a community.</li>
 							</ul>
+						</section>
 				</div>
 			</div>
 		</section>
