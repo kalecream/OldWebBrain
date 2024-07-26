@@ -10,7 +10,8 @@ export const metadata: Metadata = {
 
 const NowPage = () => {
 	return (
-		<section className={style.paragraph}>
+		<section >
+			<section className={style.paragraph}>
 			<h2>Now.</h2>
 
 			<div className="prose">
@@ -24,7 +25,7 @@ const NowPage = () => {
 					<h3 className={style.heading}>2024-Summer</h3>
 					<p className="glassmorphic">
 						I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
-						tasks this season.{' '}
+						tasks this season.
 					</p>
 
 					<ul className={style.summer + ` glassmorphic`}>
@@ -49,11 +50,14 @@ const NowPage = () => {
 							<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
 						</li>
 					</ul>
-
-					<section>
-					<h2 className={style.behind}>Behind Me.</h2>
-								<h3>2024-Spring</h3>
-
+				</div>
+			</div>
+			</section>
+			<section className={style.paragraph}>
+						<h2 className={style.behind + ` section-title`}>Behind Me.</h2>
+								
+						<div className={`prose ` + style.paragraph}>
+							<h3>2024-Spring</h3>
 							<div className="img-grid desktop">
 								<Image src="https://i.imgur.com/Z4rJL6X.jpeg" alt="" width={200} height={150} />
 								<Image src="https://i.imgur.com/nD4m8JX.jpeg" alt="" width={200} height={150} />
@@ -94,17 +98,17 @@ const NowPage = () => {
 									Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 								</li>
 							</ul>
+						</div>
 
-						<hr className="behind"/>
-								<h3>2023-Winter</h3>
+						<div className={`prose ` + style.paragraph}>
+							<h3>2023-Winter</h3>
 
 							<ul className={style.winter + ` glassmorphic`}>
 								<li >Had the idea for this page.</li>
 								<li >Started exploring individualism vs caring for self as a member of a community.</li>
 							</ul>
-						</section>
-				</div>
-			</div>
+						</div>
+					</section>
 		</section>
 	);
 };
