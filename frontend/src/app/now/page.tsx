@@ -25,7 +25,7 @@ const NowPage = () => {
 					<h3 className={style.heading}>2024-Summer</h3>
 					<p className="glassmorphic">
 						I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
-						tasks this season.
+						tasks this season. {new Date() - new Date("2024-09-21")} Days left in season.
 					</p>
 
 					<ul className={style.summer + ` glassmorphic`}>
@@ -53,9 +53,10 @@ const NowPage = () => {
 				</div>
 			</div>
 			</section>
-			<section className={style.paragraph}>
-						<h2 className={style.behind + ` section-title`}>Behind Me.</h2>
-								
+			<section>
+			<h2 className={`section-title`}>Behind Me.</h2>
+			</section>
+			<section className={style.paragraph}>	
 						<div className={`prose ` + style.paragraph}>
 							<h3>2024-Spring</h3>
 							<div className="img-grid desktop">
@@ -70,7 +71,7 @@ const NowPage = () => {
 								also had my head in the clouds using romance as a distraction. I've been better about returning to my
 								goals at the end of this season becoming more focused on refining my personal productivity systems to
 								prevent stalling again rather than powering through to complete my goals while neglecting my real
-								responsibilities.I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of self. 
+								responsibilities. I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of self. 
 							</p>
 
 							<ul className={style.spring }>
@@ -100,7 +101,10 @@ const NowPage = () => {
 							</ul>
 						</div>
 
-						<div className={`prose ` + style.paragraph}>
+						
+					</section>
+					<section>
+					<div className={`prose ` + style.paragraph}>
 							<h3>2023-Winter</h3>
 
 							<ul className={style.winter }>
