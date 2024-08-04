@@ -91,8 +91,8 @@ $map in $themes {
 :root {
 	--mask: linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
 		radial-gradient(farthest-side, #000 98%, #0000) 0 0/50px 50px round;
-	--primary: #003300;
-	--secondary: #90e202;
+	--primary: #331200;
+	--secondary: #b12603;
 	--backgroundColor: #f2f0e9;
 	--textColor: #222;
 	--textColorFade: #030637;
@@ -287,6 +287,27 @@ progress {
 	@include breakpoint-range($from: tablet, $to: desktopSmall) {
 		flex-direction: row;
 		align-content: flex-end;
+	}
+}
+
+.frame {
+	border-image-source: url(../../public/img/album/goldframe_horizantal.png);
+	overflow: hidden;
+	z-index: 10;
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		border: none
+	}
+
+	@include breakpoint-range($from: tablet) {
+		border-image-slice: 140;
+		border-image-repeat: stretch;
+		border-width: 70px;
+		border-style: solid;
+	}
+
+	& img {
+		object-fit: cover;
 	}
 }
 

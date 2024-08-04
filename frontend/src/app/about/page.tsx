@@ -11,10 +11,9 @@ import button from '@styles/modules/Button.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from '@styles/modules/Rolodex.module.scss';
-import pic from '@public/img/album/plants.gif';
+import pic from '@public/img/album/river.jpg';
 import { ScrollDown } from '@components/scrollDown';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-import PalestineGraphic from '@assets/images/palestine.gif';
 
 interface BookmarkProps {
 	url: string;
@@ -138,54 +137,47 @@ export const About = () => {
 			<h1 className="text-center">About</h1>
 			{/* <PhotoGalley /> */}
 			{/* TODO: Fix photogallery on about */}
-			<section>
-				<div className="flex column center">
-					<Image src={pic} alt="" height={100} width={200} style={{ margin: 'auto' }} />
+				<div className="flex column center" style={{marginBottom: "2rem"}}>
+					<div className="frame">
+						<Image src={pic} alt="" height={200} width={350} style={{margin:"auto", borderRadius:0}} />
+					</div>
 					<p className="prose glassmorphic">
-						I made this about page because showing you my personality through the things I enjoy & abhor is personally
-						preferable to describing it. I've always disliked that "tell me a bit about yourself" in personal
-						environments. This page is still under construction.
+						I made this about page because showing you my personality through the things I enjoy is personally
+						preferable to making a biography. I've always disliked that "tell me a bit about yourself" in personal
+						environments. <b>This page is still under construction.</b>
 					</p>
-					<div className={`flex row`}>
+					<div className={`flex`}>
 						<Link
-							className={button.primary + ` glassmorphic`}
+							className={button.border + ` glassmorphic`}
 							href={'#books'}
 							style={{ width: '100px', height: '100px' }}
 						>
 							Books
 						</Link>
 						<Link
-							className={button.primary + ` glassmorphic`}
+							className={button.border + ` glassmorphic`}
 							href={'#games'}
 							style={{ width: '100px', height: '100px' }}
 						>
 							Games
 						</Link>
 						<Link
-							className={button.primary + ` glassmorphic`}
+							className={button.border + ` glassmorphic`}
 							href={'#podcasts'}
 							style={{ width: '100px', height: '100px' }}
 						>
 							Podcasts
 						</Link>
 						<Link
-							className={button.primary + ` glassmorphic`}
+							className={button.border + ` glassmorphic`}
 							href={'#rolodex'}
 							style={{ width: '100px', height: '100px' }}
 						>
 							Rolodex
 						</Link>
-						<Link
-							className={button.primary + ` glassmorphic`}
-							href={'#stamps'}
-							style={{ width: '100px', height: '100px' }}
-						>
-							Stamps
-						</Link>
 					</div>
 					<ScrollDown />
 				</div>
-			</section>
 
 			{/* <h2>Coding</h2>
 
@@ -380,20 +372,6 @@ export const About = () => {
 							</div>
 						))}
 					</div>
-				</div>
-			</section>
-
-			<section className={styles.paragraph} id="stamps">
-				<h2 className="text-center">Stamps</h2>
-				<div className="flex">
-					<Link href="https://decolonizepalestine.com/">
-						<Image
-							src={PalestineGraphic}
-							alt="From the river to the sea, Palestine will be the free."
-							width={88}
-							height={44}
-						/>
-					</Link>
 				</div>
 			</section>
 		</section>

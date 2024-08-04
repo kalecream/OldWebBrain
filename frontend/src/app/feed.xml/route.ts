@@ -5,7 +5,7 @@ export async function GET() {
 	const site_url = process.env.NODE_ENV === 'production' ? 'https://sabrinamedwinter.com' : 'http://localhost:3001';
 
 	const feed = new RSS({
-		title: 'Sab Medwinter | RSS Feed',
+		title: 'Sab Medwinter',
 		description: "Sab's blog posts!",
 		site_url: site_url,
 		feed_url: `${site_url}/feed.xml`,
@@ -23,7 +23,7 @@ export async function GET() {
           guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
           url: `https://sabrinamedwinter.com/blog/${post.slug}`,
           date: post.metadata.update || post.metadata.date,
-          description: post.metadata.description,
+          description: post.content,
           author: 'Sabrina Medwinter',
 			//   categories: post.metadata.tags || [],
 		//   FIXME: Post tags in rss
