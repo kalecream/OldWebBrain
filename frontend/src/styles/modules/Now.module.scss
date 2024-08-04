@@ -40,16 +40,18 @@
 
 .spring,
 .winter,
+.summer,
 .doing {
 
     li {
         font-weight: 400;
-        text-indent: 0.5rem;
+        text-indent: 1rem;
         color: var(--primary);
+        margin-bottom: 1rem;
 
-        &::marker {
-            font-size: 0.5rem;
-        }
+        // &::marker {
+        //     font-size: 0.5rem;
+        // }
     }
 }
 

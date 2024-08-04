@@ -2,6 +2,7 @@ import style from '@styles/modules/Now.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ScrollDown } from '@components/scrollDown';
 
 export const metadata: Metadata = {
 	title: 'Now',
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
 
 const NowPage = () => {
 	return (
-		<section className={style.paragraph}>
+		<section >
+			<section className={style.paragraph}>
 			<h2>Now.</h2>
 
 			<div className="prose">
-				<p>
+				<p className="glassmorphic">
 					The idea of a now page came from <Link href={'https://sive.rs/now3'}>Derek Sivers</Link>. A page I stumbled on
 					while trying to see which web-rings were still active. These aren't exactly goals, but a collection of
 					things/experiences I'm trying to complete. I'll likely update the points with a blog post to show progress.
@@ -22,46 +24,42 @@ const NowPage = () => {
 
 				<div className={`prose ` + style.paragraph}>
 					<h3 className={style.heading}>2024-Summer</h3>
-					<p>
+					<p className="glassmorphic">
 						I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
-						tasks this season.{' '}
+						tasks this season.
 					</p>
 
-					<ul className={style.summer}>
-						<li>
+					<ul className={style.summer + ` glassmorphic`}>
+						<li >
 							{' '}
 							<progress max="100" value="17" /> Getting my amateur radio licence.
 						</li>
-						<li>
+						<li >
 							{' '}
 							<progress max="100" value="12" /> Calisthenics Foundations
 						</li>
-						<li>
+						<li >
 							{' '}
-							<progress max="100" value="0" /> Learning to sew to
+							<progress max="100" value="5" /> Learning to sew to
 							<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
 						</li>
 						<li>
-							{' '}
-							<progress max="100" value="2" /> Learning beginner Jamaican Sign Language.
+							<progress max="100" value="5" /> Learning beginner Jamaican Sign Language.
 						</li>
-						<li>
-							{' '}
-							<progress max="100" value="0" /> Rebuilding my non-perishable food pantry.
-						</li>
-						<li>
-							{' '}
-							<progress max="100" value="0" /> {' '}Finishing a neglected online course (FullStackOpen).
+						<li >
+								<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
 						</li>
 					</ul>
-
-					<details className={style.behind}>
-						<summary>Behind Me.</summary>
-						<details className={style.behind}>
-							<summary>
-								<h3>2024-Spring</h3>
-							</summary>
-
+				</div>
+				</div>
+				<ScrollDown/>
+			</section>
+			<section>
+			<h2 className={`section-title`}>Behind Me.</h2>
+			</section>
+			<section className={style.paragraph}>	
+						<div className={`prose ` + style.paragraph}>
+							<h3>2024-Spring</h3>
 							<div className="img-grid desktop">
 								<Image src="https://i.imgur.com/Z4rJL6X.jpeg" alt="" width={200} height={150} />
 								<Image src="https://i.imgur.com/nD4m8JX.jpeg" alt="" width={200} height={150} />
@@ -74,11 +72,11 @@ const NowPage = () => {
 								also had my head in the clouds using romance as a distraction. I've been better about returning to my
 								goals at the end of this season becoming more focused on refining my personal productivity systems to
 								prevent stalling again rather than powering through to complete my goals while neglecting my real
-								responsibilities.{' '}
+								responsibilities. I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of self. 
 							</p>
 
-							<ul className={style.spring}>
-								<li>{' '}
+							<ul className={style.spring }>
+								<li>
 							<progress max="100" value="2" /> 
 									Completing my{' '}
 									<Link
@@ -90,7 +88,7 @@ const NowPage = () => {
 									</Link>{' '}
 									I have with myself, family, friends and others.
 								</li>
-								<li>{' '}
+								<li>
 							<progress max="100" value="2" /> 
 									<Link href="https://docs.google.com/spreadsheets/d/1Ao_9w17kz0X82ZlpYiu4AoUsMOThUjBWkbDFai1bIsA/edit?usp=sharing">
 										Advancing
@@ -102,25 +100,20 @@ const NowPage = () => {
 									Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 								</li>
 							</ul>
+						</div>
 
-							<hr />
+						
+					</section>
+					<section>
+					<div className={`prose ` + style.paragraph}>
+							<h3>2023-Winter</h3>
 
-							<p>wins: diving into reading again, love, strengthening community ties and a stronger sense of self. </p>
-							<p>losses: time?</p>
-						</details>
-						<details className={style.behind}>
-							<summary>
-								<h3>2023-Winter</h3>
-							</summary>
-
-							<ul className={style.winter}>
-								<li>Had the idea for this page.</li>
-								<li>Started exploring individualism vs caring for self as a member of a community.</li>
+							<ul className={style.winter }>
+								<li >Had the idea for this page.</li>
+								<li >Started exploring individualism vs caring for self as a member of a community.</li>
 							</ul>
-						</details>
-					</details>
-				</div>
-			</div>
+						</div>
+					</section>
 		</section>
 	);
 };
