@@ -37,7 +37,7 @@
 	white-space: nowrap;
 	text-transform: capitalize;
 	will-change: box-shadow, transform;
-	border-radius: var(--borderRadius);
+	border-radius: var(--buttonBorderRadius);
 
 	&:hover {
 		opacity: 1;

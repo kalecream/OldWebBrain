@@ -84,6 +84,7 @@ const ProjectList: React.FC = () => {
 													height: '120px',
 													margin: '0 auto',
 													display: 'flex',
+													borderRadius: 'var(--sharpBorderRadius)',
 												}}
 												placeholder="blur"
 												blurDataURL={project.image}
