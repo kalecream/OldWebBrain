@@ -2,6 +2,7 @@ import style from '@styles/modules/Now.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import { ScrollDown } from '@components/scrollDown';
 
 export const metadata: Metadata = {
 	title: 'Now',
@@ -25,7 +26,7 @@ const NowPage = () => {
 					<h3 className={style.heading}>2024-Summer</h3>
 					<p className="glassmorphic">
 						I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
-						tasks this season. {new Date() - new Date("2024-09-21")} Days left in season.
+						tasks this season.
 					</p>
 
 					<ul className={style.summer + ` glassmorphic`}>
@@ -46,12 +47,12 @@ const NowPage = () => {
 							<progress max="100" value="5" /> Learning beginner Jamaican Sign Language.
 						</li>
 						<li >
-							{' '}
-							<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
+								<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
 						</li>
 					</ul>
 				</div>
-			</div>
+				</div>
+				<ScrollDown/>
 			</section>
 			<section>
 			<h2 className={`section-title`}>Behind Me.</h2>
