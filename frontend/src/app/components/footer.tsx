@@ -1,5 +1,7 @@
 import { MediaProfiles } from '@components/navigation/socialmedia';
 import Link from 'next/link';
+import Image from 'next/image';
+import PalestineGraphic from '@assets/images/palestine.gif';
 import style from '@styles/modules/footer.module.scss';
 
 export const SocialMediaList = () => {
@@ -296,6 +298,17 @@ export const Footer: React.FunctionComponent = () => {
 				<Link href="https://en.wikipedia.org/wiki/Creative_Commons_license#Zero,_public_domain">
 					<PublicDomain />
 				</Link>
+				<div className="flex">
+					<Link href="https://decolonizepalestine.com/">
+						<Image
+							src={PalestineGraphic}
+							alt="From the river to the sea, Palestine will be the free."
+							width={88}
+							height={44}
+							style={{borderRadius:0}}
+						/>
+					</Link>
+				</div>
 			</div>
 		</footer>
 	);
