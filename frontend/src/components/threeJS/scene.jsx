@@ -1,7 +1,6 @@
 import { Suspense, useRef, useState } from 'react';
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
-import { OrbitControls} from '@react-three/drei';
-;
+import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export const Scene = ({ modelPath, scale = 40 }) => {

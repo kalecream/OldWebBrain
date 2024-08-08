@@ -122,7 +122,12 @@ const ProjectList: React.FC = () => {
 									<div className={`flex ` + styles['project-lang']}>
 										{project.language && project.language.map((l, i) => <span key={i}>{l.toLowerCase()}</span>)}
 
-										{project.technology && project.technology.map((t, i) => <span className={styles.project__tech} key={i} >{t.toLowerCase()}</span>)}
+										{project.technology &&
+											project.technology.map((t, i) => (
+												<span className={styles.project__tech} key={i}>
+													{t.toLowerCase()}
+												</span>
+											))}
 									</div>
 
 									<small className={styles.project__description}>{project.description}</small>

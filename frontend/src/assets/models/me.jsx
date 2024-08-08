@@ -8,8 +8,8 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 
 export function Model() {
 	const group = useRef();
-	const { nodes, materials} = useGLTF('/me.glb');
-	
+	const { nodes, materials } = useGLTF('/me.glb');
+
 	return (
 		<group ref={group} dispose={null}>
 			<primitive object={nodes.Hips} />

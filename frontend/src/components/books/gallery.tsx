@@ -15,7 +15,7 @@ const AlbumImages = [
 	'/img/album/earring.jpg',
 	'/img/album/jellyfish.jpg',
 	'/img/album/flamingo.jpg',
-	'/img/album/kitty.jpg'
+	'/img/album/kitty.jpg',
 ];
 
 const AlbumCaptions = [
@@ -24,7 +24,7 @@ const AlbumCaptions = [
 	'A brief stint in jewelry making',
 	'Jellyfish @ beach clean-up',
 	'Flamingo @ the Zoo',
-	'My fave stray had a kitten!'
+	'My fave stray had a kitten!',
 ];
 
 const PhotoGalley = () => {

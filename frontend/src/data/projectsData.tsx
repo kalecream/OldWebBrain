@@ -35,8 +35,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		repoName: 'dotfiles',
-		technology: [ 'i3wm', 'rofi', 'feh', 'polybar'
-		],
+		technology: ['i3wm', 'rofi', 'feh', 'polybar'],
 		language: ['Bash', 'Python'],
 		created: '2022-07-07',
 		updated: '2023-08-13',
@@ -55,9 +54,7 @@ export const Projects: ProjectStructure[] = [
 			</span>
 		),
 		repoName: 'morning-messages',
-		technology: [
-			'PyWhatKit','GeoPy','OpenWeatherMap'
-		],
+		technology: ['PyWhatKit', 'GeoPy', 'OpenWeatherMap'],
 		language: ['Python'],
 		created: '2021-11-15',
 	},
@@ -77,8 +74,7 @@ export const Projects: ProjectStructure[] = [
 		),
 		repoName: 'OldWebBrain',
 		link: 'https://www.sabrinamedwinter.com/',
-		technology: ['Next.js','React-Three-Fiber','GSAP'
-		],
+		technology: ['Next.js', 'React-Three-Fiber', 'GSAP'],
 		created: '2022-08',
 		language: ['React', 'TypeScript', 'MDX'],
 	},
@@ -96,8 +92,7 @@ export const Projects: ProjectStructure[] = [
 				A login/registration form with refresh token done for a test of a Swagger API for a Front-End take-home test.
 			</span>
 		),
-		technology: ['Swagger SMTest'
-		],
+		technology: ['Swagger SMTest'],
 		repoName: 'Sphenery',
 		language: ['React', 'Typescript'],
 		created: '2023-07-23',

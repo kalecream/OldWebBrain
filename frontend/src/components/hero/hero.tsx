@@ -23,19 +23,14 @@ const Hero = () => {
 								<br /> based in 🇯🇲
 							</p>
 							<p className="p-note">
-								I intended this site to be a professional portfolio, but it has evolved into a personal
-								showcase as I explore the indie web.
+								I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
+								explore the indie web.
 							</p>
 						</center>
 					</div>
 
 					<div className={button.container}>
-						<Link
-							title="What I'm up to!"
-							className={button.primary}
-							href="/now"
-							rel="me"
-						>
+						<Link title="What I'm up to!" className={button.primary} href="/now" rel="me">
 							/now!
 						</Link>
 						<Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">

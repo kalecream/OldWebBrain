@@ -164,9 +164,9 @@ export const BookShelf: FC = () => {
 
 	return (
 		<div className="desktop flex">
-			<details open className={styles.bookDetails} id='want'>
+			<details open className={styles.bookDetails} id="want">
 				<summary>
-						<a>{wantToReadBooks.length} Books To Read</a>
+					<a>{wantToReadBooks.length} Books To Read</a>
 				</summary>
 				<div className="bookshelf flex">
 					{wantToReadBooks.map((book) => (
@@ -189,9 +189,9 @@ export const BookShelf: FC = () => {
 					))}
 				</div>
 			</details>
-			<details open className={styles.bookDetails} id='read'>
+			<details open className={styles.bookDetails} id="read">
 				<summary>
-						<a className="read-books-title">{readBooks.length} Read Books</a>
+					<a className="read-books-title">{readBooks.length} Read Books</a>
 				</summary>
 				<div className={`flex items-center ` + styles['project-tabs']}>
 					<button
@@ -238,7 +238,9 @@ export const BookShelf: FC = () => {
 };
 
 export const RandomBooks: FC = () => {
-	const randomBooks = Books.filter((book) => book.status === 'Read' && book.review).sort(() => Math.random() - Math.random());
+	const randomBooks = Books.filter((book) => book.status === 'Read' && book.review).sort(
+		() => Math.random() - Math.random(),
+	);
 
 	return (
 		<div className={styles.random}>

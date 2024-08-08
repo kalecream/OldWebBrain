@@ -1,24 +1,24 @@
-"use client"
+'use client';
 import { useRef } from 'react';
 import styles from '@styles/modules/heroName.module.scss';
 
 const HeroName = ({ name }) => {
 	const textArray = useRef(null);
-	const colorArr = ['var(--textColor)',  'var(--secondary)'];
+	const colorArr = ['var(--textColor)', 'var(--secondary)'];
 
 	return (
 		<>
 			<div className={styles.container}>
 				<div className={styles.text__container} ref={textArray}>
 					{Array.from({ length: 2 }).map((_, index) => (
-							<span key={index} className={styles.text} style={{ color: colorArr[index % colorArr.length] }}>
-								{name}
-								<div className={styles['icon--container']}>
-									<svg className={`${styles.icon} ${styles.star}`}>
-										<use xlinkHref="#star"></use>
-									</svg>
-								</div>
-							</span>
+						<span key={index} className={styles.text} style={{ color: colorArr[index % colorArr.length] }}>
+							{name}
+							<div className={styles['icon--container']}>
+								<svg className={`${styles.icon} ${styles.star}`}>
+									<use xlinkHref="#star"></use>
+								</svg>
+							</div>
+						</span>
 					))}
 				</div>
 			</div>

@@ -134,9 +134,8 @@ export const About = () => {
 
 	return (
 		<section>
-			
-			<section style={{marginBottom: "3rem", marginTop: 0, paddingTop: 0}}>
-			<h1 className="text-center">About</h1>
+			<section style={{ marginBottom: '3rem', marginTop: 0, paddingTop: 0 }}>
+				<h1 className="text-center">About</h1>
 				{/* <PhotoGalley /> */}
 				{/* TODO: Fix photogallery on about */}
 				<div className="flex column center" style={{ marginTop: '2rem' }}>

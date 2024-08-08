@@ -45,13 +45,12 @@ const LoadingScene = () => {
 		'Weaving the warmth of Jamaica into every line of code',
 		'Coding with a dash of Jamaican rhythm',
 		'Blending the vibrant culture of Jamaica into the digital canvas',
-		'Transforming pixels into a digital tapestry'
+		'Transforming pixels into a digital tapestry',
 	];
 
 	const [currentTextIndex, setCurrentTextIndex] = useState(Math.floor(Math.random() * loadingScreenTexts.length));
 
 	useEffect(() => {
-
 		let header = document.getElementById('header');
 		header.style.display = 'none';
 

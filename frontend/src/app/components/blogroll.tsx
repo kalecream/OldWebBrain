@@ -48,7 +48,7 @@ export const ArrowIcon = () => {
 			/>
 		</svg>
 	);
-}
+};
 
 export const BlogPosts = () => {
 	let posts = getBlogPosts();
@@ -147,7 +147,7 @@ export const HomePosts = () => {
 				})
 				.map((post) => (
 					<Link key={post.slug} className="flex flex-col space-y-1 mb-4" href={`/blog/${post.slug}`}>
-                        <ArrowIcon />
+						<ArrowIcon />
 						<div className="w-full flex flex-col">
 							<p className="text-neutral-900 dark:text-neutral-100 tracking-tight">{post.metadata.title}</p>
 						</div>

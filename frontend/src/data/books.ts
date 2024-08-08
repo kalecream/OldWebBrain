@@ -307,7 +307,7 @@ const Books = [
 		title: 'Odd Bits: How to Cook the Rest of the Animal',
 		author: 'Jennifer McLagan',
 		series: '',
-		genre: ['Non-Fiction', 'Nutrition',],
+		genre: ['Non-Fiction', 'Nutrition'],
 		rating: 4.5,
 		published: '2011-10-01',
 		format: 'Hardcover',
@@ -764,7 +764,7 @@ const Books = [
 		started: '2023-03-25',
 		added: '2022-01-28',
 		finished: '2023-07-20',
-		cover: 'https://i.imgur.com/kPu4Ch2.jpeg'
+		cover: 'https://i.imgur.com/kPu4Ch2.jpeg',
 	},
 	{
 		title: "Uncle Tom's Cabin",
@@ -782,7 +782,7 @@ const Books = [
 			'Scenes of blood and cruelty are shocking to our ear and heart. What man has nerve to do, man has not nerve to hear.',
 			'Death! Strange that there should be such a word, and such a thing, and we ever forget it; that one should be living, warm and beautiful, full of hopes, desires and wants, one day, and the next be gone, utterly gone, and forever!',
 		],
-		cover: 'https://i.imgur.com/Gwk3SUv.jpeg'
+		cover: 'https://i.imgur.com/Gwk3SUv.jpeg',
 	},
 	{
 		title: 'Huareo: Story of a Jamaican Cacique',
@@ -809,7 +809,7 @@ const Books = [
 		added: '2023-09-10',
 		finished: '2023-09-10',
 		review: 'A good introduction to Next.js. It needs to be updated for the app router now.',
-		cover: 'https://i.imgur.com/sbODdtk.jpeg'
+		cover: 'https://i.imgur.com/sbODdtk.jpeg',
 	},
 	{
 		title: 'The Green Book: Volume I - III',
@@ -819,7 +819,7 @@ const Books = [
 		status: 'Read',
 		started: '2024-02-26',
 		finished: '2024-05-28',
-		cover: 'https://i.imgur.com/H97065w.jpeg'
+		cover: 'https://i.imgur.com/H97065w.jpeg',
 	},
 	{
 		title: 'Wild Fermentation',
@@ -835,17 +835,17 @@ const Books = [
 		cover: 'https://i.imgur.com/c6PgZop.jpeg',
 		quotes: [
 			'As you watch your fermenting food bubble away as bacteria and yeast work their transformative magic, envision yourself as an agent for change, creating agitation and unrest, releasing bubbles of transformation into the social order. Use your fermented goodies to nourish your family and friends and allies. The life-affirming power of these basic foods contrasts sharply with the lifeless industrially-processed foods that fill supermarket shelves.',
-			'The word fermentation has another connotation. Ideas ferment, as they spread and mutate and inspire movements for change. In the American Heritage dictionary the secondary meaning of fermentation is “unrest, agitation.” I feel equally committed to this aspect of fermentation. As an agent for change, I am a culturural manipulator, proud to be subversive.'
-		]
+			'The word fermentation has another connotation. Ideas ferment, as they spread and mutate and inspire movements for change. In the American Heritage dictionary the secondary meaning of fermentation is “unrest, agitation.” I feel equally committed to this aspect of fermentation. As an agent for change, I am a culturural manipulator, proud to be subversive.',
+		],
 	},
 	{
-		title: 'Gut: The Inside Story of Our Body\'s Most Underrated Organ',
+		title: "Gut: The Inside Story of Our Body's Most Underrated Organ",
 		author: ['Giulia Enders', 'Jill Enders'],
 		genre: ['Non-Fiction', 'Nutrition'],
 		status: 'Read',
 		pages: 273,
 		started: '2024-06-28',
-finished: '2024-07-11',
+		finished: '2024-07-11',
 		cover: 'https://i.imgur.com/UUjeWOs.jpeg',
 	},
 	{
@@ -896,7 +896,7 @@ finished: '2024-07-11',
 		pages: 344,
 		cover: 'https://i.imgur.com/d2tJJcd.jpg',
 		started: '2024-07-04',
-	}
+	},
 ];
 
 export default Books;

@@ -16,11 +16,23 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 export const CodersrankSummary = () => {
 	const [CodersRankData, setCodersRankData] = useState([]);
-	const IgnoreList = ['Batchfile', 'C#', 'C++', 'CoffeeScript', 'EJS', 'Nix', 'PHP', 'Ruby', 'Svelte','TSQL', 'JSON', 'HTML']
+	const IgnoreList = [
+		'Batchfile',
+		'C#',
+		'C++',
+		'CoffeeScript',
+		'EJS',
+		'Nix',
+		'PHP',
+		'Ruby',
+		'Svelte',
+		'TSQL',
+		'JSON',
+		'HTML',
+	];
 
 	useEffect(() => {
 		const getCodersRankAPI = async () => {
-
 			const response = await fetch('https://api.codersrank.io/v2/users/kalecream/languages');
 			const CodersRankData = await response.json();
 			setCodersRankData(CodersRankData);
@@ -28,9 +40,6 @@ export const CodersrankSummary = () => {
 		getCodersRankAPI();
 	}, []);
 
-	
-
-	
 	return (
 		<div className={styles.coding__container}>
 			{CodersRankData &&
