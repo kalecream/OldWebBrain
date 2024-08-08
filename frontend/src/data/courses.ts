@@ -6,7 +6,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/windows-10-tips-and-tricks',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Windows'
+		topic: 'Windows',
 	},
 	{
 		id: 2,
@@ -15,7 +15,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/visual-studio-code-building-an-extension',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Visual Studio Code'
+		topic: 'Visual Studio Code',
 	},
 	{
 		id: 3,
@@ -24,7 +24,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/using-python-with-excel',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Python'
+		topic: 'Python',
 	},
 	{
 		id: 4,
@@ -33,7 +33,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/learning-python-2021',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Python'
+		topic: 'Python',
 	},
 	{
 		id: 5,
@@ -42,7 +42,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/excel-spreadsheet-design-extreme-makeover',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Excel'
+		topic: 'Excel',
 	},
 	{
 		id: 6,
@@ -51,7 +51,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/innovative-customer-service-techniques',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 7,
@@ -60,7 +60,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/innovative-customer-service-techniques',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 8,
@@ -69,7 +69,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/customer-service-creating-customer-value-2015',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 9,
@@ -78,7 +78,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/customer-service-creating-customer-value-2015',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 10,
@@ -87,7 +87,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/customer-service-problem-solving-and-troubleshooting',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 11,
@@ -96,7 +96,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/phone-based-customer-service',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 12,
@@ -105,7 +105,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/customer-service-managing-customer-expectations',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 13,
@@ -114,7 +114,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/writing-customer-service-emails',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 14,
@@ -123,7 +123,7 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/customer-service-foundations',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Customer Service'
+		topic: 'Customer Service',
 	},
 	{
 		id: 15,
@@ -133,7 +133,7 @@ const Courses = [
 		type: 'certificate',
 		where: 'LinkedIn Learning',
 		topic: 'Blender',
-		unfinished: true
+		unfinished: true,
 	},
 	{
 		id: 16,
@@ -142,8 +142,8 @@ const Courses = [
 		url: 'https://www.linkedin.com/learning/administrative-professional-foundations',
 		type: 'certificate',
 		where: 'LinkedIn Learning',
-		topic: 'Administrative Professional'
-	}
+		topic: 'Administrative Professional',
+	},
 ];
 
 export default Courses;

@@ -15,6 +15,6 @@ export const useForm = <T>(callback: () => Promise<any>, initialState: T) => {
 	return {
 		onChange,
 		onSubmit,
-		values
+		values,
 	};
 };

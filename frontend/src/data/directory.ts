@@ -1,11 +1,11 @@
 const Directory = [
 	{
 		title: 'About',
-		links: '/about'
+		links: '/about',
 	},
 	{
 		title: 'Now',
-		links: '/now'
+		links: '/now',
 	},
 	{
 		title: 'Wiki',
@@ -13,12 +13,12 @@ const Directory = [
 	},
 	{
 		title: 'Blog',
-		links: '/blog'
+		links: '/blog',
 	},
 	{
 		title: 'Changelog',
 		links: '/changelog',
-	}
+	},
 ];
 
 export default Directory;

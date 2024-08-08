@@ -24,7 +24,7 @@ const GPhotos = {
 	lunch_trio: lunch_trio,
 	okra: okra,
 	pineapple: pineapple,
-	plantwindow: plantwindow
+	plantwindow: plantwindow,
 };
 
 export { GPhotos };

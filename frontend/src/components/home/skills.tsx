@@ -17,7 +17,7 @@ const Skills = [
 	'GitHub',
 	'Heroku',
 	'Netlify',
-	'Vercel'
+	'Vercel',
 ];
 
 const SkillMarquee = () => {

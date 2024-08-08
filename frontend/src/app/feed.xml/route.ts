@@ -13,22 +13,22 @@ export async function GET() {
 		pubDate: new Date(),
 		language: 'en',
 		copyright: `All rights reserved ${new Date().getFullYear()}`,
-    });
+	});
 
-    let posts = await getBlogPosts();
-    
-    posts.map((post) => {
-        feed.item({
-          title: post.metadata.title,
-          guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
-          url: `https://sabrinamedwinter.com/blog/${post.slug}`,
-          date: post.metadata.update || post.metadata.date,
-          description: post.content,
-          author: 'Sabrina Medwinter',
+	let posts = await getBlogPosts();
+
+	posts.map((post) => {
+		feed.item({
+			title: post.metadata.title,
+			guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
+			url: `https://sabrinamedwinter.com/blog/${post.slug}`,
+			date: post.metadata.update || post.metadata.date,
+			description: post.content,
+			author: 'Sabrina Medwinter',
 			//   categories: post.metadata.tags || [],
-		//   FIXME: Post tags in rss
-        });
-      });
+			//   FIXME: Post tags in rss
+		});
+	});
 
 	return new Response(feed.xml({ indent: true }), {
 		headers: {

@@ -14,9 +14,7 @@ export const AvailableForWork = () => {
 			onMouseLeave={() => setHovered(false)}
 			onClick={() => router.push('/services')}
 		>
-		<span>
-				{ hovered ? 'Commission Me!' : 'Available For Work'}
-			</span>
+			<span>{hovered ? 'Commission Me!' : 'Available For Work'}</span>
 		</button>
 	);
 };

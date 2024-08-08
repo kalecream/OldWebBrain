@@ -11,11 +11,11 @@ export const GetMonthName = (dateString) => {
 		'September ',
 		'October ',
 		'November ',
-		'December '
+		'December ',
 	];
 
 	const dateParts = dateString.split('-');
-	const monthIndex = parseInt(dateParts[1], 10) - 1; 
+	const monthIndex = parseInt(dateParts[1], 10) - 1;
 
 	if (monthIndex >= 0 && monthIndex < months.length) {
 		return months[monthIndex];

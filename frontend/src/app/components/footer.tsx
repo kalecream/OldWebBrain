@@ -305,7 +305,7 @@ export const Footer: React.FunctionComponent = () => {
 							alt="From the river to the sea, Palestine will be the free."
 							width={88}
 							height={44}
-							style={{borderRadius:0}}
+							style={{ borderRadius: 0 }}
 						/>
 					</Link>
 				</div>

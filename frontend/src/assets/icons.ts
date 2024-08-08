@@ -5,7 +5,7 @@ import Email from './icons/email.svg';
 const Brands = {
 	Github,
 	Mastodon,
-	Email
+	Email,
 };
 
 export { Brands };

@@ -6,7 +6,6 @@ import '@code-hike/mdx/dist/index.css';
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
 export const App = ({ Component }: AppProps): JSX.Element => {
-
 	return (
 		<ThemeProvider
 			storageKey="theme"
@@ -16,7 +15,7 @@ export const App = ({ Component }: AppProps): JSX.Element => {
 			defaultTheme="system"
 			themes={['light', 'dark']}
 		>
-			<Component/>
+			<Component />
 		</ThemeProvider>
 	);
 };
