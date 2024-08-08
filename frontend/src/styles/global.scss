@@ -104,7 +104,7 @@ $map in $themes {
 	--buttonBorder: 2px solid rgba(255, 255, 255, 0.35);
 	--border: 1px solid rgba(0, 0, 0, 0.1);
 	--borderColor: rgba(255, 255, 255, 0.4);
-	--sharpBorderRadius:5px;
+	--sharpBorderRadius: 5px;
 	--borderRadius: 10px;
 	--buttonBorderRadius: 50px;
 	--paddingContainer: 1.5rem 3rem;
@@ -236,6 +236,42 @@ progress {
 		transition-timing-function: cubic-bezier(.36, .55, .63, .48);
 		background-color: var(--primary);
 		background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23f0f8f3' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+	}
+}
+
+fieldset {
+	border-radius: var(--buttonBorderRadius);
+	padding: var(--paddingContainer);
+	border:none;
+	// border: 1px dotted var(--primary);
+	backdrop-filter: blur(20px);
+
+	& label {
+		color: var(--primary);
+		font-weight: 300;
+	}
+
+	& input[type="checkbox"] {
+		height: 2rem;
+		width: 2rem;
+		color: --primary;
+		border-radius: var(--buttonBorderRadius);
+		-webkit-appearance: none;
+		// background: none;
+		border: 2px solid var(--primary);
+		outline: 0;
+
+		&:checked {
+			box-shadow: none;
+			background-color: var(--primary);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+		}
+
+		&:disabled {
+			background-color: #CCD3D8;
+			opacity: 0.84;
+			cursor: not-allowed;
+		}
 	}
 }
 
