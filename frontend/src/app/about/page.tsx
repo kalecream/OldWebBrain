@@ -134,12 +134,14 @@ export const About = () => {
 
 	return (
 		<section>
+			
+			<section style={{marginBottom: "3rem", marginTop: 0, paddingTop: 0}}>
 			<h1 className="text-center">About</h1>
-			{/* <PhotoGalley /> */}
-			{/* TODO: Fix photogallery on about */}
-				<div className="flex column center" style={{marginBottom: "2rem"}}>
+				{/* <PhotoGalley /> */}
+				{/* TODO: Fix photogallery on about */}
+				<div className="flex column center" style={{ marginTop: '2rem' }}>
 					<div className="frame">
-						<Image src={pic} alt="" height={200} width={350} style={{margin:"auto", borderRadius:0}} />
+						<Image src={pic} alt="" height={200} width={350} style={{ margin: 'auto', borderRadius: 0 }} />
 					</div>
 					<p className="prose glassmorphic">
 						I made this about page because showing you my personality through the things I enjoy is personally
@@ -178,6 +180,11 @@ export const About = () => {
 					</div>
 					<ScrollDown />
 				</div>
+			</section>
+
+			<section>
+				<h2 className="text-center">?</h2>
+			</section>
 
 			{/* <h2>Coding</h2>
 
