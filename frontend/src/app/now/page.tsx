@@ -91,7 +91,7 @@ const NowPage = () => {
 						</li>
 						<li>
 							<progress max="100" value="2" />
-							<Link href="https://docs.google.com/spreadsheets/d/1Ao_9w17kz0X82ZlpYiu4AoUsMOThUjBWkbDFai1bIsA/edit?usp=sharing">
+							<Link href="/c25k">
 								Advancing
 							</Link>{' '}
 							in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
