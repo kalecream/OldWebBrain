@@ -1,9 +1,9 @@
 const Runs = [
     {
         date: '2024-08-08T05:28-05:00',
-        avgPace: '07:14',
-        time: '36:43',
         distance: 5.07,
+        avgPace: '07:14',
+        time: '00:36:43',
         splits: [
             { '1km': '00:00' },
             { '2km': '00:00' },
@@ -13,10 +13,10 @@ const Runs = [
         ],
     },
     {
-        date: '2024-08-10T05:28-05:00',
-        avgPace: '00:00',
-        time: '00:00',
-        distance: 0,
+        date: '2024-08-11T05:28-06:33',
+        distance: 2.11,
+        avgPace: '10:26',
+        time: '00:22:02',
 	},
 ];
 
