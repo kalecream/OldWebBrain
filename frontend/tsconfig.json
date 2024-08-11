@@ -46,6 +46,6 @@
 			}
 		]
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js", ".next/types/**/*.ts", "src/app/c25k/page.jsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js", ".next/types/**/*.ts"],
 	"exclude": ["node_modules", ".next"]
 }

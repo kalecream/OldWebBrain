@@ -150,7 +150,7 @@ const PublicDomain = () => {
 			width="88px"
 			height="31px"
 			viewBox="-0.5 -0.101 88 31"
-			enable-background="new -0.5 -0.101 88 31"
+			enableBackground="new -0.5 -0.101 88 31"
 			// xml:space="preserve"
 		>
 			<g>
