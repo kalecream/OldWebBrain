@@ -164,32 +164,6 @@ const C25KPage = () => {
 					</fieldset>
 				</div>
 			</section>
-			<section>
-				<div className="flex row my-1">
-					<div className="flex row glassmorphic">
-						<div className="flex column">
-							<h2>Distance</h2> <span>{totalDistance} km</span>
-						</div>
-						<div className="flex column">
-							<h2>Total Time</h2> <span>{totalTime}</span>
-						</div>
-
-						<div className="flex column">
-							<h2>Avg Distance</h2> <span>{totalDistance / Runs.length} km</span>
-						</div>
-
-						<div className="flex column">
-							<h2>Avg Time</h2> <span>{totalTime}</span>
-						</div>
-						<div className="flex row">{/* splits here */}</div>
-					</div>
-				</div>
-
-				<div className="flex column">
-					<caption>Distances Run</caption>
-					<DistancesChart />
-				</div>
-			</section>
 		</>
 	);
 };
