@@ -99,7 +99,7 @@ const TimesChart = () => {
 	useEffect(() => {
 		Runs.forEach((o) => {
 			o.date = new Date(o.date);
-			// o.avgPace = d3.scaleUtc(o.avgPace);
+			o.avgPace = formatTime(o.avgPace);
 		});
 	}, []);
 
@@ -112,7 +112,7 @@ const TimesChart = () => {
 		.nice();
 
 	const y = d3
-		.scaleUtc()
+		.scaleTime()
 		.range([h - margin.bottom, margin.top])
 		.nice();
 
