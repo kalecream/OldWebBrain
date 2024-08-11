@@ -113,6 +113,12 @@ const C25KPage = () => {
 					</Link>{' '}
 					in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>
 				</p>
+
+				<div className="flex column">
+					<caption>Distances Run</caption>
+					<DistancesChart />
+				</div>
+				
 				<div className="flex row prose">
 					<fieldset className="flex">
 						<label>Week 1</label>
