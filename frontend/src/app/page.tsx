@@ -120,9 +120,6 @@ export default function Page() {
 						</div>
 					</Link>
 				</div>
-				<div>
-					<BlogPosts />
-				</div>
 			</section>
 			<ProjectList />
 		</section>
