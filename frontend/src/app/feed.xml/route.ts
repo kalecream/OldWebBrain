@@ -23,7 +23,7 @@ export async function GET() {
 			guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
 			url: `https://sabrinamedwinter.com/blog/${post.slug}`,
 			date: post.metadata.update || post.metadata.date,
-			description: post.content,
+			description: post.metadata.description,
 			author: 'Sabrina Medwinter',
 			//   categories: post.metadata.tags || [],
 			//   FIXME: Post tags in rss
