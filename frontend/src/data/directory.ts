@@ -8,16 +8,8 @@ const Directory = [
 		links: '/now',
 	},
 	{
-		title: 'Wiki',
-		links: 'https://notes.sabrinamedwinter.com',
-	},
-	{
 		title: 'Blog',
 		links: '/blog',
-	},
-	{
-		title: 'Changelog',
-		links: '/changelog',
 	},
 ];
 
