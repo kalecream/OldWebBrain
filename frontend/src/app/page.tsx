@@ -62,7 +62,7 @@ export default function Page() {
 						<div
 							className="flex column"
 							style={{
-								backgroundColor: 'var(--primary)',
+								border: 'var(--border)',
 								padding: 'var(--paddingContainer)',
 								borderRadius: 'var(--borderRadius)',
 							}}
@@ -70,7 +70,7 @@ export default function Page() {
 							<Image src={Rolodex} alt={''} width={200} height={200} />
 							<caption
 								style={{
-									color: 'var(--backgroundColor)',
+									color: 'var(--primary)',
 								}}
 							>
 								Rolodex
@@ -85,7 +85,7 @@ export default function Page() {
 						<div
 							className="flex column"
 							style={{
-								backgroundColor: 'var(--primary)',
+								border: 'var(--border)',
 								padding: 'var(--paddingContainer)',
 								borderRadius: 'var(--borderRadius)',
 							}}
@@ -93,7 +93,7 @@ export default function Page() {
 							<Image src={Grimorie} alt={''} width={200} height={200} />
 							<caption
 								style={{
-									color: 'var(--backgroundColor)',
+									color: 'var(--primary)',
 								}}
 							>
 								Changelog
@@ -104,7 +104,7 @@ export default function Page() {
 						<div
 							className="flex column"
 							style={{
-								backgroundColor: 'var(--primary)',
+								border: 'var(--border)',
 								padding: 'var(--paddingContainer)',
 								borderRadius: 'var(--borderRadius)',
 							}}
@@ -112,7 +112,7 @@ export default function Page() {
 							<Image src={Grimorie} alt={''} width={200} height={200} />
 							<caption
 								style={{
-									color: 'var(--backgroundColor)',
+									color: 'var(--primary)',
 								}}
 							>
 								Wiki
