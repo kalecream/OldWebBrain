@@ -4,7 +4,7 @@ import Image from 'next/image';
 // import { HeroModel } from '@components/threeJS/HeroModel';
 import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
-import hero from '@styles/modules/Hero.module.scss';
+import hero from '@styles/modules/Index.module.scss';
 import button from '@styles/modules/Button.module.scss';
 import Valentine from '@assets/images/valentine.webp';
 import Bop from '@assets/images/bop.webp';

@@ -41,7 +41,7 @@ const GitHubReleaseInfo = () => {
 	return (
 		<section>
 			<h1 className="section-title">Website Changes!</h1>
-			<p>If you would like to see more on how this website was made, you can read the <Link href="/colophon">Colophon</Link>.</p>
+			<p>If you would like to see more on how this website was made, you can read <Link href="/colophon" className='internal-link'>colophon</Link>.</p>
 			<div className={styles.release__container}>
 				<Suspense fallback={<p className="h-6" />}>
 					<ul className={styles.release}>
