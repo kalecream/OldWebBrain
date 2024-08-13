@@ -140,7 +140,7 @@ const NoAI = () => {
 
 export const Footer: React.FunctionComponent = () => {
 	return (
-		<footer className="glassmorphic">
+		<footer>
 			<SocialMediaList />
 			<div> sabrina medwinter &copy; {new Date().getFullYear()}</div>
 			<div className="flex my-1">
@@ -158,6 +158,10 @@ export const Footer: React.FunctionComponent = () => {
 						/>
 					</Link>
 				</div>
+			</div>
+			<div className='flex'>
+				<Link href={"/sitemap"}>Sitemap</Link>
+				<Link href={"/colophon"}>Colophon</Link>
 			</div>
 		</footer>
 	);
