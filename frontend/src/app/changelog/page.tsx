@@ -7,6 +7,7 @@ import { format, parseISO } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from '@styles/modules/changelog.module.scss';
+import Link from 'next/link';
 
 interface MarkdownRendererProps {
 	markdown: string;
@@ -40,6 +41,7 @@ const GitHubReleaseInfo = () => {
 	return (
 		<section>
 			<h1 className="section-title">Website Changes!</h1>
+			<p>If you would like to see more on how this website was made, you can read the <Link href="/colophon">Colophon</Link>.</p>
 			<div className={styles.release__container}>
 				<Suspense fallback={<p className="h-6" />}>
 					<ul className={styles.release}>
