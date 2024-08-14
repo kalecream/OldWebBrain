@@ -242,7 +242,7 @@ progress {
 fieldset {
 	border-radius: var(--buttonBorderRadius);
 	padding: var(--paddingContainer);
-	border:none;
+	border: none;
 	// border: 1px dotted var(--primary);
 	backdrop-filter: blur(20px);
 
@@ -397,6 +397,18 @@ a {
 	&:hover {
 		color: var(--secondary);
 		transition: ease-in-out 0.2s;
+	}
+}
+
+.internal-link {
+	color: var(--secondary);
+
+	&::before {
+		content: "/";
+	}
+
+	&:hover {
+		color: var(--primary)
 	}
 }
 
