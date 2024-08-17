@@ -14,7 +14,7 @@ export const SecondHero = () => {
 		.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
 	return (
-		<section style={{ backgroundColor: 'var(--backgroundColor)', borderRadius: 'var(--borderRadius)', maxHeight: '100vh', padding: 0, margin: '0 auto' }}>
+		<section style={{ backgroundColor: 'var(--backgroundColor)', borderRadius: 'var(--borderRadius)' }}>
 			<Image src={Divider} alt="" width={800} height={200} style={{ opacity: '0.3' }} className="recolor" />
 			<div className={styles.section}>
 				<div className={styles['button-block']}>
