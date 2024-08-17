@@ -12,7 +12,8 @@ const ColophonPage = () => {
 			<div className="prose">
 				<h2>Credits</h2>
 				<ul>
-					<li><Link href={"https://www.rpnation.com/threads/fifteen-years-later-the-vampire-diaries-the-originals-rp.240860/"}>Vampire Post Divider</Link> found on a  roleplaying forum discussing The Vampire Diaries/The Originals</li>
+					<li><Link href={"https://www.rpnation.com/threads/fifteen-years-later-the-vampire-diaries-the-originals-rp.240860/"} target="_blank">Vampire Post Divider</Link> found on a  roleplaying forum discussing The Vampire Diaries/The Originals</li>
+					<li><Link href={"https://codepen.io/sosuke/pen/Pjoqqp"} target="_blank">CSS Filter Generator</Link> to change colors from Black to a specific Hex</li>
 				</ul>
 			</div>
 		</section>
