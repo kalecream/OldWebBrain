@@ -135,18 +135,6 @@ body {
 
 main {
 	margin: 0 auto;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		padding: 0rem;
-	}
-
-	@include breakpoint-range($from: tablet) {
-		width: 90%;
-	}
-
-	@include breakpoint-range($from: desktopSmall) {
-		padding: 1rem 2.5rem;
-	}
 }
 
 header {
@@ -189,18 +177,14 @@ footer {
 
 section {
 	min-height: 100vh;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: center;	
 
-	@include breakpoint-range($from: mobile) {
-		padding: 0 1rem;
-	}
-
-	@include breakpoint-range($from: tablet) {
-		padding: 0.5rem;
-		margin: 0.5rem auto;
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		padding:0 1rem;
 	}
 }
 
@@ -813,6 +797,19 @@ canvas:active {
 *::-webkit-scrollbar-thumb {
 	background-color: var(--primary);
 	border-radius: var(--borderRadius);
+}
+
+.recolor {
+	filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+}
+
+.faded {
+	opacity: 0.85;
+	// the CSS filter only works on moving colours from black to the primary color 
+
+	&:hover{
+		opacity: 1;
+	}
 }
 
 // This project styling cannot go in CSS modules

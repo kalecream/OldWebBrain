@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ColophonPage = () => {
 	return (
 		<section className="paragraph">
@@ -9,7 +11,9 @@ const ColophonPage = () => {
 			
 			<div className="prose">
 				<h2>Credits</h2>
-				<p>To be added.</p>
+				<ul>
+					<li><Link href={"https://www.rpnation.com/threads/fifteen-years-later-the-vampire-diaries-the-originals-rp.240860/"}>Vampire Post Divider</Link> found on a  roleplaying forum discussing The Vampire Diaries/The Originals</li>
+				</ul>
 			</div>
 		</section>
 	);
