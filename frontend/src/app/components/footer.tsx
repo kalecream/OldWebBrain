@@ -160,7 +160,7 @@ export const Footer: React.FunctionComponent = () => {
 				</div>
 			</div>
 			<div className='flex'>
-				<Link href={"/sitemap"}>Sitemap</Link>
+				<Link href={"/sitemap.xml"}>Sitemap</Link>
 				<Link href={"/colophon"}>Colophon</Link>
 			</div>
 		</footer>
