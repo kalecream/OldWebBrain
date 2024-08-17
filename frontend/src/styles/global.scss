@@ -181,19 +181,11 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: center;	
 
-	// @include breakpoint-range($from: mobile) {
-	// 	padding: 0 1rem;
-	// }
-
-	// @include breakpoint-range($from: tablet) {
-	// 	padding: 0.5rem;
-	// }
-
-	// @include breakpoint-range($from: desktopSmall) {
-	// 	padding: 1rem 2.5rem;
-	// }
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		padding:0 1rem;
+	}
 }
 
 hr {
