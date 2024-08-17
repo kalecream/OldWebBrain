@@ -6,8 +6,7 @@ import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import hero from '@styles/modules/Index.module.scss';
 import button from '@styles/modules/Button.module.scss';
-import Valentine from '@assets/images/valentine.webp';
-import Bop from '@assets/images/bop.webp';
+import HeroImage from '@assets/images/bop.webp';
 import Link from 'next/link';
 
 const Hero = () => {
@@ -42,7 +41,7 @@ const Hero = () => {
 				<div className={hero.model}>
 					{/* <HeroModel /> */}
 					<Image
-						src={Bop}
+						src={HeroImage}
 						loader={({ src, width }) => `${src}?w=${width}`}
 						width={0}
 						height={0}
