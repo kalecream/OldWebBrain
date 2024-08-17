@@ -8,13 +8,13 @@ export default function Page() {
 	
 
 	return (
-		<section>
+		<>
 			{/* <PreloadResources /> */}
 			<Hero />
 			{/* <HomePosts /> */}
 			{/* TODO: This as a component and add css */}
 			<SecondHero />
 			<ProjectList />
-		</section>
+		</>
 	);
 }
