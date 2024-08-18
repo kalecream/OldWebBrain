@@ -7,7 +7,10 @@ const ColophonPage = () => {
 			<div className="prose"><p>
 				A colophon is a publishing term that describes how a book was made. This is that, but for a website.{' '}
 			</p>
-			<p>This website is made using Next.js 14, stored on Github and deployed using Vercel.</p></div>
+				<p>This website is made using Next.js 14, stored on Github and deployed using Vercel.</p></div>
+			
+				<h2>Acknowledgement</h2>
+			<p className="prose">The theme within this website is based on the Caribbean folklore of the <Link href={'https://www.wikiwand.com/en/Soucouyant'}>Soucouyant</Link> or Ole Higue. She is the Caribbean's version of a Vampire, a werewolf and is combined with West African witch mythos.</p>
 			
 			<div className="prose">
 				<h2>Credits</h2>
