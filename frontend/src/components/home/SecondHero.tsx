@@ -15,10 +15,11 @@ export const SecondHero = () => {
 		.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
 	return (
-		<section style={{ backgroundColor: 'var(--backgroundColor)', borderRadius: 'var(--borderRadius)' }}>
+		<section style={{ backgroundColor: 'var(--backgroundColor)', borderRadius: 'var(--borderRadius)', minHeight: '100vh' }}>
+			{/* fix image on mobile spill */}
 			<Image
 				src={Divider}
-				className="recolor"
+				className="recolor desktop"
 				width={0}
 				height={0}
 				sizes="100vw"
@@ -44,7 +45,7 @@ export const SecondHero = () => {
 							>
 								Rolodex
 							</h1>
-							<p className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center prose-small" >
 								A collection of bookmarks from other websites.
 							</p>
 						</div>
@@ -69,7 +70,7 @@ export const SecondHero = () => {
 							>
 								Changelog
 							</h1>
-							<p className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center prose-small">
 								All website changes I make.
 							</p>
 						</div>
@@ -90,7 +91,7 @@ export const SecondHero = () => {
 							>
 								Wiki
 							</h1>
-							<p className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center prose-small">
 								A collection of notes on different subjects.
 							</p>
 						</div>
@@ -99,7 +100,7 @@ export const SecondHero = () => {
 			</div>
 			<Image
 				src={Divider}
-				className="recolor"
+				className="recolor desktop"
 				width={0}
 				height={0}
 				sizes="100vw"

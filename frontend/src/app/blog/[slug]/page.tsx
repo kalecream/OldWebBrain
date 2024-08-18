@@ -54,7 +54,7 @@ const formatDate = (date: string) => {
 	let daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
 	let fullDate = new Date(date).toLocaleString('en-us', {
-		month: 'long',
+		month: 'short',
 		day: 'numeric',
 		year: 'numeric',
 	});
@@ -106,18 +106,17 @@ export default function Blog({ params }) {
 					}),
 				}}
 			/>
-			<h1 className="title">{post.metadata.title}</h1>
-			<br/>
-			<h2><i>{post.metadata.description}</i></h2>
-			<div className="flex justify-between items-center my-1 mb-2">
+			<div className="info">
+				<h1 className="title">{post.metadata.title}</h1>
+				<h2 className='text-center'>
+					<i >{post.metadata.description}</i>
+				</h2>
 				<Suspense fallback={<p className="h-5" />}>
-					<p className="text-sm text-neutral-600 dark:text-neutral-400">{formatDate(post.metadata.date)}</p>
+					<p className='text-center'>{formatDate(post.metadata.date)}</p>
 				</Suspense>
-				{/* <Suspense fallback={<p className="h-5" />}>
-          <Views slug={post.slug} />
-        </Suspense> */}
+				<br/>
 			</div>
-			<article className="prose">
+			<article className="">
 				<CustomMDX source={post.content} />
 				<div className="flex my-1">
 					<Link href={'/blog'}>Back to Blog</Link>

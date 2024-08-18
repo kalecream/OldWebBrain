@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 const Hero = () => {
 	return (
-		<section>
+		<section style={{minHeight: '100vh'}}>
 			<div className={hero.container}>
 				<div className={hero.cta}>
 					<HeroName name={'Sabrina'} />
@@ -45,7 +45,7 @@ const Hero = () => {
 						width={0}
 						height={0}
 						sizes="100vw"
-						style={{ width: 'auto', height: 'clamp(200px, 40vw,1000px)' }}
+						style={{ width: 'auto', height: 'clamp(100px, 35vw,1000px)' }}
 						alt=""
 						className="u-photo"
 					/>
