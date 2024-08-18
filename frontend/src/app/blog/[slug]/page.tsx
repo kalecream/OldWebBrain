@@ -116,10 +116,10 @@ export default function Blog({ params }) {
 				</Suspense>
 				<br/>
 			</div>
-			<article className="">
+			<article>
 				<CustomMDX source={post.content} />
 				<div className="flex my-1">
-					<Link href={'/blog'}>Back to Blog</Link>
+					<Link href={'/blog'}><p>Back to Blog</p></Link>
 				</div>
 			</article>
 		</section>
