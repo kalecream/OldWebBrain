@@ -162,6 +162,7 @@ export const Footer: React.FunctionComponent = () => {
 			<div className='flex'>
 				<Link href={"/sitemap.xml"}>Sitemap</Link>
 				<Link href={"/colophon"}>Colophon</Link>
+				<Link href={"https://github.com/kalecream/OldWebBrain"}>Source</Link>
 			</div>
 		</footer>
 	);
