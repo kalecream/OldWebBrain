@@ -23,11 +23,6 @@ const Pods = [
 		cover: 'https://i.imgur.com/ckbkeno.jpg',
 	},
 	{
-		title: 'Believer: A Paranormal Mystery',
-		url: 'https://believerpodcast.com/',
-		cover: 'https://i.imgur.com/CJxIgHu.jpg',
-	},
-	{
 		title: 'Earth Collective, The',
 		url: 'https://www.theearthcollectivestory.com/',
 		cover: 'https://i.imgur.com/d11gD2o.jpg',
@@ -48,11 +43,6 @@ const Pods = [
 		url: 'https://oyster.libsyn.com/',
 	},
 	{
-		title: 'Phenomenon: Survivors, The',
-		cover: 'https://i.imgur.com/BZnbn9c.jpg',
-		url: 'https://www.phenomenonpod.com/',
-	},
-	{
 		title: 'Roomate from Hell',
 		cover: 'https://i.imgur.com/iWk8r3K.png',
 		url: 'https://roommatefromhell.rip/',
@@ -68,24 +58,9 @@ const Pods = [
 		url: 'https://thewhitevault.com/',
 	},
 	{
-		title: 'Midnight Burger',
-		cover: 'https://i.imgur.com/4xZdqEb.jpg',
-		url: 'https://www.weopenatsix.com/',
-	},
-	{
-		title: 'Command Line Heroes',
-		cover: 'https://i.imgur.com/gagMiFO.png',
-		url: 'https://www.redhat.com/en/command-line-heroes',
-	},
-	{
 		title: 'Philosophize This!',
 		cover: 'https://i.imgur.com/3OX0qzV.jpg',
 		url: 'https://www.philosophizethis.org/',
-	},
-	{
-		title: 'SCP Foundation Database, The',
-		cover: 'https://i.imgur.com/S3G3iLn.jpg',
-		url: 'www.scpdatapodcast.com',
 	},
 	{
 		title: 'Hello From The Magic Tavern',

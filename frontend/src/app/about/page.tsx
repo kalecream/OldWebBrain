@@ -63,58 +63,38 @@ export const About = () => {
 			<section style={{ marginBottom: '3rem', marginTop: 0, paddingTop: 0 }}>
 				{/* <PhotoGalley /> */}
 				{/* TODO: Fix photogallery on about */}
-				<div className="flex column center" style={{ marginTop: '2rem' }}>
+				<div className="flex column center">
 					<div className="frame">
 						<Image src={pic} alt="" height={200} width={350} style={{ margin: 'auto', borderRadius: 0 }} />
 					</div>
 					<p className="prose ">
-						I made this about page because showing you my personality through the things I enjoy is personally
+						This about page was made because showing you my personality through the things I enjoy is personally
 						preferable to making a biography. I've always disliked being asked "tell me a bit about yourself" in
 						personal environments.
 					</p>
-					{/* <div className={`flex row`}>
-						<Link href={'#books'}>
-							<h1>Books</h1>
-						</Link>
-						<Link href={'#games'}>
-							<h1>Games</h1>
-						</Link>
-						<Link href={'#podcasts'}>
-							<h1>Podcasts</h1>
-						</Link>
-					</div> */}
+					<p className="prose ">
+						I have the standard set of outputs from personality tests, but for the longest time, I
+						struggled to figure out who I was. I thought there must be an ideal "me" outside of my usual environment
+						(which I felt was stifling.) The mundane truth turned out to be: <b>I am what I show up and do every day.</b>{' '}
+						Nothing more, nothing less. Here is what I do every day:
+					</p>
 					<ScrollDown />
 				</div>
 			</section>
-
-			{/* <h1>Coding</h1>
-
-					<p>
-						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
-						making pretty pages online then. I'm learning and experimenting every day to hone my craft. You can view the <Link href="/changelog">changelog for this website</Link>! I also really like learning through the blogging of others. 
-						
-						Here are the
-						rankings for proficiency in the languages I have used in my Github amongst other persons who signed up for{' '}
-						<Link href="https://profile.codersrank.io/user/kalecream#">Codersrank.</Link> 
-					</p>
-
-					<CodersrankSummary /> */}
-
 			<section id="books">
 				<div className={styles.paragraph}>
-					<h1 className="text-center">Books</h1>
+					<h1 className="text-center">Mostly, I read...</h1>
 					<p className="prose ">
 						I like to read to learn about the world around me or get laughs. I have{' '}
-						<b>{Books.filter((book) => book.status != 'Want').length} books in my library</b>, and I'm always looking
-						for more. I prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
+						<b>{Books.filter((book) => book.status != 'Want').length}</b> books in my library, and I'm always looking
+						for more. I prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, and read in a{' '}
 						<b>
-							{Percentage[0].toFixed(1)}% fiction and {Percentage[1].toFixed(1)}% non-fiction
-						</b>
-						.
+							{Percentage[0].toFixed(1)}% fiction + {Percentage[1].toFixed(1)}% non-fiction
+						</b> split.
 					</p>
 					<div className="flex row align-items">
-						<Link className="prose  text-center" href="/read#read">
-							<FaArrowLeftLong /> Last ({readBooks.length})
+						<Link className="prose text-center" href="/read#read">
+							<p>{'<-'} Last ({readBooks.length})</p>
 						</Link>
 						{
 							<Link
@@ -131,36 +111,68 @@ export const About = () => {
 						}
 						<Reads status="Want" limit={1} />
 						<Link className="prose text-center" href="/read#want">
-							Next ({wantToReadBooks.length}) <FaArrowRightLong />
+						<p>
+							Next ({wantToReadBooks.length}) {'->'}
+						</p>
 						</Link>
 					</div>
 				</div>
 				<p className="prose ">
-					I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
-					below.My 10 most frequently read book tags are: <b>{topGenres}.</b>
+					I'm currently reading <b>{Books.filter((book) => book.status === 'Reading').length}</b> books, which you can see
+					below. My 10 most frequently read book tags are: <b>{topGenres}.</b>
 				</p>
 				<Reads status="Reading" />
 				<p className="prose ">
-					This graph below is my book status backlog for the past rolling year. This ignores books from before then to
+					The graph below is my book status backlog for the past rolling year. The read signifies books I've started to read in the labelled month and brown is for books I've finished. This graph ignores books from before then to
 					ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-					Non-Fiction. I have books in my backlog to-read.
+					Non-Fiction.
 				</p>
 				<BacklogGraph />
+				<p className="prose ">Here is a random review from a book I've read. I don't normally do a write-up so I must have really liked/hated/found the book functional.</p>
 				<RandomBooks />
+			</section>
+
+			<section className={styles.paragraph} id="podcasts">
+				<div>
+					<h1 className="text-center">& I'm always listening to a podcast!</h1>
+					<p className="prose ">
+						Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts when
+						I'm doing work. These have been my favourite listens so far:
+					</p>
+					<div className="flex row">
+						{Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
+							<div className="">
+								{p.url ? (
+									<Link href={p.url}>
+										<Image
+											width={150}
+											height={150}
+											src={p.cover}
+											alt={p.title}
+											title={p.title}
+											className={`outerglow`}
+										/>
+									</Link>
+								) : (
+									<small>{p.title}</small>
+								)}
+							</div>
+						))}
+					</div>
+				</div>
 			</section>
 
 			<section className={styles.paragraph} id="games">
 				<div>
-					<h1 className="text-center">Games</h1>
+					<h1 className="text-center">Occasionally, I play Games...</h1>
 
 					<p className={` prose`}>
-						My preference is playing indie games and games I physically own. I still play my Gameboy Advance and I own 3
-						different DSes. Not featured below: several untouched games from{' '}
+						My preference is playing short indie games or any  games I physically own. I still play my Gameboy Advance and I own multiple DSi. Not featured in the game gallery below is several untouched games from{' '}
 						<Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
 							Steam
 						</Link>{' '}
 						and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
-						nowadays.
+						nowadays:
 					</p>
 					<div className="flex row">
 						<div className="">
@@ -234,35 +246,7 @@ export const About = () => {
 				</div>
 			</section>
 
-			<section className={styles.paragraph} id="podcasts">
-				<div>
-					<h1 className="text-center">Podcasts</h1>
-					<p className="prose ">
-						I mainly listen to audiodramas and horror podcasts, but tend to listen to Non-Fiction or Media Podcasts when
-						I'm doing work. These have been my favourite listens so far.
-					</p>
-					<div className="flex row">
-						{Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
-							<div className="">
-								{p.url ? (
-									<Link href={p.url}>
-										<Image
-											width={125}
-											height={125}
-											src={p.cover}
-											alt={p.title}
-											title={p.title}
-											className={`outerglow`}
-										/>
-									</Link>
-								) : (
-									<small>{p.title}</small>
-								)}
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
+			
 		</section>
 	);
 };
