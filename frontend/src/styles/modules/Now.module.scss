@@ -1,86 +1,49 @@
 @import '@styles/mediaQuery';
 
+.paragraph {
+
+    & h1, & h2, & h3 {
+        font-family: "Garamond";
+    }
+
+    & ul {
+        @include breakpoint-range($from: mobile, $to: tablet) {
+            margin: 0 auto;
+            margin-left: 1rem;
+        }
+
+    }
+
+    & ul li {
+        text-indent: 0.5rem;
+    }
+
+    .spring {
+        li::marker {
+            content: '🩸';
+        }
+    }
+
+    .summer {
+        li::marker {
+            content: '🔆';
+        }
+    }
+
+    .fall {
+        li::marker {
+            content: '👻';
+        }
+    }
+
+    .winter {
+        li::marker {
+            content: '🪦';
+        }
+    }
+}
+
 .behind {
-    margin-top: 2rem;
-    width: 90%;
-    opacity: 0.7;
-    cursor: pointer;
-
-    &[open] > summary {
-        text-decoration: line-through;
-    }
-
-    summary {
-        opacity: 0.6;
-
-        &::marker {
-            content: none;
-        }
-
-        &:hover {
-            text-decoration: line-through;
-        }
-    }
-}
-
-.heading {
-    @include breakpoint-range($from: mobile, $to: tablet) {
-        text-indent: 2rem;
-    }
-
-}
-
-.paragraph ul {
-    @include breakpoint-range($from: mobile, $to: tablet) {
-       width: 90%;
-       margin-left: 1rem;
-    }
-    
-}
-
-.spring,
-.winter,
-.summer,
-.doing {
-
-    li {
-        font-weight: 400;
-        text-indent: 1rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-
-        // &::marker {
-        //     font-size: 0.5rem;
-        // }
-    }
-}
-
-.spring {
-    li::marker {
-        content: '🌱';
-    }
-}
-
-.summer {
-    li::marker {
-        content: '🌿';
-    }
-}
-
-.fall {
-    li::marker {
-        content: '🍂';
-    }
-}
-
-.winter {
-    li::marker {
-        content: '🌰';
-    }
-}
-
-.doing {
-    & li > a {
-        font-weight: 400;
-    }
+    text-transform: uppercase;
+    color: var(--textColorFade);
 }

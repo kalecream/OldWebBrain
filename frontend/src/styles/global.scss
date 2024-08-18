@@ -1,7 +1,58 @@
 @import 'normalize';
-@import 'typography';
 @import 'animations';
 @import 'mediaQuery';
+
+// FONTS
+@font-face {
+	font-family: "Proxima Nova";
+	font-display: swap;
+	src: local("Proxima Nova"), url(../assets/fonts/ProximaNova.otf);
+}
+
+@font-face {
+	font-family: "Sims Sans SC";
+	font-display: swap;
+	src: local("Sims Sans"), url(../assets/fonts/Sim-Sans-Bold-SC.otf);
+}
+
+@font-face {
+	font-family: "Fira Code";
+	font-display: swap;
+	src: local("Fira Code Regular"), url(../assets/fonts/FiraCode-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Garamond";
+	font-display: swap;
+	src: url(../assets/fonts/adobe-garamond-pro-2/AGaramondPro-Regular.otf);
+}
+
+@font-face {
+	font-family: "Garamond Italics";
+	src: url(../assets/fonts/adobe-garamond-pro-2/AGaramondPro-Italic.otf);
+}
+
+@font-face {
+	font-family: "Garamond Bold";
+	src: url(../assets/fonts/adobe-garamond-pro-2/AGaramondPro-Bold.otf);
+}
+
+@font-face {
+	font-family: "Garamond Bold Italics";
+	src: url(../assets/fonts/adobe-garamond-pro-2/AGaramondPro-BoldItalic.otf);
+}
+
+@font-face {
+	font-family: "Cattedrale";
+	src: url(../assets/fonts/Cattedrale-Demo-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Cattedrale Ornamental";
+	src: url(../assets/fonts/cattedrale-ornament.ttf);
+}
+
+
 
 $primary: #b39f03;
 $secondary: #00a368;
@@ -114,22 +165,25 @@ $map in $themes {
 	--transition: all 0.3s ease-in-out;
 	--loadingBackground: radial-gradient(circle farthest-corner at 10% 20%, #b797c5 0%, #720455; 90%);
 	--loadingTextColor: #fff;
-	--bodyFont: 'Inter', sans-serif;
-	--headingFont: 'Inter', sans-serif;
-	--accentFont: 'Sims Sans SC', sans-serif;
+	--bodyFont: 'Garamond', serif;
+	--headingFont: 'Cattedrale', serif;
+	--accentFont: 'Cattedrale', serif;
 	--backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
 	// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
 }
 
+
+
 html {
 	color: var(--textColor);
-	line-height: 1.2;
+	line-height: 1.6;
 	font-family: var(--bodyFont);
+	font-size: 1.4 rem;
 }
 
 body {
 	background-color: var(--backgroundColor);
-	background-image: var(--backgroundImage);
+	// background-image: var(--backgroundImage);
 	background-repeat: repeat;
 }
 
@@ -140,24 +194,28 @@ main {
 header {
 	position: sticky;
 	top: 0;
-
 	align-items: center;
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	z-index: 5;
 
-	@include breakpoint-range($from: mobile) {
-		padding: 1rem;
-		justify-content: center;
-	}
-
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {
-		padding: 1rem 2.5rem;
-	}
-
-	@include breakpoint-range($from: desktopSmall) {
+	& > nav {
+		margin: 0 auto;
+		width: 95%;
+		display: flex;
 		justify-content: space-between;
-		padding: var(--paddingContainer);
+
+		@include breakpoint-range($from: mobile) {
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		@include breakpoint-range($from: desktopSmall) {
+			flex-direction: row;
+			justify-content: space-between;
+		padding: 0 1rem;
+		}
 	}
 }
 
@@ -165,14 +223,14 @@ footer {
 	display: flex;
 	bottom: 0;
 	position: relative;
-	padding: 0.5rem 0;
-	font-size: 0.7rem;
+	padding: 0.75rem 0;
+	font-size: 0.9rem;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 	text-transform: uppercase;
-	font-weight: 600;
+	font-family: "Inter";
 }
 
 section {
@@ -181,16 +239,17 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 
 	@include breakpoint-range($from: mobile, $to: tablet) {
-		padding:0 1rem;
+		padding: 0 1rem;
 	}
 }
 
 hr {
-	border: 0;
-	border-bottom: 1px dashed var(--primary);
+	content: "-";
+	font-family: "Cattedrale Ornamental";
+	font-size: 50px;
 }
 
 progress {
@@ -396,8 +455,17 @@ a {
 	}
 }
 
+i {
+	font-family: "Garamond Italics";
+}
+
 b {
 	font-weight: 500;
+	font-family: "Garamond Bold";
+}
+
+b i {
+	font-family: "Garamond Bold Italics";
 }
 
 h1,
@@ -407,35 +475,36 @@ h4,
 h5,
 h6 {
 	color: var(--textColor);
-	font: var(--headingFont);
+	font-family: "Garamond", serif;
 	font-weight: 300;
-	margin-bottom: 1rem;
+	// margin-bottom: 1rem;
 }
 
 h1 {
-	font-size: clamp(2rem, 2vw, 3.5rem);
+	font-size: clamp(3rem, 3vw, 5rem);
 	margin-bottom: 0rem;
 	text-align: center;
 }
 
 h2 {
-	font-size: clamp(1.5rem, 2vw, 2.5rem);
+	font-size: clamp(2.5rem, 2vw, 4rem);
 	margin-top: 0;
 }
 
 h3 {
-	font-size: clamp(1.4rem, 2vw, 2rem);
+	font-size: clamp(2rem, 2vw, 3rem);
 }
 
-p {
-	font-size: clamp(0.9rem, -0.8750rem + 8.3333vw, 1rem);
+p,
+li {
+	font-size: clamp(1rem, -0.8750rem + 8.3333vw, 1.4rem);
 	margin-bottom: 0.8rem;
 	// backdrop-filter: blur($blur);
 }
 
 p a {
-	color: var(--textColor);
-	border-bottom: 1px solid var(--borderColor);
+	border-bottom: 1px solid var(--primary);
+	border-color: var(--primary);
 }
 
 li {
@@ -535,14 +604,6 @@ kbd::after,
 /*  */
 .hider {
 	overflow: hidden;
-}
-
-.sitename {
-	color: var(--textColor);
-}
-
-.sitename:hover {
-	color: var(--primary);
 }
 
 .text-center {
@@ -678,11 +739,12 @@ article h3 {
 }
 
 article h1 {
-	font-size: 2rem;
+	font-size: 5rem;
+	font-family: "Cattedrale";
 }
 
 article h2 {
-	font-size: 1.75rem;
+	font-size: 3rem;
 }
 
 article h3 {
@@ -690,8 +752,6 @@ article h3 {
 }
 
 article p {
-	font-size: 1.05rem;
-	line-height: 1.6;
 	margin-bottom: 1rem;
 }
 
@@ -807,7 +867,7 @@ canvas:active {
 	opacity: 0.85;
 	// the CSS filter only works on moving colours from black to the primary color 
 
-	&:hover{
+	&:hover {
 		opacity: 1;
 	}
 }

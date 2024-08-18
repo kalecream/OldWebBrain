@@ -10,13 +10,13 @@
 	max-width: 480px;
 	height: 200px;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		display: none;
-	}
+	// @include breakpoint-range($from: mobile, $to: tablet) {
+	// 	display: none;
+	// }
 
-	@include breakpoint-range($from: tablet, $to: desktop) {
-		display: block;
-	}
+	// @include breakpoint-range($from: tablet, $to: desktop) {
+	// 	display: block;
+	// }
 }
 .container .text__container,
 .container .shadow-container {
@@ -29,7 +29,8 @@
 .container .text {
 	position: absolute;
 	top: 50%;
-	font-size: clamp(4rem, 25vw, 8rem);
+	color: var(--primary);
+	font-size: clamp(1rem, 25vw, 11rem);
 	font-family: var(--accentFont), sans-serif;
 	text-transform: capitalize;
 	-webkit-text-stroke: 2px solid var(--border);

@@ -13,8 +13,8 @@ export function Navbar() {
 			<nav id="nav">
 				{path && path !== '/' && (
 					<>
-						<Link className={style['site-name']} href="/">
-							sab
+						<Link href="/">
+							<span className={style['site-name']}></span>
 						</Link>
 					</>
 				)}

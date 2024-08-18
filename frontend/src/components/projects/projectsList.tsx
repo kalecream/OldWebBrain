@@ -33,10 +33,10 @@ const ProjectList: React.FC = () => {
 
 	return (
 		<section className={styles['project-wrapper']}>
-			<h2>Things I've Made</h2>
+			<h1>Things I've Made</h1>
 			<div className={styles['project-tabs']}>
 				<button
-					className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
+					className={`${styles['project-tab'] + ` `} ${activeCategory === 'All' ? styles['active'] : ''}`}
 					onClick={() => handleTabChange('All')}
 				>
 					All
@@ -44,7 +44,7 @@ const ProjectList: React.FC = () => {
 				{categories.map((category) => (
 					<button
 						key={category}
-						className={`${styles['project-tab'] + ` glassmorphic`} ${
+						className={`${styles['project-tab'] + ` `} ${
 							activeCategory === category ? styles['active'] : ''
 						}`}
 						onClick={() => handleTabChange(category)}
@@ -55,11 +55,11 @@ const ProjectList: React.FC = () => {
 			</div>
 			<div className={styles['project-list']}>
 				{filteredProjects.map((project) => (
-					<div key={project.id} className={styles['project-overlay'] + ` glassmorphic`}>
+					<div key={project.id} className={styles['project-overlay'] + ` `}>
 						<div key={project.id} className={styles.project + ` p-${project.id}`}>
 							<div className={styles['project-info']}>
 								<div className={styles.project__present}>
-									<h2 className={styles.project__title}>
+									<h1 className={styles.project__title}>
 										<div className={styles['project-year']}>
 											{GetMonthName(project.created)}
 											{project.created.split('-', 1)}
@@ -71,7 +71,7 @@ const ProjectList: React.FC = () => {
 											title={project.status}
 											aria-label={project.status}
 										></span>
-									</h2>
+									</h1>
 									{project.image && (
 										<div className={styles.project__image}>
 											<Image
@@ -166,9 +166,9 @@ export const LatestProject = () => {
 			/>
 			<div className={styles.latest__container}>
 				<div className={styles.latest__description}>
-					<h3>
+					<h2>
 						<b>{project.title}</b>
-					</h3>
+					</h2>
 					<p>
 						Made {project.language && 'with ' + project.language.join(',  ')} using{' '}
 						{project.technology && (project.technology.length == 1 ? project.technology : project.technology)}

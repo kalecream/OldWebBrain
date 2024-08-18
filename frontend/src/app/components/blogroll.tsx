@@ -98,16 +98,15 @@ export const BlogPosts = () => {
 
 	return (
 		<section>
-			<h2>Blog</h2>
 			{years.map((year) => (
 				<ul key={year.date}>
 					<li className={blog.nolist} key={year.date}>
 						<ul>
 							{year.months.map((month, i) => (
 								<li className={blog.nolist} key={i}>
-									<h2 className={blog.month}>
+									<h1 className={blog.month}>
 										<span>{month.name}</span> <span>{i === 0 && year.date}</span>
-									</h2>
+									</h1>
 									<ul>
 										{month.posts.map((post) => (
 											<li key={post.slug} className="no-marker h-entry glassmorphic">
@@ -115,7 +114,7 @@ export const BlogPosts = () => {
 													<div className={blog.list__section}>
 														<div>
 															<span className={blog.list__date + ` dt-published`}>{post.metadata.date.slice(-2)}</span>
-															<h3 className={blog.list__title + ` p-name`}>{post.metadata.title}</h3>
+															<h1 className={blog.list__title + ` p-name`}>{post.metadata.title}</h1>
 														</div>
 														<p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
 													</div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Suspense, cache } from 'react';
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { CustomMDX } from '../../components/mdx';
 // import { getViewsCount } from '../../db/queries';
@@ -107,6 +107,8 @@ export default function Blog({ params }) {
 				}}
 			/>
 			<h1 className="title">{post.metadata.title}</h1>
+			<br/>
+			<h2><i>{post.metadata.description}</i></h2>
 			<div className="flex justify-between items-center my-1 mb-2">
 				<Suspense fallback={<p className="h-5" />}>
 					<p className="text-sm text-neutral-600 dark:text-neutral-400">{formatDate(post.metadata.date)}</p>

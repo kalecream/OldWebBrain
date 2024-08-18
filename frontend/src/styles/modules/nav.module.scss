@@ -1,21 +1,33 @@
+@import '../mediaQuery';
+
 .directory-list {
   align-items: center;
 }
 
 .directory-section {
+  
   right: 0;
   float: right;
   display: flex;
+  flex-direction: row;;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  @include breakpoint-range($from: mobile) {
+    margin: 2rem 0;
+  }
+  @include breakpoint-range($from: desktopSmall) {
+    margin: 2rem 6rem;
+
+  }
 }
 
 .directory-link {
   text-transform: capitalize;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .settings > * {
@@ -39,13 +51,34 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-	font-family: var(--accentFont);
-  margin: 0 1rem;
-  color: var(--primary);
-}
+  align-self: center;
 
-.site-name:hover {
-  opacity: 0.8;
+  &:hover {
+    opacity: 0.75;
+    filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+  }
+
+  @include breakpoint-range($from: mobile) {
+    &::before {
+      content: 'Sabrina';
+      color: var(--primary);
+      font-size: clamp(5rem, 25vw, 6rem);
+      font-family: "Cattedrale";
+    }
+
+    background-image: none;
+  }
+
+  @include breakpoint-range($from: tablet) {
+    &::before {
+      content: "";
+    }
+    margin: 0 auto;
+    height: 250px;
+    width: 600px;
+    content: none;
+    background-image: url(../../assets/images/Sitename.svg);
+    background-repeat: no-repeat;
+    background-position: cover;
+  }
 }
