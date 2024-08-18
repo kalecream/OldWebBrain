@@ -12,56 +12,48 @@ export const metadata: Metadata = {
 
 const NowPage = () => {
 	return (
-		<section>
+		<>
 			<section className={style.paragraph}>
 				<h1>Now.</h1>
 
 				<div className="prose">
-					<p className="glassmorphic">
+					<p>
 						The idea of a now page came from <Link href={'https://sive.rs/now3'}>Derek Sivers</Link>. A page I stumbled
 						on while trying to see which web-rings were still active. These aren't exactly goals, but a collection of
-						things/experiences I'm trying to complete. I'll likely update the points with a blog post to show progress.
+						things/experiences I would like to complete. I have no qualms with them rolling over to the next quarter if I don't have enough time to complete it. I no longer stress about achieving goals. Either I am well enough to continue working on the tasks, too busy/sick trying to keep myself afloat or dead with the tasks being no longer my problem.
 					</p>
-					<br />
-					<br />
-
-					<div className={`prose ` + style.paragraph}>
-						<h2>2024-Summer</h2>
-						<p className="glassmorphic">
-							I'm still working on last season's goals + want to focus on repairing, low-tech and continued
-							sustainability tasks this season.
-						</p>
-						<hr />
-						<ul className={style.summer + ` glassmorphic`}>
-							<li> Getting my amateur radio licence.</li>
-							<li> Calisthenics Foundations</li>
-							<li>
-								{' '}
-								Learning to sew to
-								<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
-							</li>
-							<li>Learning beginner Jamaican Sign Language.</li>
-							<li>Finishing a neglected online course (FullStackOpen).</li>
-						</ul>
-					</div>
 				</div>
-				<ScrollDown />
 			</section>
 			<section>
-				<Image src={BehindImage} alt="" width={200} height={150} /> <h1 className={`text-center behind`}>Behind Me.</h1>
+				<div className={`prose ` + style.paragraph}>
+					<div className="img-grid">
+						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
+					</div>
+					<h1>2024-Summer</h1>
+					<p className="">
+						I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
+						tasks this season.
+					</p>
+					<hr />
+					<ul className={style.summer + ` `}>
+						<li> Getting an Amateur Radio licence.</li>
+						<li> Calisthenics foundations</li>
+						<li>
+							Learning sewing to
+							<Link href="https://www.houseofsew.com/sewing-level/"> proficiency</Link>
+						</li>
+						<li>Learning beginner Jamaican Sign Language.</li>
+						<li>Finishing a neglected online course - FullStackOpen.</li>
+					</ul>
+				</div>
 			</section>
+
 			<section className={style.paragraph}>
 				<div className={`prose ` + style.paragraph}>
-					<h2>2024-Spring</h2>
-					<div className="img-grid desktop">
-						<Image src="https://i.imgur.com/Z4rJL6X.jpeg" alt="" width={200} height={150} />
-						<Image src="https://i.imgur.com/nD4m8JX.jpeg" alt="" width={200} height={150} />
-						<Image src="https://i.imgur.com/ysYbJGt.jpeg" alt="" width={200} height={150} />
-					</div>
-
+					<h1>2024-Spring</h1>
 					<p>
-						This spring is a busy time. I am trying to reorient myself to handle the rest of the year. The quarter
-						started strong, then was blown off track by the stings of poverty and burnout. For a few months, I've also
+						This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
+						started strong, then was blown off track by the stings of poverty and burnout.</p><p> For a few months, I've also
 						had my head in the clouds using romance as a distraction. I've been better about returning to my goals at
 						the end of this season becoming more focused on refining my personal productivity systems to prevent
 						stalling again rather than powering through to complete my goals while neglecting my real responsibilities.
@@ -71,18 +63,18 @@ const NowPage = () => {
 					<hr />
 					<ul className={style.spring}>
 						<li>
-							Completing my{' '}
+							Continuing my {' '}
 							<Link
 								href={
 									'https://docs.google.com/document/d/140xQK_9cy4ThBbSxBK3NANQqWoO4CxW0QUZ1HNBhAlU/edit?usp=sharing'
 								}
 							>
-								guide on relationships
+								guide on the relationships I have
 							</Link>{' '}
-							I have with myself, family, friends and others.
+							 with myself, family, friends and others.
 						</li>
 						<li>
-							<Link href="/c25k">Advancing</Link> in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
+							<Link href="/c25k">Advancing</Link> in the <Link href="https://c25k.com/c25k_plan/">Couch to 5K challenge</Link>.
 						</li>
 						<li>
 							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
@@ -92,15 +84,12 @@ const NowPage = () => {
 			</section>
 			<section>
 				<div className={`prose ` + style.paragraph}>
-					<h2>2023-Winter</h2>
-
-					<ul className={style.winter}>
-						<li>Had the idea for this page.</li>
-						<li>Started exploring individualism vs caring for self as a member of a community.</li>
-					</ul>
+					<h1>2023-Winter</h1>
+					<p>This is when I started this page. At the time, I was exploring individuallism vs caring for myself as a member of a community. This might re-appear as a goal-point after I read Frantz Fanon's <i>Wretched of the Earth</i>.</p>
+					<p>This is also when I had some awakenings about everyday life and lost most of my heroes. It ended with my giving up religion. I have oscillated between being a Christian revert or apostate for many years. The bombing of Bethlehem on Christmas Day with little out-cry from Western Church leaders was the final straw for me. It does not make sense for me to practice a religion that is so far removed from its roots / holy sites. This was not the first time I noticed that what is generally practiced is an abstract version of Christianity, but it was the occasion that disgusted me the most. The other Abrahamic religions do not appeal to me.</p>
 				</div>
 			</section>
-		</section>
+		</>
 	);
 };
 

@@ -29,23 +29,28 @@
 		display: flex;
 		font-weight: 600;
 		font-size: clamp(1rem, 2vw, 2rem);
-		font-family: "Inter";
+		// font-family: "Inter";
 		// font-family: "Cattedrale";
 		align-items: center;
-		margin-right: 0.25rem;
+		margin-right: 0.5rem;
 	}
 
 	&__title {
+		text-align: left;;
 		font-family: "Garamond";
-		font-size: clamp(1.3rem, 2vw, 2rem);
+		font-size: clamp(1.5rem, 2vw, 2rem);
 		margin: 0;
 	}
 
 	&__description {
-		margin: 0;
-		font-size: 1.6rem;
+		margin-top: 0;
+		margin-bottom: 1rem;
+		text-overflow: ellipsis;
+		font-size: 1.5rem;
+		line-height: 1.2;
 		font-family: "Garamond Italics";
 		opacity: 0.8;
+		color: var(--textColor);
         text-align: left;
 	}
 }

@@ -3,9 +3,9 @@
 .container {
 	display: flex;
 	gap: 1rem;
-	font-size: 1.1rem;
-	font-family: "Inter";
-	font-weight: 600;
+	font-size: 1.5rem;
+	font-family: "Garamond";
+	letter-spacing: 0.5px;
 
 	@include breakpoint-range($from: mobile) {
 		flex-direction: column;
@@ -18,7 +18,7 @@
 	@include breakpoint-range($from: desktopSmall) {
 		flex-direction: row;
 		width: clamp(20rem,100%,35rem);
-		margin: 0.5rem auto;
+		margin: 0.15rem auto;
 	}
 }
 
@@ -62,13 +62,20 @@
 	background-image: var(--primary);
 	box-shadow: var(--boxShadow);
 	background-color: var(--primary);
-	color: var(--backgroundColor)
+	color: var(--backgroundColor);
+	font-weight: 600;
 }
 
 .secondary {
 	background: transparent;
 	color: var(--primary);
 	border: var(--borderColor);
+	font-weight: 400;
+
+	&:hover {
+		// button text becomes too thin when hovered
+		font-weight: 600;
+	}
 }
 
 .border {

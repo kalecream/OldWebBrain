@@ -178,7 +178,6 @@ html {
 	color: var(--textColor);
 	line-height: 1.6;
 	font-family: var(--bodyFont);
-	font-size: 1.4 rem;
 }
 
 body {
@@ -194,17 +193,14 @@ main {
 header {
 	position: sticky;
 	top: 0;
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	z-index: 5;
+	backdrop-filter: blur(20px);
 
 	& > nav {
-		margin: 0 auto;
-		width: 95%;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 
 		@include breakpoint-range($from: mobile) {
 			flex-direction: column;
@@ -233,16 +229,28 @@ footer {
 	font-family: "Inter";
 }
 
-section {
+.full-height {
 	min-height: 100vh;
-	width: 100%;
+}
+
+section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
+	}
+
+	@include breakpoint-range($from: tablet) {
+		margin: 0 1rem;
+		padding: 0 1.5rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -474,41 +482,54 @@ h3,
 h4,
 h5,
 h6 {
+	margin: auto;
 	color: var(--textColor);
 	font-family: "Garamond", serif;
 	font-weight: 300;
-	// margin-bottom: 1rem;
-}
-
-h1 {
-	font-size: clamp(3rem, 3vw, 5rem);
-	margin-bottom: 0rem;
 	text-align: center;
 }
 
+h1 {
+	font-size: clamp(2.5rem, 2vw, 5rem);
+	margin-bottom:0.5rem;
+	max-width: 40rem;
+}
+
 h2 {
-	font-size: clamp(2.5rem, 2vw, 4rem);
+	font-size: clamp(2rem, 1.8vw, 3.5rem);
 	margin-top: 0;
+	margin-bottom: 2rem;
+	max-width: 45rem;
 }
 
 h3 {
-	font-size: clamp(2rem, 2vw, 3rem);
+	font-size: clamp(1.5rem, 1.6vw, 3rem);
+}
+
+h4 {
+	font-size: clamp(1.3rem, 1.4vw, 2rem);
+}
+
+h5 {
+	font-size: clamp(1.2rem, 1.3vw, 1.5rem);
+}
+
+.ornamental {
+	font-family: "Cattedrale Ornamental";
+	font-size: 5rem;
 }
 
 p,
 li {
-	font-size: clamp(1rem, -0.8750rem + 8.3333vw, 1.4rem);
-	margin-bottom: 0.8rem;
-	// backdrop-filter: blur($blur);
+	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
 }
 
-p a {
-	border-bottom: 1px solid var(--primary);
-	border-color: var(--primary);
-}
+p > a, li > a {
+	color: var(--secondary);
 
-li {
-	margin-bottom: 0.5rem;
+	&:hover {
+		color: var(--primary);
+	}
 }
 
 img,
@@ -661,14 +682,10 @@ kbd::after,
 .img-grid {
 	display: flex;
 	flex-wrap: wrap;
-	flex: 1 1 100px;
+	flex: 1 1 200px;
 	justify-content: center;
-	gap: 10px;
-	filter: saturate(33%);
-
-	&:hover {
-		filter: saturate(90%);
-	}
+	gap: 0.5rem;
+	filter: saturate(25%);
 }
 
 .column {
@@ -702,20 +719,9 @@ kbd::after,
 	margin: auto;
 }
 
-@media (min-width: 768px) {
-	.blog--article {
-		margin-bottom: 1rem;
-	}
-
-	.blog--article__title {
-		font-size: 2rem;
-	}
-}
-
 .prose {
-	max-width: 40rem;
+	max-width: 45rem;
 	text-align: justify;
-	line-height: 1.6;
 }
 
 .prose-small {
@@ -724,35 +730,58 @@ kbd::after,
 
 article {
 	margin: 0 auto;
-	max-width: 45rem;
+	max-width: 50rem;
+	text-align: justify;
 
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
 }
 
 article h1,
 article h2,
-article h3 {
+article h3, article h4, article h5, article h6 {
 	text-align: center;
-	font-weight: 300;
 }
 
 article h1 {
-	font-size: 5rem;
+	font-size: clamp(2rem, 3vw, 4.5rem);
 	font-family: "Cattedrale";
+	margin: 0;
 }
 
 article h2 {
-	font-size: 3rem;
+	font-size: clamp(1.5rem, 2vw, 3rem);
+	margin-top: 0;
 }
 
 article h3 {
-	font-size: 1.5rem;
+	font-size: 2rem;
+}
+
+article .title {
+	margin: 0;
+}
+
+article .info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 4rem;
 }
 
 article p {
-	margin-bottom: 1rem;
+	
+	@include breakpoint-range($from: mobile) {
+		margin: 1rem 1.5rem;
+	}
+
+	@include breakpoint-range($from: tablet) {
+		margin: 1rem 2rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		margin: 1rem 0;
+	}
 }
 
 code {
@@ -761,9 +790,18 @@ code {
 
 article ul,
 article ol {
-	padding: 2rem;
-	font-size: 1.1rem;
-	margin: 0;
+
+	@include breakpoint-range($from: mobile) {
+		margin: 1rem 1rem;
+	}
+
+	@include breakpoint-range($from: tablet) {
+		margin: 1rem 2rem;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		margin: 2rem 0;
+	}
 }
 
 article li {
