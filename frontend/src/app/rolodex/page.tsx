@@ -10,7 +10,6 @@ interface BookmarkProps {
 	type: string;
 }
 
-
 const Bookmarks: BookmarkProps[] = [
 	{
 		url: 'https://grimgrains.com/site/home.html',
@@ -71,34 +70,37 @@ const Bookmarks: BookmarkProps[] = [
 	{
 		title: 'Dither Me This!',
 		url: 'https://doodad.dev/dither-me-this/',
-		description: 'Tool to reduce image sizes',
+		description: 'Tool to reduce image sizes.',
 		type: 'website',
 	},
 ];
 
 const Rolodex = () => {
 	return (
-		<>
-			<section className={styles.paragraph} id="rolodex">
-				<div>
-					<h2 className="text-center">Rolodex</h2>
-					<p className="prose glassmorphic">
-						These are some bookmarks for pages & media I've enjoyed on the net. In the future when I have areas for this
-						site similar to how I map out my life, the links will be moved to respective sectors.
-					</p>
-					<div className={style.container + ` flex`}>
-						{Bookmarks.map((bookmark) => (
-							<div className={style.link + ` glassmorphic`}>
-								<Link href={bookmark.url} target="_blank" key={bookmark.url} className={style.link + `pancake-child `}>
-									<h4 style={{ fontWeight: 'semibold' }}>{bookmark.title}</h4>
-									<p>{bookmark.description}</p>
-								</Link>
-							</div>
-						))}
+		<section className={styles.paragraph} id="rolodex">
+			<h1>Rolodex</h1>
+			<p className="prose">These are some bookmarks for pages & media I've enjoyed on the net.</p>
+			<p>
+				In the future when I have areas for this site similar to how I map out my life, the links will be moved to
+				respective sectors.
+			</p>
+			<div className={style.container + ` flex`}>
+				{Bookmarks.map((bookmark) => (
+					<div className={style.link + ``}>
+						<Link
+							href={bookmark.url}
+							target="_blank"
+							key={bookmark.url}
+							className={style.link + `pancake-child `}
+							style={{ height: '450px' }}
+						>
+							<h4 style={{ fontWeight: 'semibold' }}>{bookmark.title}</h4>
+							<p>{bookmark.description}</p>
+						</Link>
 					</div>
-				</div>
-			</section>
-		</>
+				))}
+			</div>
+		</section>
 	);
 };
 
