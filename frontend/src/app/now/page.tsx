@@ -1,9 +1,7 @@
-import style from '@styles/modules/Now.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import BehindImage from '@public/img/album/plants.gif';
-import { ScrollDown } from '@components/scrollDown';
 
 export const metadata: Metadata = {
 	title: 'Now',
@@ -13,7 +11,7 @@ export const metadata: Metadata = {
 const NowPage = () => {
 	return (
 		<>
-			<section className={style.paragraph}>
+			<section>
 				<h1>Now.</h1>
 
 				<div className="prose">
@@ -25,7 +23,7 @@ const NowPage = () => {
 				</div>
 			</section>
 			<section>
-				<div className={`prose ` + style.paragraph}>
+				<div className={`prose `}>
 					<div className="img-grid">
 						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
 					</div>
@@ -35,7 +33,7 @@ const NowPage = () => {
 						tasks this season.
 					</p>
 					<hr />
-					<ul className={style.summer + ` `}>
+					<ul>
 						<li> Getting an Amateur Radio licence.</li>
 						<li> Calisthenics foundations</li>
 						<li>
@@ -48,8 +46,8 @@ const NowPage = () => {
 				</div>
 			</section>
 
-			<section className={style.paragraph}>
-				<div className={`prose ` + style.paragraph}>
+			<section>
+				<div className={`prose `}>
 					<h1>2024-Spring</h1>
 					<p>
 						This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
@@ -61,7 +59,7 @@ const NowPage = () => {
 						self.
 					</p>
 					<hr />
-					<ul className={style.spring}>
+					<ul>
 						<li>
 							Continuing my {' '}
 							<Link
@@ -83,7 +81,7 @@ const NowPage = () => {
 				</div>
 			</section>
 			<section>
-				<div className={`prose ` + style.paragraph}>
+				<div className={`prose `}>
 					<h1>2023-Winter</h1>
 					<p>This is when I started this page. At the time, I was exploring individuallism vs caring for myself as a member of a community. This might re-appear as a goal-point after I read Frantz Fanon's <i>Wretched of the Earth</i>.</p>
 					<p>This is also when I had some awakenings about everyday life and lost most of my heroes. It ended with my giving up religion. I have oscillated between being a Christian revert or apostate for many years. The bombing of Bethlehem on Christmas Day with little out-cry from Western Church leaders was the final straw for me. It does not make sense for me to practice a religion that is so far removed from its roots / holy sites. This was not the first time I noticed that what is generally practiced is an abstract version of Christianity, but it was the occasion that disgusted me the most. The other Abrahamic religions do not appeal to me.</p>
