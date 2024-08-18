@@ -251,6 +251,7 @@ section {
 	@include breakpoint-range($from: desktopSmall) {
 		padding: 0;
 		margin: 0;
+		margin-bottom: 3rem;
 	}
 }
 
@@ -517,6 +518,21 @@ h5 {
 .ornamental {
 	font-family: "Cattedrale Ornamental";
 	font-size: 5rem;
+}
+
+ul {
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		margin: 0 auto;
+		margin-left: 1rem;
+	}
+}
+
+li {
+	text-indent: 1rem;
+
+	&::marker {
+		content: '🩸';
+	}
 }
 
 p,
