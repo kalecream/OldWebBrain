@@ -108,9 +108,9 @@ export default function Blog({ params }) {
 			/>
 			<div className="info">
 				<h1 className="title">{post.metadata.title}</h1>
-				<h2 className='text-center'>
+				{/* <h2 className='text-center'>
 					<i >{post.metadata.description}</i>
-				</h2>
+				</h2> */}
 				<Suspense fallback={<p className="h-5" />}>
 					<p className='text-center'>{formatDate(post.metadata.date)}</p>
 				</Suspense>

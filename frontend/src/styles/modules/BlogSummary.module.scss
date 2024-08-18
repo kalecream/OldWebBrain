@@ -2,6 +2,10 @@
 
 .nolist {
 	list-style: none;
+	
+	&::marker {
+		content: none;
+	}
 }
 
 .month {

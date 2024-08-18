@@ -97,7 +97,7 @@ export const BlogPosts = () => {
 	}, [posts]);
 
 	return (
-		<section style={{maxWidth: '40rem'}}>
+		<section style={{ maxWidth: '40rem' }}>
 			{years.map((year) => (
 				<ul key={year.date}>
 					<li className={blog.nolist} key={year.date}>
@@ -116,6 +116,7 @@ export const BlogPosts = () => {
 															<span className={blog.list__date + ` dt-published`}>{post.metadata.date.slice(-2)}</span>
 															<h2 className={blog.list__title + ` p-name`}>{post.metadata.title}</h2>
 														</div>
+
 														<p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
 													</div>
 												</Link>
