@@ -2,6 +2,7 @@ import style from '@styles/modules/Now.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import BehindImage from '@public/img/album/plants.gif';
 import { ScrollDown } from '@components/scrollDown';
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ const NowPage = () => {
 	return (
 		<section>
 			<section className={style.paragraph}>
-				<h2>Now.</h2>
+				<h1>Now.</h1>
 
 				<div className="prose">
 					<p className="glassmorphic">
@@ -21,45 +22,37 @@ const NowPage = () => {
 						on while trying to see which web-rings were still active. These aren't exactly goals, but a collection of
 						things/experiences I'm trying to complete. I'll likely update the points with a blog post to show progress.
 					</p>
+					<br />
+					<br />
 
 					<div className={`prose ` + style.paragraph}>
-						<h3 className={style.heading}>2024-Summer</h3>
+						<h2>2024-Summer</h2>
 						<p className="glassmorphic">
 							I'm still working on last season's goals + want to focus on repairing, low-tech and continued
 							sustainability tasks this season.
 						</p>
-
+						<hr />
 						<ul className={style.summer + ` glassmorphic`}>
+							<li> Getting my amateur radio licence.</li>
+							<li> Calisthenics Foundations</li>
 							<li>
 								{' '}
-								<progress max="100" value="17" /> Getting my amateur radio licence.
-							</li>
-							<li>
-								{' '}
-								<progress max="100" value="12" /> Calisthenics Foundations
-							</li>
-							<li>
-								{' '}
-								<progress max="100" value="5" /> Learning to sew to
+								Learning to sew to
 								<Link href="https://www.houseofsew.com/sewing-level/"> Level 5: Proficiency</Link> (Currently L2)
 							</li>
-							<li>
-								<progress max="100" value="5" /> Learning beginner Jamaican Sign Language.
-							</li>
-							<li>
-								<progress max="100" value="0" /> Finishing a neglected online course (FullStackOpen).
-							</li>
+							<li>Learning beginner Jamaican Sign Language.</li>
+							<li>Finishing a neglected online course (FullStackOpen).</li>
 						</ul>
 					</div>
 				</div>
 				<ScrollDown />
 			</section>
 			<section>
-				<h2 className={`section-title`}>Behind Me.</h2>
+				<Image src={BehindImage} alt="" width={200} height={150} /> <h1 className={`text-center behind`}>Behind Me.</h1>
 			</section>
 			<section className={style.paragraph}>
 				<div className={`prose ` + style.paragraph}>
-					<h3>2024-Spring</h3>
+					<h2>2024-Spring</h2>
 					<div className="img-grid desktop">
 						<Image src="https://i.imgur.com/Z4rJL6X.jpeg" alt="" width={200} height={150} />
 						<Image src="https://i.imgur.com/nD4m8JX.jpeg" alt="" width={200} height={150} />
@@ -75,10 +68,9 @@ const NowPage = () => {
 						I had the wins of diving into reading again, love, strengthening community ties and a stronger sense of
 						self.
 					</p>
-
+					<hr />
 					<ul className={style.spring}>
 						<li>
-							<progress max="100" value="2" />
 							Completing my{' '}
 							<Link
 								href={
@@ -90,15 +82,9 @@ const NowPage = () => {
 							I have with myself, family, friends and others.
 						</li>
 						<li>
-							<progress max="100" value="2" />
-							<Link href="/c25k">
-								Advancing
-							</Link>{' '}
-							in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
+							<Link href="/c25k">Advancing</Link> in the <Link href="https://c25k.com/c25k_plan/">C25K program</Link>.
 						</li>
 						<li>
-							{' '}
-							<progress max="100" value="2" />
 							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 						</li>
 					</ul>
@@ -106,7 +92,7 @@ const NowPage = () => {
 			</section>
 			<section>
 				<div className={`prose ` + style.paragraph}>
-					<h3>2023-Winter</h3>
+					<h2>2023-Winter</h2>
 
 					<ul className={style.winter}>
 						<li>Had the idea for this page.</li>

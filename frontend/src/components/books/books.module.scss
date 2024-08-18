@@ -1,41 +1,18 @@
 @import '@styles/mediaQuery';
 
 .paragraph {
-	font-size: 1.1rem;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		max-width: 100%;
-		font-size: 1rem;
-
-		h2 {
-			margin: 2rem auto;
-		}
-
+		@include breakpoint-range($from: tablet) {
 		p {
-			margin: 0.5rem auto;
-		}
-	}
-
-	@include breakpoint-range($from: tablet) {
-		p {
-			max-width: 40rem;
+			max-width: 45rem;
 			margin: 0 auto;
 			text-align: justify;
-			line-height: 1.6;
 			margin-bottom: 1rem;
 		}
 	}
 
-
-	& a {
-		text-decoration: none;
-		color: var(--textColor);
-		// border-bottom: 2px solid var(--primary);
-		margin-bottom: 0.15rem;
-	}
-
 	& b {
-		font-weight: 600;
+		font-weight: 500;
 	}
 }
 
@@ -75,7 +52,7 @@
 
 .books__random {
 	display: flex;
-	border: var(--border);
+	// border: var(--border);
 	border-radius: var(--borderRadius);
 	transition: 0.3s ease;
 	padding: var(--paddingObject);
@@ -88,25 +65,24 @@
 	}
 
 	@include breakpoint-range($from: mobile) {
-		width: 100%;
+		display: none;
 	}
 
 	@include breakpoint-range($from: tablet) {
-		width: clamp(650px, 40vw, 800px);
+		width: clamp(650px, 90vw, 800px);
 		min-height: 300px;
 
 		.book__title a {
-			font-weight: 400;
-			font-size: 1rem;
+			font-weight: 300;
+			line-height: 1;
 			width: 25rem;
 		}
 	}
 
 	@include breakpoint-range($from: desktop) {
-		width: clamp(650px, 40vw, 800px);
+		width: clamp(650px, 70vw, 1200px);
 
 		.book__title a {
-			font-size: 1.2rem;
 			line-height: 1;
 		}
 	}
@@ -335,9 +311,13 @@
 		line-height: 1;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {}
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
 
-	@include breakpoint-range($from: desktopSmall) {}
+	@include breakpoint-range($from: desktopSmall) {
+		display: block;
+	}
 }
 
 .book_info {
@@ -349,30 +329,28 @@
 }
 
 .book__title {
-	font-weight: 600;
+	font-weight: 300;
+	line-height: 1;
 	color: var(--primary) !important;
 	text-shadow: 1px 1px var(--borderColor);
 }
 
 .book__author {
 	margin-bottom: 1rem;
-	font-size: 0.9rem;
 	font-weight: 500;
 }
 
 .book__finished {
-	font-size: 0.75rem;
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .book__review {
 	margin: 1rem auto;
-	font-size: 0.85rem;
 	font-weight: 400;
 }
 
 .book__review__indicator {
-	font-size: 0.8rem;
+	font-size: 1rem;
 	display: inline-flex;
 	align-items: center;
 	margin: 0 0.5rem;
@@ -389,10 +367,10 @@
 
 .book__quote {
 	margin: 1rem auto;
-	font-size: 0.75rem;
 	font-style: italic;
 	font-weight: 500;
 	text-align: justify;
+	font-size: 1.1rem;
 }
 
 // .book__quote::before {

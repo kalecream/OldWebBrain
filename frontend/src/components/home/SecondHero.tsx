@@ -1,3 +1,4 @@
+"use server"
 import Image from 'next/image';
 import Divider from '@assets/images/vamp_divider.webp';
 import Rolodex from '@public/img/album/rolodex.png';
@@ -15,15 +16,24 @@ export const SecondHero = () => {
 
 	return (
 		<section style={{ backgroundColor: 'var(--backgroundColor)', borderRadius: 'var(--borderRadius)' }}>
-			<Image src={Divider} alt="" width={800} height={200} style={{ opacity: '0.3' }} className="recolor" />
+			<Image
+				src={Divider}
+				className="recolor"
+				width={0}
+				height={0}
+				sizes="100vw"
+				style={{ width: 'auto', height: 'clamp(200px, 10vw,800px)', opacity: '0.3' }}
+				alt=""
+			/>
 			<div className={styles.section}>
-				<div className={styles['button-block']}>
+				<div className={styles['button-block']} style={{	lineHeight: '1.1',}}>
 					<Link href="/rolodex">
 						<div
 							className="flex column"
 							style={{
 								padding: 'var(--paddingContainer)',
 								borderRadius: 'var(--borderRadius)',
+						
 							}}
 						>
 							<Image src={Rolodex} alt={''} width={200} height={200} className="faded" />
@@ -34,9 +44,9 @@ export const SecondHero = () => {
 							>
 								Rolodex
 							</h1>
-							<small className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center" style={{ maxWidth: '10rem' }}>
 								A collection of bookmarks from other websites.
-							</small>
+							</p>
 						</div>
 					</Link>
 					{/* <div className="flex column">
@@ -59,9 +69,9 @@ export const SecondHero = () => {
 							>
 								Changelog
 							</h1>
-							<small className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center" style={{ maxWidth: '10rem' }}>
 								All website changes I make.
-							</small>
+							</p>
 						</div>
 					</Link>
 					<Link href="https://notes.sabrinamedwinter.com">
@@ -80,14 +90,22 @@ export const SecondHero = () => {
 							>
 								Wiki
 							</h1>
-							<small className="text-center" style={{ maxWidth: '10rem' }}>
+							<p className="text-center" style={{ maxWidth: '10rem' }}>
 								A collection of notes on different subjects.
-							</small>
+							</p>
 						</div>
 					</Link>
 				</div>
 			</div>
-			<Image src={Divider} alt="" width={800} height={200} style={{ opacity: '0.3' }} className="recolor" />
+			<Image
+				src={Divider}
+				className="recolor"
+				width={0}
+				height={0}
+				sizes="100vw"
+				style={{ width: 'auto', height: 'clamp(200px, 10vw,800px)', opacity: '0.3' }}
+				alt=""
+			/>
 		</section>
 	);
 };

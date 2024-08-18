@@ -3,6 +3,9 @@
 .container {
 	display: flex;
 	gap: 1rem;
+	font-size: 1.1rem;
+	font-family: "Inter";
+	font-weight: 600;
 
 	@include breakpoint-range($from: mobile) {
 		flex-direction: column;
@@ -75,7 +78,6 @@
 
 .border:hover {
 	border-radius: 50px;
-	font-weight: 600;
 	background-color: var(--backgroundColor);
 }
 

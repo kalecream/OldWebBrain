@@ -250,7 +250,7 @@ export const RandomBooks: FC = () => {
 				.map((book) => (
 					<div key={book.title} className={`${styles.books__random}`}>
 						<div className={styles.book__info}>
-							<p>
+							<h3>
 								<Link className={styles.book__title} href={`https://www.google.com/search?q=${book.title}`}>
 									{book.title}
 								</Link>
@@ -267,7 +267,7 @@ export const RandomBooks: FC = () => {
 								)}
 								<br />
 								<span className={styles.book__author}>by {book.author}</span>
-							</p>
+							</h3>
 							<p className={styles.book__finished}>
 								Read{' '}
 								{GetMonthName(book.started) == GetMonthName(book.finished)

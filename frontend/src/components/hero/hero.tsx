@@ -15,12 +15,11 @@ const Hero = () => {
 			<div className={hero.container}>
 				<div className={hero.cta}>
 					<HeroName name={'Sabrina'} />
-					<div className={`glassmorphic ` + hero.text}>
+					<div className={` ` + hero.text}>
 						<center>
-							<p>
-								<b>Web developer</b>
-								<br /> based in 🇯🇲
-							</p>
+							<h3 style={{ color: " var(--primary)" }} >
+								Web Developer based in 🇯🇲
+							</h3>
 							<p className="p-note">
 								I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
 								explore the indie web.
@@ -30,7 +29,7 @@ const Hero = () => {
 
 					<div className={button.container}>
 						<Link title="What I'm up to!" className={button.primary} href="/now" rel="me">
-							/now!
+							Now?
 						</Link>
 						<Link title="Blog Posts" className={button.secondary + ` glassmorphic`} href="/blog">
 							Check out the blog

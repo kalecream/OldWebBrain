@@ -5,17 +5,17 @@
 	align-items: center;
 	width: 100%;
 	scale: 0.55;
-	// opacity: 0.6;
 
 	& .label {
 		margin: 1rem;
 		text-transform: uppercase;
+		font-family: "Inter";
 		letter-spacing: 1px;
 		color: var(--textColorFade);
 	}
 
 	@include breakpoint-range($from: mobile) {
-		flex-direction: column;;
+		flex-direction: column;
 	}
 
 	@include breakpoint-range($from: desktop) {

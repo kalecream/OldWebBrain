@@ -61,46 +61,33 @@ export const About = () => {
 	return (
 		<section>
 			<section style={{ marginBottom: '3rem', marginTop: 0, paddingTop: 0 }}>
-				<h1 className="text-center">About</h1>
 				{/* <PhotoGalley /> */}
 				{/* TODO: Fix photogallery on about */}
 				<div className="flex column center" style={{ marginTop: '2rem' }}>
 					<div className="frame">
 						<Image src={pic} alt="" height={200} width={350} style={{ margin: 'auto', borderRadius: 0 }} />
 					</div>
-					<p className="prose glassmorphic">
+					<p className="prose ">
 						I made this about page because showing you my personality through the things I enjoy is personally
-						preferable to making a biography. I've always disliked that "tell me a bit about yourself" in personal
-						environments. <b>This page is still under construction.</b>
+						preferable to making a biography. I've always disliked being asked "tell me a bit about yourself" in
+						personal environments.
 					</p>
-					<div className={`flex`}>
-						<Link
-							className={button.border + ` glassmorphic`}
-							href={'#books'}
-							style={{ width: '100px', height: '100px' }}
-						>
-							Books
+					{/* <div className={`flex row`}>
+						<Link href={'#books'}>
+							<h1>Books</h1>
 						</Link>
-						<Link
-							className={button.border + ` glassmorphic`}
-							href={'#games'}
-							style={{ width: '100px', height: '100px' }}
-						>
-							Games
+						<Link href={'#games'}>
+							<h1>Games</h1>
 						</Link>
-						<Link
-							className={button.border + ` glassmorphic`}
-							href={'#podcasts'}
-							style={{ width: '100px', height: '100px' }}
-						>
-							Podcasts
+						<Link href={'#podcasts'}>
+							<h1>Podcasts</h1>
 						</Link>
-					</div>
+					</div> */}
 					<ScrollDown />
 				</div>
 			</section>
 
-			{/* <h2>Coding</h2>
+			{/* <h1>Coding</h1>
 
 					<p>
 						I have been coding from 2009 back when high-schools were teaching Pascal and C. I was more interested in
@@ -115,8 +102,8 @@ export const About = () => {
 
 			<section id="books">
 				<div className={styles.paragraph}>
-					<h2 className="text-center">Books</h2>
-					<p className="prose glassmorphic">
+					<h1 className="text-center">Books</h1>
+					<p className="prose ">
 						I like to read to learn about the world around me or get laughs. I have{' '}
 						<b>{Books.filter((book) => book.status != 'Want').length} books in my library</b>, and I'm always looking
 						for more. I prefer {Percentage[0] > Percentage[1] ? 'Fiction' : 'Non-Fiction'}, so I read about{' '}
@@ -126,7 +113,7 @@ export const About = () => {
 						.
 					</p>
 					<div className="flex row align-items">
-						<Link className="prose glassmorphic text-center" href="/read#read">
+						<Link className="prose  text-center" href="/read#read">
 							<FaArrowLeftLong /> Last ({readBooks.length})
 						</Link>
 						{
@@ -142,37 +129,38 @@ export const About = () => {
 								</div>
 							</Link>
 						}
-						*
 						<Reads status="Want" limit={1} />
-						<Link className="prose glassmorphic text-center" href="/read#want">
+						<Link className="prose text-center" href="/read#want">
 							Next ({wantToReadBooks.length}) <FaArrowRightLong />
 						</Link>
 					</div>
 				</div>
-				<p className="prose glassmorphic">
+				<p className="prose ">
 					I'm currently reading {Books.filter((book) => book.status === 'Reading').length} books, which you can see
-					below. <b>My 10 most frequently read book tags are: {topGenres}.</b>
+					below.My 10 most frequently read book tags are: <b>{topGenres}.</b>
 				</p>
 				<Reads status="Reading" />
-				<p className="prose glassmorphic">
+				<p className="prose ">
 					This graph below is my book status backlog for the past rolling year. This ignores books from before then to
 					ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
 					Non-Fiction. I have books in my backlog to-read.
 				</p>
 				<BacklogGraph />
-				<h3 className="text-center">Random Review</h3>
 				<RandomBooks />
 			</section>
 
 			<section className={styles.paragraph} id="games">
 				<div>
-					<h2 className="text-center">Games</h2>
+					<h1 className="text-center">Games</h1>
 
-					<p className={`glassmorphic prose`}>
+					<p className={` prose`}>
 						My preference is playing indie games and games I physically own. I still play my Gameboy Advance and I own 3
 						different DSes. Not featured below: several untouched games from{' '}
-						<Link href="https://steamcommunity.com/id/SabMedwinter">Steam</Link> and{' '}
-						<Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation nowadays.
+						<Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
+							Steam
+						</Link>{' '}
+						and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
+						nowadays.
 					</p>
 					<div className="flex row">
 						<div className="">
@@ -248,8 +236,8 @@ export const About = () => {
 
 			<section className={styles.paragraph} id="podcasts">
 				<div>
-					<h2 className="text-center">Podcasts</h2>
-					<p className="prose glassmorphic">
+					<h1 className="text-center">Podcasts</h1>
+					<p className="prose ">
 						I mainly listen to audiodramas and horror podcasts, but tend to listen to Non-Fiction or Media Podcasts when
 						I'm doing work. These have been my favourite listens so far.
 					</p>
