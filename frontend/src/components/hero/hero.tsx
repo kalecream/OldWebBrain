@@ -20,7 +20,7 @@ const Hero = () => {
 							<h3 style={{ color: " var(--primary)" }} >
 								Web Developer based in 🇯🇲
 							</h3>
-							<p className="p-note">
+							<p className="p-note" style={{lineHeight: '1.2',fontSize:'1.2rem' }}>
 								I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
 								explore the indie web.
 							</p>
