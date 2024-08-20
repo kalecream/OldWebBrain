@@ -97,9 +97,9 @@ export const BlogPosts = () => {
 	}, [posts]);
 
 	return (
-		<section style={{ maxWidth: '40rem' }}>
+		<section>
 			{years.map((year) => (
-				<ul key={year.date}>
+				<ul key={year.date} className={blog.container}>
 					<li className={blog.nolist} key={year.date}>
 						<ul>
 							{year.months.map((month, i) => (

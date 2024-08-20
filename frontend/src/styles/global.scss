@@ -52,8 +52,6 @@
 	src: url(../assets/fonts/cattedrale-ornament.ttf);
 }
 
-
-
 $primary: #b39f03;
 $secondary: #00a368;
 $borderRadius: 5px;
@@ -168,8 +166,8 @@ $map in $themes {
 	--bodyFont: 'Garamond', serif;
 	--headingFont: 'Cattedrale', serif;
 	--accentFont: 'Cattedrale', serif;
-	--backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
-	// backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
+	// --backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
+	--backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
 }
 
 
@@ -182,7 +180,7 @@ html {
 
 body {
 	background-color: var(--backgroundColor);
-	// background-image: var(--backgroundImage);
+	background-image: var(--backgroundImage);
 	background-repeat: repeat;
 }
 
