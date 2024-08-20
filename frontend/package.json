@@ -20,7 +20,6 @@
 		"not ie <= 11"
 	],
 	"dependencies": {
-		"@code-hike/mdx": "^0.9.0",
 		"@codesandbox/sandpack-react": "^2.13.10",
 		"@googleapis/youtube": "^16.1.0",
 		"@mdx-js/loader": "^3.0.1",

@@ -5,7 +5,6 @@ import { TweetComponent } from './tweet';
 import { highlight } from 'sugar-high';
 import React from 'react';
 import { LiveCode } from './sandpack';
-import { CH } from '@code-hike/mdx/components';
 
 function Table({ data }) {
 	let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -156,7 +155,6 @@ let components = {
 	code: Code,
 	Table,
 	LiveCode,
-	CH,
 };
 
 export function CustomMDX(props) {

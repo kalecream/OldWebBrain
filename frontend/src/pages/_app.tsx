@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import '@styles/global.scss';
-import '@code-hike/mdx/dist/index.css';
 
 export const WEBSITE_HOST_URL = 'https://www.sabrinamedwinter.com';
 
