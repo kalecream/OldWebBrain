@@ -56,7 +56,7 @@ const ProjectList: React.FC = () => {
 			<div className={styles['project-list']}>
 				{filteredProjects.map((project) => (
 					<div key={project.id} className={styles['project-overlay'] + ` `}>
-						<div key={project.id} className={styles.project + ` p-${project.id}`}>
+						<div key={project.id} className={styles.project + ` p-${project.id}`+ ` `}>
 							<div className={styles['project-info']}>
 								<div className={styles.project__present}>
 									<h1 className={styles.project__title}>
