@@ -65,6 +65,10 @@
 
 	z-index: 99;
 
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
+
 	@include breakpoint-range($from: tablet) {
 		display: flex;
 	}
