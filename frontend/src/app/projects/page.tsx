@@ -1,10 +1,10 @@
-import Projects from '@data/projectsData';
-import Image from 'next/image';
-import Link from 'next/link';
-import { extractCategories } from '@components/projects';
+// import Projects from '@data/projectsData';
+// import Image from 'next/image';
+// import Link from 'next/link';
+// import { extractCategories } from '@components/projects';
 
 const ProjectsPage = () => {
-	const categories = extractCategories();
+	// const categories = extractCategories();
 
 	return (
 		<>
