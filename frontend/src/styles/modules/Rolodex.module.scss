@@ -1,12 +1,15 @@
 @import '@styles/mediaQuery';
 
 .container {
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .link {
+    height: clamp(200px, 20vw,400px);
+    overflow-y: scroll;
+    box-shadow: var(--boxShadow);
     border: var(--border);
-    padding: var(--paddingContainer);
+    padding: 2rem;
     border-radius: var(--borderRadius);
 
     @include breakpoint-range($from: mobile) {
@@ -17,16 +20,16 @@
         width: clamp(200px, 35vw, 500px);
     }
 
-    & a h4 {
-        color: var(--primary);
-        font-weight: 500;
-        margin-bottom: 1rem;
+    & a h2 {
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
     }
 
     & a p {
         color: var(--textColor);
-        font-weight: 400;
-        font-size: 0.9rem;
+        font-size: 1.4rem;
+        line-height: 1.3;
         opacity: 0.85;
     }
 }
