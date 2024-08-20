@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { TweetComponent } from './tweet';
-import { highlight } from 'sugar-high';
 import React from 'react';
 import { LiveCode } from './sandpack';
+import { codeToHtml } from 'shiki';
+import type { BundledLanguage, BundledTheme } from 'shiki';
+import { transformerNotationHighlight } from '@shikijs/transformers';
 
 function Table({ data }) {
 	let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -105,10 +107,24 @@ function ConsCard({ title, cons }) {
 	);
 }
 
-function Code({ children, ...props }) {
-	let codeHTML = highlight(children);
-	return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-}
+type Props = {
+	children: string;
+	lang?: BundledLanguage;
+	theme?: BundledTheme;
+	filename?: string;
+};
+
+const Code = async ({ children, lang = 'javascript', theme = 'nord', filename = '.txt' }: Props) => {
+	let codeHTML = await codeToHtml(children, { lang, theme });
+	return (
+		<div className='code'>
+			<div className='filename'>
+				{filename && <caption>{filename}</caption>}
+			</div>
+			<code dangerouslySetInnerHTML={{ __html: codeHTML }} />
+		</div>
+	);
+};
 
 function slugify(str) {
 	return str
