@@ -240,11 +240,11 @@
   @supports (-webkit-mask-box-image: inherit) or (mask-border: inherit) {
 	.vamp-border {
 	  background-image: linear-gradient(to bottom, #adadac 50%, #8b8b8a 50%);
-	  -webkit-mask-box-image-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border.svg");
+	  -webkit-mask-box-image-source: url("../../assets/images/baldurs-gate-3-border.svg");
 	  -webkit-mask-box-image-slice: 15 23;
 	  -webkit-mask-box-image-width: 15px 23px;
 	  -webkit-mask-box-image-repeat: repeat;
-	  mask-border-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border.svg");
+	  mask-border-source: url("../../assets/images/baldurs-gate-3-border.svg");
 	  mask-border-slice: 15 23;
 	  mask-border-width: 15px 23px;
 	  mask-border-repeat: repeat;
@@ -256,7 +256,7 @@
 	  border-width: 15px 23px;
 	  border-style: solid;
 	  border-color: transparent;
-	  border-image-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border-inverted.svg");
+	  border-image-source: url("../../assets/images/baldurs-gate-3-border-inverted.svg");
 	  border-image-slice: 15 23;
 	  border-image-width: 15px 23px;
 	  border-image-repeat: repeat;
