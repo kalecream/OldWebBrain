@@ -52,6 +52,21 @@
 	src: url(../assets/fonts/cattedrale-ornament.ttf);
 }
 
+@font-face {
+	font-family: "Cattedrale Outline";
+	src: url(../assets/fonts/cattedrale-outline.ttf);
+}
+
+@font-face {
+	font-family: "Cattedrale Rough";
+	src: url(../assets/fonts/cattedrale-rough.ttf);
+}
+
+@font-face {
+	font-family: "Cattedrale Sliced";
+	src: url(../assets/fonts/cattedrale-sliced.ttf);
+}
+
 $primary: #b39f03;
 $secondary: #00a368;
 $borderRadius: 5px;
@@ -165,7 +180,7 @@ $map in $themes {
 	--loadingTextColor: #fff;
 	--bodyFont: 'Garamond', serif;
 	--headingFont: 'Cattedrale', serif;
-	--accentFont: 'Cattedrale', serif;
+	--accentFont: 'Cattedrale Rough', serif;
 	// --backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
 	--backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
 }

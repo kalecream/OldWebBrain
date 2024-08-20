@@ -2,25 +2,80 @@
 
 .container {
 	display: flex;
-	gap: 1rem;
-	font-size: 1.5rem;
-	font-family: "Garamond";
+	gap: 2rem;
+	font-size: 1.6rem;
 	letter-spacing: 0.5px;
+	align-items: center;
 
 	@include breakpoint-range($from: mobile) {
 		flex-direction: column;
 		width: clamp(10rem,80%,30rem);
-		margin: 1rem;
+		margin: 0rem auto;
 		justify-content: center;
 		gap: 1rem;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		flex-direction: row;
-		width: clamp(20rem,100%,35rem);
-		margin: 0.15rem auto;
+		// flex-direction: row;
+		width: clamp(20rem,100%,50rem);
+		margin: 0rem auto;
 	}
 }
+
+// <button class="button-40" role="button">
+//   <span class="text">Button 40</span>
+// </button>
+
+/* CSS */
+.button-40 {
+	--glow-color: rgb(217, 176, 255);
+	--glow-spread-color: rgba(191, 123, 255, 0.781);
+	--enhanced-glow-color: rgb(231, 206, 255);
+	--btn-color: rgb(100, 61, 136);
+	border: .25em solid var(--glow-color);
+	padding: 1rem 3em;
+	color: var(--glow-color);
+	font-size: 15px;
+	font-weight: bold;
+	background-color: var(--btn-color);
+	border-radius: 1em;
+	outline: none;
+	box-shadow: 0 0 1em .25em var(--glow-color),
+		  0 0 4em 1em var(--glow-spread-color),
+		  inset 0 0 .75em .25em var(--glow-color);
+	text-shadow: 0 0 .5em var(--glow-color);
+	position: relative;
+	transition: all 0.3s;
+	}
+  
+  .button-40::after {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	top: 120%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: var(--glow-spread-color);
+	filter: blur(2em);
+	opacity: .7;
+	transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+  }
+  
+  .button-40:hover {
+	color: var(--btn-color);
+	background-color: var(--glow-color);
+	box-shadow: 0 0 1em .25em var(--glow-color),
+		  0 0 4em 2em var(--glow-spread-color),
+		  inset 0 0 .75em .25em var(--glow-color);
+  }
+  
+  .button-40:active {
+	box-shadow: 0 0 0.6em .25em var(--glow-color),
+		  0 0 2.5em 2em var(--glow-spread-color),
+		  inset 0 0 .5em .25em var(--glow-color);
+  }
+  
 
 .primary,
 .secondary,
@@ -33,7 +88,7 @@
 	justify-content: center;
 	line-height: 1;
 	overflow: hidden;
-	padding: var(--paddingObject);
+	padding: var(--paddingContainer);
 	position: relative;
 	user-select: none;
 	touch-action: manipulation;
@@ -59,8 +114,7 @@
 }
 
 .primary {
-	background-image: var(--primary);
-	box-shadow: var(--boxShadow);
+	// box-shadow: var(--boxShadow);
 	background-color: var(--primary);
 	color: var(--backgroundColor);
 	font-weight: 600;
@@ -70,6 +124,7 @@
 	background: transparent;
 	color: var(--primary);
 	border: var(--borderColor);
+	padding: 1rem;
 	font-weight: 400;
 
 	&:hover {
@@ -106,3 +161,108 @@
 	-webkit-mask-composite: destination-out;
 	mask-composite: exclude;
 }
+
+
+// <!-- HTML !-->
+// <button class="vamp" role="button">
+//   <span class="text">Button 13</span>
+//   <span class="vamp-background"></span>
+//   <span class="vamp-border"></span>
+
+//   <!-- mask-border fallback -->
+//   <svg style="position: absolute;" width="0" height="0">
+//     <filter id="remove-black-vamp" color-interpolation-filters="sRGB">
+//       <feColorMatrix type="matrix" values="1 0 0 0 0
+//                 0 1 0 0 0
+//                 0 0 1 0 0
+//                 -1 -1 -1 0 1" result="black-pixels"></feColorMatrix>
+//       <feComposite in="SourceGraphic" in2="black-pixels" operator="out"></feComposite>
+//     </filter>
+//   </svg>
+// </button>
+
+/* CSS */
+.vamp {
+	touch-action: manipulation;
+	background: none;
+	position: relative;
+	border-width: 4px 12px;
+	border-style: solid;
+	border-color: transparent;
+	padding: 1rem 3rem;
+	text-align: center;
+	transition-property: transform;
+	transition-duration: 0.4s;
+  }
+  
+  .vamp:active {
+	transform: scale(0.92);
+  }
+  
+  .vamp-background {
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	clip-path: polygon(12px 0, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+	background-color: var(--primary);
+	background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.8)), linear-gradient(to bottom, #af6a65, calc(12.5% - 1px), #cfa381, #88312b calc(12.5% + 1px) 50%, #601d2c 50% calc(87.5% - 1px), #994021, var(--primary) calc(87.5% + 1px));
+	transition-property: filter;
+	transition-duration: 0.2s;
+	will-change: filter;
+  }
+  
+  .vamp .text {
+	background: linear-gradient(180deg, var(--backgroundColor) 1%, #CDAF87 100%), #FFFFFF;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	z-index: 3;
+	position: relative;
+  }
+  
+  @media (hover: hover) {
+	.vamp:hover .vamp-background {
+	  filter: brightness(0.7);
+	}
+  }
+  
+  .vamp:active .vamp-background {
+	filter: brightness(0.4);
+  }
+  
+  .vamp-border {
+	position: absolute;
+	z-index: 1;
+	inset: -4px -12px;
+  }
+  
+  @supports (-webkit-mask-box-image: inherit) or (mask-border: inherit) {
+	.vamp-border {
+	  background-image: linear-gradient(to bottom, #adadac 50%, #8b8b8a 50%);
+	  -webkit-mask-box-image-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border.svg");
+	  -webkit-mask-box-image-slice: 15 23;
+	  -webkit-mask-box-image-width: 15px 23px;
+	  -webkit-mask-box-image-repeat: repeat;
+	  mask-border-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border.svg");
+	  mask-border-slice: 15 23;
+	  mask-border-width: 15px 23px;
+	  mask-border-repeat: repeat;
+	}
+  }
+  
+  @supports not ((-webkit-mask-box-image: inherit) or (mask-border: inherit)) {
+	.vamp-border {
+	  border-width: 15px 23px;
+	  border-style: solid;
+	  border-color: transparent;
+	  border-image-source: url("https://csspro.com/css-3d-buttons/buttons-img/baldurs-gate-3-border-inverted.svg");
+	  border-image-slice: 15 23;
+	  border-image-width: 15px 23px;
+	  border-image-repeat: repeat;
+	  background-image: linear-gradient(#000, #000), linear-gradient(to bottom, #bb9d7a 50%, #806d56 50%);
+	  background-origin: content-box, border-box;
+	  background-repeat: no-repeat;
+	  filter: url("#remove-black-vamp");
+	}
+  }

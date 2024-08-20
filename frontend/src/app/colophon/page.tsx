@@ -17,6 +17,7 @@ const ColophonPage = () => {
 				<ul>
 					<li><Link href={"https://www.rpnation.com/threads/fifteen-years-later-the-vampire-diaries-the-originals-rp.240860/"} target="_blank">Vampire Post Divider</Link> found on a  roleplaying forum discussing The Vampire Diaries/The Originals.</li>
 					<li><Link href={"https://codepen.io/sosuke/pen/Pjoqqp"} target="_blank">CSS Filter Generator</Link> to change colors from Black to a specific Hex. This is used to change the blog title when hovering (on non-index pages.)</li>
+					<li><Link href="https://giphy.com/stickers/cat-halloween-this-is-peLhJa1fluELs1WCx9">(Temp) Vampire GIF Sticker</Link> to complement the hero section.</li>
 				</ul>
 			</div>
 		</section>
