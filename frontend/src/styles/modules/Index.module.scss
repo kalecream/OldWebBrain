@@ -22,11 +22,9 @@
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		padding: 1rem 2.5rem;
+		padding: 0.5rem 3rem;
 	}
 }
-
-
 
 .section {
 	width: fit-content;
@@ -46,11 +44,18 @@
 		font-weight: 300;
 		max-width: 30rem;
 		text-align: center;
+		color: var(--primary);
+
+		& p {
+			line-height: 1.2;
+			font-size: 1.4rem;
+			margin-top: 2rem;
+		}
 	}
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 15%;
+		bottom: 10%;
 		left: 10%;
 	}
 }
@@ -58,9 +63,7 @@
 .model {
 	@extend .section;
 
-	// @include breakpoint-range($from: mobile) {
-	// 	display: none
-	// }
+	z-index: 99;
 
 	@include breakpoint-range($from: tablet) {
 		display: flex;
@@ -68,8 +71,8 @@
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 10%;
-		right: 8%;
-		// margin:auto
+		bottom: 15%;
+		right: 10%;
+		margin:auto
 	}
 }

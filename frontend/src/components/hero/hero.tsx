@@ -6,18 +6,18 @@ import HeroName from '@components/hero/heroName/heroName';
 import { ScrollDown } from '@components/scrollDown';
 import hero from '@styles/modules/Index.module.scss';
 import button from '@styles/modules/Button.module.scss';
-import HeroImage from '@assets/images/bop.webp';
+import HeroImage from '@assets/images/vamp.webp';
 
 const Hero = () => {
 	return (
-		<section style={{ minHeight: '100vh' }}>
+		<section style={{ minHeight: '85vh' }}>
 			<div className={hero.container}>
 				<div className={hero.cta}>
 					<HeroName name={'Sabrina'} />
 					<div className={` ` + hero.text}>
 						<center>
-							<h3 style={{ color: ' var(--primary)' }}>Web Developer based in 🇯🇲</h3>
-							<p className="p-note" style={{ lineHeight: '1.2', fontSize: '1.2rem' }}>
+							<h2>the <span>Web Developer</span></h2>
+							<p className="p-note">
 								I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
 								explore the indie web.
 							</p>
@@ -47,7 +47,7 @@ const Hero = () => {
 								</svg>
 							</button>
 						</Link>
-						<Link title="Blog Posts" className={''} href="/blog">
+						<Link title="Blog Posts" className={''} href="/blog" style={{scale: '0.8'}}>
 							Skip
 						</Link>
 					</div>
@@ -61,7 +61,7 @@ const Hero = () => {
 						width={0}
 						height={0}
 						sizes="100vw"
-						style={{ width: 'auto', height: 'clamp(100px, 35vw,1000px)' }}
+						style={{ width: 'auto', height: 'clamp(100px, 40vw,1000px)', alignSelf: 'center' }}
 						alt=""
 						className="u-photo"
 					/>

@@ -10,7 +10,7 @@
 	@include breakpoint-range($from: mobile) {
 		flex-direction: column;
 		width: clamp(10rem,80%,30rem);
-		margin: 1rem;
+		margin: 0rem auto;
 		justify-content: center;
 		gap: 1rem;
 	}
@@ -18,7 +18,7 @@
 	@include breakpoint-range($from: desktopSmall) {
 		// flex-direction: row;
 		width: clamp(20rem,100%,50rem);
-		margin: 0.15rem auto;
+		margin: 0rem auto;
 	}
 }
 
