@@ -28,6 +28,7 @@
   text-transform: capitalize;
   font-size: 1.6rem;
   font-weight: 500;
+  color: var(--textColor);
 }
 
 .settings > * {
@@ -61,9 +62,10 @@
   @include breakpoint-range($from: mobile) {
     &::before {
       content: 'Sabrina';
-      color: var(--primary);
-      font-size: clamp(5rem, 25vw, 6rem);
-      font-family: "Cattedrale";
+      color: var(--textColor);
+      font-size: clamp(5rem, 15vw, 8rem);
+      font-family: "Cattedrale Rough";
+      margin: 0 auto;
     }
 
     background-image: none;
@@ -74,7 +76,7 @@
       content: "";
     }
     margin: 0 auto;
-    height: 250px;
+    height: 220px;
     width: 600px;
     content: none;
     background-image: url(../../assets/images/Sitename.svg);

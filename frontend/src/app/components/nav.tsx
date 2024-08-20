@@ -3,7 +3,6 @@ import Link from 'next/link';
 import style from '@styles/modules/nav.module.scss';
 import { usePathname } from 'next/navigation';
 import Directory from '@data/directory';
-// import ThemeSwitch from '@components/navigation/theme-toggle';
 
 export function Navbar() {
 	const path = usePathname();
@@ -28,9 +27,6 @@ export function Navbar() {
 							</div>
 						))}
 				</div>
-				{/* <div className={`${style.settings}  ${style['directory-section']}`}>
-				<ThemeSwitch />
-			</div> */}
 			</nav>
 		</header>
 	);
