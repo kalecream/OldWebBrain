@@ -13,8 +13,8 @@ export default function Page() {
 			<Hero />
 			{/* <HomePosts /> */}
 			{/* TODO: This as a component and add css */}
-			<SecondHero />
-			<ProjectList />
+			{/* <SecondHero />
+			<ProjectList /> */}
 		</>
 	);
 }

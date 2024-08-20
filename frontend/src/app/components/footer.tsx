@@ -163,6 +163,7 @@ export const Footer: React.FunctionComponent = () => {
 				<Link href={"/sitemap.xml"}>Sitemap</Link>
 				<Link href={"/colophon"}>Colophon</Link>
 				<Link href={"https://github.com/kalecream/OldWebBrain"}>Source</Link>
+				<Link href={'/rolodex'}>Rolodex</Link>
 			</div>
 		</footer>
 	);

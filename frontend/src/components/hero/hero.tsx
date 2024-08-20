@@ -10,7 +10,7 @@ import HeroImage from '@assets/images/vamp.webp';
 
 const Hero = () => {
 	return (
-		<section style={{ minHeight: '85vh' }}>
+		<section style={{ minHeight: '90vh' }}>
 			<div className={hero.container}>
 				<div className={hero.cta}>
 					<HeroName name={'Sabrina'} />
@@ -67,7 +67,7 @@ const Hero = () => {
 					/>
 				</div>
 			</div>
-			<ScrollDown />
+			{/* <ScrollDown /> */}
 		</section>
 	);
 };

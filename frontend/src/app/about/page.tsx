@@ -76,7 +76,7 @@ export const About = () => {
 						I have the standard set of outputs from personality tests, but for the longest time, I
 						struggled to figure out who I was. I thought there must be an ideal "me" outside of my usual environment
 						(which I felt was stifling.) The mundane truth turned out to be: <b>I am what I show up and do every day.</b>{' '}
-						Nothing more, nothing less. Here is what I do every day:
+						Nothing more, nothing less. This page is still under construction. Here is what I do every day...
 					</p>
 					<ScrollDown />
 				</div>
@@ -94,7 +94,7 @@ export const About = () => {
 					</p>
 					<div className="flex row align-items">
 						<Link className="prose text-center" href="/read#read">
-							<p>{'<-'} Last ({readBooks.length})</p>
+							<p>&#8592; Last ({readBooks.length})</p>
 						</Link>
 						{
 							<Link
@@ -112,7 +112,7 @@ export const About = () => {
 						<Reads status="Want" limit={1} />
 						<Link className="prose text-center" href="/read#want">
 						<p>
-							Next ({wantToReadBooks.length}) {'->'}
+							Next ({wantToReadBooks.length}) &#8594;
 						</p>
 						</Link>
 					</div>
@@ -128,8 +128,8 @@ export const About = () => {
 					Non-Fiction.
 				</p>
 				<BacklogGraph />
-				<p className="prose ">Here is a random review from a book I've read. I don't normally do a write-up so I must have really liked/hated/found the book functional.</p>
-				<RandomBooks />
+				{/* <p className="prose ">Here is a random review from a book I've read. I don't normally do a write-up so I must have really liked/hated/found the book functional.</p>
+				<RandomBooks /> */}
 			</section>
 
 			<section className={styles.paragraph} id="podcasts">

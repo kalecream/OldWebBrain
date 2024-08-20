@@ -48,6 +48,9 @@ const NowPage = () => {
 
 			<section>
 				<div className={`prose `}>
+				<div className="img-grid">
+						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
+					</div>
 					<h1>2024-Spring</h1>
 					<p>
 						This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
@@ -82,6 +85,9 @@ const NowPage = () => {
 			</section>
 			<section>
 				<div className={`prose `}>
+				<div className="img-grid">
+						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
+					</div>
 					<h1>2023-Winter</h1>
 					<p>This is when I started this page. At the time, I was exploring individuallism vs caring for myself as a member of a community. This might re-appear as a goal-point after I read Frantz Fanon's <i>Wretched of the Earth</i>.</p>
 					<p>This is also when I had some awakenings about everyday life and lost most of my heroes. It ended with my giving up religion. I have oscillated between being a Christian revert or apostate for many years. The bombing of Bethlehem on Christmas Day with little out-cry from Western Church leaders was the final straw for me. It does not make sense for me to practice a religion that is so far removed from its roots / holy sites. This was not the first time I noticed that what is generally practiced is an abstract version of Christianity, but it was the occasion that disgusted me the most. The other Abrahamic religions do not appeal to me.</p>

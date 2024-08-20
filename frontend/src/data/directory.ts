@@ -11,6 +11,10 @@ const Directory = [
 		title: 'Blog',
 		links: '/blog',
 	},
+	{
+		title: 'Changelog',
+		links: '/changelog',
+	},
 ];
 
 export default Directory;
