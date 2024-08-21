@@ -63,24 +63,32 @@
     &::before {
       content: 'Sabrina';
       color: var(--textColor);
-      font-size: clamp(5rem, 15vw, 8rem);
+      font-size: clamp(1rem, 20vw, 8rem);
       font-family: "Cattedrale Rough";
+      text-transform: capitalize;
       margin: 0 auto;
+      margin-left: 4rem;
+      letter-spacing: -2px;
+      user-select: none;
+	pointer-events: none;
+  text-shadow:  0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
     }
 
     background-image: none;
   }
 
-  @include breakpoint-range($from: tablet) {
-    &::before {
-      content: "";
-    }
-    margin: 0 auto;
-    height: 220px;
-    width: 600px;
-    content: none;
-    background-image: url(../../assets/images/Sitename.svg);
-    background-repeat: no-repeat;
-    background-position: cover;
-  }
+  // @include breakpoint-range($from: tablet) {
+  //   &::before {
+  //     content: "";
+  //   }
+  //   margin: 0 auto;
+  //   height: 220px;
+  //   width: 600px;
+  //   content: none;
+  //   background-image: url(../../assets/images/Sitename.svg);
+  //   background-repeat: no-repeat;
+  //   background-position: cover;
+  // }
 }
