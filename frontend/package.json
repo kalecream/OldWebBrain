@@ -20,7 +20,6 @@
 		"not ie <= 11"
 	],
 	"dependencies": {
-		"@code-hike/mdx": "^0.9.0",
 		"@codesandbox/sandpack-react": "^2.13.10",
 		"@googleapis/youtube": "^16.1.0",
 		"@mdx-js/loader": "^3.0.1",
@@ -75,13 +74,13 @@
 		"remark-gfm": "^4.0.0",
 		"rss": "^1.2.2",
 		"sharp": "^0.33.4",
-		"sugar-high": "^0.6.1",
 		"three": "^0.164.1",
 		"vercel": "^34.2.0",
 		"webpack": "5.76.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
+		"@shikijs/transformers": "^1.14.1",
 		"@types/webpack-env": "^1.18.0",
 		"@typescript-eslint/eslint-plugin": "^5.50.0",
 		"@typescript-eslint/parser": "^5.50.0",
@@ -90,6 +89,7 @@
 		"eslint-plugin-react": "^7.32.2",
 		"prisma": "^5.2.0",
 		"sass": "^1.66.1",
+		"shiki": "^1.14.1",
 		"types": "^0.1.1",
 		"typescript": "^5.4.5"
 	}

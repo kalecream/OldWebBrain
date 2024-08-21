@@ -1,5 +1,3 @@
-const { remarkCodeHike, recmaCodeHike } = require('@code-hike/mdx');
-
 /** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
@@ -7,19 +5,10 @@ const withMDX = require('@next/mdx')({
 	options: {
 		remarkPlugins: [
 			[
-				remarkCodeHike,
-				{
-					autoImport: false,
-					// @todo make a custom theme
-					theme: 'github-dark-dimmed',
-					lineNumbers: true,
-					showCopyButton: true,
-					autoLink: true,
-					staticMediaQuery: 'not screen, (max-width: 768px)',
-				},
+				
 			],
 		],
-		recmaPlugins: [[recmaCodeHike]],
+		recmaPlugins: [],
 	},
 });
 

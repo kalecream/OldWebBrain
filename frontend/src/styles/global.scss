@@ -223,7 +223,7 @@ header {
 		@include breakpoint-range($from: desktopSmall) {
 			flex-direction: row;
 			justify-content: space-between;
-		padding: 0 1rem;
+			padding: 0 1rem;
 		}
 	}
 }
@@ -505,7 +505,7 @@ h6 {
 
 h1 {
 	font-size: clamp(2.5rem, 2vw, 5rem);
-	margin-bottom:0.5rem;
+	margin-bottom: 0.5rem;
 	max-width: 40rem;
 }
 
@@ -555,7 +555,8 @@ li {
 	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
 }
 
-p > a, li > a {
+p > a,
+li > a {
 	color: var(--secondary);
 
 	&:hover {
@@ -774,7 +775,10 @@ article {
 
 article h1,
 article h2,
-article h3, article h4, article h5, article h6 {
+article h3,
+article h4,
+article h5,
+article h6 {
 	text-align: center;
 }
 
@@ -805,7 +809,7 @@ article .info {
 }
 
 article p {
-	
+
 	@include breakpoint-range($from: mobile) {
 		margin: 1rem 1.5rem;
 	}
@@ -821,6 +825,35 @@ article p {
 
 code {
 	font-family: 'Fira Code', monospace;
+}
+
+.code {
+	& .filename {
+		margin: 0.5rem 0;
+		padding: 0.5em 3rem;
+		border-radius: var(--borderRadius);
+		width: fit-content;
+		background-color: var(--primary);
+		color: var(--backgroundColor);
+	}
+
+}
+
+.shiki {
+	width: 100%;
+	padding: 1rem;
+	border-radius: var(--borderRadius);
+	counter-reset: step;
+	counter-increment: step 0;
+
+	.line {
+		&::before {
+			counter-increment: step;
+			margin-right: 6rem;
+			display: inline-block;
+			text-align: right;
+		}
+	}
 }
 
 article ul,
