@@ -63,7 +63,7 @@
       font-size: clamp(2.5rem, 10vw, 8rem);
       font-family: "Cattedrale Rough";
       text-transform: capitalize;
-      margin: 0 auto;
+      margin: 0;
       letter-spacing: -2px;
       user-select: none;
       pointer-events: none;
@@ -73,7 +73,7 @@
     }
   }
 
-  @include breakpoint-range($from: mobile) {
+  @include breakpoint-range($from: desktopSmall) {
     &::before {
       margin-left: 4rem;
     }
