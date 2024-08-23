@@ -50,8 +50,9 @@
   align-self: center;
 
   &:hover {
-    opacity: 0.75;
-    filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+    // opacity: 0.75;
+    // filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+    color: var(--secondary);
   }
 
   @include breakpoint-range($from: mobile) {
