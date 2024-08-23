@@ -67,7 +67,7 @@ const NowPage = () => {
 							Continuing my {' '}
 							<Link
 								href={
-									'https://docs.google.com/document/d/140xQK_9cy4ThBbSxBK3NANQqWoO4CxW0QUZ1HNBhAlU/edit?usp=sharing'
+									'/relationships'
 								}
 							>
 								guide on the relationships I have

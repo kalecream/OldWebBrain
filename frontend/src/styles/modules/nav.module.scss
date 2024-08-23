@@ -5,34 +5,29 @@
 }
 
 .directory-section {
-  
   right: 0;
   float: right;
   display: flex;
-  flex-direction: row;;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 
   @include breakpoint-range($from: mobile) {
-    margin: 2rem 0;
+    margin: 1rem auto;
   }
+
   @include breakpoint-range($from: desktopSmall) {
-    margin: 2rem 6rem;
+    margin: 2rem 4rem;
 
   }
 }
 
 .directory-link {
   text-transform: capitalize;
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1.4rem;
   color: var(--textColor);
-}
-
-.settings > * {
-  margin: 0 0.5rem;
 }
 
 .social-media-list {
@@ -55,28 +50,34 @@
   align-self: center;
 
   &:hover {
-    opacity: 0.75;
-    filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+    // opacity: 0.75;
+    // filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+    color: var(--secondary);
   }
 
   @include breakpoint-range($from: mobile) {
+    background-image: none;
+
     &::before {
       content: 'Sabrina';
       color: var(--textColor);
-      font-size: clamp(1rem, 20vw, 8rem);
+      font-size: clamp(2.5rem, 10vw, 8rem);
       font-family: "Cattedrale Rough";
       text-transform: capitalize;
-      margin: 0 auto;
-      margin-left: 4rem;
+      margin: 0;
       letter-spacing: -2px;
       user-select: none;
-	pointer-events: none;
-  text-shadow:  0px 4px 3px rgba(0,0,0,0.4),
-  0px 8px 13px rgba(0,0,0,0.1),
-  0px 18px 23px rgba(0,0,0,0.1);
+      pointer-events: none;
+      text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
     }
+  }
 
-    background-image: none;
+  @include breakpoint-range($from: desktopSmall) {
+    &::before {
+      margin-left: 4rem;
+    }
   }
 
   // @include breakpoint-range($from: tablet) {
