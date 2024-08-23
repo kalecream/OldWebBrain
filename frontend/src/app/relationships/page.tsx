@@ -4,7 +4,7 @@ const RShipPage = () => {
     return (
         <>
             <section id="toc" className="prose">
-                <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i>
+                <center> <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i></center>
                 <ol>
                     <li><Link href="#self">With Self</Link></li>
                     <li><Link href="#family">With Family</Link></li>
@@ -15,26 +15,27 @@ const RShipPage = () => {
                 </ol>
             </section>
             <section id="introduction" >
-                The most daunting problem I’ve found in trying to understand how other persons view relationships is that information on the internet about growing and repairing relationships are geared towards romantic relationships when familial ties and camaraderie are the basis of most of the relationships in our lives.
-
-                Another issue is people just having thoughts about it at all. There are no definitions or personal boundaries. When I've asked persons about their thoughts on some of the things I've been trying to find my item definition for, I realize we've all been basing our social life on vibes, pop culture and whatever we lacked in our formative years. The alternative isn't better either, some who have thought about it have just swallowed some philosopher’s world-view. I have no heroes, so that approach doesn't gel with me. I want to create my own thoughts on this with my own reasoning. I don't want to do that from scratch and it would make no sense to throw away the thoughts that came before me in this venture. My thoughts are speaking on all relationships unless I specify romantic. I believe that romantic relationships should be an evolution of friendship. One cannot be a good partner without being a good friend to their partner.
-
-                This document is ongoing as I navigate my relationship with myself and others. It was started and (the bulk of it) written in 2023 to aid me in recovering from a break-up with a long-term partner. After the realizations that came with the dissolution of that relationship, I felt the need to define how I wanted to interact with others. I also thought about how I wanted to go about interacting with myself. I often hear that I’m too harsh with myself.
-
-                I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a yam-head or the abusive farmer. The most important thing to note is that:
-                Relationships are unique and do not follow the same path. We all know that life likes to just throw us off the road for no reason.
-                Adaptability and consideration is absolutely key.
-                Communication is a given.
-                All relationships, including the one with self, require effort and intention to nurture it.
-
-                The most important part of a relationship for me is Consideration. This includes considering how my actions affect myself and other persons to:
-                reduce the chance of causing harm,
-                never intentionally causing harm,
-                considering myself enough to stay my own person
-                and to not lose a sense of self becoming codependent.
-
-                I hope to make myself proud by sticking to my values of being considerate and taking a stand, where necessary, to reduce harm in my circle of loved ones, then my wider community.
-
+                <p className="prose">
+                    The most daunting problem I’ve found in trying to understand how other persons view relationships is that information on the internet about growing and repairing relationships are geared towards romantic relationships when familial ties and camaraderie are the basis of most of the relationships in our lives.
+                </p>  <p className="prose">
+                    Another issue is people just having thoughts about it at all. There are no definitions or personal boundaries. When I've asked persons about their thoughts on some of the things I've been trying to find my item definition for, I realize we've all been basing our social life on vibes, pop culture and whatever we lacked in our formative years. The alternative isn't better either, some who have thought about it have just swallowed some philosopher’s world-view. I have no heroes, so that approach doesn't gel with me. I want to create my own thoughts on this with my own reasoning. I don't want to do that from scratch and it would make no sense to throw away the thoughts that came before me in this venture. My thoughts are speaking on all relationships unless I specify romantic. I believe that romantic relationships should be an evolution of friendship. One cannot be a good partner without being a good friend to their partner.
+                </p><p className="prose">
+                    This document is ongoing as I navigate my relationship with myself and others. It was started and (the bulk of it) written in 2023 to aid me in recovering from a break-up with a long-term partner. After the realizations that came with the dissolution of that relationship, I felt the need to define how I wanted to interact with others. I also thought about how I wanted to go about interacting with myself. I often hear that I’m too harsh with myself.
+                </p><p className="prose">
+                    I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a yam-head or the abusive farmer. The most important thing to note is that:
+                    Relationships are unique and do not follow the same path. We all know that life likes to just throw us off the road for no reason.
+                    Adaptability and consideration is absolutely key.
+                    Communication is a given.
+                    All relationships, including the one with self, require effort and intention to nurture it.
+                </p><p className="prose">
+                    The most important part of a relationship for me is Consideration. This includes considering how my actions affect myself and other persons to:
+                    reduce the chance of causing harm,
+                    never intentionally causing harm,
+                    considering myself enough to stay my own person
+                    and to not lose a sense of self becoming codependent.
+                </p><p className="prose">
+                    I hope to make myself proud by sticking to my values of being considerate and taking a stand, where necessary, to reduce harm in my circle of loved ones, then my wider community.
+                </p>
             </section>
             <section id="self">
                 <h1>With Self</h1>
@@ -73,8 +74,10 @@ const RShipPage = () => {
                 </div>
             </section>
             <section id="family">
-                I have not been good at this section. There is something that’s uniquely difficult about maintaining good relations with family members. Our first steps into emotional pain and some wounds in our pysche were likely caused by our family.
-            </section>
+                <h1>With Family</h1>
+                <p className="prose">
+                    I have not been good at this section. There is something that’s uniquely difficult about maintaining good relations with family members. Our first steps into emotional pain and some wounds in our pysche were likely caused by our family.
+                </p></section>
             <section id="friends">
                 <h1>With Friends</h1>
                 <p className="prose">I would also consider my friends my life partners. I'm now not sure where the delineation of a romantic partner would start from my definition of a friend. I could start with defining a friend first and stating a romantic partner as a friend with greater expectations set on them.
@@ -145,6 +148,8 @@ const RShipPage = () => {
                     <p className="prose">In a romantic relationship, it is about more than staying together; it’s about actively choosing each other every day, growing together, and nurturing the bond that connects us. It’s a dynamic process that evolves as we navigate life.</p>
                     <p className="prose">Commitment (or decision) “refers, in the short-term, to the decision that one loves a certain other, and in the long-term, to one’s commitment to maintain that love” (Sternberg, 1997, p. 315).</p>
                 </div>
+
+                <div className="prose">
                 <ol>
                     <li>offering unwavering support during challenges, personal growth, and ambitions: providing encouragement during setbacks, and celebrating achievements.</li>
                     <li>allowing them to feel secure enough to share deepest fears, desires, and secrets, knowing they will be met with understanding and acceptance.</li>
@@ -156,10 +161,26 @@ const RShipPage = () => {
                     <li>maintaining a close physical connection and being attuned to each other’s emotional needs.
                     </li>
                 </ol>
+                </div>
 
                 <p className="prose"><i>
-                A partner is someone who truly shares my life. We can have fun together every day even doing the most mundane chores. We see each other through the good days and the bad, and in doing so, we foster huge amounts of trust and understanding. And when you have someone who you really trust who just gets you in the bedroom? Oh man, it’s insane. [^5]
+                    A partner is someone who truly shares my life. We can have fun together every day even doing the most mundane chores. We see each other through the good days and the bad, and in doing so, we foster huge amounts of trust and understanding. And when you have someone who you really trust who just gets you in the bedroom? Oh man, it’s insane. [^5]
                 </i></p>
+                <div>
+                    <h4>Commitment to Self in Partnerships</h4>
+                    <ol>
+                        <li>To understand my own needs and desires. It signals an understanding of what I want out of life, independent of the relationship.
+                        </li>
+                        <li>To communicate my limits and boundaries.
+                        </li>
+                        <li>To maintain my physical & mental health.
+                        </li>
+                        <li>To maintain independence: my own hobbies, friendships, finances, time alone, and continuing my personal development as an individual.
+                        </li>
+                        <li>To maintain a strong network of support outside the relationship.
+                        </li>
+                    </ol>
+                </div>
                 <p className="prose"></p>
                 <p className="prose"></p>
                 <p className="prose"></p>
