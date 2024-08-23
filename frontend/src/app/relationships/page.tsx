@@ -4,8 +4,8 @@ const RShipPage = () => {
     return (
         <>
             <section id="toc" className="prose">
-                <center>  <p> <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i></p></center>
-                <ol>
+                <p className="prose"> <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i></p>
+                <ol className="prose">
                     <li><Link href="#self">With Self</Link></li>
                     <li><Link href="#family">With Family</Link></li>
                     <li><Link href="#friends">With Friends</Link></li>
