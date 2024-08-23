@@ -63,7 +63,7 @@
     &::before {
       content: 'Sabrina';
       color: var(--textColor);
-      font-size: clamp(1rem, 20vw, 8rem);
+      font-size: clamp(2.5rem, 10vw, 8rem);
       font-family: "Cattedrale Rough";
       text-transform: capitalize;
       margin: 0 auto;
