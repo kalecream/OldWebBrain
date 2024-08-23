@@ -4,7 +4,7 @@ const RShipPage = () => {
     return (
         <>
             <section id="toc" className="prose">
-                <center>  <p className="prose"> <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i></p></center>
+                <center>  <p> <i>"A relationship is a commitment to doing the work of becoming a more thoughtful person."</i></p></center>
                 <ol>
                     <li><Link href="#self">With Self</Link></li>
                     <li><Link href="#family">With Family</Link></li>
@@ -126,9 +126,9 @@ const RShipPage = () => {
                     The sense of excitement and physical attraction to a new flame is always wonderful. It feels like I have greater motivation to do anything when I get a crush. My crushes tend to be superficial. I like that my fleeting crushes highlight small romantic things about persons that I can remember them by. I hope that I never age out of crushes and that I continue to be considerate of any partners when having crushes.
                 </p>
                 <p className="prose">
-                    I want it particularly noted that I don't believe in “right person, wrong time.” Life sucks. There's never going to be a right time, there's no guarantee that the person you knew this year is the same as they will be next year. Traumatic events are always happening. They force us to reconsider who we are and what we are willing to do. This is also why we should go slowly. A rushed relationship with no foundation will leave questions on where we stand where a strong relationship will have defined protocols for emergency events and how to deal with them will be more likely to survive.
+                    I want it particularly noted that I don't believe in “right person, wrong time.” Life sucks. There's never going to be a right time, there's no guarantee that the person you knew this year is the same as they will be next year. Traumatic events are always happening. They force us to reconsider who we are and what we are willing to do. This is also why we should go slowly. A rushed relationship with no foundation will leave questions on where we stand where a strong relationship with have defined protocols for emergency events and how to deal with them will be more likely to survive.
                 </p>
-                <p className="prose">I want to go on a lot more dates: self-dates, friend-dates, and romantic dates. At the time of writing this, I have no money, but I swear to God, I'm going to be out and about experiencing things when I have funds again. Until then, I'm gathering up a list of things to do!</p>
+                <p className="prose">I want to go on a lot more dates: self-dates, friend-dates, and romantic dates. </p>
                 <ol><b>Important to remember in this stage:</b>
                     <li>Draw up my own boundaries, get and respect their boundaries.</li>
                     <li>Take it slow.</li>
