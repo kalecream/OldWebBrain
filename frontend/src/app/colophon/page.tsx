@@ -54,6 +54,7 @@ const ColophonPage = () => {
 						Cool 3D <Link href="https://csspro.com/css-3d-buttons/">Button 13</Link> for the Index Hero. Taken from
 						CSSPro.com and apparently inspired by Balder's Gate 3.
 					</li>
+					<li><Link href="https://www.svgrepo.com/svg/133672/blood-drop">Blood Drop SVG</Link> as list markers from SVGRepo.com</li>
 				</ul>
 			</div>
 		</section>
