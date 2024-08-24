@@ -4,14 +4,13 @@ import { Navbar } from './components/nav';
 import { Footer } from './components/footer';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { SandpackCSS } from './blog/[slug]/sandpack';
 import { BackToTop } from '@components/_basics/BackToTop';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://sabrinamedwinter.com'),
 	title: {
-		default: 'Sabrina Medwinter',
-		template: '%s | Sabrina Medwinter',
+		default: 'Sab Medwinter',
+		template: '%s | Sab Medwinter',
 	},
 	description:
 		'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
 	twitter: {
 		title: 'Sabrina Medwinter',
 		card: 'summary_large_image',
-		site: '@SabMedwinter',
+		site: '@Medwinters',
 	},
 	// verification: {
 	//   google: '',
@@ -54,14 +53,9 @@ export const metadata: Metadata = {
 	// },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(' ');
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<head>
-				<SandpackCSS />
-			</head>
 			<body>
 				<main>
 					<Navbar />
