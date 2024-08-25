@@ -25,7 +25,7 @@ const Hero = () => {
 					</div>
 
 					<div className={button.container}>
-						<Link title="Services" href="/services" rel="me">
+						<Link href="/professional" rel="me">
 							<button className={button.vamp} role="button">
 								<span className={button.text}>The Professional Route</span>
 								<span className={button["vamp-background"]}></span>
@@ -47,7 +47,7 @@ const Hero = () => {
 								</svg>
 							</button>
 						</Link>
-						<Link title="Blog Posts" className={''} href="/blog" style={{scale: '0.8'}}>
+						<Link  className={''} href="/skip" style={{scale: '0.8'}}>
 							Skip
 						</Link>
 					</div>
