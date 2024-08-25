@@ -182,7 +182,9 @@ $map in $themes {
 	--headingFont: 'Cattedrale', serif;
 	--accentFont: 'Cattedrale Rough', serif;
 	// --backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
-	--backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png')
+	--backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png');
+	--hr-line-offset: 25%;
+	--hr-color: var(--primary);
 }
 
 
@@ -269,9 +271,28 @@ section {
 }
 
 hr {
-	content: "-";
-	font-family: "Cattedrale Ornamental";
-	font-size: 50px;
+	border-style: double;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right,
+			transparent,
+			var(--hr-color) calc(50% - var(--hr-line-offset)),
+			var(--hr-color) calc(50% + var(--hr-line-offset)),
+			transparent);
+}
+
+.hr-hands {
+	border: none;
+
+	&::after {
+		background: url(../assets/images/hr.svg) no-repeat top center;
+		content: "";
+		display: block;
+		height: 80px;
+		margin: 4rem auto;
+		position: relative;
+		top: -50px;
+		border: 0;
+	}
 }
 
 progress {
