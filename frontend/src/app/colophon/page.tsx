@@ -55,6 +55,9 @@ const ColophonPage = () => {
 						CSSPro.com and apparently inspired by Balder's Gate 3.
 					</li>
 					<li><Link href="https://www.svgrepo.com/svg/133672/blood-drop">Blood Drop SVG</Link> as list markers from SVGRepo.com</li>
+					<li>
+						<Link href="https://www.smashingmagazine.com/2008/09/the-hr-contest-results-download-your-fresh-hr-line-now/">HR Line</Link> from Smashing Magazine.
+					</li>
 				</ul>
 			</div>
 		</section>
