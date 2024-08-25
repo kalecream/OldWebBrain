@@ -3,6 +3,7 @@ import Link from 'next/link';
 import style from '@styles/modules/nav.module.scss';
 import { usePathname } from 'next/navigation';
 import Directory from '@data/directory';
+import { FaRss } from 'react-icons/fa6';
 
 export function Navbar() {
 	const path = usePathname();
@@ -26,6 +27,17 @@ export function Navbar() {
 								</Link>
 							</div>
 						))}
+					<div>
+					<Link
+						href={'/feed.xml'}
+						aria-label="social media link"
+						className={style['social-media'] + ` `}
+						target="_blank"
+						rel="me"
+					>
+						<FaRss />
+					</Link>
+					</div>
 				</div>
 			</nav>
 		</header>
