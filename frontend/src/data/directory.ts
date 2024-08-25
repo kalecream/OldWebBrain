@@ -1,9 +1,5 @@
 const Directory = [
 	{
-		title: 'About',
-		links: '/about',
-	},
-	{
 		title: 'Now',
 		links: '/now',
 	},
@@ -12,9 +8,13 @@ const Directory = [
 		links: '/blog',
 	},
 	{
+		title: 'Contact',
+		links: '/contact',
+	},
+	{
 		title: 'Changelog',
 		links: '/changelog',
-	},
+	}
 ];
 
 export default Directory;

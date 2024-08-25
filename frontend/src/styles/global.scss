@@ -187,8 +187,6 @@ $map in $themes {
 	--hr-color: var(--primary);
 }
 
-
-
 html {
 	color: var(--textColor);
 	line-height: 1.6;
@@ -231,17 +229,28 @@ header {
 }
 
 footer {
-	display: flex;
 	bottom: 0;
 	position: relative;
 	padding: 0.75rem 0;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 	text-transform: uppercase;
-	font-family: "Inter";
+
+	@include breakpoint-range($from: mobile) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-content: space-between;
+		padding: 0 1rem;
+	}
 }
 
 .full-height {
