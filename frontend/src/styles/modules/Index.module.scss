@@ -55,7 +55,7 @@
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 10%;
+		bottom: 25%;
 		left: 10%;
 	}
 }
@@ -72,7 +72,7 @@
 	@include breakpoint-range($from: desktop) {
 		display: flex;
 		position: absolute;
-		bottom: 15%;
+		bottom: 25%;
 		right: 10%;
 		margin:auto
 	}
