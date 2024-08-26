@@ -189,7 +189,7 @@
 	border-width: 4px 12px;
 	border-style: solid;
 	border-color: transparent;
-	padding: 1rem 3rem;
+	padding: 0.75rem 1.5rem;
 	text-align: center;
 	transition-property: transform;
 	transition-duration: 0.4s;
@@ -223,12 +223,12 @@
   
   @media (hover: hover) {
 	.vamp:hover .vamp-background {
-	  filter: brightness(0.7);
+	  filter: brightness(0.5);
 	}
   }
   
   .vamp:active .vamp-background {
-	filter: brightness(0.4);
+	filter: brightness(0.1);
   }
   
   .vamp-border {
