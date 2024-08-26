@@ -18,7 +18,7 @@ export const MediaProfiles = [
 	},
 	{
 		name: 'Instagram',
-		url: 'www.instagram.com/sabrinamedwinter/',
+		url: 'https://www.instagram.com/sabrinamedwinter/',
 		icon: FaInstagram,
 	}
 ];

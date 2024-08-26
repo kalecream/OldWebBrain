@@ -71,8 +71,7 @@ const NowPage = () => {
 					<hr />
 					<ul>
 						<li>
-							Continuing my <Link href={'/relationships'}>guide on the relationships I have</Link> with myself, family,
-							friends and others.
+							Continuing my <Link href={'/relationships'}>guide on the relationships</Link> I have with myself, family, friends, romantic interests and others.
 						</li>
 						<li>
 							<Link href="/c25k">Advancing</Link> in the{' '}
