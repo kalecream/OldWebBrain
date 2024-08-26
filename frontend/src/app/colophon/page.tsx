@@ -120,7 +120,10 @@ const ColophonPage = () => {
 					<p>A colophon is a publishing term that describes how a book was made. This is that, but for a website. </p>
 					<p>
 						This website is made using React Typescript on the Next.js 14 framework, stored on Github and deployed using
-						Vercel.
+						Vercel. The fonts used are{' '}
+						<Link href="https://archive.org/details/adobegaramondpro">Adobe Garamond Pro</Link> for the body text and{' '}
+						<Link href="https://www.creativefabrica.com/product/cattedrale/ref/777922">Cattedrale</Link> as an accent
+						font.
 					</p>
 				</div>
 			</div>
@@ -129,10 +132,11 @@ const ColophonPage = () => {
 				<h2>Acknowledgement</h2>
 				<p className="prose">
 					The theme within this website is based on the Caribbean folklore of the{' '}
-					<Link href={'https://www.wikiwand.com/en/Soucouyant'}>Soucouyant</Link> also known as the  Ole Higue. She is the Caribbean's
-					version of a Vampire, a Werewolf and is combined with some West African witch mythos.
+					<Link href={'https://www.wikiwand.com/en/Soucouyant'}>Soucouyant</Link> also known as the Ole Higue. She is
+					the Caribbean's version of a Vampire, a Werewolf and is combined with some West African witch mythos.
+					Throughout the site, I may mingle the theme with some folklore details from rivermummas and other
+					femme mythological figures.
 				</p>
-				<p>Throughout the site, I might mingle the theme with some folklore details from mermaids / rivermummas and other femme mythological figures.</p>
 			</div>
 
 			<div className="prose">
@@ -181,7 +185,9 @@ const ColophonPage = () => {
 						</Link>{' '}
 						from Smashing Magazine.
 					</li>
-					<li><Link href="https://www.cursor.cc/?action=icon&file_id=213942">Devil's Red Hand from Cursor.cc</Link></li>
+					<li>
+						<Link href="https://www.cursor.cc/?action=icon&file_id=213942">Devil's Red Hand from Cursor.cc</Link>
+					</li>
 				</ul>
 			</div>
 		</section>
