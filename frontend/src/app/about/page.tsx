@@ -245,6 +245,8 @@ export const About = () => {
 					</div>
 				</div>
 			</section>
+			<p>Say hello to my pet!</p>
+			<iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Nox&dob=1724664598&gender=f&element=Earth&pet=cat.gif&map=night.gif&background=paper.jpg&tablecolor=black&textcolor=black" frameBorder="0"></iframe>
 
 			
 		</section>
