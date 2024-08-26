@@ -283,6 +283,13 @@ section {
 	}
 }
 
+p, q, li, small, caption, h1, h2, h3, h4, h5, h6, a {
+	&::selection {
+		color: var(--backgroundColor);
+		background-color: var(--primary);
+	}
+}
+
 hr {
 	border-style: double;
 	border-image-slice: 1;
@@ -586,7 +593,8 @@ li {
 
 p,
 li {
-	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
+	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.5rem);
+	
 }
 
 p > a,
@@ -596,6 +604,14 @@ li > a {
 	&:hover {
 		color: var(--primary);
 	}
+}
+
+q {
+	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
+	font-style: italic;
+	text-align: center;
+	color: var(--secondary);
+	max-width: 65rem;
 }
 
 img,
