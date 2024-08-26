@@ -158,7 +158,7 @@ $map in $themes {
 	--primary: #331200;
 	--secondary: #b12603;
 	--backgroundColor: #f2f0e9;
-	--textColor: #222;
+	--textColor: var(--primary);
 	--textColorFade: #030637;
 	--captionColor: #aaa;
 	--buttonTextColor: #720455;
@@ -200,6 +200,7 @@ html {
 body {
 	height: 100vh;
 	background-color: var(--backgroundColor);
+	color: var(--primary);
 	// background-image: var(--backgroundImage);
 	// background-repeat: repeat;
 }
