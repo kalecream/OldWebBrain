@@ -195,6 +195,7 @@ html {
 
 body {
 	background-color: var(--backgroundColor);
+	cursor: url('data:image/x-icon;base64,AAACAAEAICAQAAAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIyOCAAgIvwAGsc8Ab2/yABwWDwCo8v8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVVVVUAAAAAAAAAAAAAAFVVQiIlVVVQAAAAAAAABVVVREIiIiIiVQAAAAAABVVEREIiIiIiIiUAAAAAAFVEQiIiIiIiIiIlUAAAAAVUQiIiIiIiIiIiIlAAAABVRCIlIiIiIiIiIiJQAAAAVEIiUiIiIiIiIiIiUAAABVQiIlIiIiIiIiIiIlAAAFVEIiVSIiIhIiIiIiJQAABUQiIlIiIiFSIiIiIiUAAFVCIiVSIiIRUiIiIiIlAAVUIiIlUiIhVVIiEiIiJQBVQiIiVVIiIiIiIVIhIiUFVCIiVVVSIiVSIhVSFSElBTMiJVVVIiIlQiIiIVURVQVmIlBVVSIiVUIlUiIiJVUFVlUABVQiJVQiVUIlUiVQAFZQAAVUIiVEJVQiVSJVAABVUAAFRCJVQiVCJVIlUAAAAAAABUQiVCJVQlUiVQAAAAAAAFVCJVQlVCVUJVAAAAAAAABUQiVEJUQlQlUAAAAAAAAFVCIlUiVSVVVQAAAAAAAAVUQiVVUlVVAAAAAAAAAABVRCJVAFVQAAAAAAAAAAVVVEIiUAAAAAAAAAAAAABVREQiVVAAAAAAAAAAAAAAVjIiJVAAAAAAAAAAAAAABVYyVVUAAAAAAAAAAAAAAAVmVVAAAAAAAAAAAAAAAAAFVVAAAAAAAAAAAAAAAAAAD//8B///4AA//wAAH/wAAB/4AAAP8AAAD+AAAA/gAAAPwAAAD4AAAA+AAAAPAAAADgAAAAwAAAAIAAAACAAAAAgQAAAIOAAAHHgAADx4AAB/+AAA//AAAf/wAAP/4AAH/8AAf/+AY//8AP//+AD///gD///wB///8D////D////w=='), auto;
 	// background-image: var(--backgroundImage);
 	// background-repeat: repeat;
 }
@@ -230,26 +231,24 @@ header {
 
 footer {
 	bottom: 0;
-	position: relative;
-	padding: 0.75rem 0;
-	font-size: 0.85rem;
-	flex-direction: column;
-	justify-content: center;
+	position: fixed;
+	width: 100%;
+	padding: 2rem auto;
+	font-size: 0.75rem;
+	background-color: var(--backgroundColor);
 	align-items: center;
-	gap: 0.5rem;
 	text-transform: uppercase;
+	display: flex;
 
 	@include breakpoint-range($from: mobile) {
-		display: flex;
+		
 		flex-direction: column;
 		justify-content: center;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		flex-direction: row;
 		justify-content: space-between;
-		padding: 0 1rem;
 	}
 }
 

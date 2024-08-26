@@ -181,6 +181,7 @@ const ColophonPage = () => {
 						</Link>{' '}
 						from Smashing Magazine.
 					</li>
+					<li><Link href="https://www.cursor.cc/?action=icon&file_id=213942">Devil's Red Hand from Cursor.cc</Link></li>
 				</ul>
 			</div>
 		</section>
