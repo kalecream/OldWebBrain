@@ -53,6 +53,10 @@
 		}
 	}
 
+	@include breakpoint-range($from: mobile) { 
+		bottom: 15%;
+	}
+
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
 		bottom: 25%;
