@@ -9,7 +9,7 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('/vampire.glb')
   return (
     <group {...props} dispose={null}>
-      <group name="Scene" position={[12,0,0]} rotation={[-1.8, -2.9, -3]}>
+      <group name="Scene" position={[9.5,2,0]} rotation={[-1.8, -2.9, -3]}>
         <mesh
           name="Circle"
           castShadow

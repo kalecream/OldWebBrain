@@ -59,15 +59,14 @@
 
 	@include breakpoint-range($from: desktop) {
 		position: absolute;
-		bottom: 15%;
-		left: 15%;
+		bottom: 20%;
+		left: 12%;
 	}
 }
 
 .model {
 	width: 100vw;
 	height: 100vh;
-
 	z-index: 99;
 
 	@include breakpoint-range($from: mobile) {
@@ -77,8 +76,8 @@
 	@include breakpoint-range($from: desktop) {
 		display: flex;
 		position: absolute;
-		bottom: 5%;
-		right: 5%;
+		bottom: 0%;
+		right: 0%;
 		margin:auto
 	}
 }
