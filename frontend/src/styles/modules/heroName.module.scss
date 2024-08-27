@@ -29,7 +29,6 @@
 }
 .container .text {
 	position: absolute;
-	top: 50%;
 	color: var(--primary);
 	font-size: clamp(1rem, 25vw, 12rem);
 	font-family: var(--accentFont), sans-serif;
@@ -39,6 +38,15 @@
 	user-select: none;
 	pointer-events: none;
 	stroke: var(--border);
+
+
+	@include breakpoint-range($from: mobile) {
+		top: 75%;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		top: 50%;
+	}
 
 }
 .container .text .icon {
