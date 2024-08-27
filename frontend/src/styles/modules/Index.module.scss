@@ -53,7 +53,7 @@
 		}
 	}
 
-	@include breakpoint-range($from: mobile) { 
+	@include breakpoint-range($from: mobile) {
 		bottom: 15%;
 	}
 
@@ -67,16 +67,9 @@
 .model {
 	width: 100vw;
 	height: 95vh;
-
-	@include breakpoint-range($from: mobile) {
-		display: flex;
-	}
-
-	@include breakpoint-range($from: desktop) {
-		
-		position: absolute;
-		bottom: 2%;
-		right: 0%;
-		margin:auto
-	}
+	display: flex;
+	position: absolute;
+	bottom: 2%;
+	right: 0%;
+	margin: auto
 }
