@@ -66,8 +66,7 @@
 
 .model {
 	width: 100vw;
-	height: 100vh;
-	z-index: -9;
+	height: 90vh;
 
 	@include breakpoint-range($from: mobile) {
 		display: none;
@@ -76,7 +75,7 @@
 	@include breakpoint-range($from: desktop) {
 		display: flex;
 		position: absolute;
-		bottom: 0%;
+		bottom: 2%;
 		right: 0%;
 		margin:auto
 	}
