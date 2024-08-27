@@ -66,7 +66,7 @@
 
 .model {
 	width: 100vw;
-	height: 90vh;
+	height: 95vh;
 
 	@include breakpoint-range($from: mobile) {
 		display: none;
