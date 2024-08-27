@@ -16,7 +16,6 @@ export const HeroModel = () => {
 				width: '100vw',
 				height: '100vh',
 				margin: 'auto',
-				zIndex: '-9999',
 			}}
 		>
 			<Preload all />
