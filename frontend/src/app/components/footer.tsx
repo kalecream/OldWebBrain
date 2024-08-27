@@ -28,16 +28,15 @@ export const SocialMediaList = () => {
 export const Footer: React.FunctionComponent = () => {
 	return (
 		<footer>
-			<div className="flex">
-				<small>sabrina medwinter &copy; {new Date().getFullYear()}</small>
-			</div>
-
 			<div className="flex row" style={{flexWrap: 'wrap'}}>
 				<Link href={'/about'}>About</Link>
 				<Link href={'/sitemap.xml'}>Sitemap</Link>
 				<Link href={'/colophon'}>Colophon</Link>
 				<Link href={'https://github.com/kalecream/OldWebBrain'}>Source</Link>
 				<Link href={'/rolodex'}>Rolodex</Link>
+			</div>
+			<div className="flex">
+				<small>sabrina medwinter &copy; {new Date().getFullYear()}</small>
 			</div>
 		</footer>
 	);
