@@ -65,7 +65,7 @@ const NowPage = () => {
 						For a few months, I've also had my head in the clouds using romance as a distraction. I've been better about
 						returning to my goals at the end of this season becoming more focused on refining my personal productivity
 						systems to prevent stalling again rather than powering through to complete my goals while neglecting my real
-						responsibilities. I had the wins of diving into reading again, love, strengthening community ties and a
+						responsibilities. I had the wins of diving into reading again, loving, strengthening community ties and a
 						stronger sense of self.
 					</p>
 					<hr />
