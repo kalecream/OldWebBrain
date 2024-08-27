@@ -6,15 +6,6 @@ import { Model } from 'src/assets/models/castlevania';
 import { Preload, Html, OrbitControls, PresentationControls } from '@react-three/drei';
 
 export const HeroModel = () => {
-	const [rotation, setRotation] = useState([0, 0, 0]);
-	const handleMouseOver = () => {
-		setRotation([0, 0.4, 0]);
-	};
-
-	const handleMouseOut = () => {
-		setRotation([0, 0, 0]);
-	};
-
 	return (
 		<Canvas
 			flat
@@ -32,9 +23,7 @@ export const HeroModel = () => {
 			<Suspense fallback={<Html center>Loading</Html>}>
 				<spotLight intensity={100} position={[10, 10, 10]} />
 				<directionalLight intensity={9.5} />
-				<group rotation={rotation} onPointerOver={handleMouseOver} onPointerOut={handleMouseOut}>
-					<Model />
-				</group>
+				<Model />
 				<OrbitControls />
 				<PresentationControls
 					global
