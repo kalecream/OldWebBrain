@@ -238,12 +238,16 @@ footer {
 	bottom: 0;
 	position: fixed;
 	width: 100%;
-	padding: 2rem auto;
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 	background-color: var(--backgroundColor);
 	align-items: center;
 	text-transform: uppercase;
 	display: flex;
+	margin-top: 2rem;
+
+	& * > div {
+		padding: 2rem 0;
+	}
 
 	@include breakpoint-range($from: mobile) {
 
@@ -255,10 +259,6 @@ footer {
 		flex-direction: row;
 		justify-content: space-between;
 	}
-}
-
-.full-height {
-	min-height: 100vh;
 }
 
 section {
