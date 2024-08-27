@@ -39,13 +39,13 @@ const NowPage = () => {
 					<hr />
 					<ul>
 						<li> Getting an Amateur Radio licence.</li>
-						<li> Calisthenics foundations</li>
+						<li><s>Calisthenics foundations</s></li>
 						<li>
 							Learning sewing to
 							<Link href="https://www.houseofsew.com/sewing-level/"> proficiency</Link>
 						</li>
 						<li>Learning beginner Jamaican Sign Language.</li>
-						<li>Finishing a neglected online course - FullStackOpen.</li>
+						<li><s>Finishing a neglected online course - FullStackOpen.</s></li>
 					</ul>
 				</div>
 			</section>
