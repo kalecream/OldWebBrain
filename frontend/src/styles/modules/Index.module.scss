@@ -69,11 +69,11 @@
 	height: 95vh;
 
 	@include breakpoint-range($from: mobile) {
-		display: none;
+		display: flex;
 	}
 
 	@include breakpoint-range($from: desktop) {
-		display: flex;
+		
 		position: absolute;
 		bottom: 2%;
 		right: 0%;
