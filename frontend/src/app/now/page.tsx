@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import BehindImage from '@public/img/album/plants.gif';
+import WinterImage from '@assets/images/winter.webp';
+import SummerImage from '@assets/images/summer.webp';
 import PalestineGraphic from '@assets/images/palestine.gif';
 
 export const metadata: Metadata = {
@@ -29,7 +31,7 @@ const NowPage = () => {
 			<section>
 				<div className={`prose `}>
 					<div className="img-grid">
-						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
+						<Image src={SummerImage} alt="" width={74} height={100} style={{ margin: '0 auto' }} />
 					</div>
 					<h1>2024-Summer</h1>
 					<p className="">
@@ -86,7 +88,7 @@ const NowPage = () => {
 			<section>
 				<div className={`prose `}>
 					<div className="img-grid">
-						<Image src={BehindImage} alt="" width={200} height={120} style={{ margin: '0 auto' }} />
+						<Image src={WinterImage} alt="" width={200} height={51.56} style={{ margin: '0 auto' }} />
 					</div>
 					<h1>2023-Winter</h1>
 					<p>

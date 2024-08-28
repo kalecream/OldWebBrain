@@ -189,6 +189,7 @@ const ColophonPage = () => {
 						<Link href="https://www.cursor.cc/?action=icon&file_id=213942">Devil's Red Hand from Cursor.cc</Link>
 					</li>
 					<li><Link href="https://www.youtube.com/watch?v=58U1zMUn8o0&t=188s">Vampire Killer Whip From Castlevania</Link> Blender3D Tutorial and <Link href="https://app.gumroad.com/d/913baa425c39ede0220692d5f019df29">downloadable 3D model link</Link></li>
+					<li><Link href="https://giphy.com/cryptorastas">Jamaican GIFs</Link>taken from @cryptorasts on Giphy.</li>
 				</ul>
 			</div>
 		</section>
