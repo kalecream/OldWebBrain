@@ -609,6 +609,32 @@ image {
 	border-radius: var(--borderRadius);
 }
 
+table {
+	border: 1px solid #dededf;
+    height: 100%;
+    // width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+	display: table;
+
+	& tr {
+		display: table-cell;
+	}
+
+	& tr td {
+		display: block;
+		// min-height: 50px;
+		align-items: center;
+	}
+
+	&  td {
+		border: var(--border);
+		padding: 5px;
+	}
+}
+
 .head3 {
 	margin-left: 10px;
 	list-style-type: circle;
