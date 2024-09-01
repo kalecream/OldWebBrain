@@ -8,16 +8,12 @@ export const sitemap = async () => {
 		priority: 0.5,
 	}));
 
-	console.log(PageRoutes)
-
 	let routes = PageRoutes.map((r) => ({
 		url: `https://sabrinamedwinter.com${r.route}`,
 		lastModified: r.date,
 		priority: r.priority
 		
 	}));
-
-	console.log(PageRoutes)
 
 	return [...routes, ...blogs];
 };
