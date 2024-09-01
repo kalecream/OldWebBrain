@@ -53,3 +53,8 @@ npx prisma migrate dev
 <a href="https://ko-fi.com/sabrinamedwinter">
 <img src="https://img.shields.io/badge/Kofi-FF5E5B.svg?style=for-the-badge&logo=Ko-fi&logoColor=white" />
 </a>
+
+### PR Todo list
+
+- [ ] Update sitemap
+- [ ] Test on mobile

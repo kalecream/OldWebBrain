@@ -30,7 +30,7 @@ export const Footer: React.FunctionComponent = () => {
 		<footer>
 			<div className="flex row" style={{flexWrap: 'wrap'}}>
 				<Link href={'/about'}>About</Link>
-				<Link href={'/sitemap.xml'}>Sitemap</Link>
+				<Link href={'/sitemap'}>Sitemap</Link>
 				<Link href={'/colophon'}>Colophon</Link>
 				<Link href={'https://github.com/kalecream/OldWebBrain'}>Source</Link>
 				<Link href={'/rolodex'}>Rolodex</Link>
