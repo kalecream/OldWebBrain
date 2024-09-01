@@ -1,4 +1,5 @@
 import { getBlogPosts } from '@app/db/blog';
+import { PageRoutes } from '@data/routes';
 
 export const sitemap = async () => {
 	let blogs = getBlogPosts().map((post) => ({
@@ -6,12 +7,12 @@ export const sitemap = async () => {
 		lastModified: post.metadata.update || post.metadata.date,
 	}));
 
-	let routes = ['/', '/blog', '/changelog', '/colophon', '/c25k', '/now', '/read', '/relationships', '/rolodex', '/services'].map((route) => ({
-		url: `https://sabrinamedwinter.com${route}`,
-		lastModified: new Date().toISOString().split('T')[0],
+	PageRoutes.map((route) => ({
+		url: `https://sabrinamedwinter.com${route.route}`,
+		lastModified: route.date,
 	}));
 
-	return [...routes, ...blogs];
+	return [...PageRoutes, ...blogs];
 };
 
 export default sitemap;
