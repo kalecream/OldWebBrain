@@ -38,7 +38,7 @@
 .cta {
 	@extend .section;
 	position: absolute;
-	
+	backdrop-filter: blur(12px);
 
 	.text {
 		padding: var(--paddingContainer);
@@ -56,15 +56,17 @@
 	}
 
 	@include breakpoint-range($from: mobile) {
-		backdrop-filter: blur(12px);
+		background: var(--backgroundColor);
 		border-radius: var(--borderRadius);
 		min-height: 100vh;
+		width: 100%;
 	}
 
 	@include breakpoint-range($from: desktop) {
-		min-height: 10vh;
 		bottom: 20%;
 		left: 12%;
+		background: transparent;
+		width: fit-content;
 	}
 }
 
@@ -83,11 +85,8 @@
 		}
 	}
 
-	@include breakpoint-range($from: desktopSmall, $to: desktopLarge) {
-		flex-direction: row;
-	}
-
 	@include breakpoint-range($from: desktopSmall) {
 		padding: 0.5rem 3rem;
+		flex-direction: row;
 	}
 }

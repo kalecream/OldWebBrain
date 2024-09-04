@@ -45,7 +45,7 @@ export const PageRoutes:PageRoutesProps[] = [
     },
     {
         route: '/colophon',
-        date: new Date(2024, 7, 31),
+        date: new Date(2024, 8, 4,12, 22),
         priority: 0.3,
 
     },
@@ -56,6 +56,12 @@ export const PageRoutes:PageRoutesProps[] = [
 
     },
     {
+        route: '/inktober',
+        date: new Date(2024, 8, 1, 2,7),
+        priority: 0.4,
+
+    },
+    {
         route: '/now',
         date: new Date(2024, 7, 31),
         priority: 0.4,
@@ -63,8 +69,8 @@ export const PageRoutes:PageRoutesProps[] = [
     },
     {
         route: '/professional',
-        date: new Date(2024, 7, 31),
-        priority: 0.4,
+        date: new Date(2024, 8, 4,5,13),
+        priority: 0.9,
 
     },
     {
@@ -110,13 +116,19 @@ export const PageRoutes:PageRoutesProps[] = [
 
     },
     {
-        route: '/relationships/skip',
-        date: new Date(2024, 7, 31),
+        route: '/skip',
+        date: new Date(2024, 8, 4,8,13),
         priority: 0.4,
 
     },
     {
-        route: '/relationships/sitemap',
+        route: '/sitemap',
+        date: new Date(2024, 8, 4, 4,7),
+        priority: 0.4,
+
+    },
+    {
+        route: '/swordtember',
         date: new Date(2024, 8, 1, 2,7),
         priority: 0.4,
 

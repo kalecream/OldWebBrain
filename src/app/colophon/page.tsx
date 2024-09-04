@@ -158,12 +158,13 @@ const ColophonPage = () => {
 						</Link>{' '}
 						found on a roleplaying forum discussing The Vampire Diaries/The Originals.
 					</li>
-					<li>
+					<li><s>
 						<Link href={'https://codepen.io/sosuke/pen/Pjoqqp'} target="_blank">
 							CSS Filter Generator
 						</Link>{' '}
-						to change colors from Black to a specific Hex. This is used to change the blog title when hovering (on
-						non-index pages.)
+						to change colors from Black to a specific Hex. This <i>was</i> used to change the blog title when hovering (on
+						non-index pages.) because the website title used to be an SVG.
+						</s>
 					</li>
 					<li>
 						<Link href="https://giphy.com/stickers/cat-halloween-this-is-peLhJa1fluELs1WCx9">
@@ -189,7 +190,8 @@ const ColophonPage = () => {
 						<Link href="https://www.cursor.cc/?action=icon&file_id=213942">Devil's Red Hand from Cursor.cc</Link>
 					</li>
 					<li><Link href="https://www.youtube.com/watch?v=58U1zMUn8o0&t=188s">Vampire Killer Whip From Castlevania</Link> Blender3D Tutorial and <Link href="https://app.gumroad.com/d/913baa425c39ede0220692d5f019df29">downloadable 3D model link</Link></li>
-					<li><Link href="https://giphy.com/cryptorastas">Jamaican GIFs</Link>taken from @cryptorasts on Giphy.</li>
+					<li><Link href="https://giphy.com/cryptorastas">Jamaican GIFs</Link> taken from @cryptorastas on Giphy.</li>
+					<li><Link href="https://codepen.io/simeydotme/pen/PrQKgo">Pokemon Holo Hover Cards</Link> and <Link href="https://codepen.io/markmiro/pen/wbqMPa">3D Card Hover Effect</Link> from Codepen.</li>
 				</ul>
 			</div>
 		</section>

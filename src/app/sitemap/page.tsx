@@ -39,7 +39,7 @@ const SitemapPage = () => {
 
 					<tr>
 						{PageRoutes.map((r, i=0) => (
-                            <td key={i + 1}>{r.date.toLocaleDateString()}</td>
+                            <td key={i + 1}>{r.date.toISOString()}</td>
 						))}
 					</tr>
 				</tbody>
