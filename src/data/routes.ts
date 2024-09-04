@@ -45,7 +45,7 @@ export const PageRoutes:PageRoutesProps[] = [
     },
     {
         route: '/colophon',
-        date: new Date(2024, 7, 31),
+        date: new Date(2024, 8, 4,12, 22),
         priority: 0.3,
 
     },
