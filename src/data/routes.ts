@@ -69,8 +69,8 @@ export const PageRoutes:PageRoutesProps[] = [
     },
     {
         route: '/professional',
-        date: new Date(2024, 8, 4),
-        priority: 0.4,
+        date: new Date(2024, 8, 4,5,13),
+        priority: 0.9,
 
     },
     {
@@ -117,13 +117,13 @@ export const PageRoutes:PageRoutesProps[] = [
     },
     {
         route: '/skip',
-        date: new Date(2024, 8, 4,4,30),
+        date: new Date(2024, 8, 4,8,13),
         priority: 0.4,
 
     },
     {
         route: '/sitemap',
-        date: new Date(2024, 8, 1, 2,7),
+        date: new Date(2024, 8, 4, 4,7),
         priority: 0.4,
 
     },
