@@ -59,18 +59,14 @@
 		background: var(--backgroundColor);
 		border-radius: var(--borderRadius);
 		min-height: 100vh;
-	}
-
-	@include breakpoint-range($from: tablet) { 
-		min-height: 10vh;
-		bottom: 25%;
-		left: 20%;
+		width: 100%;
 	}
 
 	@include breakpoint-range($from: desktop) {
 		bottom: 20%;
 		left: 12%;
 		background: transparent;
+		width: fit-content;
 	}
 }
 

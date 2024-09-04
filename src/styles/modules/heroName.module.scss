@@ -44,6 +44,10 @@
 		top: 75%;
 	}
 
+	@include breakpoint-range($from: tablet) {
+		top: 55%;
+	}
+
 	@include breakpoint-range($from: desktopSmall) {
 		top: 50%;
 	}
