@@ -46,8 +46,8 @@ const NowPage = () => {
 							Learning sewing to
 							<Link href="https://www.houseofsew.com/sewing-level/"> proficiency</Link>
 						</li>
-						<li>Learning beginner Jamaican Sign Language.</li>
-						<li><s>Finishing a neglected online course - FullStackOpen.</s></li>
+						<li><s>Learning beginner Jamaican Sign Language.</s></li>
+						<li>Finishing a neglected online course - FullStackOpen</li>
 					</ul>
 				</div>
 			</section>
@@ -80,7 +80,7 @@ const NowPage = () => {
 							<Link href="https://c25k.com/c25k_plan/">Couch to 5K challenge</Link>.
 						</li>
 						<li>
-							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
+							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a former muse.
 						</li>
 					</ul>
 				</div>
