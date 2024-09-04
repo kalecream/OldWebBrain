@@ -10,7 +10,7 @@ export const sitemap = async () => {
 
 	let routes = PageRoutes.map((r) => ({
 		url: `https://sabrinamedwinter.com${r.route}`,
-		lastModified: r.date,
+		lastModified: r.date.toISOString(),
 		priority: r.priority
 		
 	}));
