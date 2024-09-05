@@ -92,7 +92,7 @@ export const ServiceCard = () => {
 		<div className={style['card-container']}>
 			<Card id={1} href="/web-development" heading={`Web Development`} />
 			<Card id={2} href="/graphic-design" heading={`Graphic Design`} />
-			<Card id={3} href="/automation" heading={`Automation`} />
+			<Card id={3} href="/support" heading={`Support`} />
 		</div>
 	);
 };
