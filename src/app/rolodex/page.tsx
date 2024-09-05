@@ -1,6 +1,5 @@
-import style from '@styles/modules/Rolodex.module.scss';
-import styles from '@components/books/books.module.scss';
-import Link from 'next/link';
+import { InteractiveCard } from '@components/InteractiveCard';
+
 
 interface BookmarkProps {
 	url: string;
@@ -15,14 +14,14 @@ const Bookmarks: BookmarkProps[] = [
 		url: 'https://grimgrains.com/site/home.html',
 		title: 'Grim Grains',
 		description:
-			"A vegan cooking blog with cute illustrations. I've been thinking about blogging about exploring cooking and exploring making a fallback cookbook for myself in a similar format, but I don't want to be a copycat.",
+			"A vegan cooking blog with cute illustrations.",
 		tags: ['cooking', 'food'],
 		type: 'website',
 	},
 	{
 		title: 'Kill the Newsletter',
 		url: 'https://kill-the-newsletter.com/',
-		description: 'Convert email newsletters into RSS feeds',
+		description: 'Convert email newsletters into RSS.',
 		type: 'website',
 	},
 	{
@@ -30,7 +29,7 @@ const Bookmarks: BookmarkProps[] = [
 		title: 'Failure Resume',
 		tags: [''],
 		description:
-			'"A failure resume isn’t just a showcase of failure in and of itself, but also a document of all the spectacular ways you’ve worked hard towards your own goals and accomplishments. In many ways, it validates your struggle and your effort."',
+			'A  document of the ways you’ve worked hard towards your goals and accomplishments."',
 		type: 'article',
 	},
 	{
@@ -38,15 +37,8 @@ const Bookmarks: BookmarkProps[] = [
 		title: 'Personal Finance',
 		tags: [''],
 		description:
-			'I had been looking up ways persons were using Ledger. Instead I got a paradigm shift on how I was viewing my personal finances and a cool new blog to follow. I now use beancount, but I come back to this post every now and again. The calculations for short and long runaway (i.e. when we run out of money) are very helpful to consider .',
+			'A paradigm shift on how I was viewing my personal finances and a cool new blog to follow..',
 		type: 'webpage',
-	},
-	{
-		url: 'https://themeasureofaplan.com/budget-tracking-tool/',
-		title: 'The Measure of A Plan',
-		tags: ['money'],
-		description: 'A spreadsheet budgeting tool for people who need budgeting analytics, but not too much',
-		type: 'tool',
 	},
 	{
 		url: 'https://www.wilsonquarterly.com/quarterly/_/whats-the-best-way-to-die',
@@ -70,7 +62,7 @@ const Bookmarks: BookmarkProps[] = [
 	{
 		title: 'Dither Me This!',
 		url: 'https://doodad.dev/dither-me-this/',
-		description: 'Tool to reduce image sizes.',
+		description: '',
 		type: 'website',
 	},
 ];
@@ -87,20 +79,14 @@ const Rolodex = () => {
 				</p>
 			</section>
 			<section>
-				<div className={style.container + ` flex`}>
+				<div className={` flex`}>
 					{Bookmarks.map((bookmark) => (
-						<div className={style.link + ``}>
-							<Link
-								href={bookmark.url}
-								target="_blank"
-								key={bookmark.url}
-								className={style.link + `pancake-child `}
-								style={{ height: '450px' }}
-							>
-								<h2>{bookmark.title}</h2>
-								<p>{bookmark.description}</p>
-							</Link>
-						</div>
+						<InteractiveCard
+							link={bookmark.url}
+							heading={bookmark.title}
+							text={bookmark.description}
+							key={bookmark.url}
+						/>
 					))}
 				</div>
 			</section>
