@@ -3,11 +3,7 @@ const withMDX = require('@next/mdx')({
 	extension: /\.mdx?$/,
 	jsx: true,
 	options: {
-		remarkPlugins: [
-			[
-				
-			],
-		],
+		remarkPlugins: [[]],
 		recmaPlugins: [],
 	},
 });
