@@ -10,6 +10,7 @@ export const HeroModel = () => {
 		<Canvas
 			flat
 			shadows
+			id="hero-model"
 			dpr={[1, 2]}
 			camera={{ fov: 26, position: [-1.1872, -2.385, 45.981], rotation: [0.33907, -0.000024, -9.4405] }}
 			style={{
