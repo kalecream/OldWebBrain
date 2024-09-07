@@ -1,11 +1,12 @@
 'use client';
 import { FC, useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, Tooltip } from 'recharts';
+import Link from 'next/link';
 import Books from '@data/books';
 import { WindowWidth } from '@utils/windowDimmensions';
 import { GetMonthName } from '@utils/GetMonthName';
 import styles from './books.module.scss';
-import Link from 'next/link';
+
 export interface BooksProps {
 	title: string;
 	author: string[] | string;
@@ -126,114 +127,6 @@ const CustomerBarLabel: FC<any> = (props) => {
 		<text x={x + width / 2} y={y} fill="var(--primary)" fontSize="1.5rem" fontWeight={700} textAnchor="middle" dy={-6}>
 			{value}
 		</text>
-	);
-};
-
-export const extractGenres = () => {
-	const categoriesSet = new Set<string>();
-	Books.filter((book) => book.status == 'Read').forEach((b) => {
-		b.genre.map((g) => {
-			categoriesSet.add(g);
-		});
-	});
-	return Array.from(categoriesSet);
-};
-
-export const BookShelf: FC = () => {
-	const [activeCategory, setActiveCategory] = useState<string>('All');
-
-	const handleTabChange = (category: string) => {
-		setActiveCategory(category);
-	};
-
-	const categories = extractGenres();
-
-	const readBooks = Books.filter((book) => book.status === 'Read').sort(
-		(a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime(),
-	);
-	const wantToReadBooks = Books.filter((book) => book.status === 'Want').sort(
-		(a, b) => new Date(b.added).getTime() - new Date(a.added).getTime(),
-	);
-
-	const filteredBooks =
-		activeCategory === 'All'
-			? [...readBooks].sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime())
-			: readBooks
-					.filter((project) => project.genre.includes(activeCategory))
-					.sort((a, b) => new Date(b.finished).getTime() - new Date(a.finished).getTime());
-
-	return (
-		<div className="desktop flex">
-			<details open className={styles.bookDetails} id="want">
-				<summary>
-					<a>{wantToReadBooks.length} Books To Read</a>
-				</summary>
-				<div className="bookshelf flex">
-					{wantToReadBooks.map((book) => (
-						<Link
-							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							key={book.title}
-							className={styles.books}
-						>
-							<div className={styles.book}>
-								<img
-									src={book.cover}
-									alt={book.title}
-									title={book.summary}
-									style={{ width: '200px', height: '300px' }}
-								/>
-							</div>
-						</Link>
-					))}
-				</div>
-			</details>
-			<details open className={styles.bookDetails} id="read">
-				<summary>
-					<a className="read-books-title">{readBooks.length} Read Books</a>
-				</summary>
-				<div className={`flex items-center ` + styles['project-tabs']}>
-					<button
-						className={`${styles['project-tab'] + ` glassmorphic`} ${activeCategory === 'All' ? styles['active'] : ''}`}
-						onClick={() => handleTabChange('All')}
-					>
-						All
-					</button>
-					{categories.map((category) => (
-						<button
-							key={category}
-							className={`${styles['project-tab'] + ` glassmorphic`} ${
-								activeCategory === category ? styles['active'] : ''
-							}`}
-							onClick={() => handleTabChange(category)}
-						>
-							{category}
-						</button>
-					))}
-				</div>
-				<div className="bookshelf pancake">
-					{filteredBooks.map((book) => (
-						<Link
-							href={`https://www.duckduckgo.com/search?q=${book.title}+${book.author}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							key={book.title}
-							className={styles.books}
-						>
-							<div className={styles.book} style={{ margin: '0', padding: '0' }}>
-								<img
-									src={book.cover}
-									alt={book.title}
-									title={book.summary}
-									style={{ width: '200px', height: '300px' }}
-								/>
-							</div>
-						</Link>
-					))}
-				</div>
-			</details>
-		</div>
 	);
 };
 

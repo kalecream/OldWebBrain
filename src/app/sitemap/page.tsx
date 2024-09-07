@@ -10,14 +10,6 @@ const SitemapPage = () => {
 			<h1>Human Readable Sitemap</h1>
 			<p className="prose">This table shows all the pages in this website by last modified time.</p>
 			<table>
-				{/* <thead>
-                    <tr>
-                        <th>#</th>
-						<th>Route</th>
-						<th>Description</th>
-						<th>Last Modified</th>
-					</tr>
-				</thead> */}
 				<tbody>
 					<tr>
 						{pages.map((r, i = 1) => (

@@ -16,7 +16,7 @@ const Reads = ({ status, limit }: { status: string; limit?: number }) => {
 						.filter((book) => book.status == status)
 						.slice(0, limit)
 						.map((book) => {
-							let searchURL = `https://www.duckduckgo.com/?q=${book.title}+${book.author}`;
+							let searchURL = `https://www.duckduckgo.com/?hps=1&q=${book.title}+${book.author}`;
 							return (
 								<Link
 									title={book.title}

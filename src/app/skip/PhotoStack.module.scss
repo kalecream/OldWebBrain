@@ -1,0 +1,56 @@
+.photoContainer {
+	position: relative;
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: tablet, $to: desktopLarge) {
+		top: 60%;
+		left: -35%;
+		max-width: 800px;
+		margin-right: 2rem;
+	}
+}
+
+.picture {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 5px solid var(--borderColor);
+	border-radius: ar(--borderRadius);
+	background: var(--backgroundColor);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+	transform: translate(-50%, -50%);
+	user-select: none;
+	cursor: pointer;
+
+	& img {
+		display: block;
+		width: 200px;
+		pointer-events: none;
+	}
+
+	& span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 200px;
+		height: 50px;
+		padding: 12px 24px;
+		font-size: 1rem;
+		text-align: center;
+		font-family: 'Caveat', 'Inter', sans-serif;
+		overflow: hidden;
+		line-height: 1;
+	}
+
+	@include breakpoint-range($from: mobile) {
+		display: none;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: block;
+	}
+}

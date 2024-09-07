@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './books.module.scss';
@@ -27,7 +28,7 @@ const AlbumCaptions = [
 	'My fave stray had a kitten!',
 ];
 
-const PhotoGalley = () => {
+const PhotoStack = () => {
 	const picturesRef = useRef<NodeListOf<Element> | null>(null);
 	const emojis = ['💖', '💎', '👑', '🌈', '🌵', '🌿', '🍃', '🍊', '🍋', '🍑', '🍒', '🎀', '✨', '💀'];
 
@@ -125,4 +126,4 @@ const PhotoGalley = () => {
 	);
 };
 
-export default PhotoGalley;
+export default PhotoStack;

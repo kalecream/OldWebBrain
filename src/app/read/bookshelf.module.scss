@@ -1,0 +1,78 @@
+@import '@styles/mediaQuery';
+
+.bookDetails {
+	display: grid;
+	margin: 1rem auto;
+    align-items: center;
+    justify-content: center;
+
+	// &[open] > summary::before {
+	// 	content: '📖';
+	// 	transform: rotate(25deg);
+	// }
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		width: 90%;
+		border: var(--border);
+		border-radius: var(--borderRadius);
+	}
+
+	@include breakpoint-range($from: tablet) {
+		width: 100%;
+	}
+}
+
+.bookDetails summary {
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+	text-transform: capitalize;
+    margin: 1rem;
+    display: inline-table;
+
+	// &::before {
+	// 	content: '📕'; // 📕 📗 📘 📙 📔 📓 📒 📚 📖
+	// 	position: absolute;
+	// 	left: 8px;
+	// 	transform: rotate(0deg);
+	// 	transition: transform 0.3s ease;
+	// }
+
+    & h1 {
+        line-height: 1;
+        font-size: 2rem;
+    }
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		margin: 0 0.15rem;
+		padding: 1rem;
+	}
+
+	@include breakpoint-range($from: tablet) {
+		margin: 0 2rem;
+		padding: 1rem;
+	}
+}
+
+.book-tabs {
+	margin: 1rem auto;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.book-tab {
+	font-size: 0.7rem;
+	padding: var(--paddingObject);
+	border-radius: var(--borderRadius);
+	outline: none;
+	border: var(--border);
+	color: var(--primary);
+	background-color: transparent;
+	text-transform: capitalize;
+}
+
+.book-tab:active,
+.book-tab:hover {
+	background-color: var(--primary);
+	color: var(--backgroundColor);
+}

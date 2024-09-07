@@ -1,4 +1,4 @@
-import { BookShelf } from '@components/books/backlogGraph';
+import { BookShelf } from './BookShelf';
 
 const Read = () => {
 	return (

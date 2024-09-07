@@ -2,17 +2,14 @@
 import { useEffect, useState } from 'react';
 import Books from '@data/books';
 import Pods from '@data/pod';
-import Reads from '@components/books/Reads';
-import { BacklogGraph, RandomBooks } from '@components/books/backlogGraph';
-// import PhotoGalley from '@components/books/gallery';
-import styles from '@components/books/books.module.scss';
-import button from '@styles/modules/Button.module.scss';
-// import { CodersrankSummary } from '@components/books/CodersRank';
+import Reads from '@app/about/Reads';
+import { BacklogGraph} from './backlogGraph';
+import styles from './books.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import pic from '@public/img/album/river.jpg';
 import { ScrollDown } from '@components/scrollDown';
-import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
+import { CodersrankSummary } from './CodersRank';
 
 export const About = () => {
 	const [Percentage, setPercentage] = useState([0, 0]);
@@ -61,22 +58,20 @@ export const About = () => {
 	return (
 		<section>
 			<section style={{ marginBottom: '3rem', marginTop: 0, paddingTop: 0 }}>
-				{/* <PhotoGalley /> */}
-				{/* TODO: Fix photogallery on about */}
+				
 				<div className="flex column center">
 					<div className="frame">
 						<Image src={pic} alt="" height={200} width={350} style={{ margin: 'auto', borderRadius: 0 }} />
 					</div>
-					<p className="prose ">
+					<p className="prose">
 						This about page was made because showing you my personality through the things I enjoy is personally
 						preferable to making a biography. I've always disliked being asked "tell me a bit about yourself" in
 						personal environments.
 					</p>
-					<p className="prose ">
+					<p className="prose" style={{margin: '-1rem 0'}}>
 						I have the standard set of outputs from personality tests, but for the longest time, I
-						struggled to figure out who I was. I thought there must be an ideal "me" outside of my usual environment
-						(which I felt was stifling.) The mundane truth turned out to be: <b>I am what I show up and do every day.</b>{' '}
-						Nothing more, nothing less. This page is still under construction. Here is what I do every day...
+						struggled to figure out who I was. The mundane truth turned out to be: <b>I am what I show up and do every day.</b>{' '}
+						Nothing more, nothing less. Here is what I do every day...
 					</p>
 					<ScrollDown />
 				</div>
@@ -123,13 +118,11 @@ export const About = () => {
 				</p>
 				<Reads status="Reading" />
 				<p className="prose ">
-					The graph below is my book status backlog for the past rolling year. The read signifies books I've started to read in the labelled month and brown is for books I've finished. This graph ignores books from before then to
+					The graph below is my book status backlog for the past rolling year. This graph ignores books from before then to
 					ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
 					Non-Fiction.
 				</p>
 				<BacklogGraph />
-				{/* <p className="prose ">Here is a random review from a book I've read. I don't normally do a write-up so I must have really liked/hated/found the book functional.</p>
-				<RandomBooks /> */}
 			</section>
 
 			<section className={styles.paragraph} id="podcasts">
@@ -141,7 +134,7 @@ export const About = () => {
 					</p>
 					<div className="flex row">
 						{Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
-							<div className="">
+							<div key={p.url}>
 								{p.url ? (
 									<Link href={p.url}>
 										<Image
@@ -161,7 +154,6 @@ export const About = () => {
 					</div>
 				</div>
 			</section>
-
 			<section className={styles.paragraph} id="games">
 				<div>
 					<h1 className="text-center">Occasionally, I play Games...</h1>
@@ -245,10 +237,11 @@ export const About = () => {
 					</div>
 				</div>
 			</section>
-			<p>Say hello to my pet!</p>
-			<iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Nox&dob=1724664598&gender=f&element=Earth&pet=cat.gif&map=night.gif&background=paper.jpg&tablecolor=black&textcolor=black" frameBorder="0"></iframe>
-
-			
+			<section className={styles.paragraph} id="code">
+				<h1 className="text-center">I code...</h1>
+				<CodersrankSummary />
+				<p className="prose">Data from <Link href="https://profile.codersrank.io/user/kalecream">CodersRank.io</Link> </p>
+			</section>
 		</section>
 	);
 };

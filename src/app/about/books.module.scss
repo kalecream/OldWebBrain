@@ -16,8 +16,6 @@
 	}
 }
 
-// CurrentReads
-
 .reading,
 .random {
 	display: flex;
@@ -95,10 +93,6 @@
 	margin: 0;
 
 	@include breakpoint-range($from: mobile) {
-		display: none;
-	}
-
-	@include breakpoint-range($from: mobile) {
 		display: flex;
 	}
 }
@@ -111,7 +105,7 @@
 	transform-style: preserve-3d;
 	transform: rotateY(-30deg);
 	transition: 1s ease;
-	animation: 1s ease 0s 1 initAnimation;
+	animation: 1s ease 0s 1 bookRotation;
 	scale: 0.6;
 
 	img {
@@ -194,59 +188,13 @@
 	}
 }
 
-@keyframes initAnimation {
+@keyframes bookRotation {
 	0% {
 		transform: rotateY(0deg);
 	}
 
 	100% {
 		transform: rotateY(-30deg);
-	}
-}
-
-.bookDetails {
-	display: block;
-	width: 90%;
-	margin: 1rem auto;
-
-	&[open] > summary::before {
-		content: '📖';
-		transform: rotate(25deg);
-	}
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		width: 90%;
-		border: var(--border);
-		border-radius: var(--borderRadius);
-	}
-
-	@include breakpoint-range($from: tablet) {
-		width: 100%;
-	}
-}
-
-.bookDetails summary {
-	position: relative;
-	cursor: pointer;
-	user-select: none;
-	text-transform: capitalize;
-
-	&::before {
-		content: '📕'; // 📕 📗 📘 📙 📔 📓 📒 📚 📖
-		position: absolute;
-		left: 8px;
-		transform: rotate(0deg);
-		transition: transform 0.3s ease;
-	}
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		margin: 0 0.15rem;
-		padding: 1rem;
-	}
-
-	@include breakpoint-range($from: tablet) {
-		margin: 0 2rem;
-		padding: 1rem;
 	}
 }
 
@@ -258,65 +206,6 @@
 
 	& a {
 		font-size: 1rem;
-	}
-}
-
-// PhotoGallery
-
-.photoContainer {
-	position: relative;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		display: none;
-	}
-
-	@include breakpoint-range($from: tablet, $to: desktopLarge) {
-		top: 60%;
-		left: -35%;
-		max-width: 800px;
-		margin-right: 2rem;
-	}
-}
-
-.picture {
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: 5px solid var(--borderColor);
-	border-radius: ar(--borderRadius);
-	background: var(--backgroundColor);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-	transform: translate(-50%, -50%);
-	user-select: none;
-	cursor: pointer;
-
-	& img {
-		display: block;
-		width: 200px;
-		pointer-events: none;
-	}
-
-	& span {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 200px;
-		height: 50px;
-		padding: 12px 24px;
-		font-size: 1rem;
-		text-align: center;
-		font-family: 'Caveat', 'Inter', sans-serif;
-		overflow: hidden;
-		line-height: 1;
-	}
-
-	@include breakpoint-range($from: mobile) {
-		display: none;
-	}
-
-	@include breakpoint-range($from: desktopSmall) {
-		display: block;
 	}
 }
 
@@ -373,14 +262,6 @@
 	font-size: 1.1rem;
 }
 
-// .book__quote::before {
-// 	content: '“ ';
-// }
-
-// .book__quote::after {
-// 	content: ' ”';
-// }
-
 .book__quote::before,
 .book__quote::after {
 	color: var(--textColorFade);
@@ -401,73 +282,6 @@
 	line-height: 0;
 }
 
-.coding__container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-
-	@include breakpoint-range($from: mobile) {
-		margin: 1rem auto;
-	}
-
-	@include breakpoint-range($from: tablet) {
-		margin: 2rem auto;
-	}
-
-	@include breakpoint-range($from: desktop) {
-		padding: var(--paddingContainer);
-		gap: 0.15rem;
-	}
-
-}
-
-.coding {
-	border: var(--border);
-	border-radius: var(--borderRadius);
-	padding: 1rem;
-	box-shadow: var(--boxShadow);
-	text-align: center;
-	background-color: var(--backgroundColor);
-
-	& p {
-		margin-bottom: 1rem;
-		text-align: center;
-	}
-
-	@include breakpoint-range($from: mobile) {
-		margin: 0.25rem;
-		width: clamp(100px, 40%, 150px);
-		min-height: 150px;
-	}
-
-	@include breakpoint-range($from: desktopSmall) {
-		margin: 1rem;
-	}
-}
-
-.code__language {
-	font-size: 1.2rem;
-	color: var(--primary);
-	font-weight: 500;
-}
-
-.code__rank {
-
-	line-height: 1;
-	font-size: 0.75rem;
-	font-weight: 500;
-	color: var(--textColorFade);
-
-}
-
-.code__placement {
-	font-size: 1rem;
-	font-weight: 500;
-	color: var(--textColor);
-	;
-}
-
 .backlogChart {
 	margin: 1rem auto;
 
@@ -476,30 +290,3 @@
 		margin: 3rem auto;
 	}
 }
-// ==========================
-
-
-.project-tabs {
-	margin: 0 auto;
-	padding-bottom: var(--paddingObjectSmall);
-	display: flex;
-	gap: 0.5rem;
-}
-
-.project-tab {
-	font-size: 0.7rem;
-	padding: var(--paddingObject);
-	border-radius: var(--borderRadius);
-	outline: none;
-	border: var(--border);
-	color: var(--primary);
-	background-color: transparent;
-	text-transform: capitalize;
-}
-
-.project-tab:active,
-.project-tab:hover {
-	background-color: var(--primary);
-	color: var(--backgroundColor);
-}
-

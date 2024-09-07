@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaGlobeAmericas } from 'react-icons/fa';
-import styles from '@components/books/books.module.scss';
-import Skeleton from 'react-loading-skeleton';
+import styles from './CodersRank.module.scss';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 // interface CoderLanguage {
@@ -29,6 +28,7 @@ export const CodersrankSummary = () => {
 		'TSQL',
 		'JSON',
 		'HTML',
+		'SQL',
 	];
 
 	useEffect(() => {
@@ -47,12 +47,7 @@ export const CodersrankSummary = () => {
 					(language) =>
 						!IgnoreList.includes(language) && (
 							<div className={styles.coding} key={language}>
-								<p className={styles.code__language}>
-									{/* TODO: Fix language image */}
-									{/* <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${language}/${language}-original.svg`} />{' '} */}
-									{language}
-									{/* TODO: Add technologies */}
-								</p>
+								<p className={styles.code__language}>{language}</p>
 								<div className={styles.code__rank}>
 									<FaGlobeAmericas />
 									<span className={styles.code__placement}>
@@ -84,14 +79,6 @@ export const CodersrankSummary = () => {
 							</div>
 						),
 				)}
-			{!CodersRankData && (
-				<div className={styles.coding}>
-					<Skeleton height={50} width={50} />
-					<Skeleton height={50} width={50} />
-					<Skeleton height={50} width={50} />
-					<Skeleton height={50} width={50} />
-				</div>
-			)}
 		</div>
 	);
 };
