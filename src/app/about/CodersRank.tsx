@@ -46,7 +46,7 @@ export const CodersrankSummary = () => {
 				Object.keys(CodersRankData).map(
 					(language) =>
 						!IgnoreList.includes(language) && (
-							<div className={styles.coding} key={language}>
+							<div className={styles.coding + ` outerglow`} key={language}>
 								<p className={styles.code__language}>{language}</p>
 								<div className={styles.code__rank}>
 									<FaGlobeAmericas />

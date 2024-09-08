@@ -204,7 +204,7 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 5;
-	backdrop-filter: blur(20px);
+	backdrop-filter: blur(5px);
 
 	& > nav {
 		width: 100%;
@@ -236,7 +236,7 @@ footer {
 	margin-top: 2rem;
 
 	& * > div {
-		padding: 2rem 0;
+		padding: 1rem 0;
 	}
 
 	@include breakpoint-range($from: mobile) {
@@ -256,7 +256,6 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	backdrop-filter: blur(10px);
 
 	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;

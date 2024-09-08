@@ -41,7 +41,7 @@
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		margin: 1rem;
+		margin: 0.5rem;
 	}
 }
 

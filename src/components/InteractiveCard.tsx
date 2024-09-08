@@ -87,7 +87,7 @@ const Card = ({ href, heading, text }) => {
 			<div ref={glowRef} className={style.glow}>
 				<div className={style['card-content']} style={{maxWidth: '15rem'}}>
 					<h1 style={{ fontSize: '2.8rem', wordSpacing: 0, textAlign: 'center', lineHeight: '1.1', fontFamily: 'Cattedrale Rough' }}>{heading}</h1>
-					<p style={{ color: 'var(--backgroundColor)', fontSize: '1rem' }}>{text}</p>
+					<p style={{ color: 'var(--backgroundColor)', fontSize: '1.1rem' }}>{text}</p>
 				</div>
 			</div>
 		</Link>

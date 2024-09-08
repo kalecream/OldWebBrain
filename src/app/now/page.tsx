@@ -41,13 +41,17 @@ const NowPage = () => {
 					<hr />
 					<ul>
 						<li> Getting an Amateur Radio licence.</li>
-						<li><s>Calisthenics foundations</s></li>
+						<li>
+							<s>Calisthenics foundations</s>
+						</li>
 						<li>
 							Learning sewing to
 							<Link href="https://www.houseofsew.com/sewing-level/"> proficiency</Link>
 						</li>
-						<li><s>Learning beginner Jamaican Sign Language.</s></li>
-						<li>Finishing a neglected online course - FullStackOpen</li>
+						<li>
+							<s>Learning beginner Jamaican Sign Language.</s>
+						</li>
+						{/* <li>Finishing a neglected online course - FullStackOpen</li> */}
 					</ul>
 				</div>
 			</section>
@@ -73,14 +77,20 @@ const NowPage = () => {
 					<hr />
 					<ul>
 						<li>
-							Continuing my <Link href={'/relationships'}>guide on the relationships</Link> I have with myself, family, friends, romantic interests and others.
+							Continuing my guide on the{' '}
+							<Link href={'/relationships'} className="internal-link">
+								relationships
+							</Link>{' '}
+							I have with myself, family, friends, romantic interests and others.
+						</li>
+						<li>Starting  {' '}
+							<Link href="/c25k" className="internal-link">
+								C25K
+							</Link>
+							.
 						</li>
 						<li>
-							<Link href="/c25k">Advancing</Link> in the{' '}
-							<Link href="https://c25k.com/c25k_plan/">Couch to 5K challenge</Link>.
-						</li>
-						<li>
-							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a former muse.
+							Creating a <Link href="https://www.gbstudio.dev/">GBStudio</Link> game as a love letter to a muse.
 						</li>
 					</ul>
 				</div>
@@ -98,15 +108,8 @@ const NowPage = () => {
 					</p>
 					<div className="flex my-1">
 						<div className="flex">
-							<Link href="https://decolonizepalestine.com/">
-								<Image
-									src={PalestineGraphic}
-									alt="From the river to the sea, Palestine will be the free."
-									width={88}
-									height={44}
-									style={{ borderRadius: 0, scale: '0.9' }}
-									unoptimized
-								/>
+							<Link href="https://decolonizepalestine.com/" style={{color: '--var(--secondary)'}}>
+							From the river to the sea, Palestine will be the free.
 							</Link>
 						</div>
 					</div>

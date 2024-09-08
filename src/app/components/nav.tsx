@@ -7,7 +7,8 @@ import { FaRss } from 'react-icons/fa6';
 
 export function Navbar() {
 	const path = usePathname();
-
+	console.log(path);
+	console.log('test');
 	return (
 		<header id="header" className={path && path == '/' ? `` : `glassmorphic`}>
 			<nav id="nav">
@@ -25,7 +26,7 @@ export function Navbar() {
 								<Link
 									className={style['directory-link']}
 									href={directory.links}
-									style={path == directory.title ? { color: 'var(--secondary)' } : { color: 'var(--primary)' }}
+									style={path == directory.title ? { textDecoration: 'underline' } : { textDecoration: 'none'  }}
 								>
 									{directory.title}
 								</Link>

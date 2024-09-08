@@ -73,10 +73,6 @@ const Rolodex = () => {
 			<section id="rolodex">
 				<h1>Rolodex</h1>
 				<p className="prose">These are some bookmarks for pages & media I've enjoyed on the net.</p>
-				<p className="prose">
-					In the future when I have areas for this site similar to how I map out my life, the links will be moved to
-					respective sectors.
-				</p>
 			</section>
 			<section>
 				<div className={` flex`}>
