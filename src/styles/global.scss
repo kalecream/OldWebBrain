@@ -746,10 +746,12 @@ kbd::after,
 }
 
 .flex {
+	width: 100%;
+	padding: 1rem;
 	display: flex;
 	place-items: center;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: 0.5rem;
 	margin: auto;
 	justify-content: center;
 }
