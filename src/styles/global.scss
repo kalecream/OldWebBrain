@@ -192,8 +192,8 @@ body {
 	height: 100vh;
 	background-color: var(--backgroundColor);
 	color: var(--primary);
-	background-image: var(--backgroundImage);
-	background-repeat: repeat;
+	// background-image: var(--backgroundImage);
+	// background-repeat: repeat;
 }
 
 main {
@@ -227,7 +227,6 @@ header {
 
 footer {
 	bottom: 0;
-	position: fixed;
 	width: 100%;
 	font-size: 0.8rem;
 	background-color: var(--backgroundColor);
@@ -747,7 +746,6 @@ kbd::after,
 
 .flex {
 	width: 100%;
-	padding: 1rem;
 	display: flex;
 	place-items: center;
 	flex-wrap: wrap;

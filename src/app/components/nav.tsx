@@ -22,21 +22,25 @@ export function Navbar() {
 					{Directory.length > 0 &&
 						Directory.map((directory, index) => (
 							<div className={style['directory-list']} key={index}>
-								<Link className={style['directory-link']} href={directory.links}>
+								<Link
+									className={style['directory-link']}
+									href={directory.links}
+									style={path == directory.title ? { color: 'var(--secondary)' } : { color: 'var(--primary)' }}
+								>
 									{directory.title}
 								</Link>
 							</div>
 						))}
 					<div>
-					<Link
-						href={'/feed.xml'}
-						aria-label="social media link"
-						className={style['social-media'] + ` `}
-						target="_blank"
-						rel="me"
-					>
-						<FaRss />
-					</Link>
+						<Link
+							href={'/feed.xml'}
+							aria-label="social media link"
+							className={style['social-media'] + ` `}
+							target="_blank"
+							rel="me"
+						>
+							<FaRss />
+						</Link>
 					</div>
 				</div>
 			</nav>

@@ -25,7 +25,7 @@ export const SocialMediaList = () => {
 	);
 };
 
-export const Footer: React.FunctionComponent = () => {
+export const Footer: React.FC = () => {
 	return (
 		<footer>
 			<div className="flex row" style={{flexWrap: 'wrap'}}>
