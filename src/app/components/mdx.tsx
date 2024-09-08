@@ -118,9 +118,9 @@ const Code = async ({ children, lang = 'javascript', theme = 'nord', filename = 
 	let codeHTML = await codeToHtml(children, { lang, theme });
 	return (
 		<div className='code'>
-			<div className='filename'>
+			{/* <div className='filename'>
 				{filename && <caption>{filename}</caption>}
-			</div>
+			</div> */}
 			<code dangerouslySetInnerHTML={{ __html: codeHTML }} />
 		</div>
 	);

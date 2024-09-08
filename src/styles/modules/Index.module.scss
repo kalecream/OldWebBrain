@@ -38,7 +38,7 @@
 .cta {
 	@extend .section;
 	position: absolute;
-	backdrop-filter: blur(12px);
+	
 
 	.text {
 		padding: var(--paddingContainer);
@@ -56,26 +56,27 @@
 	}
 
 	@include breakpoint-range($from: mobile) {
+		bottom: 0;
+		left: 0;
 		background: var(--backgroundColor);
 		border-radius: var(--borderRadius);
 		min-height: 100%;
 		width: 100%;
 	}
 
-	@include breakpoint-range($from: mobile) {
-		bottom: 0;
-		left: 0;
+	@include breakpoint-range($from: tablet) {
+		bottom: 1%;
+		left: 20%;
 		background: var(--backgroundColor);
-		min-height: 80%;
-		width: 100%;
+		width: fit-content;
+		min-height: 70%;
+		
 	}
 
-	@include breakpoint-range($from: desktop) {
+	@include breakpoint-range($from: desktopSmall) {
 		bottom: 20%;
 		left: 12%;
-		background: transparent;
 		min-height: 10%;
-		width: fit-content;
 	}
 }
 

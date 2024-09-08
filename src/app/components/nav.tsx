@@ -7,7 +7,8 @@ import { FaRss } from 'react-icons/fa6';
 
 export function Navbar() {
 	const path = usePathname();
-
+	console.log(path);
+	console.log('test');
 	return (
 		<header id="header" className={path && path == '/' ? `` : `glassmorphic`}>
 			<nav id="nav">
@@ -22,21 +23,25 @@ export function Navbar() {
 					{Directory.length > 0 &&
 						Directory.map((directory, index) => (
 							<div className={style['directory-list']} key={index}>
-								<Link className={style['directory-link']} href={directory.links}>
+								<Link
+									className={style['directory-link']}
+									href={directory.links}
+									style={path == directory.title ? { textDecoration: 'underline' } : { textDecoration: 'none'  }}
+								>
 									{directory.title}
 								</Link>
 							</div>
 						))}
 					<div>
-					<Link
-						href={'/feed.xml'}
-						aria-label="social media link"
-						className={style['social-media'] + ` `}
-						target="_blank"
-						rel="me"
-					>
-						<FaRss />
-					</Link>
+						<Link
+							href={'/feed.xml'}
+							aria-label="social media link"
+							className={style['social-media'] + ` `}
+							target="_blank"
+							rel="me"
+						>
+							<FaRss />
+						</Link>
 					</div>
 				</div>
 			</nav>
