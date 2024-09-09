@@ -1,9 +1,11 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import style from '@styles/modules/nav.module.scss';
 import { usePathname } from 'next/navigation';
 import Directory from '@data/directory';
 import { FaRss } from 'react-icons/fa6';
+import SiteImage from '@public/og_logo.png';
 
 export function Navbar() {
 	const path = usePathname();
@@ -14,8 +16,9 @@ export function Navbar() {
 			<nav id="nav">
 				{path && path !== '/' && (
 					<>
-						<Link href="/">
-							<span className={style['site-name']}></span>
+						<Link href="/" className={style['site-name']}>
+							{/* <span className={style['site-name']}></span> */}
+							<Image src={SiteImage} alt="logo" width={90} height={90} style={{marginTop: '1rem'}} />
 						</Link>
 					</>
 				)}
@@ -26,7 +29,7 @@ export function Navbar() {
 								<Link
 									className={style['directory-link']}
 									href={directory.links}
-									style={path == directory.title ? { textDecoration: 'underline' } : { textDecoration: 'none'  }}
+									style={path === directory.title ? { textDecoration: 'underline' } : { textDecoration: 'none'  }}
 								>
 									{directory.title}
 								</Link>
