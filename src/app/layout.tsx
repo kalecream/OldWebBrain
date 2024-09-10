@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 	},
 	description:
 		'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
-	keywords:
-		'Web Developer, Frontend Developer, Creative Developer, React Developer, 3D Develper',
+	keywords: 'Web Developer, Frontend Developer, Creative Developer, React Developer, 3D Develper',
 	openGraph: {
 		title: 'Sab Medwinter',
 		description:
@@ -57,14 +56,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body>
+				<Navbar />
 				<main>
-					<Navbar />
 					{children}
 					<Analytics />
 					<SpeedInsights />
 					<BackToTop />
-					<Footer />
 				</main>
+				<Footer />
 			</body>
 		</html>
 	);
