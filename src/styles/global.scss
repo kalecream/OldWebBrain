@@ -189,7 +189,7 @@ html {
 }
 
 body {
-	height: 100vh;
+	min-height: 100vh;
 	background-color: var(--backgroundColor);
 	color: var(--primary);
 	// background-image: var(--backgroundImage);
@@ -198,6 +198,7 @@ body {
 
 main {
 	margin: 0 auto;
+	min-height: 85vh;
 }
 
 header {
@@ -233,10 +234,9 @@ footer {
 	align-items: center;
 	text-transform: uppercase;
 	display: flex;
-	margin-top: 2rem;
 
 	& * > div {
-		padding: 1rem 0;
+		padding: 0.5rem 0;
 	}
 
 	@include breakpoint-range($from: mobile) {
@@ -256,6 +256,7 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 3rem;
 
 	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
@@ -269,7 +270,6 @@ section {
 	@include breakpoint-range($from: desktopSmall) {
 		padding: 0;
 		margin: 0;
-		margin-bottom: 3rem;
 	}
 }
 

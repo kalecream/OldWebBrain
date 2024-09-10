@@ -192,6 +192,7 @@ const ColophonPage = () => {
 					<li><Link href="https://www.youtube.com/watch?v=58U1zMUn8o0&t=188s">Vampire Killer Whip From Castlevania</Link> Blender3D Tutorial and <Link href="https://app.gumroad.com/d/913baa425c39ede0220692d5f019df29">downloadable 3D model link</Link></li>
 					<li><Link href="https://giphy.com/cryptorastas">Jamaican GIFs</Link> taken from @cryptorastas on Giphy.</li>
 					<li><Link href="https://codepen.io/simeydotme/pen/PrQKgo">Pokemon Holo Hover Cards</Link> and <Link href="https://codepen.io/markmiro/pen/wbqMPa">3D Card Hover Effect</Link> from Codepen.</li>
+					<li><Link href="https://giphy.com/stickers/vampire-milk-juice-1xSVq3jCyrYICv5XuC">Vampire Goth Sticker</Link>from GIPHY for 404 page.</li>
 				</ul>
 			</div>
 		</section>

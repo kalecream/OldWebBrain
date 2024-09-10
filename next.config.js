@@ -27,6 +27,7 @@ const nextConfig = {
 			{ hostname: 'source.unsplash.com' },
 			{ hostname: 'i.imgur.com' },
 			{ hostname: 'imgur.com' },
+			{ hostname: 'media1.giphy.com' },
 		],
 	},
 	sassOptions: {
