@@ -29,10 +29,10 @@ export const SceneViewer = () => {
 				/>
 			</Suspense>
 			<EffectComposer>
-				<ChromaticAberration
+				{/* <ChromaticAberration
 					blendFunction={BlendFunction.NORMAL} // blend mode
 					offset={[0.0002, 0.000005]} // color offset
-				/>
+				/> */}
 				<Noise premultiply />
 				<Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={0.1} />
 			</EffectComposer>
