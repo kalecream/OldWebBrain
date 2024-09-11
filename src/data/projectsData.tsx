@@ -61,7 +61,7 @@ export const Projects: ProjectStructure[] = [
 	{
 		id: '003',
 		display: true,
-		title: 'Kalecream Website',
+		title: 'This Website',
 		category: 'code',
 		type: 'website',
 		image: '/img/project/003.png',
@@ -69,7 +69,7 @@ export const Projects: ProjectStructure[] = [
 		description: (
 			<span>
 				I've rebuilt the website many different times in; plain HTML, Javascript and CSS combination, Wordpress, and now
-				in React Typescript on NextJS. You're on it right now.
+				in React Typescript on NextJS.
 			</span>
 		),
 		repoName: 'OldWebBrain',
@@ -189,19 +189,6 @@ export const Projects: ProjectStructure[] = [
 		description: <span>A practice render I made for the idea of a new queen coming onto a chess board.</span>,
 		technology: ['Blender3D'],
 		language: null,
-		created: '2022-11-12',
-	},
-	{
-		id: '014',
-		display: true,
-		title: 'Donut',
-		category: 'illustration',
-		type: 'practice',
-		image: '/img/project/014.webp',
-		status: 'completed',
-		description: <span>I wanted to do the infamous beginner donut again, but ended up doing a breakfast scene.</span>,
-		language: null,
-		technology: ['Blender3D'],
 		created: '2022-11-12',
 	},
 	{

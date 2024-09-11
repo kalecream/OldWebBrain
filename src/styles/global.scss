@@ -228,12 +228,14 @@ header {
 
 footer {
 	bottom: 0;
+	position: fixed;
 	width: 100%;
-	font-size: 0.8rem;
-	background-color: var(--backgroundColor);
+	font-size: 0.7rem;
 	align-items: center;
 	text-transform: uppercase;
 	display: flex;
+	backdrop-filter: blur(5px);
+	z-index: 5;
 
 	& * > div {
 		padding: 0.5rem 0;
