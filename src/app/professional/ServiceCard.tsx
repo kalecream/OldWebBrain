@@ -90,7 +90,7 @@ const Card = ({ id, href, heading }) => {
 export const ServiceCard = () => {
 	return (
 		<div className={style['card-container']}>
-			<Card id={1} href="professional/web-development" heading={`Development`} />
+			<Card id={1} href="professional/web-development" heading={`Develop`} />
 			<Card id={2} href="professional/graphic-design" heading={`Design`} />
 		</div>
 	);
