@@ -64,7 +64,7 @@ export const Projects: ProjectStructure[] = [
 		title: 'Kalecream Website',
 		category: 'code',
 		type: 'website',
-		image: '/img/project/003.webp',
+		image: '/img/project/003.png',
 		status: 'ongoing',
 		description: (
 			<span>
@@ -81,12 +81,12 @@ export const Projects: ProjectStructure[] = [
 	{
 		id: '005',
 		display: true,
-		title: 'Swagger Login Test',
+		title: 'Swagger Login',
 		category: 'code',
 		status: 'completed',
 		type: 'test',
 		link: 'https://sphenery.vercel.app/login',
-		image: '/img/project/005.webp',
+		image: '/img/project/005.png',
 		description: (
 			<span>
 				A login/registration form with refresh token done for a test of a Swagger API for a Front-End take-home test.
@@ -96,21 +96,6 @@ export const Projects: ProjectStructure[] = [
 		repoName: 'Sphenery',
 		language: ['React', 'Typescript'],
 		created: '2023-07-23',
-	},
-	{
-		id: '006',
-		display: true,
-		title: 'Park',
-		category: 'illustration',
-		type: 'practice',
-		image: '/img/project/006.webp',
-		status: 'completed',
-		description: (
-			<span>A test of the sapling plug-in in Blender3D. This model was set as the background of this website.</span>
-		),
-		technology: ['Blender3D'],
-		language: null,
-		created: '2019-01-01',
 	},
 	{
 		id: '007',
@@ -207,24 +192,6 @@ export const Projects: ProjectStructure[] = [
 		created: '2022-11-12',
 	},
 	{
-		id: '013',
-		display: true,
-		title: 'Cake',
-		category: 'illustration',
-		type: 'practice',
-		image: '/img/project/013.webp',
-		status: 'ongoing',
-		description: (
-			<span>
-				I wanted to make more little cakes. I made one cake as an icon and never made any more cakes. I should make some
-				more cakes.
-			</span>
-		),
-		technology: ['Blender3D'],
-		language: null,
-		created: '2022-11-12',
-	},
-	{
 		id: '014',
 		display: true,
 		title: 'Donut',
@@ -236,6 +203,23 @@ export const Projects: ProjectStructure[] = [
 		language: null,
 		technology: ['Blender3D'],
 		created: '2022-11-12',
+	},
+	{
+		id: '015',
+		display: true,
+		title: 'Ceremonial Bee Sword',
+		category: 'illustration',
+		type: 'practice',
+		image: '/img/project/015.webp',
+		status: 'completed',
+		description: (
+			<span>
+				A ceremonial bee sword with an obsidian blade and pearl wings made for Swordtember 2024. The prompt was "Winged".
+			</span>
+		),
+		technology: ['Blender3D'],
+		created: '2024-09-01',
+		link: '/practice/swordtember/1',
 	},
 ];
 

@@ -7,9 +7,6 @@ import Image from 'next/image';
 import { GetMonthName } from '@utils/GetMonthName';
 import { FaCode, FaFileImage, FaRegEye } from 'react-icons/fa6';
 
-
-
-
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
 	Projects.forEach((project) => {
@@ -29,10 +26,12 @@ const WebProjects: React.FC = () => {
 
 	const filteredProjects =
 		activeCategory === 'All'
-			? [...Projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
-			: Projects.filter((project) => project.category === activeCategory).sort(
-					(a, b) => new Date(b.created).getTime() - new Date(a.created).getTime(),
-				);
+			? [...Projects]
+					.filter((p) => p.category === 'code')
+					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+			: Projects.filter((p) => p.category === 'code')
+					.filter((project) => project.category === activeCategory)
+					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
 	return (
 		<section className={styles['project-wrapper']}>
@@ -118,13 +117,14 @@ const WebProjects: React.FC = () => {
 											title="View Code"
 											className={styles.project__code}
 											href={`https://github.com/kalecream/${project.repoName}`}
+											target="_blank"
 										>
 											<FaCode />
 										</Link>
 									)}
 
 									{project.link && (
-										<Link title="View Project" className={styles.project__code} href={project.link}>
+										<Link title="View Project" className={styles.project__code} href={project.link} target="_blank">
 											<FaRegEye />
 										</Link>
 									)}
