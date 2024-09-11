@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 		template: '%s | Sab Medwinter',
 	},
 	description:
-		'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
+		'Sisyphus escaping liminality.',
 	keywords: 'Web Developer, Frontend Developer, Creative Developer, React Developer, 3D Develper',
 	openGraph: {
 		title: 'Sab Medwinter',
 		description:
-			'Unlocking the digital realm with a fusion of Jamaican web development prowess and captivating 3D artistry.',
+			'Sisyphus escaping liminality.',
 		url: 'https://sabrinamedwinter.com',
 		siteName: 'Sab Medwinter',
 		locale: 'en_JM',
