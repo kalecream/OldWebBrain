@@ -10,7 +10,7 @@ import HeroImage from '@assets/images/vamp.webp';
 
 const Hero = () => {
 	return (
-		<section style={{ minHeight: '85vh' }}>
+		<section>
 			<div className={hero.container}>
 				<div className={hero.model}>
 					<HeroModel />
