@@ -83,7 +83,7 @@ const C25KPage = () => {
 					<SplitChart />
 				</Suspense>
 			</div>
-			<p className="prose glassmorphic" style={{ marginTop: '0rem', marginBottom: '3rem' }}>
+			<p className="prose glassmorphic" style={{ marginTop: '2rem', marginBottom: '3rem' }}>
 				I'm using "<Link href="https://zrx.app/">Zombies, Run 5K Training</Link>" to do an 8 week program of the Couch to 5KM
 				challenge. I attempted this briefly before, but I have never made it fully through and would like to improve my
 				running ability.
