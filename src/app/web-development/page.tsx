@@ -1,15 +1,20 @@
+import Image from 'next/image';
+import WebProjects from "@components/projects/WebProjects";
 import { WebDevelopementQuote } from "./WebDevelopementQuote";
+import WebDevImage from '@public/img/Services/Automation.svg';
 
 export const WebDevelopementPage = () => {
     return (
         <>
             <section>
-                <h1>Featured Projects</h1>
-                <h1>Latest Projects</h1>
+                <h1>Web Development</h1>
             </section>
             <section>
-                <WebDevelopementQuote />
+                <WebProjects />
             </section>
+            {/* <section>
+                <WebDevelopementQuote />
+            </section> */}
         </>
     );
 };

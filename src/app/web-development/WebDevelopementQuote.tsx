@@ -1,5 +1,6 @@
 'use client';
 import styled from 'styled-components';
+import { Projects } from '@data/projectsData';
 
 const FormSection = styled.section`
 	width: 100vw;
@@ -36,6 +37,8 @@ enum DomainAndHosting {
 	Yes = 'Yes',
 	No = 'No',
 }
+
+
 
 export const WebDevelopementQuote = () => {
 	return (
