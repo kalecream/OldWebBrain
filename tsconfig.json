@@ -46,6 +46,6 @@
 			}
 		]
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js", ".next/types/**/*.ts", "src/assets/models/castlevania.jsx", "src/components/threeJS/HeroModel.jsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx", "next.config.js", ".next/types/**/*.ts", "src/assets/models/castlevania.jsx", "src/components/threeJS/HeroModel.jsx", "src/assets/models/WingedSword.jsx"],
 	"exclude": ["node_modules", ".next"]
 }
