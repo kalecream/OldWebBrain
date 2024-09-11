@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from '@styles/modules/projects.module.scss';
 import Image from 'next/image';
 import { GetMonthName } from '@utils/GetMonthName';
-import { FaCode, FaFileImage, FaRegEye } from 'react-icons/fa6';
+import { FaCode, FaRegEye } from 'react-icons/fa6';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
