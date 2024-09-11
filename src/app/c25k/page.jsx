@@ -1,5 +1,5 @@
 'use client';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import Runs from '@data/runs';
 import Link from 'next/link';
@@ -70,6 +70,11 @@ const SplitChart = () => {
 };
 
 const C25KPage = () => {
+
+	useEffect(() => {
+		document.title = "C25K | Sab Medwinter ";
+	}, []);
+	
 	return (
 		<section style={{ minHeight: '80vh' }}>
 			<h1>Couch to 5K</h1>
@@ -78,11 +83,14 @@ const C25KPage = () => {
 					<SplitChart />
 				</Suspense>
 			</div>
-			<p className="prose glassmorphic" style={{ marginTop: '-2rem', marginBottom: '3rem' }}>
-				I'm currently using an App called "Zombies, Run 5K Training" to do an 8 week program of the Couch to 5KM
+			<p className="prose glassmorphic" style={{ marginTop: '0rem', marginBottom: '3rem' }}>
+				I'm using "<Link href="https://zrx.app/">Zombies, Run 5K Training</Link>" to do an 8 week program of the Couch to 5KM
 				challenge. I attempted this briefly before, but I have never made it fully through and would like to improve my
 				running ability.
+				
 			</p>
+			<p className="prose glassmorphic" style={{ marginTop: '-2rem' }}>Something that really helped was looking up YouTube videos on <Link href="https://www.youtube.com/watch?v=_kGESn8ArrU&pp=ygUKaG93IHRvIHJ1bg%3D%3D">how to run properly</Link>. For some reason, I thought running forms would be instinctive. It is not. Similarly, I had to <Link href="https://www.youtube.com/watch?v=B9ie7aRTCnE&pp=ygUcaG93IHRvIGJyZWF0aGUgd2hpbGUgcnVubmluZw%3D%3D">learn to breathe</Link> as evolution failed me by making my instinct holding my breath.</p>
+			
 		</section>
 	);
 };
