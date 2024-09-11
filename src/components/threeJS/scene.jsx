@@ -23,15 +23,38 @@ export const Scene = ({ modelPath, scale = 40 }) => {
 	);
 };
 
-export const SceneViewer = ({ modelPath, scale = 40 }) => {
+export const SceneViewer = () => {
 	return (
-		<Canvas shadows camera={{ fov: 30, position: [0, 0, 0] }}>
-			<ambientLight />
-			<spotLight position={[10, 10, 10]} rotation={0.15} />
-			<pointLight position={[-10, -10, -10]} />
-			<Suspense fallback={null}>
-				<Scene modelPath={modelPath} scale={scale} />
-				<OrbitControls />
+		<Canvas
+			shadows
+			dpr={[1, 2]}
+			camera={{ fov: 30, position: [0, 0, 0] }}
+			style={{
+				margin: 'auto',
+			}}
+		>
+			<Preload all />
+			<Suspense fallback={<Html center>Loading</Html>}>
+				<ambientLight />
+				<spotLight position={[10, 10, 10]} rotation={0.15} />
+				<pointLight position={[-10, -10, -10]} />
+				<directionalLight intensity={9.5} />
+				{children}
+				<OrbitControls autoRotate autoRotateSpeed={0.15} />
+				<PresentationControls
+					global
+					rotation={[-Math.PI / 2, -Math.PI / 4, -Math.PI / 4]}
+					polar={[0, Math.PI / 2]}
+					azimuth={[-Math.PI / 4, Math.PI / 4]}
+				/>
+				<EffectComposer>
+					<ChromaticAberration
+						blendFunction={BlendFunction.NORMAL} // blend mode
+						offset={[0.0002, 0.000005]} // color offset
+					/>
+					<Noise premultiply />
+					<Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={0.1} />
+				</EffectComposer>
 			</Suspense>
 		</Canvas>
 	);
