@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 type Props = {
   readingSpeedWPM?: number;
 };
 
-export const PageReadTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
+export const PageReadTime: FC<Props> = ({ readingSpeedWPM = 200 }) => {
   const [readingTime, setReadingTime] = useState(0);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const PageReadTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
 
   return (
     <div>
-      <small className='prose'>Estimated reading time: {readingTime} minute{readingTime > 1 && 's'}</small>
+      <small className='prose'>Estimated Read: {readingTime} minute{readingTime > 1 && 's'}</small>
     </div>
   );
 };
