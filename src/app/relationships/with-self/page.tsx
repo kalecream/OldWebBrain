@@ -1,5 +1,5 @@
-import Image from "next/Image";
-import Needs from "./needs";
+import Image from "next/image";
+import Needs from "./needs.webp";
 
 const WithSelfPage = () => {
     return (
@@ -11,7 +11,7 @@ const WithSelfPage = () => {
                         I will lay out what my priorities should be in caring for myself, and I will abide by these priorities in times of crisis. 
                         Hopefully, I will also abide by these priorities in times of calm.</p>
                 </div>
-                <Image src={Needs} alt="" width={300} height={300}/>
+                <Image src={Needs} alt="" width={300} height={300} style={{margin:'0 auto'}}/>
                 <div>
                     <h2>Physiological Needs</h2>
                     <p className="prose"></p>
