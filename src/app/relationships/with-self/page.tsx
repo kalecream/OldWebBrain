@@ -7,10 +7,14 @@ const WithSelfPage = () => {
       <section id="self">
         <h1>With Self</h1>
         <p className="prose">
+          While this section will be focused on the Self, I believe we need strong relationships with ourselves to have a
+          strong relationship with others where we can be aware of and prevent boundary lines from being crossed.
+        </p>
+        <p className="prose">
           Fostering a healthy relationship with myself is being started from scratch. My method of going through life
           was to mentally check out through media consumption and daydreams once the going got tough, and handing off
-          the problem to a future me. I am now that future me. I have expressed opinions before of the violence I would
-          like to enact on previous versions of me. I have been told to be gentler with myself. I am now on a journey of
+          the problem to a future me. I am now that future me. Having expressed opinions of the violence I would
+          like to enact on previous versions of me, I have been told to be gentler with myself. I am now on a journey of
           paying more attention, giving greater care and being softer with her.
         </p>
         <p className="prose">
@@ -19,10 +23,7 @@ const WithSelfPage = () => {
           illness, I will not get my death wish. Having already experienced a debilitating illness, I'm not interested
           in experiencing anything like that again.
         </p>
-        <p className="prose">
-          While this section will be focused on the Self, I believe we need strong relationships with ourselves to have a
-          strong relationship with others where boundary lines do not get crossed.
-        </p>
+        
         <div>
           <p className="prose">
             Learning to meet my own needs as set out in Maslow’s Hierarchy. When I feel overwhelmed, this is the order
@@ -30,24 +31,22 @@ const WithSelfPage = () => {
             by these priorities in times of crisis. Hopefully, I will also abide by these priorities in times of calm.
           </p>
         </div>
-        <Image src={Needs} alt="" width={700} height={650} />
-        <p></p>
+        <hr/>
         <div>
           <h2>Needs</h2>
           <details className="prose">
             <summary>Physiological</summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
-              have found when my higher order needs are not being met, these are the needs which ground me.
+              have found when my higher order needs are not being met, these are the needs which ground me. In future, I may expand all of these to their own pages.
             </p>
             <p>
-                <b>Water</b> I have a measured water bottle, but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be wildly distracted. In either scenario, I keep forgetting to drink water.<br/>
-                <b></b>
-Food.
-Excrete.
-Shower.
-Sleep.
-Sex.
+                <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM, but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be wildly distracted. In either scenario, I keep forgetting to drink water.<br/>
+                <b>Food.</b>
+                <b>Execrete.</b> No problems here.<br/>
+                <b>Shower.</b> Showering is useful for more than getting clean. It's a good way to give a mini reset to the day with a cold shower.<br/>
+                <b>Sleep.</b> I have a bedtime routine that I have been following for a few months now. I have been sleeping better and waking up refreshed.<br/>
+                <b>Sex.</b> Eh.
 </p>
           </details>
           <details>
