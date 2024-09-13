@@ -20,8 +20,8 @@ const WithSelfPage = () => {
           in experiencing anything like that again.
         </p>
         <p className="prose">
-          While this section will be focused on the Self, I believe we need strong relationships with others to have a
-          strong relationship with ourselves as well.
+          While this section will be focused on the Self, I believe we need strong relationships with ourselves to have a
+          strong relationship with others where boundary lines do not get crossed.
         </p>
         <div>
           <p className="prose">
@@ -30,7 +30,7 @@ const WithSelfPage = () => {
             by these priorities in times of crisis. Hopefully, I will also abide by these priorities in times of calm.
           </p>
         </div>
-        <Image src={Needs} alt="" width={600} height={550} />
+        <Image src={Needs} alt="" width={700} height={650} />
         <p></p>
         <div>
           <h2>Needs</h2>
@@ -38,8 +38,17 @@ const WithSelfPage = () => {
             <summary>Physiological</summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
-              have found when my higher order needs are not being met, these are the needs which ground me.{" "}
+              have found when my higher order needs are not being met, these are the needs which ground me.
             </p>
+            <p>
+                <b>Water</b> I have a measured water bottle, but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be wildly distracted. In either scenario, I keep forgetting to drink water.<br/>
+                <b></b>
+Food.
+Excrete.
+Shower.
+Sleep.
+Sex.
+</p>
           </details>
           <details>
             <summary>Safety</summary>
