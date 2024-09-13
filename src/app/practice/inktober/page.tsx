@@ -1,11 +1,11 @@
-import { ComingSoon } from '@components/_misc/ComingSoon';
+import { ComingSoon } from "@components/_misc/ComingSoon";
 
 const SwordtemberPage = () => {
-	return (
-		<>
-			<ComingSoon />
-		</>
-	);
+  return (
+    <>
+      <ComingSoon />
+    </>
+  );
 };
 
 export default SwordtemberPage;

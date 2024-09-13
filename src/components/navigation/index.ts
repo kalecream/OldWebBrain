@@ -1,1 +1,1 @@
-export * from '../../app/components/footer';
+export * from "../../app/components/footer";
