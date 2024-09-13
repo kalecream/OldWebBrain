@@ -37,7 +37,7 @@ const WithSelfPage = () => {
         <div>
           <h2>Needs</h2>
           <details className="prose">
-            <summary><p>Physiological</p></summary>
+            <summary><i>Physiological</i></summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
               have found when my higher order needs are not being met, these are the needs which ground me. In future, I may expand all of these to their own pages.
@@ -52,13 +52,13 @@ const WithSelfPage = () => {
 </p>
           </details>
           <details>
-            <summary><p><i>Safety</i></p></summary>
+            <summary><i>Safety</i></summary>
           </details>
           <details>
-            <summary>Love</summary>
+            <summary><i>Love</i></summary>
           </details>
           <details>
-            <summary>Belonging</summary>
+            <summary><i>Belonging</i></summary>
           </details>
           <p className="prose"></p>
           <h2>Self-Regulation</h2>

@@ -7,7 +7,6 @@ const RShipPage = () => {
       <section id="introduction">
         <h1>Relationship</h1>
         <PageReadTime readingSpeedWPM={200} />
-        <h2>Introduction</h2>
         <q>
           A relationship is a commitment
           <wbr /> to doing the work of
