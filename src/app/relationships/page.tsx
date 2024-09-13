@@ -23,8 +23,8 @@ const RShipPage = () => {
 					asked persons about their thoughts on some of the things I've been trying to find my own personal definitions
 					for, I realize we've all been basing our social life on vibes, pop culture and hording whatever we lacked in
 					our formative years. The alternative I've seen isn't better. Some who have thought about it have just
-					swallowed some philosopher’s world-view. I have no heroes, so that approach doesn't gel with me. I want to
-					create my own thoughts on this with my own reasoning, but I don't want to do that from scratch. It would make
+					swallowed some philosopher’s world-view. I have no heroes and want to
+					create my own thoughts on this with my own reasoning. I don't want to do that from scratch. It would make
 					no sense to throw away the thoughts that came before me in this venture. My thoughts are speaking on all
 					relationships unless I specify romantic. I believe that romantic relationships should be an evolution of
 					friendship. One cannot be a good partner without being a good friend to their partner.
@@ -33,34 +33,35 @@ const RShipPage = () => {
 					These pages are an ongoing project as I navigate my relationship with myself and others. It was started and (the bulk of
 					it) written in 2023 to aid me in recovering from a break-up with a long-term partner. After the realizations
 					that came with the dissolution of that relationship, I felt the need to define how I wanted to interact with
-					others. I also thought about how I wanted to go about interacting with myself. I often hear that I’m too harsh
-					with myself.
+					others. I also thought about how I wanted to go about interacting with myself.
 				</p>
 				<hr />
 				<p className="prose">
 					I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a
 					yam-head or the abusive farmer. The most important thing to note is that:
 				</p>
-				<ol className="prose" style={{margin: '0 1rem'}}>
+				<ol className="prose" style={{ margin: '0 1rem' }}>
 					<li> Relationships are unique and do not follow the same path.</li>
 					<li>
-						We all know that life likes to just throw us off the road for no reason therefore adaptability,
-						consideration and grace will be neccesary.
+						Adaptability,
+						Consideration and Grace will be neccesary for when Life likes to just throw us off our paths.
 					</li>
-					<li> Communication is a must.</li>
+					<li> Communication is a must. Don't leave the other person's understanding to chance. Make sure they know where you are coming from and why it is so.</li>
 					<li>Vulnerability should be encouraged.</li>
 					<li>All relationships, including the one with self, require effort and intention to nurture them.</li>
 				</ol>
 				<hr />
 				<p className="prose">
-					The most important part of a relationship for me is Consideration. This includes considering how my actions
-					affect myself and other persons to: reduce the chance of causing harm, never intentionally causing harm,
-					considering myself enough to stay my own person and to not lose a sense of self becoming codependent.
+					The most important part of a relationship for me is Consideration. I hope to make myself proud by sticking to my values of being considerate and taking a stand, where necessary,
+					to reduce harm in my circle of loved ones, then my wider community. It is very important to consider how actions taken will affect someone. 
+					I want to take time to consider my actions to:
 				</p>
+				<ul>
+					<li>reduce the chance of causing harm</li>
+					<li>never intentionally causing harm</li>
+					<li>considering myself enough to stay my own person and to not lose a sense of self becoming codependent</li>
+				</ul>
 				<p className="prose">
-					I hope to make myself proud by sticking to my values of being considerate and taking a stand, where necessary,
-					to reduce harm in my circle of loved ones, then my wider community.
-					<br />
 					<Link href="/relationships/with-self">With Self</Link>
 					<br />
 					<Link href="/relationships/with-family">With Family</Link>
