@@ -9,15 +9,15 @@ const WithSelfPage = () => {
         <h1>With Self</h1>
         <PageReadTime readingSpeedWPM={200} />
         <p className="prose">
-          While this section will be focused on the Self, I believe we need strong relationships with ourselves to have a
-          strong relationship with others where we can be aware of and prevent boundary lines from being crossed.
+          While this section will be focused on the Self, I believe we need strong relationships with ourselves to have
+          a strong relationship with others where we can be aware of and prevent boundary lines from being crossed.
         </p>
         <p className="prose">
           Fostering a healthy relationship with myself is being started from scratch. My method of going through life
           was to mentally check out through media consumption and daydreams once the going got tough, and handing off
-          the problem to a future me. I am now that future me. Having expressed opinions of the violence I would
-          like to enact on previous versions of me, I have been told to be gentler with myself. I am now on a journey of
-          paying more attention, giving greater care and being softer with her.
+          the problem to a future me. I am now that future me. Having expressed opinions of the violence I would like to
+          enact on previous versions of me, I have been told to be gentler with myself. I am now on a journey of paying
+          more attention, giving greater care and being softer with her.
         </p>
         <p className="prose">
           When I was younger, a teenager specifically, it was a completely foreign concept to me that I would live this
@@ -25,7 +25,7 @@ const WithSelfPage = () => {
           illness, I will not get my death wish. Having already experienced a debilitating illness, I'm not interested
           in experiencing anything like that again.
         </p>
-        
+
         <div>
           <p className="prose">
             Learning to meet my own needs as set out in Maslow’s Hierarchy. When I feel overwhelmed, this is the order
@@ -33,32 +33,62 @@ const WithSelfPage = () => {
             by these priorities in times of crisis. Hopefully, I will also abide by these priorities in times of calm.
           </p>
         </div>
-        <hr/>
+        <hr />
         <div>
           <h2>Needs</h2>
           <details className="prose">
-            <summary><i>Physiological</i></summary>
+            <summary>
+              <i style={{fontSize: '1.2rem'}}>Physiological</i>
+            </summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
-              have found when my higher order needs are not being met, these are the needs which ground me. In future, I may expand all of these to their own pages.
+              have found when my higher order needs are not being met, these are the needs which ground me. Mostly
+              because when focused these are the needs I'm mostly likely to ignore. In future, I may expand all of these
+              to their own pages.
             </p>
             <p>
-                <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM, but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be wildly distracted. In either scenario, I keep forgetting to drink water.<br/>
-                <b>Food.</b><br/>
-                <b>Execrete.</b> No problems here.<br/>
-                <b>Shower.</b> Showering is useful for more than getting clean. It's a good way to give a mini reset to the day with a cold shower.<br/>
-                <b>Sleep.</b> I have a bedtime routine that I have been following for a few months now. I have been sleeping better and waking up refreshed.<br/>
-                <b>Sex.</b> Eh.
-</p>
+              <b>Breathe.</b> Frequently, I will realize I'm holding my breathe or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
+            </p>
+            <p>
+              <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM,
+              but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be
+              wildly distracted. In either scenario, I keep forgetting to drink water.
+              <br />
+            </p>
+            <p>
+              <b>Food. I occasionally feel hunger, but my relationship with food needs work. I sometimes eat nothing and other times overstuff myself. Moderation is a problem here.</b>
+              <br />
+            </p>
+            <p>
+              <b>Execrete.</b> No problems here.
+              <br />
+            </p>
+            <p>
+              <b>Shelter</b> The need I treat with the most seriousness. I have a roof over my head and I'm grateful for it.
+              <br />
+            </p>
+            <p>
+              <b>Sleep.</b> I've developed a bedtime routine that I'm happy with so far.'
+              <br />
+            </p>
+            <p>
+              <b>Sex.</b> I don't have a desire to continue my bloodline. This likely belongs as a higher order need because it's purely recreational. 
+            </p>
           </details>
           <details>
-            <summary><i>Safety</i></summary>
+            <summary>
+              <i  style={{fontSize: '1.2rem'}}>Safety</i>
+            </summary>
           </details>
           <details>
-            <summary><i>Love</i></summary>
+            <summary>
+              <i style={{fontSize: '1.2rem'}}>Love</i>
+            </summary>
           </details>
           <details>
-            <summary><i>Belonging</i></summary>
+            <summary>
+              <i style={{fontSize: '1.2rem'}}>Belonging</i>
+            </summary>
           </details>
           <p className="prose"></p>
           <h2>Self-Regulation</h2>
