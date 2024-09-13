@@ -11,9 +11,23 @@ const WithSelfPage = () => {
                         I will lay out what my priorities should be in caring for myself, and I will abide by these priorities in times of crisis. 
                         Hopefully, I will also abide by these priorities in times of calm.</p>
                 </div>
-                <Image src={Needs} alt="" width={500} height={400}/>
+                <Image src={Needs} alt="" width={600} height={550}/>
+                <p></p>
                 <div>
-                    <h2>Physiological Needs</h2>
+                    <h2>Needs</h2>
+                    <details className="prose">
+                        <summary>Physiological</summary>
+                        <p>These needs are the most important set and ones that we regularly betray or allow us to be led astray.</p>
+                    </details>
+                    <details>
+                        <summary>Safety</summary>
+                    </details>
+                    <details>
+                        <summary>Love</summary>
+                    </details>
+                    <details>
+                        <summary>Belonging</summary>
+                    </details>
                     <p className="prose"></p>
                     <h2>Self-Regulation</h2>
                     <h3>Meditation</h3>
