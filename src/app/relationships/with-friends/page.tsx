@@ -1,30 +1,39 @@
+import { PageReadTime } from "@utils/PageReadTime";
+
 const WithFriendsPage = () => {
   return (
     <section id="friends">
       <h1>With Friends</h1>
+      <PageReadTime readingSpeedWPM={200} />
       <p className="prose">
         I would also consider my friends my life partners. I'm now not sure where the delineation of a romantic partner
         would start from my definition of a friend. I could start with defining a friend first and stating a romantic
         partner as a friend with greater expectations set on them.
-        <br />
-        <br />
+      </p>
+      <p className="prose">
         Dictionary Definitions of Friend: from The American Heritage® Dictionary of the English Language, 5th Edition.
+      </p>
+      <q className="prose">
         A person whom one knows, likes, and trusts. A person with whom one is allied in a struggle or cause; a comrade.
         from The Century Dictionary. One who is attached to another by feelings of personal regard and preference; one
         who entertains for another sentiments which lead him to seek his company and to study to promote his welfare.
         One not hostile; one of the same nation, party, or kin; one at amity with another; an ally: opposed to _foe_ or
         _enemy._ A lover, of either sex. One who entertains for another such sentiments of esteem, respect, and
         affection that he seeks his society and welfare; a wellwisher; an intimate associate; sometimes, an attendant.
-        <br />
+      </q>
+      <p className="prose">
         I sought out dictionary definitions, but those were inadequate with too wide a range. Now, I seek out the
         etymology of Friendship. The sense that I am getting is that the definition of a friend is something personal.
-        <br />
+      </p>
+      <q className="prose">
         The linguistic root of the word friend Old English freond "one attached to another by feelings of personal
         regard and preference," from Proto-Germanic *frijōjands "lover, friend" (source also of Old Norse frændi, Old
         Danish frynt, Old Frisian friund, Dutch vriend, Middle High German friunt, German Freund, Gothic frijonds
         "friend"), from PIE *priy-ont-, "loving," present-participle form of root
         [*pri-](https://www.etymonline.com/word/*pri- "Etymology, meaning and definition of *pri- ") "to love."
-        <br />I found it adorable that both 'friendship' and 'free' came from root of 'Love'. However, this brings me no
+      </q>
+      <p className="prose">
+        I found it adorable that both 'friendship' and 'free' came from root of 'Love'. However, this brings me no
         closer to my own definition for a friend. I asked my close friends for their personal definitions, but it was
         not something they had rigidly defined for themselves outside of people they care about and like to be around.
       </p>
@@ -35,9 +44,11 @@ const WithFriendsPage = () => {
         merely as a case of reciprocal love of some form (together with mutual acknowledgment of this love), but as
         essentially involving significant interactions between the friends—as being in this sense a certain kind of
         relationship. [^2]
+        <br />
+        <br />
+        <b>Healthy friendships have a balance of giving and taking:</b>
       </p>
       <ol className="prose">
-        <b>Healthy friendships have a balance of giving and taking:</b>
         <li>Can you remember the last time you did something thoughtful for a friend?</li>
         <li>Or they did something for you?</li>
         <li>Who normally reaches out first?</li>
