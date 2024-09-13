@@ -61,9 +61,9 @@ const RShipPage = () => {
           take time to consider my actions to:
         </p>
         <ol className="prose" style={{ margin: "0 1rem" }}>
-          <li>reduce the chance of causing harm</li>
-          <li>never intentionally causing harm</li>
-          <li>considering myself enough to stay my own person and to not lose a sense of self becoming codependent</li>
+          <li>Reduce the chance of causing harm</li>
+          <li>Never intentionally causing harm</li>
+          <li>Consider myself to not lose a sense of self becoming codependent</li>
         </ol>
         <p className="prose">
           <Link href="/relationships/with-self">With Self</Link>
