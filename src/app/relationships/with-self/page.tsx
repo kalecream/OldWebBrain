@@ -1,5 +1,5 @@
 import Image from "next/Image";
-import Needs from "./needs"
+import Needs from "./needs";
 
 const WithSelfPage = () => {
     return (
