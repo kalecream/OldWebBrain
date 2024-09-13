@@ -5,7 +5,7 @@ type Props = {
   readingSpeedWPM?: number;
 };
 
-const ReadingTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
+export const PageReadTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
   const [readingTime, setReadingTime] = useState(0);
 
   useEffect(() => {
@@ -23,5 +23,3 @@ const ReadingTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
     </div>
   );
 };
-
-export default ReadingTime;

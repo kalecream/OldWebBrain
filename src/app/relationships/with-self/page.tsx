@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Needs from "./needs.webp";
+import { PageReadTime } from "@utils/PageReadTime";
 
 const WithSelfPage = () => {
   return (
     <>
       <section id="self">
         <h1>With Self</h1>
+        <PageReadTime readingSpeedWPM={200} />
         <p className="prose">
           While this section will be focused on the Self, I believe we need strong relationships with ourselves to have a
           strong relationship with others where we can be aware of and prevent boundary lines from being crossed.
@@ -42,7 +44,7 @@ const WithSelfPage = () => {
             </p>
             <p>
                 <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM, but I still do not take in enough water daily. I tend to focus solely on what's in front of me or be wildly distracted. In either scenario, I keep forgetting to drink water.<br/>
-                <b>Food.</b>
+                <b>Food.</b><br/>
                 <b>Execrete.</b> No problems here.<br/>
                 <b>Shower.</b> Showering is useful for more than getting clean. It's a good way to give a mini reset to the day with a cold shower.<br/>
                 <b>Sleep.</b> I have a bedtime routine that I have been following for a few months now. I have been sleeping better and waking up refreshed.<br/>
