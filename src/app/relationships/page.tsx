@@ -1,3 +1,4 @@
+import { PageReadTime } from "@utils/PageReadTime";
 import Link from "next/link";
 
 const RShipPage = () => {
@@ -5,6 +6,7 @@ const RShipPage = () => {
     <>
       <section id="introduction">
         <h1>Relationship</h1>
+        <PageReadTime readingSpeedWPM={200} />
         <h2>Introduction</h2>
         <q>
           A relationship is a commitment

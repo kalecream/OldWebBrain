@@ -19,7 +19,7 @@ export const PageReadTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
 
   return (
     <div>
-      <p className='prose'>Estimated reading time: {readingTime} minute{readingTime > 1 && 's'}</p>
+      <small className='prose'>Estimated reading time: {readingTime} minute{readingTime > 1 && 's'}</small>
     </div>
   );
 };
