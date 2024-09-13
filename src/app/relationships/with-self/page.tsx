@@ -1,13 +1,20 @@
+import Image from "next/Image";
+import Needs from "./needs"
+
 const WithSelfPage = () => {
     return (
         <>
          <section id="self">
                 <h1>With Self</h1>
                 <div>
-                    <h2>Meeting Needs</h2>
-                    <p className="prose">Learning to meet my own needs as set out in Maslow’s hierarchy. When I feel overwhelmed, this is the order on which I need to focus. I will lay out what my priorities should be in caring for myself, and I will abide by these priorities in times of crisis. Hopefully, I will also abide by these priorities in times of calm.</p>
+                    <p className="prose">Learning to meet my own needs as set out in Maslow’s Hierarchy. When I feel overwhelmed, this is the order on which I need to focus. 
+                        I will lay out what my priorities should be in caring for myself, and I will abide by these priorities in times of crisis. 
+                        Hopefully, I will also abide by these priorities in times of calm.</p>
                 </div>
+                <Image src={Needs} alt="" width={300} height={300}>
                 <div>
+                    <h2>Physiological Needs</h2>
+                    <p className="prose"></p>
                     <h2>Self-Regulation</h2>
                     <h3>Meditation</h3>
                     <p className="prose">Meditation has a history that goes back thousands of years, and many meditative techniques began in Eastern traditions. The term “meditation” refers to a variety of practices that focus on mind and body integration and are used to calm the mind and enhance overall well-being.

@@ -56,11 +56,11 @@ const RShipPage = () => {
 					to reduce harm in my circle of loved ones, then my wider community. It is very important to consider how actions taken will affect someone. 
 					I want to take time to consider my actions to:
 				</p>
-				<ul>
+				<ol className="prose" style={{ margin: '0 1rem' }}>
 					<li>reduce the chance of causing harm</li>
 					<li>never intentionally causing harm</li>
 					<li>considering myself enough to stay my own person and to not lose a sense of self becoming codependent</li>
-				</ul>
+				</ol>
 				<p className="prose">
 					<Link href="/relationships/with-self">With Self</Link>
 					<br />
