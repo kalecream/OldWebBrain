@@ -1,47 +1,47 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export const robots = (): MetadataRoute.Robots => {
-	return {
-		rules: [
-			{
-				userAgent: '*',
-				allow: ['/'],
-				disallow: '/private/',
-			},
-			{
-				userAgent: [
-					'AdsBot-Google',
-					'Amazonbot',
-					'Applebot',
-					'CCBot',
-					'GPTBot',
-					'ChatGPT-User',
-					'Anthropic-ai',
-					'ClaudeBot',
-					'Claude-Web',
-					'cohere-ai',
-					'DataForSeoBot',
-					'Omgilibot',
-					'Omgili',
-					'FacebookBot',
-					'FriendlyCrawler',
-					' Diffbot',
-					' Bytespider',
-					'PerplexityBot',
-					'ImagesiftBot',
-					'cohere-ai',
-					'img2dataset',
-					'ImagesiftBot',
-					'YouBot',
-					'Seekr',
-					'scoop.it',
-				],
-				disallow: ['/'],
-			},
-		],
-		sitemap: 'https://sabrinamedwinter.com/sitemap.xml',
-		host: 'https://sabrinamedwinter.com',
-	};
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: ["/"],
+        disallow: "/private/",
+      },
+      {
+        userAgent: [
+          "AdsBot-Google",
+          "Amazonbot",
+          "Applebot",
+          "CCBot",
+          "GPTBot",
+          "ChatGPT-User",
+          "Anthropic-ai",
+          "ClaudeBot",
+          "Claude-Web",
+          "cohere-ai",
+          "DataForSeoBot",
+          "Omgilibot",
+          "Omgili",
+          "FacebookBot",
+          "FriendlyCrawler",
+          " Diffbot",
+          " Bytespider",
+          "PerplexityBot",
+          "ImagesiftBot",
+          "cohere-ai",
+          "img2dataset",
+          "ImagesiftBot",
+          "YouBot",
+          "Seekr",
+          "scoop.it",
+        ],
+        disallow: ["/"],
+      },
+    ],
+    sitemap: "https://sabrinamedwinter.com/sitemap.xml",
+    host: "https://sabrinamedwinter.com",
+  };
 };
 
 export default robots;

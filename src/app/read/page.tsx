@@ -1,11 +1,11 @@
-import { BookShelf } from './BookShelf';
+import { BookShelf } from "./BookShelf";
 
 const Read = () => {
-	return (
-		<section>
-			<BookShelf />
-		</section>
-	);
+  return (
+    <section>
+      <BookShelf />
+    </section>
+  );
 };
 
 export default Read;

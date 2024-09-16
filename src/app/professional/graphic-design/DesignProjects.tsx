@@ -1,11 +1,11 @@
-'use client';
-import { useState } from 'react';
-import { Projects } from '@data/projectsData';
-import Link from 'next/link';
-import styles from '@styles/modules/projects.module.scss';
-import Image from 'next/image';
-import { GetMonthName } from '@utils/GetMonthName';
-import { FaCode, FaFileImage, FaRegEye } from 'react-icons/fa6';
+"use client";
+import { useState } from "react";
+import { Projects } from "@data/projectsData";
+import Link from "next/link";
+import styles from "@styles/modules/projects.module.scss";
+import Image from "next/image";
+import { GetMonthName } from "@utils/GetMonthName";
+import { FaCode, FaFileImage, FaRegEye } from "react-icons/fa6";
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
@@ -16,13 +16,13 @@ export const extractCategories = () => {
 };
 
 const DesignProjects: React.FC = () => {
-	const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState<string>("All");
 
-	const handleTabChange = (category: string) => {
-		setActiveCategory(category);
-	};
+  const handleTabChange = (category: string) => {
+    setActiveCategory(category);
+  };
 
-	const categories = extractCategories();
+  const categories = extractCategories();
 
 	const filteredProjects =
 		activeCategory === 'All'
@@ -92,49 +92,49 @@ const DesignProjects: React.FC = () => {
 									></span>
 								</h1>
 
-								<div className={`flex ` + styles['project-lang']}>
-									{project.language && project.language.map((l, i) => <span key={i}>{l.toLowerCase()}</span>)}
-									<br />
-									{project.technology &&
-										project.technology.map((t, i) => (
-											<span className={styles.project__tech} key={i}>
-												{t.toLowerCase()}
-											</span>
-										))}
-								</div>
+                <div className={`flex ` + styles["project-lang"]}>
+                  {project.language && project.language.map((l, i) => <span key={i}>{l.toLowerCase()}</span>)}
+                  <br />
+                  {project.technology &&
+                    project.technology.map((t, i) => (
+                      <span className={styles.project__tech} key={i}>
+                        {t.toLowerCase()}
+                      </span>
+                    ))}
+                </div>
 
-								<p className={styles.project__description}>
-									<b>
-										{GetMonthName(project.created)}
-										{project.created.split('-', 1)}.
-									</b>{' '}
-									{project.description}
-								</p>
+                <p className={styles.project__description}>
+                  <b>
+                    {GetMonthName(project.created)}
+                    {project.created.split("-", 1)}.
+                  </b>{" "}
+                  {project.description}
+                </p>
 
-								<div className={styles['project-lang']}>
-									{project.repoName && (
-										<Link
-											title="View Code"
-											className={styles.project__code}
-											href={`https://github.com/kalecream/${project.repoName}`}
-											target="_blank"
-										>
-											<FaCode />
-										</Link>
-									)}
+                <div className={styles["project-lang"]}>
+                  {project.repoName && (
+                    <Link
+                      title="View Code"
+                      className={styles.project__code}
+                      href={`https://github.com/kalecream/${project.repoName}`}
+                      target="_blank"
+                    >
+                      <FaCode />
+                    </Link>
+                  )}
 
-									{project.link && (
-										<Link title="View Project" className={styles.project__code} href={project.link} target="_blank">
-											<FaRegEye />
-										</Link>
-									)}
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		</section>
-	);
+                  {project.link && (
+                    <Link title="View Project" className={styles.project__code} href={project.link} target="_blank">
+                      <FaRegEye />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 export default DesignProjects;

@@ -1,6 +1,6 @@
-import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
-import { FaToggleOff, FaToggleOn } from 'react-icons/fa6';
+import { useTheme } from "next-themes";
+import { useEffect } from "react";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 
 /**
  * Based off of gatsby-theme-novela
@@ -10,38 +10,38 @@ import { FaToggleOff, FaToggleOn } from 'react-icons/fa6';
  */
 
 const ThemeSwitch = () => {
-	const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
-	useEffect(() => {}, [theme]);
+  useEffect(() => {}, [theme]);
 
-	return (
-		<div
-			style={{
-				display: 'flex',
-				placeItems: 'center',
-			}}
-		>
-			<button
-				name="theme-switch"
-				aria-label="theme-switch"
-				title="theme switch"
-				style={{
-					display: 'grid',
-					placeItems: 'center',
-					outline: 'none',
-					border: 'none',
-					fontSize: '1rem',
-					cursor: 'pointer',
-					justifyContent: 'center',
-					backgroundColor: 'transparent',
-					color: 'var(--primary)',
-				}}
-				onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-			>
-				{theme === 'dark' ? <FaToggleOn /> : <FaToggleOff />}
-			</button>
-		</div>
-	);
+  return (
+    <div
+      style={{
+        display: "flex",
+        placeItems: "center",
+      }}
+    >
+      <button
+        name="theme-switch"
+        aria-label="theme-switch"
+        title="theme switch"
+        style={{
+          display: "grid",
+          placeItems: "center",
+          outline: "none",
+          border: "none",
+          fontSize: "1rem",
+          cursor: "pointer",
+          justifyContent: "center",
+          backgroundColor: "transparent",
+          color: "var(--primary)",
+        }}
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        {theme === "dark" ? <FaToggleOn /> : <FaToggleOff />}
+      </button>
+    </div>
+  );
 };
 
 export default ThemeSwitch;

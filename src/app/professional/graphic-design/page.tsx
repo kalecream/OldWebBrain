@@ -2,6 +2,18 @@ import DesignProjects from "@app/professional/graphic-design/DesignProjects";
 import Link from "next/link";
 
 export const WebDevelopementPage = () => {
+<<<<<<< HEAD
+  return (
+    <>
+      <section>
+        <h1>Web Development</h1>
+      </section>
+      <section>
+        <DesignProjects />
+      </section>
+    </>
+  );
+=======
     return (
         <>
             <section>
@@ -13,6 +25,7 @@ export const WebDevelopementPage = () => {
             </section>
         </>
     );
+>>>>>>> master
 };
 
 export default WebDevelopementPage;
