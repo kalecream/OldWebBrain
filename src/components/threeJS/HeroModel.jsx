@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense} from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, ChromaticAberration, EffectComposer, Noise } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
@@ -20,7 +20,7 @@ export const HeroModel = () => {
 			}}
 		>
 			<Preload all />
-			<Suspense fallback={<Html center>Loading</Html>}>
+			<Suspense fallback={<Html center>Loading 3D Model...</Html>}>
 				<spotLight intensity={100} position={[10, 10, 10]} />
 				<directionalLight intensity={9.5} />
 				<Model />

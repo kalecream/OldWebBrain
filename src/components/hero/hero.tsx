@@ -1,20 +1,24 @@
 'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { HeroModel } from '@components/threeJS/HeroModel.jsx';
-import HeroName from '@components/hero/heroName/heroName';
-import { ScrollDown } from '@components/scrollDown';
 import hero from '@styles/modules/Index.module.scss';
 import button from '@styles/modules/Button.module.scss';
+import { HeroModel } from '@components/threeJS/HeroModel.jsx';
+import Link from 'next/link';
+
+import HeroName from '@components/hero/heroName/heroName';
+import Image from 'next/image';
 import HeroImage from '@assets/images/vamp.webp';
+// import { ScrollDown } from '@components/scrollDown';
 
 const Hero = () => {
 	return (
 		<section>
 			<div className={hero.container}>
 				<div className={hero.model}>
-					<HeroModel />
-					{/* <Image
+					<div className="desktop">
+						<HeroModel />
+					</div>
+					<div className='mobile'>
+					 <Image
 						src={HeroImage}
 						loader={({ src, width }) => `${src}?w=${width}`}
 						width={0}
@@ -23,7 +27,7 @@ const Hero = () => {
 						style={{ width: 'auto', height: 'clamp(100px, 40vw,1000px)', alignSelf: 'center' }}
 						alt=""
 						className="u-photo"
-					/> */}
+					/> </div> 
 					<div className={hero.cta}>
 						<HeroName name={'Sabrina'} />
 						<div className={` ` + hero.text}>
