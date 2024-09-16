@@ -9,8 +9,8 @@ import { FaCode, FaFileImage, FaRegEye } from 'react-icons/fa6';
 
 export const extractCategories = () => {
 	const categoriesSet = new Set<string>();
-	Projects.forEach((project) => {
-		categoriesSet.add(project.category);
+	Projects.filter((p) => p.category === 'code').forEach((project) => {
+		categoriesSet.add(project.type);
 	});
 	return Array.from(categoriesSet);
 };
@@ -30,7 +30,7 @@ const WebProjects: React.FC = () => {
 					.filter((p) => p.category === 'code')
 					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
 			: Projects.filter((p) => p.category === 'code')
-					.filter((project) => project.category === activeCategory)
+					.filter((project) => project.type === activeCategory)
 					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
 	return (
@@ -40,7 +40,7 @@ const WebProjects: React.FC = () => {
 					className={`${styles['project-tab'] + ` `} ${activeCategory === 'All' ? styles['active'] : ''}`}
 					onClick={() => handleTabChange('All')}
 				>
-					All
+					All ({Projects.filter((p) => p.category === 'code').length})
 				</button>
 				{categories.map((category) => (
 					<button
@@ -48,7 +48,7 @@ const WebProjects: React.FC = () => {
 						className={`${styles['project-tab'] + ` `} ${activeCategory === category ? styles['active'] : ''}`}
 						onClick={() => handleTabChange(category)}
 					>
-						{category}
+						{category} ({Projects.filter((p) => p.type === category).length})
 					</button>
 				))}
 			</div>

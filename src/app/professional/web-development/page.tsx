@@ -7,10 +7,11 @@ export const WebDevelopementPage = () => {
     return (
         <>
             <section>
-                <h1><Link href="/professional">~Services</Link>/Development</h1>
+                <h1>Development</h1>
             </section>
             <section>
                 <WebProjects />
+                <Link href="/professional" style={{color: 'var(--secondary)', marginBottom: '2rem'}}>Back to Services</Link>
             </section>
             {/* <section>
                 <WebDevelopementQuote />

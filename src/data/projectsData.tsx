@@ -4,7 +4,7 @@ export interface ProjectStructure {
 	id: string;
 	display: boolean;
 	category?: string;
-	type: string | string[];
+	type: string;
 	title: string;
 	image?: string;
 	description: ReactNode;
@@ -102,7 +102,7 @@ export const Projects: ProjectStructure[] = [
 		display: true,
 		title: 'Bite-Sized Binge Logo',
 		category: 'illustration',
-		type: 'practice',
+		type: 'assets',
 		image: '/img/project/007.webp',
 		status: 'completed',
 		description: (
@@ -120,12 +120,12 @@ export const Projects: ProjectStructure[] = [
 		display: true,
 		title: 'Under Construction',
 		category: 'illustration',
-		type: 'production',
+		type: 'assets',
 		image: '/img/project/008.webp',
 		status: 'completed',
 		description: (
 			<span>
-				A placeholder image I made for when my website was under construction. It still is under construction.
+				A placeholder image I made for when my website was first under construction.
 			</span>
 		),
 		technology: ['Blender3D'],
@@ -168,7 +168,7 @@ export const Projects: ProjectStructure[] = [
 		display: true,
 		title: 'Kinder Blocks',
 		category: 'illustration',
-		type: 'art-fight',
+		type: 'assets',
 		image: '/img/project/011.webp',
 		status: 'completed',
 		description: (
@@ -196,7 +196,7 @@ export const Projects: ProjectStructure[] = [
 		display: true,
 		title: 'Ceremonial Bee Sword',
 		category: 'illustration',
-		type: 'practice',
+		type: 'Swordtember',
 		image: '/img/project/015.webp',
 		status: 'completed',
 		description: (
@@ -207,6 +207,22 @@ export const Projects: ProjectStructure[] = [
 		technology: ['Blender3D'],
 		created: '2024-09-01',
 		link: '/practice/swordtember/1',
+	},
+	{
+		id: '016',
+		display: true,
+		title: 'Eclipse Poster',
+		category: 'illustration',
+		type: 'poster',
+		image: 'https://i.imgur.com/DSbuF74.png',
+		status: 'completed',
+		description: (
+			<span>
+				Poster made for an astronomy event viewing the 2023 Annular Solar Eclipse.
+			</span>
+		),
+		technology: ['Photopea'],
+		created: '2023-10-10',
 	},
 ];
 
