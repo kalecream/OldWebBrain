@@ -24,7 +24,7 @@ export const HeroModel = () => {
 				<spotLight intensity={100} position={[10, 10, 10]} />
 				<directionalLight intensity={9.5} />
 				<Model />
-				<OrbitControls autoRotate autoRotateSpeed={0.15} />
+				<OrbitControls autoRotate autoRotateSpeed={0.3} />
 				<PresentationControls
 					global
 					rotation={[-Math.PI / 2, -Math.PI / 4, -Math.PI / 4]}
