@@ -9,8 +9,6 @@ import SiteImage from '@public/og_logo.png';
 
 export function Navbar() {
 	const path = usePathname();
-	console.log(path);
-	console.log('test');
 	return (
 		<header id="header" className={path && path == '/' ? `` : `glassmorphic`}>
 			<nav id="nav">
