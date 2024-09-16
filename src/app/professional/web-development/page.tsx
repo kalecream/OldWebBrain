@@ -3,17 +3,6 @@ import Link from "next/link";
 // import { WebDevelopementQuote } from "./WebDevelopementQuote";
 
 export const WebDevelopementPage = () => {
-<<<<<<< HEAD
-  return (
-    <>
-      <section>
-        <h1>Development</h1>
-      </section>
-      <section>
-        <WebProjects />
-      </section>
-      {/* <section>
-=======
     return (
         <>
             <section>
@@ -24,7 +13,6 @@ export const WebDevelopementPage = () => {
                 <Link href="/professional" style={{color: 'var(--secondary)', marginBottom: '2rem'}}>Back to Services</Link>
             </section>
             {/* <section>
->>>>>>> master
                 <WebDevelopementQuote />
             </section> */}
     </>
