@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,6 +16,29 @@ const Hero = () => {
         <div className={hero.model}>
           <HeroModel />
           {/* <Image
+=======
+'use client';
+import hero from '@styles/modules/Index.module.scss';
+import button from '@styles/modules/Button.module.scss';
+import { HeroModel } from '@components/threeJS/HeroModel.jsx';
+import Link from 'next/link';
+
+import HeroName from '@components/hero/heroName/heroName';
+import Image from 'next/image';
+import HeroImage from '@assets/images/vamp.webp';
+// import { ScrollDown } from '@components/scrollDown';
+
+const Hero = () => {
+	return (
+		<section>
+			<div className={hero.container}>
+				<div className={hero.model}>
+					<div className="desktop">
+						<HeroModel />
+					</div>
+					<div className='mobile'>
+					 <Image
+>>>>>>> master
 						src={HeroImage}
 						loader={({ src, width }) => `${src}?w=${width}`}
 						width={0}
@@ -23,6 +47,7 @@ const Hero = () => {
 						style={{ width: 'auto', height: 'clamp(100px, 40vw,1000px)', alignSelf: 'center' }}
 						alt=""
 						className="u-photo"
+<<<<<<< HEAD
 					/> */}
           <div className={hero.cta}>
             <HeroName name={"Sabrina"} />
@@ -37,6 +62,22 @@ const Hero = () => {
                 </p>
               </center>
             </div>
+=======
+					/> </div> 
+					<div className={hero.cta}>
+						<HeroName name={'Sabrina'} />
+						<div className={` ` + hero.text}>
+							<center>
+								<h2>
+									the <span>Web Developer</span>
+								</h2>
+								<p className="p-note">
+									I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
+									explore the indie web.
+								</p>
+							</center>
+						</div>
+>>>>>>> master
 
             <div className={button.container}>
               <Link href="/professional" rel="me">

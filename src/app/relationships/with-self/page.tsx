@@ -56,15 +56,11 @@ const WithSelfPage = () => {
               <br />
             </p>
             <p>
-              <b>Food. I occasionally feel hunger, but my relationship with food needs work. I sometimes eat nothing and other times overstuff myself. Moderation is a problem here.</b>
+              <b>Food.</b> I occasionally feel hunger, but my relationship with food needs work. I sometimes eat nothing and other times overstuff myself. Moderation is a problem here.
               <br />
             </p>
             <p>
-              <b>Execrete.</b> No problems here.
-              <br />
-            </p>
-            <p>
-              <b>Shelter</b> The need I treat with the most seriousness. I have a roof over my head and I'm grateful for it.
+              <b>Shelter.</b> The need I treat with the most seriousness. I have a roof over my head and I'm grateful for it.
               <br />
             </p>
             <p>

@@ -8,11 +8,19 @@ import { GetMonthName } from "@utils/GetMonthName";
 import { FaCode, FaFileImage, FaRegEye } from "react-icons/fa6";
 
 export const extractCategories = () => {
+<<<<<<< HEAD
   const categoriesSet = new Set<string>();
   Projects.forEach((project) => {
     categoriesSet.add(project.category);
   });
   return Array.from(categoriesSet);
+=======
+	const categoriesSet = new Set<string>();
+	Projects.filter((p) => p.category === 'code').forEach((project) => {
+		categoriesSet.add(project.type);
+	});
+	return Array.from(categoriesSet);
+>>>>>>> master
 };
 
 const WebProjects: React.FC = () => {
@@ -24,6 +32,7 @@ const WebProjects: React.FC = () => {
 
   const categories = extractCategories();
 
+<<<<<<< HEAD
   const filteredProjects =
     activeCategory === "All"
       ? [...Projects]
@@ -79,6 +88,63 @@ const WebProjects: React.FC = () => {
                 <FaFileImage style={{ fontSize: "12rem", margin: "auto" }} />
               </div>
             )}
+=======
+	const filteredProjects =
+		activeCategory === 'All'
+			? [...Projects]
+					.filter((p) => p.category === 'code')
+					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+			: Projects.filter((p) => p.category === 'code')
+					.filter((project) => project.type === activeCategory)
+					.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
+
+	return (
+		<section className={styles['project-wrapper']}>
+			<div className={styles['project-tabs']}>
+				<button
+					className={`${styles['project-tab'] + ` `} ${activeCategory === 'All' ? styles['active'] : ''}`}
+					onClick={() => handleTabChange('All')}
+				>
+					All ({Projects.filter((p) => p.category === 'code').length})
+				</button>
+				{categories.map((category) => (
+					<button
+						key={category}
+						className={`${styles['project-tab'] + ` `} ${activeCategory === category ? styles['active'] : ''}`}
+						onClick={() => handleTabChange(category)}
+					>
+						{category} ({Projects.filter((p) => p.type === category).length})
+					</button>
+				))}
+			</div>
+			<div className={styles['project-list']}>
+				{filteredProjects.map((project) => (
+					<div key={project.id} className={styles.project__card}>
+						{project.image ? (
+							<div className={styles.project__image}>
+								<Image
+									height={0}
+									width={0}
+									sizes="100vw"
+									style={{
+										width: 'auto',
+										height: '50vh',
+										margin: '0 auto',
+										display: 'flex',
+										borderRadius: 'var(--sharpBorderRadius)',
+									}}
+									placeholder="blur"
+									blurDataURL={project.image}
+									src={project.image}
+									alt={project.title}
+								/>
+							</div>
+						) : (
+							<div className={styles.project__image}>
+								<FaFileImage style={{ fontSize: '12rem', margin: 'auto' }} />
+							</div>
+						)}
+>>>>>>> master
 
             <div className={styles["project-info"]}>
               <div className={styles.project__present}></div>

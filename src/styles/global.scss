@@ -808,6 +808,17 @@ kbd::after,
 	}
 }
 
+.mobile {
+	display: flex;
+	@include breakpoint-range($from: mobile) {
+		display: flex;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		display: none;
+	}
+}
+
 .desktop {
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		display: none;
