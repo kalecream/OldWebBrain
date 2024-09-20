@@ -11,13 +11,13 @@ import SiteImage from "@assets/images/ouroburos.svg";
 export function Navbar() {
 	const path = usePathname();
 	return (
-		<header id="header" className={path && path == '/' ? `` : `glassmorphic`}>
+		<header id="header">
 			<nav id="nav">
 				{path && path !== '/' && (
 					<>
 						<Link href="/" className={style['site-name']}>
 							{/* <span className={style['site-name']}></span> */}
-							<Image src={SiteImage} alt="logo" width={100} height={100} style={{marginTop: '1rem'}} />
+							<Image src={SiteImage} alt="logo" width={120} height={120} style={{marginTop: '1rem'}} />
 						</Link>
 					</>
 				)}
