@@ -5,7 +5,8 @@ import style from "@styles/modules/nav.module.scss";
 import { usePathname } from "next/navigation";
 import Directory from "@data/directory";
 import { FaRss } from "react-icons/fa6";
-import SiteImage from "@public/og_logo.png";
+// import SiteImage from "@public/og_logo.png";
+import SiteImage from "@assets/images/ouroburos.svg";
 
 export function Navbar() {
 	const path = usePathname();
@@ -16,7 +17,7 @@ export function Navbar() {
 					<>
 						<Link href="/" className={style['site-name']}>
 							{/* <span className={style['site-name']}></span> */}
-							<Image src={SiteImage} alt="logo" width={90} height={90} style={{marginTop: '1rem'}} />
+							<Image src={SiteImage} alt="logo" width={100} height={100} style={{marginTop: '1rem'}} />
 						</Link>
 					</>
 				)}
