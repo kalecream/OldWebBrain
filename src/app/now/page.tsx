@@ -35,7 +35,7 @@ const NowPage = () => {
           </div>
           <h1>2024-Fall</h1>
           <p className="">
-            The focus of this season is instrospection, self-care, a backlog that I've neglected and previous goals which were not completed. I've been made aware of some negative traits of mine. With cursory thoughts, it would affect my relationship with myself, therefore I'll be paying more attention to developing my relationship <Link href="/relationships/with-self" className="internal-link">with-self</Link> to improve my relationship with everyone else.
+            The focus of this season is instrospection, self-care, a backlog that I've neglected and previous goals which were not completed. I've been made aware of some negative traits of mine. With cursory thoughts, it affects my relationship <Link href="/relationships/with-self" className="internal-link">with-self</Link>. Working on ths will also have a positive effect on my relationships with everyone else.
           </p>
         </div>
       </section>
