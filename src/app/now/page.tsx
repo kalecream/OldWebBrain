@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import BehindImage from "@public/img/album/plants.gif";
 import WinterImage from "@assets/images/winter.webp";
 import SummerImage from "@assets/images/summer.webp";
-import PalestineGraphic from "@assets/images/palestine.gif";
+import Fall2024 from "@assets/images/fall2024.webp";
 
 export const metadata: Metadata = {
   title: "Now",
@@ -25,6 +25,17 @@ const NowPage = () => {
             I don't have enough time to complete it. I no longer stress about achieving goals. Either I am well enough
             to continue working on the tasks, too busy/sick trying to keep myself afloat or dead with the tasks being no
             longer my problem.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div className={`prose `}>
+          <div className="img-grid">
+            <Image src={Fall2024} alt="" width={100} height={100} style={{ margin: "0 auto" }} />
+          </div>
+          <h1>2024-Fall</h1>
+          <p className="">
+            The focus of this season is instrospection, self-care, a backlog that I've neglected and previous goals which were not completed. I've been made aware of some negative traits of mine. With cursory thoughts, it would affect my relationship with myself, therefore I'll be paying more attention to developing my relationship <Link href="/relationships/with-self" className="internal-link">with-self</Link> to improve my relationship with everyone else.
           </p>
         </div>
       </section>
@@ -59,7 +70,7 @@ const NowPage = () => {
       <section>
         <div className={`prose `}>
           <div className="img-grid">
-            <Image src={BehindImage} alt="" width={200} height={120} style={{ margin: "0 auto" }} />
+            <Image src={BehindImage} alt="" width={160} height={100} style={{ margin: "0 auto" }} />
           </div>
           <h1>2024-Spring</h1>
           <p>
