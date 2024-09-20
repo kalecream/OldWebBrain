@@ -58,6 +58,11 @@ export const PageRoutes: PageRoutesProps[] = [
     priority: 0.4,
   },
   {
+    route: "/privacy",
+    date: new Date(2024, 8, 17, 11, 7),
+    priority: 0.3,
+  },
+  {
     route: "/professional",
     date: new Date(2024, 8, 17, 9, 13),
     priority: 0.9,
