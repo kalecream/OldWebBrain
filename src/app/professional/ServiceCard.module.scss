@@ -29,25 +29,86 @@
   transition-timing-function: ease-out;
   transform: rotate3d(0);
   transform: rotate(-5deg);
-}
 
-.card:hover {
-  color: #909090;
-  transition-duration: 150ms;
-  border-radius: var(--borderRadius);
-  background-color: #000;
-  box-shadow:
-    0 0 30px -5px var(--primary),
-    0 0 10px -2px var(--primary),
-    0 55px 35px -20px rgba(0, 0, 0, 0.5);
+  &:hover {
+    color: #909090;
+    transition-duration: 150ms;
+    border-radius: var(--borderRadius);
+    background-color: #000;
+    box-shadow:
+      0 0 30px -5px var(--primary),
+      0 0 10px -2px var(--primary),
+      0 55px 35px -20px rgba(0, 0, 0, 0.5);
 
     & h1 {
       color: var(--backgroundColor);
       font-family: "Cattedrale Rough";
     }
+  }
+
+  &-content {
+    position: absolute;
+    top: 26%;
+    left: 38%;
+    text-align: center;
+    max-width: 8rem;
+    writing-mode: vertical-lr;
+
+
+    & h1 {
+      font-family: "Cattedrale";
+      font-size: 5rem;
+      line-height: 1;
+      font-weight: bold;
+      color: #000;
+      // one word per line 
+      word-spacing: 100vw;
+      z-index: 10;
+
+      &:hover {
+        transition: color 0.5s;
+        color: var(--backgroundColor);
+      }
+
+    }
+  }
+
 }
 
-.card .glow {
+.card_2 {
+  color: #000;
+  margin: 1rem;
+  width: 300px;
+  height: 530px;
+  box-shadow: 0 1px 5px #1a191999;
+
+  border-radius: var(--borderRadius);
+  background-color: var(--secondary);
+  // background-image: url(https://imgur.com/VxjuARH.jpg);
+  background-size: cover;
+
+  position: relative;
+
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+
+  &:hover {
+    color: #909090;
+    transition-duration: 150ms;
+    border-radius: var(--borderRadius);
+    background-color: #000;
+    box-shadow:
+      0 0 30px -5px var(--primary),
+      0 0 10px -2px var(--primary),
+      0 55px 35px -20px rgba(0, 0, 0, 0.5);
+
+  }
+
+}
+
+.glow {
   position: absolute;
 
   border-radius: var(--borderRadius);
@@ -62,29 +123,30 @@
   z-index: 99;
 }
 
-.card-content {
-  position: absolute;
-  top: 26%;
-  left: 38%;
+.card__content {
   text-align: center;
-  max-width: 8rem;
-  writing-mode:vertical-lr;
+  max-width: 15rem;
+  color: var(--backgroundColor);
 
 
   & h1 {
-    font-family: "Cattedrale";
-    font-size: 5rem;
-    line-height: 1;
+    color: var(--backgroundColor);
+    font-family: "Cattedrale Rough";
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1.1;
     font-weight: bold;
-    color: #000;
-    // one word per line 
-    word-spacing: 100vw;
+    // word-spacing: 1rem;
     z-index: 10;
 
     &:hover {
       transition: color 0.5s;
-      color: var(--backgroundColor);
+      color: var(--secondary);
     }
 
+  }
+
+  & p {
+    font-size: 1.1rem;
   }
 }

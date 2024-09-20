@@ -80,24 +80,16 @@ const Card = ({ href, heading, text }) => {
     <Link
       href={href}
       ref={cardRef}
-      className={style.card}
+      className={style.card_2}
       target="_blank"
-      style={{ backgroundImage: "url(https://imgur.com/VxjuARH.jpg)", width: 300, height: 530 }}
     >
       <div ref={glowRef} className={style.glow}>
-        <div className={style["card-content"]} style={{ maxWidth: "15rem" }}>
+        <div className={style.card__content}>
           <h1
-            style={{
-              fontSize: "2.8rem",
-              wordSpacing: 0,
-              textAlign: "center",
-              lineHeight: "1.1",
-              fontFamily: "Cattedrale Rough",
-            }}
           >
             {heading}
           </h1>
-          <p style={{ color: "var(--backgroundColor)", fontSize: "1.1rem" }}>{text}</p>
+          <p>{text}</p>
         </div>
       </div>
     </Link>
