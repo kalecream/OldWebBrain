@@ -8,6 +8,7 @@ import { getBlogPosts } from "../../db/blog";
 // import { increment } from '../../db/actions';
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
+import { PageReadTime } from "@utils/PageReadTime";
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
@@ -16,17 +17,17 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
   // }
 
   let { title, date: publishedTime, summary: description, image, tags } = post.metadata;
-  let ogImage = image ? `https://sabrinamedwinter.com${image}` : `https://sabrinamedwinter.com/og?title=${title}`;
+  let ogImage = image ? `https://sabrinamedwinter.com${image}` : `https://sabrinamedwinter.com/opengraph-image.png`;
 
   return {
     title,
-    description,
+    description: post.metadata.description,
     keywords: tags,
     openGraph: {
       title,
       description,
       type: "article",
-      publishedTime,
+      publishedTime: post.metadata.date,
       url: `https://sabrinamedwinter.com/blog/${post.slug}`,
       images: [
         {
@@ -110,8 +111,10 @@ export default function Blog({ params }) {
         <h1 className="title">{post.metadata.title}</h1>
         {/* <h2 className='text-center'>
 					<i >{post.metadata.description}</i>
-				</h2> */}
+        </h2> */}
+
         <Suspense fallback={<p className="h-5" />}>
+          <PageReadTime readingSpeedWPM={200} />
           <p className="text-center">{formatDate(post.metadata.date)}</p>
         </Suspense>
         <br />
