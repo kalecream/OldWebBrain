@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Sabrina Medwinter",
+    title: "Sab Medwinter",
     card: "summary_large_image",
     site: "@Medwinters",
   },
