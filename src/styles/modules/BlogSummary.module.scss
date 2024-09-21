@@ -35,6 +35,12 @@
 	margin: 2.5rem 0 0 0;
 }
 
+.post {
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 0;
+}
+
 .list {
 
 	&__section div {
@@ -60,7 +66,7 @@
 	&__title {
 		align-self: center;
 		line-height: 1.2;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		margin: 0;
 		word-wrap: break-word;
 		text-transform: capitalize;
@@ -68,14 +74,29 @@
 
 	&__description {
 		max-width: 35rem;
-		margin-top: 0.15rem;
-		margin-bottom: 1.2rem;
-		margin-left: 0.8rem;
-		font-size: 1.4rem;
+		margin: 0.3rem 0;
+		font-size: 1.2rem;
 		line-height: 1.1;
-		font-family: "Garamond Italics";
+		// font-family: "Garamond Italics";
 		opacity: 0.7;
 		color: var(--textColor);
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin: 0.1rem 0;
+		font-size: 1rem;
+		opacity: 0.7;
+		line-height: 1;
+	}
+
+	&__tag {
+		color: var(--textColor);
+		padding: 0.1rem;
+		font-size: 0.8rem;
+		text-transform: capitalize;
 	}
 
 	&__title,
