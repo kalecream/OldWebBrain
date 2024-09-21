@@ -20,10 +20,7 @@ const NowPage = () => {
         <div className="prose">
           <p>
             The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. A page I stumbled
-            on while trying to see which web-rings were still active. These aren't exactly goals, but a collection of
-            things/experiences I would like to complete. I have no qualms with them rolling over to the next quarter if
-            I don't have enough time to complete it. I no longer stress about achieving goals. Either I am well enough
-            to continue working on the tasks, too busy/sick trying to keep myself afloat or dead with the tasks being no
+            on while trying to see which <Link className="internal-link" href={"/web-ring"}>web-rings</Link> were still active. These aren't exactly goals, but a collection of experiences I would like to complete. I have no qualms with them rolling over to the next quarter if I don't have enough time to complete it.  Either I am well enough to continue working on the tasks, too busy trying to keep myself afloat or dead with the tasks being no
             longer my problem.
           </p>
         </div>
@@ -127,7 +124,7 @@ const NowPage = () => {
           </div>
           <p>
             This is also when I had some awakenings about everyday life and lost most of my heroes. It ended with my
-            giving up religion. I have oscillated between being a Christian revert or apostate for many years. The
+            giving up religion. I have oscillated between being a Christian revert & apostate for many years. The
             bombing of Bethlehem on Christmas Day with little out-cry from Western Church leaders was the final straw
             for me. It does not make sense for me to practice a religion that is so far removed from its roots / holy
             sites. This was not the first time I noticed that what is generally practiced is an abstract version of
