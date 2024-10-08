@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Needs from "./needs.webp";
+import Link from "next/link";
 import { PageReadTime } from "@utils/PageReadTime";
 
 const WithSelfPage = () => {
@@ -36,9 +37,9 @@ const WithSelfPage = () => {
         <hr />
         <div>
           <h2>Needs</h2>
-          <details className="prose">
+          <details open className="prose">
             <summary>
-              <i style={{fontSize: '1.2rem'}}>Physiological</i>
+              <i style={{fontSize: '1.4rem'}}>Physiological</i>
             </summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
@@ -47,7 +48,7 @@ const WithSelfPage = () => {
               to their own pages.
             </p>
             <p>
-              <b>Breathe.</b> Frequently, I will realize I'm holding my breathe or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
+              <b><Link href="/relationships/with-self/breathe">Breathe.</Link></b> Frequently, I will realize I'm holding my breathe or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
             </p>
             <p>
               <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM,
@@ -64,27 +65,75 @@ const WithSelfPage = () => {
               <br />
             </p>
             <p>
-              <b>Sleep.</b> I've developed a bedtime routine that I'm happy with so far.'
+              <b>Sleep.</b> I've developed a bedtime routine that I'm happy with so far.
+              <br />
+            </p>
+          </details>
+          <details>
+            <summary>
+              <i  style={{fontSize: '1.4rem'}}>Safety</i>
+              </summary>
+              <p>
+              <b>Security in Body</b>
               <br />
             </p>
             <p>
-              <b>Sex.</b> I don't have a desire to continue my bloodline. This likely belongs as a higher order need because it's purely recreational. 
+              <b>Security in Employment</b>
+              <br />
+            </p>
+            <p>
+              <b>Security in Resources</b>
+              <br />
+            </p>
+            <p>
+              <b>Security in Morality</b>
+              <br />
+            </p>
+            <p>
+              <b>Security in Family</b>
+              <br />
+            </p>
+            <p>
+              <b>Security in Health</b>
+              <br />
+            </p>
+            <p>
+              <b>Security in Property</b>
+              <br />
+            </p>
+            
+          </details>
+          <details>
+            <summary>
+              <i style={{fontSize: '1.4rem'}}>Belonging</i>
+            </summary>
+            <p>
+              <b>Friendship</b>
+              <br />
+            </p>
+            <p>
+              <b>Family</b>
+              <br />
+            </p>
+            <p>
+              <b>Sexual Intimacy</b>
+              <br />
             </p>
           </details>
           <details>
             <summary>
-              <i  style={{fontSize: '1.2rem'}}>Safety</i>
+              <i style={{fontSize: '1.4rem'}}>Esteem</i>
             </summary>
+            <p>
+              <b>Sexual Intimacy</b>
+              <br />
+            </p>
           </details>
           <details>
             <summary>
-              <i style={{fontSize: '1.2rem'}}>Love</i>
+              <i style={{fontSize: '1.4rem'}}>Self-Actualization</i>
             </summary>
-          </details>
-          <details>
-            <summary>
-              <i style={{fontSize: '1.2rem'}}>Belonging</i>
-            </summary>
+            
           </details>
           <p className="prose"></p>
           <h2>Self-Regulation</h2>
