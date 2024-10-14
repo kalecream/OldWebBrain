@@ -99,8 +99,13 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/relationships/with-self",
-    date: new Date(2024, 7, 31),
+    date: new Date(2024, 8, 14, 4, 49),
     priority: 0.4,
+  },
+  {
+    route: "/relationships/with-self/breathe",
+    date: new Date(2024, 8, 14, 4, 49),
+    priority: 0.5,
   },
   {
     route: "/skip",
