@@ -39,7 +39,7 @@ const WithSelfPage = () => {
           <h2>Needs</h2>
           <details open className="prose">
             <summary>
-              <i style={{fontSize: '1.6rem'}}>Physiological</i>
+              <i style={{fontSize: '1.8rem'}}>Physiological</i>
             </summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
@@ -71,7 +71,7 @@ const WithSelfPage = () => {
           </details>
           <details open>
             <summary>
-              <i  style={{fontSize: '1.6rem'}}>Safety</i>
+              <i  style={{fontSize: '1.8rem'}}>Safety</i>
               </summary>
               <p>
               <b>Security in Body</b>
@@ -101,7 +101,7 @@ const WithSelfPage = () => {
           </details>
           <details>
             <summary>
-              <i style={{fontSize: '1.6rem'}}>Belonging</i>
+              <i style={{fontSize: '1.8rem'}}>Belonging</i>
             </summary>
             <p>
               <b>Friendship</b>
@@ -118,7 +118,7 @@ const WithSelfPage = () => {
           </details>
           <details>
             <summary>
-              <i style={{fontSize: '1.6rem'}}>Esteem</i>
+              <i style={{fontSize: '1.8rem'}}>Esteem</i>
             </summary>
             <p>
               <b>Esteem for oneself (dignity, achievement, mastery, independence) </b>
