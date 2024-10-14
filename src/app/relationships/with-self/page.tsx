@@ -48,7 +48,7 @@ const WithSelfPage = () => {
               to their own pages.
             </p>
             <p>
-              <b><Link className="internal-link" href="/relationships/with-self/breathe" title="Page not yet made">breathe</Link></b>. Frequently, I will realize I'm holding my breath or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
+              <b><Link className="internal-link" href="relationships/with-self/breathe" title="Page not yet made">breathe</Link></b>. Frequently, I will realize I'm holding my breath or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
             </p>
             <p>
               <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM,
