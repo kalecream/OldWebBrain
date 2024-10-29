@@ -34,17 +34,6 @@ export function Navbar() {
 								</Link>
 							</div>
 						))}
-					<div>
-						<Link
-							href={'/feed.xml'}
-							aria-label="social media link"
-							className={style['social-media'] + ` `}
-							target="_blank"
-							rel="me"
-						>
-							<FaRss />
-						</Link>
-					</div>
 				</div>
 			</nav>
 		</header>

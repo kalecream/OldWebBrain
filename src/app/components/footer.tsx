@@ -4,7 +4,7 @@ import style from "@styles/modules/footer.module.scss";
 
 export const SocialMediaList = () => {
   return (
-    <div className={style["social-media-list"] + ` flex space-between`}>
+    <div className={style["social-media-list"] + ` flex space-around`}>
       {MediaProfiles.map((media) => {
         const Icon = media.icon;
 
@@ -17,7 +17,7 @@ export const SocialMediaList = () => {
             key={media.name}
             rel="me"
           >
-            <Icon name={media.name} />
+            <Icon name={media.name} style={{scale: "1.5", margin: "0 1rem"}} />
           </Link>
         );
       })}
@@ -29,11 +29,9 @@ export const Footer: React.FC = () => {
   return (
     <footer>
       <div className="flex row" style={{ flexWrap: "wrap" }}>
-        <Link href={"/about"}>About</Link>
         <Link href={"/sitemap"}>Sitemap</Link>
         <Link href={"/colophon"}>Colophon</Link>
         <Link href={"https://github.com/kalecream/OldWebBrain"}>Source</Link>
-        <Link href={"/rolodex"}>Rolodex</Link>
       </div>
       <div className="flex">
         <small>sabrina medwinter &copy; {new Date().getFullYear()}</small>

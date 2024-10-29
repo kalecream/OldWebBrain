@@ -4,6 +4,10 @@ const Directory = [
     links: "/now",
   },
   {
+    title: "About",
+    links: "/about",
+  },
+  {
     title: "Blog",
     links: "/blog",
   },
@@ -15,6 +19,10 @@ const Directory = [
     title: "Changelog",
     links: "/changelog",
   },
+  {
+    title: "RSS",
+    links: "/feed.xml",
+  }
 ];
 
 export default Directory;
