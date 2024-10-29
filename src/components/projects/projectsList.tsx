@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "@styles/modules/projects.module.scss";
 import Image from "next/image";
 import { GetMonthName } from "@utils/GetMonthName";
-import { FaCode, FaRegEye } from "react-icons/fa6";
 
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
@@ -106,13 +105,13 @@ const ProjectList: React.FC = () => {
                         className={styles.project__code}
                         href={`https://github.com/kalecream/${project.repoName}`}
                       >
-                        <FaCode />
+                        Code.
                       </Link>
                     )}
 
                     {project.link && (
                       <Link title="View Project" className={styles.project__code} href={project.link}>
-                        <FaRegEye />
+                        Demo.
                       </Link>
                     )}
                   </div>
@@ -179,12 +178,12 @@ export const LatestProject = () => {
                 className={styles.project__code}
                 href={`https://github.com/kalecream/${project.repoName}`}
               >
-                <FaCode />
+                Code.
               </Link>
             )}{" "}
             {project.link && (
               <Link title="View Project" className={styles.project__code} href={project.link}>
-                <FaRegEye />
+                Demo.
               </Link>
             )}
           </div>

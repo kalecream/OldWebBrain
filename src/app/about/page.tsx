@@ -130,14 +130,14 @@ export const About = () => {
             Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts
             when I'm doing work. These have been my favourite listens so far:
           </p>
-          <div className="flex row">
+          <div className="flex row mx-1">
             {Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
               <div key={p.url}>
                 {p.url ? (
                   <Link href={p.url}>
                     <Image
-                      width={150}
-                      height={150}
+                      width={100}
+                      height={100}
                       src={p.cover}
                       alt={p.title}
                       title={p.title}
@@ -157,15 +157,14 @@ export const About = () => {
           <h1 className="text-center">Occasionally, I play Games...</h1>
 
           <p className={` prose`}>
-            My preference is playing short indie games or any games I physically own. I still play my Gameboy Advance
-            and I own multiple DSi. Not featured in the game gallery below is several untouched games from{" "}
+            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy Advance, DS my and NES emulator. Not featured in the game gallery below is several untouched games from{" "}
             <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
               Steam
             </Link>{" "}
             and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
             nowadays:
           </p>
-          <div className="flex row">
+          <div className="flex row mx-1">
             <div className="">
               <Link href="https://www.legendsofidleon.com/">
                 <Image

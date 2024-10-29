@@ -30,15 +30,14 @@ const Hero = () => {
             />{" "}
           </div>
           <div className={hero.cta}>
-            <HeroName name={"Sabrina"} />
+            <HeroName name={"Sisyphus"} />
             <div className={` ` + hero.text}>
               <center>
-                <h2>
-                  the <span>Web Developer</span>
-                </h2>
+                <h1 style={{maxWidth: "100%", fontSize: "2.3rem"}}>
+                  Escaping <span>Liminality</span>
+                </h1>
                 <p className="p-note">
-                  I intended this site to be a professional portfolio, but it has evolved into a personal showcase as I
-                  explore the indie web.
+                  A cross between a portfolio, a resume, a playground and a journal.
                 </p>
               </center>
             </div>
@@ -66,7 +65,7 @@ const Hero = () => {
                   </svg>
                 </button>
               </Link>
-              <Link href="/skip" style={{ scale: "0.8" }}>
+              <Link href="/skip" style={{ scale: "0.9" }}>
                 Skip
               </Link>
             </div>

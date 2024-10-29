@@ -77,11 +77,6 @@ const Pods = [
     url: "https://darknetdiaries.com/",
     cover: "https://i.imgur.com/tcrcLr6.png",
   },
-  {
-    title: "Sawbones: A Marital Tour of Misused Medicine",
-    url: "https://maximumfun.org/podcasts/sawbones/",
-    cover: "https://i.imgur.com/6My221k.png",
-  },
 ];
 
 export default Pods;

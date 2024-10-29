@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Projects as ProjectsData } from "@data/projectsData";
 import styles from "@styles/modules/projects.module.scss";
 import { GetMonthName } from "@utils/GetMonthName";
-import { FaCode, FaRegEye } from "react-icons/fa6";
 
 const SkipPage = () => {
   const LatestProject = ProjectsData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())[0];
@@ -18,9 +17,7 @@ const SkipPage = () => {
           <Link className="internal-link" href="/now">
             now{" "}
           </Link>{" "}
-          page but for things I've already done. Right now, I'm doing{" "}
-          <Link href="practice/swordtember">Swordtember</Link> and, then <Link href="practice/inktober">Inktober</Link>{" "}
-          challenges to get back into 3D practice and flesh out my portfolio.
+          page but for things I've already done. Right now, I'm doing        challenges to get back into 3D practice and flesh out my portfolio.
         </p>
       </section>
       <section>
@@ -82,7 +79,7 @@ const SkipPage = () => {
                       href={`https://github.com/kalecream/${LatestProject.repoName}`}
                       target="_blank"
                     >
-                      <FaCode />
+                      Code.
                     </Link>
                   )}
 
@@ -93,7 +90,7 @@ const SkipPage = () => {
                       href={LatestProject.link}
                       target="_blank"
                     >
-                      <FaRegEye />
+                      Demo.
                     </Link>
                   )}
                 </div>

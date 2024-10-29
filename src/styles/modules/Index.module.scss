@@ -67,7 +67,7 @@
 	@include breakpoint-range($from: tablet) {
 		bottom: 1%;
 		left: 20%;
-		background: var(--backgroundColor);
+		background: transparent;
 		width: fit-content;
 		min-height: 70%;
 		
