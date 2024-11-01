@@ -30,13 +30,15 @@
 }
 
 .project-tab {
-	padding: var(--paddingObject);
+	padding: 1rem 2.5rem;
 	border-radius: var(--borderRadius);
 	outline: none;
-	border: var(--border);
+	// border: var(--border);
 	background-color: var(--backgroundColor);
 	color: var(--primary);
+	font-size: 1.3rem;
 	text-transform: capitalize;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .project-tab:active,
