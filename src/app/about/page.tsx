@@ -118,7 +118,7 @@ export const About = () => {
         <p className="prose ">
           The graph below is my book status backlog for the past rolling year. This graph ignores books from before then
           to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-          Non-Fiction.
+          Non-Fiction. I frequently fail my reading pace because the goal isn't the most important thing to me, the system is. I want to ensure I continue reading throughout the year to learn new things and expand my imagination.
         </p>
         <BacklogGraph />
       </section>
@@ -157,7 +157,7 @@ export const About = () => {
           <h1 className="text-center">Occasionally, I play Games...</h1>
 
           <p className={` prose`}>
-            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy Advance, DS my and NES emulator. Not featured in the game gallery below is several untouched games from{" "}
+            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy Advance, DS and an NES emulator. Not featured in the game gallery below is several untouched games from{" "}
             <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
               Steam
             </Link>{" "}
