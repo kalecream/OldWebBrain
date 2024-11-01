@@ -8,7 +8,7 @@ export const MediaProfiles = [
   },
   {
     name: "Twitter",
-    url: "https://x.com/Medwinters",
+    url: "https://twitter.com/medwinters",
     icon: FaTwitter,
   },
   {

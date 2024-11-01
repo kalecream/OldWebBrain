@@ -18,8 +18,8 @@ export const PageReadTime: FC<Props> = ({ readingSpeedWPM = 200 }) => {
   }, [readingSpeedWPM]);
 
   return (
-    <p className="text-center">
-      Estimated Read: {readingTime} minute{readingTime > 1 && "s"}
-    </p>
+    <span className="text-center">
+      {readingTime} min read
+    </span>
   );
 };

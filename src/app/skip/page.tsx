@@ -9,18 +9,19 @@ const SkipPage = () => {
 
   return (
     <>
-      <section>
+      <section style={{minHeight: "65vh"}}>
         <h1>Hi, Friend!</h1>
         <p className="prose">
-          This is the personal side of my website. To this, I'll be showing my latest personal notes, musings and
-          projects that are not polished enough to go in my portfolio. It will be like now my{" "}
+          This is the personal side of my website. I'll be showing my latest personal notes, musings and
+          projects that are not polished enough to go in my portfolio. It will be like my{" "}
           <Link className="internal-link" href="/now">
             now{" "}
           </Link>{" "}
-          page but for things I've already done. Right now, I'm doing        challenges to get back into 3D practice and flesh out my portfolio.
+          page but for things I've already done + things I'm learning. I <i>might</i> lead you onto NSFW pages, but that will always come with a big full page warning banner.
         </p>
+        <p className="prose">I'm pretty busy these days with currently trying to catch up with work, flesh out my portfolio, learning self-sufficiency, discovering solo tabletop & print-n-play games. </p>
       </section>
-      <section>
+      <section style={{minHeight: "70vh"}}>
         <div className={styles["project-list"]}>
           <div className={styles.project__card}>
             <div className={styles.project__image}>
