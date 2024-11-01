@@ -28,11 +28,6 @@ export const SocialMediaList = () => {
 export const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="flex row" style={{ flexWrap: "wrap" }}>
-        <Link href={"/sitemap"}>Sitemap</Link>
-        <Link href={"/colophon"}>Colophon</Link>
-        <Link href={"https://github.com/kalecream/OldWebBrain"}>Source</Link>
-      </div>
       <div className="flex">
         <small>sabrina medwinter &copy; {new Date().getFullYear()}</small>
       </div>
