@@ -1,5 +1,3 @@
-import "@styles/tabs.module.css";
-
 export interface TabsProps {
   categories: string[];
   activeCategory: string;
