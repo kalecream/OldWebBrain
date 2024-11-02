@@ -17,14 +17,14 @@ const GPhotos: GalleryData[] = [
   {
     id: 0,
     src: "https://i.imgur.com/jCQIISQ.jpeg",
-    name: "Banana Sunset",
-    desc: "A banana tree at sunset",
+    name: "Punisher",
+    desc: "A stray cat who occasionally visits me. She has a kitten and when she was named, I was unaware of her sex. Still, Punisher fits her.",
     tags: ["banana", "sunset"],
   },
   {
     id: 1,
     src: "https://i.imgur.com/nD4m8JX.jpeg",
-    name: "Black and White Trees",
+    name: "Books",
     desc: "Trees in black and white",
     tags: ["trees", "black and white"],
   },
@@ -34,13 +34,6 @@ const GPhotos: GalleryData[] = [
     name: "Earring",
     desc: "A close-up of an earring",
     tags: ["earring", "jewelry"],
-  },
-  {
-    id: 3,
-    src: "https://i.imgur.com/I7sOZyW.jpeg",
-    name: "Jellyfish",
-    desc: "A jellyfish in the ocean",
-    tags: ["jellyfish", "ocean"],
   },
   {
     id: 4,
@@ -59,7 +52,7 @@ const GPhotos: GalleryData[] = [
   {
     id: 6,
     src: "https://i.imgur.com/YvnWlaW.jpeg",
-    name: "Pineapple",
+    name: "Wire-Wrapping",
     desc: "A pineapple on a table",
     tags: ["pineapple", "fruit"],
   },
@@ -78,22 +71,8 @@ const GPhotos: GalleryData[] = [
     tags: ["pumpkin", "vegetable"],
   },
   {
-    id: 9,
-    src: "https://i.imgur.com/Mn0LFu1.png",
-    name: "Sunset",
-    desc: "A sunset over the ocean",
-    tags: ["sunset", "ocean"],
-  },
-  {
     id: 10,
     src: "https://i.imgur.com/Z4rJL6X.jpeg",
-    name: "Sunset",
-    desc: "A sunset over the ocean",
-    tags: ["sunset", "ocean"],
-  },
-  {
-    id: 11,
-    src: "https://i.imgur.com/HurHDs0.jpeg",
     name: "Sunset",
     desc: "A sunset over the ocean",
     tags: ["sunset", "ocean"],

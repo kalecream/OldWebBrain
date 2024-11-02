@@ -1,5 +1,4 @@
 "use client";
-import { StaticImageData } from "next/image";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import style from './Gallery.module.scss';
@@ -101,7 +100,7 @@ const Tile: React.FC<TileProps> = ({ id, src, name, desc, onClick }) => (
 );
 
 const Picture: React.FC<ImageProps> = ({ CSSClass, src, alt }) => (
-  <img className={CSSClass} src={src} alt={alt} />
+  <Image className={CSSClass} src={src} alt={alt} width={500} height={500} />
 );
 
 export default NineGridGallery;

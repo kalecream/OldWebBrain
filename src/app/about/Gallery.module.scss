@@ -1,17 +1,32 @@
+@import '@styles/mediaQuery';
+
 .gallery {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: auto 5rem;
+
+    @include breakpoint-range($from: desktop) {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5rem 10rem;
+    }
 }
 
 .gallery-tile {
-    width: clamp(150px, 20vw, 300px);
+    flex: 0 0 25;
+
     aspect-ratio: 1/1;
     margin: 0.15em;
     overflow: hidden;
     position: relative;
-    // cursor: pointer;
+
+    @include breakpoint-range($from: mobile) {
+        width: 100%;
+    }
+
+    @include breakpoint-range($from: tablet) {
+        width: clamp(150px, 33%, 250px);
+    }
 }
 
 .gallery-tile img {

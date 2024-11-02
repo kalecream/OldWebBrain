@@ -76,7 +76,7 @@ interface TextScrambleComponentProps {
 const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases}) => {
 
   const defaultPhrases = [
-    "I am what I show up and do every day.",
+    "I am what <br/>I show up and do<br/> every day.",
       "Nothing more,<br/> nothing less.",
   ];
 
@@ -91,20 +91,20 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
 
       const next = () => {
         fxRef.current
-          ?.setText(phrases[counter.current])
+          ?.setText(usedPhrases[counter.current])
           .then(() => setTimeout(next, 800));
 
-        counter.current = (counter.current + 1) % phrases.length;
+        counter.current = (counter.current + 1) % usedPhrases.length;
       };
 
       next();
     }
 
     return () => cancelAnimationFrame(fxRef.current?.frameRequest!);
-  }, [phrases]);
+  }, [usedPhrases]);
 
   return (
-    <h1 className="text" ref={textRef}>
+    <h1 className="text" ref={textRef} style={{maxWidth: "55rem"}}>
     </h1>
   );
 };
