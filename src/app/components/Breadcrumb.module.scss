@@ -1,0 +1,40 @@
+/* Breadcrumb.module.css */
+.breadcrumbList {
+    display: flex;    
+    flex-flow: row wrap;
+    max-width: 55rem;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & li::marker {
+        content: '';
+    }
+
+}
+
+.breadcrumbItem {
+    float: left;
+}
+
+.breadcrumbItem a {
+    color: var(--primary);
+}
+
+.breadcrumbItem a:hover {
+    color: var(--secondary);
+}
+
+.breadcrumbItem::after {
+    content: '/';
+    margin-left: 8px;
+}
+
+.breadcrumbItem:last-child a {
+    color: var(--secondary);
+}
+
+.breadcrumbItem:last-child::after {
+    content: '';
+}

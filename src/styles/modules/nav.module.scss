@@ -47,43 +47,9 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  margin: 0 auto;
 
   &:hover {
     filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
   }
-
-  @include breakpoint-range($from: mobile) {
-    margin: 0 auto;
-
-    // &::before {
-    //   content: 'Sabrina';
-    //   color: var(--textColor);
-    //   font-size: clamp(3rem, 10vw, 4rem);
-    //   font-family: "Cattedrale Rough";
-    //   text-transform: capitalize;
-    //   margin: 0;
-    //   letter-spacing: -2px;
-    //   user-select: none;
-    //   pointer-events: none;
-    // }
-  }
-
-  @include breakpoint-range($from: desktopSmall) {
-
-    margin-left: 4rem;
-
-  }
-
-  // @include breakpoint-range($from: tablet) {
-  //   &::before {
-  //     content: "";
-  //   }
-  //   margin: 0 auto;
-  //   height: 220px;
-  //   width: 600px;
-  //   content: none;
-  //   background-image: url(../../assets/images/Sitename.svg);
-  //   background-repeat: no-repeat;
-  //   background-position: cover;
-  // }
 }
