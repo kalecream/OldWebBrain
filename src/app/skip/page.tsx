@@ -19,9 +19,6 @@ const SkipPage = () => {
           </Link>{" "}
           page but for things I've already done + things I'm learning. I <i>might</i> lead you onto NSFW pages, but that will always come with a big full page warning banner.
         </p>
-        <p className="prose">I'm pretty busy these days with currently trying to catch up with work, flesh out my portfolio, learning self-sufficiency, discovering solo tabletop & print-n-play games. </p>
-      </section>
-      <section style={{minHeight: "70vh"}}>
         <div className={styles["project-list"]}>
           <div className={styles.project__card}>
             <div className={styles.project__image}>
