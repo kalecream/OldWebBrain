@@ -60,7 +60,7 @@
 		left: 0;
 		background: var(--backgroundColor);
 		border-radius: var(--borderRadius);
-		min-height: 100%;
+		min-height: 90%;
 		width: 100%;
 	}
 
@@ -81,13 +81,11 @@
 }
 
 .model {
-	width: 100vw;
-	height: 95vh;
 	display: flex;
 	position: absolute;
 	bottom: 2%;
-	right: 0%;
-	margin: auto;
+	left: 5%;
+	margin: 0 auto;
 
 	@include breakpoint-range($from: mobile, $to: desktopSmall) {
 	 & #hero-model {
@@ -100,7 +98,6 @@
 			display: block;
 		}
 
-		padding: 0.5rem 3rem;
 		flex-direction: row;
 	}
 }

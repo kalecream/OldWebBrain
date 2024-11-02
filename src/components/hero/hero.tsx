@@ -10,9 +10,7 @@ const Hero = () => {
     <section>
       <div className={`${hero.container}`}>
         <div className={hero.model}>
-          <div className="desktop">
             <HeroModel />
-          </div>
           <div className={hero.cta}>
             <HeroName name={"Sisyphus"} />
             <div className={` ` + hero.text}>
