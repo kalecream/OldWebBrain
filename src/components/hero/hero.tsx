@@ -19,7 +19,7 @@ const Hero = () => {
                   Escaping <span>Liminality</span>
                 </h1>
                 <p className="p-note">
-                  A cross between a portfolio, a resume, a playground, a prayer ,and a journal.
+                  A cross between a portfolio, a resume, a playground, a prayer, and a journal.
                 </p>
               </center>
             </div>
