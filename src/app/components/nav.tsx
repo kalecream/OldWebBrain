@@ -17,7 +17,7 @@ export function Navbar() {
 					<>
 						<Link href="/" className={style['site-name']}>
 							{/* <span className={style['site-name']}></span> */}
-							<Image src={SiteImage} alt="logo" width={120} height={120} style={{marginTop: '1rem'}} />
+							<Image src={SiteImage} alt="logo" width={100} height={100} style={{marginTop: '1rem'}} />
 						</Link>
 					</>
 				)}

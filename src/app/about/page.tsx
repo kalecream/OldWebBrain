@@ -1,17 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { GPhotos } from "@assets/images";
 import Books from "@data/books";
 import Pods from "@data/pod";
 import Reads from "@app/about/Reads";
 import { BacklogGraph } from "./backlogGraph";
 import styles from "./books.module.scss";
-import Link from "next/link";
-import Image from "next/image";
-import pic from "@public/img/album/river.jpg";
-import { ScrollDown } from "@components/scrollDown";
+import button from "@styles/modules/Button.module.scss";
+import NineGridGallery from "./Gallery";
 import { CodersrankSummary } from "./CodersRank";
+import TextScrambleComponent from "@app/components/TextScramble";
 
 export const About = () => {
+
   const [Percentage, setPercentage] = useState([0, 0]);
 
   useEffect(() => {
@@ -57,25 +60,52 @@ export const About = () => {
 
   return (
     <section>
-      <section style={{ marginBottom: "3rem", marginTop: 0, paddingTop: 0 }}>
+      <section style={{ marginTop: "auto", paddingTop: "auto", minHeight: "90vh" }}>
         <div className="flex column center">
           <div className="frame">
-            <Image src={pic} alt="" height={200} width={350} style={{ margin: "auto", borderRadius: 0 }} />
+            <Image src={"https://i.imgur.com/sRfXe3l.jpeg"} alt="" height={200} width={350} style={{ margin: "auto", borderRadius: 0 }} />
           </div>
-          <p className="prose">
-            This about page was made because showing you my personality through the things I enjoy is personally
-            preferable to making a biography. I've always disliked being asked "tell me a bit about yourself" in
-            personal environments.
+          <p className="prose" style={{ maxWidth: "35rem" }}>
+            (Under construction) I've always disliked being asked "tell me a bit about yourself" in personal
+            environments.I have the standard set of outputs from personality tests, but for the longest time, I
+            struggled to figure out who I was.  The mundane truth turned out to be...
           </p>
-          <p className="prose" style={{ margin: "-1rem 0" }}>
-            I have the standard set of outputs from personality tests, but for the longest time, I struggled to figure
-            out who I was. The mundane truth turned out to be: <b>I am what I show up and do every day.</b> Nothing
-            more, nothing less. Here is what I do every day...
-          </p>
-          <ScrollDown />
+          <Link href="/about#who" rel="me">
+            <button className={button.vamp} role="button">
+              <span className={button.text}>Who Are You?</span>
+              <span className={button["vamp-background"]}></span>
+              <span className={button["vamp-border"]}></span>
+
+              {/* <!-- mask-border fallback --> */}
+              <svg style={{ position: "absolute", width: "0", height: "0" }}>
+                <filter id="remove-black-vamp" colorInterpolationFilters="sRGB">
+                  <feColorMatrix
+                    type="matrix"
+                    values="1 0 0 0 0
+                 0 1 0 0 0
+                 0 0 1 0 0
+                 -1 -1 -1 0 1"
+                    result="black-pixels"
+                  ></feColorMatrix>
+                  <feComposite in="SourceGraphic" in2="black-pixels" operator="out"></feComposite>
+                </filter>
+              </svg>
+            </button>
+          </Link>
         </div>
       </section>
-      <section id="books">
+      <section id="who" className="stars" style={{ margin: 0, padding: 0, minHeight: "100vh" }}>
+        <TextScrambleComponent />
+      
+      </section>
+      <section className="stars" style={{ margin: 0, paddingTop: 0, minHeight: "90vh", paddingBottom: "6rem", marginBottom: "6rem" }}>
+        <div className="flex center">
+          <div>
+            <NineGridGallery images={GPhotos} />
+          </div>
+        </div>
+      </section>
+      <section id="books" style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}>
         <div className={styles.paragraph}>
           <h1 className="text-center">Mostly, I read...</h1>
           <p className="prose ">
@@ -118,12 +148,18 @@ export const About = () => {
         <p className="prose ">
           The graph below is my book status backlog for the past rolling year. This graph ignores books from before then
           to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
-          Non-Fiction. I frequently fail my reading pace because the goal isn't the most important thing to me, the system is. I want to ensure I continue reading throughout the year to learn new things and expand my imagination.
+          Non-Fiction. I frequently fail my reading pace because the goal isn't the most important thing to me, the
+          system is. I want to ensure I continue reading throughout the year to learn new things and expand my
+          imagination.
         </p>
         <BacklogGraph />
       </section>
 
-      <section className={styles.paragraph} id="podcasts">
+      <section
+        className={styles.paragraph}
+        id="podcasts"
+        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+      >
         <div>
           <h1 className="text-center">& I'm always listening to a podcast!</h1>
           <p className="prose ">
@@ -136,8 +172,8 @@ export const About = () => {
                 {p.url ? (
                   <Link href={p.url}>
                     <Image
-                      width={100}
-                      height={100}
+                      width={150}
+                      height={150}
                       src={p.cover}
                       alt={p.title}
                       title={p.title}
@@ -152,12 +188,17 @@ export const About = () => {
           </div>
         </div>
       </section>
-      <section className={styles.paragraph} id="games">
+      <section
+        className={styles.paragraph}
+        id="games"
+        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+      >
         <div>
           <h1 className="text-center">Occasionally, I play Games...</h1>
 
           <p className={` prose`}>
-            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy Advance, DS and an NES emulator. Not featured in the game gallery below is several untouched games from{" "}
+            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy
+            Advance, DS and an NES emulator. Not featured in the game gallery below is several untouched games from{" "}
             <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
               Steam
             </Link>{" "}
@@ -235,8 +276,12 @@ export const About = () => {
           </div>
         </div>
       </section>
-      <section className={styles.paragraph} id="code">
-        <h1 className="text-center">I code...</h1>
+      <section
+        className={styles.paragraph}
+        id="code"
+        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+      >
+        <h1 className="text-center">And, I code...</h1>
         <CodersrankSummary />
         <p className="prose">
           Data from <Link href="https://profile.codersrank.io/user/kalecream">CodersRank.io</Link>{" "}

@@ -168,10 +168,10 @@ const ColophonPage = () => {
             </s>
           </li>
           <li>
-            <Link href="https://giphy.com/stickers/cat-halloween-this-is-peLhJa1fluELs1WCx9">
-              (Temp) Vampire GIF Sticker
-            </Link>{" "}
-            to complement the hero section.
+            <Link href="https://www.codepel.com/animation/javascript-text-scramble-effect/">
+            Text Scramble Effect
+            </Link>
+            
           </li>
           <li>
             Cool 3D <Link href="https://csspro.com/css-3d-buttons/">Button 13</Link> for the Index Hero. Taken from
