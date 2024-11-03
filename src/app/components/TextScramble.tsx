@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 class TextScramble {
   el: HTMLElement;
@@ -76,7 +76,7 @@ interface TextScrambleComponentProps {
 const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases}) => {
 
   const defaultPhrases = [
-    "I am what <br/>I show up and do<br/> every day.",
+    "I am what I show up and do every day.",
       "Nothing more,<br/> nothing less.",
   ];
 
@@ -104,7 +104,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
   }, [usedPhrases]);
 
   return (
-    <h1 className="text" ref={textRef} style={{maxWidth: "55rem"}}>
+    <h1 ref={textRef}>
     </h1>
   );
 };

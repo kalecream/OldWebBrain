@@ -26,6 +26,7 @@
 	margin: 0 auto;
 	padding-bottom: var(--paddingObject);
 	display: flex;
+	flex-flow: row wrap;
 	gap: 1rem;
 }
 
@@ -33,7 +34,7 @@
 	padding: 1rem 2.5rem;
 	border-radius: var(--borderRadius);
 	outline: none;
-	// border: var(--border);
+	border: none;
 	background-color: var(--backgroundColor);
 	color: var(--primary);
 	font-size: 1.3rem;

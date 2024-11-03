@@ -14,7 +14,7 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/about",
-    date: new Date(2024, 7, 31),
+    date: new Date(2024, 10, 3, 12, 22),
     priority: 0.4,
   },
   {
@@ -39,18 +39,13 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/colophon",
-    date: new Date(2024, 8, 4, 12, 22),
+    date: new Date(2024, 10, 4, 12, 22),
     priority: 0.3,
   },
   {
     route: "/contact",
     date: new Date(2024, 7, 31),
     priority: 0.8,
-  },
-  {
-    route: "/inktober",
-    date: new Date(2024, 8, 1, 2, 7),
-    priority: 0.4,
   },
   {
     route: "/now",

@@ -1,28 +1,5 @@
 @import '../mediaQuery';
 
-.directory-list {
-  align-items: center;
-}
-
-.directory-section {
-  right: 0;
-  float: right;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  @include breakpoint-range($from: mobile) {
-    margin: 0rem auto;
-  }
-
-  @include breakpoint-range($from: desktopSmall) {
-    margin: 1rem 4rem;
-  }
-}
-
 .directory-link {
   text-transform: capitalize;
   font-size: 1.4rem;

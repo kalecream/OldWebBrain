@@ -10,13 +10,12 @@ export function Navbar() {
 	return (
 		<header id="header">
 			<nav id="nav">
-				
 				<Breadcrumb />
-				<div className={`${style['directory-list']} ${style['directory-section']}`}>
+				<div className="nav_section">
 					{Directory.length > 0 &&
 						Directory.map((directory, index) => (
 							
-							<div className={style['directory-list']} key={index}>
+							<div key={index}>
 								<Link
 									className={style['directory-link']}
 									href={directory.links}
