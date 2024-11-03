@@ -16,10 +16,6 @@ const Directory = [
     links: "/contact",
   },
   {
-    title: "Colophon",
-    links: "/colophon",
-  },
-  {
     title: "Sitemap",
     links: "/sitemap",
   },

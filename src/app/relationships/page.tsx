@@ -67,13 +67,13 @@ const RShipPage = () => {
           <li>Consider myself to not lose a sense of self becoming codependent</li>
         </ol>
         <p className="prose">
-          <Link href="/relationships/with-self">With Self</Link>
+          <Link href="/with-self">With Self</Link>
           <br />
-          <Link href="/relationships/with-family">With Family</Link>
+          <Link href="/with-family">With Family</Link>
           <br />
-          <Link href="/relationships/with-friends">With Friends</Link>
+          <Link href="/with-friends">With Friends</Link>
           <br />
-          <Link href="/relationships/with-romance">With Romantic Interests</Link>
+          <Link href="/with-romance">With Romantic Interests</Link>
         </p>
       </section>
     </>
