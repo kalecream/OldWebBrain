@@ -13,79 +13,43 @@ import AboutBooksSection from "./AboutBooks";
 
 export const About = () => {
   return (
-    <>
-      <section style={{ marginTop: 0, paddingTop: 0, minHeight: "90vh" }}>
-        <div className="flex column center">
-          <div className="frame">
-            <Image
-              src={"https://i.imgur.com/sRfXe3l.jpeg"}
-              alt=""
-              height={200}
-              width={350}
-              style={{ margin: "auto", borderRadius: 0 }}
-            />
-          </div>
-          <p className="prose">
-        — To see more on how this website was made, read{" "}
-          <Link href="/colophon" className="internal-link">
-            colophon
-          </Link>.
-          <br />
-          — To see all pages, visit <Link className="internal-link" href={"/sitemap"}>sitemap</Link>
-          .
-        </p>
-          <p className="prose" style={{ maxWidth: "40rem" }}>
-            I've always disliked being asked "tell me a bit about yourself" in personal environments. For the longest time, I struggled to figure out who I
-            was.
-          </p>
-          <Link href="/about#who" rel="me">
-            <button className={button.vamp} role="button">
-              <span className={button.text}>Who Are You?</span>
-              <span className={button["vamp-background"]}></span>
-              <span className={button["vamp-border"]}></span>
-
-              {/* <!-- mask-border fallback --> */}
-              <svg style={{ position: "absolute", width: "0", height: "0" }}>
-                <filter id="remove-black-vamp" colorInterpolationFilters="sRGB">
-                  <feColorMatrix
-                    type="matrix"
-                    values="1 0 0 0 0
-                 0 1 0 0 0
-                 0 0 1 0 0
-                 -1 -1 -1 0 1"
-                    result="black-pixels"
-                  ></feColorMatrix>
-                  <feComposite in="SourceGraphic" in2="black-pixels" operator="out"></feComposite>
-                </filter>
-              </svg>
-            </button>
-          </Link>
+    <div className="stars">
+      <section className="stars" style={{ margin: 0, padding: "2rem 0 ", minHeight: "95vh" }}>
+        <div className="frame">
+          <Image
+            src={"https://i.imgur.com/sRfXe3l.jpeg"}
+            alt=""
+            height={200}
+            width={350}
+            style={{ margin: "auto", borderRadius: 0 }}
+          />
         </div>
-      </section>
-      <section id="who" className="stars" style={{ margin: 0, padding: 0, minHeight: "100vh" }}>
+        <p className="prose" style={{ maxWidth: "50rem" }}>
+          For the longest time, I struggled to figure out who I was.
+        </p>
         <TextScrambleComponent />
       </section>
-      <section
+      
+      {/* <section
         className="stars"
         style={{ margin: 0, padding: 0, minHeight: "100vh", paddingBottom: "6rem", marginBottom: "6rem" }}
       >
         <div className="flex center mx-1">
           <NineGridGallery images={GPhotos} />
         </div>
-      </section>
+      </section> */}
       <AboutBooksSection />
       <section
         className={styles.paragraph}
         id="podcasts"
         style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
       >
-        <div>
           <h1 className="text-center">& I'm always listening to a podcast!</h1>
-          <p className="prose ">
+          <p className="prose blur ">
             Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts
             when I'm doing work. These have been my favourite listens so far:
           </p>
-          <div className="flex row mx-1">
+          <div className="flex row m-1 p-1">
             {Pods.sort((a, b) => a.title.localeCompare(b.title)).map((p) => (
               <div key={p.url}>
                 {p.url ? (
@@ -105,26 +69,24 @@ export const About = () => {
               </div>
             ))}
           </div>
-        </div>
       </section>
       <section
         className={styles.paragraph}
         id="games"
         style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
       >
-        <div>
-          <h1 className="text-center">Occasionally, I play Games...</h1>
+          <h1 className="text-center">Rarely, I play Games!</h1>
 
-          <p className={` prose`}>
-            My preference is playing short indie games or any games I physically own. I still play my physical Gameboy
-            Advance, DS and an NES emulator. Not featured in the game gallery below is several untouched games from{" "}
+          <p className={`blur prose`}>
+            My preference is playing short indie games or any game I physically own. I still play my Gameboy
+            Advance, DS and an NES emulator. <br/><br/>Not featured in the game gallery below is several untouched games from{" "}
             <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
               Steam
             </Link>{" "}
             and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
             nowadays:
           </p>
-          <div className="flex row mx-1">
+          <div className="flex row m-1 p-1">
             <div className="">
               <Link href="https://www.legendsofidleon.com/">
                 <Image
@@ -193,7 +155,6 @@ export const About = () => {
               </Link>
             </div>
           </div>
-        </div>
       </section>
       {/* <section
         className={styles.paragraph}
@@ -206,7 +167,7 @@ export const About = () => {
           Data from <Link href="https://profile.codersrank.io/user/kalecream">CodersRank.io</Link>{" "}
         </p>
       </section> */}
-    </>
+    </div>
   );
 };
 

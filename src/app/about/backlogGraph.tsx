@@ -104,15 +104,13 @@ export const BacklogGraph: FC = () => {
   const width = WindowWidth() - 100;
 
   return (
-    <>
       <BarChart width={width} height={300} data={Data} className={styles.backlogChart}>
         <XAxis dataKey="month" />
         {/* <YAxis domain={[0, 'dataMax + 3']} /> */}
         <Tooltip />
-        <Bar dataKey="Started" stackId="a" fill="var(--secondary)" />
-        <Bar dataKey="Finished" stackId="a" fill="var(--primary)" label={<CustomerBarLabel />} />
+        <Bar dataKey="Started" stackId="a" fill="var(--primary)" />
+        <Bar dataKey="Finished" stackId="a" fill="var(--secondary)" label={<CustomerBarLabel />} />
       </BarChart>
-    </>
   );
 };
 
@@ -124,7 +122,7 @@ const CustomerBarLabel: FC<any> = (props) => {
   }
 
   return (
-    <text x={x + width / 2} y={y} fill="var(--primary)" fontSize="1.5rem" fontWeight={700} textAnchor="middle" dy={-6}>
+    <text x={x + width / 2} y={y} fill="var(--secondary)" fontSize="2rem" fontWeight={700} textAnchor="middle" dy={-6}>
       {value}
     </text>
   );

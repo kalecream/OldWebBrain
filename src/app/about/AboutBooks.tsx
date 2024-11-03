@@ -54,10 +54,10 @@ const readBooks = Books.filter((book) => book.status === "Read").sort(
 );
     
     return (
-        <section id="books" style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}>
+        <section id="books" style={{ margin: 0, padding: 0, minHeight: "100vh"}}>
         <div className={styles.paragraph}>
           <h1 className="text-center">Mostly, I read...</h1>
-          <p className="prose ">
+          <p className="prose blur ">
             I like to read to learn about the world around me or get laughs. I have{" "}
             <b>{Books.filter((book) => book.status != "Want").length}</b> books in my library, and I'm always looking
             for more. I prefer {Percentage[0] > Percentage[1] ? "Fiction" : "Non-Fiction"}, and read in a{" "}
@@ -67,7 +67,7 @@ const readBooks = Books.filter((book) => book.status === "Read").sort(
             split.
           </p>
           <div className="flex row align-items">
-            <Link className="prose text-center" href="/read#read">
+            <Link className="prose text-center blur" href="/read#read">
               <p>&#8592; Last ({readBooks.length})</p>
             </Link>
             {
@@ -84,17 +84,17 @@ const readBooks = Books.filter((book) => book.status === "Read").sort(
               </Link>
             }
             <Reads status="Want" limit={1} />
-            <Link className="prose text-center" href="/read#want">
+            <Link className="prose text-center blur" href="/read#want">
               <p>Next ({wantToReadBooks.length}) &#8594;</p>
             </Link>
           </div>
         </div>
-        <p className="prose ">
+        <p className="prose blur">
           I'm currently reading <b>{Books.filter((book) => book.status === "Reading").length}</b> books, which you can
           see below. My 10 most frequently read book tags are: <b>{topGenres}.</b>
         </p>
         <Reads status="Reading" />
-        <p className="prose ">
+        <p className="prose blur">
           The graph below is my book status backlog for the past rolling year. This graph ignores books from before then
           to ensure that I'm keeping up my desired reading pace of 24 books for every 12 months with 70/30 Fiction to
           Non-Fiction. I frequently fail my reading pace because the goal isn't the most important thing to me, the
