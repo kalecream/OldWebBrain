@@ -41,7 +41,7 @@ const RShipPage = () => {
           I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a
           yam-head or the abusive farmer. The most important thing to note is that:
         </p>
-        <ol className="prose" style={{ margin: "0 1rem" }}>
+        <ol className="prose">
           <li> Relationships are unique and do not follow the same path.</li>
           <li>
             Adaptability, Consideration and Grace will be neccesary for when Life likes to just throw us off our paths.
@@ -61,19 +61,19 @@ const RShipPage = () => {
           then my wider community. It is very important to consider how actions taken will affect someone. I want to
           take time to consider my actions to:
         </p>
-        <ol className="prose" style={{ margin: "0 1rem" }}>
+        <ol className="prose">
           <li>Reduce the chance of causing harm</li>
           <li>Never intentionally causing harm</li>
           <li>Consider myself to not lose a sense of self becoming codependent</li>
         </ol>
         <p className="prose">
-          <Link href="/with-self">With Self</Link>
+          <Link href={"relationships/with-self"}>With Self</Link>
           <br />
-          <Link href="/with-family">With Family</Link>
+          <Link href="relationships/with-family">With Family</Link>
           <br />
-          <Link href="/with-friends">With Friends</Link>
+          <Link href="relationships/with-friends">With Friends</Link>
           <br />
-          <Link href="/with-romance">With Romantic Interests</Link>
+          <Link href="relationships/with-romance">With Romantic Interests</Link>
         </p>
       </section>
     </>
