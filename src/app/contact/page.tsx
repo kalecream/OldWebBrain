@@ -4,12 +4,14 @@ import Link from "next/link";
 const ContactPage = () => {
   return (
     <>
-      <section style={{ minHeight: "65vh", textAlign: "center", gap: "3rem" }}>
+      <section style={{ minHeight: "100vh", textAlign: "center", gap: "3rem" }}>
         <div>
           <p>The best way to get me is to e-mail me at</p>
-          <h1 style={{ lineHeight: "1.2", margin: 0 }}>
+          <h1 style={{ lineHeight: "1.2" }}>
             <Link href="mailto://sabrinamedwinter@gmail.com">
-              sabrinamedwinter
+              sabrina
+              <wbr />
+              medwinter
               <wbr />
               @gmail.com
             </Link>
