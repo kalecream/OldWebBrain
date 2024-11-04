@@ -10,11 +10,13 @@ import NineGridGallery from "./Gallery";
 // import { CodersrankSummary } from "./CodersRank";
 import TextScrambleComponent from "@app/components/TextScramble";
 import AboutBooksSection from "./AboutBooks";
+import { CodersrankSummary } from "./CodersRank";
+import { ScrollDown } from "@components/scrollDown";
 
 export const About = () => {
   return (
     <div className="stars">
-      <section className="stars" style={{ margin: 0, padding: "2rem 0 ", minHeight: "95vh" }}>
+      <section className="stars" style={{ minHeight: "95vh" }}>
         <div className="frame">
           <Image
             src={"https://i.imgur.com/sRfXe3l.jpeg"}
@@ -28,6 +30,7 @@ export const About = () => {
           For the longest time, I struggled to figure out who I was.
         </p>
         <TextScrambleComponent />
+        <ScrollDown />
       </section>
       
       {/* <section
@@ -42,7 +45,7 @@ export const About = () => {
       <section
         className={styles.paragraph}
         id="podcasts"
-        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+        style={{ minHeight: "100vh", marginBottom: "6rem" }}
       >
           <h1 className="text-center">& I'm always listening to a podcast!</h1>
           <p className="prose blur ">
@@ -73,7 +76,7 @@ export const About = () => {
       <section
         className={styles.paragraph}
         id="games"
-        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+        style={{ minHeight: "100vh", marginBottom: "6rem" }}
       >
           <h1 className="text-center">Rarely, I play Games!</h1>
 
@@ -159,7 +162,7 @@ export const About = () => {
       {/* <section
         className={styles.paragraph}
         id="code"
-        style={{ margin: 0, padding: 0, minHeight: "100vh", marginBottom: "6rem" }}
+        style={{ minHeight: "100vh", marginBottom: "6rem" }}
       >
         <h1 className="text-center">And, I code...</h1>
         <CodersrankSummary />
