@@ -27,11 +27,12 @@
 	padding-bottom: var(--paddingObject);
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
 	gap: 1rem;
 }
 
 .project-tab {
-	padding: 1rem 2.5rem;
+	padding: 1rem 1rem;
 	border-radius: var(--borderRadius);
 	outline: none;
 	border: none;
@@ -66,6 +67,7 @@
 	border-radius: var(--borderRadius);
 
 	@include breakpoint-range($from: mobile) {
+		max-width: 90vw;
 		flex-wrap: wrap;
 	}
 
@@ -121,16 +123,21 @@
 }
 
 .project__image {
+	display: flex;
+	border-radius: var(--sharpBorderRadius);
+	
 
 	@include breakpoint-range($from: mobile) {
-		display: none;
+		width: clamp(150px, 100%, 500px);
+		overflow: scroll;
+		margin: auto;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		display: flex;
 		height: 50vh;
 		width: auto;
-		border-radius: var(--sharpBorderRadius);
+		overflow: hidden;
+		margin: 0;
 	}
 }
 

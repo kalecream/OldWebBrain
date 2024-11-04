@@ -3,7 +3,6 @@ import { ServiceCard } from "./ServiceCard";
 
 const ProfessionalPage = () => {
   return (
-    <>
       <section>
         <h1>Services</h1>
         <p className="prose center" style={{ margin: "-1rem auto" }}>
@@ -12,7 +11,6 @@ const ProfessionalPage = () => {
         </p>
         <ServiceCard />
       </section>
-    </>
   );
 };
 

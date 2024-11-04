@@ -35,6 +35,7 @@ const DesignProjects: React.FC = () => {
 
 	return (
 		<section className={styles['project-wrapper']}>
+			<h1>Design</h1>
 			<div className={styles['project-tabs']}>
 				<button
 					className={`${styles['project-tab'] + ` `} ${activeCategory === 'All' ? styles['active'] : ''}`}
