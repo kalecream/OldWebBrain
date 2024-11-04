@@ -70,6 +70,7 @@
 		background: transparent;
 		width: fit-content;
 		min-height: 70%;
+		backdrop-filter: blur(25px);
 		
 	}
 
@@ -77,6 +78,7 @@
 		bottom: 20%;
 		left: 12%;
 		min-height: 10%;
+		
 	}
 }
 
