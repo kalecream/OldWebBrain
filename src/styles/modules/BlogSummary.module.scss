@@ -31,13 +31,14 @@
 	justify-content: space-between;
 	font-size: 2.5rem;
 	list-style: none;
-	margin: 2.5rem 0 0 0;
+	margin: 3rem 0 0 0;
 }
 
 .post {
 	display: flex;
 	flex-direction: column;
 	margin: 2rem 0;
+	padding: 0; // remove default padding from li;
 }
 
 .list {
@@ -45,6 +46,7 @@
 	&__section div {
 		display: flex;
 		flex-direction: row;
+		padding: 0;;
 	}
 
 	&__date {
@@ -54,11 +56,11 @@
 		align-items: center;
 
 		@include breakpoint-range($from: mobile) {
-			margin-right: 0.1rem;
+			margin-right: 0.25rem;
 		}
 
 		@include breakpoint-range($from: tablet) {
-			margin-right: 0.25rem;
+			margin-right: 0.5rem;
 		}
 	}
 
