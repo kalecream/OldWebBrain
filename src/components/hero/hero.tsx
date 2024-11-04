@@ -18,7 +18,7 @@ const Hero = () => {
                 <h1 style={{maxWidth: "100%", fontSize: "2.3rem"}}>
                   Escaping <span>Liminality</span>
                 </h1>
-                <p className="p-note">
+                <p className="p-note blur">
                   A cross between a portfolio, a resume, a playground, a prayer, and a journal.
                 </p>
               </center>
