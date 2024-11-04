@@ -34,7 +34,7 @@ const Breadcrumb: React.FC = () => {
       )}
       <ol className={styles.breadcrumbList}>
         {breadcrumbItems.map((item, index) => (
-          <li key={index} className={styles.breadcrumbItem}>
+          <li key={index} className={styles.breadcrumbItem} style={{paddingLeft: 0}}>
             <Link href={item.href}>{item.label}</Link>
           </li>
         ))}
