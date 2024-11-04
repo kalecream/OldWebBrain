@@ -124,7 +124,7 @@ export default function Blog({ params }) {
 
         <br />
       </div>
-      <article>
+      <article className="blur">
         <CustomMDX source={post.content} />
       </article>
     </section>
