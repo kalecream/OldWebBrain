@@ -27,9 +27,9 @@ const NowPage = () => {
       </section>
       <section>
         <div className={`prose `}>
-          <div className="img-grid">
+          {/* <div className="img-grid">
             <Image src={Fall2024} alt="" width={100} height={100} style={{ margin: "0 auto" }} />
-          </div>
+          </div> */}
           <h1>2024-Fall</h1>
           <p className="">
             The focus of this season is introspection, a backlog that I've neglected and previous goals which were not completed. Recently, I've been made aware of some negative traits of mine. With cursory thoughts, I see it affects my relationship with myself. Working on this will have a positive effect on my relationship with everyone else.
@@ -38,9 +38,9 @@ const NowPage = () => {
       </section>
       <section>
         <div className={`prose `}>
-          <div className="img-grid">
+          {/* <div className="img-grid">
             <Image src={SummerImage} alt="" width={74} height={100} style={{ margin: "0 auto" }} />
-          </div>
+          </div> */}
           <h1>2024-Summer</h1>
           <p className="">
             I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
@@ -66,9 +66,9 @@ const NowPage = () => {
 
       <section>
         <div className={`prose `}>
-          <div className="img-grid">
+          {/* <div className="img-grid">
             <Image src={BehindImage} alt="" width={160} height={100} style={{ margin: "0 auto" }} />
-          </div>
+          </div> */}
           <h1>2024-Spring</h1>
           <p>
             This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
@@ -106,9 +106,9 @@ const NowPage = () => {
       </section>
       <section>
         <div className={`prose `}>
-          <div className="img-grid">
+          {/* <div className="img-grid">
             <Image src={WinterImage} alt="" width={200} height={51.56} style={{ margin: "0 auto" }} />
-          </div>
+          </div> */}
           <h1>2023-Winter</h1>
           <p>
             This is when I started this page. At the time, I was exploring individuallism vs caring for myself as a
