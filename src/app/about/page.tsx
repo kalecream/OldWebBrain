@@ -16,7 +16,7 @@ import { ScrollDown } from "@components/scrollDown";
 export const About = () => {
   return (
     <div className="stars">
-      <section className="stars" style={{ minHeight: "95vh" }}>
+      <section className="stars" style={{ minHeight: "100vh" }}>
         <div className="frame">
           <Image
             src={"https://i.imgur.com/sRfXe3l.jpeg"}
@@ -30,7 +30,6 @@ export const About = () => {
           For the longest time, I struggled to figure out who I was.
         </p>
         <TextScrambleComponent />
-        <ScrollDown />
       </section>
       
       {/* <section
@@ -45,7 +44,7 @@ export const About = () => {
       <section
         className={styles.paragraph}
         id="podcasts"
-        style={{ minHeight: "100vh", marginBottom: "6rem" }}
+        style={{ minHeight: "100vh"}}
       >
           <h1 className="text-center">& I'm always listening to a podcast!</h1>
           <p className="prose blur ">
@@ -76,7 +75,7 @@ export const About = () => {
       <section
         className={styles.paragraph}
         id="games"
-        style={{ minHeight: "100vh", marginBottom: "6rem" }}
+        style={{ minHeight: "100vh" }}
       >
           <h1 className="text-center">Rarely, I play Games!</h1>
 
