@@ -203,13 +203,10 @@ $transition: all 0.3s ease-in-out;
 	--paddingObjectSmall: 0.5rem;
 	--boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
 	--transition: all 0.3s ease-in-out;
-	--loadingBackground: radial-gradient(circle farthest-corner at 10% 20%, #b797c5 0%, #720455; 90%);
-	--loadingTextColor: #fff;
 	--bodyFont: 'Garamond', serif;
 	--headingFont: 'Cattedrale', serif;
 	--accentFont: 'Cattedrale Rough', serif;
-	// --backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
-	// --backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png');
+	--backgroundImage: url('https://i.imgur.com/vLMwD96.png');
 	--hr-line-offset: 25%;
 	--hr-color: var(--primary);
 }
@@ -226,7 +223,7 @@ html {
 
 body {
 	background-color: var(--backgroundColor);
-	color: var(--primary);
+	color: var(--textColor);
 	background-image: var(--backgroundImage);
 	background-repeat: repeat;
 }
@@ -515,19 +512,10 @@ fieldset {
 	}
 }
 
-.subtleBackground {
-	width: 100vw;
-	height: 100vh;
-	background-color: var(--backgroundColor);
-	background-image: url('https://www.transparenttextures.com/patterns/argyle.png');
-	background-repeat: repeat;
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-
 a {
 	text-decoration: none;
 	color: var(--primary);
-	font-weight: 500;
+	font-weight: 600;
 
 	&:hover {
 		color: var(--secondary);
@@ -552,11 +540,12 @@ i {
 }
 
 b {
-	font-weight: 500;
+	font-weight: 800;
 	font-family: "Garamond Bold";
 }
 
 b i {
+	font-weight: 800;
 	font-family: "Garamond Bold Italics";
 }
 
@@ -566,7 +555,6 @@ h3,
 h4,
 h5,
 h6 {
-	margin: auto;
 	color: var(--textColor);
 	font-family: "Garamond", serif;
 	font-weight: 300;
@@ -575,7 +563,7 @@ h6 {
 
 h1 {
 	font-size: clamp(2.5rem, 3vw, 5rem);
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.15rem;
 	max-width: 45rem;
 	font-weight: 400;
 	font-family: "Roman", serif;
@@ -584,7 +572,7 @@ h1 {
 h2 {
 	font-size: clamp(2rem, 1.8vw, 3.5rem);
 	margin-top: 0;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	max-width: 45rem;
 }
 
@@ -609,24 +597,29 @@ h5 {
 	font-size: 5rem;
 }
 
-ul {
+ul, ol {
+	list-style-position: outside;
+
+	& li {
+		padding-left: 1rem;
+	}
+
 	@include breakpoint-range($from: mobile, $to: tablet) {
 		margin: 0 auto;
 		margin-left: 1rem;
 	}
+}
 
+ul {
 	& li::marker {
-		// content: url(../assets/images/blood-drop.svg);
+		content: url(../assets/images/blood-drop.svg);
 		margin-bottom: 0.75rem;
-		margin-right: 1rem;
-		scale: 0.8;
 	}
 }
 
 p,
 li {
 	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.5rem);
-
 }
 
 p > a,
@@ -649,41 +642,6 @@ q {
 img,
 image {
 	border-radius: var(--borderRadius);
-}
-
-table {
-	height: 100%;
-	// width: 100%;
-	table-layout: fixed;
-	border-collapse: collapse;
-	border-spacing: 1px;
-	text-align: left;
-	display: table;
-
-	& tr {
-		display: table-cell;
-	}
-
-	& tr td {
-		display: block;
-		// min-height: 50px;
-		align-items: center;
-	}
-
-	& td {
-		border: var(--border);
-		padding: 5px;
-	}
-}
-
-.head3 {
-	margin-left: 10px;
-	list-style-type: circle;
-}
-
-.head4 {
-	margin-left: 20px;
-	list-style-type: square;
 }
 
 kbd,
@@ -751,21 +709,6 @@ kbd::after,
 	box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 1);
 }
 
-.head2 {
-	margin-left: 10px;
-	list-style-type: disc;
-}
-
-.head3 {
-	margin-left: 30px;
-	list-style-type: circle;
-}
-
-/*  */
-.hider {
-	overflow: hidden;
-}
-
 .text-center {
 	text-align: center;
 }
@@ -776,14 +719,6 @@ kbd::after,
 	&::marker {
 		content: none;
 	}
-}
-
-.badge {
-	display: inline-flex;
-	place-items: center;
-	border: var(--border);
-	border-radius: var(--borderRadius);
-	text-decoration: none;
 }
 
 .flex {
@@ -829,24 +764,11 @@ kbd::after,
 	flex: 1 1 200px;
 	justify-content: center;
 	gap: 0.5rem;
-	// filter: saturate(25%);
+	filter: saturate(25%);
 }
 
 .column {
 	flex-direction: column;
-}
-
-.half__column {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	place-items: center;
-	gap: 0.5rem;
-	text-align: center;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		width: 100%;
-	}
 }
 
 .mobile {
@@ -1067,9 +989,9 @@ canvas {
 	}
 }
 
-canvas:active {
-	cursor: grabbing;
-}
+// canvas:active {
+// 	cursor: grabbing;
+// }
 
 *::-webkit-scrollbar {
 	width: 3px;
@@ -1168,13 +1090,13 @@ span.project__status.archived {
 }
 
 // CodeHike Component CSS
-.ch-codeblock .ch-code-button {
-	display: none;
-}
+// .ch-codeblock .ch-code-button {
+// 	display: none;
+// }
 
-.ch-codeblock:hover .ch-code-button {
-	display: block;
-}
+// .ch-codeblock:hover .ch-code-button {
+// 	display: block;
+// }
 
 .justify-between {
 	justify-content: space-between;
@@ -1204,65 +1126,65 @@ span.project__status.archived {
 	margin-bottom: 2rem;
 }
 
-:root {
-	--progress-bar-color: $lighten(var(--backgroundColor));
-	--progress-value-color: var(--primary);
-	--progress-empty-color-h: 4.1;
-	--progress-empty-color-s: 89.6;
-	--progress-empty-color-l: 58.4;
-	--progress-filled-color-h: 122.4;
-	--progress-filled-color-s: 39.4;
-	--progress-filled-color-l: 49.2;
-}
+// :root {
+// 	--progress-bar-color: $lighten(var(--backgroundColor));
+// 	--progress-value-color: var(--primary);
+// 	--progress-empty-color-h: 4.1;
+// 	--progress-empty-color-s: 89.6;
+// 	--progress-empty-color-l: 58.4;
+// 	--progress-filled-color-h: 122.4;
+// 	--progress-filled-color-s: 39.4;
+// 	--progress-filled-color-l: 49.2;
+// }
 
-progress[value] {
-	appearance: none;
-	width: 150px;
-	height: 6px;
-	--border-radius: 10px;
-	border-radius: var(--border-radius);
-	border: var(--border);
-	--progress-value-string: attr(value) '%';
-	--progress-max-decimal: attr(value) / attr(max);
-	--progress-value-decimal: attr(value) / attr(max);
+// progress[value] {
+// 	appearance: none;
+// 	width: 150px;
+// 	height: 6px;
+// 	--border-radius: 10px;
+// 	border-radius: var(--border-radius);
+// 	border: var(--border);
+// 	--progress-value-string: attr(value) '%';
+// 	--progress-max-decimal: attr(value) / attr(max);
+// 	--progress-value-decimal: attr(value) / attr(max);
 
-	@supports selector(::-moz-progress-bar) {
-		--progress-value-decimal: attr(value) / attr(max);
-	}
+// 	@supports selector(::-moz-progress-bar) {
+// 		--progress-value-decimal: attr(value) / attr(max);
+// 	}
 
-	// --progress-value-percent: calc(var(--progress-value-decimal) * 100%);
-	// --progress-value-color: hsl(calc((var(--progress-empty-color-h) + (var(--progress-filled-color-h) - var(--progress-empty-color-h)) * var(--progress-value-decimal)) * 1deg) calc((var(--progress-empty-color-s) + (var(--progress-filled-color-s) - var(--progress-empty-color-s)) * var(--progress-value-decimal)) * 1%) calc((var(--progress-empty-color-l) + (var(--progress-filled-color-l) - var(--progress-empty-color-l)) * var(--progress-value-decimal)) * 1%));
-	animation: calc(3s * var(--progress-max-decimal)) linear 0.5s 1 normal both progress;
-}
+// 	// --progress-value-percent: calc(var(--progress-value-decimal) * 100%);
+// 	// --progress-value-color: hsl(calc((var(--progress-empty-color-h) + (var(--progress-filled-color-h) - var(--progress-empty-color-h)) * var(--progress-value-decimal)) * 1deg) calc((var(--progress-empty-color-s) + (var(--progress-filled-color-s) - var(--progress-empty-color-s)) * var(--progress-value-decimal)) * 1%) calc((var(--progress-empty-color-l) + (var(--progress-filled-color-l) - var(--progress-empty-color-l)) * var(--progress-value-decimal)) * 1%));
+// 	animation: calc(3s * var(--progress-max-decimal)) linear 0.5s 1 normal both progress;
+// }
 
-progress[value]::-webkit-progress-bar {
-	background-color: var(--progress-bar-color);
-	border-radius: var(--border-radius);
-	overflow: hidden;
-}
+// progress[value]::-webkit-progress-bar {
+// 	background-color: var(--progress-bar-color);
+// 	border-radius: var(--border-radius);
+// 	overflow: hidden;
+// }
 
-progress[value]::-webkit-progress-value {
-	width: attr(value) !important;
-	background-color: var(--progress-value-color);
-	border-radius: var(--border-radius);
-}
+// progress[value]::-webkit-progress-value {
+// 	width: attr(value) !important;
+// 	background-color: var(--progress-value-color);
+// 	border-radius: var(--border-radius);
+// }
 
-progress[value]::-moz-progress-bar {
-	width: attr(value) !important;
-	background-color: var(--progress-value-color);
-	border-radius: var(--border-radius);
-}
+// progress[value]::-moz-progress-bar {
+// 	width: attr(value) !important;
+// 	background-color: var(--progress-value-color);
+// 	border-radius: var(--border-radius);
+// }
 
 
-@keyframes progress {
-	from {
-		--progress-value: 0;
-	}
+// @keyframes progress {
+// 	from {
+// 		--progress-value: 0;
+// 	}
 
-	to {
-		--progress-value: attr(value);
-	}
-}
+// 	to {
+// 		--progress-value: attr(value);
+// 	}
+// }
 
 // statblock
 
