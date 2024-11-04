@@ -84,7 +84,7 @@
 	display: flex;
 	position: absolute;
 	bottom: 2%;
-	left: 5%;
+	
 	margin: 0 auto;
 
 	@include breakpoint-range($from: mobile, $to: desktopSmall) {
@@ -94,10 +94,13 @@
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
+		left: 0%;
+		flex-direction: row;
+		
 		& #hero-model {
 			display: block;
 		}
 
-		flex-direction: row;
+		
 	}
 }

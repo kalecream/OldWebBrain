@@ -209,7 +209,7 @@ $transition: all 0.3s ease-in-out;
 	--headingFont: 'Cattedrale', serif;
 	--accentFont: 'Cattedrale Rough', serif;
 	// --backgroundImage: url('https://www.transparenttextures.com/patterns/arches.png');
-	--backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png');
+	// --backgroundImage: url('https://www.transparenttextures.com/patterns/grid-me.png');
 	--hr-line-offset: 25%;
 	--hr-color: var(--primary);
 }
@@ -235,46 +235,40 @@ main {
 	margin: 0 auto;
 }
 
-header {
-	& > nav {
-		position: sticky;
-		top: 0;
-		z-index: 999;
-		padding: 1rem 0;
+nav {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	padding: 1rem 0;
+	display: flex;
+	width: 100vw;
+	backdrop-filter: blur(20px);
+	align-items: center;
+	gap: 1rem;
+
+	@include breakpoint-range($from: mobile) {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	@include breakpoint-range($from: desktopSmall) {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	& > div {
 		display: flex;
-		width: 100vw;
-		backdrop-filter: blur(20px);
-		align-items: center;
+		flex-flow: row wrap;
 		gap: 1rem;
+		justify-content: center;
 
-		@include breakpoint-range($from: mobile) {
-			flex-direction: column;
-			justify-content: center;
+		&:first-child {
+			float: left;
 		}
 
-		@include breakpoint-range($from: desktopSmall) {
-			flex-direction: row;
-			justify-content: space-around;
+		&:last-child {
+			float: right;
 		}
-
-		& > div {
-			display: flex;
-			flex-flow: row wrap;
-			gap: 1rem;
-			justify-content: center;
-
-			&:first-child {
-				float: left;
-			}
-
-			&:last-child {
-				float: right;
-			}
-		}
-
-
-
-
 	}
 }
 
@@ -313,6 +307,10 @@ section {
 
 	@include breakpoint-range($from: mobile) {
 		padding: 0 1rem;
+
+		&:first-of-type {
+			padding-top: 15rem;
+		}
 	}
 
 	@include breakpoint-range($from: tablet) {
@@ -323,11 +321,11 @@ section {
 		padding: 0;
 
 		&:first-of-type {
-			padding-top: 3rem;
+			padding-top: 10rem;
 		}
 
 		&:last-of-type {
-			margin-bottom: 3rem;
+			padding-bottom: 3rem;
 		}
 	}
 }
@@ -465,43 +463,10 @@ fieldset {
 	}
 }
 
-.container__wide__tall {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-}
-
-.thirds {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 1rem;
-	padding: 1rem 0;
-	width: 100%;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		flex-direction: column;
-	}
-
-	@include breakpoint-range($from: tablet, $to: desktopSmall) {
-		flex-direction: row;
-		align-content: flex-end;
-	}
-}
-
 .frame {
 	border-image-source: url(../../public/img/album/goldframe_horizantal.png);
 	overflow: hidden;
 	z-index: 10;
-
-	@include breakpoint-range($from: mobile, $to: tablet) {
-		border: none
-	}
 
 	@include breakpoint-range($from: tablet) {
 		border-image-slice: 140;
@@ -657,8 +622,6 @@ ul {
 		scale: 0.8;
 	}
 }
-
-
 
 p,
 li {
