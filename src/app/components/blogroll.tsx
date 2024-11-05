@@ -82,7 +82,7 @@ export const BlogPosts = () => {
   let years = useMemo(() => BlogDateSplit(posts), [posts]);
 
   return (
-    <section>
+    <section style={{marginTop: "3rem"}}>
       <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert // Laxcity"} audioLink={"https://www.youtube.com/watch?v=KLjxb2paJgw"} />
       {years.map((year) => (
         <ul key={year.date} className={blog.container}>
