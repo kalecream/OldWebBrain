@@ -48,6 +48,15 @@
 		text-align: center;
 		color: var(--primary);
 
+		& p, h1, small {
+			backdrop-filter: blur(30px);
+			border-radius: var(--borderRadius);
+		}
+
+		& a {
+			color: var(--primary);
+		}
+
 		& p {
 			line-height: 1.2;
 			font-size: 1.4rem;
@@ -69,9 +78,7 @@
 		left: 20%;
 		background: transparent;
 		width: fit-content;
-		min-height: 70%;
-		backdrop-filter: blur(25px);
-		
+		min-height: 70%;	
 	}
 
 	@include breakpoint-range($from: desktopSmall) {

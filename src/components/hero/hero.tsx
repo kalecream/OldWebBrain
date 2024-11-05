@@ -4,28 +4,46 @@ import button from "@styles/modules/Button.module.scss";
 import { HeroModel } from "@components/threeJS/HeroModel.jsx";
 import Link from "next/link";
 import HeroName from "@components/hero/heroName/heroName";
+import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 const Hero = () => {
   return (
     <section>
       <div className={`${hero.container}`}>
         <div className={hero.model}>
-            <HeroModel />
+          <HeroModel />
           <div className={hero.cta}>
             <HeroName name={"Sisyphus"} />
             <div className={` ` + hero.text}>
               <center>
-                <h1 style={{maxWidth: "100%", fontSize: "2.3rem"}}>
+                <h1 style={{ maxWidth: "100%", fontSize: "2.3rem" }}>
                   Escaping <span>Liminality</span>
                 </h1>
-                <p className="p-note blur">
-                  A cross between a portfolio, a resume, a playground, a prayer, and a journal.
+                <p className="p-note">
+                  A cross between{" "}
+                  <Link href="https://github.com/kalecream" rel="me">
+                    a portfolio
+                  </Link>
+                  ,{" "}
+                  <Link href="https://www.linkedin.com/in/medwinter/" rel="me">
+                    a resume
+                  </Link>
+                  , <Link href="mailto://sabrinamedwinter@gmail.com" rel="me"></Link>a playground,{" "}
+                  <Link href="mailto://sabrinamedwinter@gmail.com" rel="me">
+                    {" "}
+                    a prayer
+                  </Link>
+                  , and{" "}
+                  <Link href="https://twitter.com/medwinters" rel="me">
+                    a journal
+                  </Link>
+                  .
                 </p>
               </center>
             </div>
 
             <div className={button.container}>
-              <Link href="/professional" rel="me">
+              <Link href="/professional">
                 <button className={button.vamp} role="button">
                   <span className={button.text}>The Professional Route</span>
                   <span className={button["vamp-background"]}></span>
@@ -54,6 +72,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <MusicPlayer
+        audioSrc={"/audio/hozier.m4a"}
+        songTitle={"soft hozier playlist 🦌🍃 [slowed, muffled + waves]"}
+        audioLink={"https://www.youtube.com/watch?v=9Rqwdl9fTvw"}
+      />
     </section>
   );
 };

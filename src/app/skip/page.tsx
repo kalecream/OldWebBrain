@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
@@ -5,25 +6,31 @@ import { PageRoutes } from "@data/routes";
 import { Projects as ProjectsData } from "@data/projectsData";
 import styles from "@styles/modules/projects.module.scss";
 import { GetMonthName } from "@utils/GetMonthName";
+import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 const SkipPage = () => {
   let pages = PageRoutes.sort((a, b) => {
     return b.date.getTime() - a.date.getTime();
-  }).slice(0, 6);
+  }).slice(0, 11);
 
   const LatestProject = ProjectsData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())[0];
 
   return (
     <>
-      <section style={{ minHeight: "65vh" }}>
+      <MusicPlayer
+        audioSrc={"/audio/sink.mp3"}
+        songTitle={"Feng Sauve - Sink into the Floor"}
+        audioLink={"https://www.youtube.com/watch?v=kc6Y1Bjxfk8&pp=ygUeZmVuZyBzdWF2ZSBzaW5rIGludG8gdGhlIGZsb29y"}
+      />
+      <section style={{ minHeight: "100vh" }}>
         <h1>Hi, Friend!</h1>
         <p className="prose">
           This will be like my{" "}
           <Link className="internal-link" href="/now">
             now{" "}
           </Link>{" "}
-          page, but for things I've already done + things I'm learning. I <i>might</i> lead you onto NSFW pages. The
-          last 5 pages I've edited are: <br />
+          page, but for things more general things instead of "goals". I <i>might</i> lead you onto NSFW pages since
+          some of the following things may be notes. The last 10 pages I've edited are: <br />
           <br />
           {pages.map((r) => (
             <div key={r.route}>
@@ -34,6 +41,9 @@ const SkipPage = () => {
             </div>
           ))}
         </p>
+      </section>
+      <section style={{ minHeight: "100vh" }}>
+        <h1>My latest project btw! :)</h1>
         <div className={styles.project__card}>
           <div className={styles.project__image}>
             <Image

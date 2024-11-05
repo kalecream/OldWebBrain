@@ -101,10 +101,10 @@ export const BacklogGraph: FC = () => {
     setData(cumulativeData);
   }, [Books]);
 
-  const width = WindowWidth() - 100;
+  const width = WindowWidth();
 
   return (
-      <BarChart width={width} height={300} data={Data} className={styles.backlogChart}>
+      <BarChart width={width > 1200 ? width - 400: width - 100} height={300} data={Data} className={styles.backlogChart}>
         <XAxis dataKey="month" />
         {/* <YAxis domain={[0, 'dataMax + 3']} /> */}
         <Tooltip />

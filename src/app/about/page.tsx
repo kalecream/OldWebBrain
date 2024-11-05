@@ -1,22 +1,24 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { GPhotos } from "@assets/images";
-import Books from "@data/books";
+// import { GPhotos } from "@assets/images";
+// import Books from "@data/books";
 import Pods from "@data/pod";
 import styles from "./books.module.scss";
-import button from "@styles/modules/Button.module.scss";
-import NineGridGallery from "./Gallery";
+// import button from "@styles/modules/Button.module.scss";
+// import NineGridGallery from "./Gallery";
 // import { CodersrankSummary } from "./CodersRank";
 import TextScrambleComponent from "@app/components/TextScramble";
 import AboutBooksSection from "./AboutBooks";
-import { CodersrankSummary } from "./CodersRank";
-import { ScrollDown } from "@components/scrollDown";
+// import { CodersrankSummary } from "./CodersRank";
+// import { ScrollDown } from "@components/scrollDown";
+import MiniPlayer from "@components/MusicPlayer/MusicPlayer";
 
 export const About = () => {
   return (
     <div className="stars">
-      <section className="stars" style={{ minHeight: "100vh" }}>
+      <MiniPlayer audioSrc={"/audio/song.m4a"} songTitle={"Francesca // Hozier"} audioLink={"https://www.youtube.com/watch?v=UOUXV6-_DyY&pp=ygUQZnJhbmNlc2NhIGhvemllcg%3D%3D"}/>
+      <section style={{ minHeight: "100vh" }}>
         <div className="frame">
           <Image
             src={"https://i.imgur.com/sRfXe3l.jpeg"}
