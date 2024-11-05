@@ -16,9 +16,9 @@ import MiniPlayer from "@components/MusicPlayer/MusicPlayer";
 
 export const About = () => {
   return (
-    <div className="stars">
+    <>
       <MiniPlayer audioSrc={"/audio/song.m4a"} songTitle={"Francesca // Hozier"} audioLink={"https://www.youtube.com/watch?v=UOUXV6-_DyY&pp=ygUQZnJhbmNlc2NhIGhvemllcg%3D%3D"}/>
-      <section style={{ minHeight: "100vh" }}>
+      <section className="stars" style={{ minHeight: "100vh" }}>
         <div className="frame">
           <Image
             src={"https://i.imgur.com/sRfXe3l.jpeg"}
@@ -171,7 +171,7 @@ export const About = () => {
           Data from <Link href="https://profile.codersrank.io/user/kalecream">CodersRank.io</Link>{" "}
         </p>
       </section> */}
-    </div>
+    </>
   );
 };
 

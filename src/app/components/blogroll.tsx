@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getBlogPosts } from "../db/blog";
 import { ArrowIcon } from "@utils/icons";
 import blog from "@styles/modules/BlogSummary.module.scss";
+import NineGridGallery from "@app/about/Gallery";
 
 type Year = {
   date: string;
@@ -83,23 +84,26 @@ export const BlogPosts = () => {
     <section>
       {years.map((year) => (
         <ul key={year.date} className={blog.container}>
-          <li className={blog.nolist} key={year.date}>
+          <li key={year.date}>
             <ul>
               {year.months.map((month, i) => (
-                <li className={blog.nolist} key={i}>
-                  <h1 className={blog.month}>
-                    <span>{month.name}</span> <span>{i === 0 && year.date}</span>
-                  </h1>
-                  <ul>
-                    {month.posts.map((post) => (
-                      <li key={post.slug} className={blog.post + ` no-marker h-entry`}>
-                        <Link className={blog.link + `  u-url`} href={`/blog/${post.slug}`}>
-                          <div className={blog.list__section}>
-                            <div>
-                              <span className={blog.list__date + ` dt-published`}>{post.metadata.date.slice(-2)}</span>
-                              <h2 className={blog.list__title + ` p-name`}>{post.metadata.title}</h2>
-                            </div>
-                            {/* <p className={blog.list__tags}>
+                <div className={blog.month_lump} key={i}>
+                  <li className={blog.nolist} key={i}>
+                    <h1 className={blog.month}>
+                      <span>{month.name}</span> <span>{i === 0 && year.date}</span>
+                    </h1>
+                    <ul>
+                      {month.posts.map((post) => (
+                        <li key={post.slug} className={blog.post + ` no-marker h-entry`}>
+                          <Link className={blog.link + `  u-url`} href={`/blog/${post.slug}`}>
+                            <div className={blog.list__section}>
+                              <div>
+                                <span className={blog.list__date + ` dt-published`}>
+                                  {post.metadata.date.slice(-2)}
+                                </span>
+                                <h2 className={blog.list__title + ` p-name`}>{post.metadata.title}</h2>
+                              </div>
+                              {/* <p className={blog.list__tags}>
                               {post.metadata.tags.split(",").map((tag, i) => (
                                 <span key={i} className={blog.list__tag}>
                                   {tag}
@@ -107,13 +111,15 @@ export const BlogPosts = () => {
                               ))}
                             </p> */}
 
-                            <p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
-                          </div>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
+                              <p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                  <NineGridGallery year={year.date} month={month.date} />
+                </div>
               ))}
             </ul>
           </li>

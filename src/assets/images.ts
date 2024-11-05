@@ -15,6 +15,8 @@ export { ThreeD };
 
 const GPhotos: GalleryData[] = [
   {
+    year: '2023',
+    month: '05',
     id: 0,
     src: "https://i.imgur.com/jCQIISQ.jpeg",
     name: "Punisher",
@@ -23,6 +25,8 @@ const GPhotos: GalleryData[] = [
   },
   {
     id: 1,
+    year: '2024',
+    month: '06',
     src: "https://i.imgur.com/nD4m8JX.jpeg",
     name: "Books",
     desc: "Trees in black and white",
@@ -30,6 +34,8 @@ const GPhotos: GalleryData[] = [
   },
   {
     id: 2,
+    year: '2024',
+    month: '06',
     src: "https://imgur.com/Sd2DuQz.jpeg",
     name: "Earring",
     desc: "A close-up of an earring",
@@ -37,6 +43,8 @@ const GPhotos: GalleryData[] = [
   },
   {
     id: 4,
+    year: '2024',
+    month: '08',
     src: "https://i.imgur.com/p3ApPPh.jpeg",
     name: "Lunch Trio",
     desc: "Three lunch dishes",
@@ -44,6 +52,8 @@ const GPhotos: GalleryData[] = [
   },
   {
     id: 5,
+    year: '2024',
+    month: '08',
     src: "https://i.imgur.com/nIkVHY9.jpeg",
     name: "Flamingo",
     desc: "I went to the Zoo and finally got to see a Flamingo with my own two eyes.",
@@ -51,27 +61,17 @@ const GPhotos: GalleryData[] = [
   },
   {
     id: 6,
+    year: '2024',
+    month: '08',
     src: "https://i.imgur.com/YvnWlaW.jpeg",
     name: "Wire-Wrapping",
     desc: "A pineapple on a table",
     tags: ["pineapple", "fruit"],
   },
   {
-    id: 7,
-    src: "https://i.imgur.com/JTE1KcU.jpeg",
-    name: "Plant Window",
-    desc: "A window with plants",
-    tags: ["window", "plants"],
-  },
-  {
-    id: 8,
-    src: "https://i.imgur.com/3yUpjJV.jpeg",
-    name: "Pumpkin",
-    desc: "A pumpkin on a table",
-    tags: ["pumpkin", "vegetable"],
-  },
-  {
     id: 10,
+    year: '2024',
+    month: '06',
     src: "https://i.imgur.com/Z4rJL6X.jpeg",
     name: "Sunset",
     desc: "A sunset over the ocean",
