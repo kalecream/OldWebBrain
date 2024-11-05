@@ -4,6 +4,7 @@ import { getBlogPosts } from "../db/blog";
 import { ArrowIcon } from "@utils/icons";
 import blog from "@styles/modules/BlogSummary.module.scss";
 import NineGridGallery from "@app/about/Gallery";
+import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 type Year = {
   date: string;
@@ -82,6 +83,7 @@ export const BlogPosts = () => {
 
   return (
     <section>
+      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert // Laxcity"} audioLink={"https://www.youtube.com/watch?v=KLjxb2paJgw"} />
       {years.map((year) => (
         <ul key={year.date} className={blog.container}>
           <li key={year.date}>
