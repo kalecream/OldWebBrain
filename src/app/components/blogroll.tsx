@@ -1,7 +1,7 @@
+"use client";
 import { useMemo } from "react";
 import Link from "next/link";
 import { getBlogPosts } from "../db/blog";
-import { ArrowIcon } from "@utils/icons";
 import blog from "@styles/modules/BlogSummary.module.scss";
 import NineGridGallery from "@app/about/Gallery";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
