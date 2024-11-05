@@ -9,6 +9,7 @@ import { getBlogPosts } from "../../db/blog";
 import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 import { PageReadTime } from "@utils/PageReadTime";
+import WebMentions from "@components/webmentions/WebMentions";
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
@@ -116,7 +117,8 @@ export default function Blog({ params }) {
             <PageReadTime readingSpeedWPM={200} /> 𑁍 {formatDate(post.metadata.date)}
           </p>
         </Suspense>
-        <br/><br/>
+        <br />
+        <br />
         <h1 className="title">{post.metadata.title}</h1>
         <h2 className="text-center">
           <i>{post.metadata.description}</i>
@@ -127,6 +129,7 @@ export default function Blog({ params }) {
       <article className="blur">
         <CustomMDX source={post.content} />
       </article>
+      <WebMentions targetUrl={`https://sabrinamedwinter.com/blog/${post.slug}`} />
     </section>
   );
 }
