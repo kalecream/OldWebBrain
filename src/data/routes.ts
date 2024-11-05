@@ -74,7 +74,7 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/relationships",
-    date: new Date(2024, 8, 10, 4, 7),
+    date: new Date(2024, 10, 4, 19, 2),
     priority: 0.4,
   },
   {
@@ -89,7 +89,7 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/relationships/with-romance",
-    date: new Date(2024, 7, 31),
+    date: new Date(2024, 10, 4, 19, 2),
     priority: 0.4,
   },
   {

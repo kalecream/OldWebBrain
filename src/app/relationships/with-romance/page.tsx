@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const WithRomance = () => {
   return (
     <section id="romance">
@@ -16,9 +19,12 @@ const WithRomance = () => {
         we stand where a strong relationship with have defined protocols for emergency events and how to deal with them
         will be more likely to survive.
       </p>
-      <p className="prose">I want to go on a lot more dates: self-dates, friend-dates, and romantic dates. </p>
+      <p className="prose">
+        I want to go on a lot more dates: self-dates, friend-dates, and romantic dates.{" "}
+        <b>Important to remember in this stage:</b>{" "}
+      </p>
+
       <ol>
-        <b>Important to remember in this stage:</b>
         <li>Draw up my own boundaries, get and respect their boundaries.</li>
         <li>Take it slow.</li>
         <li>Maintain my independence.</li>
@@ -34,14 +40,20 @@ const WithRomance = () => {
         figure out incompatibilities that cannot be overlooked from early.
       </p>
       <p className="prose">
-        In a relationship intake stage, I would go over the form on the following form [INSERT FORM HERE]
+        In a relationship intake stage, I would go over the form on the following form. I think I've made mistakes by
+        not doing something similar to set expenctations and express desires. This is a form I got from Reddit, clicking on it will bring you to the original thread.
       </p>
       <div>
+        <Link href="https://www.reddit.com/r/polyamory/comments/pwkdxp/v3_relationship_components_menu_last_update_for/">
+          <Image src="https://i.imgur.com/85cBfSQ.png" alt="Relationship Intake Form" width={1080} height={1398} />
+        </Link>
+      </div>
+      {/* <div>
         <h3>Dating</h3>
         <p className="prose"></p>
         <p className="prose"></p>
         <p className="prose"></p>
-      </div>
+      </div> */}
       <div>
         <h3>Partnership</h3>
         <p className="prose">

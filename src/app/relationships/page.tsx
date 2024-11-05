@@ -5,7 +5,7 @@ const RShipPage = () => {
   return (
     <>
       <section id="introduction">
-        <h1>Relationship</h1>
+        <h1>Relationships</h1>
         <PageReadTime readingSpeedWPM={200} />
         <q>
           A relationship is a commitment
