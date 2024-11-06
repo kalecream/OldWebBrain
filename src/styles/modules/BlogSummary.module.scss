@@ -31,10 +31,6 @@
 	&:not(last-of-type) {
 		margin-bottom: 3rem;
 	}
-
-	&:nth-of-type(even) {
-		flex-direction: row-reverse;
-	}
 }
 
 .nolist {

@@ -7,10 +7,9 @@
     @include breakpoint-range($from: desktop) {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: end;
         overflow: hidden;
-        width: 55rem;
-        // margin: 0 auto;
+        width: 50rem;
         padding: auto 2rem;
     }
 }
@@ -67,9 +66,8 @@
 
 .imageview-wrapper {
     width: auto;
-    height: clamp(200px, 100%, 350px);
+    height: clamp(200px, 100%, 250px);
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -79,24 +77,24 @@
 }
 
 .imageview > * {
-    margin: 2em;
+    margin: 1rem;
 }
 
 .imageview-image {
+    max-height: 25rem;
     width: auto;
-    height: clamp(100px, 100%, 250px);
     box-shadow: 0 20px 40px -5px rgba(66, 66, 66, 0.7);
 }
 
 .imageview-info {
-    max-width: 260px;
+    max-width: 45rem;
     text-align: right;
     position: relative;
 }
 
 .imageview-info button {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--secondary);
@@ -121,7 +119,7 @@
     font-size: 2.5rem;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1rem;
     margin-top: 0;
 }
 
