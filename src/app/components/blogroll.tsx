@@ -1,10 +1,8 @@
-"use client";
 import { useMemo } from "react";
 import Link from "next/link";
 import { getBlogPosts } from "../db/blog";
 import blog from "@styles/modules/BlogSummary.module.scss";
 import NineGridGallery from "@app/about/Gallery";
-import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 type Year = {
   date: string;
@@ -83,7 +81,6 @@ export const BlogPosts = () => {
 
   return (
     <section style={{marginTop: "3rem"}}>
-      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert // Laxcity"} audioLink={"https://www.youtube.com/watch?v=KLjxb2paJgw"} />
       {years.map((year) => (
         <ul key={year.date} className={blog.container}>
           <li key={year.date}>

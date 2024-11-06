@@ -224,6 +224,22 @@ export const Projects: ProjectStructure[] = [
 		technology: ['Photopea'],
 		created: '2023-10-10',
 	},
+	{
+		id: '017',
+		display: true,
+		title: 'Meteor Shower Poster',
+		category: 'illustration',
+		type: 'poster',
+		image: 'https://i.imgur.com/WC7RHhi.jpeg',
+		status: 'completed',
+		description: (
+			<span>
+				Poster made for an astronomy event viewing the 2019 Perseids Meteor Shower.
+			</span>
+		),
+		technology: ['Photopea'],
+		created: '2019-08-09',
+	}
 ];
 
 export default Projects;

@@ -3,6 +3,7 @@
 .gallery {
     display: none;
     ;
+
     @include breakpoint-range($from: desktop) {
         display: flex;
         flex-flow: row wrap;
@@ -66,7 +67,7 @@
 
 .imageview-wrapper {
     width: auto;
-    height: clamp(200px,100%, 350px);
+    height: clamp(200px, 100%, 350px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +84,7 @@
 
 .imageview-image {
     width: auto;
-    height: 100%;
+    height: clamp(100px, 100%, 250px);
     box-shadow: 0 20px 40px -5px rgba(66, 66, 66, 0.7);
 }
 
