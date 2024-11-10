@@ -125,5 +125,5 @@ model GuestBook {
   name      String
   url       String?
 
-    @@map(name: "guestBook")
+  @@map(name: "guestBook")
 }
