@@ -16,6 +16,10 @@ const Directory = [
     links: "/contact",
   },
   {
+    title: "Guestbook",
+    links: "/guestbook",
+  },
+  {
     title: "Sitemap",
     links: "/sitemap",
   },
