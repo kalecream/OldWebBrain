@@ -121,9 +121,9 @@ model Project {
 model GuestBook {
   createdAt DateTime @id @default(now()) @map(name: "created_at")
   id        Int      @default(autoincrement()) @map(name: "id")
-  note      String[]
-  name      String?
+  note      String
+  name      String
   url       String?
-}
 
-// npx prisma db push
+    @@map(name: "guestBook")
+}

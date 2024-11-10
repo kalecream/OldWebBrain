@@ -32,6 +32,9 @@ npx prisma generate
 # Create tables
 npx prisma db push
 
+# Migration
+npx prisma migrate dev --name init
+
 # See the tables
 npx prisma studio
 

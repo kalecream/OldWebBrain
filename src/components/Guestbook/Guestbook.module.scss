@@ -1,0 +1,92 @@
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: var(--paddingContainer);
+}
+
+.note {
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: var(--secondary);
+    border-radius: var(--borderRadius);
+
+    box-shadow: var(--boxShadow);
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+
+    color: rgb(16, 16, 16);
+    // color: var(--textColor);
+    text-align: center;
+    width: 28ch;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-content: center;
+
+    & .note_content {
+        bottom: 0;
+        display: flex;
+        margin-top: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    & .name {
+        color: rgb(52, 52, 52);
+        font-weight: 800;
+    }
+
+    & .date {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+}
+
+
+
+.note_form {
+    @extend .note;
+
+    backdrop-filter: blur(5px);
+    align-items: center;
+
+    a {
+        color: rgb(16, 16, 16);
+        opacity: 0.8;
+        text-decoration: none;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    & input,
+    textarea {
+        background: none;
+        color: rgb(16, 16, 16);
+        width: 90%;
+        padding: var(--paddingObject);
+        margin: 0 auto;
+        border: none;
+    }
+
+    & button {
+        background: none;
+        color: rgb(16, 16, 16);
+        padding: var(--paddingObject);
+        border: none;
+        border-radius: 5px;
+
+        &:hover {
+            color: var(--primary)
+        }
+    }
+
+}
