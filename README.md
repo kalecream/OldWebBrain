@@ -53,6 +53,10 @@ npx prisma migrate dev
 > [!WARNING]
 > Your tables will be dropped and you will lose data unless you edit the migration file to renaming instead of dropping. It's a simple SQL query. Here is an [SQL Cheatsheet](https://www.sqltutorial.org/sql-cheat-sheet/).
 
+>[!NOTE]
+> If you intend on deploying to Vercel, it is very important that you click this link should you encounter a build error -> [Link](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue)
+
+
 ---
 
 <a href="https://ko-fi.com/sabrinamedwinter">
