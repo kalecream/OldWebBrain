@@ -10,9 +10,10 @@
     "tsc": "tsc",
     "dev": "yarn && next dev -p 3001",
     "build": "next build",
+    "postinstall": "prisma generate",
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "export": "npm run build && next export -o _static"
+    "export": "yarn run build && next export -o _static"
   },
   "browserslist": [
     "> 0.5%",
