@@ -7,7 +7,7 @@
     @include breakpoint-range($from: desktop) {
         display: flex;
         flex-flow: row wrap;
-        justify-content: end;
+        justify-content:flex-end;
         overflow: hidden;
         width: 50rem;
         padding: auto 2rem;
@@ -52,7 +52,7 @@
     font-family: "Roman";
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--backgroundColor);
+    color: #fff;
 }
 
 .gallery-tile:hover img {

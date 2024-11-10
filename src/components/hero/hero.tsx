@@ -65,7 +65,7 @@ const Hero = () => {
                   </svg>
                 </button>
               </Link>
-              <Link href="/skip" style={{ scale: "0.9" }}>
+              <Link href="/skip" style={{ scale: "0.9" }} className={ hero.skip}>
                 Skip
               </Link>
             </div>

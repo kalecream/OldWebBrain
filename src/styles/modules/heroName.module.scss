@@ -60,7 +60,7 @@
 	stroke-width: 25px;
 	stroke: rgba($color: var(--borderColor), $alpha: 0.5);
 	transform: translate(-50%, -50%);
-	animation: scaleUpdown 2000ms ease-in-out infinite;
+	animation: scaleUpdown 3000ms ease-in-out infinite;
 	color: var(--textColor);
 }
 
@@ -89,7 +89,7 @@
 	opacity: 0;
 	left: 42.5%;
 	transform: translate(-50%, -50%);
-	animation: upDown 2000ms ease-in-out infinite;
+	animation: upDown 4000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1));
 	z-index: -1;
 	user-select: none;
@@ -99,7 +99,7 @@
 	opacity: 0;
 	left: 44%;
 	transform: translate(-48%, -50%);
-	animation: upDown 2000ms ease-in-out infinite;
+	animation: upDown 4000ms ease-in-out infinite;
 	animation-delay: calc(0s + (0.1s * 1.3));
 	z-index: -2;
 	user-select: none;
