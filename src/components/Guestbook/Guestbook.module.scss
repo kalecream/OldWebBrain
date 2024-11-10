@@ -22,7 +22,6 @@
     overflow-wrap: break-word;
 
     color: rgb(16, 16, 16);
-    // color: var(--textColor);
     text-align: center;
     width: 28ch;
     font-size: 1rem;
@@ -46,10 +45,9 @@
         margin: 0;
         font-size: 0.8rem;
     }
-
 }
 
-
+.name_link { text-decoration: wavy}
 
 .note_form {
     @extend .note;
@@ -88,5 +86,4 @@
             color: var(--primary)
         }
     }
-
 }

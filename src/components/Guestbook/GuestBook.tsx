@@ -120,7 +120,7 @@ const Guestbook = () => {
               <span className={styles.note_content}>{entry.note}</span>
 
               {entry.url ? (
-                <Link href={`${entry.url}`} target="_blank" className={styles.name}>
+                <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
                   {entry.name}
                 </Link>
               ) : (
