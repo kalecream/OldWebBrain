@@ -24,13 +24,19 @@ const SkipPage = () => {
       />
       <section style={{ minHeight: "100vh" }}>
         <h1>Hi, Friend!</h1>
-        <p className="prose">
+        <p className="prose blur">
           This will be like my{" "}
           <Link className="internal-link" href="/now">
             now{" "}
           </Link>{" "}
           page, but for things more general things instead of "goals". I <i>might</i> lead you onto NSFW pages since
-          some of the following things may be notes. The last 10 pages I've edited are: <br />
+          some of the following things are notes.
+        </p>
+        <p className="prose blur">
+          Would you like to sign my <Link className="internal-link"  href="/guestbook">guestbook</Link>?   Or maybe you'd like to see some <Link className="internal-link"  href="/webring">webrings</Link> I joined?
+        </p>
+        <p className="prose">
+          The last 10 pages I've edited are: <br />
           <br />
           {pages.map((r) => (
             <div key={r.route}>
@@ -43,7 +49,7 @@ const SkipPage = () => {
         </p>
       </section>
       <section style={{ minHeight: "100vh" }}>
-        <h1>My latest project btw! :)</h1>
+        <h1>latest project</h1>
         <div className={styles.project__card}>
           <div className={styles.project__image}>
             <Image
