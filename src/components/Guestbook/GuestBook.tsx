@@ -106,10 +106,11 @@ const Guestbook = () => {
             cols={28}
             maxLength={140}
             onChange={(e) => setNote(e.target.value)}
+            draggable={false}
             required
           ></textarea>
           <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
-          <input placeholder="https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
+          <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
           <button type="submit">Scribble</button>
         </form>
         {entries.map((entry) => {
