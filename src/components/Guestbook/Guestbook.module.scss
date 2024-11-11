@@ -52,8 +52,13 @@
 
 .name_link {
     @extend .name;
+    -webkit-text-decoration: wavy;
+    text-decoration: 1px wavy underline;
 
-    text-decoration: wavy
+    &:hover {
+        text-decoration: 1px underline;
+    }
+
 }
 
 .note_form {

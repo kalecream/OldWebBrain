@@ -93,9 +93,9 @@ const Guestbook = () => {
   return (
     <section>
       <h1>Guest Log</h1>
-      <p className="prose">
+      <p className="prose text-center">
         You were here. Leave your mark. <br/>This guestbook was heavily inspired by {" "}
-        <Link href={"eva.town/guestbook"}>Eva.Town</Link>
+        <Link href={"eva.town/guestbook"}>eva.town</Link>
       </p>
       <div className={styles.notes}>
         <form onSubmit={handleSubmit} className={styles.note_form}>
@@ -142,7 +142,7 @@ const Guestbook = () => {
           );
         })}
       </div>
-      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert//laxcity"} audioLink={"https://www.youtube.com/watch?v=vJAK7Isi784&t=47s&pp=ygURaW50cm92ZXJ0IGxheGNpdHk%3D"} />
+      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert // Laxcity"} audioLink={"https://www.youtube.com/watch?v=vJAK7Isi784&t=47s&pp=ygURaW50cm92ZXJ0IGxheGNpdHk%3D"} />
     </section>
   );
 };
