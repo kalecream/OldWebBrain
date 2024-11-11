@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { unstable_noStore as noStore } from "next/cache";
 import styles from "./Guestbook.module.scss";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
@@ -94,8 +94,8 @@ const Guestbook = () => {
     <section>
       <h1>Guest Log</h1>
       <p className="prose text-center">
-        You were here. Leave your mark. <br/>This guestbook was heavily inspired by {" "}
-        <Link href={"eva.town/guestbook"}>eva.town</Link>
+        You were here. Leave your mark. <br />
+        This guestbook was heavily inspired by <Link href={"https://eva.town/guestbook"}>eva.town</Link>
       </p>
       <div className={styles.notes}>
         <form onSubmit={handleSubmit} className={styles.note_form}>
@@ -114,35 +114,41 @@ const Guestbook = () => {
           <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
           <button type="submit">Scribble</button>
         </form>
-        {entries.map((entry) => {
-          const randomRotation = `${Math.random() * 6 - 3}deg`;
-          const randomTranslateX = `${Math.random() * 24 - 12}px`;
+        <Suspense fallback={<p className="text-center">Loading Logs...</p>}>
+          {entries.map((entry) => {
+            const randomRotation = `${Math.random() * 6 - 3}deg`;
+            const randomTranslateX = `${Math.random() * 24 - 12}px`;
 
-          return (
-            <p
-              key={entry.id}
-              className={styles.note}
-              style={{
-                transform: `rotate(${randomRotation}) translateX(${randomTranslateX})`,
-              }}
-            >
-              <span className={styles.note_content}>{entry.note}</span>
+            return (
+              <p
+                key={entry.id}
+                className={styles.note}
+                style={{
+                  transform: `rotate(${randomRotation}) translateX(${randomTranslateX})`,
+                }}
+              >
+                <span className={styles.note_content}>{entry.note}</span>
 
-              {entry.url ? (
-                <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
-                  {entry.name}
-                </Link>
-              ) : (
-                <span className={styles.name}>{entry.name}</span>
-              )}
-              <span className={styles.date} title={entry.createdAt}>
-                {formatDate(entry.createdAt)}
-              </span>
-            </p>
-          );
-        })}
+                {entry.url ? (
+                  <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
+                    {entry.name}
+                  </Link>
+                ) : (
+                  <span className={styles.name}>{entry.name}</span>
+                )}
+                <span className={styles.date} title={entry.createdAt}>
+                  {formatDate(entry.createdAt)}
+                </span>
+              </p>
+            );
+          })}
+        </Suspense>
       </div>
-      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert // Laxcity"} audioLink={"https://www.youtube.com/watch?v=vJAK7Isi784&t=47s&pp=ygURaW50cm92ZXJ0IGxheGNpdHk%3D"} />
+      <MusicPlayer
+        audioSrc={"/audio/introvert.mp3"}
+        songTitle={"Introvert // Laxcity"}
+        audioLink={"https://www.youtube.com/watch?v=vJAK7Isi784&t=47s&pp=ygURaW50cm92ZXJ0IGxheGNpdHk%3D"}
+      />
     </section>
   );
 };
