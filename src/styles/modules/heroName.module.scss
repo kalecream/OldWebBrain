@@ -29,9 +29,8 @@
 }
 .container .text {
 	position: absolute;
-	color: var(--primary);
 	font-size: clamp(1rem, 25vw, 12rem);
-	font-family: var(--accentFont), sans-serif;
+	font-family: "Cattedrale Rough", sans-serif;
 	text-transform: capitalize;
 	-webkit-text-stroke: 2px solid var(--border);
 	letter-spacing: -2px;
@@ -93,7 +92,6 @@
 	animation-delay: calc(0s + (0.1s * 1));
 	z-index: -1;
 	user-select: none;
-	// color: var(--textColor);
 }
 .container .text__container .text:nth-child(2) {
 	opacity: 0;

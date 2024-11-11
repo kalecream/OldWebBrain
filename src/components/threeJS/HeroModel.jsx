@@ -20,7 +20,7 @@ export const HeroModel = () => {
 			}}
 		>
 			<Preload all />
-			<Suspense fallback={<Html center>Loading 3D Model...</Html>}>
+			<Suspense fallback={<Html center>Loading...</Html>}>
 				<spotLight intensity={100} position={[10, 10, 10]} />
 				<directionalLight intensity={9.5} />
 				<Model />
