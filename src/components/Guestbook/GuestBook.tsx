@@ -104,7 +104,7 @@ const Guestbook = () => {
             placeholder="* 140 characters left to make your mark."
             rows={4}
             cols={28}
-            maxLength={140}
+            maxLength={180}
             onChange={(e) => setNote(e.target.value)}
             draggable={false}
             required
