@@ -1128,7 +1128,8 @@ span.project__status.archived {
 	min-width: 280px;
 	padding: 5px 10px;
 	border-radius: var(--borderRadius);
-	box-shadow: var(--boxShadow)
+	box-shadow: var(--boxShadow);
+	backdrop-filter: blur(25px);
 }
 
 .stat-block.wide {
@@ -1325,19 +1326,5 @@ span.project__status.archived {
 @media screen and (max-width: 575px) {
 	.stat-block {
 		margin: 20px 0;
-	}
-}
-
-.stars {
-	background-image: url(../assets/images/stars.gif);
-	user-select: none;
-
-	& h1 {
-		font-family: "Roman";
-		max-width: 65rem;
-		height: 200px;
-		margin: 0;
-		font-size: clamp(3rem, 5vw, 5rem);
-		line-height: 1.3;
 	}
 }
