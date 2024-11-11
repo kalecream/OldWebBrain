@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { unstable_noStore as noStore } from "next/cache";
 import styles from "./Guestbook.module.scss";
+import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 const formatDate = (date: string) => {
   noStore();
@@ -92,7 +93,7 @@ const Guestbook = () => {
   return (
     <section>
       <h1>Guest Log</h1>
-      <p>
+      <p className="prose">
         You were here. Leave your mark. <br/>This guestbook was heavily inspired by {" "}
         <Link href={"eva.town/guestbook"}>Eva.Town</Link>
       </p>
@@ -141,6 +142,7 @@ const Guestbook = () => {
           );
         })}
       </div>
+      <MusicPlayer audioSrc={"/audio/introvert.mp3"} songTitle={"Introvert//laxcity"} audioLink={"https://www.youtube.com/watch?v=vJAK7Isi784&t=47s&pp=ygURaW50cm92ZXJ0IGxheGNpdHk%3D"} />
     </section>
   );
 };

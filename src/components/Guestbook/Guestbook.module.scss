@@ -37,27 +37,21 @@
 
     & .name {
         font-size: 0.9rem;
-        opacity: 0.7;
-
-        & a {
-            color: rgb(16, 16, 16);
-            text-decoration: none;
-            opacity: 0.7;
-
-            &:hover {
-                color: red;
-            }
-        }
-    }
-
-    & .date {
-        margin: 0;
-        font-size: 0.8rem;
+        color: rgb(16, 16, 16);
+        text-decoration: none;
         opacity: 0.7;
     }
 }
 
+& .date {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
 .name_link {
+    @extend .name;
+
     text-decoration: wavy
 }
 
