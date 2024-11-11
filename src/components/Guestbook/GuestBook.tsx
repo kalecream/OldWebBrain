@@ -26,11 +26,15 @@ const formatDate = (date: string) => {
   if (secondsAgo < 1) {
     return `just now`;
   } else if (secondsAgo < 60 || minutesAgo < 1) {
-    return `${secondsAgo} second(s) ago`;
+    return `${secondsAgo} seconds ago`;
   } else if (hoursAgo < 1) {
-    return `${minutesAgo} minute(s) ago`;
+    return `${minutesAgo} minutes ago`;
+  } else if (hoursAgo < 2) {
+    return `${hoursAgo} hour ago`;
   } else if (hoursAgo < 24) {
-    return `${hoursAgo} hour(s) ago`;
+    return `${hoursAgo} hours ago`;
+  } else if (daysAgo < 2) {
+    return `${fullDate} (yesterday)`;
   } else if (daysAgo < 7) {
     return `${fullDate} (${daysAgo}d ago)`;
   } else if (daysAgo < 30) {
@@ -94,16 +98,16 @@ const Guestbook = () => {
           <textarea
             value={note}
             name="content"
-            placeholder="You have 140 characters to make your mark...."
-            rows={2}
+            placeholder="* 140 characters left to make your mark."
+            rows={4}
             cols={28}
             maxLength={140}
             onChange={(e) => setNote(e.target.value)}
             required
           ></textarea>
-          <input type="text" placeholder="Your Name" required value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
           <input placeholder="https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
-          <button type="submit">Scribble Note</button>
+          <button type="submit">Scribble</button>
         </form>
         {entries.map((entry) => {
           const randomRotation = `${Math.random() * 6 - 3}deg`;
