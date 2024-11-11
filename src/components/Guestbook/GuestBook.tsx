@@ -93,8 +93,8 @@ const Guestbook = () => {
     <section>
       <h1>Guest Log</h1>
       <p>
-        You were here. Leave your mark. This guestbook was heavily inspired by the one at{" "}
-        <Link href={"eva.town/guestbook"}>Eva.Town</Link> and code is taken from her tutorial.{" "}
+        You were here. Leave your mark. <br/>This guestbook was heavily inspired by {" "}
+        <Link href={"eva.town/guestbook"}>Eva.Town</Link>
       </p>
       <div className={styles.notes}>
         <form onSubmit={handleSubmit} className={styles.note_form}>
