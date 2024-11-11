@@ -3,6 +3,8 @@ export interface PageRoutesProps {
   date: Date;
   description?: string;
   priority: number;
+  category?: string;
+  subcategory?: string;
 }
 
 export const PageRoutes: PageRoutesProps[] = [
@@ -11,26 +13,32 @@ export const PageRoutes: PageRoutesProps[] = [
     date: new Date(2024, 7, 31),
     description: "Index",
     priority: 1.0,
+    category: "main",
   },
   {
     route: "/about",
     date: new Date(2024, 10, 3, 12, 22),
     priority: 0.4,
+    category: "personal",
   },
   {
     route: "/amateur-radio",
     date: new Date(2024, 7, 31),
     priority: 0.3,
+    category: "notes",
+    subcategory: "hobbies",
   },
   {
     route: "/blog",
     date: new Date(2024, 7, 31),
     priority: 0.5,
+    category: "personal",
   },
   {
     route: "/c25k",
     date: new Date(2024, 8, 11, 0, 11),
     priority: 0.2,
+    category: "personal",
   },
   {
     route: "/changelog",
@@ -46,11 +54,13 @@ export const PageRoutes: PageRoutesProps[] = [
     route: "/contact",
     date: new Date(2024, 7, 31),
     priority: 0.8,
+    category: "personal",
   },
   {
     route: "/now",
     date: new Date(2024, 7, 31),
     priority: 0.4,
+    category: "personal",
   },
   {
     route: "/privacy",
@@ -71,6 +81,7 @@ export const PageRoutes: PageRoutesProps[] = [
     route: "/read",
     date: new Date(2024, 7, 31),
     priority: 0.2,
+    category: "personal",
   },
   {
     route: "/relationships",
@@ -106,6 +117,7 @@ export const PageRoutes: PageRoutesProps[] = [
     route: "/skip",
     date: new Date(2024, 8, 4, 8, 13),
     priority: 0.4,
+    category: "personal",
   },
   {
     route: "/sitemap",
@@ -117,4 +129,9 @@ export const PageRoutes: PageRoutesProps[] = [
     date: new Date(2024, 8, 1, 2, 7),
     priority: 0.4,
   },
+  {
+    route: "/webring" ,
+    date: new Date(2024, 10, 11, 14, 40),
+    priority: 0.4,
+  }
 ];
