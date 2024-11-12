@@ -4,6 +4,7 @@ import { Footer } from "./components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { BackToTop } from "@components/_basics/BackToTop";
+import { ThemeProvider } from "./context/Theme";
 import "@styles/global.scss";
 
 export const metadata: Metadata = {
@@ -57,14 +58,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="webmention" href="https://webmention.io/sabrinamedwinter.com/webmention" />
       </head>
       <body>
-        <Navbar />
-        <main>
-          {children}
-          <Analytics />
-          <SpeedInsights />
-          <BackToTop />
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main>
+            {children}
+            <Analytics />
+            <SpeedInsights />
+            <BackToTop />
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

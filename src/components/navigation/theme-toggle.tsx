@@ -1,6 +1,5 @@
-import { useTheme } from "next-themes";
-import { useEffect } from "react";
-import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
+import { useTheme } from "../../app/context/Theme";
+import { FaMoon, FaSun } from "react-icons/fa6";
 
 /**
  * Based off of gatsby-theme-novela
@@ -10,15 +9,14 @@ import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
  */
 
 const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {}, [theme]);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div
       style={{
         display: "flex",
         placeItems: "center",
+        marginTop: "-0.25rem",
       }}
     >
       <button
@@ -36,9 +34,9 @@ const ThemeSwitch = () => {
           backgroundColor: "transparent",
           color: "var(--primary)",
         }}
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        onClick={toggleTheme}
       >
-        {theme === "dark" ? <FaToggleOn /> : <FaToggleOff />}
+        {theme === "dark" ? <FaSun /> : <FaMoon />}
       </button>
     </div>
   );

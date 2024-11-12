@@ -100,35 +100,46 @@
 	--hr-color: var(--primary);
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		--backgroundColor: #f2f0e9;
-		--primary: #331200;
-		--secondary: #b12603;
-		--backgroundImage: url('https://i.imgur.com/vLMwD96.png');
-		--textColor: var(--primary);
-		--textColorAlt: #030637;
-		--border: 1px solid rgba(0, 0, 0, 0.1);
-		--boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
-		--borderColor: rgba(255, 255, 255, 0.4);
-		--captionColor: #aaa;
-	}
+:root {
+	--backgroundColor: #f2f0e9;
+	--primary: #331200;
+	--secondary: #b12603;
+	--backgroundImage: url('https://i.imgur.com/vLMwD96.png');
+	--textColor: var(--primary);
+	--textColorAlt: #030637;
+	--border: 1px solid rgba(0, 0, 0, 0.1);
+	--boxShadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
+	--borderColor: rgba(255, 255, 255, 0.4);
+	--captionColor: #aaa;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--backgroundColor: rgb(29, 29, 29);
-		--primary: #c80000 ;
-		--secondary: #e20000 ;
-		--textColor: #ccc;
-		--backgroundImage: url(../assets/images/stars.gif);
-		--textColorAlt: #ffe7e7;
-		--border: 1px solid rgba(255, 255, 255, 0.1);
-		--boxShadow: 1px 4px 16px 0 rgba(255, 255, 255, 0.2);
-		--borderColor: rgba(0, 0, 0, 0.4);
-		--captionColor: rgb(136, 136, 136);
-	}
+[data-theme='dark'] {
+	--backgroundColor: rgb(29, 29, 29);
+	--primary: #c80000;
+	--secondary: #e20000;
+	--textColor: #ccc;
+	--backgroundImage: url(../assets/images/stars.gif);
+	--textColorAlt: #ffe7e7;
+	--border: 1px solid rgba(255, 255, 255, 0.1);
+	--boxShadow: 1px 4px 16px 0 rgba(255, 255, 255, 0.2);
+	--borderColor: rgba(0, 0, 0, 0.4);
+	--captionColor: rgb(136, 136, 136);
 }
+
+// @media (prefers-color-scheme: dark) {
+// 	:root {
+// 		--backgroundColor: rgb(29, 29, 29);
+// 		--primary: #c80000;
+// 		--secondary: #e20000;
+// 		--textColor: #ccc;
+// 		--backgroundImage: url(../assets/images/stars.gif);
+// 		--textColorAlt: #ffe7e7;
+// 		--border: 1px solid rgba(255, 255, 255, 0.1);
+// 		--boxShadow: 1px 4px 16px 0 rgba(255, 255, 255, 0.2);
+// 		--borderColor: rgba(0, 0, 0, 0.4);
+// 		--captionColor: rgb(136, 136, 136);
+// 	}
+// }
 
 * {
 	transition: var(--transition);
@@ -485,7 +496,7 @@ h6 {
 }
 
 h1 {
-	font-size: clamp(2.5rem, -0.8750rem + 8.3333vw, 5rem);
+	font-size: clamp(2.5rem, -0.8750rem + 8.3333vw, 4rem);
 	margin-bottom: 0.15rem;
 	max-width: 45rem;
 	font-weight: 400;
