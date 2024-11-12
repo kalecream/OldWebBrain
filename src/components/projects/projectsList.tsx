@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Projects } from "@data/projectsData";
+import { Projects, ProjectStructure  } from "@data/projectsData";
 import Link from "next/link";
 import styles from "@styles/modules/projects.module.scss";
 import Image from "next/image";
@@ -13,6 +13,132 @@ export const extractCategories = () => {
   });
   return Array.from(categoriesSet);
 };
+
+const ProjectGallery: React.FC<{ projects: ProjectStructure[] }> = ({ projects }) => {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeID, setActiveID] = useState<string | null>(null);
+  const [imageView, setImageView] = useState<boolean>(false);
+
+  const handleTabChange = (category: string) => setActiveCategory(category);
+
+  const categories = extractCategories();
+
+  const filteredProjects = activeCategory === "All"
+    ? [...projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+    : projects.filter((project) => project.category === activeCategory).sort(
+        (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
+      );
+
+  const openImageView = (id: string) => {
+    setActiveID(id);
+    setImageView(true);
+  };
+
+  const closeImageView = () => setImageView(false);
+
+  const activeProject = activeID ? projects.find((project) => project.id === activeID) : null;
+
+  return (
+    <div className="wrapper">
+      <div className={styles["project-tabs"]}>
+        <button
+          className={`${styles["project-tab"]} ${activeCategory === "All" ? styles["active"] : ""}`}
+          onClick={() => handleTabChange("All")}
+        >
+          All
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`${styles["project-tab"]} ${activeCategory === category ? styles["active"] : ""}`}
+            onClick={() => handleTabChange(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {imageView && activeProject ? (
+        <ImageView
+          title={activeProject.title}
+          image={activeProject.image}
+          description={activeProject.description}
+          technology={activeProject.technology}
+          onClose={closeImageView}
+        />
+      ) : (
+        <Gallery data={filteredProjects} onOpenImageView={openImageView} />
+      )}
+    </div>
+  );
+};
+
+interface ImageViewProps {
+  title: string;
+  image?: string;
+  description: React.ReactNode;
+  technology: string[];
+  onClose: () => void;
+}
+
+const ImageView: React.FC<ImageViewProps> = ({ title, image, description, technology, onClose }) => (
+  <div className={`desktop ${styles["imageview-wrapper"]} ${styles.fadeIn}`}>
+    <div className={`${styles.imageview}`}>
+      {image && <Image className={`${styles["imageview-image"]}`} src={image} alt={title} width={800} height={800} />}
+      <div className={`${styles["imageview-info"]}`}>
+        <button className={`${styles["imageview-close"]}`} onClick={onClose}>
+          x
+        </button>
+        <h2>{title}</h2>
+        <div>{description}</div>
+        <h3>Technologies</h3>
+        <ul>
+          {technology.map((tech, index) => (
+            <li key={index}>{tech}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+interface GalleryProps {
+  data: ProjectStructure[];
+  onOpenImageView: (id: string) => void;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ data, onOpenImageView }) => (
+  <div className={`${styles.gallery} ${styles.fadeIn}`}>
+    {data
+      .filter((project) => project.display)
+      .map((project) => (
+        <Tile
+          key={project.id}
+          id={project.id}
+          title={project.title}
+          image={project.image}
+          onClick={() => onOpenImageView(project.id)}
+        />
+      ))}
+  </div>
+);
+
+interface TileProps {
+  id: string;
+  title: string;
+  image?: string;
+  onClick: () => void;
+}
+
+const Tile: React.FC<TileProps> = ({ id, title, image, onClick }) => (
+  <div className={`${styles["gallery-tile"]}`} onClick={onClick}>
+    {image && <Image className={`${styles["tile-image"]}`} src={image} alt={title} width={400} height={400} />}
+    <div className={`${styles["picture-info"]}`}>
+      <h2>{title}</h2>
+    </div>
+  </div>
+);
+
 
 const ProjectList: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -33,7 +159,8 @@ const ProjectList: React.FC = () => {
   return (
     <section className={styles["project-wrapper"]}>
       <h1>Things I've Made</h1>
-      <div className={styles["project-tabs"]}>
+      <ProjectGallery projects={Projects} />
+      {/* <div className={styles["project-tabs"]}>
         <button
           className={`${styles["project-tab"] + ` `} ${activeCategory === "All" ? styles["active"] : ""}`}
           onClick={() => handleTabChange("All")}
@@ -49,8 +176,8 @@ const ProjectList: React.FC = () => {
             {category}
           </button>
         ))}
-      </div>
-      <div className={styles["project-list"]}>
+      </div> */}
+      {/* <div className={styles["project-list"]}>
         {filteredProjects.map((project) => (
           <div key={project.id} className={styles["project-overlay"] + ` `}>
             <div key={project.id} className={styles.project + ` p-${project.id}` + ` `}>
@@ -95,7 +222,7 @@ const ProjectList: React.FC = () => {
 										<div className={styles.project__image}>
 											<FaFileImage style={{ fontSize: '1rem', margin: 'auto' }} />
 										</div>
-									)} */}
+									)} 
                 </div>
                 <div className={styles.project__box}>
                   <div className={styles["project-lang"]}>
@@ -133,7 +260,7 @@ const ProjectList: React.FC = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
