@@ -4,6 +4,8 @@
     justify-content: center;
     gap: 1rem;
     padding: var(--paddingContainer);
+
+
 }
 
 .note {
@@ -17,41 +19,67 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
 
     color: rgb(16, 16, 16);
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
     justify-content: center;
-    gap: 0.5rem;
-    flex: 0 1 325px;
+    flex: 0 1 300px;
+
+    & .note_bg {
+        display: grid;
+        place-items: center;
+        height: clamp(200px, 30vh, 300px);
+    }
+
+    & .note_info {
+        align-self: end;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 0;
+    }
 
     & .note_content {
+        padding: 0.5rem;
+        align-self: flex-end;
         display: flex;
         justify-content: center;
-        width: 28ch;
+        align-items: center;
+        text-wrap: balance;
+        font-family: "Fira Code";
+        font-size: 0.8rem;
         margin: 0 auto;
+        overflow-x: hidden;
+        max-width: 30ch;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    & .name,
+    & .date {
+        text-align: center;
+        opacity: 0.65;
+        margin: 0;
     }
 
     & .name {
-        font-size: 0.9rem;
-        color: rgb(16, 16, 16);
-        text-decoration: none;
-        opacity: 0.7;
+        font-size: 1.6rem;
+        font-family: "Cattedrale Rough";
     }
 
     & .date {
-        margin: 0;
         font-size: 0.8rem;
-        opacity: 0.7;
+        font-family: "Fira Code";
     }
 
 }
 
 .name_link {
     @extend .name;
+
+    color: #000;
     -webkit-text-decoration: wavy;
     text-decoration: 1px wavy underline;
 
@@ -64,13 +92,14 @@
 .note_form {
     @extend .note;
 
+    display: grid;
     align-items: center;
-    padding: 1rem;
+    background-color: var(--secondary);
+    height: clamp(200px, 30vh, 300px);
 
     a {
         color: rgb(16, 16, 16);
         opacity: 0.8;
-        text-decoration: none;
 
         &:hover {
             color: #000;
@@ -89,12 +118,12 @@
     & button {
         background: none;
         color: rgb(16, 16, 16);
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         border: 1px dashed rgb(16, 16, 16, 0.4);
         border-radius: 50px;
 
         &:hover {
-            color: rgba(255, 255, 255, 0.9)
+            background: rgba(255, 255, 255, 0.9)
         }
     }
 }

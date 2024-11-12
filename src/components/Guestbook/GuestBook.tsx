@@ -19,15 +19,12 @@ const formatDate = (date: string) => {
   let secondsAgo = Math.floor(timeDifference / 1000);
 
   let fullDate = new Date(date).toLocaleString("en-us", {
-    month: "long",
+    month: "short",
     day: "numeric",
-    year: "numeric",
   });
 
-  if (secondsAgo < 1) {
+  if (secondsAgo < 60 || minutesAgo < 1) {
     return `just now`;
-  } else if (secondsAgo < 60 || minutesAgo < 1) {
-    return `${secondsAgo} seconds ago`;
   } else if (hoursAgo < 1) {
     return `${minutesAgo} minutes ago`;
   } else if (hoursAgo < 2) {
@@ -90,56 +87,72 @@ const Guestbook = () => {
     }
   };
 
+  const randomChar = () => {
+    const chars = "BCDEFGHIJKMNOPQRSTUVWYbcdefghiknqrstuvwxz_";
+    return chars[Math.floor(Math.random() * chars.length)];
+  };
+
   return (
     <section>
       <h1>Guest Log</h1>
-      <p className="prose text-center">
+      <p className="prose" style={{ textAlign: "center" }}>
         You were here. Leave your mark. <br />
         This guestbook was heavily inspired by <Link href={"https://eva.town/guestbook"}>eva.town</Link>
       </p>
       <div className={styles.notes}>
-        <form onSubmit={handleSubmit} className={styles.note_form}>
-          <textarea
-            value={note}
-            name="content"
-            placeholder="* 140 characters left to make your mark."
-            rows={4}
-            cols={28}
-            maxLength={180}
-            onChange={(e) => setNote(e.target.value)}
-            draggable={false}
-            required
-          ></textarea>
-          <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
-          <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
-          <button type="submit">Scribble</button>
-        </form>
         <Suspense fallback={<p className="text-center">Loading Logs...</p>}>
+          <form onSubmit={handleSubmit} className={styles.note_form}>
+            <textarea
+              value={note}
+              name="content"
+              placeholder="* 190 characters left to make your mark."
+              rows={4}
+              cols={28}
+              maxLength={190}
+              onChange={(e) => setNote(e.target.value)}
+              draggable={false}
+              required
+            ></textarea>
+            <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
+            <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
+            <button type="submit">Scribble</button>
+          </form>
           {entries.map((entry) => {
             const randomRotation = `${Math.random() * 6 - 3}deg`;
             const randomTranslateX = `${Math.random() * 24 - 12}px`;
 
             return (
-              <p
+              <div
                 key={entry.id}
                 className={styles.note}
                 style={{
                   transform: `rotate(${randomRotation}) translateX(${randomTranslateX})`,
                 }}
               >
-                <span className={styles.note_content}>{entry.note}</span>
-
-                {entry.url ? (
-                  <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
-                    {entry.name}
-                  </Link>
-                ) : (
-                  <span className={styles.name}>{entry.name}</span>
-                )}
-                <span className={styles.date} title={entry.createdAt}>
-                  {formatDate(entry.createdAt)}
-                </span>
-              </p>
+                <div className={styles.note_bg}>
+                  <span className={styles.note_content}>{entry.note}</span>
+                  <div className={styles.note_info}>
+                    {entry.url ? (
+                      <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
+                        <span className="ornamental" style={{ fontSize: "1rem" }}>
+                          {randomChar()}
+                        </span>
+                        {entry.name}
+                      </Link>
+                    ) : (
+                      <span className={styles.name}>
+                        <span className="ornamental" style={{ fontSize: "1rem" }}>
+                          {randomChar()}
+                        </span>
+                        {entry.name}
+                      </span>
+                    )}
+                    <span className={styles.date} title={entry.createdAt}>
+                      {formatDate(entry.createdAt)}
+                    </span>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </Suspense>
