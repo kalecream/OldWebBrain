@@ -21,12 +21,11 @@ const NowPage = () => {
         <div className="prose">
           <p className="blur">
             The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. A page I stumbled
-            on while trying to see which web-rings were still active. These aren't exactly goals, but a collection of
+            on while trying to see which <Link href="/webrings" className="internal-link">webrings</Link>{' '} were still active. These aren't exactly goals, but a collection of
             experiences I would like to complete.
           </p>
           <p className="blur">
-            I have no qualms with them rolling over to the next quarter if I don't have enough time to complete it.
-            Either I am well enough to continue working on the tasks, too busy trying to keep myself afloat or dead with
+            I am fine delaying and rolling over to the next quarter if I don't have enough time to complete it. Either I am well enough to continue working on the tasks, too busy trying to keep myself afloat or dead with
             the tasks being no longer my problem.
           </p>
         </div>

@@ -24,18 +24,10 @@ const Hero = () => {
                   <Link href="https://github.com/kalecream" rel="me">
                     a portfolio
                   </Link>
-                  ,{" "}
-                  <Link href="https://www.linkedin.com/in/medwinter/" rel="me">
-                    a resume
-                  </Link>
-                  , <Link href="https://mstdn.social/@KaleCream" rel="me"></Link>a playground,{" "}
+                  , <Link href="https://mstdn.social/@KaleCream" rel="me">a playground,</Link><wbr/>
                   <Link href="mailto://sabrinamedwinter@gmail.com" rel="me">
                     {" "}
-                    a prayer
-                  </Link>
-                  , and{" "}
-                  <Link href="https://twitter.com/medwinters" rel="me">
-                    a journal
+                    and a prayer
                   </Link>
                   .
                 </p>

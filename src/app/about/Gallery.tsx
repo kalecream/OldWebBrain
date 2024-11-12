@@ -55,11 +55,18 @@ const NineGridGallery: React.FC<{ year: string; month: string }> = ({ year, mont
   };
 
   const closeImageView = () => setImageView(false);
+  const activeImage = activeID !== null ? data.find((item) => item.id === activeID) : null;
 
   return (
     <div className="wrapper">
-      {imageView && activeID !== null ? (
-        <ImageView {...data[activeID]} onClose={closeImageView} />
+      {imageView && activeImage !== null ? (
+        <ImageView
+          src={activeImage.src}
+          name={activeImage.name}
+          desc={activeImage.desc}
+          tags={activeImage.tags}
+          onClose={closeImageView}
+        />
       ) : (
         <Gallery data={data} year={year} month={month} onOpenImageView={openImageView} />
       )}
@@ -90,11 +97,9 @@ const ImageView: React.FC<ImageViewProps> = ({ src, name, desc, tags, onClose })
 
 const Gallery: React.FC<GalleryProps> = ({ data, year, month, onOpenImageView }) => (
   <div className={`${style.gallery} ${style.fadeIn}`}>
-    
     {data
       .filter((y) => y.year == year)
       .filter((y) => y.month == month)
-      .slice(0, 9)
       .map((item) => (
         <Tile key={item.id} {...item} onClick={() => onOpenImageView(item.id)} />
       ))}

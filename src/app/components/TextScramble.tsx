@@ -10,7 +10,7 @@ class TextScramble {
 
   constructor(el: HTMLElement) {
     this.el = el;
-    this.chars = "!<>-_\\/[]{}—=+*^?#________";
+    this.chars = "!-\\/[]=+*^??????____";
     this.queue = [];
     this.frame = 0;
     this.update = this.update.bind(this);
@@ -92,7 +92,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
       const next = () => {
         fxRef.current
           ?.setText(usedPhrases[counter.current])
-          .then(() => setTimeout(next, 800));
+          .then(() => setTimeout(next, 1500));
 
         counter.current = (counter.current + 1) % usedPhrases.length;
       };
@@ -104,7 +104,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
   }, [usedPhrases]);
 
   return (
-    <h1 ref={textRef}>
+    <h1 ref={textRef} style={{lineHeight: 1}}>
     </h1>
   );
 };

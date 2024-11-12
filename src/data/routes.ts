@@ -121,7 +121,7 @@ export const PageRoutes: PageRoutesProps[] = [
   },
   {
     route: "/sitemap",
-    date: new Date(2024, 8, 4, 4, 7),
+    date: new Date(2024, 10, 11, 20, 7),
     priority: 0.4,
   },
   {
