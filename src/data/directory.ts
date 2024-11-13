@@ -20,10 +20,6 @@ const Directory = [
     links: "/guestbook",
   },
   {
-    title: "Sitemap",
-    links: "/sitemap",
-  },
-  {
     title: "RSS",
     links: "/feed.xml",
   }

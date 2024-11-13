@@ -2,20 +2,13 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { CustomMDX } from "../../components/mdx";
-// import { getViewsCount } from '../../db/queries';
 import { getBlogPosts } from "../../db/blog";
-// import ViewCounter from '../view-counter';
-// import { increment } from '../../db/actions';
 import { unstable_noStore as noStore } from "next/cache";
-import Link from "next/link";
 import { PageReadTime } from "@utils/PageReadTime";
 import WebMentions from "@components/webmentions/WebMentions";
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
-  // if (!post) {
-  //   return;
-  // }
 
   let { title, date: publishedTime, summary: description, image, tags } = post.metadata;
   let ogImage = image ? `https://sabrinamedwinter.com${image}` : `https://sabrinamedwinter.com/opengraph-image.png`;
@@ -63,21 +56,18 @@ const formatDate = (date: string) => {
 
   if (daysAgo < 1) {
     return "Today";
+  } else if (daysAgo < 7) {
+    return `${fullDate} (${daysAgo}d ago)`;
+  } else if (daysAgo < 30) {
+    const weeksAgo = Math.floor(daysAgo / 7);
+    return `${fullDate} (${weeksAgo}w ago)`;
+  } else if (daysAgo < 365) {
+    const monthsAgo = Math.floor(daysAgo / 30);
+    return `${fullDate} (${monthsAgo}mo ago)`;
   } else {
-    return fullDate;
+    const yearsAgo = Math.floor(daysAgo / 365);
+    return `${fullDate} (${yearsAgo}y ago)`;
   }
-  // } else if (daysAgo < 7) {
-  //   return `${fullDate} (${daysAgo}d ago)`;
-  // } else if (daysAgo < 30) {
-  //   const weeksAgo = Math.floor(daysAgo / 7);
-  //   return `${fullDate} (${weeksAgo}w ago)`;
-  // } else if (daysAgo < 365) {
-  //   const monthsAgo = Math.floor(daysAgo / 30);
-  //   return `${fullDate} (${monthsAgo}mo ago)`;
-  // } else {
-  //   const yearsAgo = Math.floor(daysAgo / 365);
-  //   return `${fullDate} (${yearsAgo}y ago)`;
-  // }
 };
 
 export default function Blog({ params }) {
@@ -114,16 +104,13 @@ export default function Blog({ params }) {
       <div className="info">
         <Suspense fallback={<p />}>
           <p className="text-center">
-            <PageReadTime readingSpeedWPM={200} /> 𑁍 {formatDate(post.metadata.date)}
+            <PageReadTime readingSpeedWPM={250} /> — {formatDate(post.metadata.date)}
           </p>
         </Suspense>
-        <br />
-        <br />
         <h1 className="title">{post.metadata.title}</h1>
         <h2 className="text-center">
           <i>{post.metadata.description}</i>
         </h2>
-
         <br />
       </div>
       <article className="blur">
@@ -134,10 +121,3 @@ export default function Blog({ params }) {
   );
 }
 
-// let incrementViews = cache(increment);
-
-// async function Views({ slug }: { slug: string }) {
-//   let views = await getViewsCount();
-//   incrementViews(slug);
-//   return <ViewCounter allViews={views} slug={slug} />;
-// }

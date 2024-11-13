@@ -1,12 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { TweetComponent } from "./tweet";
 import React from "react";
 import { LiveCode } from "./sandpack";
 import { codeToHtml } from "shiki";
 import type { BundledLanguage, BundledTheme } from "shiki";
-import { transformerNotationHighlight } from "@shikijs/transformers";
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -47,7 +45,7 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return <Image alt={props.alt} {...props} />;
 }
 
 function Callout(props) {
@@ -167,7 +165,6 @@ let components = {
   Callout,
   ProsCard,
   ConsCard,
-  StaticTweet: TweetComponent,
   code: Code,
   Table,
   LiveCode,

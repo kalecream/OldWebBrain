@@ -1339,3 +1339,21 @@ span.project__status.archived {
 		margin: 20px 0;
 	}
 }
+
+@keyframes subtleFall {
+	0% {
+	  transform: translateY(0);
+	  opacity: 0.5;
+	}
+	100% {
+	  transform: translateY(20px); 
+	  opacity: 1;
+	}
+  }
+  
+  .falling {
+	font-size: 5rem; 
+	color: rgba(0, 0, 0, 0.1); 
+	animation: subtleFall 5s ease-in-out infinite; 
+  }
+  
