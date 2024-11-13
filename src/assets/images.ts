@@ -257,8 +257,27 @@ const GPhotos: GalleryData[] = [
     desc: "I grew escallion around a dying plant to save space.",
     tags: ["seedling", "garden"],
   },
+  {
+    id: 28,
+    year: "2024",
+    month: "11",
+    src: "https://i.imgur.com/CdqnCdV.jpeg",
+    name: "Bujo",
+    desc: "My first bullet journal",
+    tags: ["bujo", "journal"],                       
+  },
+  {
+    id: 30,
+    year: "2024",
+    month: "11",
+    src: "https://i.imgur.com/ccU54kQ.jpeg",
+    name: "Home",
+    desc: "Nothing tastes as good as home feels",
+    tags: ["home", "food"],
+  }
+  
   // {
-  //   id: 28,
+  //   id: 29,
   //   year: "2024",
   //   month: "06",
   //   src: "https://i.imgur.com/a0xm3RS.jpeg",
