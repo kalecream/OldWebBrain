@@ -17,9 +17,5 @@ export const PageReadTime: FC<Props> = ({ readingSpeedWPM = 200 }) => {
     setReadingTime(time);
   }, [readingSpeedWPM]);
 
-  return (
-    <span className="text-center">
-      {readingTime} min read
-    </span>
-  );
+  return <span className="text-center">{readingTime} min read</span>;
 };

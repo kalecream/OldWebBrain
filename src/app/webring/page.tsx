@@ -46,8 +46,8 @@ const WebringPage: React.FC = () => {
       <h1>Webring</h1>
       <p className="prose">
         A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
-        "previous" link that allows users to navigate through the ring. The webring is a recall to the early days of
-        the internet when websites were more personal and interconnected.
+        "previous" link that allows users to navigate through the ring. The webring is a recall to the early days of the
+        internet when websites were more personal and interconnected.
       </p>
       <ClawWebringWidget />
     </section>

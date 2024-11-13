@@ -13,7 +13,8 @@ const SVGCard = () => {
       viewBox="0 0 450.000000 684.000000"
       preserveAspectRatio="xMidYMid meet"
       style={{
-        zIndex: -5, transition: "transform 1s"
+        zIndex: -5,
+        transition: "transform 1s",
       }}
     >
       {" "}
@@ -157,7 +158,7 @@ const Card = ({ id, href, heading }) => {
   return (
     <Link href={href} ref={cardRef} className={style.card}>
       <div ref={glowRef} className={style.glow}>
-        <SVGCard/>
+        <SVGCard />
         <div className={style["card-content"]}>
           <h1>{heading}</h1>
         </div>

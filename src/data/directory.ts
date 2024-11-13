@@ -22,7 +22,7 @@ const Directory = [
   {
     title: "RSS",
     links: "/feed.xml",
-  }
+  },
 ];
 
 export default Directory;

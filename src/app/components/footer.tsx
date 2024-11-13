@@ -17,7 +17,7 @@ export const SocialMediaList = () => {
             key={media.name}
             rel="me"
           >
-            <Icon name={media.name} style={{scale: "1.5", margin: "0 1rem"}} />
+            <Icon name={media.name} style={{ scale: "1.5", margin: "0 1rem" }} />
           </Link>
         );
       })}

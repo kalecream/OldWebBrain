@@ -77,18 +77,10 @@ const Card = ({ href, heading, text }) => {
   }, []);
 
   return (
-    <Link
-      href={href}
-      ref={cardRef}
-      className={style.card_2}
-      target="_blank"
-    >
+    <Link href={href} ref={cardRef} className={style.card_2} target="_blank">
       <div ref={glowRef} className={style.glow}>
         <div className={style.card__content}>
-          <h1
-          >
-            {heading}
-          </h1>
+          <h1>{heading}</h1>
           <p>{text}</p>
         </div>
       </div>

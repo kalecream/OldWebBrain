@@ -80,7 +80,7 @@ export const BlogPosts = () => {
   let years = useMemo(() => BlogDateSplit(posts), [posts]);
 
   return (
-    <section style={{marginTop: "3rem"}}>
+    <section style={{ marginTop: "3rem" }}>
       {years.map((year) => (
         <ul key={year.date} className={blog.container}>
           <li key={year.date}>

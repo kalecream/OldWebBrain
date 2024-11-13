@@ -130,8 +130,8 @@ export const PageRoutes: PageRoutesProps[] = [
     priority: 0.4,
   },
   {
-    route: "/webring" ,
+    route: "/webring",
     date: new Date(2024, 10, 11, 14, 40),
     priority: 0.4,
-  }
+  },
 ];

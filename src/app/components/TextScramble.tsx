@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 class TextScramble {
   el: HTMLElement;
@@ -23,8 +23,8 @@ class TextScramble {
     this.queue = [];
 
     for (let i = 0; i < length; i++) {
-      const from = oldText[i] || '';
-      const to = newText[i] || '';
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
       const start = Math.floor(Math.random() * 40);
       const end = start + Math.floor(Math.random() * 40);
       this.queue.push({ from, to, start, end });
@@ -73,12 +73,8 @@ interface TextScrambleComponentProps {
   phrases?: string[];
 }
 
-const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases}) => {
-
-  const defaultPhrases = [
-    "I am what I show up and do every day.",
-      "Nothing more,<br/> nothing less.",
-  ];
+const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases }) => {
+  const defaultPhrases = ["I am what I show up and do every day.", "Nothing more,<br/> nothing less."];
 
   const textRef = useRef<HTMLDivElement | null>(null);
   const fxRef = useRef<TextScramble | null>(null);
@@ -90,9 +86,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
       fxRef.current = new TextScramble(textRef.current);
 
       const next = () => {
-        fxRef.current
-          ?.setText(usedPhrases[counter.current])
-          .then(() => setTimeout(next, 1500));
+        fxRef.current?.setText(usedPhrases[counter.current]).then(() => setTimeout(next, 1500));
 
         counter.current = (counter.current + 1) % usedPhrases.length;
       };
@@ -103,10 +97,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases})
     return () => cancelAnimationFrame(fxRef.current?.frameRequest!);
   }, [usedPhrases]);
 
-  return (
-    <h1 ref={textRef} style={{lineHeight: 1}}>
-    </h1>
-  );
+  return <h1 ref={textRef} style={{ lineHeight: 1 }}></h1>;
 };
 
 export default TextScrambleComponent;

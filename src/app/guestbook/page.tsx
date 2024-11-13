@@ -1,9 +1,7 @@
-import Guestbook from '@components/Guestbook/GuestBook';
+import Guestbook from "@components/Guestbook/GuestBook";
 
 const GuestBookPage = () => {
-  return (
-    <Guestbook />
-  );
-}
+  return <Guestbook />;
+};
 
 export default GuestBookPage;

@@ -24,7 +24,11 @@ const Hero = () => {
                   <Link href="https://github.com/kalecream" rel="me">
                     a portfolio
                   </Link>
-                  , <Link href="https://mstdn.social/@KaleCream" rel="me">a playground,</Link><wbr/>
+                  ,{" "}
+                  <Link href="https://mstdn.social/@KaleCream" rel="me">
+                    a playground,
+                  </Link>
+                  <wbr />
                   <Link href="mailto://sabrinamedwinter@gmail.com" rel="me">
                     {" "}
                     and a prayer
@@ -57,7 +61,7 @@ const Hero = () => {
                   </svg>
                 </button>
               </Link>
-              <Link href="/skip" style={{ scale: "0.9" }} className={ hero.skip}>
+              <Link href="/skip" style={{ scale: "0.9" }} className={hero.skip}>
                 Skip
               </Link>
             </div>

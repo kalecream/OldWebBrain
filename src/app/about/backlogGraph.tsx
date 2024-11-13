@@ -104,13 +104,13 @@ export const BacklogGraph: FC = () => {
   const width = WindowWidth();
 
   return (
-      <BarChart width={width > 1200 ? width - 400: width - 100} height={300} data={Data} className={styles.backlogChart}>
-        <XAxis dataKey="month" />
-        {/* <YAxis domain={[0, 'dataMax + 3']} /> */}
-        <Tooltip />
-        <Bar dataKey="Started" stackId="a" fill="var(--primary)" />
-        <Bar dataKey="Finished" stackId="a" fill="var(--secondary)" label={<CustomerBarLabel />} />
-      </BarChart>
+    <BarChart width={width > 1200 ? width - 400 : width - 100} height={300} data={Data} className={styles.backlogChart}>
+      <XAxis dataKey="month" />
+      {/* <YAxis domain={[0, 'dataMax + 3']} /> */}
+      <Tooltip />
+      <Bar dataKey="Started" stackId="a" fill="var(--primary)" />
+      <Bar dataKey="Finished" stackId="a" fill="var(--secondary)" label={<CustomerBarLabel />} />
+    </BarChart>
   );
 };
 

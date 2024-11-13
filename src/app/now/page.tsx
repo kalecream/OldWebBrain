@@ -21,12 +21,16 @@ const NowPage = () => {
         <div className="prose">
           <p className="blur">
             The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. A page I stumbled
-            on while trying to see which <Link href="/webrings" className="internal-link">webrings</Link>{' '} were still active. These aren't exactly goals, but a collection of
-            experiences I would like to complete.
+            on while trying to see which{" "}
+            <Link href="/webrings" className="internal-link">
+              webrings
+            </Link>{" "}
+            were still active. These aren't exactly goals, but a collection of experiences I would like to complete.
           </p>
           <p className="blur">
-            I am fine delaying and rolling over to the next quarter if I don't have enough time to complete it. Either I am well enough to continue working on the tasks, too busy trying to keep myself afloat or dead with
-            the tasks being no longer my problem.
+            I am fine delaying and rolling over to the next quarter if I don't have enough time to complete it. Either I
+            am well enough to continue working on the tasks, too busy trying to keep myself afloat or dead with the
+            tasks being no longer my problem.
           </p>
         </div>
       </section>
@@ -35,7 +39,7 @@ const NowPage = () => {
           <div className="img-grid">
             <Image src={Fall2024} alt="" width={100} height={100} style={{ margin: "0 auto" }} />
           </div>
-          <h1 style={{margin: "0"}}>2024-Fall</h1>
+          <h1 style={{ margin: "0" }}>2024-Fall</h1>
           <p className="blur">
             The focus of this season is introspection, a backlog that I've neglected and previous goals which were not
             completed. Recently, I've been made aware of some negative traits of mine. With cursory thoughts, I see it
@@ -49,7 +53,7 @@ const NowPage = () => {
           <div className="img-grid">
             <Image src={SummerImage} alt="" width={74} height={100} style={{ margin: "0 auto" }} />
           </div>
-          <h1 style={{margin: "0"}}>2024-Summer</h1>
+          <h1 style={{ margin: "0" }}>2024-Summer</h1>
           <p className="blur">
             I'm still working on last season's goals + want to focus on repairing, low-tech and continued sustainability
             tasks this season.
@@ -77,7 +81,7 @@ const NowPage = () => {
           <div className="img-grid">
             <Image src={BehindImage} alt="" width={160} height={100} style={{ margin: "0 auto" }} />
           </div>
-          <h1 style={{margin: "0"}}>2024-Spring</h1>
+          <h1 style={{ margin: "0" }}>2024-Spring</h1>
           <p className="blur">
             This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
             started strong, then was blown off track by the stings of poverty and burnout.
@@ -116,7 +120,7 @@ const NowPage = () => {
           <div className="img-grid">
             <Image src={WinterImage} alt="" width={200} height={51.56} style={{ margin: "0 auto" }} />
           </div>
-          <h1 style={{margin: "0"}}>2023-Winter</h1>
+          <h1 style={{ margin: "0" }}>2023-Winter</h1>
           <p>
             This is when I started this page. At the time, I was exploring individuallism vs caring for myself as a
             member of a community. This might re-appear as a goal-point after I read Frantz Fanon's{" "}

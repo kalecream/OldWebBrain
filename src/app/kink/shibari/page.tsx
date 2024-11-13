@@ -54,7 +54,11 @@ const ShibariPage = () => {
           <li>
             <Link href="https://www.youtube.com/@BeRoped/videos">Basic Knots — Reposts from Two Knotty Boys</Link>
           </li>
-          <li><Link href="https://youtube.com/playlist?list=PLwVgIGt40K446aVrcwB66VQh_H0tASWJJ&si=c9eaSwar2D2uoMM8">Other Tutorials or Creative Ties</Link></li>
+          <li>
+            <Link href="https://youtube.com/playlist?list=PLwVgIGt40K446aVrcwB66VQh_H0tASWJJ&si=c9eaSwar2D2uoMM8">
+              Other Tutorials or Creative Ties
+            </Link>
+          </li>
         </ul>
       </div>
     </section>

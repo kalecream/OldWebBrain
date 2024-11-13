@@ -43,12 +43,15 @@ const GitHubReleaseInfo = () => {
       <section>
         <h1>Website Changes!</h1>
         <p className="prose">
-        — To see more on how this website was made, read{" "}
+          — To see more on how this website was made, read{" "}
           <Link href="/colophon" className="internal-link">
             colophon
-          </Link>.
-          <br />
-          — To see all pages, visit <Link className="internal-link" href={"/sitemap"}>sitemap</Link>
+          </Link>
+          .
+          <br />— To see all pages, visit{" "}
+          <Link className="internal-link" href={"/sitemap"}>
+            sitemap
+          </Link>
           .
         </p>
       </section>

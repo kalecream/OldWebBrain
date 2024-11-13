@@ -6,7 +6,7 @@ import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 const WithRomance = () => {
   return (
     <>
-      <section id="romance" style={{minHeight: "100vh"}}>
+      <section id="romance" style={{ minHeight: "100vh" }}>
         <MusicPlayer audioSrc={"/audio/yth.mp3"} songTitle={"Yes To Heaven // Lana Del Rey"} audioLink={""} />
         <h1>With Romantic Interests</h1>
         <p className="prose">
@@ -37,7 +37,7 @@ const WithRomance = () => {
           <li>Accept/Give rejection gracefully.</li>
         </ol>
       </section>
-      <section style={{minHeight: "100vh"}}>
+      <section style={{ minHeight: "100vh" }}>
         <h2>Non Escalator Relationships</h2>
         <p className="prose">
           My understanding of the relationship escalator is that the process outline is what most couples expect in a
@@ -61,8 +61,8 @@ const WithRomance = () => {
         <p className="prose"></p>
         <p className="prose"></p>
       </div> */}
-        </section>
-        <section style={{minHeight: "100vh"}}>
+      </section>
+      <section style={{ minHeight: "100vh" }}>
         <div>
           <h3>Partnership</h3>
           <p className="prose">

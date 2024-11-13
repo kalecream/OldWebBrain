@@ -39,7 +39,7 @@ const WithSelfPage = () => {
           <h2>Needs</h2>
           <details open className="prose">
             <summary>
-              <i style={{fontSize: '1.8rem'}}>Physiological</i>
+              <i style={{ fontSize: "1.8rem" }}>Physiological</i>
             </summary>
             <p>
               These needs are the most important set and ones that we regularly betray or allow us to be led astray. I
@@ -48,7 +48,13 @@ const WithSelfPage = () => {
               to their own pages.
             </p>
             <p>
-              <b><Link className="internal-link" href="with-self/breathe" title="Page not yet made">breathe</Link></b>. Frequently, I will realize I'm holding my breath or hyperventilating depending on what's going on. The practice of Pranayama sometimes helps me to calm down.
+              <b>
+                <Link className="internal-link" href="with-self/breathe" title="Page not yet made">
+                  breathe
+                </Link>
+              </b>
+              . Frequently, I will realize I'm holding my breath or hyperventilating depending on what's going on. The
+              practice of Pranayama sometimes helps me to calm down.
             </p>
             <p>
               <b>Water.</b> I have a measured 1.3L water bottle that shows me reccomended drink levels from 8AM to 7PM,
@@ -57,11 +63,13 @@ const WithSelfPage = () => {
               <br />
             </p>
             <p>
-              <b>Food.</b> I occasionally feel hunger, but my relationship with food needs work. I sometimes eat nothing and other times overstuff myself. Moderation is a problem here.
+              <b>Food.</b> I occasionally feel hunger, but my relationship with food needs work. I sometimes eat nothing
+              and other times overstuff myself. Moderation is a problem here.
               <br />
             </p>
             <p>
-              <b>Shelter.</b> The need I treat with the most seriousness. I have a roof over my head and I'm grateful for it.
+              <b>Shelter.</b> The need I treat with the most seriousness. I have a roof over my head and I'm grateful
+              for it.
               <br />
             </p>
             <p>
@@ -71,9 +79,9 @@ const WithSelfPage = () => {
           </details>
           <details open>
             <summary>
-              <i  style={{fontSize: '1.8rem'}}>Safety</i>
-              </summary>
-              <p>
+              <i style={{ fontSize: "1.8rem" }}>Safety</i>
+            </summary>
+            <p>
               <b>Security in Body</b>
               <br />
             </p>
@@ -97,11 +105,10 @@ const WithSelfPage = () => {
               <b>Security in Property</b>
               <br />
             </p>
-            
           </details>
           <details>
             <summary>
-              <i style={{fontSize: '1.8rem'}}>Belonging</i>
+              <i style={{ fontSize: "1.8rem" }}>Belonging</i>
             </summary>
             <p>
               <b>Friendship</b>
@@ -118,7 +125,7 @@ const WithSelfPage = () => {
           </details>
           <details>
             <summary>
-              <i style={{fontSize: '1.8rem'}}>Esteem</i>
+              <i style={{ fontSize: "1.8rem" }}>Esteem</i>
             </summary>
             <p>
               <b>Esteem for oneself (dignity, achievement, mastery, independence) </b>
@@ -128,7 +135,7 @@ const WithSelfPage = () => {
               <b>The need to be accepted and valued by others (e.g., status, prestige)</b>
               <br />
             </p>
-          </details>      
+          </details>
         </div>
       </section>
     </>

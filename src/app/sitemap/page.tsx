@@ -12,7 +12,7 @@ const SitemapPage = () => {
       <p>
         {pages.map((r) => (
           <div key={r.route}>
-            <Link href={r.route} target="_blank" style={{fontWeight: 600}}>
+            <Link href={r.route} target="_blank" style={{ fontWeight: 600 }}>
               {r.route}
             </Link>{" "}
             → {formatDistanceToNow(new Date(r.date))} ago <br />

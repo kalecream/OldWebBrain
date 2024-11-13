@@ -24,7 +24,7 @@ const Breadcrumb: React.FC = () => {
   });
 
   return (
-    <div aria-label="breadcrumb" style={{display: "flex"}}>
+    <div aria-label="breadcrumb" style={{ display: "flex" }}>
       {path && path !== "/" && (
         <>
           <Link href="/" className={style["site-name"]}>
@@ -34,7 +34,7 @@ const Breadcrumb: React.FC = () => {
       )}
       <ol className={styles.breadcrumbList}>
         {breadcrumbItems.map((item, index) => (
-          <li key={index} className={styles.breadcrumbItem} style={{paddingLeft: 0}}>
+          <li key={index} className={styles.breadcrumbItem} style={{ paddingLeft: 0 }}>
             <Link href={item.href}>{item.label}</Link>
           </li>
         ))}

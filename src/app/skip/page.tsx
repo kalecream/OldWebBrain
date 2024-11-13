@@ -33,7 +33,15 @@ const SkipPage = () => {
           some of the following things are notes.
         </p>
         <p className="prose blur">
-          Would you like to sign my <Link className="internal-link"  href="/guestbook">guestbook</Link>?   Or maybe you'd like to see some <Link className="internal-link"  href="/webring">webrings</Link> I joined?
+          Would you like to sign my{" "}
+          <Link className="internal-link" href="/guestbook">
+            guestbook
+          </Link>
+          ? Or maybe you'd like to see some{" "}
+          <Link className="internal-link" href="/webring">
+            webrings
+          </Link>{" "}
+          I joined?
         </p>
         <p className="prose">
           The last 10 pages I've edited are: <br />

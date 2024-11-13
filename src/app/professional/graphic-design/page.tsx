@@ -1,11 +1,11 @@
 import DesignProjects from "@app/professional/graphic-design/DesignProjects";
 
 export const DesignPage = () => {
-    return (    
-            <>
-                <DesignProjects />
-            </>
-    );
+  return (
+    <>
+      <DesignProjects />
+    </>
+  );
 };
 
 export default DesignPage;

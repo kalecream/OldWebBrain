@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Projects, ProjectStructure  } from "@data/projectsData";
+import { Projects, ProjectStructure } from "@data/projectsData";
 import Link from "next/link";
 import styles from "@styles/modules/projects.module.scss";
 import Image from "next/image";
@@ -23,11 +23,12 @@ const ProjectGallery: React.FC<{ projects: ProjectStructure[] }> = ({ projects }
 
   const categories = extractCategories();
 
-  const filteredProjects = activeCategory === "All"
-    ? [...projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
-    : projects.filter((project) => project.category === activeCategory).sort(
-        (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
-      );
+  const filteredProjects =
+    activeCategory === "All"
+      ? [...projects].sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+      : projects
+          .filter((project) => project.category === activeCategory)
+          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   const openImageView = (id: string) => {
     setActiveID(id);
@@ -138,7 +139,6 @@ const Tile: React.FC<TileProps> = ({ id, title, image, onClick }) => (
     </div>
   </div>
 );
-
 
 const ProjectList: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("All");
