@@ -1,6 +1,12 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.2.4](https://github.com/your-repo/compare/v0.1.1...v1.2.4) (2024-11-13)
+
+
+### Documentation
+
+* improve code documentation ([5a94a7e](https://github.com/your-repo/commit/5a94a7ef12e39fa59ea7c0b9a1a13e46975444c6))
 
 ### [0.1.1](https://github.com/kalecream/OldWebBrain/compare/v0.1.0-beta...v0.1.1) (2024-11-13)
 
