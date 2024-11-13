@@ -8,8 +8,6 @@
 
 * improve code documentation ([5a94a7e](https://github.com/your-repo/commit/5a94a7ef12e39fa59ea7c0b9a1a13e46975444c6))
 
-### [0.1.1](https://github.com/kalecream/OldWebBrain/compare/v0.1.0-beta...v0.1.1) (2024-11-13)
-
 
 ### Features
 

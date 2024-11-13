@@ -67,3 +67,14 @@ npx prisma migrate dev
 
 - [ ] Update sitemap
 - [ ] Test on mobile
+
+## Releasing
+
+```bash
+
+yarn release -- --release-as patch
+yarn release -- --release-as minor
+yarn release -- --release-as major
+
+git push --follow-tags origin main
+```

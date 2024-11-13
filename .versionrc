@@ -1,16 +1,50 @@
 {
-  "bumpFiles": ["package.json", "package-lock.json"],
+  "bumpFiles": [
+    "package.json",
+    "package-lock.json"
+  ],
   "types": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug Fixes" },
-    { "type": "perf", "section": "Performance Improvements" },
-    { "type": "docs", "section": "Documentation" },
-    { "type": "refactor", "section": "Code Refactoring" },
-    { "type": "test", "section": "Tests" },
-    { "type": "chore", "section": "Chores" }
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes"
+    },
+    {
+      "type": "perf",
+      "section": "Performance Improvements"
+    },
+    {
+      "type": "docs",
+      "section": "Documentation"
+    },
+    {
+      "type": "refactor",
+      "section": "Code Refactoring"
+    },
+    {
+      "type": "test",
+      "section": "Tests"
+    },
+    {
+      "type": "chore",
+      "section": "Chores",
+      "hidden": true
+    }
   ],
   "commitUrlFormat": "https://github.com/your-repo/commit/{{hash}}",
   "compareUrlFormat": "https://github.com/your-repo/compare/{{previousTag}}...{{currentTag}}",
   "issueUrlFormat": "https://github.com/your-repo/issues/{{id}}",
-  "header": "# Changelog\n\n"
+  "header": "# Changelog\n\n",
+  "skip": {
+    "changelog": false,
+    "tag": false
+  },
+  "scripts": {
+    "postbump": "yarn run build",
+    "postchangelog": "git add CHANGELOG.md",
+    "precommit": "git commit -m \"chore: release\""
+  }
 }
