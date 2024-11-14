@@ -567,11 +567,17 @@ li > a {
 }
 
 q {
-	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
-	font-style: italic;
+	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.65rem);
+	font-family: "Garamond Italics";
 	text-align: center;
 	color: var(--secondary);
-	max-width: 65rem;
+	max-width: 40rem;
+	line-height: 1;
+	margin: 0 auto;
+
+	& > p {
+		margin: 0;
+	}
 }
 
 img,
@@ -798,6 +804,12 @@ article p {
 	@include breakpoint-range($from: desktopSmall) {
 		margin: 1rem 0;
 	}
+}
+
+article q p {
+	font-size: clamp(1.4rem, -0.8750rem + 8.3333vw, 1.8rem);
+	margin: 0;
+	font-family: "Garamond Italics";
 }
 
 code {
