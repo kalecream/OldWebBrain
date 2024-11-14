@@ -490,7 +490,7 @@ h4,
 h5,
 h6 {
 	color: var(--textColor);
-	font-family: "Garamond", serif;
+	font-family: "Roman", serif;
 	font-weight: 300;
 	text-align: center;
 }
@@ -504,7 +504,7 @@ h1 {
 }
 
 h2 {
-	font-size: clamp(2rem, 1.8vw, 3.5rem);
+	font-size: clamp(2rem, -0.8750rem + 5.3333vw, 3rem);
 	margin-top: 0;
 	margin-bottom: 1rem;
 	max-width: 45rem;
