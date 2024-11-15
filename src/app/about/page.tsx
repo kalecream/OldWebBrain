@@ -13,6 +13,7 @@ import AboutBooksSection from "./AboutBooks";
 // import { CodersrankSummary } from "./CodersRank";
 // import { ScrollDown } from "@components/scrollDown";
 import MiniPlayer from "@components/MusicPlayer/MusicPlayer";
+import StackedTimeLog from "@components/TimeLog/TimeLog";
 
 export const About = () => {
   return (
@@ -37,15 +38,9 @@ export const About = () => {
         </p>
         <TextScrambleComponent />
       </section>
-
-      {/* <section
-        className="stars"
-        style={{ margin: 0, padding: 0, minHeight: "100vh", paddingBottom: "6rem", marginBottom: "6rem" }}
-      >
-        <div className="flex center mx-1">
-          <NineGridGallery images={GPhotos} />
-        </div>
-      </section> */}
+      <section className="flex center" style={{ margin: "1rem", padding: 0 }}>
+        <StackedTimeLog />
+      </section>
       <AboutBooksSection />
       <section className={styles.paragraph} id="podcasts" style={{ minHeight: "100vh" }}>
         <h1 className="text-center">& I'm always listening to a podcast!</h1>

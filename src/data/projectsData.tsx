@@ -229,6 +229,22 @@ export const Projects: ProjectStructure[] = [
     technology: ["Photopea"],
     created: "2019-08-09",
   },
+  {
+    id: "018",
+    display: true,
+    title: "AAJ Guest Poster",
+    category: "illustration",
+    type: "poster",
+    image: "https://i.imgur.com/c4DSQIp.jpeg",
+    status: "completed",
+    description: (
+      <span>
+        Poster for the Astronomical Association of Jamaica's guest presentation on neutron stars and black holes. 
+      </span>
+    ),
+    technology: ["Photopea"],
+    created: "2021-05-20",
+  }
 ];
 
 export default Projects;
