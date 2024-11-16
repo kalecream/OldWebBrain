@@ -20,6 +20,11 @@ const projectID: Record<string, string> = {
   "190040024": "Physical",
 };
 
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toISOString().split('T')[0];
+};
+
 const StackedTimeLog: React.FC = () => {
   const [graphData, setGraphData] = useState<any[]>([]);
   const [currentTask, setCurrentTask] = useState<TimeLog | null>(null);
@@ -28,21 +33,21 @@ const StackedTimeLog: React.FC = () => {
     const fetchData = async () => {
       try {
         const entries: TimeLog[] = await fetchTimeLog();
-        console.log(entries);
+        // console.log(entries);
 
         if (entries.length > 0) {
-          const latestTask = entries[entries.length - 1];
+          const latestTask = entries[0];
           setCurrentTask(latestTask);
         }
 
         const validEntries = entries.filter(
-          (entry) => entry.start && entry.project_id && typeof entry.duration === "number" && entry.duration > 0,
+          (entry) => entry.start && entry.project_id && typeof entry.duration === "number" ,
         );
 
         const aggregatedData: Record<string, Record<string, number>> = {};
 
         validEntries.forEach((entry) => {
-          const date = entry.start.split("T")[0];
+          const date = formatDate(entry.start);
           const projectName = projectID[entry.project_id] || "Unknown Project";
           const duration = entry.duration / 3600;
 
@@ -51,7 +56,7 @@ const StackedTimeLog: React.FC = () => {
             aggregatedData[date][projectName] = 0;
           }
 
-          aggregatedData[date][projectName] += parseFloat(duration.toPrecision(3));
+          aggregatedData[date][projectName] += parseFloat(duration.toPrecision(2));
         });
 
         const formattedData = Object.entries(aggregatedData).map(([date, projects]) => ({
@@ -73,7 +78,7 @@ const StackedTimeLog: React.FC = () => {
       <h1>My Time Log</h1>
       {currentTask && (
         <p className="prose">
-          <i>Last:  {currentTask.description} for </i> {(currentTask.duration / 3600).toFixed(2)} <i>hours.</i>
+          <i>Currently  {currentTask.description} for {projectID[currentTask.project_id]}. </i>
         </p>
       )}
 
