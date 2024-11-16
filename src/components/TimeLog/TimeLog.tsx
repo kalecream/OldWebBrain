@@ -15,7 +15,9 @@ const projectID: Record<string, string> = {
   "176878046": "Organisation",
   "196581248": "Work",
   "190040032": "Social",
+  "198974982": "Personal",
   "196579838": "LANDS",
+  "190040024": "Physical",
 };
 
 const StackedTimeLog: React.FC = () => {
@@ -71,7 +73,7 @@ const StackedTimeLog: React.FC = () => {
       <h1>My Time Log</h1>
       {currentTask && (
         <p className="prose">
-          <i>Currently: {currentTask.description} for </i> {(currentTask.duration / 3600).toFixed(2)} <i>hours.</i>
+          <i>Last:  {currentTask.description} for </i> {(currentTask.duration / 3600).toFixed(2)} <i>hours.</i>
         </p>
       )}
 
