@@ -41,7 +41,7 @@ const StackedTimeLog: React.FC = () => {
         }
 
         const validEntries = entries.filter(
-          (entry) => entry.start && entry.project_id && typeof entry.duration === "number" ,
+          (entry) => entry.start && entry.project_id && typeof entry.duration === "number" && entry.duration > 0,
         );
 
         const aggregatedData: Record<string, Record<string, number>> = {};
