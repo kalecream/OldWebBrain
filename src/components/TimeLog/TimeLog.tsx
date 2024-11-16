@@ -78,7 +78,7 @@ const StackedTimeLog: React.FC = () => {
       <h1>My Time Log</h1>
       {currentTask && (
         <p className="prose">
-          <i>Currently  {currentTask.description} for {projectID[currentTask.project_id]}. </i>
+          <i>Currently  {currentTask.description} — {projectID[currentTask.project_id]}. </i>
         </p>
       )}
 
