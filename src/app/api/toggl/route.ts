@@ -7,7 +7,11 @@ const formatDate = (date: Date) => {
   return date.toISOString().split('T')[0];
 };
 
-export async function GET() {
+export const revalidate = 0;
+// this is so next will refresh the api instead of caching
+
+
+export const GET = async () =>  {
   const auth = Buffer.from(`${TOGGL_API_KEY}:api_token`).toString("base64");
   const startDate = new Date();
   startDate.setDate(startDate.getDate() - 90);
