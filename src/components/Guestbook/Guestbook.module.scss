@@ -37,7 +37,7 @@
         align-self: end;
         display: flex;
         flex-direction: column;
-        padding: 1.5rem 0;
+        padding: 0 0 1rem 0;
     }
 
     & .note_content {
@@ -51,7 +51,7 @@
         font-size: 0.8rem;
         margin: 0 auto;
         overflow-x: hidden;
-        max-width: 30ch;
+        max-width: 40ch;
         white-space: pre-wrap;
         overflow-wrap: break-word;
         word-break: break-word;
