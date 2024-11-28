@@ -11,7 +11,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
   let post = getBlogPosts().find((post) => post.slug === params.slug);
 
   let { title, date: publishedTime, summary: description, image, tags } = post.metadata;
-  let ogImage = image ? `https://sabrinamedwinter.com${image}` : `https://sabrinamedwinter.com/opengraph-image.png`;
+  let ogImage = image ? `https://yunghigue.com${image}` : `https://yunghigue.com/opengraph-image.png`;
 
   return {
     title,
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       description,
       type: "article",
       publishedTime: post.metadata.date,
-      url: `https://sabrinamedwinter.com/blog/${post.slug}`,
+      url: `https://yunghigue.com/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -91,9 +91,9 @@ export default function Blog({ params }) {
             dateModified: post.metadata.update,
             description: post.metadata.description,
             image: post.metadata.image
-              ? `https://sabrinamedwinter.com${post.metadata.image}`
-              : `https://sabrinamedwinter.com/og?title=${post.metadata.title}`,
-            url: `https://sabrinamedwinter.com/blog/${post.slug}`,
+              ? `https://yunghigue.com${post.metadata.image}`
+              : `https://yunghigue.com/og?title=${post.metadata.title}`,
+            url: `https://yunghigue.com/blog/${post.slug}`,
             author: {
               "@type": "Person",
               name: "Sabrina Medwinter",
@@ -116,7 +116,7 @@ export default function Blog({ params }) {
       <article className="blur">
         <CustomMDX source={post.content} />
       </article>
-      <WebMentions targetUrl={`https://sabrinamedwinter.com/blog/${post.slug}`} />
+      <WebMentions targetUrl={`https://yunghigue.com/blog/${post.slug}`} />
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const NotFound = () => {
   return (
@@ -17,7 +18,7 @@ const NotFound = () => {
         <h1>This page doesn't exist</h1>
         <p className="prose" style={{ textAlign: "center" }}>
           If you expected to see something here,
-          <br /> let me know at sabrinamedwinter@gmail.com.
+          <br /> let me know at <Link href={"mailto:sab@yunghigue.com"}>sab@yunghigue.com</Link>.
         </p>
       </div>
     </section>

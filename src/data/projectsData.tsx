@@ -73,7 +73,7 @@ export const Projects: ProjectStructure[] = [
       </span>
     ),
     repoName: "OldWebBrain",
-    link: "https://www.sabrinamedwinter.com/",
+    link: "https://www.yunghigue.com/",
     technology: ["Next.js", "React-Three-Fiber", "GSAP"],
     created: "2022-08",
     language: ["React", "TypeScript", "MDX"],
