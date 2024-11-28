@@ -3,13 +3,13 @@ import { PageRoutes } from "@data/routes";
 
 export const sitemap = async () => {
   let blogs = getBlogPosts().map((post) => ({
-    url: `https://sabrinamedwinter.com/blog/${post.slug}`,
+    url: `https://yunghigue.com/blog/${post.slug}`,
     lastModified: post.metadata.update || post.metadata.date,
     priority: 0.5,
   }));
 
   let routes = PageRoutes.map((r) => ({
-    url: `https://sabrinamedwinter.com${r.route}`,
+    url: `https://yunghigue.com${r.route}`,
     lastModified: r.date.toISOString(),
     priority: r.priority,
   }));

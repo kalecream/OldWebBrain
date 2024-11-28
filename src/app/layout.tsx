@@ -8,7 +8,7 @@ import { ThemeProvider } from "./context/Theme";
 import "@styles/global.scss";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sabrinamedwinter.com"),
+  metadataBase: new URL("https://yunghigue.com"),
   title: {
     default: "Sab Medwinter",
     template: "%s | Sab Medwinter",
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sab Medwinter",
     description: "Sisyphus escaping liminality.",
-    url: "https://sabrinamedwinter.com",
+    url: "https://yunghigue.com",
     siteName: "Sab Medwinter",
     locale: "en_JM",
     type: "website",
   },
   alternates: {
-    types: { "application/rss+xml": "https://sabrinamedwinter.com/feed.xml" },
+    types: { "application/rss+xml": "https://yunghigue.com/feed.xml" },
   },
   robots: {
     index: true,
@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="webmention" href="https://webmention.io/sabrinamedwinter.com/webmention" />
+        <link rel="webmention" href="https://webmention.io/yunghigue.com/webmention" />
       </head>
       <body>
         <ThemeProvider>

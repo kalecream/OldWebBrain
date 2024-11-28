@@ -1,14 +1,9 @@
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa6";
 
 export const MediaProfiles = [
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/medwinter/",
-    icon: FaLinkedin,
-  },
-  {
     name: "Twitter",
-    url: "https://twitter.com/medwinters",
+    url: "https://twitter.com/yunghigue",
     icon: FaTwitter,
   },
   {
@@ -16,4 +11,9 @@ export const MediaProfiles = [
     url: "https://www.github.com/kalecream",
     icon: FaGithub,
   },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/yunghigue",
+    icon: FaInstagram,
+  }
 ];

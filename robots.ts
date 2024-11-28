@@ -39,8 +39,8 @@ export const robots = (): MetadataRoute.Robots => {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://sabrinamedwinter.com/sitemap.xml",
-    host: "https://sabrinamedwinter.com",
+    sitemap: "https://yunghigue.com/sitemap.xml",
+    host: "https://yunghigue.com",
   };
 };
 

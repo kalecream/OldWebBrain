@@ -2,7 +2,7 @@ import RSS from "rss";
 import { getBlogPosts } from "@app/db/blog";
 
 export async function GET() {
-  const site_url = process.env.NODE_ENV === "production" ? "https://sabrinamedwinter.com" : "http://localhost:3001";
+  const site_url = process.env.NODE_ENV === "production" ? "https://yunghigue.com" : "http://localhost:3001";
 
   const feed = new RSS({
     title: "Sab Medwinter",
@@ -20,8 +20,8 @@ export async function GET() {
   posts.map((post) => {
     feed.item({
       title: post.metadata.title,
-      guid: `https://sabrinamedwinter.com/blog/${post.slug}`,
-      url: `https://sabrinamedwinter.com/blog/${post.slug}`,
+      guid: `https://yunghigue.com/blog/${post.slug}`,
+      url: `https://yunghigue.com/blog/${post.slug}`,
       date: post.metadata.update || post.metadata.date,
       description: post.metadata.description,
       author: "Sabrina Medwinter",
