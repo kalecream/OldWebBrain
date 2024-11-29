@@ -71,7 +71,7 @@ const SplitChart = () => {
 
 const C25KPage = () => {
   useEffect(() => {
-    document.title = "C25K | Sab Medwinter ";
+    document.title = "C25K | Yung Higue ";
   }, []);
 
   return (

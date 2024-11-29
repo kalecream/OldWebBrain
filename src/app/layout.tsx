@@ -10,16 +10,16 @@ import "@styles/global.scss";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yunghigue.com"),
   title: {
-    default: "Sab Medwinter",
-    template: "%s | Sab Medwinter",
+    default: "Yung Higue",
+    template: "%s | Yung Higue",
   },
   description: "Sisyphus escaping liminality.",
   keywords: "Web Developer, Frontend Developer, Creative Developer, React Developer, 3D Develper",
   openGraph: {
-    title: "Sab Medwinter",
-    description: "Sisyphus escaping liminality.",
+    title: "Yung Higue",
+    description: "Gallivanting all night without skin, and eating blood in fat black pudding",
     url: "https://yunghigue.com",
-    siteName: "Sab Medwinter",
+    siteName: "Yung Higue",
     locale: "en_JM",
     type: "website",
   },
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Sab Medwinter",
+    title: "Yung Higue",
     card: "summary_large_image",
-    site: "@Medwinters",
+    site: "@YungHigue",
   },
   // verification: {
   //   google: '',
