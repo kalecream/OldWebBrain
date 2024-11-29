@@ -8,7 +8,7 @@ const MunchPage = () => {
         TLDR; It's an opportunity for members of the local kink community to get together to socialize in a low
         pressure, non-play environment. This is not a play event or opportunity to "pick up" partners. If the only
         reason you come to the munch is for pick up a playmate, you are going to be disappointed. This is a relaxed
-        social event to meet new people and I will be enforcing the <b>relaxed</b>.
+        social event to meet new people and I will be enforcing the <b>relaxed</b>. The comfort of everyone in attendance is my top priority.
       </p>
       <p className="prose blur">
         If you would like to play, <Link href="https://therosedungeon.com/events/">The Rose Dungeon</Link> is holding
