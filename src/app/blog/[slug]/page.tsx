@@ -96,7 +96,7 @@ export default function Blog({ params }) {
             url: `https://yunghigue.com/blog/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Sabrina Medwinter",
+              name: "Sab Medwinter",
             },
           }),
         }}
