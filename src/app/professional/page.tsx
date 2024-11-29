@@ -7,7 +7,7 @@ const ProfessionalPage = () => {
       <h1>Services</h1>
       <p className="prose center" style={{ margin: "-1rem auto" }}>
         Look at the portfolio for each below and{" "}
-        <Link href="mailto:sabrinamedwinter@gmail.com">reach out to me via email</Link>.
+        <Link href="mailto:sab@yunghigue.com">reach out to me via email</Link>.
       </p>
       <ServiceCard />
     </section>
