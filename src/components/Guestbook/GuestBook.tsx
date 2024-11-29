@@ -100,23 +100,23 @@ const Guestbook = () => {
         This guestbook was heavily inspired by <Link href={"https://eva.town/guestbook"}>eva.town</Link>
       </p>
       <div className={styles.notes}>
+        <form onSubmit={handleSubmit} className={styles.note_form}>
+          <textarea
+            value={note}
+            name="content"
+            placeholder="* 150 characters left to make your mark."
+            rows={4}
+            cols={28}
+            maxLength={150}
+            onChange={(e) => setNote(e.target.value)}
+            draggable={false}
+            required
+          ></textarea>
+          <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
+          <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
+          <button type="submit">Scribble</button>
+        </form>
         <Suspense fallback={<p className="text-center">Loading Logs...</p>}>
-          <form onSubmit={handleSubmit} className={styles.note_form}>
-            <textarea
-              value={note}
-              name="content"
-              placeholder="* 190 characters left to make your mark."
-              rows={4}
-              cols={28}
-              maxLength={170}
-              onChange={(e) => setNote(e.target.value)}
-              draggable={false}
-              required
-            ></textarea>
-            <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
-            <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
-            <button type="submit">Scribble</button>
-          </form>
           {entries.map((entry) => {
             const randomRotation = `${Math.random() * 6 - 3}deg`;
             const randomTranslateX = `${Math.random() * 24 - 12}px`;
@@ -133,7 +133,11 @@ const Guestbook = () => {
                   <span className={styles.note_content}>{entry.note}</span>
                   <div className={styles.note_info}>
                     {entry.url ? (
-                      <Link href={`${entry.url}`} target="_blank" className={styles.name_link}>
+                      <Link
+                        href={entry.url.split(7) == "https://" ? `${entry.url}` : `https://${entry.url}`}
+                        target="_blank"
+                        className={styles.name_link}
+                      >
                         <span className="ornamental" style={{ fontSize: "1rem" }}>
                           {randomChar()}
                         </span>
