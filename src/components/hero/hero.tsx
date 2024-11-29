@@ -29,7 +29,7 @@ const Hero = () => {
                     a playground,
                   </Link>
                   <wbr />
-                  <Link href="mailto://sab@yunghigue.com" rel="me">
+                  <Link href="mailto:sab@yunghigue.com" rel="me">
                     {" "}
                     and a prayer
                   </Link>

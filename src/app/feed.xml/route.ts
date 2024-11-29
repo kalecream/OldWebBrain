@@ -5,8 +5,8 @@ export async function GET() {
   const site_url = process.env.NODE_ENV === "production" ? "https://yunghigue.com" : "http://localhost:3001";
 
   const feed = new RSS({
-    title: "Sab Medwinter",
-    description: "Sab's blog posts!",
+    title: "Yung Higue",
+    description: "Sab's posts!",
     site_url: site_url,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/logo.jpeg`,
