@@ -105,10 +105,6 @@ git push --follow-tags origin main
 
 ### Code
 
-#### Authors
-
-- Sabrina Medwinter
-
 ### Finances
 
 <!-- /BACKERS -->
@@ -120,19 +116,5 @@ git push --follow-tags origin main
 [Discover the release history by heading on over to the releases page.](https://github.com/kalecream/OldWebBrain/releases)
 
 <!-- /HISTORY -->
-
-<!-- LICENSE/ -->
-
-## License
-
-Unless stated otherwise all works are:
-
-- Copyright &copy; Sabrina Medwinter
-
-and licensed under:
-
-- [MIT License](http://spdx.org/licenses/MIT.html)
-
-<!-- /LICENSE -->
 
 </center>

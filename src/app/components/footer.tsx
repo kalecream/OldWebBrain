@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
   return (
     <footer>
       <div className="flex">
-        <small>sabrina medwinter &copy; {new Date().getFullYear()}</small>
+        <small>Yung Higue &copy; {new Date().getFullYear()}</small>
       </div>
     </footer>
   );

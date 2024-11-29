@@ -24,7 +24,7 @@ export async function GET() {
       url: `https://yunghigue.com/blog/${post.slug}`,
       date: post.metadata.update || post.metadata.date,
       description: post.metadata.description,
-      author: "Sabrina Medwinter",
+      author: "SabMedwinter",
       //   categories: post.metadata.tags || [],
       //   FIXME: Post tags in rss
     });

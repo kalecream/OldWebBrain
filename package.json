@@ -9,9 +9,9 @@
     "type": "git",
     "url": "https://github.com/kalecream/OldWebBrain.git"
   },
-  "author": "Sabrina Medwinter",
+  "author": "Sab Medwinter",
   "authors": [
-    "Sabrina Medwinter"
+    "Sab Medwinter"
   ],
   "main": "src/pages/index.tsx",
   "dependencies": {
