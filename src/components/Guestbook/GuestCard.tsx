@@ -1,10 +1,18 @@
-"use client";
-import { useRef, useEffect } from "react";
-import style from "./ServiceCard.module.scss";
 import Link from "next/link";
-import { SVGCard } from "@utils/SVGCard";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { unstable_noStore as noStore } from "next/cache";
+import styles from "./Guestbook.module.scss";
+import { SVGCard, SVGCardCenter } from "@utils/SVGCard";
 
-const Card = ({ id, href, heading }) => {
+interface GuestCardProps {
+  id: number;
+  href: string;
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+  className?: string;
+}
+
+export const GuestCard = ({ id, href, children, style, className }: GuestCardProps) => {
   const cardRef = useRef(null);
   const glowRef = useRef(null);
   let bounds;
@@ -22,26 +30,26 @@ const Card = ({ id, href, heading }) => {
 
     if (cardRef.current) {
       cardRef.current.style.transform = `
-		  scale3d(1.07, 1.07, 1.07)
-		  rotate3d(
-			${center.y / 100},
-			${-center.x / 100},
-			0,
-			${Math.log(distance) * 2}deg
-		  )
-		`;
+            scale3d(1.07, 1.07, 1.07)
+            rotate3d(
+              ${center.y / 100},
+              ${-center.x / 100},
+              0,
+              ${Math.log(distance) * 2}deg
+            )
+          `;
     }
 
     if (glowRef.current) {
       glowRef.current.style.backgroundImage = `
-		  radial-gradient(
-			circle at
-			${center.x * 2 + bounds.width / 2}px
-			${center.y * 2 + bounds.height / 2}px,
-			#ffffff55,
-			#0000000f
-		  )
-		`;
+            radial-gradient(
+              circle at
+              ${center.x * 2 + bounds.width / 2}px
+              ${center.y * 2 + bounds.height / 2}px,
+              #ffffff55,
+              #0000000f
+            )
+          `;
     }
   };
 
@@ -78,22 +86,11 @@ const Card = ({ id, href, heading }) => {
   }, []);
 
   return (
-    <Link href={href} ref={cardRef} className={style.card}>
-      <div ref={glowRef} className={style.glow}>
-        <SVGCard />
-        <div className={style["card-content"]}>
-          <h1>{heading}</h1>
-        </div>
+    <Link href={href} ref={cardRef} className={`${styles.card} ${className}`} style={style}>
+      <div ref={glowRef} className={styles.glow}>
+        <SVGCardCenter />
+        <div className={styles["card-content"]}>{children}</div>
       </div>
     </Link>
-  );
-};
-
-export const ServiceCard = () => {
-  return (
-    <div className={style["card-container"]}>
-      <Card id={1} href="professional/web-development" heading={`Develop`} />
-      <Card id={2} href="professional/graphic-design" heading={`Design`} />
-    </div>
   );
 };

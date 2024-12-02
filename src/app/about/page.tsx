@@ -38,9 +38,6 @@ export const About = () => {
         </p>
         <TextScrambleComponent />
       </section>
-      <section className="flex center" style={{ margin: "1rem", padding: 0 }}>
-        <StackedTimeLog />
-      </section>
       <AboutBooksSection />
       <section className={styles.paragraph} id="podcasts" style={{ minHeight: "100vh" }}>
         <h1 className="text-center">& I'm always listening to a podcast!</h1>
