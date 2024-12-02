@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { unstable_noStore as noStore } from "next/cache";
 import styles from "./Guestbook.module.scss";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
+import { GuestCard } from "./GuestCard";
 
 const formatDate = (date: string) => {
   noStore();
@@ -96,28 +97,30 @@ const Guestbook = () => {
     <section>
       <h1>Guest Log</h1>
       <p className="prose" style={{ textAlign: "center" }}>
-        You were here. Leave your mark. <br />
+        You were here. Leave your mark on a calling card. <br />
         This guestbook was heavily inspired by <Link href={"https://eva.town/guestbook"}>eva.town</Link>
       </p>
       <div className={styles.notes}>
-        <form onSubmit={handleSubmit} className={styles.note_form}>
-          <textarea
-            value={note}
-            name="content"
-            placeholder="* 150 characters left to make your mark."
-            rows={4}
-            cols={28}
-            maxLength={150}
-            onChange={(e) => setNote(e.target.value)}
-            draggable={false}
-            required
-          ></textarea>
-          <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
-          <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
-          <button type="submit">Scribble</button>
-        </form>
+        <GuestCard id={0} href={""}>
+          <form onSubmit={handleSubmit} className={styles.note_form}>
+            <textarea
+              value={note}
+              name="content"
+              placeholder="* 150 characters left to make your mark."
+              rows={4}
+              cols={28}
+              maxLength={150}
+              onChange={(e) => setNote(e.target.value)}
+              draggable={false}
+              required
+            ></textarea>
+            <input type="text" placeholder="* Name" required value={name} onChange={(e) => setName(e.target.value)} />
+            <input placeholder="? https://(url)" value={url} onChange={(e) => setUrl(e.target.value)} />
+            <button type="submit">Scribble</button>
+          </form>
+        </GuestCard>
         <Suspense fallback={<p className="text-center">Loading Logs...</p>}>
-          {entries.map((entry) => {
+          {entries.map((entry, i) => {
             const randomRotation = `${Math.random() * 6 - 3}deg`;
             const randomTranslateX = `${Math.random() * 24 - 12}px`;
 
@@ -125,37 +128,31 @@ const Guestbook = () => {
               <div
                 key={entry.id}
                 className={styles.note}
-                style={{
-                  transform: `rotate(${randomRotation}) translateX(${randomTranslateX})`,
-                }}
+                
               >
-                <div className={styles.note_bg}>
-                  <span className={styles.note_content}>{entry.note}</span>
-                  <div className={styles.note_info}>
-                    {entry.url ? (
-                      <Link
-                        href={entry.url.split(7) == "https://" ? `${entry.url}` : `https://${entry.url}`}
-                        target="_blank"
-                        className={styles.name_link}
-                      >
-                        <span className="ornamental" style={{ fontSize: "1rem" }}>
-                          {randomChar()}
-                        </span>
-                        {entry.name}
-                      </Link>
-                    ) : (
-                      <span className={styles.name}>
-                        <span className="ornamental" style={{ fontSize: "1rem" }}>
-                          {randomChar()}
-                        </span>
-                        {entry.name}
+                <GuestCard id={i} href={""} style={{
+                  transform: `rotate(${randomRotation}) translateX(${randomTranslateX})`,
+                }}>
+                  <div className={styles.note_bg}>
+                    <span className={styles.note_content}>{entry.note}</span>
+                    <div className={styles.note_info}>
+                      {entry.url ? (
+                        <Link
+                          href={entry.url.split(7) == "https://" ? `${entry.url}` : `https://${entry.url}`}
+                          target="_blank"
+                          className={styles.name_link}
+                        >
+                          {entry.name}
+                        </Link>
+                      ) : (
+                        <span className={styles.name}>{entry.name}</span>
+                      )}
+                      <span className={styles.date} title={entry.createdAt}>
+                        {formatDate(entry.createdAt)}
                       </span>
-                    )}
-                    <span className={styles.date} title={entry.createdAt}>
-                      {formatDate(entry.createdAt)}
-                    </span>
+                    </div>
                   </div>
-                </div>
+                </GuestCard>
               </div>
             );
           })}

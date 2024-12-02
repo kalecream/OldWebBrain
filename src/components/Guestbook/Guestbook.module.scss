@@ -2,46 +2,42 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
     padding: var(--paddingContainer);
-
-
 }
 
 .note {
     margin: 0 auto;
     position: relative;
-    aspect-ratio: 4 / 3;
-    background: var(--secondary);
+    // background: var(--secondary);
+    // background: url(https://i.pinimg.com/736x/e6/3c/89/e63c8907f5f0d596afbcc095b4bf7767.jpg) no-repeat;
+    // background-size: cover;
     border-radius: var(--borderRadius);
-
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     display: flex;
-    flex-direction: column;
     transition: transform 0.3s;
-
-    color: rgb(16, 16, 16);
     text-align: center;
-    font-size: 1rem;
     font-weight: bold;
     justify-content: center;
-    flex: 0 1 300px;
+    flex: 0 1 clamp(300px, 5vh, 550px);
 
     & .note_bg {
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 1rem 0;
+        justify-content: center;
         place-items: center;
-        height: clamp(300px, 30vh, 450px);
+        height: 100%;
     }
 
     & .note_info {
         align-self: end;
         display: flex;
+        margin: 0 auto;
         flex-direction: column;
         padding: 0 0 1rem 0;
     }
 
     & .note_content {
-        padding: 0.5rem;
+        height: 100%;
         align-self: flex-end;
         display: flex;
         justify-content: center;
@@ -49,13 +45,14 @@
         text-wrap: balance;
         font-family: "Fira Code";
         font-size: 0.8rem;
-        color: var(--backgroundColor);
+        color: var(--secondary);
         margin: 0 auto;
         overflow-x: hidden;
-        max-width: 30ch;
+        overflow-y: scroll;
         white-space: pre-wrap;
         overflow-wrap: break-word;
         word-break: break-word;
+        max-width: 30ch;
     }
 
     & .name,
@@ -66,8 +63,10 @@
     }
 
     & .name {
+        margin: 0 auto;
         font-size: 1.6rem;
         font-family: "Cattedrale Rough";
+        line-height: 1;
     }
 
     & .date {
@@ -80,7 +79,6 @@
 .name_link {
     @extend .name;
 
-    color: #000;
     -webkit-text-decoration: wavy;
     text-decoration: 1px wavy underline;
 
@@ -92,10 +90,13 @@
 
 .note_form {
     @extend .note;
-
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    place-items: center;
+    justify-content: center;
     align-items: center;
-    background-color: var(--secondary);
+    // background-color: var(--secondary);
 
     a {
         color: rgb(16, 16, 16);
@@ -117,11 +118,11 @@
 
     & button {
         background: none;
-        color:  rgb(16, 16, 16);
+        color: rgb(16, 16, 16);
         padding: 0.5rem 1rem;
         border: none;
         font-family: 'Cattedrale Rough';
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         &:hover {
             font-size: 2.5rem;
@@ -129,4 +130,114 @@
             color: var(--backgroundColor);
         }
     }
+}
+
+// card
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 3rem;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+    user-select: none;
+}
+
+.card {
+    color: #8f8b83;
+    margin: 1rem;
+    width: 320px;
+    height: 490px;
+    // box-shadow: 0 1px 5px #1a191999;
+
+    border-radius: var(--borderRadius);
+    // background-color: var(--secondary);
+    // background-image: url(../../assets/images/border.svg);
+    background-size: cover;
+
+    position: relative;
+
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+    // transform: rotate(-5deg);
+
+    &:hover {
+        color: #909090;
+        transition-duration: 150ms;
+        border-radius: var(--borderRadius);
+        background-color: #000;
+        box-shadow:
+            0 0 30px -5px var(--secondary),
+            0 0 10px -2px var(--secondary),
+            0 55px 35px -20px rgba(0, 0, 0, 0.5);
+
+        & h1 {
+            color: var(--backgroundColor);
+            font-family: "Cattedrale Rough";
+        }
+    }
+
+    &-content {
+        position: absolute;
+        margin: 0 auto;
+        top: 20%;
+        left: auto;
+        text-align: center;
+        height: 65%;
+        max-width: 44%;
+    }
+
+}
+
+.card_2 {
+    color: #000;
+    margin: 1rem;
+    width: 300px;
+    height: 530px;
+    box-shadow: 0 1px 5px #1a191999;
+
+    border-radius: var(--borderRadius);
+    background-color: var(--secondary);
+    // background-image: url(https://imgur.com/VxjuARH.jpg);
+    background-size: cover;
+
+    position: relative;
+
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+
+    &:hover {
+        color: #909090;
+        transition-duration: 150ms;
+        border-radius: var(--borderRadius);
+        background-color: #000;
+        box-shadow:
+            0 0 30px -5px var(--secondary),
+            0 0 10px -2px var(--secondary),
+            0 55px 35px -20px rgba(0, 0, 0, 0.5);
+
+    }
+
+}
+
+.glow {
+    position: absolute;
+
+    border-radius: var(--borderRadius);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    display: grid;
+    place-items: center;
+    // background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+    z-index: 99;
 }
