@@ -257,15 +257,15 @@ const GPhotos: GalleryData[] = [
     desc: "I grew escallion around a dying plant to save space.",
     tags: ["seedling", "garden"],
   },
-  {
-    id: 28,
-    year: "2024",
-    month: "11",
-    src: "https://i.imgur.com/CdqnCdV.jpeg",
-    name: "Bujo",
-    desc: "My first bullet journal",
-    tags: ["bujo", "journal"],                       
-  },
+  // {
+  //   id: 28,
+  //   year: "2024",
+  //   month: "11",
+  //   src: "https://i.imgur.com/CdqnCdV.jpeg",
+  //   name: "Bujo",
+  //   desc: "My first bullet journal",
+  //   tags: ["bujo", "journal"],                       
+  // },
   {
     id: 30,
     year: "2024",
@@ -274,6 +274,24 @@ const GPhotos: GalleryData[] = [
     name: "Home",
     desc: "Nothing tastes as good as home feels",
     tags: ["home", "food"],
+  },
+  {
+    id: 31,
+    year: "2024",
+    month: "11",
+    src: "https://i.imgur.com/Xcszx2b.jpeg",
+    name: "Kitty",
+    desc: "A restaurant with terrible serivce had this very friendly cat",
+    tags: ["cat", "food"]
+  },
+  {
+    id: 32,
+    year: "2024",
+    month: "11",
+    src: "https://i.imgur.com/ufpD8hb.jpeg",
+    name: "Net",
+    desc: "Something wicked this way comes",
+    tags: ["rope", "me"]
   }
   
   // {
