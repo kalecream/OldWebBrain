@@ -8,9 +8,6 @@
 .note {
     margin: 0 auto;
     position: relative;
-    // background: var(--secondary);
-    // background: url(https://i.pinimg.com/736x/e6/3c/89/e63c8907f5f0d596afbcc095b4bf7767.jpg) no-repeat;
-    // background-size: cover;
     border-radius: var(--borderRadius);
     display: flex;
     transition: transform 0.3s;
@@ -44,8 +41,8 @@
         align-items: center;
         text-wrap: balance;
         font-family: "Fira Code";
-        font-size: 0.8rem;
-        color: var(--secondary);
+        font-size: 0.75rem;
+        color: #8f8b83;;
         margin: 0 auto;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -58,13 +55,13 @@
     & .name,
     & .date {
         text-align: center;
-        opacity: 0.65;
+        opacity: 0.85;
         margin: 0;
     }
 
     & .name {
         margin: 0 auto;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-family: "Cattedrale Rough";
         line-height: 1;
     }
@@ -96,7 +93,6 @@
     place-items: center;
     justify-content: center;
     align-items: center;
-    // background-color: var(--secondary);
 
     a {
         color: rgb(16, 16, 16);
@@ -118,7 +114,7 @@
 
     & button {
         background: none;
-        color: rgb(16, 16, 16);
+        color: #8f8b83;
         padding: 0.5rem 1rem;
         border: none;
         font-family: 'Cattedrale Rough';
@@ -127,7 +123,7 @@
         &:hover {
             font-size: 2.5rem;
             opacity: 0.8;
-            color: var(--backgroundColor);
+            color: var(--secondary);
         }
     }
 }
