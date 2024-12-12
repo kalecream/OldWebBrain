@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { Suspense, useEffect, useRef, useState } from "react";
-import { unstable_noStore as noStore } from "next/cache";
+import { useEffect, useRef } from "react";
 import styles from "./Guestbook.module.scss";
-import { SVGCard, SVGCardCenter } from "@utils/SVGCard";
 
 interface GuestCardProps {
   id: number;
@@ -88,7 +86,6 @@ export const GuestCard = ({ id, href, children, style, className }: GuestCardPro
   return (
     <Link href={href} ref={cardRef} className={`${styles.card} ${className}`} style={style}>
       <div ref={glowRef} className={styles.glow}>
-        <SVGCardCenter />
         <div className={styles["card-content"]}>{children}</div>
       </div>
     </Link>
