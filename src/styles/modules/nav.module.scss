@@ -28,6 +28,7 @@
   margin: 0 auto;
 
   &:hover {
-    filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
+    rotate: 180deg;
+    transition: ease-in 3ms;
   }
 }

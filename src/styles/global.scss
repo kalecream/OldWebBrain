@@ -169,7 +169,7 @@ nav {
 	padding: 1rem 0;
 	display: flex;
 	width: 100vw;
-	backdrop-filter: blur(20px);
+	backdrop-filter: blur(10px);
 	align-items: center;
 	gap: 1rem;
 
@@ -207,7 +207,7 @@ footer {
 	align-items: center;
 	text-transform: uppercase;
 	display: flex;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(10px);
 	z-index: 5;
 
 	& * > div {
@@ -339,7 +339,7 @@ fieldset {
 	padding: var(--paddingContainer);
 	border: none;
 	// border: 1px dotted var(--primary);
-	backdrop-filter: blur(20px);
+	backdrop-filter: blur(10px);
 
 	& label {
 		color: var(--primary);
@@ -412,7 +412,7 @@ fieldset {
 }
 
 .blur {
-	backdrop-filter: blur(15px);
+	backdrop-filter: blur(10px) saturate(150%);
 }
 
 .glassmorphic {

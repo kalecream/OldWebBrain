@@ -14,7 +14,6 @@
     text-align: center;
     font-weight: bold;
     justify-content: center;
-    flex: 0 1 clamp(300px, 5vh, 550px);
 
     & .note_bg {
         display: flex;
@@ -30,7 +29,7 @@
         display: flex;
         margin: 0 auto;
         flex-direction: column;
-        padding: 0 0 1rem 0;
+        padding: 0;
     }
 
     & .note_content {
@@ -42,14 +41,13 @@
         text-wrap: balance;
         font-family: "Fira Code";
         font-size: 0.75rem;
-        color: #8f8b83;;
+        color: var(--textColor);
         margin: 0 auto;
         overflow-x: hidden;
         overflow-y: scroll;
         white-space: pre-wrap;
         overflow-wrap: break-word;
         word-break: break-word;
-        max-width: 30ch;
     }
 
     & .name,
@@ -94,6 +92,10 @@
     justify-content: center;
     align-items: center;
 
+    input[placeholder], [placeholder], *[placeholder] {
+        color: var(--textColor);
+    }
+
     a {
         color: rgb(16, 16, 16);
         opacity: 0.8;
@@ -114,7 +116,7 @@
 
     & button {
         background: none;
-        color: #8f8b83;
+        color: var(--textColor);
         padding: 0.5rem 1rem;
         border: none;
         font-family: 'Cattedrale Rough';
@@ -143,15 +145,15 @@
 }
 
 .card {
-    color: #8f8b83;
-    margin: 1rem;
-    width: 320px;
-    height: 490px;
-    // box-shadow: 0 1px 5px #1a191999;
+    margin: 0.65rem;
+    width: 215px;
+    height: 220px;
+    backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(255, 2, 23, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0 1px 5px #1a191999;
 
     border-radius: var(--borderRadius);
-    // background-color: var(--secondary);
-    // background-image: url(../../assets/images/border.svg);
     background-size: cover;
 
     position: relative;
@@ -160,13 +162,12 @@
     transition-property: transform, box-shadow;
     transition-timing-function: ease-out;
     transform: rotate3d(0);
-    // transform: rotate(-5deg);
 
     &:hover {
         color: #909090;
         transition-duration: 150ms;
         border-radius: var(--borderRadius);
-        background-color: #000;
+        background-color: rgba(30, 0, 3, 0.9);
         box-shadow:
             0 0 30px -5px var(--secondary),
             0 0 10px -2px var(--secondary),
@@ -181,44 +182,11 @@
     &-content {
         position: absolute;
         margin: 0 auto;
-        top: 20%;
+        top: 5%;
         left: auto;
         text-align: center;
-        height: 65%;
-        max-width: 44%;
-    }
-
-}
-
-.card_2 {
-    color: #000;
-    margin: 1rem;
-    width: 300px;
-    height: 530px;
-    box-shadow: 0 1px 5px #1a191999;
-
-    border-radius: var(--borderRadius);
-    background-color: var(--secondary);
-    // background-image: url(https://imgur.com/VxjuARH.jpg);
-    background-size: cover;
-
-    position: relative;
-
-    transition-duration: 300ms;
-    transition-property: transform, box-shadow;
-    transition-timing-function: ease-out;
-    transform: rotate3d(0);
-
-    &:hover {
-        color: #909090;
-        transition-duration: 150ms;
-        border-radius: var(--borderRadius);
-        background-color: #000;
-        box-shadow:
-            0 0 30px -5px var(--secondary),
-            0 0 10px -2px var(--secondary),
-            0 55px 35px -20px rgba(0, 0, 0, 0.5);
-
+        height: 95%;
+        max-width: 85%;
     }
 
 }
