@@ -5,6 +5,7 @@ import React from "react";
 import { LiveCode } from "./sandpack";
 import { codeToHtml } from "shiki";
 import type { BundledLanguage, BundledTheme } from "shiki";
+import { FaParagraph } from "react-icons/fa";
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -153,6 +154,14 @@ function createHeading(level) {
   };
 }
 
+const paragraph = ({children}) => {
+  return (
+    <p className="blur">
+      {children}
+    </p>
+  )
+}
+
 let components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -160,6 +169,7 @@ let components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
+  p: paragraph,
   Image: RoundedImage,
   a: CustomLink,
   Callout,

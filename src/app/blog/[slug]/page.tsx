@@ -113,7 +113,7 @@ export default function Blog({ params }) {
         </h2>
         <br />
       </div>
-      <article className="blur">
+      <article>
         <CustomMDX source={post.content} />
       </article>
       <WebMentions targetUrl={`https://yunghigue.com/blog/${post.slug}`} />
