@@ -18,11 +18,7 @@ const Directory = [
   {
     title: "Guestbook",
     links: "/guestbook",
-  },
-  {
-    title: "RSS",
-    links: "/feed.xml",
-  },
+  }
 ];
 
 export default Directory;
