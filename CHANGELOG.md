@@ -1,5 +1,34 @@
 # Changelog
 
+
+## [1.4.0](https://github.com/your-repo/compare/v1.2.4...v1.4.0) (2025-01-05)
+
+
+### Features
+
+* make Time log for about ([59cb62e](https://github.com/your-repo/commit/59cb62eb6e4686e68b738074d633411fd202509b))
+* munch page ([#103](https://github.com/your-repo/issues/103)) ([fa59215](https://github.com/your-repo/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
+
+
+### Bug Fixes
+
+* fix blog image + add monthly images ([b2c1bd9](https://github.com/your-repo/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
+* mailing links ([#101](https://github.com/your-repo/issues/101)) ([2271d4e](https://github.com/your-repo/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
+* url links to posters ([#102](https://github.com/your-repo/issues/102)) ([60fd47c](https://github.com/your-repo/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
+
+
+### Documentation
+
+* add testing to repo ([bdbebc4](https://github.com/your-repo/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
+* change changelog behaviour ([8a7173f](https://github.com/your-repo/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
+
+
+### Code Refactoring
+
+* change graph type, make api call dynamic ([3411482](https://github.com/your-repo/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
+* change valid entries ([610b828](https://github.com/your-repo/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
+* update log length ([7ed1cda](https://github.com/your-repo/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
+
 ### [1.2.4](https://github.com/your-repo/compare/v0.1.1...v1.2.4) (2024-11-13)
 
 ### Documentation

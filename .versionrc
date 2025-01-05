@@ -43,7 +43,7 @@
     "tag": false
   },
   "scripts": {
-    "postbump": "yarn run build",
+    "postbump": "",
     "postchangelog": "git add CHANGELOG.md",
     "precommit": "git commit -m \"chore: release\""
   }
