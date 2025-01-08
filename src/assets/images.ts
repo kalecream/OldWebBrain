@@ -292,6 +292,24 @@ const GPhotos: GalleryData[] = [
     name: "Net",
     desc: "Something wicked this way comes",
     tags: ["rope", "me"]
+  },
+  {
+    id: 33,
+    year: "2025",
+    month: "01",
+    src: "https://i.imgur.com/RPY9Ygs.jpeg",
+    name: "Reverse Engineered Futomomo",
+    desc: "A reverse engineered futomomo from IG user @selftautties",
+    tags: ["rope", "shibari"]
+  },
+  {
+    id: 34,
+    year: "2025",
+    month: "01",
+    src: "https://i.imgur.com/PIXoizY.jpeg",
+    name: "",
+    desc: "",
+    tags: []
   }
   
   // {
