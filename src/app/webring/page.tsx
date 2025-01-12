@@ -61,6 +61,8 @@ const WebringPage: React.FC = () => {
       </p>
       <h2>Personal Website Rings</h2>
       <ClawWebringWidget />
+      <div><a href='https://webring.dinhe.net/prev/www.yunghigue.com'>Previous</a>Retronaut Webring
+<a href='https://webring.dinhe.net/next/www.yunghigue.com'>Next</a></div>
     </section>
   );
 };
