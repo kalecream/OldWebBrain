@@ -73,6 +73,7 @@ const Hero = () => {
         songTitle={"soft hozier playlist 🦌🍃 [slowed, muffled + waves]"}
         audioLink={"https://www.youtube.com/watch?v=9Rqwdl9fTvw"}
       />
+      <a href="https://www.yunghigue.com/" className="h-card" rel="me"></a>
     </section>
   );
 };
