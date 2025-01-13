@@ -56,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="webmention" href="https://webmention.io/yunghigue.com/webmention" />
+        <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+        <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
       </head>
       <body>
         <ThemeProvider>
