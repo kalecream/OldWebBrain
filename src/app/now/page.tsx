@@ -37,15 +37,21 @@ const NowPage = () => {
       <section>
         <div className={`prose `}>
           <div className="img-grid">
-            <Image src={WinterImage} alt="" width={100} height={100} style={{ margin: "0 auto" }} />
+            <Image src={WinterImage} alt="" width={200} height={51.56} style={{ margin: "0 auto" }} />
           </div>
           <h1 style={{ margin: "0" }}>2024-Winter</h1>
           <p className="blur">
-            The focus of this season is introspection, a backlog that I've neglected and previous goals which were not
-            completed. Recently, I've been made aware of some negative traits of mine. With cursory thoughts, I see it
-            affects my relationship with myself. Working on this will have a positive effect on my relationship with
-            everyone else.
+          The things stunting my growth that I need to change within myself have been identified. I want to use this time to build a foundation for the 2025 seasons. 
           </p>
+          <hr />
+          <ul>
+          <li>
+            Complete the 'self' section in{" "}
+              <Link href={"/relationships"} className="internal-link">
+                relationships
+              </Link>.
+            </li>
+          </ul>
         </div>
       </section>
       <section>
