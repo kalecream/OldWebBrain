@@ -7,6 +7,7 @@ import { Projects as ProjectsData } from "@data/projectsData";
 import styles from "@styles/modules/projects.module.scss";
 import { GetMonthName } from "@utils/GetMonthName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
+import { ClawWebRing } from "./ClawWebRing";
 
 const SkipPage = () => {
   let pages = PageRoutes.sort((a, b) => {
@@ -25,24 +26,29 @@ const SkipPage = () => {
       <section style={{ minHeight: "100vh" }}>
         <h1>Hi, Friend!</h1>
         <p className="prose blur">
-          This will be like my{" "}
-          <Link className="internal-link" href="/now">
-            now{" "}
-          </Link>{" "}
-          page, but for things more general things instead of "goals". I <i>might</i> lead you onto NSFW pages since
-          some of the following things are notes.
+          The theme within this website is based on the Caribbean folklore of the{" "}
+          <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Soucouyant</Link> also known as the Ole Higue. She is
+          the Caribbean's version of a Vampire, a Werewolf, and combined with some West African witch mythos. She's is typically presented as an old woman which I am not. I want our folktales to continue to evolve rather than being frozen in time.
+          Throughout the site, I may mingle the theme with some folklore details from other femme mythological figures.
         </p>
         <p className="prose blur">
-          Would you like to sign my{" "}
+          Please sign my{" "}
           <Link className="internal-link" href="/guestbook">
             guestbook
           </Link>
-          ? Or maybe you'd like to see some{" "}
-          <Link className="internal-link" href="/webring">
-            webrings
-          </Link>{" "}
-          I joined?
+          ! Or maybe you'd like to see some webrings I joined?
         </p>
+        <p className="prose">
+          A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
+          "previous" link that allows us to navigate through the ring.
+          <br />
+          <br /> The webring is a recall to the early days of the internet when websites were more personal and
+          interconnected. As search engines continue to degrade, topic-based web-rings could provide us with sources of
+          truth.
+        </p>
+        <div className="flex row">
+          <ClawWebRing />
+        </div>
         <p className="prose">
           The last 10 pages I've edited are: <br />
           <br />
