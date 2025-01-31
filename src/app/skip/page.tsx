@@ -27,25 +27,26 @@ const SkipPage = () => {
         <h1>Hi, Friend!</h1>
         <p className="prose blur">
           My website theme is based on the folklore around the{" "}
-          <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Ole Higue</Link>. She is
-          the Caribbean's version of a Vampire, a Werewolf, and combined with some West African witch mythos. She's
-          typically presented as an old woman which I am not. As a Yung Higue, I want our folktales to continue to
-          evolve rather than being frozen in time. Throughout the site, I may mingle the details from other femme
-          mythological figures.
+          <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Ole Higue</Link>. She is like the Caribbean's version of
+          a Vampire, and a Werewolf combined with West African witch mythos. She's typically presented as an old woman.
+          As a Yung Higue, I want our folktales to continue to evolve rather than being frozen in time.
         </p>
-        <hr/>
+        <hr />
         <p className="prose blur">
           Please sign my{" "}
           <Link className="internal-link" href="/guestbook">
             guestbook
           </Link>
-          ! Or maybe you'd like to see some webrings I joined? A webring is a collection of websites linked together in
-          a circular structure. Webrings were prevalent in the early days of the internet when websites were more personal andIinterconnected. As search engines continue to degrade, topic-based webrings could provide us with sources of truth.
+          <br />
+          <br />! Or maybe you'd like to see some webrings I joined? A webring is a collection of websites linked
+          together in a circular structure. Each site has a "next" and "previous" link that allows us to navigate
+          through the ring. As search engines continue to degrade, topic-based webrings could provide us with sources of
+          truth.
         </p>
         <div className="flex row">
           <ClawWebRing />
         </div>
-        <p className="prose">
+        <p className="prose blur">
           The last 5 pages I edited are: <br />
           <br />
           {pages.map((r) => (
