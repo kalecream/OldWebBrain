@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
-const ClawWebringWidget: React.FC = () => {
+export const ClawWebRing: React.FC = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs";
@@ -49,20 +49,3 @@ const ClawWebringWidget: React.FC = () => {
     </the-claw-webring-widget>
   );
 };
-
-const WebringPage: React.FC = () => {
-  return (
-    <section>
-      <h1>Webrings</h1>
-      <p className="prose">
-        A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
-        "previous" link that allows users to navigate through the ring. The webring is a recall to the early days of the
-        internet when websites were more personal and interconnected. As popular search engines continue to degrade, topic-based web-rings could provide sources of truth.
-      </p>
-      <h2>Personal Website Rings</h2>
-      <ClawWebringWidget />
-    </section>
-  );
-};
-
-export default WebringPage;

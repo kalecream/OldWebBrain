@@ -18,17 +18,6 @@ const ColophonPage = () => {
       </div>
 
       <div className="prose">
-        <h2>Acknowledgement</h2>
-        <p className="prose">
-          The theme within this website is based on the Caribbean folklore of the{" "}
-          <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Soucouyant</Link> also known as the Ole Higue. She is
-          the Caribbean's version of a Vampire, a Werewolf and is combined with some West African witch mythos.
-          Throughout the site, I may mingle the theme with some folklore details from rivermummas and other femme
-          mythological figures.
-        </p>
-      </div>
-
-      <div className="prose">
         <h2>Credits</h2>
         <p>
           I don't think I could have made my vision come to life without standing on the shoulders of the coders who
