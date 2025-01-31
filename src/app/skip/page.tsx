@@ -37,15 +37,17 @@ const SkipPage = () => {
           <Link className="internal-link" href="/guestbook">
             guestbook
           </Link>
-          <br />
-          <br />! Or maybe you'd like to see some webrings I joined? A webring is a collection of websites linked
-          together in a circular structure. Each site has a "next" and "previous" link that allows us to navigate
-          through the ring. As search engines continue to degrade, topic-based webrings could provide us with sources of
-          truth.
+          !
+        </p>
+        <p className="prose blur">
+          Would you like to see some webrings I joined? A webring is a collection of websites linked together in a
+          circular structure. Each site has a "next" and "previous" link that allows us to navigate through the ring. As
+          search engines continue to degrade, topic-based webrings could provide us with sources of truth.
         </p>
         <div className="flex row">
           <ClawWebRing />
         </div>
+        <hr/>
         <p className="prose blur">
           The last 5 pages I edited are: <br />
           <br />
@@ -58,78 +60,6 @@ const SkipPage = () => {
             </div>
           ))}
         </p>
-      </section>
-      <section style={{ minHeight: "100vh" }}>
-        <h1>latest project</h1>
-        <div className={styles.project__card}>
-          <div className={styles.project__image}>
-            <Image
-              height={0}
-              width={0}
-              sizes="100vw"
-              style={{
-                width: "auto",
-                height: "50vh",
-                margin: "0 auto",
-                display: "flex",
-                borderRadius: "var(--sharpBorderRadius)",
-              }}
-              src={LatestProject.image}
-              alt={LatestProject.title}
-            />
-          </div>
-          <div className={styles["project-info"]}>
-            <div className={styles.project__present}></div>
-            <div className={styles.project__box}>
-              <h1 className={styles.project__title}>
-                {LatestProject.title}
-                <span
-                  className={`project__status ${LatestProject.status}`}
-                  title={LatestProject.status}
-                  aria-label={LatestProject.status}
-                ></span>
-              </h1>
-
-              <div className={`flex ` + styles["project-lang"]}>
-                {LatestProject.language && LatestProject.language.map((l, i) => <span key={i}>{l.toLowerCase()}</span>)}
-                <br />
-                {LatestProject.technology &&
-                  LatestProject.technology.map((t, i) => (
-                    <span className={styles.project__tech} key={i}>
-                      {t.toLowerCase()}
-                    </span>
-                  ))}
-              </div>
-
-              <p className={styles.project__description}>
-                <b>
-                  {GetMonthName(LatestProject.created)}
-                  {LatestProject.created.split("-", 1)}.
-                </b>{" "}
-                {LatestProject.description}
-              </p>
-
-              <div className={styles["project-lang"]}>
-                {LatestProject.repoName && (
-                  <Link
-                    title="View Code"
-                    className={styles.project__code}
-                    href={`https://github.com/kalecream/${LatestProject.repoName}`}
-                    target="_blank"
-                  >
-                    Code.
-                  </Link>
-                )}
-
-                {LatestProject.link && (
-                  <Link title="View Project" className={styles.project__code} href={LatestProject.link} target="_blank">
-                    Demo.
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );
