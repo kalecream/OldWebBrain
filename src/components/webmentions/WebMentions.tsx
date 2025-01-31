@@ -58,7 +58,7 @@ const WebMentions: React.FC<WebMentionsProps> = ({ targetUrl }) => {
       <p style={{ margin: "3rem auto", justifyContent: "center", display: "flex", flexDirection: "column" }}>
         <b>No web mentions found.</b>
         <br />
-        <Link className="text-center" href="https://webmention.io/www.sabrinamedwinter.com/webmention">
+        <Link className="text-center" href="https://webmention.io/www.yunghigue.com/webmention">
           Mention this post
         </Link>
       </p>
@@ -69,7 +69,7 @@ const WebMentions: React.FC<WebMentionsProps> = ({ targetUrl }) => {
 
   return (
     <div>
-      <Link href="https://webmention.io/www.sabrinamedwinter.com/webmention">Mention this post</Link>
+      <Link href="https://webmention.io/www.yunghigue.com/webmention">Mention this post</Link>
 
       <h2>({mentionCount}) Web Mentions</h2>
       <ul>
