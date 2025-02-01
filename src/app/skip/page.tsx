@@ -12,7 +12,7 @@ import { ClawWebRing } from "./ClawWebRing";
 const SkipPage = () => {
   let pages = PageRoutes.sort((a, b) => {
     return b.date.getTime() - a.date.getTime();
-  }).slice(0, 6);
+  }).slice(0, 3);
 
   const LatestProject = ProjectsData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())[0];
 
@@ -29,27 +29,33 @@ const SkipPage = () => {
           My website theme is based on the folklore around the{" "}
           <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Ole Higue</Link>. She is like the Caribbean's version of
           a Vampire, and a Werewolf combined with West African witch mythos. She's typically presented as an old woman.
-          As a Yung Higue, I want our folktales to continue to evolve rather than being frozen in time.
+          As a Yung Higue, I want our stories to continue to evolve rather than being frozen in time.
         </p>
-        <hr />
         <p className="prose blur">
           Please sign my{" "}
           <Link className="internal-link" href="/guestbook">
             guestbook
           </Link>
-          !
+          ! I have a 88x31 website button!
         </p>
+        <span className="center" style={{ margin: "0 auto" }}>
+          <Image width={88} height={31} alt="" src="https://i.imgur.com/jOZv4jt.gif" style={{ borderRadius: "0" }} />
+        </span>
+        <p className="prose blur">...and a very empty button garden. </p>
+        <div style={{ height: "200px", width: "45rem", border: "groove 3px" }}> </div>
+        <hr />
+        <p className="prose blur">Would you like to see some webrings I joined? </p>{" "}
         <p className="prose blur">
-          Would you like to see some webrings I joined? A webring is a collection of websites linked together in a
-          circular structure. Each site has a "next" and "previous" link that allows us to navigate through the ring. As
-          search engines continue to degrade, topic-based webrings could provide us with sources of truth.
+          A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
+          "previous" link that allows us to navigate through the websites in the ring. As search engines continue to degrade,
+          topic-based webrings could provide us with sources of truth.
         </p>
         <div className="flex row">
           <ClawWebRing />
         </div>
-        <hr/>
+        <hr />
         <p className="prose blur">
-          The last 5 pages I edited are: <br />
+          The last 3 pages I edited are: <br />
           <br />
           {pages.map((r) => (
             <div key={r.route}>
