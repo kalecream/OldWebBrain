@@ -21,11 +21,11 @@ const NowPage = () => {
         <div className="prose">
           <p className="blur">
             The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. A page I stumbled
-            on while trying to see which{" "}
-            <Link href="/webrings" className="internal-link">
-              webrings
-            </Link>{" "}
-            were still active. These aren't exactly goals, but a collection of experiences I would like to complete.
+            on while trying to see which webrings were still active. These aren't exactly goals, but a collection of
+            experiences I would like to complete. My actual goals can be seen at{" "}
+            <Link href="/trying" className="internal-link">
+              trying
+            </Link>{" "}.
           </p>
           <p className="blur">
             I am fine delaying and rolling over to the next quarter if I don't have enough time to complete it. Either I

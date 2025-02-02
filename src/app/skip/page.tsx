@@ -47,10 +47,9 @@ const SkipPage = () => {
             <Image width={88} height={31} alt="" src="https://i.imgur.com/OJgTOn5.jpeg" style={{ borderRadius: "0" }} />
           </Link>
         </div>
-        <p className="prose blur">Would you like to see some webrings I joined? </p>
+        <hr/>
         <p className="prose blur">
-          A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
-          "previous" link that allows us to navigate through the websites in the ring. As search engines continue to
+          A webring is a collection of websites linked together in a circular structure.  As search engines continue to
           degrade, topic-based webrings could provide us with sources of truth.
         </p>
         <div className="flex row" style={{ width: "80%" }}>
