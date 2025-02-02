@@ -42,19 +42,27 @@ const SkipPage = () => {
           <Image width={88} height={31} alt="" src="https://i.imgur.com/jOZv4jt.gif" style={{ borderRadius: "0" }} />
         </span>
         <p className="prose blur">...and a very empty button garden. </p>
-        <div style={{ height: "200px", width: "45rem", border: "groove 3px" }}> </div>
-        <hr />
-        <p className="prose blur">Would you like to see some webrings I joined? </p>{" "}
+        <div style={{ height: "100px", width: "45rem", border: "dashed 1px" }}>
+          <Link href={"https://scp-wiki.wikidot.com/"}>
+            <Image width={88} height={31} alt="" src="https://i.imgur.com/OJgTOn5.jpeg" style={{ borderRadius: "0" }} />
+          </Link>
+        </div>
+        <p className="prose blur">Would you like to see some webrings I joined? </p>
         <p className="prose blur">
           A webring is a collection of websites linked together in a circular structure. Each site has a "next" and
-          "previous" link that allows us to navigate through the websites in the ring. As search engines continue to degrade,
-          topic-based webrings could provide us with sources of truth.
+          "previous" link that allows us to navigate through the websites in the ring. As search engines continue to
+          degrade, topic-based webrings could provide us with sources of truth.
         </p>
-        <div className="flex row">
+        <div className="flex row" style={{ width: "80%" }}>
           <ClawWebRing />
+
+          <iframe
+            id="bucket-webring"
+            style={{ width: "25rem", height: "3rem", border: "none" }}
+            src="https://webring.bucketfish.me/embed.html?name=yung+higue"
+          />
         </div>
-        <hr />
-        <p className="prose blur">
+        {/* <p className="prose blur">
           The last 3 pages I edited are: <br />
           <br />
           {pages.map((r) => (
@@ -65,7 +73,7 @@ const SkipPage = () => {
               → {formatDistanceToNow(new Date(r.date))} ago <br />
             </div>
           ))}
-        </p>
+        </p> */}
       </section>
     </>
   );
