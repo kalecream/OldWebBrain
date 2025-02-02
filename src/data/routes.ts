@@ -129,9 +129,4 @@ export const PageRoutes: PageRoutesProps[] = [
     date: new Date(2024, 8, 1, 2, 7),
     priority: 0.4,
   },
-  {
-    route: "/webring",
-    date: new Date(2025, 1, 8, 14, 40),
-    priority: 0.4,
-  },
 ];
