@@ -12,6 +12,10 @@ const Directory = [
     links: "/blog",
   },
   {
+    title: "Garden",
+    links: "/notes",
+  },
+  {
     title: "Contact",
     links: "/contact",
   },
