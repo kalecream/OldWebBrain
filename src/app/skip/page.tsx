@@ -1,20 +1,22 @@
 "use client";
+// import { Suspense, useEffect, useState } from "react";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { formatDistanceToNow } from "date-fns";
-import { PageRoutes } from "@data/routes";
-import { Projects as ProjectsData } from "@data/projectsData";
-import styles from "@styles/modules/projects.module.scss";
-import { GetMonthName } from "@utils/GetMonthName";
+// import { formatDistanceToNow } from "date-fns";
+// import { PageRoutes } from "@data/routes";
+// import { Projects as ProjectsData } from "@data/projectsData";
+// import styles from "@styles/modules/projects.module.scss";
+// import { GetMonthName } from "@utils/GetMonthName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 import { ClawWebRing } from "./ClawWebRing";
 
 const SkipPage = () => {
-  let pages = PageRoutes.sort((a, b) => {
-    return b.date.getTime() - a.date.getTime();
-  }).slice(0, 3);
+  // let pages = PageRoutes.sort((a, b) => {
+  //   return b.date.getTime() - a.date.getTime();
+  // }).slice(0, 3);
 
-  const LatestProject = ProjectsData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())[0];
+  // const LatestProject = ProjectsData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())[0];
 
   return (
     <>
