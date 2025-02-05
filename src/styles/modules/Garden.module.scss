@@ -4,10 +4,11 @@
     display: flex;
 
     h1 {
-        font-size: clamp(1rem, 25vw, 6.5rem);
+        font-size: clamp(1rem, 25vw, 3rem);
+        width: 100%;
+        ;
         font-family: "Cattedrale Rough", sans-serif;
         text-transform: capitalize;
-        -webkit-text-stroke: 2px solid var(--border);
         letter-spacing: -2px;
         user-select: none;
         pointer-events: none;
@@ -18,28 +19,37 @@
         flex-direction: column;
     }
 
-    @include breakpoint-range($from: tablet) {
-   
-    }
+    @include breakpoint-range($from: tablet) {}
 
     @include breakpoint-range($from: desktopSmall) {
         flex-direction: row;
         justify-content: center;
 
         .notes-list {
-            margin-top: 4rem;
-            max-height: 400px;
+            flex-direction: row;
+            justify-content: center;
+            max-height: 500px;
             overflow-y: scroll;
+            overflow-x: hidden;
         }
     }
 }
 
 
 .notes-list {
+    margin-top: 4rem;
+    max-width: 45rem;
     display: flex;
-    gap:1rem 2rem;
+    gap: 2rem;
+    
 
     & li {
+        &::marker {
+            content: '';
+        }
+        backdrop-filter: blur(5px);
+        padding: 0.5rem;
+        font-size: 1.2rem;
         margin: 1rem auto;
     }
 }

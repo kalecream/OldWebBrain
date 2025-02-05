@@ -3,6 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import garden from "@styles/modules/Garden.module.scss";
+import HeroName from "@components/hero/heroName/heroName";
 
 const ForceGraph = dynamic(() => import("../components/Graph"), { ssr: false });
 
@@ -34,14 +35,14 @@ export const NotesPage = () => {
 
   const filteredNotes = notes.filter(({ data, slug }) =>
     (data.title || slug).toLowerCase().includes(searchTerm.toLowerCase()),
-  );
+  ).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
   return (
     <div className={garden.wrapper}>
       <section className="">
-        <h1>Digital Garden</h1>
-        <p className="prose">
-          My notes across various life sectors. I have my life separated into 9 life sectors: Physical, Mental,
+        <HeroName name="Garden" />
+        <p className="prose blur">
+          I have my life separated into sectors: Physical, Mental,
           Intellectual, Financial, Occupational, Organisational, Recreational, Social, Spiritual.
         </p>
         <input
@@ -67,11 +68,12 @@ export const NotesPage = () => {
                 <li key={slug} className="">
                   <Link href={`/notes/${slug}`} className="">
                     {data?.title || slug}
-                  </Link>
+                  </Link><br/>
+                  <small>{data?.date || ''}</small>
                 </li>
               ))
             ) : (
-              <li className="">No notes found</li>
+              <li className="">10/10, No notes.</li>
             )}
           </ul>
         </Suspense>
