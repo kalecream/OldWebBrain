@@ -2,18 +2,7 @@
 
 .wrapper {
     display: flex;
-
-    h1 {
-        font-size: clamp(1rem, 25vw, 3rem);
-        width: 100%;
-        ;
-        font-family: "Cattedrale Rough", sans-serif;
-        text-transform: capitalize;
-        letter-spacing: -2px;
-        user-select: none;
-        pointer-events: none;
-    }
-
+    margin: 0 auto;
 
     @include breakpoint-range($from: mobile) {
         flex-direction: column;
@@ -22,8 +11,14 @@
     @include breakpoint-range($from: tablet) {}
 
     @include breakpoint-range($from: desktopSmall) {
+        height: 95vh;
         flex-direction: row;
         justify-content: center;
+        place-items: center;
+
+        p {
+            font-size: 1.4rem;
+        }
 
         .notes-list {
             flex-direction: row;
@@ -35,21 +30,38 @@
     }
 }
 
-
 .notes-list {
-    margin-top: 4rem;
+    margin-top: 2rem;
     max-width: 45rem;
     display: flex;
-    gap: 2rem;
-    
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
 
     & li {
         &::marker {
             content: '';
         }
+
+        & > a {
+            color: var(--textColor);
+        }
+
+        border: var(--border);
+        border-radius: var(--borderRadius);
         backdrop-filter: blur(5px);
-        padding: 0.5rem;
-        font-size: 1.2rem;
+        padding: var(--paddingObject);
+        font-size: 1.4rem;
         margin: 1rem auto;
+        text-transform: capitalize;
+
+        & > small {
+            opacity: 0.75;
+        }
     }
+
+    & li:hover {
+        border-color: var(--secondary);
+        transition: 200ms ease-in-out;
+     }
 }

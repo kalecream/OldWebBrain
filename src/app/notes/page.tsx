@@ -35,14 +35,14 @@ export const NotesPage = () => {
 
   const filteredNotes = notes.filter(({ data, slug }) =>
     (data.title || slug).toLowerCase().includes(searchTerm.toLowerCase()),
-  ).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  ).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date ).getTime());
 
   return (
     <div className={garden.wrapper}>
       <section className="">
-        <HeroName name="Garden" />
+        <h1>Digital Garden</h1>
         <p className="prose blur">
-          I have my life separated into sectors: Physical, Mental,
+          I have my life (and notes) separated into sectors: Physical, Mental,
           Intellectual, Financial, Occupational, Organisational, Recreational, Social, Spiritual.
         </p>
         <input
@@ -52,7 +52,7 @@ export const NotesPage = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
-            width: "45rem",
+            maxWidth: "45rem",
             height: "3rem",
             padding: "1rem",
             backgroundColor: "transparent",
@@ -67,13 +67,13 @@ export const NotesPage = () => {
               filteredNotes.map(({ slug, data }) => (
                 <li key={slug} className="">
                   <Link href={`/notes/${slug}`} className="">
-                    {data?.title || slug}
+                    {data?.title || slug.split("-").join(" ")}
                   </Link><br/>
-                  <small>{data?.date || ''}</small>
+                  <small>{data?.date?.toLocaleString()|| ''}</small>
                 </li>
               ))
             ) : (
-              <li className="">10/10, No notes.</li>
+              <p className="">10/10, No notes.</p>
             )}
           </ul>
         </Suspense>
