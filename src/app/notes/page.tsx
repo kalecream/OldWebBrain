@@ -3,6 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import garden from "@styles/modules/Garden.module.scss";
+import HeroName from "@components/hero/heroName/heroName";
 
 const ForceGraph = dynamic(() => import("../components/Graph"), { ssr: false });
 
@@ -34,7 +35,7 @@ export const NotesPage = () => {
 
   const filteredNotes = notes.filter(({ data, slug }) =>
     (data.title || slug).toLowerCase().includes(searchTerm.toLowerCase()),
-  ).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date ).getTime());
+  ).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date ).getTime());
 
   return (
     <div className={garden.wrapper}>
@@ -51,7 +52,7 @@ export const NotesPage = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
-            width: "45rem",
+            maxWidth: "45rem",
             height: "3rem",
             padding: "1rem",
             backgroundColor: "transparent",

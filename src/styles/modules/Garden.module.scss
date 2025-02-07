@@ -8,9 +8,7 @@
         flex-direction: column;
     }
 
-    @include breakpoint-range($from: tablet) {
-   
-    }
+    @include breakpoint-range($from: tablet) {}
 
     @include breakpoint-range($from: desktopSmall) {
         height: 95vh;
@@ -23,9 +21,11 @@
         }
 
         .notes-list {
-            margin-top: 4rem;
-            max-height: 400px;
+            flex-direction: row;
+            justify-content: center;
+            max-height: 500px;
             overflow-y: scroll;
+            overflow-x: hidden;
         }
     }
 }
