@@ -36,7 +36,7 @@ export const Graph = ({ data }) => {
     });
   }, [data]);
 
-  return <svg ref={ref} width={800} height={600}></svg>;
+  return <svg ref={ref} width={800} height={600} style={{}}></svg>;
 }
 
 export default Graph;

@@ -42,8 +42,8 @@ export const NotesPage = () => {
       <section className="">
         <h1>Digital Garden</h1>
         <p className="prose blur">
-          I have my life (and notes) separated into sectors: Physical, Mental,
-          Intellectual, Financial, Occupational, Organisational, Recreational, Social, Spiritual.
+          I have my life separated into the sectors: Physical, Mental,
+          Intellectual, Financial, Occupational, Organisational, Recreational, Social, and Spiritual.
         </p>
         <input
           type="text"
@@ -53,6 +53,7 @@ export const NotesPage = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
             maxWidth: "45rem",
+            width: "100%",
             height: "3rem",
             padding: "1rem",
             backgroundColor: "transparent",
@@ -78,7 +79,7 @@ export const NotesPage = () => {
           </ul>
         </Suspense>
       </section>
-      <section>
+      <section style={{padding: 0, margin: "auto"}}>
         <Suspense>
           <Graph />
         </Suspense>
