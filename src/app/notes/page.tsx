@@ -39,7 +39,7 @@ export const NotesPage = () => {
 
   return (
     <div className={garden.wrapper}>
-      <section className="">
+      <section style={{padding: 0, margin: "auto"}}>
         <h1>Digital Garden</h1>
         <p className="prose blur">
           I have my life separated into the sectors: Physical, Mental,

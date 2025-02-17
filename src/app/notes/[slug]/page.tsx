@@ -20,7 +20,7 @@ export const NotePage = ({ params }) => {
         <div className="prose">
           <div className="info">
             <p className="text-center">
-              <PageReadTime readingSpeedWPM={250} />. { note.data.seed ? 'Seeded: ' + note.data.seed + ". " : ''} { note.data.tended ? 'Tended: ' + note.data.tended + ". " : ''} 
+              <PageReadTime readingSpeedWPM={250} />. { note.data.date ? 'Seeded: ' + note.data.date + ". " : ''} { note.data.tended ? 'Tended: ' + note.data.tended + ". " : ''} 
             </p>
           </div>
           <CustomMDX source={parseWikiLinks(note.body)} />
