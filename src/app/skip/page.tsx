@@ -1,6 +1,5 @@
 "use client";
-// import { Suspense, useEffect, useState } from "react";
-// import dynamic from "next/dynamic";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 // import { formatDistanceToNow } from "date-fns";
@@ -10,8 +9,16 @@ import Image from "next/image";
 // import { GetMonthName } from "@utils/GetMonthName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 import { ClawWebRing } from "./ClawWebRing";
+import WordGraph from "@app/notes/Graph";
 
 const SkipPage = () => {
+  const [graphData, setGraphData] = useState({ nodes: [], links: [] });
+
+  useEffect(() => {
+    fetch("/api/notes/graph")
+      .then((res) => res.json())
+      .then((data) => setGraphData(data));
+  }, []);
   // let pages = PageRoutes.sort((a, b) => {
   //   return b.date.getTime() - a.date.getTime();
   // }).slice(0, 3);
@@ -25,7 +32,7 @@ const SkipPage = () => {
         songTitle={"Feng Sauve - Sink into the Floor"}
         audioLink={"https://www.youtube.com/watch?v=kc6Y1Bjxfk8&pp=ygUeZmVuZyBzdWF2ZSBzaW5rIGludG8gdGhlIGZsb29y"}
       />
-      <section style={{ minHeight: "100vh" }}>
+      <section style={{ minHeight: "100vh", gap: "2rem" }}>
         <h1>Hi, Friend!</h1>
         <p className="prose blur">
           My website theme is based on the folklore around the{" "}
@@ -49,14 +56,13 @@ const SkipPage = () => {
             <Image width={88} height={31} alt="" src="https://i.imgur.com/OJgTOn5.jpeg" style={{ borderRadius: "0" }} />
           </Link>
         </div>
-        <hr/>
+        <hr />
         <p className="prose blur">
-          A webring is a collection of websites linked together in a circular structure.  As search engines continue to
+          A webring is a collection of websites linked together in a circular structure. As search engines continue to
           degrade, topic-based webrings could provide us with sources of truth.
         </p>
         <div className="flex row" style={{ width: "80%" }}>
           <ClawWebRing />
-
           <iframe
             id="bucket-webring"
             style={{ width: "25rem", height: "3rem", border: "none" }}
@@ -75,6 +81,17 @@ const SkipPage = () => {
             </div>
           ))}
         </p> */}
+      </section>
+      <section>
+        {" "}
+        <p className="prose blur">
+          I'm also tending a web garden of non-personal notes across different topics. I have my life separated into the
+          sectors: Physical, Mental, Intellectual, Financial, Occupational, Organisational, Recreational, Social, and
+          Spiritual. The graph is draggable. Clicking on the center of the word will take you to the note page.
+        </p>
+        <Suspense>
+          <WordGraph data={graphData} />
+        </Suspense>
       </section>
     </>
   );
