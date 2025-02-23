@@ -1,9 +1,10 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import garden from "@styles/modules/Garden.module.scss";
-import { Graph as ForceGraph } from "./Graph";
-import HeroName from "@components/hero/heroName/heroName";
+
+const ForceGraph = dynamic(() => import("./Graph"), { ssr: false });
 
 export const Graph = () => {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });

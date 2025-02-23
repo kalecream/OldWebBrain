@@ -1,5 +1,6 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 // import { formatDistanceToNow } from "date-fns";
@@ -9,7 +10,8 @@ import Image from "next/image";
 // import { GetMonthName } from "@utils/GetMonthName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 import { ClawWebRing } from "./ClawWebRing";
-import WordGraph from "@app/notes/Graph";
+
+const ForceGraph = dynamic(() => import("./WordGraph"), { ssr: false });
 
 const SkipPage = () => {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
