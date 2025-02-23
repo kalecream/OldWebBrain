@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { highlight, Pre, type RawCode } from "codehike/code";
-import React from "react";
+import { codeToHtml } from "shiki";
+import type { BundledLanguage, BundledTheme } from "shiki";
+import { createElement } from "react";
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -46,9 +47,20 @@ function RoundedImage(props) {
   return <Image alt={props.alt} {...props} />;
 }
 
-const Code = async ({ codeblock }: { codeblock: RawCode }) => {
-  const highlighted = await highlight(codeblock, "github-dark")
-  return <Pre code={highlighted}  />
+interface Props {
+  children: string;
+  lang?: BundledLanguage;
+  theme?: BundledTheme;
+  filename?: string;
+}
+
+const Code = async ({ children, lang = "javascript", theme = "nord" }: Props) => {
+  let codeHTML = await codeToHtml(children, { lang, theme });
+  return (
+    <div>
+      <code dangerouslySetInnerHTML={{ __html: codeHTML }} />
+    </div>
+  );
 };
 
 function slugify(str) {
@@ -65,11 +77,11 @@ function slugify(str) {
 function createHeading(level) {
   return ({ children }) => {
     let slug = slugify(children);
-    return React.createElement(
+    return createElement(
       `h${level}`,
       { id: slug },
       [
-        React.createElement("a", {
+        createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
           className: "anchor",
@@ -95,7 +107,7 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table
+  Table,
 };
 
 export function CustomMDX(props) {
