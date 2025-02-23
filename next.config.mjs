@@ -1,26 +1,39 @@
+import withMDX from "@next/mdx";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import { remarkCodeHike, recmaCodeHike } from "codehike/mdx";
+
+/** @type {import('codehike/mdx').CodeHikeConfig} */
+const chConfig = {
+  // optional (see code docs):
+  components: { code: "Code" },
+  // if you can't use RSC:
+  syntaxHighlighting: {
+    theme: "github-dark",
+  },
+}
+
 /** @type {import('next').NextConfig} */
-const withMDX = require("@next/mdx")({
+const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   jsx: true,
   options: {
-    remarkPlugins: [[]],
-    recmaPlugins: [],
+    remarkPlugins: [[remarkCodeHike, chConfig]],
+    recmaPlugins: [[recmaCodeHike, chConfig]],
+    jsx: true,
   },
 });
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+/** @type {import('next').NextConfig} */
+const bundleAnalyzerConfig = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure pageExtensions to include md and mdx
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  // Optionally, add any other Next.js config below
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    // path: '/img/',
     formats: ["image/webp"],
     remotePatterns: [
       { hostname: "cdn.sanity.io" },
@@ -34,14 +47,14 @@ const nextConfig = {
     includePaths: ["src/app/styles"],
   },
   typescript: {
-    // Set this to false if you want production builds to abort if there's type errors
     ignoreBuildErrors: process.env.VERCEL_ENV === "production",
   },
   eslint: {
-    /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === "production",
   },
 };
 
 // Merge MDX config with Next.js config
-module.exports = withBundleAnalyzer(withMDX(nextConfig));
+const config = bundleAnalyzerConfig(withMDX(nextConfig));
+
+export default config;

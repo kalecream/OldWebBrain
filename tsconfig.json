@@ -51,7 +51,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mdx",
-    "next.config.js",
+    "next.config.mjs",
     ".next/types/**/*.ts",
     "src/assets/models/castlevania.jsx",
     "src/components/threeJS/HeroModel.jsx",
