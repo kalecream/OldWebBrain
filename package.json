@@ -32,7 +32,6 @@
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^1.2.1",
-    "codehike": "^1.0.4",
     "d3": "^7.9.0",
     "date-fns": "^3.6.0",
     "dotenv": "^16.0.3",
@@ -95,7 +94,6 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^8.14.0"
   },
-  "resolutions": { "@types/react": "~18.3.1" },
   "scripts": {
     "tsc": "tsc",
     "prepare": "husky",

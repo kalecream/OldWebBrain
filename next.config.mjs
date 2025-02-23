@@ -1,24 +1,13 @@
 import withMDX from "@next/mdx";
 import withBundleAnalyzer from "@next/bundle-analyzer";
-import { remarkCodeHike, recmaCodeHike } from "codehike/mdx";
-
-/** @type {import('codehike/mdx').CodeHikeConfig} */
-const chConfig = {
-  // optional (see code docs):
-  components: { code: "Code" },
-  // if you can't use RSC:
-  syntaxHighlighting: {
-    theme: "github-dark",
-  },
-}
 
 /** @type {import('next').NextConfig} */
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   jsx: true,
   options: {
-    remarkPlugins: [[remarkCodeHike, chConfig]],
-    recmaPlugins: [[recmaCodeHike, chConfig]],
+    remarkPlugins: [[]],
+    recmaPlugins: [[]],
     jsx: true,
   },
 });
@@ -55,6 +44,6 @@ const nextConfig = {
 };
 
 // Merge MDX config with Next.js config
-const config = bundleAnalyzerConfig(withMDX(nextConfig));
+const config = bundleAnalyzerConfig(mdxConfig(nextConfig));
 
 export default config;
