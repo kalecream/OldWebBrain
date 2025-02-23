@@ -64,7 +64,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.33.4",
     "styled-components": "^6.1.13",
-    "three": "^0.173.0",
+    "three": "^0.164.1",
     "vercel": "^34.2.0",
     "webpack": "5.76.0"
   },
@@ -95,6 +95,7 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^8.14.0"
   },
+  "resolutions": { "@types/react": "~18.3.1" },
   "scripts": {
     "tsc": "tsc",
     "prepare": "husky",
