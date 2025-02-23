@@ -1,50 +1,51 @@
 "use client";
-import { Suspense, useRef, useState } from "react";
+import { Suspense } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls, Preload, PresentationControls } from "@react-three/drei";
 import { EffectComposer, ChromaticAberration, Noise, Bloom } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import { Model } from "@assets/models/WingedSword";
 
-export const SceneViewer = () => {
-  return (
-    <Canvas
-      shadows
-      dpr={[1, 2]}
-      style={{
-        margin: "auto",
-        width: "75vh",
-        height: "75vh",
-      }}
-    >
-      <Preload all />
-      <Suspense fallback={<Html center>Loading</Html>}>
-        <Model />
-        <OrbitControls autoRotate autoRotateSpeed={0.5} />
-        <PresentationControls
-          global
-          rotation={[-Math.PI / 2, -Math.PI / 4, -Math.PI / 4]}
-          polar={[0, Math.PI / 2]}
-          azimuth={[-Math.PI / 4, Math.PI / 4]}
-        />
-      </Suspense>
-      <EffectComposer>
-        {/* <ChromaticAberration
-					blendFunction={BlendFunction.NORMAL} // blend mode
-					offset={[0.0002, 0.000005]} // color offset
-				/> */}
-        <Noise premultiply />
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={0.1} />
-      </EffectComposer>
-    </Canvas>
-  );
-};
+// FIX: upgrade to react-three/fiber from react-three-fiber and FIX Canvas Element
+// export const SceneViewer = () => {
+//   return (
+//     <Canvas
+//       shadows
+//       dpr={[1, 2]}
+//       style={{
+//         margin: "auto",
+//         width: "75vh",
+//         height: "75vh",
+//       }}
+//     >
+//       <Preload all />
+//       <Suspense fallback={<Html center>Loading</Html>}>
+//         <Model />
+//         <OrbitControls autoRotate autoRotateSpeed={0.5} />
+//         <PresentationControls
+//           global
+//           rotation={[-Math.PI / 2, -Math.PI / 4, -Math.PI / 4]}
+//           polar={[0, Math.PI / 2]}
+//           azimuth={[-Math.PI / 4, Math.PI / 4]}
+//         />
+//       </Suspense>
+//       <EffectComposer>
+//         <ChromaticAberration
+// 					blendFunction={BlendFunction.NORMAL} // blend mode
+// 					offset={[0.0002, 0.000005]} // color offset
+// 				/>
+//         <Noise premultiply />
+//         <Bloom luminanceThreshold={0} luminanceSmoothing={0.8} height={0.1} />
+//       </EffectComposer>
+//     </Canvas>
+//   );
+// };
 
 const Swordtempber2024_Wings = () => {
   return (
     <section>
       <div className="item-container">
-        <SceneViewer />
+        {/* <SceneViewer /> */}
         <div className="stat-block wide">
           <hr />
           <div className="section-left">
