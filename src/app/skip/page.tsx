@@ -11,7 +11,7 @@ import Image from "next/image";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 import { ClawWebRing } from "./ClawWebRing";
 
-const ForceGraph = dynamic(() => import("./WordGraph"), { ssr: false });
+const WordGraph = dynamic(() => import("./WordGraph"), { ssr: false });
 
 const SkipPage = () => {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
