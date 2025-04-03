@@ -1,6 +1,9 @@
 // Code fount at https://stackoverflow.com/questions/62528918/media-query-scss-breakpoints-best-practice
 // 2023-08-31
 
+@use "sass:string";
+@use "sass:map";
+
 $break-points: (
   mobile: 0,
   phone: 480px,
@@ -12,36 +15,40 @@ $break-points: (
 
 
 /** Helper to build @media query. Use named arguments only! */
+/// @param {string} $mode - Media type (screen, print, etc.)
+/// @param {string} $from - Starting breakpoint name
+/// @param {string} $to - Ending breakpoint name
+/// @param {map} $extra - Additional media query conditions
 @mixin breakpoint-range($mode: screen, $from: false, $to: false, $extra: ()) {
   /** Checking arguments consistency */
-  @each $key in ($from, $to) {
-    @if $key and not map-has-key($break-points, $key) {
-      @error "Available values for ($from, $to) args are: #{map-keys($break-points)}";
-    };
-  };
+  @if $from and not map.has-key($break-points, $from) {
+    @error "Invalid $from value '#{$from}'. Available breakpoints: #{map.keys($break-points)}";
+  }
+  
+  @if $to and not map.has-key($break-points, $to) {
+    @error "Invalid $to value '#{$to}'. Available breakpoints: #{map.keys($break-points)}";
+  }
 
   /** Accumulator */
   $conditions: $mode;
-
-  /** Combining breakpoints dependencies */
-  @each $key, $value in (
-    min-width: $from,
-    max-width: $to,
-  ) {
-    @if $value {
-      $modifier: if($key == 'max-width', -1px, 0px);
-      $condition: " and (#{$key}: #{map-get($break-points, $value) - $modifier})";
-      $conditions: str-insert($conditions, $condition, -1);
-    }
-  }
-
-  /** Combining rest dependencies */
-  @each $key, $value in $extra {
-    $condition: " and (#{$key}: #{$value})"
+  
+  @if $from {
+    $min-value: map.get($break-points, $from);
+    $conditions: string.insert($conditions, " and (min-width: #{$min-value})", -1);
   }
   
-  /** Building final media query */
-  @media #{$conditions} { @content; }
+  @if $to {
+    $max-value: map.get($break-points, $to) - 1px;
+    $conditions: string.insert($conditions, " and (max-width: #{$max-value})", -1);
+  }
+  
+  @each $key, $value in $extra {
+    $conditions: string.insert($conditions, " and (#{$key}: #{$value})", -1);
+  }
+  
+  @media #{$conditions} {
+    @content;
+  }
 }
 
 /** 
@@ -50,30 +57,14 @@ $break-points: (
 *
 **/
 
-.element {
-  /** Both bp arguments */
-  @include breakpoint-range($from: mobile, $to: desktop) {
-    /* Result: @media screen and (min-width: 480px) and (max-width: 1240px) */
-  }
-  /** One bp argument */
-  @include breakpoint-range($to: desktop) {
-    /* Result: @media screen and (max-width: 1240px) */
-  }
-  /** Just changing view mode */
-  @include breakpoint-range($mode: print) {
-    /* Result: @media print */
-  }
-  /** Or add anything else */
-  @include breakpoint-range(
-    $from: mobile, 
-    $to: desktop, 
-    $extra: (orientation: landscape)
-  ) {
-    /* Result: @media screen 
-                  and (min-width: 480px) 
-                  and (max-width: 1240px)
-                  and (orientation: landscape)
-    */
-  }
-}
-
+// @include breakpoint-range(
+//   $from: tablet,
+//   $to: desktopLarge,
+//   $extra: (orientation: landscape, prefers-color-scheme: dark)
+// ) {
+  // Result: @media screen 
+  //           and (min-width: 720px)
+  //           and (max-width: 1919px)
+  //           and (orientation: landscape)
+  //           and (prefers-color-scheme: dark)
+// }
