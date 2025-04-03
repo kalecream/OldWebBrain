@@ -2,26 +2,9 @@ import withMDX from "@next/mdx";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
 /** @type {import('next').NextConfig} */
-const mdxConfig = withMDX({
-  extension: /\.mdx?$/,
-  jsx: true,
-  options: {
-    remarkPlugins: [[]],
-    recmaPlugins: [[]],
-    jsx: true,
-  },
-});
-
-/** @type {import('next').NextConfig} */
-const bundleAnalyzerConfig = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     formats: ["image/webp"],
     remotePatterns: [
@@ -43,7 +26,22 @@ const nextConfig = {
   },
 };
 
-// Merge MDX config with Next.js config
+/** @type {import('next').NextConfig} */
+const mdxConfig = withMDX({
+  extension: /\.mdx?$/,
+  jsx: true,
+  options: {
+    remarkPlugins: [],
+    recmaPlugins: [],
+    providerImportSource: '@mdx-js/react',
+  },
+});
+
+/** @type {import('next').NextConfig} */
+const bundleAnalyzerConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const config = bundleAnalyzerConfig(mdxConfig(nextConfig));
 
 export default config;
