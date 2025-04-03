@@ -34,7 +34,7 @@ const WebMentions: React.FC<WebMentionsProps> = ({ targetUrl }) => {
     const fetchWebMentions = async () => {
       try {
         const response = await fetch(
-          `https://webmention.io/api/mentions.jf2?token=TMnh232DKvTeXEHFalVuig&target=${encodeURIComponent(targetUrl)}`,
+          `/api/webmentions/${encodeURIComponent(targetUrl)}`,
         );
         if (!response.ok) {
           throw new Error(`Error fetching web mentions: ${response.statusText}`);
