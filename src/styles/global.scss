@@ -1,6 +1,6 @@
-@import 'normalize';
-@import 'animations';
-@import 'mediaQuery';
+@use 'normalize' as *;
+@use 'animations' as *;
+@use 'mediaQuery' as *;
 
 @font-face {
 	font-family: "Fira Code";
@@ -98,9 +98,6 @@
 	--accentFont: 'Cattedrale', serif;
 	--hr-line-offset: 25%;
 	--hr-color: var(--primary);
-}
-
-:root {
 	--backgroundColor: #f2f0e9;
 	--primary: #331200;
 	--secondary: #b12603;
@@ -125,21 +122,6 @@
 	--borderColor: rgba(0, 0, 0, 0.4);
 	--captionColor: rgb(136, 136, 136);
 }
-
-// @media (prefers-color-scheme: dark) {
-// 	:root {
-// 		--backgroundColor: rgb(29, 29, 29);
-// 		--primary: #c80000;
-// 		--secondary: #e20000;
-// 		--textColor: #ccc;
-// 		--backgroundImage: url(../assets/images/stars.gif);
-// 		--textColorAlt: #ffe7e7;
-// 		--border: 1px solid rgba(255, 255, 255, 0.1);
-// 		--boxShadow: 1px 4px 16px 0 rgba(255, 255, 255, 0.2);
-// 		--borderColor: rgba(0, 0, 0, 0.4);
-// 		--captionColor: rgb(136, 136, 136);
-// 	}
-// }
 
 * {
 	transition: var(--transition);
