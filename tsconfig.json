@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "noUnusedParameters": false,
-    "noImplicitAny": false,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -22,24 +26,54 @@
     "types": [
       "node",
       "webpack-env",
-      "@react-three/fiber", "@types/react", "@types/react-dom"
+      "@react-three/fiber",
+      "@types/react",
+      "@types/react-dom"
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@module/*": ["src/styles/modules/*"],
-      "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"],
-      "@layout/*": ["src/container/layout/*"],
-      "@data/*": ["src/data/*"],
-      "@types/*": ["src/types/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@posts/*": ["src/posts/*"],
-      "@containers/*": ["src/containers/*"],
-      "@public/*": ["public/*"],
-      "@app/*": ["src/app/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@module/*": [
+        "src/styles/modules/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@layout/*": [
+        "src/container/layout/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@posts/*": [
+        "src/posts/*"
+      ],
+      "@containers/*": [
+        "src/containers/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ]
     },
     "plugins": [
       {
@@ -58,5 +92,8 @@
     "src/components/threeJS/HeroModel.jsx",
     "src/assets/models/WingedSword.jsx"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

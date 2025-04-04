@@ -1,13 +1,19 @@
 import { PresentationControls, Html } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-
+import { ReactNode, Suspense } from "react";
 import { Model as IndexScene } from "src/assets/models/Scene";
+
+interface CanvasProps {
+  children?: ReactNode;
+  [key: string]: any;
+}
+
+declare module "@react-three/fiber" {
+  interface Canvas extends CanvasProps {}
+}
 
 export const SiteBackground = (): JSX.Element => {
   return (
-    <Canvas
-      shadows
+    <canvas
       style={{
         width: "100vw",
         height: "100vh",
@@ -24,9 +30,9 @@ export const SiteBackground = (): JSX.Element => {
           </Html>
         }
       >
-        <ambientLight />
+        {/* <ambientLight /> */}
         <IndexScene />
-        <directionalLight />
+        {/* <directionalLight /> */}
         <PresentationControls
           global
           rotation={[0, -Math.PI / 4, 0]}
@@ -34,6 +40,6 @@ export const SiteBackground = (): JSX.Element => {
           azimuth={[-Math.PI / 4, Math.PI / 4]}
         />
       </Suspense>
-    </Canvas>
+    </canvas>
   );
 };
