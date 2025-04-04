@@ -5,7 +5,7 @@ export function useHeadsObserver() {
   const [activeId, setActiveId] = useState<any>("");
 
   useEffect(() => {
-    const handleObsever = (entries) => {
+    const handleObsever = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry?.isIntersecting) {
           setActiveId(entry.target.id);

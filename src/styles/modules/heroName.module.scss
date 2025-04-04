@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+@use '@styles/mediaQuery' as *;
 
 .icons {
 	display: none;
