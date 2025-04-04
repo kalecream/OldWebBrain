@@ -3,7 +3,6 @@ import { CustomMDX } from "../../components/mdx";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PageReadTime } from "@utils/PageReadTime";
-import WebMentions from "@components/webmentions/WebMentions";
 
 export const generateStaticParams = async () => {
   return getAllNotes().map(({ slug }) => ({ slug }));
@@ -24,8 +23,7 @@ export const NotePage = ({ params }) => {
             </p>
           </div>
           <CustomMDX source={parseWikiLinks(note.body)} />
-          <WebMentions targetUrl={`https://yunghigue.com/blog/${note.slug}`} />
-        </div>
+           </div>
       </Suspense>
     </section>
   );
