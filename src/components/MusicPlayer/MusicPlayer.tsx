@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./MusicPlayer.module.scss";
 import Link from "next/link";
 

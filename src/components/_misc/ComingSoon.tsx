@@ -1,3 +1,5 @@
+
+import React  from 'react';
 import HeroName from "@components/hero/heroName/heroName";
 import Link from "next/link";
 

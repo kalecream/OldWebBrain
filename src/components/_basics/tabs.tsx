@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface TabsProps {
   categories: string[];
   activeCategory: string;

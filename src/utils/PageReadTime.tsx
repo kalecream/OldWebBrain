@@ -1,14 +1,14 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import React from "react";
 
 type Props = {
   readingSpeedWPM?: number;
 };
 
-export const PageReadTime: FC<Props> = ({ readingSpeedWPM = 200 }) => {
-  const [readingTime, setReadingTime] = useState(0);
+export const PageReadTime: React.FC<Props> = ({ readingSpeedWPM = 200 }) => {
+  const [readingTime, setReadingTime] = React.useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const text = document.body.innerText || "";
     const words = text.split(/\s+/).filter((word) => word.length > 0);
     const wordCount = words.length;

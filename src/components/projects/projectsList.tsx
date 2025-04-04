@@ -1,16 +1,13 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Projects, ProjectStructure } from "@data/projectsData";
 import Link from "next/link";
 import styles from "@styles/modules/projects.module.scss";
 import Image from "next/image";
-import { GetMonthName } from "@utils/GetMonthName";
 
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
-  Projects.forEach((project) => {
-    categoriesSet.add(project.category);
-  });
+  Projects.forEach((project) => categoriesSet.add(project.category || ''));
   return Array.from(categoriesSet);
 };
 

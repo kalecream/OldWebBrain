@@ -1,4 +1,5 @@
 "use client";
+import React  from 'react';
 import hero from "@styles/modules/Index.module.scss";
 import button from "@styles/modules/Button.module.scss";
 import { HeroModel } from "@components/threeJS/HeroModel.jsx";

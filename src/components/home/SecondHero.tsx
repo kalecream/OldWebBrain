@@ -1,4 +1,5 @@
 "use server";
+import React  from 'react';
 import Image from "next/image";
 import Divider from "@assets/images/vamp_divider.webp";
 import Rolodex from "@public/img/album/rolodex.png";

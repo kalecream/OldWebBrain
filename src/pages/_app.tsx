@@ -1,3 +1,4 @@
+import React  from 'react';
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import "@styles/global.scss";

@@ -1,3 +1,4 @@
+import React  from 'react';
 import { PresentationControls, Html } from "@react-three/drei";
 import { ReactNode, Suspense } from "react";
 import { Model as IndexScene } from "src/assets/models/Scene";

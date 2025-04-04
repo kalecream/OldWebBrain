@@ -1,3 +1,4 @@
+import React  from 'react';
 import mouse from "@styles/modules/ScrollDown.module.scss";
 
 export const ScrollDown = () => {

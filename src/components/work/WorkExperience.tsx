@@ -1,3 +1,4 @@
+import React  from 'react';
 import { PastJobs } from "./pastWork";
 import styles from "./WorkExperience.module.scss";
 

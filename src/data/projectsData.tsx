@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 
 export interface ProjectStructure {
@@ -239,12 +240,12 @@ export const Projects: ProjectStructure[] = [
     status: "completed",
     description: (
       <span>
-        Poster for the Astronomical Association of Jamaica's guest presentation on neutron stars and black holes. 
+        Poster for the Astronomical Association of Jamaica's guest presentation on neutron stars and black holes.
       </span>
     ),
     technology: ["Photopea"],
     created: "2021-05-20",
-  }
+  },
 ];
 
 export default Projects;
