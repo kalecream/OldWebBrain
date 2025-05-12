@@ -14,7 +14,7 @@ const mdxConfig = withMDX({
 
 /** @type {import('next').NextConfig} */
 const bundleAnalyzerConfig = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
+  enabled: process.env.ANALYZE === "false",
 });
 
 /** @type {import('next').NextConfig} */
