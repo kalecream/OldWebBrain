@@ -84,8 +84,6 @@
 }
 
 :root {
-	--mask: linear-gradient(#000 0 0) 50%/calc(100% - 46.25px) calc(100% - 46.25px) no-repeat,
-		radial-gradient(farthest-side, #000 98%, #0000) 0 0/50px 50px round;
 	--sharpBorderRadius: 5px;
 	--borderRadius: 10px;
 	--buttonBorderRadius: 50px;
@@ -93,7 +91,7 @@
 	--paddingObject: 1rem;
 	--paddingObjectSmall: 0.5rem;
 	--transition: all 0.5s ease-in-out;
-	--bodyFont: 'Garamond', serif;
+  --bodyFont: 'Garamond', serif, inherit;
 	--headingFont: 'Roman', serif;
 	--accentFont: 'Cattedrale', serif;
 	--hr-line-offset: 25%;
@@ -324,7 +322,7 @@ progress {
 	&::-moz-progress-bar,
 	&::-webkit-progress-bar {
 		border-radius: 0 20px 20px 0;
-		width: 0%;
+      width: 0;
 		height: 100%;
 		transition: width;
 		transition-duration: 1s;
@@ -470,17 +468,17 @@ a {
 }
 
 i {
-	font-family: "Garamond Italics";
+  font-family: "Garamond Italics", serif;
 }
 
 b {
 	font-weight: 800;
-	font-family: "Garamond Bold";
+  font-family: "Garamond Bold", serif;
 }
 
 b i {
 	font-weight: 800;
-	font-family: "Garamond Bold Italics";
+  font-family: "Garamond Bold Italics", serif;
 }
 
 h1,
@@ -523,7 +521,7 @@ h5 {
 }
 
 .cattedrale {
-	font-family: "Cattedrale";
+  font-family: "Cattedrale", serif;
 }
 
 .ornamental {
@@ -568,7 +566,7 @@ li > a {
 
 q {
 	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.65rem);
-	font-family: "Garamond Italics";
+  font-family: "Garamond Italics", serif;
 	text-align: center;
 	color: var(--secondary);
 	max-width: 40rem;
@@ -636,7 +634,7 @@ kbd::after,
 }
 
 .kbd-down {
-	top: 0em;
+  top: 0;
 	box-shadow: inset 0 -0.2em 0.3em -0.1em rgba(200, 200, 200, 0.5);
 }
 
@@ -647,7 +645,7 @@ kbd::after,
 }
 
 .kbd-down::before {
-	box-shadow: inset 0px 1px 6px 0px rgba(0, 0, 0, 1);
+  box-shadow: inset 0 1px 6px 0 rgba(0, 0, 0, 1);
 }
 
 .text-center {
@@ -674,7 +672,7 @@ kbd::after,
 
 .outerglow {
 	&:hover {
-		box-shadow: 0px 0px 10px 5px var(--secondary);
+      box-shadow: 0 0 10px 5px var(--secondary);
 	}
 }
 
@@ -767,7 +765,7 @@ article h6 {
 
 article h1 {
 	font-size: clamp(2rem, 3vw, 4.5rem);
-	font-family: "Cattedrale";
+  font-family: "Cattedrale", serif;
 	margin: 0;
 }
 
@@ -809,14 +807,13 @@ article p {
 article q p {
 	font-size: clamp(1.4rem, -0.8750rem + 8.3333vw, 1.8rem);
 	margin: 0;
-	font-family: "Garamond Italics";
+  font-family: "Garamond Italics", serif;
 }
 
 .shiki {
 	position: relative;
 	padding: 1rem;
 	margin: 1rem auto;
-	padding: 1rem;
 	width: 100%;
 	max-width: 45rem;
 	counter-reset: step;

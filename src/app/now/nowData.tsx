@@ -35,7 +35,8 @@ const NowData: NowDataProps[] = [
     seasons: [
       {
         season: "Spring",
-        summary: "",
+        summary:
+          "Clearing my backlog has been going well, but I still have a long time to go before I can take on anything new. I'm crossing my fingers that I'll be free by 2025-Fall.",
       },
     ],
   },

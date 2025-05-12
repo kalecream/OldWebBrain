@@ -1,7 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 "use client";
 import Link from "next/link";
-import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 import nowData from "./nowData";
 import style from "./now.module.scss";
 
@@ -9,21 +8,10 @@ const NowPage = () => {
   return (
     <>
       <section>
-        <MusicPlayer
-          audioSrc={"/audio/icarian.m4a"}
-          songTitle={"I, Carrion // Hozier"}
-          audioLink={"https://www.youtube.com/watch?v=rag_buWyB_A&pp=ygUJaSBjYXJyaW9u"}
-        />
         <h1>Now.</h1>
-
         <div className="prose">
           <p className="blur">
-            The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. These aren't
-            exactly goals, but a collection of experiences I would like to complete. My actual goals can be seen at{" "}
-            <Link href="/trying" className="internal-link">
-              trying
-            </Link>{" "}
-            .
+            The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>.
           </p>
         </div>
       </section>
