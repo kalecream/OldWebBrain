@@ -1375,7 +1375,7 @@ span.project__status.archived {
 	// Aspect Ratio Percentage=(Width/Height​)×100
 }
 
-.imageWrapper :global(img) {
+.imageWrapper:global(img) {
 	object-fit: cover;
 	object-position: center;
 }
