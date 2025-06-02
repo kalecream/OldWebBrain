@@ -1039,8 +1039,21 @@ const Books = [
     "format": "Hardcover",
     "series": "N/A",
     "series_number": null
+  },
+  {
+    "title": "Debt: The First 5,000 Years",
+    "author": "David Graeber",
+    "genre": ["Non-fiction", "Economics", "Anthropology"],
+    "status": "Read",
+    "rating": 4.5,
+    "pages": 544,
+    "cover": "https://www.bing.com/th?id=OIP.GzzqHGYNimYqFTZYLjOIlwAAAA&w=80&h=80&c=1&pid=5.1",
+    "format": "Paperback",
+    "published": "2011-09-06",
+    "series": "N/A",
+    "series_number": null,
+    "summary": "David Graeber's 'Debt: The First 5,000 Years' explores the historical relationship of debt with social institutions such as barter, marriage, friendship, slavery, law, religion, war, and government. The book challenges the conventional notion that money existed before debt, suggesting instead that debt has shaped society's economic and moral frameworks."
 }
-
 ];
 
 export default Books;
