@@ -796,7 +796,7 @@ const Books = [
     format: "Paperback",
     started: "2023-09-01",
     added: "2023-09-01",
-    finished: null,
+    finished: "2025-05-30",
     cover: "https://i.imgur.com/GAVF0mb.jpeg",
   },
   {
@@ -1029,6 +1029,17 @@ const Books = [
     series: "Discworld",
     series_number: 41,
   },
+  {
+    "title": "Violin",
+    "author": "Anne Rice",
+    "genre": ["Horror", "Fantasy"],
+    "status": "Reading",
+    "pages": 289,
+    "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/ViolinNovel.jpg/220px-ViolinNovel.jpg",
+    "format": "Hardcover",
+    "series": "N/A",
+    "series_number": null
+}
 
 ];
 
