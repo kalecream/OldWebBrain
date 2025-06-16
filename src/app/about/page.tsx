@@ -13,9 +13,8 @@ import AboutBooksSection from "./AboutBooks";
 // import { CodersrankSummary } from "./CodersRank";
 // import { ScrollDown } from "@components/scrollDown";
 import MiniPlayer from "@components/MusicPlayer/MusicPlayer";
-import { StackedTimeLog } from "@components/TimeLog/TimeLog";
 
-export const About = () => {
+const About = () => {
   return (
     <>
       <MiniPlayer

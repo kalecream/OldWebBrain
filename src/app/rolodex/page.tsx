@@ -1,4 +1,6 @@
 import { InteractiveCard } from "@components/InteractiveCard";
+import { YT } from "@data/youtube";
+import Link from "next/link";
 
 interface BookmarkProps {
   url: string;
@@ -71,16 +73,23 @@ const Rolodex = () => {
         <p className="prose">These are some bookmarks for pages & media I've enjoyed on the net.</p>
       </section>
       <section>
-        <div className={` flex`}>
+          <ol className="prose">
           {Bookmarks.map((bookmark) => (
-            <InteractiveCard
-              link={bookmark.url}
-              heading={bookmark.title}
-              text={bookmark.description}
-              key={bookmark.url}
-            />
+            <Link href={bookmark.url} key={bookmark.url}>
+              <li><b>{bookmark.title}</b> {bookmark.description}</li>
+            </Link>
           ))}
-        </div>
+            </ol>
+      </section>
+      <section>
+        <h2>Youtube</h2>
+        <ol className="prose">
+          {YT.map((bookmark) => (
+            <Link href={bookmark.url} key={bookmark.url}>
+              <li><b>{bookmark.title}</b> {bookmark.description}</li>
+            </Link>
+          ))}
+            </ol>
       </section>
     </>
   );
