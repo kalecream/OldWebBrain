@@ -2,7 +2,7 @@
 
 .container {
 	display: flex;
-	gap: 2rem;
+	gap: 1rem;
 	font-size: 1.3rem;
 	letter-spacing: 0.5px;
 	align-items: center;
@@ -16,7 +16,7 @@
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
-		// flex-direction: row;
+		flex-direction: row;
 		width: clamp(20rem, 100%, 50rem);
 		margin: 0rem auto;
 	}
@@ -213,6 +213,17 @@
 	will-change: filter;
 }
 
+.vamp-background-alt {
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	clip-path: polygon(12px 0, calc(100% - 12px) 0%, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px), 0% 12px);
+	background-color:#333232;
+	transition-property: filter;
+	transition-duration: 0.2s;
+	will-change: filter;
+}
+
 .vamp .text {
 	background: linear-gradient(180deg, #ccc 1%, #fff 100%), var(--textColor);
 	-webkit-background-clip: text;
@@ -225,12 +236,12 @@
 }
 
 @media (hover: hover) {
-	.vamp:hover .vamp-background {
+	.vamp:hover .vamp-background, .vamp:hover .vamp-background-alt {
 		filter: brightness(0.5);
 	}
 }
 
-.vamp:active .vamp-background {
+.vamp:active .vamp-background, .vamp:active .vamp-background-alt {
 	filter: brightness(0.1);
 }
 

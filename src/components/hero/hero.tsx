@@ -13,12 +13,9 @@ const Hero = () => {
         <div className={hero.model}>
           <HeroModel />
           <div className={hero.cta}>
-            <HeroName name={"Sisyphus"} />
-            <div className={` ` + hero.text}>
+          <div className={` ` + hero.text}>
+            <HeroName name={"Yung Higue"} />
               <center>
-                <h1 style={{ maxWidth: "100%", fontSize: "2.3rem" }}>
-                  Escaping <span>Liminality</span>
-                </h1>
                 <p className="p-note">
                   A cross between{" "}
                   <Link href="https://github.com/kalecream" rel="me">
@@ -61,8 +58,27 @@ const Hero = () => {
                   </svg>
                 </button>
               </Link>
-              <Link href="/skip" style={{ scale: "0.9" }} className={hero.skip}>
-                Skip
+              <Link href="/skip">
+                <button className={button.vamp} role="button">
+                  <span className={button.text}>For Friends</span>
+                  <span className={button["vamp-background-alt"]}></span>
+                  <span className={button["vamp-border"]}></span>
+
+                  {/* <!-- mask-border fallback --> */}
+                  <svg style={{ position: "absolute", width: "0", height: "0" }}>
+                    <filter id="remove-black-vamp" colorInterpolationFilters="sRGB">
+                      <feColorMatrix
+                        type="matrix"
+                        values="1 0 0 0 0
+                 0 1 0 0 0
+                 0 0 1 0 0
+                 -1 -1 -1 0 1"
+                        result="black-pixels"
+                      ></feColorMatrix>
+                      <feComposite in="SourceGraphic" in2="black-pixels" operator="out"></feComposite>
+                    </filter>
+                  </svg>
+                </button>
               </Link>
             </div>
           </div>

@@ -6,9 +6,10 @@
 
 .container {
 	position: relative;
-	width: 100vw;
-	max-width: 480px;
-	height: 200px;
+	// width: 100vw;
+	max-width: 45rem;
+	height: clamp(1rem, 25vw, 12rem);
+	margin: 1rem;
 	user-select: none;
 
 	// @include breakpoint-range($from: mobile, $to: tablet) {
@@ -25,11 +26,12 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 }
 .container .text {
 	position: absolute;
 	font-size: clamp(1rem, 25vw, 12rem);
+	line-height: 1;
 	font-family: "Cattedrale Rough", sans-serif;
 	text-transform: capitalize;
 	-webkit-text-stroke: 2px solid var(--border);
@@ -49,39 +51,32 @@
 
 	@include breakpoint-range($from: desktopSmall) {
 		top: 50%;
+		margin: 0;
+		padding: 0;
 	}
 
 }
 .container .text .icon {
 	position: absolute;
 	width: clamp(2rem, 1.5vw, 10rem);
-	height: clamp(2rem, 1.5vw, 10rem);
 	stroke-width: 25px;
 	stroke: rgba($color: var(--borderColor), $alpha: 0.5);
 	transform: translate(-50%, -50%);
 	animation: scaleUpdown 3000ms ease-in-out infinite;
-	color: var(--textColor);
+	color: var(--secondary);
 }
 
 .container .text .icon:nth-child(1) {
-	top: 11%;
-	left: 63%;
+	top: 58%;
+	left: 30%;
 	// animation-delay: 0;
-	color: var(--secondary);
-}
-
-.container .text .icon:nth-child(1) {
-	top: 11%;
-	left: 63%;
-	animation-delay: 0;
-	color: var(--secondary);
 }
 
 .container .text__container {
 	z-index: 1;
 }
 .container .text__container .text .icon {
-	fill: var(--textColor);
+	fill: var(--primary);
 }
 
 .container .text__container .text:nth-child(1) {
@@ -124,12 +119,12 @@
 }
 @keyframes scaleUpdown {
 	0% {
-		transform: translate(-45%, -50%) scale(1) rotate(0);
+		transform: translate(-45%, -50%) scale(1.2) rotate(0);
 	}
 	50% {
-		transform: translate(-45%, -50%) scale(1.4) rotate(90deg);
+		transform: translate(-45%, -50%) scale(1.5) rotate(90deg);
 	}
 	100% {
-		transform: translate(-45%, -50%) scale(1) rotate(180deg);
+		transform: translate(-45%, -50%) scale(1.2) rotate(180deg);
 	}
 }
