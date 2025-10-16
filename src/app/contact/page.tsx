@@ -11,17 +11,11 @@ const ContactPage = () => {
             <Link href="mailto:yunghigue@gmail.com">
               yunghigue
               <wbr />
-              @gmail
-              <wbr />
-              .com
+              @gmail.com
             </Link>
           </h1>
         </div>
         <div>
-          <p>
-            If I'm currently de-activated on social media,
-            <br /> don't worry, I'll be back!
-          </p>
           <SocialMediaList />
         </div>
       </section>
