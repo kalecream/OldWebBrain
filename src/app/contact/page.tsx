@@ -8,10 +8,10 @@ const ContactPage = () => {
         <div>
           <p>The best way to get me is to e-mail me at</p>
           <h1 style={{ lineHeight: "1.2" }}>
-            <Link href="mailto:sab@yunghigue.com">
-              sab
+            <Link href="mailto:yunghigue@gmail.com">
+              yunghigue
               <wbr />
-              @yunghigue
+              @gmail
               <wbr />
               .com
             </Link>
