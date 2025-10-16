@@ -1,6 +1,47 @@
 # Changelog
 
 
+## [1.6.0](https://github.com/your-repo/compare/v1.2.4...v1.6.0) (2025-10-16)
+
+
+### Features
+
+* add Web Garden Force Graph ([#117](https://github.com/your-repo/issues/117)) ([6177d52](https://github.com/your-repo/commit/6177d52b13cdfd8353c6c46a3888ddf5af86ed53))
+* Add website button ([77b4b5a](https://github.com/your-repo/commit/77b4b5ae1f4ec804d46cdabf96b14a4114db627c))
+* create Digital Garden ([#114](https://github.com/your-repo/issues/114)) ([9b8d457](https://github.com/your-repo/commit/9b8d457c138a963eb5d9a96069d0c6d58ee50145))
+* gallery of trying ([#113](https://github.com/your-repo/issues/113)) ([0c941c4](https://github.com/your-repo/commit/0c941c4d67711f8923f0b58f2e98bb1446e7db02))
+* make Time log for about ([59cb62e](https://github.com/your-repo/commit/59cb62eb6e4686e68b738074d633411fd202509b))
+* munch page ([#103](https://github.com/your-repo/issues/103)) ([fa59215](https://github.com/your-repo/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
+
+
+### Bug Fixes
+
+* fix blog image + add monthly images ([b2c1bd9](https://github.com/your-repo/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
+* fixed graph components; build issues ([#118](https://github.com/your-repo/issues/118)) ([0f03040](https://github.com/your-repo/commit/0f03040edc1a53de7255ce7e2ae3bf0576e4a4be))
+* mailing links ([#101](https://github.com/your-repo/issues/101)) ([2271d4e](https://github.com/your-repo/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
+* url links to posters ([#102](https://github.com/your-repo/issues/102)) ([60fd47c](https://github.com/your-repo/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
+
+
+### Documentation
+
+* add testing to repo ([bdbebc4](https://github.com/your-repo/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
+* change changelog behaviour ([8a7173f](https://github.com/your-repo/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
+
+
+### Code Refactoring
+
+* change graph type, make api call dynamic ([3411482](https://github.com/your-repo/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
+* change valid entries ([610b828](https://github.com/your-repo/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
+* changed rolodex content & layout ([5686be5](https://github.com/your-repo/commit/5686be506d40b45bb2e13fd98a85f3790980e7f2))
+* Garden QOL improvements ([356085f](https://github.com/your-repo/commit/356085f0401b9618147413c85772384ade959418))
+* Garden styling update ([#116](https://github.com/your-repo/issues/116)) ([bf321cb](https://github.com/your-repo/commit/bf321cbaef40921e3e26f2067db88f10ca625b84))
+* improve linked webring appearance ([#109](https://github.com/your-repo/issues/109)) ([23e26b0](https://github.com/your-repo/commit/23e26b0254e9180c566638aaf1715465430a3fea))
+* re-structured now page ([0472a69](https://github.com/your-repo/commit/0472a69fddeaa7725bece9f04456058088b744df))
+* reorganize webring reference ([#111](https://github.com/your-repo/issues/111)) ([ccf4c06](https://github.com/your-repo/commit/ccf4c06a8a32c693730a956f7ae9fd5737561fff))
+* revert to Shiki codeblocks ([#119](https://github.com/your-repo/issues/119)) ([e43c04b](https://github.com/your-repo/commit/e43c04bd980865aef52c641c824bebf44f00f53f))
+* styling updates to garden section ([#115](https://github.com/your-repo/issues/115)) ([3b97dec](https://github.com/your-repo/commit/3b97dec119e8274fb4768a86027a933f0682358c))
+* update log length ([7ed1cda](https://github.com/your-repo/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
+
 ## [1.5.0](https://github.com/your-repo/compare/v1.2.4...v1.5.0) (2025-01-05)
 
 
