@@ -54,9 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="webmention" href="https://webmention.io/yunghigue.com/webmention" />
-      </head>
+      <head></head>
       <body>
         <ThemeProvider>
           <Navbar />

@@ -5,7 +5,6 @@ import { CustomMDX } from "../../components/mdx";
 import { getBlogPosts } from "../../db/blog";
 import { unstable_noStore as noStore } from "next/cache";
 import { PageReadTime } from "@utils/PageReadTime";
-import WebMentions from "@components/webmentions/WebMentions";
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   let post = getBlogPosts().find((post) => post.slug === params.slug);
@@ -116,7 +115,6 @@ export default function Blog({ params }) {
       <article>
         <CustomMDX source={post.content} />
       </article>
-      <WebMentions targetUrl={`https://yunghigue.com/blog/${post.slug}`} />
     </section>
   );
 }
