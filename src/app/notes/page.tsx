@@ -1,26 +1,7 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import garden from "@styles/modules/Garden.module.scss";
-
-const ForceGraph = dynamic(() => import("./Graph"), { ssr: false });
-
-export const Graph = () => {
-  const [graphData, setGraphData] = useState({ nodes: [], links: [] });
-
-  useEffect(() => {
-    fetch("/api/notes/graph")
-      .then((res) => res.json())
-      .then((data) => setGraphData(data));
-  }, []);
-
-  return (
-    <div className="graph" style={{ display: 'flex', margin: 'auto', width: '100%', overflow: 'hidden'}}>
-      <ForceGraph data={graphData} />
-    </div>
-  );
-};
 
 export const NotesPage = () => {
   const [notes, setNotes] = useState([]);
@@ -41,10 +22,6 @@ export const NotesPage = () => {
     <div className={garden.wrapper}>
       <section style={{ padding: 0, margin: "auto" }}>
         <h1>Digital Garden</h1>
-        <p className="prose blur">
-          I have my life separated into the sectors: Physical, Mental, Intellectual, Financial, Occupational,
-          Organisational, Recreational, Social, and Spiritual.
-        </p>
         <input
           type="text"
           placeholder="Search notes..."
@@ -66,12 +43,11 @@ export const NotesPage = () => {
           <Suspense>
             {filteredNotes.length > 0 ? (
               filteredNotes.map(({ slug, data }) => (
-                <li key={slug} className="">
+                <li key={slug} className="garden.note">
                   <Link href={`/notes/${slug}`} className="">
-                    {data?.title || slug.split("-").join(" ")}
+                    <small className={garden["note-title"]}>{data?.title || slug.split("-").join(" ")}</small>
+                   <small className={garden["note-date"]}>{data?.date?.toLocaleString() || ""}</small>
                   </Link>
-                  <br />
-                  <small>{data?.date?.toLocaleString() || ""}</small>
                 </li>
               ))
             ) : (
@@ -79,11 +55,6 @@ export const NotesPage = () => {
             )}
           </Suspense>
         </ul>
-      </section>
-      <section style={{ padding: 0, margin: "auto" }}>
-        <Suspense fallback={"loading..."}>
-          <Graph />
-        </Suspense>
       </section>
     </div>
   );
