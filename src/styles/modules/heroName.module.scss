@@ -8,7 +8,7 @@
 	position: relative;
 	// width: 100vw;
 	max-width: 45rem;
-	height: clamp(1rem, 25vw, 12rem);
+	height: clamp(1rem, 25vw, 8rem);
 	margin: 1rem;
 	user-select: none;
 
@@ -55,15 +55,6 @@
 		padding: 0;
 	}
 
-}
-.container .text .icon {
-	position: absolute;
-	width: clamp(2rem, 1.5vw, 10rem);
-	stroke-width: 25px;
-	stroke: rgba($color: var(--borderColor), $alpha: 0.5);
-	transform: translate(-50%, -50%);
-	animation: scaleUpdown 3000ms ease-in-out infinite;
-	color: var(--secondary);
 }
 
 .container .text .icon:nth-child(1) {
