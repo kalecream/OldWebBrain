@@ -30,6 +30,16 @@ interface NowDataProps {
 
 const NowData: NowDataProps[] = [
   {
+    year: 2026,
+    summary: "Planned.",
+    seasons: [
+      {
+        season: "Winter",
+        summary: "Backlog now cleared. It's time to cash out on my unrealised goals from previous years",
+  },
+    ],
+  },
+  {
     year: 2025,
     summary: "Ongoing.",
     seasons: [
