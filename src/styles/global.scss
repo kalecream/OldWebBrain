@@ -169,7 +169,6 @@ nav {
 	width: 100vw;
 	backdrop-filter: blur(10px);
 	align-items: center;
-	gap: 1rem;
 
 	@include breakpoint-range($from: mobile) {
 		flex-direction: column;
@@ -178,7 +177,8 @@ nav {
 
 	@include breakpoint-range($from: desktopSmall) {
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: end;
+		padding: 1rem 2rem;
 	}
 
 	& > div {
