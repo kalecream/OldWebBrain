@@ -27,14 +27,14 @@ const MusicPlayer: React.FC<PlayerProps> = ({ audioSrc, songTitle, audioLink }) 
         className={styles.playPauseIcon}
         style={isPlaying ? { filter: "" } : { filter: "saturate(0)", transition: "0" }}
       >
-        {isPlaying ? "🪷" : "🎵"}
+        {isPlaying ? "⏸" : "𝆕"}
       </span>
       <div className={styles.songInfo}>
         {isPlaying ? "Play: " : "Playing: "}
         <Link href={audioLink} target="_blank">{` ${songTitle}`}</Link>
       </div>
       <audio ref={audioRef} src={audioSrc} autoPlay loop />
-    </div>
+  </div>
   );
 };
 

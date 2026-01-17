@@ -1,19 +1,14 @@
 .miniplayer {
   position: fixed;
   bottom: 20px;
-  left: 25px;
+  left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 8px;
-  user-select: none;
-  // background-color: rgb(60, 60, 60);
-  color: var(--secondary);
   width: 25px;
   height: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-
 
   &:hover {
     border: 1px dashed var(--secondary);
@@ -27,18 +22,16 @@
 }
 
 .playPauseIcon {
-  font-size: 10px;
-  margin: 0;
+  font-size: 15px;
 }
 
 .songInfo {
   position: absolute;
-  bottom: 10px;
-  left: 60px;
+  bottom: 5px;
+  left: 50px;
   background: var(--backgroundColor);
   color: var(--primary);
   padding: 0.5rem;
-  font-size: 1.2rem;
   border-radius: var(--borderRadius);
   opacity: 0;
   visibility: hidden;
