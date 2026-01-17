@@ -3,7 +3,6 @@ import hero from "@styles/modules/Index.module.scss";
 import button from "@styles/modules/Button.module.scss";
 import { HeroModel } from "@components/threeJS/HeroModel.jsx";
 import Link from "next/link";
-import HeroName from "./heroName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 const Hero = () => {

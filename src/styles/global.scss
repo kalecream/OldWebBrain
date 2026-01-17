@@ -116,7 +116,7 @@ $font-path: '../../public/fonts';
 	--backgroundColor: #f2f0e9;
 	--primary: #331200;
 	--secondary: #b12603;
-	--backgroundImage: url('https://i.imgur.com/vLMwD96.png');
+	--backgroundImage: url('http://41.media.tumblr.com/tumblr_lxwynw0Pdg1r9g6hvo4_250.png');
 	--textColor: var(--primary);
 	--textColorAlt: #030637;
 	--border: 1px solid rgba(0, 0, 0, 0.1);
@@ -160,7 +160,7 @@ $font-path: '../../public/fonts';
 
 html {
 	color: var(--textColor);
-	line-height: 1.5;
+	line-height: 1.6;
 	font-family: var(--bodyFont);
 }
 
@@ -227,7 +227,7 @@ nav {
 
 .social-media {
   margin: 0 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--primary);
 }
 
@@ -245,14 +245,14 @@ footer {
 	bottom: 0;
 	position: fixed;
 	width: 100%;
-	font-size: 0.7rem;
+	font-size: 0.5rem;
 	align-items: center;
 	text-transform: uppercase;
 	display: flex;
 	backdrop-filter: blur(10px);
 	z-index: 5;
 
-	& *>div {
+	& * >div {
 		padding: 0.5rem 0;
 	}
 
