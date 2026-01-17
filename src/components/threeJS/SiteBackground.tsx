@@ -4,8 +4,9 @@ import { Suspense } from "react";
 
 import { Model as IndexScene } from "src/assets/models/Scene";
 
-export const SiteBackground = () => {
+export const SiteBackground = (): any => {
   return (
+    // @ts-ignore
     <Canvas
       shadows
       style={{

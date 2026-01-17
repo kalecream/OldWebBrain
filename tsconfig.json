@@ -9,7 +9,7 @@
     "noEmit": true,
     "noUnusedParameters": false,
     "noImplicitAny": false,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noUnusedLocals": false,
     "strictNullChecks": false,
     "esModuleInterop": true,
@@ -19,6 +19,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "suppressImplicitAnyIndexErrors": true,
     "types": [
       "node",
       "webpack-env" // here

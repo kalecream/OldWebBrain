@@ -3,6 +3,7 @@
 .vscode/
 _static/
 yarn.lock
+*.log
 
 # dependencies
 **/node_modules/
