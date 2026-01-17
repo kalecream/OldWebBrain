@@ -35,8 +35,8 @@ export const PageRoutes: PageRoutesProps[] = [
     category: "personal",
   },
   {
-    route: "/c25k",
-    date: new Date(2024, 8, 11, 0, 11),
+    route: "/fitness",
+    date: new Date(2026, 1, 17, 0, 11),
     priority: 0.2,
     category: "personal",
   },

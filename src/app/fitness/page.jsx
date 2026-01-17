@@ -1,7 +1,7 @@
 "use client";
 import { Suspense, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import Runs from "@data/runs";
+import Runs from "./runs";
 import Link from "next/link";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { WindowWidth } from "@utils/windowDimmensions";
@@ -71,11 +71,11 @@ const SplitChart = () => {
 
 const C25KPage = () => {
   useEffect(() => {
-    document.title = "C25K | Yung Higue ";
+    document.title = "Fitness | Yung Higue ";
   }, []);
 
   return (
-    <section style={{ minHeight: "80vh" }}>
+    <section>
       <h1>Couch to 5K</h1>
       <div className="flex column">
         <Suspense fallback={<Skeleton count={1} />}>

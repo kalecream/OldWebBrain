@@ -57,7 +57,6 @@
 .month {
 	display: flex;
 	justify-content: space-between;
-	font-size: 2.5rem;
 	list-style: none;
 	margin: 1rem 0 0 0;
 }
@@ -70,7 +69,6 @@
 }
 
 .list {
-
 	&__section div {
 		display: flex;
 		flex-direction: row;
@@ -80,7 +78,7 @@
 	&__date {
 		display: flex;
 		font-weight: 600;
-		font-size: clamp(1.5rem, 2vw, 2rem);
+		font-size: 1.2rem;
 		align-items: center;
 
 		@include breakpoint-range($from: mobile) {
@@ -95,19 +93,18 @@
 	&__title {
 		align-self: center;
 		line-height: 1.2;
-		font-size: 1.6rem;
+		font-size: 1.2rem;
 		margin: 0;
 		word-wrap: break-word;
 		text-transform: capitalize;
-		font-family: "Garamond Italics";
+		font-family: 'Poppins', sans-serif;
 	}
 
 	&__description {
-		max-width: 35rem;
-		margin: 0.3rem 0;
-		font-size: 1.2rem;
+		max-width: 30rem;
+		margin: 0;
+		font-size: 1rem;
 		line-height: 1.1;
-		// font-family: "Garamond Italics";
 		opacity: 0.7;
 		color: var(--textColor);
 	}

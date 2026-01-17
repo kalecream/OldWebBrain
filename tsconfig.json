@@ -9,7 +9,7 @@
     "noEmit": true,
     "noUnusedParameters": false,
     "noImplicitAny": false,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noUnusedLocals": false,
     "strictNullChecks": false,
     "esModuleInterop": true,

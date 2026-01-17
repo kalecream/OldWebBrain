@@ -18,18 +18,18 @@ type Month = {
 const BlogDateSplit = (posts) => {
   let years: Year[] = [];
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
     "June",
     "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
   posts.forEach((post) => {
@@ -88,9 +88,9 @@ export const BlogPosts = () => {
               {year.months.map((month, i) => (
                 <div className={blog.month_lump} key={i}>
                   <li className={blog.nolist} key={i}>
-                    <h1 className={blog.month}>
+                    <h2 className={blog.month}>
                       <span>{month.name}</span> <span>{i === 0 && year.date}</span>
-                    </h1>
+                    </h2>
                     <ul>
                       {month.posts.map((post) => (
                         <li key={post.slug} className={blog.post + ` no-marker h-entry`}>
@@ -100,16 +100,8 @@ export const BlogPosts = () => {
                                 <span className={blog.list__date + ` dt-published`}>
                                   {post.metadata.date.slice(-2)}
                                 </span>
-                                <h2 className={blog.list__title + ` p-name`}>{post.metadata.title}</h2>
+                                <h3 className={blog.list__title + ` p-name`}>{post.metadata.title}</h3>
                               </div>
-                              {/* <p className={blog.list__tags}>
-                              {post.metadata.tags.split(",").map((tag, i) => (
-                                <span key={i} className={blog.list__tag}>
-                                  {tag}
-                                </span>
-                              ))}
-                            </p> */}
-
                               <p className={blog.list__description + ` e-content`}>{post.metadata.description}</p>
                             </div>
                           </Link>

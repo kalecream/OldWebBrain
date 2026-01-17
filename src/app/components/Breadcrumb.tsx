@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import SiteImage from "@assets/images/ouroburos.svg";
-import style from "@styles/modules/nav.module.scss";
 import styles from "./Breadcrumb.module.scss";
 
 interface BreadcrumbItem {
@@ -26,16 +25,16 @@ const Breadcrumb: React.FC = () => {
   return (
     <div aria-label="breadcrumb" style={{ display: "flex" }}>
       {path && path !== "/" && (
-        <>
-          <Link href="/" className={style["site-name"]}>
-            <Image src={SiteImage} alt="logo" width={100} height={100} />
-          </Link>
+        <>          
+        <Link href="/" className="site-name">
+          <Image src={SiteImage} alt="logo" width={80} height={80} />
+        </Link>
         </>
       )}
       <ol className={styles.breadcrumbList}>
         {breadcrumbItems.map((item, index) => (
           <li key={index} className={styles.breadcrumbItem} style={{ paddingLeft: 0 }}>
-            <Link href={item.href}>{item.label}</Link>
+            <Link href={item.href}><h1>{item.label}</h1></Link>
           </li>
         ))}
       </ol>

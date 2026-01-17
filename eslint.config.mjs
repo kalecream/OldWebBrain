@@ -2,7 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
-
+import pluginImport from "eslint-plugin-import";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -11,4 +11,18 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  pluginImport.flatConfigs.recommended,
+  {
+    rules: {
+      "react/react-in-jsx-scope": 0,
+      "react/display-name": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/explicit-module-boundary-types": 0,
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
 ];

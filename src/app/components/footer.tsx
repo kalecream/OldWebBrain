@@ -17,7 +17,7 @@ export const SocialMediaList = () => {
             key={media.name}
             rel="me"
           >
-            <Icon name={media.name} style={{ scale: "1.5", margin: "0 1rem" }} />
+            <Icon name={media.name} style={{ scale: "1.3", margin: "0 1rem" }} />
           </Link>
         );
       })}
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
   return (
     <footer>
       <div className="flex">
-        <small>Yung Higue &copy; {new Date().getFullYear()}</small>
+        <small>Yung Higue &copy; 2018 - {new Date().getFullYear()}</small>
       </div>
     </footer>
   );

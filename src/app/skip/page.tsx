@@ -43,11 +43,7 @@ const SkipPage = () => {
           As a Yung Higue, I want our stories to continue to evolve rather than being frozen in time.
         </p>
         <p className="prose blur">
-          Please sign my{" "}
-          <Link className="internal-link" href="/guestbook">
-            guestbook
-          </Link>
-          ! I have a 88x31 website button!
+          I have a 88x31 website button!
         </p>
         <span className="center" style={{ margin: "0 auto" }}>
           <Image width={88} height={31} alt="" src="https://i.imgur.com/jOZv4jt.gif" style={{ borderRadius: "0" }} />

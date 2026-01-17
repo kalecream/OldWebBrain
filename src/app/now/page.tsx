@@ -8,10 +8,9 @@ const NowPage = () => {
   return (
     <>
       <section>
-        <h1>Now.</h1>
         <div className="prose">
           <p className="blur">
-            The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>. If you'd like to know if I'm focused on anything right this second you can check <Link href={"https://www.focumon.com/focus_with/YungHigue"}>here</Link>. 
+            The idea of a now page came from <Link href={"https://sive.rs/now3"}>Derek Sivers</Link>.
           </p>
         </div>
       </section>
@@ -19,7 +18,7 @@ const NowPage = () => {
         {nowData.map((year, index) => (
           <details key={index} className={style.collapse}>
             <summary className={style.year}>
-              <h1>{year.year}</h1>
+              <h2>{year.year}</h2>
               <p>
                 <i>{year.summary}</i>
               </p>
@@ -28,9 +27,9 @@ const NowPage = () => {
               {year.seasons.map((season, index) => (
                 <details open key={index} className={style.collapse}>
                   <summary className={style.year}>
-                    <h2>
+                    <h3>
                       {year.year}-{season.season}
-                    </h2>
+                    </h3>
                   </summary>
                   <p className="blur">{season.summary}</p>
                   {season.goals && (
