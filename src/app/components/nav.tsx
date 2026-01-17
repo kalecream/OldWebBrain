@@ -4,7 +4,7 @@ import style from "@styles/modules/nav.module.scss";
 import Directory from "@data/directory";
 import Breadcrumb from "./Breadcrumb";
 import ThemeSwitch from "@components/navigation/theme-toggle";
-import { FaRss } from "react-icons/fa6";
+import { FaRss } from "react-icons/fa";
 
 export function Navbar() {
   return (

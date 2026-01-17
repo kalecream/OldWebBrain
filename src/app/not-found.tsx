@@ -18,7 +18,7 @@ const NotFound = () => {
         <h1>This page doesn't exist</h1>
         <p className="prose" style={{ textAlign: "center" }}>
           If you expected to see something here,
-          <br /> let me know at <Link href={"mailto:sab@yunghigue.com"}>sab@yunghigue.com</Link>.
+          <br /> let me know at <Link href={"mailto:yunghigue@gmail.com"}>yunghigue@gmail.com</Link>.
         </p>
       </div>
     </section>

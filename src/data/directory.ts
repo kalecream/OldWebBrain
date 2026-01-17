@@ -18,10 +18,6 @@ const Directory = [
   {
     title: "Contact",
     links: "/contact",
-  },
-  {
-    title: "Guestbook",
-    links: "/guestbook",
   }
 ];
 
