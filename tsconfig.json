@@ -19,7 +19,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "suppressImplicitAnyIndexErrors": true,
     "types": [
       "node",
       "webpack-env" // here
