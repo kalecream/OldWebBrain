@@ -2,6 +2,8 @@
 @import 'animations';
 @import 'mediaQuery';
 
+$font-path: '../../public/fonts';
+
 @font-face {
 	font-family: "Fira Code";
 	font-style: normal;
@@ -83,6 +85,19 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("Poppins"),
+	 url('#{$font-path}/Poppins-Light.ttf'),
+	  url('#{$font-path}/Poppins-Regular.ttf')
+	 url('#{$font-path}/Poppins-Medium.ttf');
+	font-display: swap;
+}
+
+
 :root {
 	--sharpBorderRadius: 5px;
 	--borderRadius: 10px;
@@ -91,7 +106,7 @@
 	--paddingObject: 1rem;
 	--paddingObjectSmall: 0.5rem;
 	--transition: all 0.5s ease-in-out;
-  --bodyFont: 'Garamond';
+  --bodyFont: 'Poppins', sans-serif;
 	--headingFont: 'Roman';
 	--accentFont: 'Cattedrale', serif;
 	--hr-line-offset: 25%;
@@ -552,7 +567,7 @@ ul {
 
 p,
 li {
-	font-size: clamp(1.2rem, -0.8750rem + 8.3333vw, 1.6rem);
+	font-size: clamp(1rem, -0.8750rem + 8.3333vw, 1.2rem);
 }
 
 p > a,
