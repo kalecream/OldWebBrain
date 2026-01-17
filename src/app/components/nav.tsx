@@ -11,14 +11,12 @@ export function Navbar() {
     <header id="header">
       <nav id="nav">
         <Breadcrumb />
-        <div className="nav_section">
+        <div id="nav-section">
           {Directory.length > 0 &&
             Directory.map((directory, index) => (
-              <div key={index}>
-                <Link className={style["directory-link"]} href={directory.links}>
-                  {directory.title}
-                </Link>
-              </div>
+              <Link key={index} className="directory-link" href={directory.links}>
+                {directory.title}
+              </Link>
             ))}
           <Link
             href="/feed.xml"
