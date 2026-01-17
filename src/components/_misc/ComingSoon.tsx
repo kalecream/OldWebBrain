@@ -1,11 +1,12 @@
-import HeroName from "@components/hero/heroName/heroName";
+
 import Link from "next/link";
 
 export const ComingSoon = () => {
   return (
     <div style={{ textAlign: "center", width: "100%" }}>
       <section style={{ minHeight: "90vh", lineHeight: "1" }}>
-        <HeroName name={"Coming Soon"} />
+        
+        <h1>Coming Soon!</h1>
       </section>
       <Link href={"/"}>⟵ back</Link>
     </div>

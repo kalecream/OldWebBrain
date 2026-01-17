@@ -3,7 +3,7 @@ import hero from "@styles/modules/Index.module.scss";
 import button from "@styles/modules/Button.module.scss";
 import { HeroModel } from "@components/threeJS/HeroModel.jsx";
 import Link from "next/link";
-import HeroName from "@components/hero/heroName/heroName";
+import HeroName from "./heroName";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
 const Hero = () => {
@@ -13,28 +13,23 @@ const Hero = () => {
         <div className={hero.model}>
           <HeroModel />
           <div className={hero.cta}>
-          <div className={` ` + hero.text}>
-            <HeroName name={"Yung Higue"} />
-              <center>
-                <p className="p-note">
-                  A cross between{" "}
-                  <Link href="https://github.com/kalecream" rel="me">
-                    a portfolio
-                  </Link>
-                  ,{" "}
-                  <Link href="https://mstdn.social/@KaleCream" rel="me">
-                    a playground,
-                  </Link>
-                  <wbr />
-                  <Link href="mailto:sab@yunghigue.com" rel="me">
-                    {" "}
-                    and a prayer
-                  </Link>
-                  .
-                </p>
-              </center>
-            </div>
-
+            <h1 className={hero.name}>Yung Higue</h1>
+            <div className={hero.text}> <p className="p-note">
+              A cross between{" "}
+              <Link href="https://github.com/kalecream" rel="me">
+                a portfolio
+              </Link>
+              ,{" "}
+              <Link href="https://mstdn.social/@KaleCream" rel="me">
+                a playground,
+              </Link>
+              <wbr />
+              <Link href="mailto:sab@yunghigue.com" rel="me">
+                {" "}
+                and a prayer
+              </Link>
+              .
+            </p></div>
             <div className={button.container}>
               <Link href="/professional">
                 <button className={button.vamp} role="button">

@@ -38,22 +38,37 @@
 .cta {
 	@extend .section;
 	position: absolute;
-	
+
+	.name {
+		font-size: clamp(3rem, 20vw, 9.5rem);
+		max-width: 100%;
+		line-height: 1;
+		font-family: "Cattedrale Rough", sans-serif;
+		text-transform: capitalize;
+		-webkit-text-stroke: 2px solid var(--border);
+		letter-spacing: -2px;
+		user-select: none;
+		pointer-events: none;
+		stroke: var(--border);
+		animation: upDown 10s ease-in-out infinite;
+	}
+
 	.text {
 		border-radius: var(--borderRadius);
 		font-weight: 300;
 		text-align: center;
 		color: var(--textColor);
 
-		& p, small {
+		& p,
+		small {
 			backdrop-filter: blur(5px);
 			border-radius: var(--borderRadius);
 		}
 
 		& p {
 			line-height: 1.2;
-			font-size: 1.2rem;
-			margin-top: 5rem;
+			font-size: 1rem;
+			margin-top: 3rem;
 			max-width: 35rem;
 		}
 	}
@@ -72,7 +87,7 @@
 		left: 20%;
 		background: transparent;
 		width: fit-content;
-		min-height: 70%;	
+		min-height: 70%;
 	}
 
 	@include breakpoint-range($from: desktopSmall) {
@@ -86,11 +101,11 @@
 	display: flex;
 	position: absolute;
 	bottom: 2%;
-	
+
 	margin: 0 auto;
 
 	@include breakpoint-range($from: mobile, $to: desktopSmall) {
-	 & #hero-model {
+		& #hero-model {
 			display: none;
 		}
 	}
@@ -98,11 +113,25 @@
 	@include breakpoint-range($from: desktopSmall) {
 		left: 0%;
 		flex-direction: row;
-		
+
 		& #hero-model {
 			display: block;
 		}
 
-		
+
+	}
+}
+
+@keyframes upDown {
+
+	0%,
+	100% {
+		opacity: 1;
+		transform: translate(0, 0%);
+	}
+
+	50% {
+		opacity: 0.5;
+		transform: translate(0, -10%);
 	}
 }
