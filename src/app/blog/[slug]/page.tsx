@@ -56,16 +56,16 @@ const formatDate = (date: string) => {
   if (daysAgo < 1) {
     return "Today";
   } else if (daysAgo < 7) {
-    return `${fullDate} (${daysAgo}d ago)`;
+    return `${fullDate} - ${daysAgo}d ago`;
   } else if (daysAgo < 30) {
     const weeksAgo = Math.floor(daysAgo / 7);
-    return `${fullDate} (${weeksAgo}w ago)`;
+    return `${fullDate} - ${weeksAgo}w ago`;
   } else if (daysAgo < 365) {
     const monthsAgo = Math.floor(daysAgo / 30);
-    return `${fullDate} (${monthsAgo}mo ago)`;
+    return `${fullDate} - ${monthsAgo}mo ago`;
   } else {
     const yearsAgo = Math.floor(daysAgo / 365);
-    return `${fullDate} (${yearsAgo}y ago)`;
+    return `${fullDate} - ${yearsAgo}y ago`;
   }
 };
 
@@ -103,13 +103,13 @@ export default function Blog({ params }) {
       <div className="info">
         <Suspense fallback={<p />}>
           <p className="text-center">
-            <PageReadTime readingSpeedWPM={250} /> — {formatDate(post.metadata.date)}
+            <PageReadTime readingSpeedWPM={250} /> <br/> {formatDate(post.metadata.date)}
           </p>
         </Suspense>
-        <h1 className="title">{post.metadata.title}</h1>
-        <h2 className="text-center">
+        <h2 className="title">{post.metadata.title}</h2>
+        <h3 className="text-center">
           <i>{post.metadata.description}</i>
-        </h2>
+        </h3>
         <br />
       </div>
       <article>

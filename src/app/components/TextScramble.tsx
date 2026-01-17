@@ -74,7 +74,7 @@ interface TextScrambleComponentProps {
 }
 
 const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases }) => {
-  const defaultPhrases = ["I am what I show up and do every day.", "Nothing more,<br/> nothing less."];
+  const defaultPhrases = ["I am what I show up and do every day.", "I am who I think I am.", "I am a work in progress."];
 
   const textRef = useRef<HTMLDivElement | null>(null);
   const fxRef = useRef<TextScramble | null>(null);

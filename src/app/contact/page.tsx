@@ -6,14 +6,14 @@ const ContactPage = () => {
     <>
       <section style={{ minHeight: "100vh", textAlign: "center", gap: "3rem" }}>
         <div>
-          <p>The best way to get me is to e-mail me at</p>
-          <h1 style={{ lineHeight: "1.2" }}>
+          <p>The best way is to e-mail me at</p>
+          <span style={{ lineHeight: "1.2", color: "var(--secondary)", fontFamily: "Roman", fontSize: "3rem" }}>
             <Link href="mailto:yunghigue@gmail.com">
               yunghigue
               <wbr />
               @gmail.com
             </Link>
-          </h1>
+          </span>
         </div>
         <div>
           <SocialMediaList />

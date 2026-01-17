@@ -2,12 +2,12 @@
 .breadcrumbList {
     display: flex;    
     flex-flow: row wrap;
-    max-width: 55rem;
     align-items: center;
     list-style: none;
+    font-size: 1rem;
     padding: 0;
     margin: 0;
-    padding-right: 4rem;
+    margin-right: 2rem;
 
     & li::marker {
         content: '';
@@ -15,7 +15,8 @@
 }
 
 .breadcrumbItem {
-    float: left;
+    margin-bottom: -2rem;
+    margin-right: 0.5rem;
 }
 
 .breadcrumbItem a {

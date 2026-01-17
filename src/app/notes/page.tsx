@@ -20,8 +20,7 @@ export const NotesPage = () => {
 
   return (
     <div className={garden.wrapper}>
-      <section style={{ padding: 0, margin: "auto" }}>
-        <h1>Digital Garden</h1>
+      <section style={{ padding: 0, margin: "auto", marginTop: "3rem"  }}>
         <input
           type="text"
           placeholder="Search notes..."
@@ -29,7 +28,7 @@ export const NotesPage = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           style={{
-            maxWidth: "45rem",
+            maxWidth: "65rem",
             width: "100%",
             height: "2.5rem",
             padding: "1rem",
