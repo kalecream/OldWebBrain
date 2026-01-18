@@ -4,10 +4,8 @@ import { ServiceCard } from "./ServiceCard";
 const ProfessionalPage = () => {
   return (
     <section>
-      <h1>Services</h1>
-      <p className="prose center" style={{ margin: "-1rem auto" }}>
-        Look at the portfolio for each below and{" "}
-        <Link href="mailto:sab@yunghigue.com">reach out to me via email</Link>.
+      <p className="prose center" style={{ margin: "0 auto" }}>
+        View the portfolio for each section below.
       </p>
       <ServiceCard />
     </section>
