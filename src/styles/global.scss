@@ -624,6 +624,55 @@ image {
 	border-radius: var(--borderRadius);
 }
 
+label {
+    font-weight: 600;
+    text-align: left;
+    color: var(--textColor);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.1rem;
+    border: none;
+    border-bottom: 1px dashed rgba(136, 0, 0, 0.2);
+    background: var(--inputBackground);
+    color: var(--textColor);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+
+    &:focus {
+        outline: none;
+		background:none;
+        border-bottom: 1px solid var(--primary);
+    }
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 600;
+        text-align: left;
+        color: var(--textColor);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        opacity: 0.8;
+        margin: 0;
+    }
+
+    &:active {
+		background: none;
+        border: none;
+        border-bottom: 1px dashed var(--primary);
+    }
+}
+
 kbd,
 .kbd {
 	display: inline-block;
