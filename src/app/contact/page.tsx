@@ -36,7 +36,7 @@ function ContactForm() {
           id="message"
           name="message"
           rows={5}
-          placeholder="<3 hey, what's up? Give me a message, suggestion or feddback here. If you give a return e-mail address I'll get back you asap!"
+          placeholder="<3 hey, what's up? Give me a message, suggestion or feedback here. If you give a return e-mail address I'll get back you asap!"
           required
         ></textarea>
         <ValidationError
@@ -83,7 +83,7 @@ const ContactPage = () => {
             <FaPhone size={24} className={button.icon} />
             <div className={button["glass-text"]}>
               <p className={button.title}>Book A Video Call</p>
-              <p className={button.info}>Schedule a meeting via Google Calendar</p>
+              <p className={button.info}>Schedule via Google Calendar</p>
             </div>
             <FaArrowRightLong className={button.arrow} size={20} />
           </button>
@@ -106,7 +106,7 @@ const ContactPage = () => {
           >
             <FaWhatsapp size={24} className={button.icon} />
             <div className={button["glass-text"]}>
-              <p className={button.title}>Whatsapp</p>
+              <p className={button.title}>Whatsapp me</p>
               <p className={button.info}>+1-876-413-5825</p>
             </div>
             <FaArrowRightLong className={button.arrow} size={20} />
@@ -118,7 +118,7 @@ const ContactPage = () => {
           >
             <FaTelegram size={24} className={button.icon} />
             <div className={button["glass-text"]}>
-              <p className={button.title}>Telegram</p>
+              <p className={button.title}>shoot me a Telegram</p>
               <p className={button.info}>@YungHigue</p>
             </div>
             <FaArrowRightLong className={button.arrow} size={20} />
