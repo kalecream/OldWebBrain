@@ -9,7 +9,7 @@ function ContactForm() {
   const [state, handleSubmit] = useForm("mlgblggp");
 
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    return <p>♡ Message Sent! ♡</p>;
   }
   return (
     <form onSubmit={handleSubmit}
