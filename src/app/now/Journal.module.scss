@@ -1,0 +1,222 @@
+.journal {
+    opacity: 1;
+    transition: opacity 250ms;
+}
+
+@keyframes Blink {
+    0% { opacity: 1; rotate: -2deg; }
+    50% { opacity: 0.8; rotate: 2deg; }
+    100% { opacity: 1; rotate: -2deg; }
+}
+
+.journal-title {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--secondary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.journal-cover {
+    background: no-repeat center/100% url('https://i.imgur.com/SOEJCKg.png');
+    background-size: cover;
+    cursor: pointer;
+    height: auto;
+    margin: 2rem auto;
+    width: 420px;
+    scale: 0.65;
+    aspect-ratio: 4/5;
+
+    &:hover {
+        rotate: -2deg;
+        transition: rotate ease-in-out 250ms;
+    }
+    
+    &:not(:hover) {
+        rotate: -15deg;
+        transition: rotate ease-in-out 250ms;
+        animation: Blink 8s ease-in-out infinite;
+    }
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+}
+
+
+.is-open .journal-cover {
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+.is-open {
+    background: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.modal-frame {
+    scale: 0.85;
+    background: url('https://i.imgur.com/j7CbR9d.png') no-repeat center/100%;
+    opacity: 0;
+    transition: opacity 250ms;
+    width: 1000px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+}
+
+.modal-frame .wrap {
+    padding: 0 4em;
+}
+
+.is-open .modal-frame {
+    opacity: 1;
+    transition: opacity 250ms;
+    z-index: 1002;
+}
+
+.journal-pages {
+    position: relative;
+    height: 0;
+    padding-bottom: 80%;
+}
+
+.journal-pages .wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.journal-pages-interior {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    display: none;
+}
+
+.journal-pages-interior.active {
+    display: flex;
+    justify-content: space-around;
+}
+
+.journal-pages-interior .page {
+    flex-basis: calc(50% - 8em);
+    padding: 1rem 0;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.journal-pages-interior.active .page {
+    height: 0;
+    padding-bottom: 100%;
+    opacity: 1;
+}
+
+.nav-arrow {
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 250ms;
+    z-index: 9999;
+    height: auto;
+    width: 100px;
+    aspect-ratio: 1/1;
+}
+
+.nav-arrow-right {
+    left: auto;
+    right: -15%;
+}
+
+.nav-arrow i,
+.nav-arrow svg {
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: color 250ms;
+}
+
+.nav-arrow:hover i,
+.nav-arrow:hover svg {
+    color: #fff;
+    transition: color 250ms;
+}
+
+.nav-arrow.show {
+    opacity: 1;
+    transition: opacity 250ms;
+}
+
+.icon-close {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: color 250ms;
+    z-index: 1004;
+}
+
+.icon-close:hover {
+    color: #fff;
+    transition: color 250ms;
+}
+
+.page h1 {
+    font-family: var(--headingFont);
+    text-transform: capitalize;
+    color: #000;
+    font-size: 1.8rem;
+    transform: rotate(-1.5deg);
+    border-bottom: 1px solid #000;
+    padding-top: 3rem;
+}
+
+.page p {
+    width: 18rem;
+}
+
+.page p,
+.page ul,
+.page div {
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    color: #000;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    transform: rotate(-1.5deg);
+}
+
+.page p.quote {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    font-weight: 800;
+    font-size: 0.6em;
+    text-transform: uppercase;
+}

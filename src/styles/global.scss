@@ -160,7 +160,7 @@ $font-path: '../../public/fonts';
 
 html {
 	color: var(--textColor);
-	line-height: 1.6;
+	line-height: 1.5;
 	font-family: var(--bodyFont);
 }
 
@@ -199,46 +199,47 @@ nav {
 		color: var(--textColor);
 	}
 
-	& >div {
+	&>div {
 		display: flex;
 		flex-flow: row wrap;
 		gap: 1rem;
 		justify-content: center;
 	}
 }
-.site-name {
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-self: center;
 
-  &:hover {
-    rotate: 45deg;
-    transition: ease-in 3ms;
-  }
+.site-name {
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+
+	&:hover {
+		rotate: 45deg;
+		transition: ease-in 3ms;
+	}
 }
 
 .social-media-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .social-media {
-  margin: 0 1rem;
-  font-size: 1rem;
-  color: var(--primary);
+	margin: 0 1rem;
+	font-size: 1rem;
+	color: var(--primary);
 }
 
 #nav-section {
-		&:first-child {
-			float: left;
-		}
+	&:first-child {
+		float: left;
+	}
 
-		&:last-child {
-			float: right;
-		}
+	&:last-child {
+		float: right;
+	}
 }
 
 footer {
@@ -252,7 +253,7 @@ footer {
 	backdrop-filter: blur(10px);
 	z-index: 5;
 
-	& * >div {
+	& *>div {
 		padding: 0.5rem 0;
 	}
 
@@ -459,6 +460,24 @@ fieldset {
 	backdrop-filter: blur(10px) saturate(150%);
 }
 
+.glass-panel {
+	background-color: rgba(0, 0, 0, 0.01);
+	box-shadow: var(--boxShadow);
+	border: 1px solid rgba(255, 255, 255, 0.23);
+	border-radius: var(--borderRadius);
+
+	@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+		background-color: rgba(36, 0, 0, 0.1);
+		-webkit-backdrop-filter: blur(20px);
+		backdrop-filter: blur(20px);
+	}
+
+	@include breakpoint-range($from: mobile, $to: tablet) {
+		backdrop-filter: none;
+		background-color: var(--backgroundColor);
+	}
+}
+
 .glassmorphic {
 	//  background-color: rgba(255, 255, 255, .4);
 	// padding: var(--paddingContainer);
@@ -593,7 +612,7 @@ ul {
 
 p,
 li {
-	font-size: clamp(1rem, -0.8750rem + 8.3333vw, 1.2rem);
+	font-size: clamp(0.8rem, -0.8750rem + 8.3333vw, 1.05rem);
 }
 
 p>a,
@@ -625,52 +644,52 @@ image {
 }
 
 label {
-    font-weight: 600;
-    text-align: left;
-    color: var(--textColor);
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.8;
-    margin: 0;
+	font-weight: 600;
+	text-align: left;
+	color: var(--textColor);
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity: 0.8;
+	margin: 0;
 }
 
 input,
 textarea {
-    width: 100%;
-    padding: 0.1rem;
-    border: none;
-    border-bottom: 1px dashed rgba(136, 0, 0, 0.2);
-    background: var(--inputBackground);
-    color: var(--textColor);
-    font-size: 1rem;
-    font-family: inherit;
-    resize: vertical;
+	width: 100%;
+	padding: 0.1rem;
+	border: none;
+	border-bottom: 1px dashed rgba(136, 0, 0, 0.2);
+	background: var(--inputBackground);
+	color: var(--textColor);
+	font-size: 1rem;
+	font-family: inherit;
+	resize: vertical;
 
-    &:focus {
-        outline: none;
-		background:none;
-        border-bottom: 1px solid var(--primary);
-    }
-
-    &::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: 600;
-        text-align: left;
-        color: var(--textColor);
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        opacity: 0.8;
-        margin: 0;
-    }
-
-    &:active {
+	&:focus {
+		outline: none;
 		background: none;
-        border: none;
-        border-bottom: 1px dashed var(--primary);
-    }
+		border-bottom: 1px solid var(--primary);
+	}
+
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.6);
+		font-weight: 600;
+		text-align: left;
+		color: var(--textColor);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 1px;
+		opacity: 0.8;
+		margin: 0;
+	}
+
+	&:active {
+		background: none;
+		border: none;
+		border-bottom: 1px dashed var(--primary);
+	}
 }
 
 kbd,
@@ -794,6 +813,15 @@ kbd::after,
 	justify-content: center;
 	gap: 0.5rem;
 	// filter: saturate(25%);
+}
+
+.small-text {
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity: 0.8;
+	margin: 0;
 }
 
 .column {

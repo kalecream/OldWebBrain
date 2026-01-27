@@ -1,5 +1,41 @@
 @import "@styles/mediaQuery";
 
+.current {
+    max-width: 35rem;
+    padding: 0 1rem;
+    text-align: justify;
+    margin:  auto;
+}
+
+.heading {
+  font-family: var(--body-font);
+  text-align: left;
+  margin: 1rem auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 90vh;
+    margin: 1.5rem auto;
+
+    @media  screen and (max-width: 768px) {
+      margin-top: 3rem;
+    }
+
+    @media  screen and (max-width: 425px) {
+      margin-top: 5rem;
+    }
+}
+
 .collapse {
   margin-bottom: 2rem;
   width: 100%;

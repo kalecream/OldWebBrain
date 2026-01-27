@@ -1043,7 +1043,8 @@ const Books = [
     "title": "Debt: The First 5,000 Years",
     "author": "David Graeber",
     "genre": ["Non-fiction", "Economics", "Anthropology"],
-    "status": "Reading",
+    "status": "Read",
+    rating: 3.5,
     "pages": 544,
     "cover": "https://i.imgur.com/eVfQ8xh.jpeg",
     "format": "Paperback"
