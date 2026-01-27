@@ -64,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SpeedInsights />
             <BackToTop />
           </main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
