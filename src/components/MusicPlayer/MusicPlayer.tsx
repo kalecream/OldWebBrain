@@ -12,6 +12,8 @@ const MusicPlayer: React.FC<PlayerProps> = ({ audioSrc, songTitle, audioLink }) 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  audioRef.current && (audioRef.current.volume = 0.35);
+  
   const togglePlayPause = () => {
     if (isPlaying) {
       audioRef.current?.pause();
