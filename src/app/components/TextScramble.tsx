@@ -74,7 +74,7 @@ interface TextScrambleComponentProps {
 }
 
 const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases }) => {
-  const defaultPhrases = ["I am what I show up and do every day.", "I am who I think I am.", "I am a work in progress."];
+  const defaultPhrases = ["I am what I show up and do every day.", "I am a work in progress."];
 
   const textRef = useRef<HTMLDivElement | null>(null);
   const fxRef = useRef<TextScramble | null>(null);
@@ -97,7 +97,7 @@ const TextScrambleComponent: React.FC<TextScrambleComponentProps> = ({ phrases }
     return () => cancelAnimationFrame(fxRef.current?.frameRequest!);
   }, [usedPhrases]);
 
-  return <h1 ref={textRef} style={{ lineHeight: 1 }}></h1>;
+  return <span ref={textRef} style={{ lineHeight: 1, textAlign: "center", margin: "1rem" }} />;
 };
 
 export default TextScrambleComponent;
