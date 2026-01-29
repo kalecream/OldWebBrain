@@ -14,7 +14,7 @@ const Hero = () => {
           <div className={hero.cta}>
             <h1 className={hero.name}>Yung Higue</h1>
             <div className={hero.text}> <p className="p-note">
-              A cross between{" "}
+              A cross between<br/>
               <Link href="https://github.com/kalecream" rel="me">
                 a portfolio
               </Link>
