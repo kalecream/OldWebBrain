@@ -8,7 +8,6 @@ const SitemapPage = () => {
   });
   return (
     <section role="region" tabIndex={0}>
-      <h1>Readable Sitemap</h1>
       <p>
         {pages.map((r) => (
           <div key={r.route}>
