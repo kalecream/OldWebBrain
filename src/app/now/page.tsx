@@ -11,7 +11,7 @@ const NowPage = () => {
         <p>
           The idea of a now page came from <Link target="_blank" href={"https://sive.rs/now3"}>Derek Sivers</Link>.
         </p>
-        <h2 className={style.heading}>Current</h2>
+        <h2 className={style.heading}>Current - 2026-01-29</h2>
         <p>I'm studying Spanish, <Link target="_blank" href="https://lichess.org/@/anirbxs">Chess</Link> & for the CompTIA+ cert. I'm trying to get more professional certification and public projects out this quadrimester. I'm also working on my fitness. I'm starting out <Link href="/fitness">in Calisthenics and my running pace.</Link> </p>
         <p>The main focus is on increasing my income and creating standard operating practices (SOPs) in my personal and professional life so I can be more present with my family and friends later on in the year.</p>
         <hr />
