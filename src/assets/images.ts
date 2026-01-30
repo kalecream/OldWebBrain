@@ -434,7 +434,7 @@ const GPhotos: GalleryData[] = [
 export { GPhotos };
 
 import BiteSizedBingePoster from "./images/bitesizedbinge.webp";
-import { GalleryData } from "@app/about/Gallery";
+import { GalleryData } from "@app/blog/Gallery";
 
 const OtherMultimediaProjectPictures = [BiteSizedBingePoster];
 

@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { getBlogPosts } from "../db/blog";
-import blog from "@styles/modules/BlogSummary.module.scss";
-import NineGridGallery from "@app/about/Gallery";
+import blog from "./BlogSummary.module.scss";
+import NineGridGallery from "./Gallery";
 
 type Year = {
   date: string;
@@ -75,7 +75,7 @@ const BlogDateSplit = (posts) => {
   return years;
 };
 
-export const BlogPosts = () => {
+export default async function BlogPosts() {
   let posts = getBlogPosts();
   let years = useMemo(() => BlogDateSplit(posts), [posts]);
 
