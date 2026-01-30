@@ -3,7 +3,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { FaCopy, FaCheck, FaFile } from 'react-icons/fa6';
 import code from './CodeBlock.module.scss';
 
-// TODO: add line numbers
+// TODO: unfuck codeblocks later
 
 interface MDXCodeBlockProps {
     children: string;
@@ -38,7 +38,7 @@ export function MDXCodeBlock({
 
                 const highlighted = await codeToHtml(children, {
                     lang: finalLang,
-                    theme: 'github-dark',
+                    theme: 'dracula-soft',
                     transformers: [
                         {
                             name: 'remove-trailing-newline',
@@ -52,29 +52,17 @@ export function MDXCodeBlock({
                                 }
                                 return node;
                             }
-                        },
-                        {
-                            name: 'add-line-numbers',
-                            pre(node) {
-                                const lines = children.split('\n');
-                                const lineElements = lines.map((_, i) => ({
-                                    type: 'element' as const,
-                                    tagName: 'span',
-                                    properties: { class: 'line-number' },
-                                    children: [{ type: 'text' as const, value: (i + 1).toString() }]
-                                }));
-                                node.children.unshift({
-                                    type: 'element' as const,
-                                    tagName: 'div',
-                                    properties: { class: 'line-numbers' },
-                                    children: lineElements
-                                });
-                            }
                         }
                     ]
                 });
 
-                setHtml(highlighted);
+                const processedHtml = highlighted.replace(/<pre([^>]*)>(.*?)<\/pre>/s, (match, attrs, content) => {
+                    const lines = content.split('\n');
+                    const numberedLines = lines.map((line, i) => `<div class="line"><span class="line-number">${i + 1}</span><span class="line-content">${line}</span></div>`).join('');
+                    return `<pre${attrs}><div class="code-lines">${numberedLines}</div></pre>`;
+                });
+
+                setHtml(processedHtml);
             } catch (error) {
                 console.error('Syntax highlighting error:', error);
 
