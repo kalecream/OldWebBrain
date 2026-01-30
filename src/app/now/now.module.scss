@@ -1,8 +1,11 @@
 @import "@styles/mediaQuery";
 
 .current {
+  @extend .glass !optional;
+
+  backdrop-filter: blur(10px);
     max-width: 35rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     text-align: justify;
     margin:  auto;
 }
@@ -25,13 +28,15 @@
     justify-content: center;
     text-align: center;
     min-height: 90vh;
-    margin: 1.5rem auto;
+    margin: auto;
 
     @media  screen and (max-width: 768px) {
       margin-top: 3rem;
     }
 
-    @media  screen and (max-width: 425px) {
-      margin-top: 5rem;
+    @media  screen and (min-width: 768px) {
+      margin-top: 3.5rem;
     }
+
+    
 }
