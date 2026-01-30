@@ -29,21 +29,46 @@ export function MDXCodeBlock({
     useEffect(() => {
         const highlightCode = async () => {
             try {
-                const { codeToHtml } = await import('shiki');
+                const { codeToHtml, bundledLanguages } = await import('shiki');
+
+                let finalLang = lang;
+                if (!(finalLang in bundledLanguages)) {
+                    finalLang = 'txt';
+                }
 
                 const highlighted = await codeToHtml(children, {
-                    lang,
-                    theme: '',
+                    lang: finalLang,
+                    theme: 'github-dark',
                     transformers: [
                         {
                             name: 'remove-trailing-newline',
                             code(node) {
                                 if (node.children.length > 0 &&
                                     node.children[node.children.length - 1].type === 'text') {
-                                    const lastChild = node.children[node.children.length - 1];
-                                    lastChild.value && typeof lastChild.value === 'string' && (lastChild.value = lastChild.value.replace(/\n$/, ''));
+                                    const lastChild = node.children[node.children.length - 1] as any;
+                                    if (lastChild.value && typeof lastChild.value === 'string') {
+                                        lastChild.value = lastChild.value.replace(/\n$/, '');
+                                    }
                                 }
                                 return node;
+                            }
+                        },
+                        {
+                            name: 'add-line-numbers',
+                            pre(node) {
+                                const lines = children.split('\n');
+                                const lineElements = lines.map((_, i) => ({
+                                    type: 'element' as const,
+                                    tagName: 'span',
+                                    properties: { class: 'line-number' },
+                                    children: [{ type: 'text' as const, value: (i + 1).toString() }]
+                                }));
+                                node.children.unshift({
+                                    type: 'element' as const,
+                                    tagName: 'div',
+                                    properties: { class: 'line-numbers' },
+                                    children: lineElements
+                                });
                             }
                         }
                     ]

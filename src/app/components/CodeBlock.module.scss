@@ -344,9 +344,6 @@
   background-color: var(--backgroundColor);
   border: 1px solid var(--primary);
   font-family: "Fira Code", monospace;
-  
-  &-loaded {
-  }
 }
 
 .mdx-code-header {
@@ -407,9 +404,6 @@
 
 .mdx-code-content {
   position: relative;
-  
-  &-with-header {
-  }
 }
 
 .mdx-highlighted-code {
@@ -417,18 +411,36 @@
   overflow-x: auto;
   font-size: 0.95rem;
   line-height: 1.6;
+  position: relative;
   
   pre {
     margin: 0;
     background: transparent;
     border: none;
     padding: 0;
+    display: flex;
   }
   
   code {
     color: #ffa7b3;
     font-family: inherit;
     font-size: inherit;
+    flex: 1;
+  }
+  
+  .line-numbers {
+    user-select: none;
+    text-align: right;
+    padding-right: 1rem;
+    color: #888;
+    font-size: 0.9em;
+    line-height: 1.6;
+    border-right: 1px solid #444;
+    margin-right: 1rem;
+  }
+  
+  .line-number {
+    display: block;
   }
 }
 
