@@ -35,7 +35,7 @@ const SkipPage = () => {
         audioLink={"https://www.youtube.com/watch?v=kc6Y1Bjxfk8&pp=ygUeZmVuZyBzdWF2ZSBzaW5rIGludG8gdGhlIGZsb29y"}
       />
       <section style={{ minHeight: "100vh", gap: "2rem" }}>
-        <h1>Hi, Friend!</h1>
+        <p>This page is under construction!!!</p>
         <p className="prose blur">
           My website theme is based on the folklore around the{" "}
           <Link href={"https://www.wikiwand.com/en/Soucouyant"}>Ole Higue</Link>. She is like the Caribbean's version of

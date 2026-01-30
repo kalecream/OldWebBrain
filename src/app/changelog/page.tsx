@@ -78,7 +78,7 @@ const GitHubReleaseInfo = () => {
                   </div>
                   <div className={styles.release__details}>
                     <div className={styles.release__left}>
-                      <h1>{release.name}</h1>
+                      <h2>{release.name}</h2>
                       <p>{format(parseISO(release.published_at), "MMMM dd, yyyy")}</p>
                     </div>
 
