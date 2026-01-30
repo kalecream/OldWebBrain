@@ -17,7 +17,6 @@ const Document = () => {
           fetchPriority="high"
         />
       </Head>
-      <Head />
       <body>
         <Main />
         <NextScript />

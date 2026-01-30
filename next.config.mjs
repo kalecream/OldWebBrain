@@ -1,11 +1,17 @@
 import withMDX from "@next/mdx";
+import { remarkCodeHike, recmaCodeHike } from "codehike/mdx"
+
+/** @type {import('codehike/mdx').CodeHikeConfig} */
+const chConfig = {
+  components: { code: "Code" },
+}
 
 /** @type {import('next').NextConfig} */
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [[]],
-    recmaPlugins: [[]],
+    remarkPlugins: [[remarkCodeHike, chConfig]],
+    recmaPlugins: [[recmaCodeHike, chConfig]],
     jsx: true,
   },
 });

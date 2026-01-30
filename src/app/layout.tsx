@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head></head>
+      <head/>
       <body>
         <ThemeProvider>
           <Navbar />
@@ -65,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BackToTop />
           </main>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

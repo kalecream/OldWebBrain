@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { codeToHtml } from "shiki";
 import type { BundledLanguage, BundledTheme } from "shiki";
 import { createElement } from "react";
+import { MDXCodeBlock as CodeBlock } from "./CodeBlock";
+import code from './CodeBlock.module.scss';
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -54,15 +55,6 @@ interface Props {
   filename?: string;
 }
 
-const Code = async ({ children, lang = "javascript", theme = "nord" }: Props) => {
-  let codeHTML = await codeToHtml(children, { lang, theme });
-  return (
-    <div>
-      <code dangerouslySetInnerHTML={{ __html: codeHTML }} />
-    </div>
-  );
-};
-
 function slugify(str) {
   return str
     .toString()
@@ -92,9 +84,34 @@ function createHeading(level) {
   };
 }
 
+const InlineCode = (props: any) => {
+  return (
+    <code className={code.inlineCode}>
+      {props.children}
+    </code>
+  );
+}
+
+const CustomPre = (props: any) => {
+  const child = props.children;
+
+  if (child?.type === 'code') {
+    const { children, className, ...rest } = child.props;
+    return (
+      <CodeBlock className={className} meta={rest.meta || ''}>
+        {children}
+      </CodeBlock>
+    );
+  }
+
+  return <pre {...props} />;
+}
+
 const paragraph = ({ children }) => {
   return <p className="blur">{children}</p>;
 };
+
+
 
 let components = {
   h1: createHeading(1),
@@ -106,7 +123,8 @@ let components = {
   p: paragraph,
   Image: RoundedImage,
   a: CustomLink,
-  code: Code,
+  pre: CustomPre,
+  code: CodeBlock,
   Table,
 };
 

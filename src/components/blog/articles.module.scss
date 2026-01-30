@@ -55,10 +55,8 @@
 	width: clamp(200px, 100%, 600px ) ;
 	justify-content: center;
 	align-items: center;
-	// background-color: var(--backgroundColor);
 	border-radius: var(--borderRadius);
 	text-align: start;
-	// box-shadow: var(--boxShadow);
 	border: var(--border);
 	backdrop-filter: blur(20px);
 	padding: var(--paddingContainer);
@@ -121,6 +119,7 @@
 	&__description {
 		margin: 0;
 		padding: 0;
+		max-width: 45rem;
 		font-size: 1rem;
 		font-weight: 400;
 		line-height: 1.6;

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   const { slug } = await params;
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) { return undefined; }
 
@@ -123,7 +123,7 @@ export default async function Blog({
           </p>
         </Suspense>
         <h2 className="title">{post.metadata.title}</h2>
-        <h3 className="text-center">
+        <h3 className="sub-title">
           <i>{post.metadata.description}</i>
         </h3>
         <br />
