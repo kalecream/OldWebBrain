@@ -28,7 +28,7 @@ export const Organization: OrgType[] = [
 
 export const PastJobs: WorkType[] = [
   {
-    company: "Roger Irvine",
+    company: "Dr R. Irvine (Private Medical Practice)",
     title: "Personal Assistant",
     location: "Onsite",
     type: "Contractor",
@@ -47,7 +47,7 @@ export const PastJobs: WorkType[] = [
     ],
   },
   {
-    company: "KaleCream LLC",
+    company: "Yung Higue (Formally KaleCream)",
     title: "Front-End Web Developer",
     location: "Hybrid",
     type: "Owner",
