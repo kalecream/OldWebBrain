@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+@use '@styles/mediaQuery' as *;
 
 .container {
 	display: flex;
@@ -7,7 +7,7 @@
 	letter-spacing: 0.5px;
 	align-items: center;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		flex-direction: column;
 		width: clamp(10rem, 80%, 30rem);
 		margin: 0rem auto;
@@ -15,7 +15,7 @@
 		gap: 1rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-direction: row;
 		width: clamp(20rem, 100%, 50rem);
 		margin: 0rem auto;
@@ -183,7 +183,7 @@
 			background-image 0.15s;
 	}
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		padding: 2rem 3rem;
 		max-width: 30rem;
 	}

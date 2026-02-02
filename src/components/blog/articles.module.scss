@@ -33,7 +33,7 @@
 		color: var(--primary);
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
@@ -75,11 +75,11 @@
 		margin: 0 auto;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		flex-direction: column;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-direction: row;
 	}
 
@@ -89,7 +89,7 @@
 		border-radius: 2px;
 		display: none;
 
-		@include breakpoint-range($from: desktopSmall) {
+		@include from(desktopSmall) {
 			display: flex;
 		}
 	}
@@ -108,7 +108,7 @@
 		font-size: clamp(1.5rem, 5vw, 1.8rem);
 		margin-bottom: 2rem;
 
-		@include breakpoint-range($from: mobile, $to: tablet) {
+		@include between(mobile,tablet) {
 			font-size: 1.5rem;
 			text-align: center;
 			margin-bottom: 1rem;
@@ -126,7 +126,7 @@
 		color: var(--backgroundColor);
 		background-color: var(--articleCardBackground);
 
-		@include breakpoint-range($from: mobile) {
+		@include from(mobile) {
 			font-size: 1rem;
 		}
 	}
@@ -174,7 +174,7 @@
 		// background-color: var(--backgroundColor);
 		text-transform: capitalize;
 
-		@include breakpoint-range($from: mobile, $to: tablet) {
+		@include between(mobile,tablet) {
 			font-size: 1.5rem;
 			margin-left: 2rem;
 		}
@@ -187,7 +187,7 @@
 		color: var(--textColor);
 		// background-color:  var(--backgroundColor);
 
-		@include breakpoint-range($from: mobile) {
+		@include from(mobile) {
 			font-size: 0.8rem;
 		}
 	}

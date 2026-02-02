@@ -11,7 +11,7 @@
 	}
 
 
-    @include breakpoint-range($from: mobile) {
+    @include from(mobile) {
         flex-wrap: wrap;
     }
 }
@@ -35,7 +35,7 @@
 	-webkit-background-clip: text;
 	animation: stripeBackgroundPosition 2s linear infinite;
 
-    @include breakpoint-range($from: mobile, $to: tablet) {
+    @include between(mobile,tablet) {
         font-size: 5rem;
     }
 
@@ -43,7 +43,7 @@
         font-size: 10rem;
     }
 
-    @include breakpoint-range($from: desktopSmall) {
+    @include from(desktopSmall) {
         font-size: 20rem;
     }
 }

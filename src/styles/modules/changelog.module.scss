@@ -10,7 +10,7 @@
         flex-direction: column;
         flex-wrap: wrap;
 
-        @include breakpoint-range($from: desktopSmall) {
+        @include from(desktopSmall) {
             justify-content: center;
         }
     }
@@ -48,7 +48,7 @@
             color: var(--primary);
         }
 
-        @include breakpoint-range($from: desktopSmall) {
+        @include from(desktopSmall) {
             width: clamp(200px, 100%, 400px);
         }
     }
@@ -58,17 +58,17 @@
         padding-left: 1rem;
         display: flex;
 
-        @include breakpoint-range($from: mobile) {
+        @include from(mobile) {
 
             flex-direction: column;
             gap: 2rem;
         }
 
-        @include breakpoint-range($from: tablet) {
+        @include from(tablet) {
             flex-direction: column;
         }
 
-        @include breakpoint-range($from: desktopSmall) {
+        @include from(desktopSmall) {
             flex-direction: row;
 
         }
@@ -104,12 +104,12 @@
             padding: 0.5rem;;
             margin-bottom: 1rem;
 
-            @include breakpoint-range($from: mobile) {
+            @include from(mobile) {
                 max-width: 18rem;
                 margin-left: 1rem;
             }
 
-            @include breakpoint-range($from: tablet) {
+            @include from(tablet) {
                 margin-left: 1.5rem;
                 max-width: 30rem;
             }

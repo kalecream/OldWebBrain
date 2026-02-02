@@ -6,7 +6,7 @@
 		content: none;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		margin: 0 auto;
 
 		& > * > ul {
@@ -14,7 +14,7 @@
 		}
 	}
 
-	@include breakpoint-range($from: mobile) { 
+	@include from(mobile) { 
 		margin: auto;
 		width: 78%;
 	}
@@ -36,7 +36,7 @@
 .nolist {
 	list-style: none;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		padding-left: 0;
 		width: 100%;
 
@@ -45,7 +45,7 @@
 		}
 	}
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		max-width: 45rem;
 	}
 
@@ -81,11 +81,11 @@
 		font-size: 1.2rem;
 		align-items: center;
 
-		@include breakpoint-range($from: mobile) {
+		@include from(mobile) {
 			margin-right: 0.25rem;
 		}
 
-		@include breakpoint-range($from: tablet) {
+		@include from(tablet) {
 			margin-right: 0.5rem;
 		}
 	}

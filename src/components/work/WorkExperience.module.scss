@@ -8,7 +8,7 @@
         display: none;
     }
 
-    @include breakpoint-range($from: tablet) {
+    @include from(tablet) {
         display: block;
     }
 
@@ -22,7 +22,7 @@
         flex-direction: column;
     }
 
-    @include breakpoint-range($from: desktopSmall) {
+    @include from(desktopSmall) {
         flex-direction: row;
     }
 

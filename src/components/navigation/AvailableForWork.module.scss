@@ -16,16 +16,16 @@
         animation: none;
     }
 
-    @include breakpoint-range($from: mobile) {
+    @include from(mobile) {
         font-size: 0.5rem;
         padding: 0.25rem 0.5rem;
     }
 
-    @include breakpoint-range($from: mobile, $to: tablet) {
+    @include between(mobile,tablet) {
         font-size: 0.6rem;
     }
 
-    @include breakpoint-range($from: tablet) {
+    @include from(tablet) {
         font-size: 0.8rem;
         padding: var(--paddingObjectSmall);
     }

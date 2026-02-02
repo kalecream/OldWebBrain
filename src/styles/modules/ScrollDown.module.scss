@@ -14,11 +14,11 @@
 		color: var(--primary);
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		flex-direction: column;
 	}
 
-	@include breakpoint-range($from: desktop) {
+	@include from(desktop) {
 		width: fit-content;
 		flex-direction: row;
 		position: absolute;

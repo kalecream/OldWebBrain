@@ -1,7 +1,7 @@
 .photoContainer {
 	position: relative;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		display: none;
 	}
 
@@ -46,11 +46,11 @@
 		line-height: 1;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: block;
 	}
 }

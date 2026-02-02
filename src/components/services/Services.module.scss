@@ -7,7 +7,7 @@ margin: 3rem auto;
 		max-width: 55rem;
 		text-align: justify;
 
-		@include breakpoint-range($from: mobile, $to: tablet) {
+		@include between(mobile,tablet) {
 			margin: 1.5rem 1rem;
 		}
 	}

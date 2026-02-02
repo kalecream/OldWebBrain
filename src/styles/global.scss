@@ -1,8 +1,67 @@
-@import 'normalize';
-@import 'animations';
-@import 'mediaQuery';
+@use '@styles/normalize';
+@use '@styles/mediaQuery' as *;
 
 $font-path: '../../public/fonts';
+
+.fadeIn__below {
+    animation: fadeInFromBelow 1s ease-in-out;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes multiColorLetterHover {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--secondary);
+  }
+  50% {
+    color: var(--tertiary);
+  }
+  75% {
+    color: var(--quaternary);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInFromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-marquee, .fadeIn__below, .sitename  {
+    animation-play-state: paused;
+  }
+}
+
+
 
 @font-face {
 	font-family: "Fira Code";
@@ -60,7 +119,6 @@ $font-path: '../../public/fonts';
 	font-display: swap;
 }
 
-
 :root {
 	--sharpBorderRadius: 5px;
 	--borderRadius: 10px;
@@ -74,9 +132,7 @@ $font-path: '../../public/fonts';
 	--accentFont: 'Cattedrale', serif;
 	--hr-line-offset: 25%;
 	--hr-color: var(--primary);
-}
-
-:root {
+// prefer light
 	--backgroundColor: #f2f0e9;
 	--primary: #331200;
 	--secondary: #b12603;
@@ -90,6 +146,7 @@ $font-path: '../../public/fonts';
 	--captionColor: #aaa;
 }
 
+// perfer dark
 [data-theme='dark'] {
 	--backgroundColor: rgb(29, 29, 29);
 	--primary: #c80000;
@@ -149,12 +206,12 @@ nav {
 	backdrop-filter: blur(8px);
 	align-items: center;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		flex-direction: column;
 		justify-content: center;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-direction: row;
 		justify-content: auto;
 		padding: 1rem;
@@ -181,21 +238,8 @@ nav {
 
 	&:hover {
 		rotate: 45deg;
-		transition: ease-in 3ms;
+		transition: var(--transition);
 	}
-}
-
-.social-media-list {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-}
-
-.social-media {
-	margin: 0 1rem;
-	font-size: 1rem;
-	color: var(--primary);
 }
 
 #nav-section {
@@ -223,13 +267,13 @@ footer {
 		padding: 0.5rem 0;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 
 		flex-direction: column;
 		justify-content: center;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-direction: row;
 		justify-content: space-between;
 	}
@@ -242,10 +286,10 @@ section {
 	align-items: center;
 
 	&:not(last-of-type) {
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		padding: 0 1rem;
 
 		&:first-of-type {
@@ -253,11 +297,11 @@ section {
 		}
 	}
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		padding: 0 1.5rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		padding: 0;
 
 		&:first-of-type {
@@ -298,34 +342,18 @@ hr {
 			transparent);
 }
 
-.hr-hands {
-	border: none;
-
-	&::after {
-		background: url(../assets/images/hr.svg) no-repeat top center;
-		content: "";
-		display: block;
-		height: 80px;
-		margin: 4rem auto;
-		position: relative;
-		top: -50px;
-		border: 0;
-	}
-}
-
 progress {
-
 	height: 10px;
 	margin: 0 1rem;
 	border: var(--border);
 	border-radius: var(--borderRadius);
 	background: var(--backgroundColor);
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		display: inline-block;
 		width: 25%;
 	}
@@ -388,7 +416,7 @@ fieldset {
 	text-align: center;
 	gap: 1.5rem;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		&>div {
 			width: 100%;
 		}
@@ -396,7 +424,7 @@ fieldset {
 		flex-direction: column;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		&>div {
 			width: 50%;
 		}
@@ -410,7 +438,7 @@ fieldset {
 	overflow: hidden;
 	z-index: 10;
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		border-image-slice: 140;
 		border-image-repeat: stretch;
 		border-width: 70px;
@@ -438,7 +466,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -457,7 +485,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -470,7 +498,7 @@ fieldset {
 	background-size: cover;
 	min-height: 100vh;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		background-attachment: scroll;
 	}
 }
@@ -496,20 +524,6 @@ a {
 	&:hover {
 		color: var(--primary)
 	}
-}
-
-i {
-	font-family: "Garamond Italics", serif;
-}
-
-b {
-	font-weight: 800;
-	font-family: "Garamond Bold", serif;
-}
-
-b i {
-	font-weight: 800;
-	font-family: "Garamond Bold Italics", serif;
 }
 
 h2,
@@ -563,7 +577,7 @@ ol {
 		padding-left: 1rem;
 	}
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		margin: 0 auto;
 		margin-left: 1rem;
 	}
@@ -705,11 +719,11 @@ textarea {
 	place-items: center;
 	justify-content: center;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		flex-direction: column;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-direction: row;
 	}
 }
@@ -721,12 +735,12 @@ textarea {
 }
 
 .pancake-child {
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		flex: 1 1 100%;
 		margin: 1rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex: 1 1 300px;
 		margin: 0.25rem;
 	}
@@ -758,21 +772,21 @@ textarea {
 .mobile {
 	display: flex;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: flex;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: none;
 	}
 }
 
 .desktop {
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	@include between(mobile,tablet) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: flex;
 	}
 }
@@ -837,15 +851,15 @@ article .info {
 
 article p {
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		margin: 1rem 1.5rem;
 	}
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		margin: 1rem 2rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		margin: 1rem 0;
 	}
 }
@@ -884,15 +898,15 @@ article q p {
 article ul,
 article ol {
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		margin: 1rem 1rem;
 	}
 
-	@include breakpoint-range($from: tablet) {
+	@include from(tablet) {
 		margin: 1rem 2rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		margin: 2rem 0;
 	}
 }
@@ -1034,41 +1048,41 @@ span.project__status.archived {
 }
 
 .desktop-block {
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: block;
 	}
 }
 
 .desktop-flex {
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: flex;
 	}
 }
 
 .mobile-block {
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: block;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: none;
 	}
 }
 
 .mobile-flex {
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: flex;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: block;
 	}
 }

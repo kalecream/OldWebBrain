@@ -13,11 +13,11 @@
 	justify-content: center;
 	align-items: center;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		gap: 1rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		gap: 2rem;
 	}
 }
@@ -66,12 +66,12 @@
 	padding: var(--paddingObject);
 	border-radius: var(--borderRadius);
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		max-width: 90vw;
 		flex-wrap: wrap;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		flex-wrap: nowrap;
 	}
 }
@@ -102,7 +102,7 @@
 	text-transform: capitalize;
 	margin: 0 auto;
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		font-size: 2.5rem;
 	}
 }
@@ -111,7 +111,7 @@
 	max-width: 20rem;
 	margin: 2rem auto;
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		font-size: 1.1rem;
 	}
 
@@ -127,13 +127,13 @@
 	border-radius: var(--sharpBorderRadius);
 
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		width: clamp(150px, 100%, 500px);
 		overflow: scroll;
 		margin: auto;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		height: 50vh;
 		width: auto;
 		overflow: hidden;
@@ -146,11 +146,11 @@
 	margin: 0 auto;
 	justify-content: center;
 
-	@include breakpoint-range($from: mobile) {
+	@include from(mobile) {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	@include from(desktopSmall) {
 		display: flex;
 	}
 }
