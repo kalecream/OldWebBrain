@@ -82,9 +82,9 @@ const C25KPage = () => {
         </Suspense>
       </div>
       <p className="prose glassmorphic" style={{ marginTop: "2rem", marginBottom: "3rem" }}>
-        I'm trying to walk more then return to using "<Link href="https://zrx.app/">Zombies, Run 5K Training</Link>" to do an 8 week program of the Couch
-        to 5KM challenge. I attempted this briefly before, but I have never made it fully through and would like to
-        improve my running ability.
+        I'm trying to walk more then return to using "<Link href="https://zrx.app/">Zombies, Run 5K Training</Link>" to
+        do an 8 week program of the Couch to 5KM challenge. I attempted this briefly before, but I have never made it
+        fully through and would like to improve my running ability.
       </p>
 
       <h2 className="prose glassmorphic">Helpful Resources</h2>
@@ -94,18 +94,28 @@ const C25KPage = () => {
           incorporating a story and missions.
         </li>
         <li>
-          <Link href="https://www.c25k.com/">Couch to 5K</Link> - A popular program designed to help beginners gradually build up
-          their running ability.
+          <Link href="https://www.c25k.com/">Couch to 5K</Link> - A popular program designed to help beginners gradually
+          build up their running ability.
         </li>
         <li>
-          <Link href="https://www.youtube.com/watch?v=_kGESn8ArrU&pp=ygUKaG93IHRvIHJ1bg%3D%3D">How to run properly</Link>{" "} - A video tutorial on proper running form and techniques to prevent injuries.
+          <Link href="https://www.youtube.com/watch?v=_kGESn8ArrU&pp=ygUKaG93IHRvIHJ1bg%3D%3D">
+            How to run properly
+          </Link>{" "}
+          - A video tutorial on proper running form and techniques to prevent injuries.
         </li>
         <li>
-          <Link href="https://www.youtube.com/watch?v=B9ie7aRTCnE&pp=ygUcaG93IHRvIGJyZWF0aGUgd2hpbGUgcnVubmluZw%3D%3D">How To Breathe While Running
-          </Link>{" "}- A video tutorial on proper breathing techniques while running as evolution failed me by making my instinct holding my breath.
+          <Link href="https://www.youtube.com/watch?v=B9ie7aRTCnE&pp=ygUcaG93IHRvIGJyZWF0aGUgd2hpbGUgcnVubmluZw%3D%3D">
+            How To Breathe While Running
+          </Link>{" "}
+          - A video tutorial on proper breathing techniques while running as evolution failed me by making my instinct
+          holding my breath.
         </li>
         <li>
-          <Link href="https://docs.google.com/spreadsheets/d/1a8tlZ-zbF695HA3Lmm20OIYeYYxo1lmUOczUXKLoL4s/edit?gid=1833143925#gid=1833143925">Spreadsheet of all Bodyweight Fitness Progressions</Link> - A comprehensive spreadsheet that tracks progressions for various bodyweight exercises, useful for tracking strength training alongside running.
+          <Link href="https://docs.google.com/spreadsheets/d/1a8tlZ-zbF695HA3Lmm20OIYeYYxo1lmUOczUXKLoL4s/edit?gid=1833143925#gid=1833143925">
+            Spreadsheet of all Bodyweight Fitness Progressions
+          </Link>{" "}
+          - A comprehensive spreadsheet that tracks progressions for various bodyweight exercises, useful for tracking
+          strength training alongside running.
         </li>
       </ol>
     </section>

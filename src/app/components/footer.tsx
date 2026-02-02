@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {  FaGithub, FaTelegram } from "react-icons/fa6";
+import { FaGithub, FaTelegram } from "react-icons/fa6";
 import style from "@styles/modules/footer.module.scss";
 
 export const MediaProfiles = [
@@ -12,7 +12,7 @@ export const MediaProfiles = [
     name: "Telegram",
     url: "https://t.me/yunghigue",
     icon: FaTelegram,
-  }
+  },
 ];
 
 export const SocialMediaList = () => {

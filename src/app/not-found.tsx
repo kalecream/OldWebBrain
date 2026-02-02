@@ -7,6 +7,8 @@ const NotFound = () => {
       <div>
         <div className="flex" style={{ width: "100%", justifyContent: "center" }}>
           <Image
+            unoptimized
+            priority
             src={
               "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnNwMHZrdnR6NXU4bXFmOGp5MmJwZjQ4YmwxY20yOG56ZXNhY25ucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1xSVq3jCyrYICv5XuC/giphy.webp"
             }

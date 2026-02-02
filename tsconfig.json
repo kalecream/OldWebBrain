@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -23,53 +19,23 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@module/*": [
-        "src/styles/modules/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@layout/*": [
-        "src/container/layout/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@posts/*": [
-        "src/posts/*"
-      ],
-      "@containers/*": [
-        "src/containers/*"
-      ],
-      "@public/*": [
-        "public/*"
-      ],
-      "@app/*": [
-        "src/app/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@module/*": ["src/styles/modules/*"],
+      "@assets/*": ["src/assets/*"],
+      "@utils/*": ["src/utils/*"],
+      "@layout/*": ["src/container/layout/*"],
+      "@data/*": ["src/data/*"],
+      "@types/*": ["src/types/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@posts/*": ["src/posts/*"],
+      "@containers/*": ["src/containers/*"],
+      "@public/*": ["public/*"],
+      "@app/*": ["src/app/*"]
     },
     "plugins": [
       {
@@ -89,8 +55,5 @@
     "src/assets/models/WingedSword.jsx",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    ".next"
-  ]
+  "exclude": ["node_modules", ".next"]
 }

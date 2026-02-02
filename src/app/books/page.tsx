@@ -1,9 +1,11 @@
-import AboutBooksSection from "@app/about/AboutBooks"
+import AboutBooksSection from "@app/about/AboutBooks";
 
 const BooksPage = () => {
-    return (
-        <><AboutBooksSection/></>
-    )
-}
+  return (
+    <>
+      <AboutBooksSection />
+    </>
+  );
+};
 
 export default BooksPage;

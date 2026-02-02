@@ -110,10 +110,7 @@ export const StackedTimeLog: React.FC = () => {
       ];
 
       const uniqueProjectIDs = Array.from(new Set(WeeklyEntries.map((d) => d.project_id)));
-      const colorScale = d3
-        .scaleOrdinal()
-        .domain(uniqueProjectIDs)
-        .range(reddishColors);
+      const colorScale = d3.scaleOrdinal().domain(uniqueProjectIDs).range(reddishColors);
 
       const tooltip = d3.select(tooltipRef.current);
 
@@ -126,7 +123,7 @@ export const StackedTimeLog: React.FC = () => {
         .attr("y", (d) => yScale(d.duration / 3600))
         .attr("height", (d) => yScale(0) - yScale(d.duration / 3600))
         .attr("width", xScale.bandwidth())
-        .attr("fill",  (d) => colorScale(d.project_id))
+        .attr("fill", (d) => colorScale(d.project_id))
         .on("mouseover", (event, d) => {
           const projectName = projectID[d.project_id] || "Misc";
           tooltip
@@ -140,9 +137,9 @@ export const StackedTimeLog: React.FC = () => {
         .on("mouseout", () => {
           tooltip.style("opacity", 0);
         });
-      
+
       const xAxis = d3.axisBottom(xScale);
-      
+
       svg
         .append("g")
         .attr("transform", `translate(0,${height - margin.bottom})`)
@@ -156,7 +153,7 @@ export const StackedTimeLog: React.FC = () => {
   return (
     <>
       <h1>My Time Log</h1>
-        
+
       {currentTask && (
         <p className="prose">
           <i> — Currently {currentTask.description} — </i>

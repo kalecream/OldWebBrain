@@ -42,11 +42,16 @@ const SkipPage = () => {
           a Vampire, and a Werewolf combined with West African witch mythos. She's typically presented as an old woman.
           As a Yung Higue, I want our stories to continue to evolve rather than being frozen in time.
         </p>
-        <p className="prose blur">
-          I have a 88x31 website button!
-        </p>
+        <p className="prose blur">I have a 88x31 website button!</p>
         <span className="center" style={{ margin: "0 auto" }}>
-          <Image width={88} height={31} alt="" src="https://i.imgur.com/jOZv4jt.gif" style={{ borderRadius: "0" }} />
+          <Image
+            unoptimized
+            width={88}
+            height={31}
+            alt=""
+            src="https://i.imgur.com/jOZv4jt.gif"
+            style={{ borderRadius: "0" }}
+          />
         </span>
         <p className="prose blur">...and a very empty button garden. </p>
         <div style={{ height: "100px", width: "45rem", border: "dashed 1px" }}>

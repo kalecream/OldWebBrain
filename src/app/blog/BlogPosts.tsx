@@ -17,20 +17,7 @@ type Month = {
 
 const BlogDateSplit = (posts) => {
   let years: Year[] = [];
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   posts.forEach((post) => {
     const [yearDate, monthDate, dayDate] = post.metadata.date.split(" ")[0].split("-");
@@ -118,4 +105,4 @@ export default async function BlogPosts() {
       ))}
     </section>
   );
-};
+}

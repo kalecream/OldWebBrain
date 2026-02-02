@@ -6,7 +6,7 @@ import { PageReadTime } from "@utils/PageReadTime";
 
 export const generateStaticParams = async () => {
   return getAllNotes().map(({ slug }) => ({ slug }));
-}
+};
 
 export const NotePage = ({ params }) => {
   const notes = getAllNotes();
@@ -19,7 +19,8 @@ export const NotePage = ({ params }) => {
         <div className="prose">
           <div className="info">
             <p className="text-center">
-              <PageReadTime readingSpeedWPM={250} />. { note.data.date ? 'Seeded: ' + note.data.date + ". " : ''} { note.data.tend ? 'Tended: ' + note.data.tend + ". " : ''} 
+              <PageReadTime readingSpeedWPM={250} />. {note.data.date ? "Seeded: " + note.data.date + ". " : ""}{" "}
+              {note.data.tend ? "Tended: " + note.data.tend + ". " : ""}
             </p>
           </div>
           <CustomMDX source={parseWikiLinks(note.body)} />
@@ -27,6 +28,6 @@ export const NotePage = ({ params }) => {
       </Suspense>
     </section>
   );
-}
+};
 
 export default NotePage;

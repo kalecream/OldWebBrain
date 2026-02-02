@@ -18,7 +18,7 @@ const Directory = [
   {
     title: "Contact",
     links: "/contact",
-  }
+  },
 ];
 
 export default Directory;

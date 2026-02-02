@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Bloom, ChromaticAberration, EffectComposer, Noise, DepthOfField } from "@react-three/postprocessing";
 import { BlendFunction, KernelSize } from "postprocessing";
 import { Model } from "src/assets/models/castlevania";
-import { Preload, Html, OrbitControls, PresentationControls,  useProgress  } from "@react-three/drei";
+import { Preload, Html, OrbitControls, PresentationControls, useProgress } from "@react-three/drei";
 
 const Loader = () => {
   const { progress } = useProgress();
@@ -11,22 +11,21 @@ const Loader = () => {
     <Html
       as="div"
       style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        fontSize: '2rem',
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        fontSize: "2rem",
       }}
     >
       Loading {progress.toFixed(2)}%
     </Html>
   );
-}
+};
 
 // rotation , rotation: [0.33907, -0.000024, -9.4405]
 
 export const HeroModel = () => {
-
   //   const effects = useMemo(() => (
   //   // <EffectComposer enabled={true}>
   //   //    <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
@@ -43,7 +42,7 @@ export const HeroModel = () => {
   //   //       luminanceSmoothing={0.5}
   //   //       kernelSize={KernelSize.LARGE}
   //   //       height={0.1} />
-      
+
   //   //     <ToneMapping
   //   //       blendFunction={BlendFunction.NORMAL}
   //   //       adaptive={true}
@@ -53,7 +52,7 @@ export const HeroModel = () => {
   //   //       averageLuminance={1.0}
   //   //       adaptationRate={1.0}
   //   //     />
-        
+
   //   //     <Vignette
   //   //       blendFunction={BlendFunction.NORMAL}
   //   //       darkness={0.5}
@@ -65,12 +64,12 @@ export const HeroModel = () => {
 
   return (
     <Canvas
-    linear={true}
+      linear={true}
       flat
       shadows
       id="hero-model"
       dpr={[1, 2]}
-      camera={{ fov: 26, position: [-1.1872, -2.385, 45.981]}}
+      camera={{ fov: 26, position: [-1.1872, -2.385, 45.981] }}
       style={{
         width: "100vw",
         height: "100vh",

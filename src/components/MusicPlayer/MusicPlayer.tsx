@@ -13,7 +13,7 @@ const MusicPlayer: React.FC<PlayerProps> = ({ audioSrc, songTitle, audioLink }) 
   const audioRef = useRef<HTMLAudioElement>(null);
 
   audioRef.current && (audioRef.current.volume = 0.35);
-  
+
   const togglePlayPause = () => {
     if (isPlaying) {
       audioRef.current?.pause();
@@ -36,7 +36,7 @@ const MusicPlayer: React.FC<PlayerProps> = ({ audioSrc, songTitle, audioLink }) 
         <Link href={audioLink} target="_blank">{` ${songTitle}`}</Link>
       </div>
       <audio ref={audioRef} src={audioSrc} autoPlay loop />
-  </div>
+    </div>
   );
 };
 

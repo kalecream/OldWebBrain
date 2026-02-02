@@ -8,7 +8,7 @@ const KinkPage = () => {
         This will hold my notes on kink, BDSM, and other related topics as I explore solo BDSM and playdates.
       </p>
       <ol>
-      <li>
+        <li>
           <Link href="kink/vetting">Vetting Playmates</Link>
         </li>
         <li>

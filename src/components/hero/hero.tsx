@@ -13,22 +13,26 @@ const Hero = () => {
           <HeroModel />
           <div className={hero.cta}>
             <h1 className={hero.name}>Yung Higue</h1>
-            <div className={hero.text}> <p className="p-note">
-              A cross between<br/>
-              <Link href="https://github.com/kalecream" rel="me">
-                a portfolio
-              </Link>
-              ,{" "}
-              <Link href="https://mstdn.social/@KaleCream" rel="me">
-                a playground,
-              </Link>
-              <wbr />
-              <Link href="mailto:sab@yunghigue.com" rel="me">
-                {" "}
-                and a prayer
-              </Link>
-              .
-            </p></div>
+            <div className={hero.text}>
+              {" "}
+              <p className="p-note">
+                A cross between
+                <br />
+                <Link href="https://github.com/kalecream" rel="me">
+                  a portfolio
+                </Link>
+                ,{" "}
+                <Link href="https://mstdn.social/@KaleCream" rel="me">
+                  a playground,
+                </Link>
+                <wbr />
+                <Link href="mailto:sab@yunghigue.com" rel="me">
+                  {" "}
+                  and a prayer
+                </Link>
+                .
+              </p>
+            </div>
             <div className={hero["button-block"]}>
               <Link href="/professional">
                 <button className={button.vamp} role="button">
@@ -53,7 +57,7 @@ const Hero = () => {
                 </button>
               </Link>
               <Link href="/skip">
-                  <span className={button.text}>Skip</span>
+                <span className={button.text}>Skip</span>
               </Link>
             </div>
           </div>

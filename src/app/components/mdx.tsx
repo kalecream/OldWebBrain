@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import type { BundledLanguage, BundledTheme } from "shiki";
 import { createElement } from "react";
 import { MDXCodeBlock as CodeBlock } from "./CodeBlock";
-import code from './CodeBlock.module.scss';
+import code from "./CodeBlock.module.scss";
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
@@ -85,33 +85,27 @@ function createHeading(level) {
 }
 
 const InlineCode = (props: any) => {
-  return (
-    <code className={code.inlineCode}>
-      {props.children}
-    </code>
-  );
-}
+  return <code className={code.inlineCode}>{props.children}</code>;
+};
 
 const CustomPre = (props: any) => {
   const child = props.children;
 
-  if (child?.type === 'code') {
+  if (child?.type === "code") {
     const { children, className, ...rest } = child.props;
     return (
-      <CodeBlock className={className} meta={rest.meta || ''}>
+      <CodeBlock className={className} meta={rest.meta || ""}>
         {children}
       </CodeBlock>
     );
   }
 
   return <pre {...props} />;
-}
+};
 
 const paragraph = ({ children }) => {
   return <p className="blur">{children}</p>;
 };
-
-
 
 let components = {
   h1: createHeading(1),

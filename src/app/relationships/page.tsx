@@ -7,16 +7,10 @@ const RShipPage = () => {
       <section id="introduction">
         <h1>Relationships</h1>
         <PageReadTime readingSpeedWPM={200} />
-      
-        <p className="prose">
-          
-        </p>
-        <p className="prose">
-          
-        </p>
-        <p className="prose">
-        
-        </p>
+
+        <p className="prose"></p>
+        <p className="prose"></p>
+        <p className="prose"></p>
         <hr />
         <p className="prose">
           I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a

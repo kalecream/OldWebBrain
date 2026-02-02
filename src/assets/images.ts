@@ -264,7 +264,7 @@ const GPhotos: GalleryData[] = [
   //   src: "https://i.imgur.com/CdqnCdV.jpeg",
   //   name: "Bujo",
   //   desc: "My first bullet journal",
-  //   tags: ["bujo", "journal"],                       
+  //   tags: ["bujo", "journal"],
   // },
   {
     id: 30,
@@ -282,7 +282,7 @@ const GPhotos: GalleryData[] = [
     src: "https://i.imgur.com/Xcszx2b.jpeg",
     name: "Kitty",
     desc: "A restaurant with terrible serivce had this very friendly cat",
-    tags: ["cat", "food"]
+    tags: ["cat", "food"],
   },
   {
     id: 32,
@@ -291,7 +291,7 @@ const GPhotos: GalleryData[] = [
     src: "https://i.imgur.com/ufpD8hb.jpeg",
     name: "Net",
     desc: "Something wicked this way comes",
-    tags: ["rope", "me"]
+    tags: ["rope", "me"],
   },
   {
     id: 33,
@@ -300,7 +300,7 @@ const GPhotos: GalleryData[] = [
     src: "https://i.imgur.com/RPY9Ygs.jpeg",
     name: "Reverse Engineered Futomomo",
     desc: "A reverse engineered futomomo from IG user @selftautties",
-    tags: ["rope", "shibari"]
+    tags: ["rope", "shibari"],
   },
   {
     id: 34,
@@ -309,7 +309,7 @@ const GPhotos: GalleryData[] = [
     src: "https://i.imgur.com/PIXoizY.jpeg",
     name: "",
     desc: "",
-    tags: []
+    tags: [],
   },
   {
     id: 35,
@@ -365,7 +365,7 @@ const GPhotos: GalleryData[] = [
     desc: "",
     tags: [],
   },
-    {
+  {
     id: 20250101,
     year: "2026",
     month: "01",
@@ -374,7 +374,7 @@ const GPhotos: GalleryData[] = [
     desc: "a physical bboard for my latest hyperfixation",
     tags: ["chess", "hobby"],
   },
-    {
+  {
     id: 20250102,
     year: "2026",
     month: "01",
@@ -410,7 +410,7 @@ const GPhotos: GalleryData[] = [
   //   desc: "",
   //   tags: [],
   // }
-  
+
   // {
   //   id: 29,
   //   year: "2024",
