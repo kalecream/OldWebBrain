@@ -3,7 +3,7 @@
 .gallery {
     display: none;
 
-    @media screen and (min-width: var(--desktopSmall))  {
+    @media screen and (min-width: 960px)  {
         display: flex;
         flex-flow: row wrap;
         justify-content:flex-end;

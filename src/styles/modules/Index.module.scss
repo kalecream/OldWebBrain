@@ -23,13 +23,12 @@
 	place-items: center;
 	margin: 0 auto;
 
-	@media screen and (min-width: var(--mobile)) and (max-width: var(--desktopSmall)) {
+	@media screen and (min-width: 0px) and (max-width: 960px) {
 		flex-direction: column;
 	}
 
-	@media screen and (min-width: var(--desktopSmall)) {
+	@media screen and (min-width: 960px) {
 		flex-direction: row;
-		padding: 0 2rem;
 	}
 }
 
@@ -47,27 +46,21 @@
 	position: absolute;
 	min-height: 30%;
 	bottom: 10%;
-	left: 5%;
 
 
-	@media (min-width: var(--mobile)) and (max-width: var(--tablet)) {
+	@media (min-width: 0px) and (max-width:  768px) {
 		background: var(--backgroundColor);
 		border-radius: var(--borderRadius);
 		min-height: 80%;
 		width: 100%;
 	}
 
-	@media (min-width: var(--tablet)) {
+	@media (min-width:  768px) {
 		bottom: 1%;
-		left: 20%;
+		left: 5%;
 		background: transparent;
 		width: fit-content;
 		min-height: 70%;
-	}
-
-	@media (min-width: var(--desktopSmall)) {
-		bottom: 10%;
-		left: 10%;
 	}
 
 	.name {
@@ -119,13 +112,13 @@
 	left: 0;
 	margin: 0 auto;
 
-	@media screen and (min-width: var(--mobile)) and (max-width: var(--desktopSmall)) {
+	@media screen and (min-width: 0px) and (max-width: 960px) {
 		& #hero-model {
 			display: none;
 		}
 	}
 
-	@media screen and (min-width: var(--desktopSmall)) {
+	@media screen and (min-width: 960px) {
 		bottom: 10%;
 		left: 5%;
 		flex-direction: row;

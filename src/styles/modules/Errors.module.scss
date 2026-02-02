@@ -35,7 +35,7 @@
 	-webkit-background-clip: text;
 	animation: stripeBackgroundPosition 2s linear infinite;
 
-     @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+     @media screen and (min-width: 0px) and (max-width:  768px)  {
         font-size: 5rem;
     }
 
@@ -43,7 +43,7 @@
         font-size: 10rem;
     }
 
-     @media screen and (min-width: var(--desktopSmall))  {
+     @media screen and (min-width: 960px)  {
         font-size: 20rem;
     }
 }

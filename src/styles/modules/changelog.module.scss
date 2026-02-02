@@ -10,7 +10,7 @@
         flex-direction: column;
         flex-wrap: wrap;
 
-         @media screen and (min-width: var(--desktopSmall))  {
+         @media screen and (min-width: 960px)  {
             justify-content: center;
         }
     }
@@ -48,7 +48,7 @@
             color: var(--primary);
         }
 
-         @media screen and (min-width: var(--desktopSmall))  {
+         @media screen and (min-width: 960px)  {
             width: clamp(200px, 100%, 400px);
         }
     }
@@ -64,11 +64,11 @@
             gap: 2rem;
         }
 
-         @media screen and (min-width: var(--tablet))  {
+         @media screen and (min-width:  768px)  {
             flex-direction: column;
         }
 
-         @media screen and (min-width: var(--desktopSmall))  {
+         @media screen and (min-width: 960px)  {
             flex-direction: row;
 
         }
@@ -109,7 +109,7 @@
                 margin-left: 1rem;
             }
 
-             @media screen and (min-width: var(--tablet))  {
+             @media screen and (min-width:  768px)  {
                 margin-left: 1.5rem;
                 max-width: 30rem;
             }

@@ -1,7 +1,7 @@
 .photoContainer {
 	position: relative;
 
-	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		display: none;
 	}
 
@@ -50,7 +50,7 @@
 		display: none;
 	}
 
-	 @media screen and (min-width: var(--desktopSmall))  {
+	 @media screen and (min-width: 960px)  {
 		display: block;
 	}
 }

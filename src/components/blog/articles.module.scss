@@ -79,7 +79,7 @@
 		flex-direction: column;
 	}
 
-	 @media screen and (min-width: var(--desktopSmall))  {
+	 @media screen and (min-width: 960px)  {
 		flex-direction: row;
 	}
 
@@ -89,7 +89,7 @@
 		border-radius: 2px;
 		display: none;
 
-		 @media screen and (min-width: var(--desktopSmall))  {
+		 @media screen and (min-width: 960px)  {
 			display: flex;
 		}
 	}
@@ -108,7 +108,7 @@
 		font-size: clamp(1.5rem, 5vw, 1.8rem);
 		margin-bottom: 2rem;
 
-		 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+		 @media screen and (min-width: 0px) and (max-width:  768px)  {
 			font-size: 1.5rem;
 			text-align: center;
 			margin-bottom: 1rem;
@@ -174,7 +174,7 @@
 		// background-color: var(--backgroundColor);
 		text-transform: capitalize;
 
-		 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+		 @media screen and (min-width: 0px) and (max-width:  768px)  {
 			font-size: 1.5rem;
 			margin-left: 2rem;
 		}

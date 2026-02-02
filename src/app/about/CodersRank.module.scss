@@ -10,11 +10,11 @@
 		margin: 1rem auto;
 	}
 
-	 @media screen and (min-width: var(--tablet))  {
+	 @media screen and (min-width:  768px)  {
 		margin: 2rem auto;
 	}
 
-	@media screen and (min-width: var(--desktopSmall))  {
+	@media screen and (min-width: 960px)  {
 		padding: var(--paddingContainer);
 		gap: 0.15rem;
 	}
@@ -40,7 +40,7 @@
 		min-height: 150px;
 	}
 
-	 @media screen and (min-width: var(--desktopSmall))  {
+	 @media screen and (min-width: 960px)  {
 		margin: 0.5rem;
 	}
 }

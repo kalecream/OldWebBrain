@@ -18,7 +18,7 @@
 		flex-direction: column;
 	}
 
-	@media screen and (min-width: var(--desktopSmall))  {
+	@media screen and (min-width: 960px)  {
 		width: fit-content;
 		flex-direction: row;
 		position: absolute;

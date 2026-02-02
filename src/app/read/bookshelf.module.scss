@@ -11,13 +11,13 @@
 	// 	transform: rotate(25deg);
 	// }
 
-	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		width: 90%;
 		border: var(--border);
 		border-radius: var(--borderRadius);
 	}
 
-	 @media screen and (min-width: var(--tablet))  {
+	 @media screen and (min-width:  768px)  {
 		width: 100%;
 	}
 }
@@ -43,12 +43,12 @@
         font-size: 2rem;
     }
 
-	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		margin: 0 0.15rem;
 		padding: 1rem;
 	}
 
-	 @media screen and (min-width: var(--tablet))  {
+	 @media screen and (min-width:  768px)  {
 		margin: 0 2rem;
 		padding: 1rem;
 	}
