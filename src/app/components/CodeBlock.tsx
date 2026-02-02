@@ -56,7 +56,7 @@ export function MDXCodeBlock({
                     ]
                 });
 
-                const processedHtml = highlighted.replace(/<pre([^>]*)>(.*?)<\/pre>/s, (match, attrs, content) => {
+                const processedHtml = highlighted.replace(/<pre([^>]*)>([\s\S]*?)<\/pre>/, (match, attrs, content) => {
                     const lines = content.split('\n');
                     const numberedLines = lines.map((line, i) => `<div class="line"><span class="line-number">${i + 1}</span><span class="line-content">${line}</span></div>`).join('');
                     return `<pre${attrs}><div class="code-lines">${numberedLines}</div></pre>`;
