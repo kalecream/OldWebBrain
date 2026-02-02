@@ -110,7 +110,7 @@ const GPhotos: GalleryData[] = [
     month: "05",
     src: "https://i.imgur.com/qBoPQhM.jpeg",
     name: "Seedlings",
-    desc: "I don't remember what I was growing here xD",
+    desc: "I do not remember what I was growing here xD",
     tags: ["seedling", "garden"],
   },
   // {
@@ -380,7 +380,7 @@ const GPhotos: GalleryData[] = [
     month: "01",
     src: "https://i.imgur.com/Ft6jnro.jpeg",
     name: "",
-    desc: "Trying to get my life right by planning out my time visually where it's less abstract to me.",
+    desc: "Trying to get my life right by planning out my time visually where it is less abstract to me.",
     tags: ["organisation", "log"],
   },
   {
@@ -417,7 +417,7 @@ const GPhotos: GalleryData[] = [
   //   month: "06",
   //   src: "https://i.imgur.com/a0xm3RS.jpeg",
   //   name: "Joy",
-  //   desc: "If I don't have silly what do I have?",
+  //   desc: "If I do not have silly what do I have?",
   //   tags: ["seedling", "garden"],
   // },
   // {

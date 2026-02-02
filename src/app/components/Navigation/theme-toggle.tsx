@@ -1,4 +1,4 @@
-import { useTheme } from "../../app/context/Theme";
+import { useTheme } from "../../context/Theme";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
 /**

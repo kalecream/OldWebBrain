@@ -1,5 +1,5 @@
 import { getAllNotes, parseWikiLinks } from "@app/db/notes";
-import { CustomMDX } from "../../components/mdx";
+import { CustomMDX } from "../../components/BlogComponents/mdx";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { PageReadTime } from "@utils/PageReadTime";

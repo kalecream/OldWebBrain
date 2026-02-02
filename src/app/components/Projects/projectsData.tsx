@@ -29,8 +29,8 @@ export const Projects: ProjectStructure[] = [
     status: "ongoing",
     description: (
       <span>
-        This is a duotone i3wm theme. I installed i3wm because for a while, my mouse wasn't working properly, so I had
-        to use the keyboard to navigate. Nowadays, I like it because it's fast, minimal and my mice still keep dying on
+        This is a duotone i3wm theme. I installed i3wm because for a while, my mouse was not working properly, so I had
+        to use the keyboard to navigate. Nowadays, I like it because it is fast, minimal and my mice still keep dying on
         me.
       </span>
     ),
@@ -68,7 +68,7 @@ export const Projects: ProjectStructure[] = [
     status: "ongoing",
     description: (
       <span>
-        I've rebuilt the website many different times in; plain HTML, Javascript and CSS combination, Wordpress, and now
+        I have rebuilt the website many different times in; plain HTML, Javascript and CSS combination, Wordpress, and now
         in React Typescript on NextJS.
       </span>
     ),
@@ -198,7 +198,7 @@ export const Projects: ProjectStructure[] = [
     description: (
       <span>
         A ceremonial bee sword with an obsidian blade and pearl wings made for Swordtember 2024. The prompt was
-        "Winged".
+        Winged.
       </span>
     ),
     technology: ["Blender3D"],
@@ -239,7 +239,7 @@ export const Projects: ProjectStructure[] = [
     status: "completed",
     description: (
       <span>
-        Poster for the Astronomical Association of Jamaica's guest presentation on neutron stars and black holes.
+        Poster for the Astronomical Association of Jamaica guest presentation on neutron stars and black holes.
       </span>
     ),
     technology: ["Photopea"],

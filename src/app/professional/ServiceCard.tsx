@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import style from "./ServiceCard.module.scss";
 import Link from "next/link";
-import { SVGCard } from "@utils/SVGCard";
+import { SVGCard } from "@components/Cards/SVGCard";
 
 const Card = ({ id, href, heading }) => {
   const cardRef = useRef(null);

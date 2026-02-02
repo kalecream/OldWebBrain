@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Directory from "@data/directory";
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import ThemeSwitch from "@components/navigation/theme-toggle";
 import { FaRss } from "react-icons/fa";
 

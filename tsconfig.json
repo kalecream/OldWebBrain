@@ -22,7 +22,8 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@components/*": ["src/app/components/*"],
+      "@blog/*": ["src/app/components/BlogComponents/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@module/*": ["src/styles/modules/*"],
@@ -31,9 +32,7 @@
       "@layout/*": ["src/container/layout/*"],
       "@data/*": ["src/data/*"],
       "@types/*": ["src/types/*"],
-      "@hooks/*": ["src/hooks/*"],
       "@posts/*": ["src/posts/*"],
-      "@containers/*": ["src/containers/*"],
       "@public/*": ["public/*"],
       "@app/*": ["src/app/*"]
     },
@@ -51,7 +50,7 @@
     "next.config.mjs",
     ".next/types/**/*.ts",
     "src/assets/models/castlevania.jsx",
-    "src/components/threeJS/HeroModel.jsx",
+    "src/app/components/threeJS/HeroModel.jsx",
     "src/assets/models/WingedSword.jsx",
     ".next/dev/types/**/*.ts"
   ],

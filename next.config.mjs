@@ -1,17 +1,11 @@
 import withMDX from "@next/mdx";
-import { remarkCodeHike, recmaCodeHike } from "codehike/mdx"
-
-/** @type {import('codehike/mdx').CodeHikeConfig} */
-const chConfig = {
-  components: { code: "Code" },
-}
 
 /** @type {import('next').NextConfig} */
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [[remarkCodeHike, chConfig]],
-    recmaPlugins: [[recmaCodeHike, chConfig]],
+    remarkPlugins: [[]],
+    recmaPlugins: [[]],
     jsx: true,
   },
 });
@@ -34,6 +28,7 @@ const nextConfig = {
     includePaths: ["src/app/styles"],
   },
   typescript: {
+    // eslint-disable-next-line no-undef
     ignoreBuildErrors: process.env.VERCEL_ENV === "production",
   }
 };

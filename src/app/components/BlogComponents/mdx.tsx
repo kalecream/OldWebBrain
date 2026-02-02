@@ -1,33 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import type { BundledLanguage, BundledTheme } from "shiki";
 import { createElement } from "react";
-import { MDXCodeBlock as CodeBlock } from "./CodeBlock";
-import code from "./CodeBlock.module.scss";
-
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
-
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
-}
+import { CodeBlock } from "@app/components";
 
 function CustomLink(props) {
-  let href = props.href;
+  const href = props.href;
 
   if (href.startsWith("/")) {
     return (
@@ -44,17 +21,6 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} {...props} />;
-}
-
-interface Props {
-  children: string;
-  lang?: BundledLanguage;
-  theme?: BundledTheme;
-  filename?: string;
-}
-
 function slugify(str) {
   return str
     .toString()
@@ -68,7 +34,7 @@ function slugify(str) {
 
 function createHeading(level) {
   return ({ children }) => {
-    let slug = slugify(children);
+    const slug = slugify(children);
     return createElement(
       `h${level}`,
       { id: slug },
@@ -83,10 +49,6 @@ function createHeading(level) {
     );
   };
 }
-
-const InlineCode = (props: any) => {
-  return <code className={code.inlineCode}>{props.children}</code>;
-};
 
 const CustomPre = (props: any) => {
   const child = props.children;
@@ -107,7 +69,7 @@ const paragraph = ({ children }) => {
   return <p className="blur">{children}</p>;
 };
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -115,11 +77,9 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   p: paragraph,
-  Image: RoundedImage,
   a: CustomLink,
   pre: CustomPre,
   code: CodeBlock,
-  Table,
 };
 
 export function CustomMDX(props) {

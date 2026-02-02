@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Navbar } from "./components/nav";
-import { Footer } from "./components/footer";
-import { Analytics } from "@vercel/analytics/react";
-// import { SpeedInsights } from "@vercel/speed-insights/next";
-import { BackToTop } from "@components/_basics/BackToTop";
-import { ThemeProvider } from "./context/Theme";
-import "@styles/global.scss";
 import Head from "next/head";
+import "@styles/global.scss";
+import { Navbar, Footer, BackToTop } from "@components";
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "./context/Theme";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yunghigue.com"),

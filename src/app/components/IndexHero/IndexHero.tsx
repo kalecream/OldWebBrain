@@ -1,11 +1,11 @@
 "use client";
-import hero from "@styles/modules/Index.module.scss";
+import hero from "./Index.module.scss";
 import button from "@styles/modules/Button.module.scss";
-import { HeroModel } from "@components/threeJS/HeroModel.jsx";
+import { HeroModel } from "@components/ThreeJS/HeroModel.jsx";
 import Link from "next/link";
 import MusicPlayer from "@components/MusicPlayer/MusicPlayer";
 
-const Hero = () => {
+const Index = () => {
   return (
     <section>
       <div className={`${hero.container}`}>
@@ -72,4 +72,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Index;

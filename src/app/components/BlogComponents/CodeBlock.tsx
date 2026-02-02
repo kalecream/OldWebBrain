@@ -9,7 +9,7 @@ interface MDXCodeBlockProps {
   meta?: string;
 }
 
-export function MDXCodeBlock({ children, className = "", meta = "" }: MDXCodeBlockProps) {
+export function CodeBlock({ children, className = "", meta = "" }: MDXCodeBlockProps) {
   const [html, setHtml] = useState<string>("");
   const [copied, setCopied] = useState(false);
   const [isLoading, setIsLoading] = useState(true);

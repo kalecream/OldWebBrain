@@ -70,7 +70,7 @@ const Rolodex = () => {
     <>
       <section id="rolodex">
         <h1>Rolodex</h1>
-        <p className="prose">These are some bookmarks for pages & media I've enjoyed on the net.</p>
+        <p className="prose">These are some bookmarks for pages & media I have enjoyed on the net.</p>
       </section>
       <section>
         <ol className="prose">

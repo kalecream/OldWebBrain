@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Projects, ProjectStructure } from "@data/projectsData";
+import { Projects, ProjectStructure } from "./projectsData";
 import Link from "next/link";
-import styles from "@styles/modules/projects.module.scss";
+import styles from "./projects.module.scss";
 import Image from "next/image";
-import { GetMonthName } from "@utils/GetMonthName";
+// import { GetMonthName } from "@components/Projects/GetMonthName";
 
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
@@ -158,7 +158,7 @@ const ProjectList: React.FC = () => {
 
   return (
     <section className={styles["project-wrapper"]}>
-      <h1>Things I've Made</h1>
+      <h1>Things I have Made</h1>
       <ProjectGallery projects={Projects} />
       {/* <div className={styles["project-tabs"]}>
         <button

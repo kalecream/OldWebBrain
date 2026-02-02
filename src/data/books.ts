@@ -9,7 +9,7 @@ const Books = [
     status: "Read",
     summary: "A history of salt and its role in civilization.",
     review:
-      "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I didn't think that salt had this big of an impact.",
+      "Very informative! I zoned out sometimes because of the amount of dense information. It was well worth reading. I did not think that salt had this big of an impact.",
 
     added: "2023-03-01",
     started: "2023-07-20",
@@ -333,7 +333,7 @@ const Books = [
     minutes: 0,
     status: "Read",
     review:
-      "Great read in terms of worldbuilding that isn't eurocentric. I could have done without the repeated sexual violence, but it was still enjoyable after the first couple chapters when I warmed up to the main character.",
+      "Great read in terms of worldbuilding that is not eurocentric. I could have done without the repeated sexual violence, but it was still enjoyable after the first couple chapters when I warmed up to the main character.",
     cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579618622l/50608676.jpg",
     added: "2020-01-01",
     started: "2020-01-01",
@@ -345,7 +345,7 @@ const Books = [
       "If you lived all your life with monsters, what was monstrous?",
       "You could have a family of one and still drive them apart.",
       "I am content with much. This world never gives me anything, and yet I have everything I want.",
-      "We don't own truth.Truth is truth and nothing you can do about it even if you hide it, or kill it, or even tell it.It was truth before you open your mouth and say, That there is a true thing",
+      "We do not own truth.Truth is truth and nothing you can do about it even if you hide it, or kill it, or even tell it.It was truth before you open your mouth and say, That there is a true thing",
     ],
   },
   {
@@ -384,7 +384,7 @@ const Books = [
     started: "2020-01-01",
     finished: "2020-08-22",
     quotes: [
-      "Don't Panic.",
+      "Do not Panic.",
       "Would it save you a lot of time if I just gave up and went mad now?",
       "If there's anything more important than my ego around, I want it caught and shot now.",
     ],
@@ -424,7 +424,7 @@ const Books = [
     quotes: [
       "In order to love people usefully you need to be focused on them and not yourself.",
       "Somewhere out there is someone who wants exactly the kind of person you are, complete with all the flaws and failings you come with.",
-      "you would be surprised how many people seriously limit their dreams. They're your dreams for heaven's sake. There should be no limit to them. Plans have to be realistic; dreams don't.",
+      "you would be surprised how many people seriously limit their dreams. They're your dreams for heaven's sake. There should be no limit to them. Plans have to be realistic; dreams do not.",
     ],
   },
   {
@@ -606,7 +606,7 @@ const Books = [
     cover: "https://4.bp.blogspot.com/-4-02iZjaIAA/VGhlDKSHp3I/AAAAAAAAAkY/Ylh8v2Vk10o/s1600/anthem0001.jpg",
     status: "Read",
     review:
-      "Satire is cringe. The portrayal of individualism was a bit overwhelming. I think it's important to have a balance between individualism and collectivism. While reading this book, it prompted me to reflect on instances where I may have inadvertently prioritized my own individualism at the expense of others. I think it's important to be aware of this and to be mindful of the impact of our actions on others. I believe it is a dangerous mindset to think that we owe nothing to our fellow humans.",
+      "Satire is cringe. The portrayal of individualism was a bit overwhelming. I think it is important to have a balance between individualism and collectivism. While reading this book, it prompted me to reflect on instances where I may have inadvertently prioritized my own individualism at the expense of others. I think it is important to be aware of this and to be mindful of the impact of our actions on others. I believe it is a dangerous mindset to think that we owe nothing to our fellow humans.",
     added: "2023-05-25",
     started: "2023-05-25",
     finished: "2023-05-25",
@@ -703,7 +703,7 @@ const Books = [
     finished: "2023-03-03",
     cover: "https://imgur.com/yj6J7UF.jpeg",
     quotes: [
-      "We would never have scales, feathers, or breasts if we didn't have teeth in the first place.",
+      "We would never have scales, feathers, or breasts if we did not have teeth in the first place.",
       "When you see these deep similarities among different organs and bodies, you begin to recognize that the diverse inhabitants of our world are just variations on a theme.",
       "We humans are part of a lineage that has traded smell for sight. We now rely on vision more than on smell, and this is reflected in our genome. In this trade-off, our sense of smell was deemphasized, and many of our olfactory genes became functionless.",
     ],
@@ -762,7 +762,7 @@ const Books = [
     rating: 4,
     pages: 272,
     review:
-      "It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it's a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I wasn't convinced by their optimistic outlook for the future of the workforce.",
+      "It gave me some food for thought on the intentions behind the 4 day workweek. I started reading this years ago so by now it is a lil outdated, but hits some very relevant topics. The sudden shift to the author's illness threw me for a loop, and I was not convinced by their optimistic outlook for the future of the workforce.",
     started: "2023-03-25",
     added: "2022-01-28",
     finished: "2023-07-20",
@@ -775,7 +775,7 @@ const Books = [
     status: "Read",
     rating: 3.75,
     pages: 438,
-    review: "One of the most infuriating works I've ever read.",
+    review: "One of the most infuriating works I have ever read.",
     started: "2023-05-01",
     added: "2023-05-01",
     finished: "2023-07-01",

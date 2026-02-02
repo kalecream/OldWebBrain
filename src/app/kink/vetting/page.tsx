@@ -3,7 +3,7 @@ const VettingPage = () => {
     <section>
       <h1>Vetting Playmates</h1>
       <p className="prose blur">
-        It's also hard to know what to look for in play partners when lacking experience. Vetting a potential playmate
+        it is also hard to know what to look for in play partners when lacking experience. Vetting a potential playmate
         or play partner is an important first step before play. Regardless of where we fall on the spectrum of BDSM
         practitioners, there are general points to follow.
       </p>
@@ -39,17 +39,17 @@ const VettingPage = () => {
       </p>
       <h2>Negotiation</h2>
       <p className="prose blur">
-        After figuring out kink compatibility, it's time to define the boundaries of play. We should discuss safewords
+        After figuring out kink compatibility, it is time to define the boundaries of play. We should discuss safewords
         versus established systems like the traffic light system.
         <br />
-        <br /> Some resources I've read suggest talking about different BDSM models (SSC, RACK, PRICK). As a beginner,
+        <br /> Some resources I have read suggest talking about different BDSM models (SSC, RACK, PRICK). As a beginner,
         I'm personally recommending that you stick to Safe, Sane, and Consensual (SSC) until you're more experienced or
         guided by an experienced play partner. Risk Aware Consensual Kink (RACK) and Personal Responsibility Informed
         Consensual Kink (PRICK) are more advanced models that you absolutely should not use until you have awareness of
         your limits.
         <br /> <br />
         Here, we also want to talk about aftercare. Aftercare is the time after play when we check in with each other
-        and offer reassurance. It's important to discuss what aftercare looks like for both parties.
+        and offer reassurance. it is important to discuss what aftercare looks like for both parties.
       </p>
     </section>
   );

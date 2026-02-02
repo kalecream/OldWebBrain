@@ -1,4 +1,4 @@
-import mouse from "@styles/modules/ScrollDown.module.scss";
+import mouse from "./ScrollDown.module.scss";
 
 export const ScrollDown = () => {
   return (

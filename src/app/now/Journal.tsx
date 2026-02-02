@@ -17,10 +17,10 @@ export const Journal = () => {
           content: (
             <div>
               <p>
-                The focus of this season is introspection, a backlog that I've neglected and previous goals which were
+                The focus of this season is introspection, a backlog that I have neglected and previous goals which were
                 not completed.
                 <br />
-                <br /> Recently, I've been made aware of some negative traits of mine. With cursory thoughts, I see it
+                <br /> Recently, I have been made aware of some negative traits of mine. With cursory thoughts, I see it
                 affects my relationship with myself. Working on this will have a positive effect on my relationship with
                 everyone else.
               </p>
@@ -50,8 +50,8 @@ export const Journal = () => {
             <>
               <p>
                 This spring is a busy time. I am trying to re-orient myself to handle the rest of the year. The quarter
-                started strong, then was blown off track by the stings of poverty and burnout. For a few months, I've
-                also had my head in the clouds. I've been better about returning to my goals at the end of this season
+                started strong, then was blown off track by the stings of poverty and burnout. For a few months, I have
+                also had my head in the clouds. I have been better about returning to my goals at the end of this season
                 becoming more focused on refining my personal productivity systems to prevent stalling again rather than
                 powering through to complete my goals while neglecting my real responsibilities. I had the wins of
                 diving into reading again, loving, strengthening community ties and a stronger sense of self.

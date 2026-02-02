@@ -82,7 +82,7 @@ function addDecompressionAndPreparationTime() {
       const decompressionEvents = calendar.getEvents(eventEndTime, decompressionEndTime, {search: 'Decompression Time'});
       const preparationEvents = calendar.getEvents(preparationStartTime, eventStartTime, {search: 'Meeting Preparation'});
 
-      // Create new decompression and preparation events if they don't exist
+      // Create new decompression and preparation events if they do not exist
       if (decompressionEvents.length === 0) {
         const decompressionEvent = calendar.createEvent('Decompression Time', eventEndTime, decompressionEndTime);
         decompressionEvent.setColor('11'); // Set the decompression event color (optional)

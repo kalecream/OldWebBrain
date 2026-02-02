@@ -16,7 +16,7 @@ const WithRomance = () => {
           never age out of crushes and that I continue to be considerate of any partners when having crushes.
         </p>
         <p className="prose">
-          I want it particularly noted that I don't believe in “right person, wrong time.” Life sucks. There's never
+          I want it particularly noted that I do not believe in “right person, wrong time.” Life sucks. There's never
           going to be a right time, there's no guarantee that the person you knew this year is the same as they will be
           next year. Traumatic events are always happening. They force us to reconsider who we are and what we are
           willing to do. This is also why we should go slowly. A rushed relationship with no foundation will leave
@@ -46,7 +46,7 @@ const WithRomance = () => {
           to figure out incompatibilities that cannot be overlooked from early.
         </p>
         <p className="prose">
-          In a relationship intake stage, I would go over the form on the following form. I think I've made mistakes by
+          In a relationship intake stage, I would go over the form on the following form. I think I have made mistakes by
           not doing something similar to set expenctations and express desires. This is a form I got from Reddit,
           clicking on it will bring you to the original thread.
         </p>

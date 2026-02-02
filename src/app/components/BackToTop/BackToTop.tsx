@@ -1,7 +1,7 @@
 "use client";
 import { FaArrowUp } from "react-icons/fa6";
-import styles from "@styles/modules/BackToTop.module.scss";
-import { useEffect, useRef } from "react";
+import styles from "./BackToTop.module.scss";
+import { useRef } from "react";
 
 export const isBrowser = () => typeof window !== "undefined";
 
@@ -9,11 +9,11 @@ export const BackToTop = () => {
   const TopButton = useRef(null);
 
   const scrollDetect = () => {
-    var lastScroll = 0;
+    let lastScroll = 0;
 
     if (!isBrowser()) return;
     window.onscroll = () => {
-      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
 
       if (currentScroll > 0 && lastScroll <= currentScroll) {
         lastScroll = currentScroll;
