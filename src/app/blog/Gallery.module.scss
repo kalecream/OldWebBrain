@@ -1,9 +1,9 @@
-@import '@styles/mediaQuery';
+ 
 
 .gallery {
     display: none;
 
-    @include from(desktop) {
+    @media screen and (min-width: var(--desktopSmall))  {
         display: flex;
         flex-flow: row wrap;
         justify-content:flex-end;

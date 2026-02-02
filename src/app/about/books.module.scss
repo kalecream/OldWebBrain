@@ -1,8 +1,8 @@
-@import '@styles/mediaQuery';
+ 
 
 .paragraph {
 
-		@include from(tablet) {
+		 @media screen and (min-width: var(--tablet))  {
 		p {
 			max-width: 45rem;
 			margin: 0 auto;
@@ -29,18 +29,18 @@
 		user-select: none;
 	}
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		gap: 0.15rem;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		gap: 0.5rem;
 		flex-direction: row;
 	}
 }
 
 .random {
-	@include from(desktop) {
+	@media screen and (min-width: var(--desktopSmall))  {
 		width: 100%;
 		margin: 2rem auto;
 		justify-content: center;
@@ -62,11 +62,11 @@
 		margin: auto;
 	}
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: none;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		width: clamp(650px, 90vw, 800px);
 		min-height: 300px;
 
@@ -77,7 +77,7 @@
 		}
 	}
 
-	@include from(desktop) {
+	@media screen and (min-width: var(--desktopSmall))  {
 		width: clamp(650px, 70vw, 1200px);
 
 		.book__title a {
@@ -92,7 +92,7 @@
 	perspective: 600px;
 	margin: 0;
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: flex;
 	}
 }
@@ -211,7 +211,7 @@
 
 .book_info {
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		padding: var(--paddingContainer);
 	}
 
@@ -285,7 +285,7 @@
 .backlogChart {
 	margin: 1rem auto;
 
-	@include from(desktop) {
+	@media screen and (min-width: var(--desktopSmall))  {
 		padding: var(--paddingContainer);
 		margin: 3rem auto;
 	}

@@ -1,11 +1,11 @@
-@import '@styles/mediaQuery';
+ 
 
 #loadMore {
     width: 100vw;
     position: relative;
     display: none;
 
-    @include breakpoint-range($from: desktopSmall ) {
+     breakpoint-range($from: desktopSmall ) {
         display: block;
     }
 }

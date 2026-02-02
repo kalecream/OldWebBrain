@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .field {
 	display: flex;
@@ -14,11 +14,11 @@
 		color: var(--primary);
 	}
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		flex-direction: column;
 	}
 
-	@include from(desktop) {
+	@media screen and (min-width: var(--desktopSmall))  {
 		width: fit-content;
 		flex-direction: row;
 		position: absolute;

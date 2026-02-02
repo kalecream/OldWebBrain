@@ -1,12 +1,19 @@
 @use '@styles/normalize';
-@use '@styles/mediaQuery' as *;
+
+:root {
+  --mobile: 0;
+  --phone: 480px;
+  --tablet: 720px;
+  --desktopSmall: 960px;
+  --desktop: 1240px;
+  --desktopLarge: 1920px;
+}
 
 $font-path: '../../public/fonts';
 
 .fadeIn__below {
     animation: fadeInFromBelow 1s ease-in-out;
 }
-
 
 @keyframes marquee {
   0% {
@@ -60,8 +67,6 @@ $font-path: '../../public/fonts';
     animation-play-state: paused;
   }
 }
-
-
 
 @font-face {
 	font-family: "Fira Code";
@@ -134,8 +139,8 @@ $font-path: '../../public/fonts';
 	--hr-color: var(--primary);
 // prefer light
 	--backgroundColor: #f2f0e9;
-	--primary: #331200;
-	--secondary: #b12603;
+	--primary: #301100;
+	--secondary: #bd2803;
 	--backgroundImage: url(../assets/images/light-grey-terrazzo.webp);
 	--textColor: var(--primary);
 	--textColorAlt: #030637;
@@ -160,21 +165,6 @@ $font-path: '../../public/fonts';
 	--borderColor: rgba(0, 0, 0, 0.4);
 	--captionColor: rgb(136, 136, 136);
 }
-
-// @media (prefers-color-scheme: dark) {
-// 	:root {
-// 		--backgroundColor: rgb(29, 29, 29);
-// 		--primary: #c80000;
-// 		--secondary: #e20000;
-// 		--textColor: #ccc;
-// 		--backgroundImage: url(../assets/images/stars.gif);
-// 		--textColorAlt: #ffe7e7;
-// 		--border: 1px solid rgba(255, 255, 255, 0.1);
-// 		--boxShadow: 1px 4px 16px 0 rgba(255, 255, 255, 0.2);
-// 		--borderColor: rgba(0, 0, 0, 0.4);
-// 		--captionColor: rgb(136, 136, 136);
-// 	}
-// }
 
 * {
 	transition: var(--transition);
@@ -202,20 +192,13 @@ nav {
 	top: 0;
 	z-index: 999;
 	display: flex;
+	flex-direction: row;
 	width: 100vw;
+	min-height: 2rem;
 	backdrop-filter: blur(8px);
-	align-items: center;
-
-	@include from(mobile) {
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	@include from(desktopSmall) {
-		flex-direction: row;
-		justify-content: auto;
-		padding: 1rem;
-	}
+	place-items: center;
+	justify-content: center;
+	padding: 1rem;
 
 	.directory-link {
 		text-transform: capitalize;
@@ -267,13 +250,13 @@ footer {
 		padding: 0.5rem 0;
 	}
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 
 		flex-direction: column;
 		justify-content: center;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		flex-direction: row;
 		justify-content: space-between;
 	}
@@ -289,7 +272,7 @@ section {
 		margin-bottom: 3rem;
 	}
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		padding: 0 1rem;
 
 		&:first-of-type {
@@ -297,11 +280,11 @@ section {
 		}
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		padding: 0 1.5rem;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		padding: 0;
 
 		&:first-of-type {
@@ -349,11 +332,11 @@ progress {
 	border-radius: var(--borderRadius);
 	background: var(--backgroundColor);
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: none;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		display: inline-block;
 		width: 25%;
 	}
@@ -416,7 +399,7 @@ fieldset {
 	text-align: center;
 	gap: 1.5rem;
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		&>div {
 			width: 100%;
 		}
@@ -424,7 +407,7 @@ fieldset {
 		flex-direction: column;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		&>div {
 			width: 50%;
 		}
@@ -438,7 +421,7 @@ fieldset {
 	overflow: hidden;
 	z-index: 10;
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		border-image-slice: 140;
 		border-image-repeat: stretch;
 		border-width: 70px;
@@ -466,7 +449,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -485,7 +468,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -498,7 +481,7 @@ fieldset {
 	background-size: cover;
 	min-height: 100vh;
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		background-attachment: scroll;
 	}
 }
@@ -577,7 +560,7 @@ ol {
 		padding-left: 1rem;
 	}
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		margin: 0 auto;
 		margin-left: 1rem;
 	}
@@ -719,11 +702,11 @@ textarea {
 	place-items: center;
 	justify-content: center;
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		flex-direction: column;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		flex-direction: row;
 	}
 }
@@ -735,12 +718,12 @@ textarea {
 }
 
 .pancake-child {
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		flex: 1 1 100%;
 		margin: 1rem;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		flex: 1 1 300px;
 		margin: 0.25rem;
 	}
@@ -772,21 +755,21 @@ textarea {
 .mobile {
 	display: flex;
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: flex;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: none;
 	}
 }
 
 .desktop {
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		display: none;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: flex;
 	}
 }
@@ -851,15 +834,15 @@ article .info {
 
 article p {
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		margin: 1rem 1.5rem;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		margin: 1rem 2rem;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		margin: 1rem 0;
 	}
 }
@@ -898,15 +881,15 @@ article q p {
 article ul,
 article ol {
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		margin: 1rem 1rem;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		margin: 1rem 2rem;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		margin: 2rem 0;
 	}
 }
@@ -1048,41 +1031,41 @@ span.project__status.archived {
 }
 
 .desktop-block {
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: none;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: block;
 	}
 }
 
 .desktop-flex {
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: none;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: flex;
 	}
 }
 
 .mobile-block {
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: block;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: none;
 	}
 }
 
 .mobile-flex {
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		display: flex;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		display: block;
 	}
 }

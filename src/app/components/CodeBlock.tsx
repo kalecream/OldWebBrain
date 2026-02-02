@@ -1,9 +1,7 @@
 'use client';
 import { useState, useEffect, Suspense } from 'react';
-import { FaCopy, FaCheck, FaFile } from 'react-icons/fa6';
+import { FaCopy, FaCheck, FaFolder } from 'react-icons/fa6';
 import code from './CodeBlock.module.scss';
-
-// TODO: unfuck codeblocks later
 
 interface MDXCodeBlockProps {
     children: string;
@@ -58,7 +56,7 @@ export function MDXCodeBlock({
 
                 const processedHtml = highlighted.replace(/<pre([^>]*)>([\s\S]*?)<\/pre>/, (match, attrs, content) => {
                     const lines = content.split('\n');
-                    const numberedLines = lines.map((line, i) => `<div class="line"><span class="line-number">${i + 1}</span><span class="line-content">${line}</span></div>`).join('');
+                    const numberedLines = lines.map((line, i) => `<div class="line"><span class="line-content">${line}</span></div>`).join('');
                     return `<pre${attrs}><div class="code-lines">${numberedLines}</div></pre>`;
                 });
 
@@ -91,7 +89,7 @@ export function MDXCodeBlock({
                 <div className={code['code-block'] + ' ' + code['code-block--loading']}>
                     {filename && (
                         <div className={code['code-header']}>
-                            <FaFile className={code['code-file-icon']} />
+                            <FaFolder className={code['code-file-icon']} />
                             <span className={code['code-filename']}>{filename}</span>
                         </div>
                     )}
@@ -111,7 +109,7 @@ export function MDXCodeBlock({
                         <div className={code['mdx-code-header-left']}>
                             {filename ? (
                                 <>
-                                    <FaFile className={code['mdx-code-file-icon']} />
+                                    <FaFolder className={code['mdx-copy-icon']} />
                                     <span className={code['mdx-code-filename']}>{filename}</span>
                                 </>
                             ) : (

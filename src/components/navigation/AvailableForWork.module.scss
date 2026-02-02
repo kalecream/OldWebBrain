@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .work-button {
     width: 150px;
@@ -16,16 +16,16 @@
         animation: none;
     }
 
-    @include from(mobile) {
+    @media screen and (min-width: 0)  {
         font-size: 0.5rem;
         padding: 0.25rem 0.5rem;
     }
 
-    @include between(mobile,tablet) {
+     @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
         font-size: 0.6rem;
     }
 
-    @include from(tablet) {
+     @media screen and (min-width: var(--tablet))  {
         font-size: 0.8rem;
         padding: var(--paddingObjectSmall);
     }

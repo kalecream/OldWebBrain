@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .terms {
 margin: 3rem auto;
@@ -7,7 +7,7 @@ margin: 3rem auto;
 		max-width: 55rem;
 		text-align: justify;
 
-		@include between(mobile,tablet) {
+		 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 			margin: 1.5rem 1rem;
 		}
 	}

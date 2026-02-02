@@ -1,4 +1,4 @@
-@use '@styles/mediaQuery' as *;
+ 
 
 .container {
 	display: flex;
@@ -7,7 +7,7 @@
 	letter-spacing: 0.5px;
 	align-items: center;
 
-	@include from(mobile) {
+	@media screen and (min-width: 0)  {
 		flex-direction: column;
 		width: clamp(10rem, 80%, 30rem);
 		margin: 0rem auto;
@@ -15,7 +15,7 @@
 		gap: 1rem;
 	}
 
-	@include from(desktopSmall) {
+	 @media screen and (min-width: var(--desktopSmall))  {
 		flex-direction: row;
 		width: clamp(20rem, 100%, 50rem);
 		margin: 0rem auto;
@@ -183,7 +183,7 @@
 			background-image 0.15s;
 	}
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		padding: 2rem 3rem;
 		max-width: 30rem;
 	}

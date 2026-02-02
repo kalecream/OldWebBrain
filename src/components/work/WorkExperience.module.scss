@@ -1,14 +1,14 @@
-@import '@styles/mediaQuery';
+ 
 
 .indicator {
     height: 1rem;
     width: 1rem;
 
-    @include breakpoint-range($from:mobile, $to: tablet) {
+     breakpoint-range($from:mobile, $to: tablet) {
         display: none;
     }
 
-    @include from(tablet) {
+     @media screen and (min-width: var(--tablet))  {
         display: block;
     }
 
@@ -18,11 +18,11 @@
     display: flex;
     margin: 1rem 0;
 
-    @include breakpoint-range($from:mobile, $to: desktopSmall) {
+     breakpoint-range($from:mobile, $to: desktopSmall) {
         flex-direction: column;
     }
 
-    @include from(desktopSmall) {
+     @media screen and (min-width: var(--desktopSmall))  {
         flex-direction: row;
     }
 

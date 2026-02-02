@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .bookDetails {
 	display: grid;
@@ -11,13 +11,13 @@
 	// 	transform: rotate(25deg);
 	// }
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		width: 90%;
 		border: var(--border);
 		border-radius: var(--borderRadius);
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		width: 100%;
 	}
 }
@@ -43,12 +43,12 @@
         font-size: 2rem;
     }
 
-	@include between(mobile,tablet) {
+	 @media screen and (min-width: var(--mobile)) and (max-width: var(--tablet))  {
 		margin: 0 0.15rem;
 		padding: 1rem;
 	}
 
-	@include from(tablet) {
+	 @media screen and (min-width: var(--tablet))  {
 		margin: 0 2rem;
 		padding: 1rem;
 	}

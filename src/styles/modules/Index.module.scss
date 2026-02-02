@@ -1,5 +1,3 @@
-@use '@styles/mediaQuery' as *;
-
 .button-block {
 	margin-top: 2rem;
 	display: flex;
@@ -25,15 +23,12 @@
 	place-items: center;
 	margin: 0 auto;
 
-	@include between(mobile, desktopSmall) {
+	@media screen and (min-width: var(--mobile)) and (max-width: var(--desktopSmall)) {
 		flex-direction: column;
 	}
 
-	@include between(desktopSmall,desktopLarge) {
+	@media screen and (min-width: var(--desktopSmall)) {
 		flex-direction: row;
-	}
-
-	@include from(desktopSmall) {
 		padding: 0 2rem;
 	}
 }
@@ -50,6 +45,30 @@
 .cta {
 	@extend .section;
 	position: absolute;
+	min-height: 30%;
+	bottom: 10%;
+	left: 5%;
+
+
+	@media (min-width: var(--mobile)) and (max-width: var(--tablet)) {
+		background: var(--backgroundColor);
+		border-radius: var(--borderRadius);
+		min-height: 80%;
+		width: 100%;
+	}
+
+	@media (min-width: var(--tablet)) {
+		bottom: 1%;
+		left: 20%;
+		background: transparent;
+		width: fit-content;
+		min-height: 70%;
+	}
+
+	@media (min-width: var(--desktopSmall)) {
+		bottom: 10%;
+		left: 10%;
+	}
 
 	.name {
 		font-size: clamp(3rem, 20vw, 9.5rem);
@@ -63,7 +82,7 @@
 		pointer-events: none;
 		stroke: var(--border);
 		animation: upDown 10s ease-in-out infinite;
-		text-shadow:  1px 1px 2px #ff0000, -1px -1px 2px #0000ff;
+		text-shadow: 1px 1px 2px #ff0000, -1px -1px 2px #0000ff;
 	}
 
 	.text {
@@ -71,6 +90,8 @@
 		font-weight: 300;
 		text-align: center;
 		color: var(--textColor);
+
+
 
 		& a {
 			color: var(--textColor);
@@ -89,53 +110,29 @@
 			max-width: 35rem;
 		}
 	}
-
-	@include from(mobile) {
-		bottom: 0;
-		left: 0;
-		background: var(--backgroundColor);
-		border-radius: var(--borderRadius);
-		min-height: 80%;
-		width: 100%;
-	}
-
-	@include from(tablet) {
-		bottom: 1%;
-		left: 20%;
-		background: transparent;
-		width: fit-content;
-		min-height: 70%;
-	}
-
-	@include from(desktopSmall) {
-		bottom: 10%;
-		left: 10%;
-		min-height: 10%;
-	}
 }
 
 .model {
 	display: flex;
 	position: absolute;
 	bottom: 2%;
-
+	left: 0;
 	margin: 0 auto;
 
-	@include between(mobile, desktopSmall) {
+	@media screen and (min-width: var(--mobile)) and (max-width: var(--desktopSmall)) {
 		& #hero-model {
 			display: none;
 		}
 	}
 
-	@include from(desktopSmall) {
-		left: 0%;
+	@media screen and (min-width: var(--desktopSmall)) {
+		bottom: 10%;
+		left: 5%;
 		flex-direction: row;
 
 		& #hero-model {
 			display: block;
 		}
-
-
 	}
 }
 
