@@ -20,12 +20,7 @@ const AboutMeHero = () => {
                     style={{ margin: "auto", borderRadius: 0 }}
                 />
             </div>
-            <div>
-                <p className="prose" style={{ margin: "2rem auto 0 auto" }}>
-                    For the longest time, I struggled to figure out who I was.
-                </p>
-
-                <TextScrambleComponent />
+            <div style={{margin: "0.5rem"}}>
                 <p>I'm currently trying to figure out how to design this page. I have some more of my media habits in <Link href="/books">my books section</Link>.</p>
             </div>
         </div>
