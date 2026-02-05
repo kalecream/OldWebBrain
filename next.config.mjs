@@ -15,6 +15,9 @@ const nextConfig = {
   turbopack: {},
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ["react-icons/fa6","react", "next", "@react-three/fiber"],
+  },
   images: {
     remotePatterns: [
       { hostname: "cdn.sanity.io" },
