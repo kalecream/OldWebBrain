@@ -1,4 +1,4 @@
-import { ComingSoon } from "@components/_misc/ComingSoon";
+import { ComingSoon } from "@components/ComingSoon/ComingSoon";
 
 const SwordtemberPage = () => {
   return (

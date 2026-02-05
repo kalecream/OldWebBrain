@@ -47,7 +47,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.33.4",
     "styled-components": "^6.1.13",
-    "three": "0.168.0",
+    "three": "0.168.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

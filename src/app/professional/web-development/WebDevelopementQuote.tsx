@@ -1,6 +1,8 @@
 "use client";
 import styled from "styled-components";
-import { Projects } from "@components/Projects/projectsData";
+import { Projects } from "@components/Projects/ProjectsData";
+
+// TODO: do next
 
 const FormSection = styled.section`
   width: 100vw;
