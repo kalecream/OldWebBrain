@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Directory from "@data/directory";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import ThemeSwitch from "@components/navigation/theme-toggle";
+import ThemeSwitch from "@components/Navigation/ThemeSwitch";
 import { FaRss } from "react-icons/fa";
 
 export function Navbar() {
