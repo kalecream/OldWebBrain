@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { CustomMDX } from "../../components/BlogComponents/mdx";
+import { CustomMDX } from "@components/BlogComponents/CustomBlogComponents";
 import { getBlogPosts } from "../../db/blog";
 import { unstable_noStore as noStore } from "next/cache";
 import { PageReadTime } from "@utils/PageReadTime";

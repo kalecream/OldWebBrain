@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { createElement } from "react";
-import { CodeBlock } from "@app/components";
+import { CodeBlock } from "@components/BlogComponents/CodeBlock";
 
 function CustomLink(props) {
   const href = props.href;
