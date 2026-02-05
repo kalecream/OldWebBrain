@@ -33,13 +33,12 @@ const Index = () => {
                 .
               </p>
             </div>
-            <div className={hero["button-block"]}>
+            <div className={button["button-block"]}>
               <Link href="/professional">
                 <button className={button.vamp} role="button">
                   <span className={button.text}>The Professional Route</span>
                   <span className={button["vamp-background"]}></span>
                   <span className={button["vamp-border"]}></span>
-
                   {/* <!-- mask-border fallback --> */}
                   <svg style={{ position: "absolute", width: "0", height: "0" }}>
                     <filter id="remove-black-vamp" colorInterpolationFilters="sRGB">

@@ -71,8 +71,8 @@ export const HeroModel = () => {
       dpr={[1, 2]}
       camera={{ fov: 26, position: [-1.1872, -2.385, 45.981] }}
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "90vw",
+        height: "90vh",
         margin: "auto",
       }}
     >
