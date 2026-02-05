@@ -28,6 +28,7 @@
       "@styles/*": ["src/styles/*"],
       "@module/*": ["src/styles/modules/*"],
       "@assets/*": ["src/assets/*"],
+      "@fonts/*": ["src/assets/fonts/*"],
       "@utils/*": ["src/utils/*"],
       "@layout/*": ["src/container/layout/*"],
       "@data/*": ["src/data/*"],

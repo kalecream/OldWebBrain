@@ -1,4 +1,3 @@
-import { InteractiveCard } from "@components/InteractiveCard";
 import { YT } from "@data/youtube";
 import Link from "next/link";
 

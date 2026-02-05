@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TextScrambleComponent from "@app/components/TextScramble";
 import style from "./AboutMe.module.scss";
 import { CodersrankSummary } from "./CodersRank";
 import styles from "./books.module.scss";

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import "@styles/global.scss";
 import { Navbar } from "@components/Navigation/NavBar";
@@ -8,36 +7,6 @@ import { Footer } from "@components/Navigation/Footer";
 import { BackToTop } from "@components/BackToTop/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./context/Theme";
-
-const FiraCode = localFont({
-  src: 'local("@public/fonts/FiraCode.ttf")',
-  display: 'swap',
-  variable: '--font-fira-code',
-});
-
-const RomansStory = localFont({
-  src: 'local("@public/fonts/RomansStory.ttf")',
-  display: 'swap',
-  variable: '--font-romans-story',
-});
-
-const Cattedrale = localFont({
-  src: 'local("@public/fonts/Cathedrale.ttf")',
-  display: 'swap',
-  variable: '--font-cathedral',
-});
-
-const CattedraleOrnamental = localFont({
-  src: 'local("@public/fonts/CathedralOrnamental.ttf")',
-  display: 'swap',
-  variable: '--font-cathedral-ornamental',
-});
-
-const CattedraleRough = localFont({
-  src: 'local("@public/fonts/CathedralRough.ttf")',
-  display: 'swap',
-  variable: '--font-cathedral-rough',
-});
 
 const poppins = Poppins({
   subsets: ["latin"],
