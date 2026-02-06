@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .coding__container {
 	display: flex;
@@ -6,15 +6,15 @@
 	justify-content: center;
 	align-items: center;
 
-	@include breakpoint-range($from: mobile) {
+	@media screen and (min-width: 0)  {
 		margin: 1rem auto;
 	}
 
-	@include breakpoint-range($from: tablet) {
+	 @media screen and (min-width:  768px)  {
 		margin: 2rem auto;
 	}
 
-	@include breakpoint-range($from: desktop) {
+	@media screen and (min-width: 960px)  {
 		padding: var(--paddingContainer);
 		gap: 0.15rem;
 	}
@@ -34,13 +34,13 @@
 		text-align: center;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@media screen and (min-width: 0)  {
 		margin: 0.25rem;
 		width: clamp(100px, 40%, 150px);
 		min-height: 150px;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	 @media screen and (min-width: 960px)  {
 		margin: 0.5rem;
 	}
 }

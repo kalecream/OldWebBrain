@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Projects, ProjectStructure } from "@data/projectsData";
+import { Projects, ProjectStructure } from "@components/Projects/ProjectsData";
 import Link from "next/link";
-import styles from "@styles/modules/projects.module.scss";
+import styles from "@components/Projects/projects.module.scss";
 import Image from "next/image";
-import { GetMonthName } from "@utils/GetMonthName";
+import { GetMonthName } from "@components/Projects/GetMonthName";
 import { FaFileImage } from "react-icons/fa6";
 
 export const extractCategories = () => {

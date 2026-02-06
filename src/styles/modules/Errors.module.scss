@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .container {
 	width: 100%;
@@ -11,7 +11,7 @@
 	}
 
 
-    @include breakpoint-range($from: mobile) {
+    @media screen and (min-width: 0)  {
         flex-wrap: wrap;
     }
 }
@@ -35,15 +35,15 @@
 	-webkit-background-clip: text;
 	animation: stripeBackgroundPosition 2s linear infinite;
 
-    @include breakpoint-range($from: mobile, $to: tablet) {
+     @media screen and (min-width: 0px) and (max-width:  768px)  {
         font-size: 5rem;
     }
 
-    @include breakpoint-range($from: tablet, $to: desktopSmall) {
+     breakpoint-range($from: tablet, $to: desktopSmall) {
         font-size: 10rem;
     }
 
-    @include breakpoint-range($from: desktopSmall) {
+     @media screen and (min-width: 960px)  {
         font-size: 20rem;
     }
 }

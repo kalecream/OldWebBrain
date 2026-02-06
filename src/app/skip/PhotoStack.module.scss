@@ -1,11 +1,11 @@
 .photoContainer {
 	position: relative;
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		display: none;
 	}
 
-	@include breakpoint-range($from: tablet, $to: desktopLarge) {
+	 breakpoint-range($from: tablet, $to: desktopLarge) {
 		top: 60%;
 		left: -35%;
 		max-width: 800px;
@@ -46,11 +46,11 @@
 		line-height: 1;
 	}
 
-	@include breakpoint-range($from: mobile) {
+	@media screen and (min-width: 0)  {
 		display: none;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	 @media screen and (min-width: 960px)  {
 		display: block;
 	}
 }

@@ -57,7 +57,7 @@ const WithFriendsPage = () => {
         <li>Would you call them if you were in trouble? And if you did, do you think they would be there for you?</li>
       </ol>
       <p className="prose">
-        Does a friend really need to meet the above requirements? I don't think they do all the time. Maybe hit some
+        Does a friend really need to meet the above requirements? I do not think they do all the time. Maybe hit some
         periodically? It might depend on how close you have been. It would be easier for close friends who have been
         separated by time/distance to do maintenance mode friendships. I wouldn’t have friendships like that with
         someone I just met nor would I have the above expectations off the bat. I would let the other person dictate the
@@ -80,12 +80,12 @@ const WithFriendsPage = () => {
         <h2>A Common Future</h2>
         <p className="prose">
           When I try to find an answer on where other persons draw the line of friendship vs partnership, it seems to be
-          a case of sharing common future plans. It doesn't matter if a friend has a completely different life
+          a case of sharing common future plans. It does not matter if a friend has a completely different life
           trajectory in mind, while a partner is expected (?) to be on a similar path. I'm not sure if I agree or
           disagree yet. It does seem like it would make things more simple if the partners are on a similar path.
         </p>
         <p className="prose">
-          I need to explore the thought: a partner doesn't have a similar life path, but a synergistic path like someone
+          I need to explore the thought: a partner does not have a similar life path, but a synergistic path like someone
           who is traveling the world with a long-distance partner who really likes their space.
         </p>
       </div>

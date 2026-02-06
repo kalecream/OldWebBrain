@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Navbar } from "./components/nav";
-import { Footer } from "./components/footer";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { BackToTop } from "@components/_basics/BackToTop";
-import { ThemeProvider } from "./context/Theme";
+import Head from "next/head";
+import { Poppins } from "next/font/google";
 import "@styles/global.scss";
+import { Navbar } from "@components/Navigation/NavBar";
+import { Footer } from "@components/Navigation/Footer";
+import { BackToTop } from "@components/BackToTop/BackToTop";
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "./context/Theme";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "800"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yunghigue.com"),
@@ -32,9 +40,6 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      // noai: true,
-      // noimageai: true
-      // TODO: check when this becomes available in nextjs
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
@@ -47,24 +52,27 @@ export const metadata: Metadata = {
   },
   // verification: {
   //   google: '',
-  //   yandex: '',
+  //   TODO: Google verification
   // },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head></head>
+      <Head>
+        <link rel="preload" href="/assets/images/light-grey-terrazzo.webp" as="image" fetchPriority="high" />
+        <link rel="preload" href="/assets/images/stars.gif" as="image" fetchPriority="high" />
+      </Head>
       <body>
         <ThemeProvider>
           <Navbar />
           <main>
             {children}
             <Analytics />
-            <SpeedInsights />
             <BackToTop />
           </main>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

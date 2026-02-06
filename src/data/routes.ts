@@ -120,7 +120,7 @@ export const PageRoutes: PageRoutesProps[] = [
     category: "personal",
   },
   {
-    route: "/sitemap",
+    route: "/human-sitemap",
     date: new Date(2024, 10, 11, 20, 7),
     priority: 0.4,
   },

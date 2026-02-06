@@ -29,7 +29,7 @@ A cross between a portfolio, a playground, and a prayer.
 
 ### General
 
-The following are really my notes because I don't have good memory and I like being able to copy paste commands for the ones I won't use often. So this is really a mini-wiki, but I figure it will be useful for persons who want to contribute, learn code or copy and change things to customise the site to their liking.
+The following are really my notes because I do not have good memory and I like being able to copy paste commands for the ones I wo not use often. So this is really a mini-wiki, but I figure it will be useful for persons who want to contribute, learn code or copy and change things to customise the site to their liking.
 
 ```bash
 # Install dependencies
@@ -72,7 +72,7 @@ npx prisma migrate dev
 ```
 
 > [!WARNING]
-> Your tables will be dropped and you will lose data unless you edit the migration file to renaming instead of dropping. It's a simple SQL query. Here is an [SQL Cheatsheet](https://www.sqltutorial.org/sql-cheat-sheet/).
+> Your tables will be dropped and you will lose data unless you edit the migration file to renaming instead of dropping. it is a simple SQL query. Here is an [SQL Cheatsheet](https://www.sqltutorial.org/sql-cheat-sheet/).
 
 > [!NOTE]
 > If you intend on deploying to Vercel, it is very important that you click this link should you encounter a build error -> [Link](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue)

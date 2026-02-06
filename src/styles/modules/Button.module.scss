@@ -1,4 +1,21 @@
-@import '@styles/mediaQuery';
+.button-block {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	gap: 0.7rem;
+
+	& a {
+		color: var(--textColor);
+		text-transform: uppercase;
+		font-size: 0.7rem;
+		font-weight: 600;
+	}
+
+	& a:hover {
+		color: var(--secondary);
+	}
+} 
 
 .container {
 	display: flex;
@@ -7,7 +24,7 @@
 	letter-spacing: 0.5px;
 	align-items: center;
 
-	@include breakpoint-range($from: mobile) {
+	@media screen and (min-width: 0)  {
 		flex-direction: column;
 		width: clamp(10rem, 80%, 30rem);
 		margin: 0rem auto;
@@ -15,7 +32,7 @@
 		gap: 1rem;
 	}
 
-	@include breakpoint-range($from: desktopSmall) {
+	 @media screen and (min-width: 960px)  {
 		flex-direction: row;
 		width: clamp(20rem, 100%, 50rem);
 		margin: 0rem auto;
@@ -183,7 +200,7 @@
 			background-image 0.15s;
 	}
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		padding: 2rem 3rem;
 		max-width: 30rem;
 	}
@@ -307,6 +324,7 @@
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	text-fill-color: transparent;
+	font-weight: 500;
 	color: transparent;
 	z-index: 3;
 	position: relative;

@@ -13,7 +13,7 @@
   </div>
   <div>
     <h2>Build</h2>
-    <p>This is where I create your product! And once you give the sign-off, it's time to...</p>
+    <p>This is where I create your product! And once you give the sign-off, it is time to...</p>
   </div>
   <div>
     <h2>Launch</h2>

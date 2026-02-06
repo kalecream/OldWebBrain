@@ -20,7 +20,7 @@ const ColophonPage = () => {
       <div className="prose">
         <h2>Credits</h2>
         <p>
-          I don't think I could have made my vision come to life without standing on the shoulders of the coders who
+          I do not think I could have made my vision come to life without standing on the shoulders of the coders who
           came before me. For individuals, I will attempt to find their donation links to post alongside their credit.
         </p>
         <ul>

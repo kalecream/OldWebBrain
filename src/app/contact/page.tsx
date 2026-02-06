@@ -1,5 +1,5 @@
 "use client";
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm, ValidationError } from "@formspree/react";
 import { FaEnvelope, FaPhone, FaArrowRightLong, FaPaperclip, FaWhatsapp, FaTelegram, FaDiscord } from "react-icons/fa6";
 import style from "./contact.module.scss";
 import form from "@styles/modules/form.module.scss";
@@ -12,26 +12,18 @@ function ContactForm() {
     return <p>♡ Message Sent! ♡</p>;
   }
   return (
-    <form onSubmit={handleSubmit}
-      className={form.form}
-    >
+    <form onSubmit={handleSubmit} className={form.form}>
       <fieldset className={form.field}>
-        <input
-          placeholder="your name (required)"
-          className={form.input} type="name" id="name" name="name" required />
-        <ValidationError
-          prefix="Name"
-          field="name"
-          errors={state.errors}
-        />
+        <input placeholder="your name (required)" className={form.input} type="name" id="name" name="name" required />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
         <input
           placeholder="your email address (not required but preferred)"
-          className={form.input} type="email" id="email" name="email" />
-        <ValidationError
-          prefix="Email"
-          field="email"
-          errors={state.errors}
+          className={form.input}
+          type="email"
+          id="email"
+          name="email"
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
           id="message"
           name="message"
@@ -39,11 +31,7 @@ function ContactForm() {
           placeholder="<3 hey, what's up? Give me a message, suggestion or feedback here. If you give a return e-mail address I'll get back you asap!"
           required
         ></textarea>
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
         <button disabled={state.submitting} className={button.vamp} role="button">
           <span className={button.text}>Send Message</span>
           <span className={button["vamp-background"]}></span>
@@ -69,7 +57,6 @@ function ContactForm() {
   );
 }
 
-
 const ContactPage = () => {
   return (
     <section className={style.container}>
@@ -77,7 +64,9 @@ const ContactPage = () => {
         <div style={{ gap: "1rem", display: "flex", flexDirection: "column" }}>
           <button
             aria-label="Book a Video Call"
-            onClick={() => { window.location.href = "https://calendar.app.google/psZPwELYuBV2JgvC8" }}
+            onClick={() => {
+              window.location.href = "https://calendar.app.google/psZPwELYuBV2JgvC8";
+            }}
             className={button.glass}
           >
             <FaPhone size={24} className={button.icon} />
@@ -89,7 +78,9 @@ const ContactPage = () => {
           </button>
           <button
             aria-label="Send an email"
-            onClick={() => { window.location.href = "mailto:yunghigue@gmail.com" }}
+            onClick={() => {
+              window.location.href = "mailto:yunghigue@gmail.com";
+            }}
             className={button.glass}
           >
             <FaEnvelope size={24} className={button.icon} />
@@ -101,7 +92,9 @@ const ContactPage = () => {
           </button>
           <button
             aria-label="Message on Whatsapp"
-            onClick={() => { window.location.href = "https://wa.me/18764135825" }}
+            onClick={() => {
+              window.location.href = "https://wa.me/18764135825";
+            }}
             className={button.glass}
           >
             <FaWhatsapp size={24} className={button.icon} />
@@ -113,7 +106,9 @@ const ContactPage = () => {
           </button>
           <button
             aria-label="Message on Telegram"
-            onClick={() => { window.location.href = "https://t.me/medwinter" }}
+            onClick={() => {
+              window.location.href = "https://t.me/medwinter";
+            }}
             className={button.glass}
           >
             <FaTelegram size={24} className={button.icon} />

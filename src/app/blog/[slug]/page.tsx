@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { CustomMDX } from "../../components/mdx";
+import { CustomMDX } from "@components/BlogComponents/CustomBlogComponents";
 import { getBlogPosts } from "../../db/blog";
 import { unstable_noStore as noStore } from "next/cache";
 import { PageReadTime } from "@utils/PageReadTime";
 
-export async function generateMetadata({ params }): Promise<Metadata | undefined> {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export async function generateStaticParams() {
+  const posts = getBlogPosts();
 
-  let { title, date: publishedTime, summary: description, image, tags } = post.metadata;
-  let ogImage = image ? `https://yunghigue.com${image}` : `https://yunghigue.com/opengraph-image.png`;
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata({ params }): Promise<Metadata | undefined> {
+  const { slug } = await params;
+  let post = getBlogPosts().find((post) => post.slug === slug);
+
+  if (!post) {
+    return undefined;
+  }
+
+  const { title, date: publishedTime, summary: description, image, tags } = post.metadata;
+  const ogImage = image ? `https://yunghigue.com${image}` : `https://yunghigue.com/opengraph-image.png`;
 
   return {
     title,
@@ -69,8 +82,9 @@ const formatDate = (date: string) => {
   }
 };
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -103,11 +117,11 @@ export default function Blog({ params }) {
       <div className="info">
         <Suspense fallback={<p />}>
           <p className="text-center">
-            <PageReadTime readingSpeedWPM={250} /> <br/> {formatDate(post.metadata.date)}
+            <PageReadTime readingSpeedWPM={250} /> <br /> {formatDate(post.metadata.date)}
           </p>
         </Suspense>
         <h2 className="title">{post.metadata.title}</h2>
-        <h3 className="text-center">
+        <h3 className="sub-title">
           <i>{post.metadata.description}</i>
         </h3>
         <br />

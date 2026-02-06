@@ -1,4 +1,4 @@
-import Hero from "@components/hero/hero";
+import Hero from "@components/IndexHero/IndexHero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

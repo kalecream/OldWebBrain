@@ -4,8 +4,13 @@ const ShibariPage = () => {
   return (
     <section>
       <h1>Shibari</h1>
-      <p className="prose">I've thought of separating this section into rope bondage, shibari and kinbaku, but I'll keep it simple for now. Rope bonage is simply the act of tying someone up with rope. Shibari is a Japanese style of rope bondage that is focused on the aesthetics of the ties and the experience of the person being tied. Kinbaku is a more specific style of shibari that is focused on the connection between the person tying and the person being tied. I'll be using the terms interchangeably.
-        </p>
+      <p className="prose">
+        I have thought of separating this section into rope bondage, shibari and kinbaku, but I'll keep it simple for now.
+        Rope bonage is simply the act of tying someone up with rope. Shibari is a Japanese style of rope bondage that is
+        focused on the aesthetics of the ties and the experience of the person being tied. Kinbaku is a more specific
+        style of shibari that is focused on the connection between the person tying and the person being tied. I'll be
+        using the terms interchangeably.
+      </p>
 
       <div className="prose">
         <h2>Basic Safety</h2>

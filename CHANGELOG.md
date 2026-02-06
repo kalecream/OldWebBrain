@@ -1,102 +1,129 @@
 # Changelog
 
 
-## [1.6.0](https://github.com/kalecream/OldWebBrain/compare/v1.2.4...v1.6.0) (2025-10-16)
+## [1.7.0](https://github.com/your-repo/compare/v1.6.0...v1.7.0) (2026-02-05)
 
 
 ### Features
 
-* add Web Garden Force Graph ([#117](https://github.com/kalecream/OldWebBrain/issues/117)) ([6177d52](https://github.com/kalecream/OldWebBrain/commit/6177d52b13cdfd8353c6c46a3888ddf5af86ed53))
-* Add website button ([77b4b5a](https://github.com/kalecream/OldWebBrain/commit/77b4b5ae1f4ec804d46cdabf96b14a4114db627c))
-* create Digital Garden ([#114](https://github.com/kalecream/OldWebBrain/issues/114)) ([9b8d457](https://github.com/kalecream/OldWebBrain/commit/9b8d457c138a963eb5d9a96069d0c6d58ee50145))
-* gallery of trying ([#113](https://github.com/kalecream/OldWebBrain/issues/113)) ([0c941c4](https://github.com/kalecream/OldWebBrain/commit/0c941c4d67711f8923f0b58f2e98bb1446e7db02))
-* make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
-* munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
+* add goals list to Now page and adjust list item marker scale ([5d3b56c](https://github.com/your-repo/commit/5d3b56cb5c0b7e440aaa8bcaafa50f3e71940722))
+* add Journal component, refactor Now page, delete old Now Data ([419b250](https://github.com/your-repo/commit/419b25018891fad0ec0f15dcf8ba730825c0abe7))
+* add line numbers to code blocks and update syntax highlighting theme ([eca9d82](https://github.com/your-repo/commit/eca9d82d52b8b3181f1a6743146997484822b160))
+* add new post "You can always hit continue!" ([0a8b309](https://github.com/your-repo/commit/0a8b30922e9accd57073414d6239a39aa48ee812))
+* add new timeline entries to GPhotos ([7167939](https://github.com/your-repo/commit/716793975031ee0e1db4bb1d15a9b7f3586a63e7))
+* add Next 16 migration; update dependencies, and implement human sitemap page to prevent build errors ([1a81d9b](https://github.com/your-repo/commit/1a81d9baf3cc9f3b4225654d9c0e6bb1097d6516))
+* enhance C25KPage with helpful resources and updated content ([8ee6be7](https://github.com/your-repo/commit/8ee6be79ea05654cc1c1e88b5648567dddf7b926))
+* implement Contact form ([32e9893](https://github.com/your-repo/commit/32e98935384c660dc659d15fda1a6c5a4ad7c780))
+* implement MDX code block component with syntax highlighting and update configurations ([6fe671e](https://github.com/your-repo/commit/6fe671e83976100472988b89c2dd1cdff20ddfcb))
+* move to next/fonts ([5a1f8c2](https://github.com/your-repo/commit/5a1f8c2c53092ecc7c9ddb654e8fddc04ebd5476))
 
 
 ### Bug Fixes
 
-* fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
-* fixed graph components; build issues ([#118](https://github.com/kalecream/OldWebBrain/issues/118)) ([0f03040](https://github.com/kalecream/OldWebBrain/commit/0f03040edc1a53de7255ce7e2ae3bf0576e4a4be))
-* mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
-* url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
-
-
-### Documentation
-
-* add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
-* change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
+* correct typo in 2026-W03 post ([6ddb4a4](https://github.com/your-repo/commit/6ddb4a4d31e4201a757642c8c179ecfbf16d518f))
+* fix xodeblock component ([6c68bc9](https://github.com/your-repo/commit/6c68bc98fb0d624fd11c777a12bdb8a731166ea6))
+* open links in new tab on Now page ([b6cbdd2](https://github.com/your-repo/commit/b6cbdd20ff915812366b5e3cff07244f94c6175a))
+* remove Footer component from RootLayout ([a95c056](https://github.com/your-repo/commit/a95c056a7d8a86d968eb9fd43f79bafe1a31cec7))
+* set initial volume for audio player ([93b474f](https://github.com/your-repo/commit/93b474f1745e5f18d7b5f5335a1182ad1145b70a))
+* update company names in PastJobs for accuracy ([f496cbf](https://github.com/your-repo/commit/f496cbf15c2ad0fe33d0ff7a132c54f2d06b6eb1))
+* update edited date NowPage ([f0a14ad](https://github.com/your-repo/commit/f0a14ad1686a33d2070df3d73a669d3c0efbe267))
+* update success message in ContactForm ([7d44b10](https://github.com/your-repo/commit/7d44b10b196b667c9ce8728e2541775df2fa45dc))
 
 
 ### Code Refactoring
 
-* change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
-* change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
-* changed rolodex content & layout ([5686be5](https://github.com/kalecream/OldWebBrain/commit/5686be506d40b45bb2e13fd98a85f3790980e7f2))
-* Garden QOL improvements ([356085f](https://github.com/kalecream/OldWebBrain/commit/356085f0401b9618147413c85772384ade959418))
-* Garden styling update ([#116](https://github.com/kalecream/OldWebBrain/issues/116)) ([bf321cb](https://github.com/kalecream/OldWebBrain/commit/bf321cbaef40921e3e26f2067db88f10ca625b84))
-* improve linked webring appearance ([#109](https://github.com/kalecream/OldWebBrain/issues/109)) ([23e26b0](https://github.com/kalecream/OldWebBrain/commit/23e26b0254e9180c566638aaf1715465430a3fea))
-* re-structured now page ([0472a69](https://github.com/kalecream/OldWebBrain/commit/0472a69fddeaa7725bece9f04456058088b744df))
-* reorganize webring reference ([#111](https://github.com/kalecream/OldWebBrain/issues/111)) ([ccf4c06](https://github.com/kalecream/OldWebBrain/commit/ccf4c06a8a32c693730a956f7ae9fd5737561fff))
-* revert to Shiki codeblocks ([#119](https://github.com/kalecream/OldWebBrain/issues/119)) ([e43c04b](https://github.com/kalecream/OldWebBrain/commit/e43c04bd980865aef52c641c824bebf44f00f53f))
-* styling updates to garden section ([#115](https://github.com/kalecream/OldWebBrain/issues/115)) ([3b97dec](https://github.com/kalecream/OldWebBrain/commit/3b97dec119e8274fb4768a86027a933f0682358c))
-* update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
+* adjust font sizes for h2 and h3 for better responsiveness ([212c2ef](https://github.com/your-repo/commit/212c2efd495e79808ffd81e1b7bf34e9c8ebb3cf))
+* center content in ServiceCard and adjust heading in ProfessionalPage ([2c8010b](https://github.com/your-repo/commit/2c8010b8731d3d92128eb3e0c79effdc3881e3e3))
+* Redesign and minor fixes ([#121](https://github.com/your-repo/issues/121)) ([62c4804](https://github.com/your-repo/commit/62c4804cf8de7b63a99f28d25cfe9514d98f3103))
+* remove webmentions ([2232142](https://github.com/your-repo/commit/22321425f9c89ce8718cd00519d9a0a8c6b9e092))
+* restructure NotesPage layout and improve styling in Garden module ([1a86aae](https://github.com/your-repo/commit/1a86aae8b07ddc3338356d8320015a9c19d4fea7))
+* update button styles and structure in Hero component ([0c6cb4e](https://github.com/your-repo/commit/0c6cb4ed74d99f124a848e62405a2ad0d9f09271))
+* update digital garden ([7d8e62b](https://github.com/your-repo/commit/7d8e62b4d1628054da2649b021150225f5f21b43))
+
+## [1.6.0](https://github.com/kalecream/OldWebBrain/compare/v1.2.4...v1.6.0) (2025-10-16)
+
+### Features
+
+- add Web Garden Force Graph ([#117](https://github.com/kalecream/OldWebBrain/issues/117)) ([6177d52](https://github.com/kalecream/OldWebBrain/commit/6177d52b13cdfd8353c6c46a3888ddf5af86ed53))
+- Add website button ([77b4b5a](https://github.com/kalecream/OldWebBrain/commit/77b4b5ae1f4ec804d46cdabf96b14a4114db627c))
+- create Digital Garden ([#114](https://github.com/kalecream/OldWebBrain/issues/114)) ([9b8d457](https://github.com/kalecream/OldWebBrain/commit/9b8d457c138a963eb5d9a96069d0c6d58ee50145))
+- gallery of trying ([#113](https://github.com/kalecream/OldWebBrain/issues/113)) ([0c941c4](https://github.com/kalecream/OldWebBrain/commit/0c941c4d67711f8923f0b58f2e98bb1446e7db02))
+- make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
+- munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
+
+### Bug Fixes
+
+- fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
+- fixed graph components; build issues ([#118](https://github.com/kalecream/OldWebBrain/issues/118)) ([0f03040](https://github.com/kalecream/OldWebBrain/commit/0f03040edc1a53de7255ce7e2ae3bf0576e4a4be))
+- mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
+- url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
+
+### Documentation
+
+- add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
+- change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
+
+### Code Refactoring
+
+- change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
+- change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
+- changed rolodex content & layout ([5686be5](https://github.com/kalecream/OldWebBrain/commit/5686be506d40b45bb2e13fd98a85f3790980e7f2))
+- Garden QOL improvements ([356085f](https://github.com/kalecream/OldWebBrain/commit/356085f0401b9618147413c85772384ade959418))
+- Garden styling update ([#116](https://github.com/kalecream/OldWebBrain/issues/116)) ([bf321cb](https://github.com/kalecream/OldWebBrain/commit/bf321cbaef40921e3e26f2067db88f10ca625b84))
+- improve linked webring appearance ([#109](https://github.com/kalecream/OldWebBrain/issues/109)) ([23e26b0](https://github.com/kalecream/OldWebBrain/commit/23e26b0254e9180c566638aaf1715465430a3fea))
+- re-structured now page ([0472a69](https://github.com/kalecream/OldWebBrain/commit/0472a69fddeaa7725bece9f04456058088b744df))
+- reorganize webring reference ([#111](https://github.com/kalecream/OldWebBrain/issues/111)) ([ccf4c06](https://github.com/kalecream/OldWebBrain/commit/ccf4c06a8a32c693730a956f7ae9fd5737561fff))
+- revert to Shiki codeblocks ([#119](https://github.com/kalecream/OldWebBrain/issues/119)) ([e43c04b](https://github.com/kalecream/OldWebBrain/commit/e43c04bd980865aef52c641c824bebf44f00f53f))
+- styling updates to garden section ([#115](https://github.com/kalecream/OldWebBrain/issues/115)) ([3b97dec](https://github.com/kalecream/OldWebBrain/commit/3b97dec119e8274fb4768a86027a933f0682358c))
+- update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
 
 ## [1.5.0](https://github.com/kalecream/OldWebBrain/compare/v1.2.4...v1.5.0) (2025-01-05)
 
-
 ### Features
 
-* make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
-* munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
-
+- make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
+- munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
 
 ### Bug Fixes
 
-* fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
-* mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
-* url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
-
+- fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
+- mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
+- url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
 
 ### Documentation
 
-* add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
-* change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
-
+- add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
+- change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
 
 ### Code Refactoring
 
-* change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
-* change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
-* update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
+- change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
+- change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
+- update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
 
 ## [1.4.0](https://github.com/kalecream/OldWebBrain/compare/v1.2.4...v1.4.0) (2025-01-05)
 
-
 ### Features
 
-* make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
-* munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
-
+- make Time log for about ([59cb62e](https://github.com/kalecream/OldWebBrain/commit/59cb62eb6e4686e68b738074d633411fd202509b))
+- munch page ([#103](https://github.com/kalecream/OldWebBrain/issues/103)) ([fa59215](https://github.com/kalecream/OldWebBrain/commit/fa59215b4a682716dc0ec605ba35954475d73b1d))
 
 ### Bug Fixes
 
-* fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
-* mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
-* url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
-
+- fix blog image + add monthly images ([b2c1bd9](https://github.com/kalecream/OldWebBrain/commit/b2c1bd9e503e9299dcf3250da0d205a7def73101))
+- mailing links ([#101](https://github.com/kalecream/OldWebBrain/issues/101)) ([2271d4e](https://github.com/kalecream/OldWebBrain/commit/2271d4ebac0c86f21ca395d31833d19f1f4d8146))
+- url links to posters ([#102](https://github.com/kalecream/OldWebBrain/issues/102)) ([60fd47c](https://github.com/kalecream/OldWebBrain/commit/60fd47c0dea99516ecfbe68c62727c73df00a561))
 
 ### Documentation
 
-* add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
-* change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
-
+- add testing to repo ([bdbebc4](https://github.com/kalecream/OldWebBrain/commit/bdbebc4a2f6fb006f4bc8ba8367701f11adadbaa))
+- change changelog behaviour ([8a7173f](https://github.com/kalecream/OldWebBrain/commit/8a7173f1bb4802a0529a6ad779f67a0963074d56))
 
 ### Code Refactoring
 
-* change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
-* change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
-* update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
+- change graph type, make api call dynamic ([3411482](https://github.com/kalecream/OldWebBrain/commit/3411482a0f996004cdf263fed0a02a006a851d7f))
+- change valid entries ([610b828](https://github.com/kalecream/OldWebBrain/commit/610b828d36716c0982f7c088f17df0bf85bd22cf))
+- update log length ([7ed1cda](https://github.com/kalecream/OldWebBrain/commit/7ed1cdae68eafe9424a6924fa2c1dba43bb3e310))
 
 ### [1.2.4](https://github.com/kalecream/OldWebBrain/compare/v0.1.1...v1.2.4) (2024-11-13)
 

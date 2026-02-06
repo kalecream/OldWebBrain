@@ -1,7 +1,7 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
-import garden from "@styles/modules/Garden.module.scss";
+import garden from "./Garden.module.scss";
 
 export const NotesPage = () => {
   const [notes, setNotes] = useState([]);

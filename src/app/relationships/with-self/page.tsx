@@ -73,7 +73,7 @@ const WithSelfPage = () => {
               <br />
             </p>
             <p>
-              <b>Sleep.</b> I've developed a bedtime routine that I'm happy with so far.
+              <b>Sleep.</b> I have developed a bedtime routine that I'm happy with so far.
               <br />
             </p>
           </details>

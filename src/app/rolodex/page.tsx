@@ -1,4 +1,3 @@
-import { InteractiveCard } from "@components/InteractiveCard";
 import { YT } from "@data/youtube";
 import Link from "next/link";
 
@@ -70,26 +69,30 @@ const Rolodex = () => {
     <>
       <section id="rolodex">
         <h1>Rolodex</h1>
-        <p className="prose">These are some bookmarks for pages & media I've enjoyed on the net.</p>
+        <p className="prose">These are some bookmarks for pages & media I have enjoyed on the net.</p>
       </section>
       <section>
-          <ol className="prose">
+        <ol className="prose">
           {Bookmarks.map((bookmark) => (
             <Link href={bookmark.url} key={bookmark.url}>
-              <li><b>{bookmark.title}</b> {bookmark.description}</li>
+              <li>
+                <b>{bookmark.title}</b> {bookmark.description}
+              </li>
             </Link>
           ))}
-            </ol>
+        </ol>
       </section>
       <section>
         <h2>Youtube</h2>
         <ol className="prose">
           {YT.map((bookmark) => (
             <Link href={bookmark.url} key={bookmark.url}>
-              <li><b>{bookmark.title}</b> {bookmark.description}</li>
+              <li>
+                <b>{bookmark.title}</b> {bookmark.description}
+              </li>
             </Link>
           ))}
-            </ol>
+        </ol>
       </section>
     </>
   );

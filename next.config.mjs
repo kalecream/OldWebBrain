@@ -1,10 +1,8 @@
 import withMDX from "@next/mdx";
-import withBundleAnalyzer from "@next/bundle-analyzer";
 
 /** @type {import('next').NextConfig} */
 const mdxConfig = withMDX({
   extension: /\.mdx?$/,
-  jsx: true,
   options: {
     remarkPlugins: [[]],
     recmaPlugins: [[]],
@@ -13,17 +11,14 @@ const mdxConfig = withMDX({
 });
 
 /** @type {import('next').NextConfig} */
-const bundleAnalyzerConfig = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "false",
-});
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
-  swcMinify: true,
+  experimental: {
+    optimizePackageImports: ["react-icons/fa6","react", "next", "@react-three/fiber"],
+  },
   images: {
-    formats: ["image/webp"],
     remotePatterns: [
       { hostname: "cdn.sanity.io" },
       { hostname: "source.unsplash.com" },
@@ -36,14 +31,11 @@ const nextConfig = {
     includePaths: ["src/app/styles"],
   },
   typescript: {
+    // eslint-disable-next-line no-undef
     ignoreBuildErrors: process.env.VERCEL_ENV === "production",
-  },
-  eslint: {
-    ignoreDuringBuilds: process.env.VERCEL_ENV === "production",
-  },
+  }
 };
 
-// Merge MDX config with Next.js config
-const config = bundleAnalyzerConfig(mdxConfig(nextConfig));
+const config = mdxConfig(nextConfig);
 
 export default config;

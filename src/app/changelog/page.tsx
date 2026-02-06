@@ -1,13 +1,11 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
+import Link from "next/link";
 import axios from "axios";
-// import Link from 'next/link';
 import { format, parseISO } from "date-fns";
-
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import styles from "@styles/modules/changelog.module.scss";
-import Link from "next/link";
+import styles from "./changelog.module.scss";
 
 interface MarkdownRendererProps {
   markdown: string;
@@ -43,21 +41,16 @@ const GitHubReleaseInfo = () => {
       <section>
         <h1>Website Changes!</h1>
         <p className="prose">
-          — To see more on how this website was made, read{" "}
+          — To see my collected resources on how this website was made, read{" "}
           <Link href="/colophon" className="internal-link">
             colophon
-          </Link>
-          .
-          <br />— To see all pages, visit{" "}
-          <Link className="internal-link" href={"/sitemap"}>
-            sitemap
           </Link>
           .
         </p>
       </section>
       <section>
         <div className={styles.release__container}>
-          <Suspense fallback={<p className="h-6" />}>
+          <Suspense fallback={<p />}>
             <ul className={styles.release}>
               {releases.map((release) => (
                 <li key={release.id} className={styles.release__content}>

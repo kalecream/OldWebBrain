@@ -7,19 +7,13 @@ const RShipPage = () => {
       <section id="introduction">
         <h1>Relationships</h1>
         <PageReadTime readingSpeedWPM={200} />
-      
-        <p className="prose">
-          
-        </p>
-        <p className="prose">
-          
-        </p>
-        <p className="prose">
-        
-        </p>
+
+        <p className="prose"></p>
+        <p className="prose"></p>
+        <p className="prose"></p>
         <hr />
         <p className="prose">
-          I've outlined a bunch of things for future me to check in with herself and keep us grounded without being a
+          I have outlined a bunch of things for future me to check in with herself and keep us grounded without being a
           yam-head or the abusive farmer. The most important thing to note is that:
         </p>
         <ol className="prose">
@@ -29,7 +23,7 @@ const RShipPage = () => {
           </li>
           <li>
             {" "}
-            Communication is a must. Don't leave the other person's understanding to chance. Make sure they know where
+            Communication is a must. Do not leave the other person's understanding to chance. Make sure they know where
             you are coming from and why it is so.
           </li>
           <li>Vulnerability should be encouraged.</li>

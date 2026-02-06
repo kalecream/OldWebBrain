@@ -1,4 +1,4 @@
-@import '@styles/mediaQuery';
+ 
 
 .bookDetails {
 	display: grid;
@@ -11,13 +11,13 @@
 	// 	transform: rotate(25deg);
 	// }
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		width: 90%;
 		border: var(--border);
 		border-radius: var(--borderRadius);
 	}
 
-	@include breakpoint-range($from: tablet) {
+	 @media screen and (min-width:  768px)  {
 		width: 100%;
 	}
 }
@@ -43,12 +43,12 @@
         font-size: 2rem;
     }
 
-	@include breakpoint-range($from: mobile, $to: tablet) {
+	 @media screen and (min-width: 0px) and (max-width:  768px)  {
 		margin: 0 0.15rem;
 		padding: 1rem;
 	}
 
-	@include breakpoint-range($from: tablet) {
+	 @media screen and (min-width:  768px)  {
 		margin: 0 2rem;
 		padding: 1rem;
 	}
