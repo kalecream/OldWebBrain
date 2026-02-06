@@ -3,6 +3,15 @@
 $font-path: '../../public/fonts';
 
 @font-face {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: 100%;
+	src: local("#{$font-path}/poppins-regular-webfont.woff2");
+	font-display: swap;
+}
+
+@font-face {
 	font-family: "Fira Code";
 	font-style: normal;
 	font-weight: 400;
@@ -64,12 +73,12 @@ $font-path: '../../public/fonts';
 	--paddingObject: 1rem;
 	--paddingObjectSmall: 0.5rem;
 	--transition: all 0.5s ease-in-out;
-	--bodyFont: var(--font-poppins), sans-serif;
+	--bodyFont: 'Poppins', sans-serif;
 	--headingFont: 'Roman', serif;
 	--accentFont: 'Cattedrale Outline', serif;
 	--hr-line-offset: 25%;
 	--hr-color: var(--primary);
-// prefer light
+	// prefer light
 	--backgroundColor: #f2f0e9;
 	--primary: #301100;
 	--secondary: #bd2803;
@@ -181,13 +190,13 @@ footer {
 		padding: 0.5rem 0;
 	}
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 
 		flex-direction: column;
 		justify-content: center;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		flex-direction: row;
 		justify-content: space-between;
 	}
@@ -203,7 +212,7 @@ section {
 		margin-bottom: 3rem;
 	}
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		padding: 0 1rem;
 
 		&:first-of-type {
@@ -211,11 +220,11 @@ section {
 		}
 	}
 
-	 @media screen and (min-width:  768px)  {
+	@media screen and (min-width: 768px) {
 		padding: 0 1.5rem;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		padding: 0;
 
 		&:first-of-type {
@@ -263,11 +272,11 @@ progress {
 	border-radius: var(--borderRadius);
 	background: var(--backgroundColor);
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: none;
 	}
 
-	 @media screen and (min-width:  768px)  {
+	@media screen and (min-width: 768px) {
 		display: inline-block;
 		width: 25%;
 	}
@@ -323,6 +332,19 @@ fieldset {
 	}
 }
 
+#hero-model {
+	@media screen and (min-width: 0px) and (max-width: 1024px) {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		display: block;
+		position: absolute;
+		width: 95vw;
+		height: 98vh;
+	}
+}
+
 #blog {
 	display: flex;
 	justify-content: center;
@@ -330,7 +352,7 @@ fieldset {
 	text-align: center;
 	gap: 1.5rem;
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		&>div {
 			width: 100%;
 		}
@@ -338,7 +360,7 @@ fieldset {
 		flex-direction: column;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		&>div {
 			width: 50%;
 		}
@@ -352,7 +374,7 @@ fieldset {
 	overflow: hidden;
 	z-index: 10;
 
-	 @media screen and (min-width:  768px)  {
+	@media screen and (min-width: 768px) {
 		border-image-slice: 140;
 		border-image-repeat: stretch;
 		border-width: 70px;
@@ -380,7 +402,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -399,7 +421,7 @@ fieldset {
 		backdrop-filter: blur(20px);
 	}
 
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		backdrop-filter: none;
 		background-color: var(--backgroundColor);
 	}
@@ -412,7 +434,7 @@ fieldset {
 	background-size: cover;
 	min-height: 100vh;
 
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		background-attachment: scroll;
 	}
 }
@@ -491,7 +513,7 @@ ol {
 		padding-left: 1rem;
 	}
 
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		margin: 0 auto;
 		margin-left: 1rem;
 	}
@@ -633,11 +655,11 @@ textarea {
 	place-items: center;
 	justify-content: center;
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		flex-direction: column;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		flex-direction: row;
 	}
 }
@@ -649,12 +671,12 @@ textarea {
 }
 
 .pancake-child {
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		flex: 1 1 100%;
 		margin: 1rem;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		flex: 1 1 300px;
 		margin: 0.25rem;
 	}
@@ -686,21 +708,21 @@ textarea {
 .mobile {
 	display: flex;
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: flex;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: none;
 	}
 }
 
 .desktop {
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		display: none;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: flex;
 	}
 }
@@ -765,15 +787,15 @@ article .info {
 
 article p {
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		margin: 1rem 1.5rem;
 	}
 
-	 @media screen and (min-width:  768px)  {
+	@media screen and (min-width: 768px) {
 		margin: 1rem 2rem;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		margin: 1rem 0;
 	}
 }
@@ -812,15 +834,15 @@ article q p {
 article ul,
 article ol {
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		margin: 1rem 1rem;
 	}
 
-	 @media screen and (min-width:  768px)  {
+	@media screen and (min-width: 768px) {
 		margin: 1rem 2rem;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		margin: 2rem 0;
 	}
 }
@@ -961,41 +983,41 @@ span.project__status.archived {
 }
 
 .desktop-block {
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: none;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: block;
 	}
 }
 
 .desktop-flex {
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: none;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: flex;
 	}
 }
 
 .mobile-block {
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: block;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: none;
 	}
 }
 
 .mobile-flex {
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		display: flex;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		display: block;
 	}
 }
@@ -1325,7 +1347,7 @@ span.project__status.archived {
 	// Aspect Ratio Percentage=(Width/Height​)×100
 }
 
-.imageWrapper > * > img {
+.imageWrapper>*>img {
 	object-fit: cover;
 	object-position: center;
 }

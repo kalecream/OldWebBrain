@@ -1,7 +1,7 @@
 import { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Bloom, ChromaticAberration, EffectComposer, Noise, DepthOfField } from "@react-three/postprocessing";
-import { BlendFunction, KernelSize } from "postprocessing";
+// import { Bloom, ChromaticAberration, EffectComposer, Noise, DepthOfField } from "@react-three/postprocessing";
+// import { BlendFunction, KernelSize } from "postprocessing";
 import { Model } from "src/assets/models/castlevania";
 import { Preload, Html, OrbitControls, PresentationControls, useProgress } from "@react-three/drei";
 
@@ -71,9 +71,8 @@ export const HeroModel = () => {
       dpr={[1, 2]}
       camera={{ fov: 26, position: [-1.1872, -2.385, 45.981] }}
       style={{
-        width: "90vw",
-        height: "90vh",
-        margin: "auto",
+        width: "95vw",
+        height: "100vh",
       }}
     >
       <Preload all />
