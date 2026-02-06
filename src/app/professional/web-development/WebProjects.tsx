@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@components/Projects/projects.module.scss";
-import { Projects, ProjectStructure } from "@components/Projects/ProjectsData";
+import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import { GetMonthName } from "@components/Projects/GetMonthName";
 import { FaFileImage } from "react-icons/fa6";
 
