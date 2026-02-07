@@ -45,10 +45,13 @@
 		margin: 0 auto;
 	}
 
-	@media (min-width: 1024px) {}
+	@media (min-width: 1024px) {
+		min-height: 20vh;
+		margin: 0 auto 5rem auto;
+	}
 
 	.name {
-		font-size: clamp(3rem, 20vw, 9.5rem);
+		font-size: clamp(3rem, 20vw, 9rem);
 		max-width: 100%;
 		line-height: 1;
 		font-family: "Cattedrale Rough", sans-serif;
@@ -86,6 +89,21 @@
 	}
 }
 
+.model-loader {
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	transform: translate(-50%, -70%);
+	font-size: 1rem;
+	width: 100vw;
+	color: var(--textColor);
+
+	& span {
+		// font-family: 'Cattedrale Outline';
+		font-size: 4rem;
+	}
+}
+
 .model {
 	display: flex;
 	position: absolute;
@@ -94,7 +112,7 @@
 	margin: 0 auto;
 
 	@media screen and (min-width: 1024px) {
-		bottom: 10%;
+		bottom: 0;
 		left: 5%;
 		flex-direction: row;
 	}
