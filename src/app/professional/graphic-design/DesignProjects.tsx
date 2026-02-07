@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Projects, ProjectStructure } from "@components/Projects/ProjectsData";
+import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import Link from "next/link";
 import styles from "@components/Projects/projects.module.scss";
 import Image from "next/image";
