@@ -1,6 +1,41 @@
 # Changelog
 
 
+## [1.8.0](https://github.com/your-repo/compare/v1.6.0...v1.8.0) (2026-02-07)
+
+
+### Features
+
+* add goals list to Now page and adjust list item marker scale ([5d3b56c](https://github.com/your-repo/commit/5d3b56cb5c0b7e440aaa8bcaafa50f3e71940722))
+* add Journal component, refactor Now page, delete old Now Data ([419b250](https://github.com/your-repo/commit/419b25018891fad0ec0f15dcf8ba730825c0abe7))
+* add new post "You can always hit continue!" ([0a8b309](https://github.com/your-repo/commit/0a8b30922e9accd57073414d6239a39aa48ee812))
+* add new timeline entries to GPhotos ([7167939](https://github.com/your-repo/commit/716793975031ee0e1db4bb1d15a9b7f3586a63e7))
+* enhance C25KPage with helpful resources and updated content ([8ee6be7](https://github.com/your-repo/commit/8ee6be79ea05654cc1c1e88b5648567dddf7b926))
+* implement Contact form ([32e9893](https://github.com/your-repo/commit/32e98935384c660dc659d15fda1a6c5a4ad7c780))
+* migrate to Next 16, create CodeBlock blog component, improve repo file structure  ([#122](https://github.com/your-repo/issues/122)) ([815b7c4](https://github.com/your-repo/commit/815b7c4934814e2ae251b98e94441ae003a54743))
+
+
+### Bug Fixes
+
+* correct typo in 2026-W03 post ([6ddb4a4](https://github.com/your-repo/commit/6ddb4a4d31e4201a757642c8c179ecfbf16d518f))
+* open links in new tab on Now page ([b6cbdd2](https://github.com/your-repo/commit/b6cbdd20ff915812366b5e3cff07244f94c6175a))
+* remove Footer component from RootLayout ([a95c056](https://github.com/your-repo/commit/a95c056a7d8a86d968eb9fd43f79bafe1a31cec7))
+* set initial volume for audio player ([93b474f](https://github.com/your-repo/commit/93b474f1745e5f18d7b5f5335a1182ad1145b70a))
+* update edited date NowPage ([f0a14ad](https://github.com/your-repo/commit/f0a14ad1686a33d2070df3d73a669d3c0efbe267))
+* update success message in ContactForm ([7d44b10](https://github.com/your-repo/commit/7d44b10b196b667c9ce8728e2541775df2fa45dc))
+
+
+### Code Refactoring
+
+* adjust font sizes for h2 and h3 for better responsiveness ([212c2ef](https://github.com/your-repo/commit/212c2efd495e79808ffd81e1b7bf34e9c8ebb3cf))
+* center content in ServiceCard and adjust heading in ProfessionalPage ([2c8010b](https://github.com/your-repo/commit/2c8010b8731d3d92128eb3e0c79effdc3881e3e3))
+* fix model effects and optimise model ([a1f9674](https://github.com/your-repo/commit/a1f9674a1013172956046664459698df1375fcdd))
+* Redesign and minor fixes ([#121](https://github.com/your-repo/issues/121)) ([62c4804](https://github.com/your-repo/commit/62c4804cf8de7b63a99f28d25cfe9514d98f3103))
+* remove webmentions ([2232142](https://github.com/your-repo/commit/22321425f9c89ce8718cd00519d9a0a8c6b9e092))
+* restructure NotesPage layout and improve styling in Garden module ([1a86aae](https://github.com/your-repo/commit/1a86aae8b07ddc3338356d8320015a9c19d4fea7))
+* update button styles and structure in Hero component ([0c6cb4e](https://github.com/your-repo/commit/0c6cb4ed74d99f124a848e62405a2ad0d9f09271))
+* update digital garden ([7d8e62b](https://github.com/your-repo/commit/7d8e62b4d1628054da2649b021150225f5f21b43))
+
 ## [1.7.0](https://github.com/your-repo/compare/v1.6.0...v1.7.0) (2026-02-05)
 
 
