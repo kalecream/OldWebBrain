@@ -17,7 +17,7 @@ function ContactForm() {
         <input placeholder="your name (required)" className={form.input} type="name" id="name" name="name" required />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
         <input
-          placeholder="your email address (not required but preferred)"
+          placeholder="your email address"
           className={form.input}
           type="email"
           id="email"
