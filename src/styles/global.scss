@@ -343,7 +343,6 @@ fieldset {
 		width: 95vw;
 		height: 98vh;
 		mix-blend-mode: screen;
-		// filter: contrast(1.1) saturate(1.1);
 	}
 }
 
@@ -598,7 +597,7 @@ textarea {
 		text-align: left;
 		color: var(--textColor);
 		font-size: 0.7rem;
-		font-weight: 600;
+		font-weight: 400;
 		letter-spacing: 1px;
 		opacity: 0.8;
 		margin: 0;

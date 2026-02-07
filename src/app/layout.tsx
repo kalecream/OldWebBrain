@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import { Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@styles/global.scss";
 import { Navbar } from "@components/Navigation/NavBar";
 import { Footer } from "@components/Navigation/Footer";
 import { BackToTop } from "@components/BackToTop/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./context/Theme";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "800"],
-  display: "swap",
-  variable: "--font-poppins",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yunghigue.com"),
@@ -73,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
         </ThemeProvider>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

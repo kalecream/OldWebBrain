@@ -106,6 +106,7 @@
 	background: rgba(49, 0, 0, 0.05);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
+	isolation: isolate; 
 	border: 1px solid rgba(250, 163, 163, 0.2);
 	box-shadow: 0 8px 32px rgba(49, 0, 0, 0.1);
 	border-radius: var(--borderRadius);
@@ -153,6 +154,8 @@
 	justify-content: start;
 	text-align: left;
 	margin-top:1rem;
+	 
+
 
 	& .title {
 		font-size: 0.7rem;
