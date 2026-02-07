@@ -19,9 +19,10 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^2.2.1",
     "@next/mdx": "^14.2.3",
+    "@react-spring/three": "^10.0.3",
     "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "9",
-    "@react-three/postprocessing": "^2.15.1",
+    "@react-three/fiber": "^9.1.2",
+    "@react-three/postprocessing": "^3.0.4",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.51",
     "@vercel/analytics": "^1.0.2",
@@ -47,7 +48,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.33.4",
     "styled-components": "^6.1.13",
-    "three": "0.168.0"
+    "three": "0.175.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

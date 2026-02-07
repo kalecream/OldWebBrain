@@ -342,6 +342,8 @@ fieldset {
 		position: absolute;
 		width: 95vw;
 		height: 98vh;
+		mix-blend-mode: screen;
+		// filter: contrast(1.1) saturate(1.1);
 	}
 }
 
