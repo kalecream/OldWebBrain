@@ -156,7 +156,7 @@ const AboutMe = () => {
   const currentContent = viewMode === "personal" ? personalContent : professionalContent;
 
   return (
-    <div className="flex-column" style={{ minHeight: "100vh", margin: "6rem 2rem 0 2rem" }}>
+    <div className="flex-column" style={{ minHeight: "100vh", marginTop: "8rem" }}>
       <div className={style["view-toggle"]}>
         <button
           className={`${style["toggle-btn"]} ${viewMode === "personal" ? style["active"] : ""}`}
