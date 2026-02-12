@@ -37,10 +37,24 @@
 	outline: none;
 	border: none;
 	background-color: var(--backgroundColor);
-	color: var(--primary);
-	font-size: 1rem;
-	text-transform: capitalize;
-	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
+	color: var(--textColor);
+	font-size: 0.8rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.project-tab:focus {
+	outline: 2px solid var(--secondary);
+	outline-offset: 2px;
+}
+
+.project-tab:focus-visible {
+	outline: 2px solid var(--secondary);
+	outline-offset: 2px;
+}
 
 .project-tab:active,
 .project-tab:hover {
@@ -70,7 +84,7 @@
 		flex-wrap: wrap;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	 @media screen and (min-width: 1024px)  {
 		flex-wrap: nowrap;
 	}
 }
@@ -113,7 +127,6 @@
 	 @media screen and (min-width: 960px)  {
 		font-size: 1.1rem;
 	}
-
 }
 
 .project-year {
@@ -164,7 +177,7 @@
 }
 
 .gallery-tile {
-	// flex: 0 0 clamp(150px, 33%, 500px);
+	// flex: 0 0 clamp(150px, 30%, 500px);
 	margin: 1rem;
 	overflow: hidden;
 	position: relative;
@@ -195,8 +208,7 @@
 }
 
 .gallery-tile .picture-info h2 {
-	font-size: 3rem;
-	font-family: "Roman";
+	font-family: var(--bodyFont);
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	color: #fff;
@@ -222,6 +234,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	@media screen and (min-width: 1024px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 .imageview > * {
@@ -229,32 +247,26 @@
 }
 
 .imageview-image {
-	max-height: 25rem;
-	width: auto;
-	// box-shadow: 0 20px 40px -5px rgba(66, 66, 66, 0.7);
+	height: auto;
+	max-width: 45rem;
 }
 
 .imageview-info {
-	max-width: 45rem;
-	text-align: right;
+	max-width: 40rem;
+	text-align: start;
 	position: relative;
 }
 
 .imageview-info button {
-	font-size: 1.5rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
 	color: var(--secondary);
 	cursor: pointer;
-	border: none;
+	border: var(--border);
+	border-radius: var(--borderRadius);
 	background: none;
 	outline: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: -2em;
-	right: -1em;
+	margin: 1rem auto;
 }
 
 .imageview-info button:hover {
@@ -263,7 +275,7 @@
 }
 
 .imageview-info h2 {
-	font-family: "Roman";
+	font-family: var(--bodyFont);
 	font-size: 2.5rem;
 	font-weight: 300;
 	text-transform: uppercase;
@@ -279,7 +291,7 @@
 }
 
 .imageview-info p {
-	text-align: justify;
+	text-align: start;
 }
 
 .imageview-info ul {

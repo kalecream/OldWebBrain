@@ -245,6 +245,45 @@ export const Projects: ProjectStructure[] = [
     technology: ["Photopea"],
     created: "2021-05-20",
   },
+  {
+    id:"019",
+    display: true,
+    title: "[Redacted] Rolling Papers",
+    category: "code",
+    type: "Web Design",
+    image: "https://i.imgur.com/AkuiBtk.png",
+    status: "completed",
+    description: (
+      <span></span>
+    ),
+    technology: ["Figma", "WordPress"],
+    created: "2025-06-06",
+  },
+  {
+    id: "020",
+    display: true,
+    title: "Habitica Eisenhower Matrix",
+    category: "code",
+    image: "https://i.imgur.com/WhD69pY.png",
+    link: "https://github.com/Vilhelm-Ian/Eisenhower_matrix_habitica",
+    type: "Web Design",
+    status: "ongoing",
+    description: (<span>I collaborated with someone extending Habitica to give a design lift to their to-do list.</span>),
+    technology: ["Figma", "React", "Typescript"],
+    created: "2022-10-06",
+  },
+  {
+    id: "021",
+    display: true,
+    title: "Balkim Media Graduation Photoshoot",
+    category: "illustration",
+    type: "poster",
+    status: "completed",
+    image: "https://i.imgur.com/wc2UpMT.jpeg",
+    description: (<span></span>),
+    technology: ["Photopea"],
+    created: "2025-10-18",
+  }
 ];
 
 export default Projects;
