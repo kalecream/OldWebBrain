@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Projects, ProjectStructure } from "@components/Projects/ProjectsData";
+import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import styles from "./projects.module.scss";
 
 export const extractCategories = () => {
