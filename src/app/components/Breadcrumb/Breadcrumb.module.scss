@@ -1,13 +1,14 @@
-/* Breadcrumb.module.css */
 .breadcrumbList {
-    display: flex;    
+    display: flex;
     flex-flow: row wrap;
+    place-items: center;
     align-items: center;
     list-style: none;
     font-size: 1rem;
     padding: 0;
-    margin: 0;
+    margin: auto 0;
     margin-right: 2rem;
+    height: 100%;
 
     & li::marker {
         content: '';
@@ -15,24 +16,22 @@
 }
 
 .breadcrumbItem {
-    margin-bottom: -2rem;
-    margin-right: 0.5rem;
+    margin: auto 0.5rem auto auto;
 }
 
 .breadcrumbItem a {
     color: var(--primary);
-    font-weight: 600;
 }
 
 .breadcrumbItem a:hover {
     color: var(--secondary);
 }
 
-.breadcrumbItem::after {
-    content: '/';
-    margin-left: 4px;
-    margin-right: 4px;
-}
+// .breadcrumbItem::after {
+//     content: '/';
+//     margin-left: 2px;
+//     margin-right: 2px;
+// }
 
 .breadcrumbItem:last-child a {
     color: var(--secondary);
