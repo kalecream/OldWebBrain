@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { Projects } from "@components/Projects/ProjectsData";
+import { Projects } from "@components/Projects/projectsData";
 
 // TODO: do next
 
