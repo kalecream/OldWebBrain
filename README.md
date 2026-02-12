@@ -2,7 +2,7 @@
 <h1> 🩸 Sisyphus Escaping Liminality 🩸 </h1>
 (formerly known as Old Web Brain)
 
-![img](https://www.yunghigue.com/_next/image?url=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExdnNwMHZrdnR6NXU4bXFmOGp5MmJwZjQ4YmwxY20yOG56ZXNhY25ucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2F1xSVq3jCyrYICv5XuC%2Fgiphy.webp&w=256&q=75)
+![img|200](https://www.yunghigue.com/_next/image?url=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExdnNwMHZrdnR6NXU4bXFmOGp5MmJwZjQ4YmwxY20yOG56ZXNhY25ucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2F1xSVq3jCyrYICv5XuC%2Fgiphy.webp&w=256&q=75)
 
 <a href="https://ko-fi.com/sabrinamedwinter">
 <img src="https://img.shields.io/badge/Kofi-FF5E5B.svg?style=for-the-badge&logo=Ko-fi&logoColor=white" />
@@ -81,33 +81,8 @@ npx prisma migrate dev
 
 <center>
 
-### PR Todo list
-
-See something, you would like to change? You're welcome to submit a PR. Here are some things that need to be done! I also try to go through this checklist before merging.
-
-- [ ] Update sitemap
-- [ ] Test on mobile
-
-## Releasing
-
-```bash
-
-yarn release -- --release-as patch
-yarn release -- --release-as minor
-yarn release -- --release-as major
-
-git push --follow-tags origin main
-```
-
-<!-- BACKERS/ -->
-
-## Backers
-
-### Code
-
-### Finances
-
-<!-- /BACKERS -->
+### Analytics
+![Alt](https://repobeats.axiom.co/api/embed/971c17cc0e5dd81c71cce33553e6dd249775623a.svg "Repobeats analytics image")
 
 <!-- HISTORY/ -->
 
