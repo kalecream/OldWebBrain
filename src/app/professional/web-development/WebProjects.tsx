@@ -6,6 +6,7 @@ import styles from "@components/Projects/projects.module.scss";
 import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import { GetMonthName } from "@components/Projects/GetMonthName";
 import { FaFileImage } from "react-icons/fa6";
+import TestimonialBlock from "../Testimonial/Testimonial";
 
 export const extractCategories = () => {
   const categoriesSet = new Set<string>();
@@ -237,7 +238,7 @@ const WebProjects: React.FC = () => {
 
   return (
     <section className={styles["project-wrapper"]}>
-      <h1>Development</h1>
+      <TestimonialBlock />
       <ProjectGallery projects={filteredProjects} />
     </section>
   );
