@@ -86,21 +86,22 @@ $font-path: '../../public/fonts';
 	--textColor: var(--primary);
 	--textColorAlt: #030637;
 	--border: 1px solid rgba(0, 0, 0, 0.1);
-	--boxShadow: 1px 4px 12px 0 rgba(0, 0, 0, 0.2);
-	--boxShadowFlipped: 1px 4px 12px 0 rgba(255, 255, 255, 0.2);
+	--boxShadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;;
+	--boxShadowFlipped:rgba(255, 255, 255, 0.4) 0px 2px 4px, rgba(255, 255, 255, 0.3) 0px 7px 13px -3px, rgba(255, 255, 255, 0.2) 0px -3px 0px inset;
 	--borderColor: rgba(255, 255, 255, 0.4);
 	--captionColor: #aaa;
 }
 
 [data-theme='dark'] {
-	--backgroundColor: rgb(29, 29, 29);
+	--backgroundColor: rgb(15, 15, 15);
 	--primary: #c80000;
 	--secondary: #e20000;
 	--textColor: #ccc;
 	--backgroundImage: url(../assets/images/stars.gif);
 	--textColorAlt: #ffe7e7;
 	--border: 1px solid rgba(255, 255, 255, 0.1);
-	--boxShadow: 1px 4px 12px 0 rgba(255, 255, 255, 0.2);
+	--boxShadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	--borderColor: rgba(255, 255, 255, 0.4);
 	--boxShadowFlipped: 1px 4px 12px 0 rgba(0, 0, 0, 0.2);
 	--borderColor: rgba(0, 0, 0, 0.4);
 	--captionColor: rgb(136, 136, 136);
