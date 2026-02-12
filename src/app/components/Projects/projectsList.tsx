@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaX } from "react-icons/fa6";
 import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import styles from "./projects.module.scss";
 
@@ -87,16 +88,15 @@ const ImageView: React.FC<ImageViewProps> = ({ title, image, description, techno
       {image && <Image className={`${styles["imageview-image"]}`} src={image} alt={title} width={800} height={800} />}
       <div className={`${styles["imageview-info"]}`}>
         <button className={`${styles["imageview-close"]}`} onClick={onClose}>
-          x
+          <FaX />
         </button>
         <h2>{title}</h2>
-        <div>{description}</div>
-        <h3>Technologies</h3>
         <ul>
           {technology.map((tech, index) => (
             <li key={index}>{tech}</li>
           ))}
         </ul>
+        <div>{description}</div>
       </div>
     </div>
   </div>
@@ -132,18 +132,18 @@ interface TileProps {
 
 const Tile: React.FC<TileProps> = ({ title, image, onClick }) => (
   <div className={`${styles["gallery-tile"]}`} onClick={onClick}>
-    {image && <Image className={`${styles["tile-image"]}`} src={image} alt={title} width={400} height={400} />}
+    {image &&
+      <Image className={`${styles["tile-image"]}`} src={image} alt={title} width={200} height={200} />
+    }
     <div className={`${styles["picture-info"]}`}>
-      <h2>{title}</h2>
+      <p>{title}</p>
     </div>
   </div>
 );
 
 const ProjectList: React.FC = () => {
-
   return (
     <section className={styles["project-wrapper"]}>
-      <h1>Things I have Made</h1>
       <ProjectGallery Projects={Projects} />
     </section>
   );
@@ -173,7 +173,7 @@ export const LatestProject = () => {
         alt={project.title}
       />
       <div className={styles.latest__container}>
-        <div className={styles.latest__description}>
+        <div className={styles.project__description}>
           <h2>
             <b>{project.title}</b>
           </h2>
@@ -205,54 +205,6 @@ export const LatestProject = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export const OtherProjects = () => {
-  return (
-    <section className={styles.others__container}>
-      <div className={`${styles.others} pancake`}>
-        <div>
-          <Link href={"https://open.spotify.com/show/3TEYSulKavQrhebkPLHkth"}>
-            <h1>Bite-Sized Binge</h1>
-          </Link>
-          <p className={styles["description"]}>
-            An audiojournal to log audiodramas, movies, manga, podcasts, books, short stories, music and other forms of
-            media to help explore my own tastes.
-          </p>
-        </div>
-        <div>
-          <iframe
-            src="https://open.spotify.com/embed/show/3TEYSulKavQrhebkPLHkth?utm_source=generator&theme=0"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      <div className={`${styles.others} pancake`}>
-        <div>
-          <Link href={"https://www.youtube.com/channel/UCOwvKgIjl13Z30wA_mfxYfw"}>
-            <h1>KaleCream </h1>
-          </Link>
-
-          <p className={styles["description"]}>
-            A YouTube channel where I vlog my pomodoro work/crafting sessions for the sake of accountability.
-          </p>
-        </div>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/acjjsQwXvbM?si=CAyeIgOXvwQtZnuC"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
-      </div>
-    </section>
   );
 };
 
