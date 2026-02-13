@@ -4,7 +4,7 @@
 
 ![img|200](https://www.yunghigue.com/_next/image?url=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExdnNwMHZrdnR6NXU4bXFmOGp5MmJwZjQ4YmwxY20yOG56ZXNhY25ucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2F1xSVq3jCyrYICv5XuC%2Fgiphy.webp&w=256&q=75)
 
-<a href="https://ko-fi.com/sabrinamedwinter">
+<a href="https://ko-fi.com/yunghigue">
 <img src="https://img.shields.io/badge/Kofi-FF5E5B.svg?style=for-the-badge&logo=Ko-fi&logoColor=white" />
 </a>
 
