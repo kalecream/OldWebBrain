@@ -2,6 +2,11 @@
 <h1> 🩸 Sisyphus Escaping Liminality 🩸 </h1>
 (formerly known as Old Web Brain)
 
+[![Visits Badge](https://badges.pufler.dev/visits/kalecream/oldwebbrain)](https://badges.pufler.dev) 
+[![Created Badge](https://badges.pufler.dev/created/kalecream/oldwebbrain)](https://badges.pufler.dev)
+[![Commits Badge](https://badges.pufler.dev/commits/monthly/kalecream)](https://badges.pufler.dev)
+[![Updated Badge](https://badges.pufler.dev/updated/kalecream/oldwebbrain)](https://badges.pufler.dev)
+
 ![img|200](https://www.yunghigue.com/_next/image?url=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExdnNwMHZrdnR6NXU4bXFmOGp5MmJwZjQ4YmwxY20yOG56ZXNhY25ucSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2F1xSVq3jCyrYICv5XuC%2Fgiphy.webp&w=256&q=75)
 
 <a href="https://ko-fi.com/yunghigue">
