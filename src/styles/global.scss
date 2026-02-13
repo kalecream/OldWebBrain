@@ -134,11 +134,12 @@ nav {
 	z-index: 999;
 	display: flex;
 	flex-direction: row;
-	width: 100vw;
+	width: 100%;
 	min-height: 2rem;
 	backdrop-filter: blur(8px);
 	place-items: center;
 	justify-content: center;
+	margin: 0 auto;
 	padding: 1rem;
 
 	.directory-link {
@@ -221,7 +222,7 @@ section {
 		padding: 0 1rem;
 
 		&:first-of-type {
-			padding-top: 8rem;
+			padding-top: 3rem;
 		}
 	}
 
@@ -233,11 +234,11 @@ section {
 		padding: 0;
 
 		&:first-of-type {
-			padding-top: 3rem;
+			padding-top: 1rem;
 		}
 
 		&:last-of-type {
-			padding-bottom: 3rem;
+			padding-bottom: 2rem;
 		}
 	}
 }
