@@ -129,7 +129,7 @@ main {
 }
 
 nav {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	z-index: 999;
 	display: flex;
@@ -139,7 +139,7 @@ nav {
 	backdrop-filter: blur(8px);
 	place-items: center;
 	justify-content: center;
-	padding: 1.5rem;
+	padding: 1rem;
 
 	.directory-link {
 		text-transform: capitalize;
@@ -151,6 +151,10 @@ nav {
 		flex-flow: row wrap;
 		gap: 1rem;
 		justify-content: center;
+
+		@media screen and (max-width: 1024px) {
+			gap: 0.5rem;
+		}
 	}
 }
 
@@ -229,7 +233,7 @@ section {
 		padding: 0;
 
 		&:first-of-type {
-			padding-top: 9rem;
+			padding-top: 3rem;
 		}
 
 		&:last-of-type {
