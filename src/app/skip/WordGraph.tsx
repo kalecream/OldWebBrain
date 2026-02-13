@@ -34,5 +34,5 @@ export default function WordGraph({ data }) {
     }
   }, [data, systemPrefersDark]);
 
-  return <div ref={containerRef} style={{ width: "100%", height: "800px", margin: "0 auto", overflow: "hidden" }} />;
+  return <div ref={containerRef} style={{ width: "100%", height: "400px", margin: "0 auto", overflow: "hidden" }} />;
 }
