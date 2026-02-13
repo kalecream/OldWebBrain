@@ -37,7 +37,7 @@ const personalContent = () => {
     <>
       <AboutMeHero />
       <div className={styles.paragraph} id="podcasts">
-        <h2 className="text-center">& I'm always listening to a podcast!</h2>
+        <h2 className="text-center">I'm always listening to a podcast!</h2>
         <p className="prose blur ">
           Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts
           when I'm doing work. These have been my favourite listens so far:
@@ -60,7 +60,7 @@ const personalContent = () => {
         </div>
       </div>
       <div className={styles.paragraph} id="games">
-        <h2 className="text-center">Rarely, I play Games!</h2>
+        <h2 className="text-center">Rarely, I also play Games!</h2>
 
         <p className={`blur prose`}>
           My preference is playing short indie games or any game I physically own. I still play my Gameboy Advance, DS
@@ -69,8 +69,7 @@ const personalContent = () => {
           Not featured in the game gallery below is several untouched games from{" "}
           <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
             Steam
-          </Link>{" "}
-          and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
+          </Link>. These are the main games in my rotation
           nowadays:
         </p>
         <div className="flex row m-1 p-1">
