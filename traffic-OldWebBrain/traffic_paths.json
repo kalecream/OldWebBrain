@@ -8,36 +8,6 @@
   {
     "path": "/kalecream/OldWebBrain",
     "title": "kalecream/OldWebBrain: My Personal & Portfolio Website",
-    "count": 4,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/blob/master/CLONE.md",
-    "title": "OldWebBrain/CLONE.md at master · kalecream/OldWebBrain",
-    "count": 4,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/actions",
-    "title": "Workflow runs · kalecream/OldWebBrain",
-    "count": 2,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/actions/workflows/clone.yml",
-    "title": "GitHub Clone Count Update Everyday · Workflow runs · kalecream/OldWebBrain",
-    "count": 2,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/blob/master/README.md",
-    "title": "OldWebBrain/README.md at master · kalecream/OldWebBrain",
-    "count": 2,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/tree/master/.github",
-    "title": "OldWebBrain/.github at master · kalecream/OldWebBrain",
     "count": 2,
     "uniques": 1
   },
@@ -48,14 +18,8 @@
     "uniques": 1
   },
   {
-    "path": "/kalecream/OldWebBrain/actions/new",
-    "title": "Create new workflow · kalecream/OldWebBrain",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/kalecream/OldWebBrain/actions/runs/21981177884",
-    "title": "GitHub Clone Count Update Everyday · kalecream/OldWebBrain@1e59d22",
+    "path": "/kalecream/OldWebBrain/commit/7d8e62b4d1628054da2649b021150225f5f21b43",
+    "title": "refactor: update digital garden · kalecream/OldWebBrain@7d8e62b",
     "count": 1,
     "uniques": 1
   }
