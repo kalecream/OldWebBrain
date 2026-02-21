@@ -1,22 +1,50 @@
+"use client"
 import Link from "next/link";
-import React from 'react';
+import { usePathname } from "next/navigation";
 import styles from './Footer.module.scss';
+import { useEffect, useState } from "react";
 // fun code found at https://codepen.io/z-/pen/zYxdRQy
 
 const Footer: React.FC = () => {
-  
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.screenY || window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+
+      if (scrollPercent <= 0.5) {
+        setOpacity(0);
+      } else {
+        const opacityValue = (scrollPercent - 0.5) * 2;
+        setOpacity(Math.min(opacityValue, 1));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  if (usePathname() == "/") {
+    return null;
+  }
+
   const bubbles = Array.from({ length: 128 }, (_, i) => ({
     id: i,
-    size: `${2 + Math.random() * 4}rem`,
-    distance: `${6 + Math.random() * 4}rem`,
-    position: `${-5 + Math.random() * 110}%`,
+    size: `${2 + Math.random() * 10}rem`,
+    distance: `${2 + Math.random() * 1}rem`,
+    position: `${-5 + Math.random() * 100}%`,
     time: `${2 + Math.random() * 2}s`,
-    delay: `${-1 * (2 + Math.random() * 2)}s`,
+    delay: `${-1 * (2 + Math.random() * 1)}s`,
   }));
 
   return (
     <>
-      <footer className={styles.footer}>
+      <footer className={styles.footer} style={{ opacity }}>
         <div className={styles.bubbles}>
           {bubbles.map((bubble) => (
             <div
@@ -34,39 +62,16 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.content}>
           <div>
-            <div>
-              <b>Eldew</b>
-              <a href="#">Secuce</a>
-              <a href="#">Drupand</a>
-              <a href="#">Oceash</a>
-              <a href="#">Ugefe</a>
-              <a href="#">Babed</a>
-            </div>
-            <div>
-              <b>Spotha</b>
-              <a href="#">Miskasa</a>
-              <a href="#">Agithe</a>
-              <a href="#">Scesha</a>
-              <a href="#">Lulle</a>
-            </div>
-            <div>
-              <b>Chashakib</b>
-              <a href="#">Chogauw</a>
-              <a href="#">Phachuled</a>
-              <a href="#">Tiebeft</a>
-              <a href="#">Ocid</a>
-              <a href="#">Izom</a>
-              <a href="#">Ort</a>
-            </div>
-            <div>
-              <b>Athod</b>
-              <a href="#">Pamuz</a>
-              <a href="#">Vapert</a>
-              <a href="#">Neesk</a>
-              <a href="#">Omemanen</a>
-            </div>
+            {/* <div style={{ gap: "1rem" }}>
+              <b>Personal</b>
+              <a href="">About</a>
+              <a href="#">Blog</a>
+              <a href="#">Garden</a>
+              <a href="#">Colophon</a>
+              <a href="#">Rolodex</a>
+            </div> */}
           </div>
-          <div>
+          <div className="company">
             <a
               className={styles.image}
               href="https://codepen.io/z-"
@@ -74,7 +79,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               style={{
                 backgroundImage:
-                  'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg")',
+                  'url("http://localhost:3001/_next/static/media/ouroburos.73a6abf4.svg")',
               }}
             />
             <p>Yung Higue &copy; {new Date().getFullYear()}</p>
@@ -94,7 +99,7 @@ const Footer: React.FC = () => {
           </filter>
         </defs>
       </svg>
-      </>
+    </>
   );
 };
 

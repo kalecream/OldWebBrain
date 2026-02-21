@@ -1,18 +1,19 @@
     .footer {
-        position: fixed;
         bottom: 0;
-        width: 99%;
+        left: 0;
+        right: 0;
+        width: 100%;
         z-index: 1;
         display: grid;
-        position: relative;
-        min-height: 12rem;
+        min-height: 3rem;
+        transition: opacity 0.3s ease;
 
         .bubbles {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1rem;
+            height: 0.5rem;
             background: var(--secondary);
             filter: url("#blob");
 
@@ -32,8 +33,8 @@
             display: grid;
             width: 100vw;
             grid-template-columns: 1fr auto;
-            grid-gap: 4rem;
-            padding: 2rem;
+            grid-gap: 1rem;
+            padding: 0 2rem;
             background: var(--secondary);
 
             a,
@@ -53,11 +54,12 @@
 
             >div {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row-reverse;
+                place-items: center;
                 justify-content: center;
 
                 >div {
-                    margin: 0.25rem 0;
+                    margin: 0.5rem 0;
 
                     >* {
                         margin-right: .5rem;
@@ -66,8 +68,8 @@
 
                 .image {
                     align-self: center;
-                    width: 4rem;
-                    height: 4rem;
+                    width: 2rem;
+                    height: 2rem;
                     margin: 0.25rem 0;
                     background-size: cover;
                     background-position: center;
