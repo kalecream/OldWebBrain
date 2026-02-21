@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, Tooltip } from "recharts";
 import Link from "next/link";
 import Books from "@data/books";
 import { WindowWidth } from "@utils/windowDimmensions";
-import { GetMonthName } from "@components/Projects/GetMonthName";
+import { GetMonthName } from "@components/Portfolio/GetMonthName";
 import styles from "./books.module.scss";
 
 export interface BooksProps {
