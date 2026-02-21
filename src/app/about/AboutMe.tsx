@@ -37,6 +37,8 @@ const personalContent = () => {
     <>
       <AboutMeHero />
       <div className={styles.paragraph} id="podcasts">
+        <p>I'm trying to be more active on working on my personal projects again</p>
+        <Image width={400} src="https://www.dailygreen.xyz/kalecream" alt="kalecream's Github chart" />
         <h2 className="text-center">I'm always listening to a podcast!</h2>
         <p className="prose blur ">
           Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts
@@ -137,7 +139,6 @@ const personalContent = () => {
 const professionalContent = () => (
   <>
     <p>
-      {" "}
       Front-end focused developer with 5+ years of experience specializing modern web technologies. I focus on creating
       applications that solve real problems with elegant solutions.
     </p>
