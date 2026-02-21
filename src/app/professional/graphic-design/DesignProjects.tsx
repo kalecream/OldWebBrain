@@ -4,7 +4,7 @@ import { Projects, ProjectStructure } from "@components/Projects/projectsData";
 import Link from "next/link";
 import styles from "@components/Projects/projects.module.scss";
 import Image from "next/image";
-import { GetMonthName } from "@components/Projects/GetMonthName";
+import { GetMonthName } from "@components/Portfolio/GetMonthName";
 import { FaFileImage } from "react-icons/fa6";
 import { TestimonialBlock } from "../Testimonial/Testimonial";
 
@@ -28,11 +28,11 @@ const ProjectGallery: React.FC<{ projects: ProjectStructure[] }> = ({ projects }
   const filteredProjects =
     activeCategory === "All"
       ? [...Projects]
-          .filter((p) => p.category === "illustration")
-          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+        .filter((p) => p.category === "illustration")
+        .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
       : Projects.filter((p) => p.category === "illustration")
-          .filter((project) => project.type === activeCategory)
-          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
+        .filter((project) => project.type === activeCategory)
+        .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   const openImageView = (id: string) => {
     setActiveID(id);
@@ -230,11 +230,11 @@ const DesignProjects: React.FC = () => {
   const filteredProjects =
     activeCategory === "All"
       ? [...Projects]
-          .filter((p) => p.category === "illustration")
-          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
+        .filter((p) => p.category === "illustration")
+        .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime())
       : Projects.filter((p) => p.category === "illustration")
-          .filter((project) => project.type === activeCategory)
-          .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
+        .filter((project) => project.type === activeCategory)
+        .sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
 
   return (
     <section className={styles["project-wrapper"]}>
