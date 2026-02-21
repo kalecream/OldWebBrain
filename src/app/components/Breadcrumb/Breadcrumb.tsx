@@ -27,7 +27,7 @@ const Breadcrumb: React.FC = () => {
       {path && path !== "/" && (
         <>
           <Link href="/" className="site-name">
-            <Image src={SiteImage} alt="logo" width={80} height={80} />
+            <Image src={SiteImage} alt="logo" width={80} height={80} loading="eager" />
           </Link>
         </>
       )}

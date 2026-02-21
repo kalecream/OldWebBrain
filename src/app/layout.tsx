@@ -3,10 +3,18 @@ import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@styles/global.scss";
 import { Navbar } from "@components/Navigation/NavBar";
-import { Footer } from "@components/Navigation/Footer";
+import Footer from "@components/Navigation/Footer";
 import { BackToTop } from "@components/BackToTop/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./context/Theme";
+import { DM_Mono } from 'next/font/google';
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yunghigue.com"),
@@ -51,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmMono.variable}`}>
       <Head>
         <link rel="preload" href="/assets/images/light-grey-terrazzo.webp" as="image" fetchPriority="high" />
         <link rel="preload" href="/assets/images/stars.gif" as="image" fetchPriority="high" />
@@ -65,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BackToTop />
           </main>
         </ThemeProvider>
-        <Footer />
+        {/* <Footer /> */}
         <SpeedInsights />
       </body>
     </html>

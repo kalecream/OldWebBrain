@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 "use client";
 import Link from "next/link";
 import { Journal } from "./Journal";
@@ -21,11 +20,8 @@ const NowPage = () => {
           <Link target="_blank" href="https://lichess.org/@/anirbxs">
             Chess
           </Link>{" "}
-          & for the CompTIA+ cert. I'm trying to get more professional certification and public projects out this
-          quadrimester. I'm also working on my fitness. I'm starting out{" "}
-          <Link href="/fitness">in Calisthenics and my running pace.</Link>{" "}
-        </p>
-        <p>
+          & for the CompTIA+ cert. I'm trying to get more public projects & do a professional rebrand this
+          quadrimester. I'm also working on my fitness - starting with <Link href="/fitness">in Calisthenics and my running pace.</Link>.
           The main focus is on increasing my income and creating standard operating practices (SOPs) in my personal and
           professional life so I can be more present with my family and friends later on in the year.
         </p>
@@ -37,42 +33,6 @@ const NowPage = () => {
         </ul>
       </div>
       <Journal />
-      {/* <section className={style.archive}>
-          {nowData.map((year, index) => (
-            <details key={index} className={style.collapse}>
-              <summary className={style.year}>
-                <h2>{year.year}</h2>
-                <p>
-                  <i>{year.summary}</i>
-                </p>
-              </summary>
-              <div className={`prose `}>
-                {year.seasons.map((season, index) => (
-                  <details open key={index} className={style.collapse}>
-                    <summary className={style.year}>
-                      <h3>
-                        {year.year}-{season.season}
-                      </h3>
-                    </summary>
-                    <p className="blur">{season.summary}</p>
-                    {season.goals && (
-                      <>
-                        <hr />
-                        <ul className={`${style.goal}}`}>
-                          {season.goals.map((goal, index) => (
-                            <li key={index} data-id={goal.status}>
-                              {goal.goal}
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </details>
-                ))}
-              </div>
-            </details>
-          ))}
-        </section> */}
     </div>
   );
 };

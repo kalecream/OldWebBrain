@@ -37,7 +37,8 @@ const personalContent = () => {
     <>
       <AboutMeHero />
       <div className={styles.paragraph} id="podcasts">
-        <h2 className="text-center">& I'm always listening to a podcast!</h2>
+        <p>I'm trying to be more active on working on my personal projects again</p>
+        <h2 className="text-center">I'm always listening to a podcast!</h2>
         <p className="prose blur ">
           Mainly horror, sci-fi or comedy audiodramas, but I tend to listen to Non-Fiction or media-related Podcasts
           when I'm doing work. These have been my favourite listens so far:
@@ -60,7 +61,7 @@ const personalContent = () => {
         </div>
       </div>
       <div className={styles.paragraph} id="games">
-        <h2 className="text-center">Rarely, I play Games!</h2>
+        <h2 className="text-center">Rarely, I also play Games!</h2>
 
         <p className={`blur prose`}>
           My preference is playing short indie games or any game I physically own. I still play my Gameboy Advance, DS
@@ -69,8 +70,7 @@ const personalContent = () => {
           Not featured in the game gallery below is several untouched games from{" "}
           <Link className="link" href="https://steamcommunity.com/id/SabMedwinter">
             Steam
-          </Link>{" "}
-          and <Link href="https://sabmedwinter.itch.io/">Itch.io</Link>. These are the main games in my rotation
+          </Link>. These are the main games in my rotation
           nowadays:
         </p>
         <div className="flex row m-1 p-1">
@@ -118,17 +118,6 @@ const personalContent = () => {
               />
             </Link>
           </div>
-          <div className="">
-            <Link href="https://en.wikipedia.org/wiki/Advance_Wars">
-              <Image
-                width={100}
-                height={100}
-                src="https://i.imgur.com/ofu3y5f.jpeg"
-                alt="Advanded Wars"
-                className={`outerglow`}
-              />
-            </Link>
-          </div>
         </div>
       </div>
     </>
@@ -138,7 +127,6 @@ const personalContent = () => {
 const professionalContent = () => (
   <>
     <p>
-      {" "}
       Front-end focused developer with 5+ years of experience specializing modern web technologies. I focus on creating
       applications that solve real problems with elegant solutions.
     </p>

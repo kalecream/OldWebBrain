@@ -1,0 +1,121 @@
+.row {
+    background: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
+    border-radius: var(--borderRadius);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: var(--transition);
+
+    &:hover {
+        border-color: var(--secondary);
+    }
+
+    &::marker {
+        content: none;
+    }
+}
+
+.rowTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.3;
+}
+
+.removeBtn {
+    background: none;
+    border: none;
+    color: var(--captionColor);
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0.1rem 0.25rem;
+    border-radius: 3px;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: var(--transition);
+
+    &:hover {
+        background: rgba(139, 0, 0, 0.1);
+        color: var(--secondary);
+    }
+}
+
+.rowBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.qtyControl {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.qtyBtn {
+    background: none;
+    border: 1px solid var(--borderColor);
+    border-radius: 4px;
+    color: var(--textColor);
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+
+    &:hover:not(:disabled) {
+        border-color: var(--secondary);
+        color: var(--secondary);
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+}
+
+.qtyValue {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--textColor);
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.unit,
+.unitLabel {
+    font-size: 0.72rem;
+    color: var(--captionColor);
+    font-style: italic;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1em;
+}
+
+.priceAmount {
+    font-family: var(--headingFont);
+    font-size: 1.05rem;
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+.priceType {
+    font-size: 0.7rem;
+    color: var(--captionColor);
+}

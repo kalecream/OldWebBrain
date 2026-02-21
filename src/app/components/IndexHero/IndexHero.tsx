@@ -34,7 +34,7 @@ const Index = () => {
               </p>
             </div>
             <div className={button["button-block"]}>
-              <Link href="/professional">
+              <Link href="/portfolio">
                 <button className={button.vamp} role="button">
                   <span className={button.text}>The Professional Route</span>
                   <span className={button["vamp-background"]}></span>

@@ -74,7 +74,6 @@ const ContactPage = () => {
               <p className={button.title}>Book A Video Call</p>
               <p className={button.info}>Schedule via Google Calendar</p>
             </div>
-            <FaArrowRightLong className={button.arrow} size={20} />
           </button>
           <button
             aria-label="Send an email"
@@ -88,7 +87,6 @@ const ContactPage = () => {
               <p className={button.title}>Email me</p>
               <p className={button.info}>yunghigue@gmail.com</p>
             </div>
-            <FaArrowRightLong className={button.arrow} size={20} />
           </button>
           <button
             aria-label="Message on Whatsapp"
@@ -102,7 +100,6 @@ const ContactPage = () => {
               <p className={button.title}>Whatsapp me</p>
               <p className={button.info}>+1-876-413-5825</p>
             </div>
-            <FaArrowRightLong className={button.arrow} size={20} />
           </button>
           <button
             aria-label="Message on Telegram"
@@ -116,7 +113,6 @@ const ContactPage = () => {
               <p className={button.title}>shoot me a Telegram</p>
               <p className={button.info}>@YungHigue</p>
             </div>
-            <FaArrowRightLong className={button.arrow} size={20} />
           </button>
         </div>
       </div>

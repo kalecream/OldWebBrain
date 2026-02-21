@@ -4,12 +4,16 @@ const Directory = [
     links: "/now",
   },
   {
-    title: "About",
-    links: "/about",
-  },
-  {
     title: "Blog",
     links: "/blog",
+  },
+  {
+    title: "Projects",
+    links: "/portfolio",
+  },
+  {
+    title: "Pricing",
+    links: "/pricing",
   },
   {
     title: "Garden",
