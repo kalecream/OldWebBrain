@@ -15,6 +15,8 @@
 
 <a href='https://github.com/MShawon/github-clone-count-badge'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/kalecream/2cb9d1bd899b5279761bc7379b9f2a96/raw/clone.json&logo=github'></a>
 
+<a href="https://wakatime.com/badge/user/4577f611-3ee4-41a1-af3d-1e65a2536e2f/project/014d850d-deef-4263-a0f5-660758ae4ec5"><img src="https://wakatime.com/badge/user/4577f611-3ee4-41a1-af3d-1e65a2536e2f/project/014d850d-deef-4263-a0f5-660758ae4ec5.svg" alt="wakatime"></a>
+
 
 <!-- DESCRIPTION/ -->
 
