@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@styles/global.scss";
-import { Navbar } from "@components/Navigation/NavBar";
+import Navbar from "@components/Navigation/NavBar";
 import Footer from "@components/Navigation/Footer";
 import { BackToTop } from "@components/BackToTop/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
