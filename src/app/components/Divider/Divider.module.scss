@@ -3,18 +3,18 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding: 4rem clamp(2rem, 8vw, 7rem);
+    padding: 1.5rem clamp(2rem, 8vw, 7rem);
 
     &__line {
         flex: 1;
         height: 1px;
-        background: linear-gradient(to right, transparent, var(--blood), transparent);
+        background: linear-gradient(to right, transparent, var(--secondary), transparent);
         opacity: 0.5;
     }
 
     &__glyph {
         font-size: 1rem;
-        color: var(--blood-bright);
+        color: var(--secondary);
         opacity: 0.8;
     }
 }
