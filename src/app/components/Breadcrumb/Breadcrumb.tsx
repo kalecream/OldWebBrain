@@ -27,9 +27,10 @@ const Breadcrumb: React.FC = () => {
       {path && path !== "/" && (
         <>
           <Link href="/" className={styles["site-name"]}>
-            <Image src={SiteImage} alt="logo" width={40} height={40} loading="eager" />
+            <Image src={SiteImage} className={styles["site-logo"]} alt="logo" width={40} height={40} loading="eager" />
+            <span className={styles["site-name-text"]}>Yung Higue</span>
           </Link>
-          <span className={styles["site-name-text"]}>Yung Higue</span>
+
         </>
       )}
       <ol className={styles.breadcrumbList}>

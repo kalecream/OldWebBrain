@@ -22,11 +22,11 @@
     display: flex;
     justify-content: center;
     align-self: center;
+}
 
-    &:hover {
-        rotate: 45deg;
-        transition: var(--transition);
-    }
+.site-logo:hover {
+    rotate: 45deg;
+    transition: var(--transition);
 }
 
 .site-name-text {
@@ -37,6 +37,10 @@
     color: var(--bone-muted, #b8a98a);
     transition: color 0.2s;
     margin: auto 2rem auto 0.5rem;
+
+    &:hover {
+        color: var(--secondary);
+    }
 }
 
 .breadcrumbList {
