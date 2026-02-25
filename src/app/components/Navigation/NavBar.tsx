@@ -54,7 +54,7 @@ export const Navbar = () => {
                 <Link
                   href={href}
                   className={` ${Bar["header__nav-link"]}${label === "Summon" ? " " + Bar["header__nav-link--cta"] : ""}`}
-                  {...(external ? { rel: "me" } : {})}
+                  {...(href.startsWith("http") ? { rel: "me" } : {})}
                 >
                   {label}
                 </Link>
@@ -82,7 +82,7 @@ export const Navbar = () => {
         <nav aria-label="Mobile navigation">
           <ul className={Bar.header__mobile_nav}>
             {NAV_LINKS.map(({ href, label }, i) => (
-              <>
+              <div key={label}>
                 {i > 0 && i < NAV_LINKS.length && (
                   <li key={`div-${i}`} aria-hidden="true">
                     <div className={Bar.header__mobile_divider} />
@@ -92,13 +92,13 @@ export const Navbar = () => {
                   <Link
                     href={href}
                     className={`${Bar["header__mobile-link"]}${label === "Summon" ? " " + Bar["header__mobile-link--cta"] : ""}`}
-                    {...(external ? { rel: "me" } : {})}
+                    {...(href.startsWith("http") ? { rel: "me" } : {})}
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}
                   </Link>
                 </li>
-              </>
+              </div>
             ))}
           </ul>
           <Link
