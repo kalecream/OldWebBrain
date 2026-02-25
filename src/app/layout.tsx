@@ -3,7 +3,7 @@ import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@styles/global.scss";
 import Navbar from "@components/Navigation/NavBar";
-import Footer from "@components/Navigation/Footer";
+import Footer from "@components/Footer/Footer";
 import { BackToTop } from "@components/BackToTop/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./context/Theme";
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <BackToTop />
           </main>
         </ThemeProvider>
-        {/* <Footer /> */}
+        <Footer />
         <SpeedInsights />
       </body>
     </html>
