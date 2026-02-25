@@ -1,0 +1,20 @@
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem clamp(2rem, 8vw, 7rem);
+
+    &__line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--blood), transparent);
+        opacity: 0.5;
+    }
+
+    &__glyph {
+        font-size: 1rem;
+        color: var(--blood-bright);
+        opacity: 0.8;
+    }
+}
