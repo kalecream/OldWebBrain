@@ -1,29 +1,41 @@
- .current {
-   @extend .glass !optional;
+.current {
+  @extend .glass !optional;
 
-   backdrop-filter: blur(10px);
-   max-width: 35rem;
-   padding: 0 1.5rem;
-   text-align: justify;
-   margin: auto;
- }
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 35rem;
+  padding: 0 clamp(1rem, 5vw, 1.5rem);
+  text-align: justify;
+  margin: auto;
+  box-sizing: border-box;
+}
 
- .heading {
-   font-family: var(--body-font);
-   text-align: left;
-   margin: 1rem auto;
-   font-size: 0.8rem;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   color: var(--secondary);
- }
+.heading {
+  font-family: var(--bodyFont);
+  text-align: left;
+  margin: 1rem auto;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
+}
 
- .container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   place-items: center;
-   justify-content: center;
-   text-align: center;
-   margin: auto;
- }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  gap: 2rem;
+  width: 100%;
+  padding: var(--paddingContainer);
+  box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    place-items: start;
+    align-items: flex-start;
+  }
+}
