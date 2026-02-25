@@ -29,6 +29,16 @@
     }
 }
 
+.site-name-text {
+    width: max-content;
+    font-family: "Cattedrale Rough", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    color: var(--bone-muted, #b8a98a);
+    transition: color 0.2s;
+    margin: auto 2rem auto 0.5rem;
+}
+
 .breadcrumbList {
     display: flex;
     flex-flow: row wrap;
@@ -48,7 +58,7 @@
 
 .breadcrumbItem a {
     margin: auto;
-    color: var(--primary);
+    color: var(--textColor);
     font-size: 0.7rem;
     text-transform: uppercase;
 }
@@ -59,8 +69,9 @@
 
 .breadcrumbItem::after {
     content: '/';
-    margin-left: 1px;
-    margin-right: 1px;
+    font-size: 0.7rem;
+    color: var(--textColor);
+    margin: auto 0.25rem;
 }
 
 .breadcrumbItem:last-child a {
