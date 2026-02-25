@@ -151,7 +151,7 @@ body {
 }
 
 main {
-	margin: 0 auto;
+	margin: 2rem auto;
 }
 
 nav {
@@ -858,10 +858,6 @@ canvas:active {
 *::-webkit-scrollbar-thumb {
 	background-color: var(--primary);
 	border-radius: var(--borderRadius);
-}
-
-.recolor {
-	filter: invert(9%) sepia(22%) saturate(4893%) hue-rotate(6deg) brightness(95%) contrast(102%);
 }
 
 .faded {
