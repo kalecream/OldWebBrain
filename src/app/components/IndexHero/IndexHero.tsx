@@ -287,7 +287,7 @@ const CARDS: Omit<FlipCardProps, "index">[] = [
     icon: <FaPaintbrush />,
     heading: "Brand Identity",
     frontSub: "Visual language with intent",
-    backBody: "Mark-making, type systems, and colour palettes for brands that want to be remembered, not just recognised.",
+    backBody: "Mark-making, type systems, and colour palettes for brands that want to be remembered.",
     skills: ["Logomark Design", "Type Systems", "Figma"],
     href: "/portfolio",
   },
