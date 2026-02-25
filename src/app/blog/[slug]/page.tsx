@@ -5,25 +5,22 @@ import { CustomMDX } from "@components/BlogComponents/CustomBlogComponents";
 import { getBlogPosts } from "../../db/blog";
 import { unstable_noStore as noStore } from "next/cache";
 import { PageReadTime } from "@utils/PageReadTime";
+import a from "./articles.module.scss";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
   const { slug } = await params;
   let post = getBlogPosts().find((post) => post.slug === slug);
-
-  if (!post) {
-    return undefined;
-  }
+  if (!post) return undefined;
 
   const { title, date: publishedTime, summary: description, image, tags } = post.metadata;
-  const ogImage = image ? `https://yunghigue.com${image}` : `https://yunghigue.com/opengraph-image.png`;
+  const ogImage = image
+    ? `https://yunghigue.com${image}`
+    : `https://yunghigue.com/opengraph-image.png`;
 
   return {
     title,
@@ -35,11 +32,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       type: "article",
       publishedTime: post.metadata.date,
       url: `https://yunghigue.com/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
@@ -53,9 +46,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
 const formatDate = (date: string) => {
   noStore();
   let currentDate = new Date().getTime();
-  if (!date.includes("T")) {
-    date = `${date}T00:00:00`;
-  }
+  if (!date.includes("T")) date = `${date}T00:00:00`;
   let targetDate = new Date(date).getTime();
   let timeDifference = Math.abs(currentDate - targetDate);
   let daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -66,32 +57,20 @@ const formatDate = (date: string) => {
     year: "numeric",
   });
 
-  if (daysAgo < 1) {
-    return "Today";
-  } else if (daysAgo < 7) {
-    return `${fullDate} - ${daysAgo}d ago`;
-  } else if (daysAgo < 30) {
-    const weeksAgo = Math.floor(daysAgo / 7);
-    return `${fullDate} - ${weeksAgo}w ago`;
-  } else if (daysAgo < 365) {
-    const monthsAgo = Math.floor(daysAgo / 30);
-    return `${fullDate} - ${monthsAgo}mo ago`;
-  } else {
-    const yearsAgo = Math.floor(daysAgo / 365);
-    return `${fullDate} - ${yearsAgo}y ago`;
-  }
+  if (daysAgo < 1) return "Today";
+  else if (daysAgo < 7) return `${fullDate} — ${daysAgo}d ago`;
+  else if (daysAgo < 30) return `${fullDate} — ${Math.floor(daysAgo / 7)}w ago`;
+  else if (daysAgo < 365) return `${fullDate} — ${Math.floor(daysAgo / 30)}mo ago`;
+  else return `${fullDate} — ${Math.floor(daysAgo / 365)}y ago`;
 };
 
 export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
-
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   return (
-    <section>
+    <>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -107,28 +86,35 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               ? `https://yunghigue.com${post.metadata.image}`
               : `https://yunghigue.com/og?title=${post.metadata.title}`,
             url: `https://yunghigue.com/blog/${post.slug}`,
-            author: {
-              "@type": "Person",
-              name: "Sab Medwinter",
-            },
+            author: { "@type": "Person", name: "Sab Medwinter" },
           }),
         }}
       />
-      <div className="info">
-        <Suspense fallback={<p />}>
-          <p className="text-center">
-            <PageReadTime readingSpeedWPM={250} /> <br /> {formatDate(post.metadata.date)}
-          </p>
-        </Suspense>
-        <h2 className="title">{post.metadata.title}</h2>
-        <h3 className="sub-title">
-          <i>{post.metadata.description}</i>
-        </h3>
-        <br />
-      </div>
-      <article>
+
+      <header className={a["post-hero"]}>
+ 
+        <div className={a["post-meta"]}>
+          <Suspense fallback={<span>…</span>}>
+            <PageReadTime readingSpeedWPM={250} />
+          </Suspense>
+          <span className={a["post-meta-sep"]}>✦</span>
+          <span>{formatDate(post.metadata.date)}</span>
+        </div>
+
+        <h1 className={a["post-title"]}>{post.metadata.title}</h1>
+
+        {post.metadata.description && (
+          <p className={a["post-subtitle"]}>{post.metadata.description}</p>
+        )}
+
+        <div className={a["drip-divider"]} aria-hidden>
+          <span className={a["drip-glyph"]}>⸸</span>
+        </div>
+      </header >
+
+      <article className={a["post-body"]}>
         <CustomMDX source={post.content} />
       </article>
-    </section>
+    </>
   );
 }
