@@ -111,7 +111,7 @@ const ContactPage = () => {
             <FaTelegram size={24} className={button.icon} />
             <div className={button["glass-text"]}>
               <p className={button.title}>shoot me a Telegram</p>
-              <p className={button.info}>@YungHigue</p>
+              <p className={button.info}>@Medwinter</p>
             </div>
           </button>
         </div>
