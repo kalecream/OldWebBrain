@@ -15,7 +15,7 @@
 	& a:hover {
 		color: var(--secondary);
 	}
-} 
+}
 
 .container {
 	display: flex;
@@ -24,7 +24,7 @@
 	letter-spacing: 0.5px;
 	align-items: center;
 
-	@media screen and (min-width: 0)  {
+	@media screen and (min-width: 0) {
 		flex-direction: column;
 		width: clamp(10rem, 80%, 30rem);
 		margin: 0rem auto;
@@ -32,7 +32,7 @@
 		gap: 1rem;
 	}
 
-	 @media screen and (min-width: 960px)  {
+	@media screen and (min-width: 960px) {
 		flex-direction: row;
 		width: clamp(20rem, 100%, 50rem);
 		margin: 0rem auto;
@@ -43,7 +43,6 @@
 //   <span class="text">Button 40</span>
 // </button>
 
-/* CSS */
 .button-40 {
 	--glow-color: rgb(217, 176, 255);
 	--glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -106,7 +105,7 @@
 	background: rgba(49, 0, 0, 0.05);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	isolation: isolate; 
+	isolation: isolate;
 	border: 1px solid rgba(250, 163, 163, 0.2);
 	box-shadow: 0 8px 32px rgba(49, 0, 0, 0.1);
 	border-radius: var(--borderRadius);
@@ -153,8 +152,8 @@
 	flex-direction: column;
 	justify-content: start;
 	text-align: left;
-	margin-top:1rem;
-	 
+	margin-top: 1rem;
+
 
 
 	& .title {
@@ -175,7 +174,6 @@
 
 
 .primary,
-.secondary,
 .border {
 	align-items: center;
 	width: 100%;
@@ -203,7 +201,7 @@
 			background-image 0.15s;
 	}
 
-	 @media screen and (min-width: 0px) and (max-width:  768px)  {
+	@media screen and (min-width: 0px) and (max-width: 768px) {
 		padding: 2rem 3rem;
 		max-width: 30rem;
 	}
@@ -217,16 +215,20 @@
 }
 
 .secondary {
-	background: transparent;
-	color: var(--primary);
-	border: var(--borderColor);
-	padding: 1rem;
-	font-weight: 400;
-
 	&:hover {
-		// button text becomes too thin when hovered
-		font-weight: 600;
+		color: var(--bone);
+		border-color: var(--bone);
 	}
+
+	font-size: 0.65rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--bone-muted);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(245, 236, 215, 0.2);
+	padding-bottom: 2px;
+	transition: color 0.2s,
+	border-color 0.2s;
 }
 
 .border {

@@ -1,0 +1,223 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 clamp(1rem, 6vw, 5rem);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.4s ease, backdrop-filter 0.4s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.site-header--scrolled {
+    background: rgba(7, 4, 9, 0.82);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom-color: rgba(139, 0, 0, 0.25);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+
+    & li::marker {
+        content: '';
+    }
+}
+
+.header__nav-link {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--textColor);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.header__nav-link:hover {
+    color: var(--bone);
+}
+
+.header__nav-link:hover::after {
+    width: 100%;
+}
+
+.header__nav-link--cta {
+    color: var(--secondary);
+    border: 1px solid rgba(196, 30, 58, 0.35);
+    padding: 0.45rem 1rem;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.header__nav-link--cta::after {
+    display: none;
+}
+
+.header__nav-link--cta:hover {
+    color: var(--void);
+    background: var(--blood-bright);
+    border-color: var(--blood-bright);
+}
+
+.header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    position: relative;
+    z-index: 110;
+}
+
+.header__burger-bar {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--bone);
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s;
+}
+
+.header__burger--open .header__burger-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.header__burger--open .header__burger-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.header__burger--open .header__burger-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ── MOBILE ── */
+.header__mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 105;
+    background: rgba(7, 4, 9, 0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.header__mobile-menu--open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header__mobile-menu::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 60%, rgba(139, 0, 0, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header__mobile-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+
+    & li::marker {
+        content: '';
+    }
+}
+
+.header__mobile-menu--open>nav>ul>li::marker {
+    content: '';
+}
+
+.header__mobile-link {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--textColor);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.header__mobile-link::before {
+    content: '✦';
+    position: absolute;
+    left: -1.8rem;
+    font-size: 0.5rem;
+    color: var(--blood-bright);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s, left 0.2s;
+}
+
+.header__mobile-link:hover {
+    color: var(--bone);
+}
+
+.header__mobile-link:hover::before {
+    opacity: 1;
+    left: -1.4rem;
+}
+
+.header__mobile-link--cta {
+    color: var(--blood-bright);
+}
+
+.header__mobile-link--cta:hover {
+    color: var(--gold);
+}
+
+.header__mobile-divider {
+    width: 1px;
+    height: 3rem;
+    background: linear-gradient(to bottom, transparent, rgba(139, 0, 0, 0.5), transparent);
+    margin: 0.5rem auto;
+}
+
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__burger {
+        display: flex;
+    }
+
+    .header__mobile-menu {
+        display: flex;
+    }
+}

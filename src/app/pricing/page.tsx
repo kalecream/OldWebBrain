@@ -87,7 +87,7 @@ const FAQAccordion: React.FC<{ items: { question: string; answer: string }[] }> 
 const FAQ_ITEMS = [
     { question: 'How long does a website take to build?', answer: 'Typically 3–6 weeks from project kickoff to launch, depending on the scope and how quickly you provide feedback and content. Rush timelines are available for an additional fee.' },
     { question: 'Do I need to provide my own content?', answer: "You can, and it helps keep costs down. But if you need help, our copywriting add-on covers you. We'll always need your brand assets (logo, photos) unless you bundle in design services." },
-    { question: 'What platform will my website be built on?', answer: "That depends on your needs. We work across Next.js, WordPress, Webflow, and Shopify. We'll recommend the right tool for your goals — not just the one easiest for us." },
+    { question: 'What platform will my website be built on?', answer: "That depends on your needs. We work across Next.js, WordPress, Webflow, and Shopify. We'll recommend the right tool for your goals." },
     { question: 'Are there any recurring fees?', answer: 'Domain registration (~$15/yr) and hosting (~$10–30/mo) are separate and billed directly to you. Maintenance plans are optional but highly recommended. There are no hidden fees.' },
     { question: "What's the payment structure?", answer: '50% deposit to begin, 50% on delivery. For larger projects, we can split into three milestones: deposit, mid-project, and on launch.' },
     { question: 'Can I upgrade my plan later?', answer: 'Absolutely. Add-ons and maintenance upgrades can be added at any point. We grow with you.' },

@@ -1,37 +1,78 @@
+.breadcrumb {
+    display: flex;
+    position: relative;
+    transition: color 0.2s;
+    line-height: 1;
+    place-items: center;
+
+    &::after {
+        content: '✦';
+        position: absolute;
+        right: -1.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.5rem;
+        color: var(--blood-bright);
+        opacity: 0.7;
+    }
+}
+
+.site-name {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    &:hover {
+        rotate: 45deg;
+        transition: var(--transition);
+    }
+}
+
+.site-name-text {
+    width: max-content;
+    font-family: "Cattedrale Rough", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    color: var(--bone-muted, #b8a98a);
+    transition: color 0.2s;
+    margin: auto 2rem auto 0.5rem;
+}
+
 .breadcrumbList {
     display: flex;
     flex-flow: row wrap;
     place-items: center;
     align-items: center;
     list-style: none;
-    font-size: 1rem;
     padding: 0;
-    margin: auto 0;
     margin-right: 2rem;
     height: 100%;
+    text-decoration: none;
+    gap: 0.1rem;
 
     & li::marker {
         content: '';
     }
 }
 
-.breadcrumbItem {
-    margin: auto 0.5rem auto auto;
-}
-
 .breadcrumbItem a {
-    color: var(--primary);
+    margin: auto;
+    color: var(--textColor);
+    font-size: 0.7rem;
+    text-transform: uppercase;
 }
 
 .breadcrumbItem a:hover {
     color: var(--secondary);
 }
 
-// .breadcrumbItem::after {
-//     content: '/';
-//     margin-left: 2px;
-//     margin-right: 2px;
-// }
+.breadcrumbItem::after {
+    content: '/';
+    font-size: 0.7rem;
+    color: var(--textColor);
+    margin: auto 0.25rem;
+}
 
 .breadcrumbItem:last-child a {
     color: var(--secondary);

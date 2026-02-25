@@ -23,19 +23,20 @@ const Breadcrumb: React.FC = () => {
   });
 
   return (
-    <div aria-label="breadcrumb" style={{ display: "flex" }}>
+    <div aria-label="breadcrumb" className={styles.breadcrumb}>
       {path && path !== "/" && (
         <>
-          <Link href="/" className="site-name">
-            <Image src={SiteImage} alt="logo" width={80} height={80} loading="eager" />
+          <Link href="/" className={styles["site-name"]}>
+            <Image src={SiteImage} alt="logo" width={40} height={40} loading="eager" />
           </Link>
+          <span className={styles["site-name-text"]}>Yung Higue</span>
         </>
       )}
       <ol className={styles.breadcrumbList}>
         {breadcrumbItems.map((item, index) => (
           <li key={index} className={styles.breadcrumbItem} style={{ paddingLeft: 0 }}>
             <Link href={item.href}>
-              <h1>{item.label}</h1>
+              <span>{item.label}</span>
             </Link>
           </li>
         ))}

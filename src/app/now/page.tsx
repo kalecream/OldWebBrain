@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Journal } from "./Journal";
 import style from "./now.module.scss";
+import Divider from "@components/Divider/Divider";
 
 const NowPage = () => {
   return (
@@ -25,11 +26,10 @@ const NowPage = () => {
           The main focus is on increasing my income and creating standard operating practices (SOPs) in my personal and
           professional life so I can be more present with my family and friends later on in the year.
         </p>
-        <hr />
-        <ul className={`${style.goal}}`}>
-          <li data-id="progress">Chess 1200 ELO on Lichess Rapid</li>
+        <Divider />
+        <ul className={`${style.goal} ${style.goalList}`}>
+          <li data-id="progress">Chess 1000 ELO on Lichess Rapid</li>
           <li data-id="progress">Completed YH Business Operating Manual</li>
-          <li data-id="progress">$X Income</li>
         </ul>
       </div>
       <Journal />
